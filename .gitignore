@@ -9,3 +9,13 @@ src/TikZ_externalize/**
 **ist
 **lomf
 **run.xml
+**bcf
+**blg
+**latexmk
+**log
+**fls
+**lof
+**out
+**lot
+**toc
+**pdf

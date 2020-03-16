@@ -3,7 +3,7 @@
   % Géométrie page de garde
 \newgeometry{
   top=20mm,
-  bottom=20mm,
+  bottom=25mm,
   left=15mm,
   right=15mm,
   nofoot,
@@ -15,7 +15,7 @@
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
   % Les Fbox ne servent qu'au debug
   %\fbox{
-    \begin{minipage}[t]{0.95\textwidth}
+    \begin{minipage}[t]{.95\textwidth}
       \hspace{.1cm}
       %\fbox{
         \begin{minipage}[t]{5cm}
@@ -65,7 +65,7 @@
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
   \vspace{.05\textheight}
   %\fbox{
-    \begin{minipage}{0.95\textwidth}
+    \begin{minipage}{0.6\textwidth}
       \centering
       % Pour l'obtention
       {\usekomafont{subject} Thèse\par}
@@ -82,13 +82,14 @@
   \vfill
   % \vspace{.025\textheight}
   {\usekomafont{author} Mattia Bunel}\par
+  \vspace{.025\textheight}
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
   %% Titre
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-  \vspace{.025\textheight}
   %\fbox{
     \begin{minipage}{0.95\textwidth}
       \centering
+      % Titre
       {\usekomafont{title}\huge Modélisation et raisonnement spatial flou \par}
       % Sous-Titre
       {\usekomafont{subtitle} Appliqué à l'aide à la localisation de victimes en montagne \par}
@@ -98,7 +99,7 @@
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
   %% Illustration
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-  \includegraphics[width=0.6\textwidth]{example-image-golden}
+  \includegraphics[width=0.8\textwidth]{example-image-golden}
   \vfill
   \noindent
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
