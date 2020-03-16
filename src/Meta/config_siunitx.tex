@@ -1,0 +1,11 @@
+\usepackage[load-configurations = abbreviations]{siunitx}
+\sisetup{
+locale = FR,
+detect-all,
+round-mode=places,
+inter-unit-product=\ensuremath{\cdot},
+range-phrase=--,     % Utilise le tiret court pour dire "de... à"
+range-units=single,  % Cache l'unité sur la première borne
+list-final-separator= { et }, % Place "et" à la fin de la liste
+list-units=single       % L'unité ne s'affiche qu'au dernier élément
+}

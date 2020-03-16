@@ -1,0 +1,41 @@
+\usepackage[
+     hyperref=true,
+     % Style
+     bibstyle=authoryear,
+     citestyle=authoryear,
+     % Nombre de noms pour les citations
+     mincitenames=1, maxcitenames=3,
+     % Nombre de noms dans la bibliographie (tous)
+     minbibnames=99, maxbibnames=99,
+     % Faut-il remplacer les répétions d'auteurs par --
+     dashed=true,
+     % Faut il une initiale de prénom ?
+     giveninits=false,
+     % Afficher l'isbn
+     isbn=false,
+     % Afficher l'url
+     url=false,
+     % Afficher le doi
+     doi=true,
+     % Afficher l'eprint
+     eprint=false,
+     % Références citation
+     backref=true,
+     bibencoding=utf8,
+     backend=biber]{biblatex}
+
+% Customisation style bibliographie
+     
+%% Pas d'inversion PRÉNOM, NOM pour les auteurs 2 à n
+\DeclareNameAlias{sortname}{last-first}
+
+%% Champs à enlever
+\AtEveryBibitem{%
+  % Traducteur
+  \clearname{translator}%
+  % Lettre après la date en cas de doublon
+  \clearfield{extrayear}
+}
+
+%% Fichier bibliographie
+\addbibresource{Bibliographie/bibliographie.bib}

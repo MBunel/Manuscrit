@@ -1,0 +1,33 @@
+% Bibliothèqes supplémentaires
+\usetikzlibrary{patterns}
+\usetikzlibrary{fadings}
+\usetikzlibrary{external}
+\usetikzlibrary{calc}
+\usetikzlibrary{positioning}
+% Options
+\tikzexternalize[prefix=TikZ_externalize/]
+% Styles
+\tikzset{
+	ffa/.style={
+		pattern=north west lines,
+		pattern color=RdBu-9-2, 
+		draw=none
+	},
+	ffa_fade/.style={
+		ffa, 
+		path fading=east
+	},
+	ffc/.style={
+		draw=RdBu-9-1, 
+		line width=1
+	},
+	% Rendu ligne transparente sans apparition des patterns en dessous
+	ffc_fade/.style={
+		ffc, 
+		draw=white, 
+		postaction={
+			draw=RdBu-9-1, 
+			path fading=east
+			}
+		},
+}

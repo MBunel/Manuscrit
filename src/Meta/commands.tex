@@ -1,0 +1,60 @@
+% Gestion automatique des figures
+\newcommand{\doConvert}[2]{\immediate\write18{convert #1 -quality 50 -resample %
+  300x300 -resize #2 #1.rs}}
+  
+\newcommand{\imgRs}[4]{\doConvert{#1.#2}{#3x#4}%
+  \includegraphics[type=#2, ext=.#2.rs, read=.#2.rs]{#1}%
+}
+
+% Table des matières par chapitre
+\newcommand{\chaptertoc}[1][Plan du chapitre]{%
+  % Avant la table
+  % Avec titre
+  \etocsettocstyle{\addsec*{#1}}{\hrulefill}%
+  % Avec espace
+  % \etocsettocstyle{\bigskip}{}%
+  % Table des matières
+  \localtableofcontents*%
+  % Après le sommaire
+  %% Trait inférieur
+  %\par\bigskip\nobreak\noindent\hrulefill\par
+  %\bigskip\noindent\ignorespaces% 
+}
+
+
+
+% Changement de nom
+\renewcommand{\listfigurename}{Liste des figures}
+
+% Citations
+\renewcommand{\dictumrule}{\vskip+1ex\hrulefill\par}
+
+% Nouveau flotant carte
+\DeclareNewTOC[
+  type=carte,
+  types=cartes,
+  % Définit un flottant associé
+  float,
+  % Positionement par défaut du flottant
+  floatpos=hbp,
+  name=Carte,
+  listname={Liste des cartes},
+  counterwithin=chapter,
+  % Même paramétrage que 
+  % listoffigures
+  hang=2.3em
+  ]{lomf}
+
+
+\renewcommand{\glspluralsuffix}{}
+
+
+% Pour les retranscriptions
+\renewcommand*\DialogueLabel[1]{%
+  \scshape\lowercase{#1}~:\hfil
+}
+
+\newcommand\Req{\speak{\makebox[3pt]{R.}\,}}
+\newcommand\Sec{\speak{\makebox[3pt]{S.}\,}}
+\newcommand\CRec{\direct{Enregistrement coup\'e}}
+%\newcommand\CRec{\texhelp{Enregistrement coup\'e}}
