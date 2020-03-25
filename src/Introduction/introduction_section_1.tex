@@ -1,5 +1,295 @@
-\lipsum
+Lorsque George Perec relate sa visite d’une maison usonienne\footnote{
+  Néologisme de Frank Lloyd Wright. Qualifie des petites maisons
+  individuelles en harmonie avec leur environnement, une part
+  importante de son œuvre construit.} du Michigan, il en décrit le
+délicat cheminement vers l’intérieur:
 
-Some text \cite{Cohn1996}
+\begin{displayquote}[Perec, 1974, pp. 52-53]
+  \enquote{%
+    On commençait par suivre un sentier\textelp{}. Peu à peu,
+    \textelp{} sans qu’à aucun instant on ait été en droit d’affirmer
+    avoir perçu quelque chose comme une transition \textelp{}, le
+    sentier devenait \textelp{} une allée \textelp{}. Puis
+    apparaissait \textelp{} une toiture \textelp{} pratiquement
+    indissociable de la végétation \textelp{}. Mais en fait, il était
+    déjà trop tard pour savoir si l’on était dehors ou dedans.%
+  }
+\end{displayquote}
 
-\lipsum
+Les jeux avec l’environnement et les matériaux, relevés par
+l’écrivain, sont les éléments d’un parcours savamment orchestré par
+l’architecte pour fondre la construction dans son environnement,
+trompant le visiteur et l’empêchant d’identifier une délimitation
+claire entre dehors et dedans ; deux espaces tacitement considérés
+comme immiscibles. Ainsi, en lieu et place d’une rupture franche,
+c’est une transition progressive qui les sépare, rendant la définition
+d’une limite, autre qu’arbitraire, impossible.
+
+Or, la délimitation d’espaces cohérents est centrale dans la réflexion
+géographique et l’existence d’objets spatiaux difficilement
+délimitables ne va pas sans soulever des questions techniques et
+épistémologiques \autocite{Burrough1996b}, auxquelles de nombreux
+travaux, comme ceux cherchant à délimiter des espaces à partir de
+ressentis \autocite{Arabacioglu2010}, de descriptions de positions
+\autocite{Jones2007, Wolter2018,Bunel2019} ou de cartes mentales
+\autocite{Dutozia2014}, ont été confrontés. Ces différents travaux ont
+pour point commun d’avoir nécessité l’emploi de modèles avancés,
+permettant la représentation d’objets spatiaux aux frontières mal
+délimitées. Mais le grand nombre de modèles de ce type et l’absence de
+consensus pour l’un d’eux rend délicat leur recensement et leur
+analyse en vue d’une application originale.
+
+C’est ce travail de recensement et de classification que nous
+souhaitons entreprendre ici, en espérant qu’il puisse servir de point
+d’entrée à toute personne amenée à manipuler des objets spatiaux
+difficilement délimitables.  Cet état de l’art présente avant tout une
+catégorisation des différents modèles proposés dans la littérature,
+mais également le cadre conceptuel auxquels ils se rattachent et
+notamment la notion d’imprécision au centre de ces questions. Notre
+objectif n’est cependant pas de proposer une typologie originale des
+différents concepts, la question ayant déjà été largement traitée
+\autocite{Bouchon-Meunier1995,Fisher2006,Devilliers2019}. Nous
+présenterons également les différentes théories mathématiques
+permettant la modélisation de l’imprécison, comme l’ont récemment
+proposé \autocite{Batton-Hubert2019}, ainsi que les implémentation de
+modèles proposées.
+
+Nous commencerons par présenter plus abondamment ces notions et
+définir les différents concepts, tels que le vague ou l’imprécision,
+nécessaires à leur compréhension. Puis nous énumérerons les
+différentes théories mathématiques permettant de modéliser
+l’imprécision. Enfin nous présenterons les différentes modélisations
+de l’imprécision spatiale proposées dans la littérature.
+
+\section{Les concepts de vague et d’imprécision spatiale}
+
+Pour commencer nous allons définir les notions d’imprécision et de
+vague et présenter leurs spécificités lorsqu’elles sont appliquées au
+contexte spatial. Nous commencerons par présenter les notions dans
+leur ensemble, avant de nous concentrer sur les liens entre
+imprécision et géographie. Puis nous définirons l’imprécision
+spatiale, concept qui sera utilisé tout au long de cet état de l’art.
+
+L’exercice de définition d’un concept équivoque, tel que le vague,
+n’est pas une tâche aisée, car l’on est rapidement confronté à
+l’imprécision sémantique du langage naturel. C’est, en partie, ce
+constat qui conduisit les philosophes Gottlob Frege (1848–1925) et
+Bertrand Russell (1872–1970) à travailler sur une formalisation
+mathématique de la logique, à même d’affranchir le processus de
+réflexion des ambiguïtés du langage naturel \autocite{Williamson1994}.
+
+La réflexion contemporaine sur les notions de précision, de vague et
+d’imprécision remonte, selon \textcite{Williamson1994}, aux travaux de
+Russell et plus spécifiquement à la publication, en 1923, de son
+article \emph{Vagueness} \autocite{Russell1923}. Pour Russell, le
+vague est l’opposé de la précision. Les deux concepts ont pour domaine
+tout système de signes et ne se limitent donc pas au langage
+naturel. Ils concernent tout type de représentation (\eg cartes,
+photographies, mots) et n’ont donc de sens que pour qualifier une
+relation entre deux systèmes de signes, définie comme précise si
+bijective, \ie pour un système de signes donné, quel que soit le signe
+considéré, il ne partage sa signification qu’avec un et un seul signe
+d’un second système de signes. À l’inverse, la relation entre deux
+systèmes de signes est vague si une représentation à plus d’un (ou
+aucun) équivalent dans le second système, laissant dès lors place à
+l’interprétation. Pour illustrer le concept de vague, Russell prend
+l’exemple du mot \enquote{rouge} décrivant une teinte tacitement
+connue de tous, mais dont on ne peut qu’arbitrairement fixer les
+limites. De la même manière, les concepts de lac et île ne sont pas
+suffisamment précis pour que leur dénombrement soit trivial
+\autocite{Sarjakoski1996}. On pourrait multiplier les exemples à
+loisir, car, dans la conception russellienne, aucun domaine n’échappe
+au vague; toute représentation l’est\footnote{Y compris le terme
+  \enquote{vague}, lui-même \autocite{Russell1923}, on parle alors
+  d’imprécision d’ordre supérieur ou \emph{hight-order vagueness}
+  \autocite{Williamson1994, Varzi2003}.}, à des degrés divers, et la
+précision n’est qu’un idéal, hors d’atteinte.
+
+Dans la littérature, le terme imprécis est régulièrement utilisé comme
+synonyme de vague, notamment par \textcite{Zadeh1965} et dans une
+grande partie des travaux se rattachant à la logique floue. Par
+métonymie, le terme flou\footnote{Ou \emph{fuzzy} dans les
+  publications anglophones.} est également employé dans le sens de
+vague, imprécis. C’est, par exemple, le cas lorsque
+\textcite{Lagacherie1996} parlent de \emph{fuzziness} ou encore quand
+\textcite[218]{Brunet1992} définissent le flou comme : \enquote{la
+  partie d’un système ou d’un espace dont les contours et les limites
+  sont, soit imparfaitement connus ou connaissables, soit instables,
+  soit imprécis \textelp{}}. De nombreux autres termes sont
+ponctuellement utilisés, rendant la terminologie confuse
+(\ref{tab:1}). Pour rendre notre propos le plus clair possible, nous
+n’emploierons le terme \emph{flou} que pour qualifier des
+formalisations fondées sur la théorie des sous-ensembles flous de
+\bsc{Zadeh.} De plus, pour rester le plus proche possible du
+vocabulaire utilisé en géomatique nous préférerons le terme
+\emph{imprécis} à celui de \emph{vague}.
+
+\begin{table}
+  \centering
+  \begin{tabular}{lm{5cm}m{5cm}}
+    \firsthline
+    &\multicolumn{1}{c}{\textbf{Précis}} & \multicolumn{1}{c}{\textbf{Imprécis}}\\
+    \cline{2-3}
+    \textbf{Anglophone}&\emph{Crisp, Sharp, Well defined, Fiat boundaries} &\emph{Fuzzy, Indeterminate, Undefined, Uncertain, Ill-Defined, Unclear, Vagueness, Bona fide boundaries}\\
+    \textbf{Francophone}&\emph{Net}&\emph{Flou, Incertain, Vague}\\
+    \lasthline
+  \end{tabular}
+  \caption{sqdq}
+  \label{tab:1}
+\end{table}
+
+La notion d’\emph{imprécision} peut être associée à d’autres concepts,
+comme l’\emph{exactitude} chez \textcite{Russell1923}, que l’on
+retrouve chez \textcite{Bouchon-Meunier1995,Bouchon-Meunier2007} sous
+le nom d’\emph{incertitude}. Ici, l’\emph{incertitude} est entendue
+comme le doute que l’on peut avoir sur la validité d’une connaissance
+\autocite{Bouchon-Meunier1995}. L’imprécision et l’incertitude sont
+foncièrement liées et varient généralement en sens inverse
+\autocite{Russell1923}. Ainsi, si la proposition (1) : \enquote{la
+  distance de la Terre à la Lune est de \SI{384397}{\km}} est plus
+  précise que la proposition (2): \enquote{la distance de la Terre à
+    la Lune est d’environ \SI{384000}{\km}}, mais la seconde
+  proposition est plus certaine car, son cadre de validité (la plage
+  de valeurs de la distance Terre-Lune) est plus large. On peut en
+  effet, considérer que la proposition (2) reste vraie pour une
+  distance réelle de \SI{384397} ou \SI{384000}{\km} alors que la
+moindre variation de l’ordre d’un kilomètre suffit à invalider la
+première proposition (1). Dans certains cas, et notamment lorsque ces
+notions sont appliquées à des objets spatiaux, il peut être délicat de
+distinguer ces deux concepts. Cependant, ils sont fondamentalement
+différents : l’\emph{imprécision} est une caractéristique invariable,
+alors que l’\emph{incertitude} est contextuelle. Pour reprendre
+l’exemple précédent, la proposition (2) est \emph{imprécise} et le
+restera quel que soit le contexte, alors que sa certitude dépend des
+connaissances de l’observateur. La véracité des propositions (1) et
+(2) est, toutes choses égales par ailleurs, invariable, mais la
+certitude de cette véracité est contextuelle.
+
+L’\emph{imprécision} et l’\emph{incertitude} sont également associées
+à la notion d’\emph{incomplétude}, qui désigne une connaissance
+partielle. Ceci est dû au fait qu’un manque de connaissances peut
+entraîner des \emph{incertitudes}, mais également des
+\emph{imprécisions}
+\autocite{Bouchon-Meunier1995,Bouchon-Meunier2007}. Pour
+\bsc{Bouchon-Meunier} et plus généralement pour la communauté de
+chercheurs en intelligence artificielle, la composition de ces trois
+concepts définit la notion d’\emph{imperfection}
+\autocite{Bouchon-Meunier1995} Dans la suite de ce document, nous
+travaillerons à partir de cette typologie, même si de nombreuses
+autres typologies de concepts ont cependant été proposées, que ce soit
+dans le domaine de l’intelligence artificielle ou de la géomatique
+(Fisher et al.,, 2006).
+
+\section{Imprécision et géographie}
+
+Les objets et les concepts géographiques n’échappent évidemment pas à
+l’imprécision. Ainsi, \textcite{Russell1923} mentionnait déjà
+l’existence d’objets dont la délimitation spatiale est imprécise, tel
+que le système solaire. De nombreux autres objets spatiaux imprécis
+ont été identifiés, comme l’illustre l’exercice de définition du
+\emph{Brownfield}, entrepris par \textcite{Alker2000} et relevée par
+\textcite{Bennett2001}, qui y voit un bon exemple de la difficulté
+d’identifier une délimitation satisfaisante d’espaces naturels. Le
+\emph{Brownfield}, tout comme les \emph{forêts}
+\autocite{Bennett2001,Dilo2006,Fisher2006}, les \emph{montagnes}
+\autocite{Varzi2001,Fisher2006,Chaudhry2008}, les \emph{vallées}
+\autocite{Schneider2003} ou même le \emph{Soleil}
+\autocite{Simons1999}, appartiennent à cette catégorie d’objets
+spatiaux dont on ne peut fixer une limite. Cette énumération pourrait
+laisser penser que l’imprécision ne concerne pas les artefacts,
+pourtant l’expérience de \bsc{Perec} nuance cette affirmation. Comme
+l’indique \textcite{Campari1996}, l’identification des frontières d’un
+artefact, n’est pas aisée puisque dépendante du contexte
+d’observation. Ainsi, la limite d’une \emph{ville} ou d’un
+\emph{village} est tout aussi \emph{vague} que celle d’une zone
+\emph{frontalière} \autocite{Varzi2001,Fisher2006}, comme l’illustre
+la grande variabilité des définitions du concept de ville.
+
+Tous ces objets géographiques, généralement qualifiés de \emph{vagues}
+\autocite{Erwig1997}, \emph{imprécis} \autocite{Winter2000},
+\emph{flous} \autocite{Lagacherie1996} ou d’\emph{objets aux
+  frontières indéterminées} \autocite{Burrough1996}, s’opposent aux
+objets dits \emph{nets} \autocite{Schneider2001} ou \emph{précis.}
+\textcite{Smith2000} font usage d’un vocabulaire très différent en
+opposant les \emph{fiat boundaries,} \ie les frontières précises, aux
+\emph{bona fide boundaries,} caractérisant les objets spatiaux dont la
+délimitation est univoque (\ref{tab:1}). Pour
+\textcite{Couclelis1996}, les objets géographiques nets sont plus
+l’exception que la norme. Ce constat est corollaire de l’avis d’
+\textcite{OddAmbrosetti1987} pour qui \enquote{\textelp{} il est
+  problématique et généralement arbitraire de tracer des
+  limites\textelp{}}\footnote{\foreignquote{italian}{La realta ci
+    mostra quanto sia problematico e spesso arbitrario tracciare dei
+    confini \textelp{}} \autocite[200]{OddAmbrosetti1987}, traduction
+  de l’auteur.}, limites qui selon \textcite[106]{Brunet2001} sont
+\enquote{\textelp{} indécises, fuyant sans cesse devant l’analyse, et
+  même, localement indécidables}. \textcite{Dutozia1994} considèrent,
+quant à eux, que \enquote{\textelp{} l’espace géographique est par
+  essence flou \textelp{}}.
+
+Ainsi, si les concepts présentés jusqu’ici nous semblent actuellement
+peu utilisés en géographie, de nombreuses notions et objets entrant
+dans le champ d’étude de la discipline y sont fondamentalement
+liés. C’est notamment le cas des différents maillages administratifs,
+comme les régions \autocite{Brennetot2014}, mais aussi des frontières
+\autocite{Brunet1992}, des seuils \autocite{Brunet1992, Levy2013}, des
+discontinuités \autocite{Brunet1992, Brunet1997}, des franges
+\autocite{Brunet1992}, des confins \autocite{Brunet1997} ou encore des
+fronts pionniers \autocite{Brunet1992}, qui, comme tous les concepts
+dérivant de la notion de limite sont généralement définis comme
+pouvant être graduels ou progressifs \autocite{Brunet1992, Levy2013},
+\ie foncièrement imprécis.
+
+La question de la formalisation des objets spatiaux imprécis a
+cependant été abordée en géographie, avant même le développement des
+systèmes d’information géographiques \autocite{Robinson2003}. Dans les
+années 70, ou, à la suite de l’élaboration de la théorie des
+sous-ensembles flous \autocite{Zadeh1965}, plusieurs géographes,
+rattachés au courant \emph{béhavioriste,} tels que
+\textcite{Gale1972,Gale1976}, \textcite{Pipkin1978} ou
+\textcite{Leung1979,Leung1987} ont identité les problèmes que
+l’existence d’objets géographiques aux limites imprécises pouvait
+poser à la géographie. Parmi ces problèmes, \textcite{Gale1976} a
+identifié la question de la régionalisation. Problématique qui sera
+également abordée par \textcite{Rolland-May1996,Rolland-May1999} lors
+de ses travaux sur la définition de \emph{territoires de cohérence.}
+Les travaux \emph{béhavioristes} aboutiront à la formalisation du
+concept \emph{d’objet géographique imprécis} à l’aide de la théorie
+des sous-ensembles flous \autocite{Leung1987}. Ces travaux n’auront,
+semble-t-il, pas suffi à inscrire durablement le concept
+d’\emph{imprécision} dans le champ de la géographie, puisque,
+régulièrement apparaîtront des publications ré-introduisant ce concept
+en géographie, c’est notamment le cas de \textcite{Fisher1998},
+\textcite{Collins2000, Varzi2001} qui se fonderont indépendamment sur
+l’exemple de la définition d’une montagne pour introduire cette
+notion.
+
+Parallèlement, \textcite{Rolland-May1984,Rolland-May1987} se fondera
+notamment sur les travaux de \bsc{Gale} et \bsc{Leung} pour développer
+le \emph{concept d’espace géographique flou.} Cette dénomination
+qualifie la formalisation, à l’aide de la théorie des sous-ensembles
+flous, de l’espace tel que conceptualisé en géographie. Ce travail,
+permettra à \bsc{Rolland-May} de proposer une définition formelle de
+notions courant utilisées en géographie, telles que les \emph{franges}
+\autocite{Rolland-May1987}, définies comme la limite floue d’un espace
+géographique, ou les \emph{discontinuités}, dérites comme une
+configuration particulière d’ensemble flou
+\autocite{Rolland-May2003}. Les différents travaux de
+\bsc{Rolland-May} autour de la question de l’imprécision en géographie
+ont offert a différents chercheurs d’aborder différemment des
+questions géographiques \autocite{Dutozia2014}, comme, par exemple,
+\textcite{deRuffray2004}, qui feront usage des concepts développés par
+\bsc{Rolland-May} pour quantifier la cohérence de territoires, ou
+\textcite{Didelon2013} qui emploient la logique floue pour exploiter
+des cartes mentales.
+
+
+
+
+
+
+
+
+
+
+

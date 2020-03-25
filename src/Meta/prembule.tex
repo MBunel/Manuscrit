@@ -5,8 +5,20 @@
 \ifluatex
     % Lua(La)TeX
     \usepackage[french]{babel}
+    % Pour la gestion des fontes
     \usepackage{fontspec}
-    \defaultfontfeatures{Ligatures=TeX}
+    % Remplacement fontes komascript
+    % Définition paramètres fontes
+    \defaultfontfeatures{%
+        Numbers={OldStyle,Proportional},
+        Ligatures=TeX}
+    \setmainfont{EB Garamond}
+    % 'Disposition' pour tous les niveaux hiérarchiques
+    \addtokomafont{disposition}{\normalfont}
+    % Changement des styles pour les epigraphes
+    \setkomafont{dictumauthor}{\small\normalfont}
+    \setkomafont{dictum}{\small\normalfont}
+    % Permet l'écriture de formules en utf8
     \usepackage{unicode-math} 
     \unimathsetup{math-style=TeX}
 \else
@@ -19,18 +31,22 @@
 
 % Définition des couleurs personalisées
 \usepackage{xcolor}
+% Mes couleurs personalisées
 \input{Meta/colors.tex}
 
 % Tikz
 \usepackage{tikz}
+% Mes styles Tikz
 \input{Meta/tikzset.tex}
 
 % Flottants
+% Permet d'éviter les flottants hors-section
 \usepackage[above]{placeins}
+% Permet sous-figures
 \usepackage[lofdepth,lotdepth]{subfig}
 
 % Paratexte
-\usepackage[babel]{csquotes}
+\usepackage[babel, autostyle]{csquotes}
 
 % Toc locales
 \usepackage{etoc}
@@ -57,7 +73,7 @@
 % Hyperef à la fin, sauf cas particuliers
 \usepackage{hyperref}
 % Configuration du package
-\hypersetup{
+\hypersetup{%
     % non-Latin characters in Acrobat’s bookmarks         
     unicode=true,  
     % Métadonnées    
@@ -86,12 +102,13 @@
 %% Fichier glossaire
 \loadglsentries{Glossaire/glossaire_def}
 
-
 % Debug
-\usepackage{showlabels}
-\usepackage{lipsum}
+%\usepackage{showlabels}
+\usepackage{blindtext}
 %\usepackage{showframe} 
 
+% Césures
+\input{Meta/config_cesures.tex}
 
 % Commandes make
 \makeglossaries

@@ -29,9 +29,10 @@ me précédents travaux.
 
 \begin{refsection}
   % Publications antérieures à la thèse
-  \nocite{Ducruet2017a,Bunel2017,Ducruet2017,
-    Wang2017,Bunel2017a, Berli2018,Bunel2016,Ducruet2017b}
-        \printbibliography[heading=none]
+  \nocite{Ducruet2017a,Bunel2017,Ducruet2017, Wang2017,Bunel2017a,
+    Berli2018,Bunel2016,Ducruet2017b}
+  \newrefcontext[sorting=ynt]
+  \printbibliography[heading=none]
 \end{refsection}
 
 % Manuels de logiciels -> références demandées par les dévloppeurs
@@ -44,5 +45,6 @@ bibliothèques utilisées durant ce travail.
 \begin{refsection}
   \nocite{Perez2007,Hunter2007,vanderWalt2011,
     vanderWalt2014,CGAL2019,Virtanen2020}
+  \newrefcontext[sorting=ynt]
   \printbibliography[heading=none, keyword={software}]
 \end{refsection}

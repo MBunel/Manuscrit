@@ -2,9 +2,10 @@
      hyperref=true,
      % Style
      bibstyle=authoryear,
-     citestyle=authoryear,
+     % Variante 'comp' pour regrouper les dates
+     citestyle=authoryear-comp,
      % Nombre de noms pour les citations
-     mincitenames=1, maxcitenames=3,
+     mincitenames=1, maxcitenames=2,
      % Nombre de noms dans la bibliographie (tous)
      minbibnames=99, maxbibnames=99,
      % Faut-il remplacer les répétions d'auteurs par --
@@ -30,12 +31,14 @@
 \DeclareNameAlias{sortname}{last-first}
 
 %% Champs à enlever
-\AtEveryBibitem{%
-  % Traducteur
-  \clearname{translator}%
-  % Lettre après la date en cas de doublon
-  \clearfield{extrayear}
-}
+% Traducteur
+\AtEveryBibitem{\clearname{translator}}
+% Lettre après la date en cas de doublon
+\AtEveryBibitem{\clearfield{month}}
+\AtEveryBibitem{\clearfield{day}}
+
+\AtEveryCitekey{\clearfield{extrayear}}
+\AtEveryBibitem{\clearfield{extrayear}}
 
 %% Fichier bibliographie
 \addbibresource{Bibliographie/bibliographie.bib}
