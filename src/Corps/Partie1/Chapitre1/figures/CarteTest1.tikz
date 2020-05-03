@@ -1,0 +1,20 @@
+\begin{tikzpicture}
+\node[inner sep=0pt, anchor=south west] (image) at (0,0){\includegraphics{./figures/CarteTest.png}};
+\begin{scope}
+\node (P2) at ([yshift=-.5cm]image.south east) {};
+\node (P1) at ([yshift=-.5cm]image.south west) {};
+
+% \draw[-] (P1) -- (P2);
+
+\foreach \xshift/\diam in {0/.05, .1/.04, .2/.03, .3/.02, .4/.01}
+{
+\draw[fill=black,draw=none] ([xshift=\xshift cm, yshift=-.5cm]P1) circle [radius=\diam cm];
+}
+
+% Légende détaillée
+\path (P1) -- (P2) node[pos=.5, yshift=-.5cm] {\tiny Pour la légende détaillée du fond topographique voir \autoref{anx:topo_leg}}; 
+
+% Échelle
+\draw[-] (P2 |- -1cm,-1cm) --++ (-1,0) node[pos=.5, above] {\footnotesize\SI{500}{\meter}};
+\end{scope}
+\end{tikzpicture}

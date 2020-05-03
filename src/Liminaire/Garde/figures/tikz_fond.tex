@@ -1,0 +1,26 @@
+\begin{tikzpicture}[overlay,remember picture]
+  \coordinate (SW) at (current page.south west);
+  \coordinate (SE) at (current page.south east);
+  \coordinate (NW) at (current page.north west);
+  \coordinate (NE) at (current page.north east);
+
+  % Affichage des noeuds
+  \node[draw] at (SW) {};
+  \node[draw] at (SE) {};
+  \node[draw] at (NW) {};
+  \node[draw] at (NE) {};
+
+
+  \path (NE) -- (NW) node [pos=.3](P1){};
+  \path (NW) -- (SW) node [pos=.3](P2){};
+  \path (SE) -- (SW) node [pos=.3](P3){};
+  \path (NE) -- (SE) node [pos=.3](P4){};
+
+
+  \path[draw] (P2)--(P4) node[pos=.3](P5){};
+
+  \path[draw, fill=blue] (P1) -- (P5);
+
+  %\path[fill=blue] (SW) -- (NE) -- (SE) -- cycle;
+  %\path[fill=red] (SW) -- (NE) -- (NW) -- cycle;
+\end{tikzpicture}

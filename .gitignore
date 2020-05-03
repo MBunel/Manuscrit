@@ -1,5 +1,6 @@
 **~
 src/TikZ_externalize/**
+src/_minted-main/**
 **rs
 **aux
 **acn
@@ -19,3 +20,6 @@ src/TikZ_externalize/**
 **lot
 **toc
 **pdf
+**lomc
+*main.mtc*
+*main.maf

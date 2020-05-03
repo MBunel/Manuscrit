@@ -1,0 +1,24 @@
+\usepackage{fontspec}
+% Permet l'écriture de formules en utf8
+\usepackage{unicode-math} 
+\unimathsetup{math-style=TeX, bold-style=ISO}
+
+% Remplacement fontes komascript
+% Définition paramètres fontes
+\defaultfontfeatures{%
+  Numbers={OldStyle,Proportional},
+  Ligatures=TeX}
+
+\setmainfont{EB Garamond}[
+% Chiffres Elzéviriens
+Numbers={OldStyle,Proportional},]
+% 'Q'
+% RawFeature={+ss06}]
+
+% Fonte Maths
+\setmathfont{Garamond-Math}[StylisticSet={7,9,10}]
+
+% Fonte spécifique pou*r les titres ?
+% Ici un clone d'helvetica
+%\newfontfamily{\dispfont}{Nimbus Sans L}
+%\newfontfamily{\dispfont}{\normalfont}

@@ -1,0 +1,37 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Styles
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% 'Disposition' pour tous les niveaux hiérarchiques
+%\addtokomafont{disposition}{\dispfont}
+\addtokomafont{disposition}{\normalfont}
+
+% Police des headers
+%\addtokomafont{pageheadfoot}{\dispfont}
+% Police num page
+%\addtokomafont{pagenumber}{\dispfont}
+
+% Changement des styles pour les epigraphes
+\setkomafont{dictumauthor}{\small\normalfont}
+\setkomafont{dictum}{\small\normalfont}
+
+% Profondeur numérotation plan
+\setcounter{secnumdepth}{5}
+\RedeclareSectionCommands[
+  font=\large
+]{subsubsection}
+
+% Style chapitre
+%\renewcommand\chapterheadstartvskip{\par\hrule\vskip2mm}
+%\renewcommand\chapterheadendvskip{\par\vskip25mm\hrule\vskip40pt}
+
+
+% Style paragraphe, saut de ligne après le titre
+\RedeclareSectionCommands[
+  afterskip=1.5ex
+]{paragraph,subparagraph}
+
+% Style sous paragraphe, pas d'indentation
+\RedeclareSectionCommands[
+  indent=0pt
+]{subparagraph}

@@ -1,0 +1,16 @@
+﻿\begin{tikzpicture}
+
+\tikzset{
+caisson/.style={minimum width=1.5cm,minimum height=.75cm},
+legende/.style={xshift=5mm, anchor=west, text width=3.5cm},
+groupe/.style={below right, yshift=-.3cm}
+}
+
+\node[groupe](voirie) {\input{legende_voirie.tikz}};
+\node[groupe] (hydro) at (voirie.south west) {\input{legende_hydro.tikz}};
+
+\node[groupe] (veget) at (hydro.south west) {\input{legende_vegetation.tikz}};
+\node[groupe, xshift=-1cm] (bati) at (veget.north east) {\input{legende_bati.tikz}};
+
+\node[groupe] (energie) at (veget.south west) {\input{legende_energie.tikz}};
+\end{tikzpicture}		

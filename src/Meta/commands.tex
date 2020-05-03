@@ -1,3 +1,6 @@
+% Profondeur toc
+\setcounter{tocdepth}{5}
+
 % Gestion automatique des figures
 \newcommand{\doConvert}[2]{\immediate\write18{convert #1 -quality 50 -resample %
   300x300 -resize #2 #1.rs}}
@@ -14,7 +17,7 @@
         % increment dummy counter
         \advance\fint by 1
         %\char"2767\char"2619
-        \pgfornament[width=3cm]{82}
+        \pgfornament[width=3.5cm]{86}
         % repeat the loop provided the counter is within specified bound
         \ifnum\fint<#1
     \repeat
@@ -22,18 +25,10 @@
 
 % Table des matières par chapitre
 \newcommand{\chaptertoc}[1][Plan du chapitre]{%
-  % Avant la table
-  % Avec titre
-  %\etocsettocstyle{\addsec*{#1}}{\hrulefill}%
-  \etocsettocstyle{\addsec*{#1}}{\par\vskip+1em\centerline{\frise{1}}}%
-  % Avec espace
-  % \etocsettocstyle{\bigskip}{}%
-  % Table des matières
-  \localtableofcontents*%
-  % Après le sommaire
-  %% Trait inférieur
-  %\par\bigskip\nobreak\noindent\hrulefill\par
-}
+\deftocheading{toc}{}%
+\par\hrule\vskip+1em\par%
+\localtableofcontentswithrelativedepth{+6}%
+\par\vskip+1em\hrule\par}
 
 
 % Changement de nom
@@ -45,7 +40,7 @@
 
 
 % Séparateur notes page
-\renewcommand*\footnoterule{\centerline{\pgfornament[width=3cm]{82}}\vskip+1.5ex}
+\renewcommand*\footnoterule{\centerline{\pgfornament[width=3.5cm]{86}}\vskip+1.5ex}
 
 
 
@@ -65,6 +60,21 @@
   hang=2.3em
   ]{lomf}
 
+% Nouveau flotant code
+\DeclareNewTOC[
+  type=code,
+  types=codes,
+  % Définit un flottant associé
+  float,
+  % Positionement par défaut du flottant
+  floatpos=hbp,
+  name={Extrait de code},
+  listname={Liste des extraits de code},
+  counterwithin=chapter,
+  % Même paramétrage que 
+  % listoffigures
+  hang=2.3em
+  ]{lomc}
 
 \renewcommand{\glspluralsuffix}{}
 

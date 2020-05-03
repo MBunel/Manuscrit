@@ -1,0 +1,32 @@
+﻿\begin{tikzpicture}
+
+\tikzset{
+autoroute/.style={draw=black, line width=.8mm,postaction={draw=red, line width=.8mm}},
+nationale/.style={draw=black, line width=.68mm,postaction={draw=red, line width=.6mm}},
+departementale/.style={draw=black, line width=.68mm,postaction={draw=yellow, line width=.6mm}},
+route/.style={draw=black, line width=.12mm},
+sentier/.style={draw=black, line width=.12mm, dash pattern={on 5pt off 2pt}},
+}
+
+\node[right] (hydro) at (0,0) {\Large Voirie :};
+
+\node (rect) [anchor=north west, caisson] at (.75, -.75) {};
+\path[autoroute](rect.west) .. controls (rect.south) and (rect.north) .. (rect.east);
+\node[right of=rect, legende] {Autoroute};
+
+\node (rect2) [below of=rect, caisson] {};
+\path[nationale](rect2.west) .. controls (rect2.south) and (rect2.north) .. (rect2.east);
+\node[right of=rect2, legende] {Nationale};
+
+\node (rect3) [right of=rect, caisson, xshift=45mm] {};
+\path[departementale](rect3.west) .. controls (rect3.south) and (rect3.north) .. (rect3.east);
+\node[right of=rect3, legende] {Départementale};
+
+\node (rect4) [below of=rect3,  caisson] {};
+\path[route](rect4.west) .. controls (rect4.south) and (rect4.north) .. (rect4.east);
+\node[right of=rect4, legende] {Autre};
+
+\node (rect5) [right of=rect3, xshift=45mm,  caisson] {};
+\path[sentier](rect5.west) .. controls (rect5.south) and (rect5.north) .. (rect5.east);
+\node[right of=rect5, legende] {Sentier};
+\end{tikzpicture}		

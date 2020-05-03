@@ -1,34 +1,17 @@
 \usepackage{amsmath}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Fontes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Meta/fontes.tex}
 
-\usepackage{ifluatex}
-% Packages Génériques
-\ifluatex
-    % Lua(La)TeX
-    \usepackage[french]{babel}
-    % Pour la gestion des fontes
-    \usepackage{fontspec}
-    % Remplacement fontes komascript
-    % Définition paramètres fontes
-    \defaultfontfeatures{%
-        Numbers={OldStyle,Proportional},
-        Ligatures=TeX}
-    \setmainfont{EB Garamond}
-    % 'Disposition' pour tous les niveaux hiérarchiques
-    \addtokomafont{disposition}{\normalfont}
-    % Changement des styles pour les epigraphes
-    \setkomafont{dictumauthor}{\small\normalfont}
-    \setkomafont{dictum}{\small\normalfont}
-    % Permet l'écriture de formules en utf8
-    \usepackage{unicode-math} 
-    \unimathsetup{math-style=TeX}
-\else
-    %default: pdf(La)TeX
-    \usepackage[french]{babel}
-    \usepackage{lmodern} % load vector font
-    \usepackage[T1]{fontenc} % font encoding
-    \usepackage[utf8]{inputenc} % input encoding
-\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Babel
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[french]{babel}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Graphiques
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Définition des couleurs personalisées
 \usepackage{xcolor}
 % Mes couleurs personalisées
@@ -36,6 +19,7 @@
 
 % Tikz
 \usepackage{tikz}
+\usepackage{pgfornament}
 % Mes styles Tikz
 \input{Meta/tikzset.tex}
 
@@ -43,7 +27,7 @@
 % Permet d'éviter les flottants hors-section
 \usepackage[above]{placeins}
 % Permet sous-figures
-\usepackage[lofdepth,lotdepth]{subfig}
+\usepackage[lofdepth,lotdepth, position=top]{subfig}
 
 % Paratexte
 \usepackage[babel, autostyle]{csquotes}
@@ -58,19 +42,44 @@
 \input{Meta/config_siunitx.tex}
 
 % Représentation des dialogues
+% pour les retranscriptions
 \usepackage{dialogue}
 
-% tableaux
-% Gestion avancée tableaux
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Tableaux
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{array}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Gestion de la Géométrie
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Modification de la géométrie (page de garde)
 \usepackage{geometry}
+% Environnement lscape
+\usepackage{lscape}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Extraits de code
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\input{Meta/config_listings.tex}
+\input{Meta/config_minted.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliographie
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{Meta/config_bibliographie.tex}
 
-% Hyperef à la fin, sauf cas particuliers
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Césures
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Meta/config_cesures.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Hyperef
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Toujours à la fin
+% sauf cas particuliers
 \usepackage{hyperref}
 % Configuration du package
 \hypersetup{%
@@ -97,18 +106,21 @@
     urlcolor=RdBu-9-8
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Glossaire
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[acronym, subentrycounter, toc]{glossaries}
-%% Fichier glossaire
-\loadglsentries{Glossaire/glossaire_def}
+%% Entrées glossaire
+\loadglsentries{Annexes/Glossaire/glossaire_def}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Debug
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\usepackage{showlabels}
 \usepackage{blindtext}
-%\usepackage{showframe} 
+%\usepackage{showframe}
 
-% Césures
-\input{Meta/config_cesures.tex}
-
-% Commandes make
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Makes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \makeglossaries

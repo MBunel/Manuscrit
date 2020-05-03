@@ -1,0 +1,135 @@
+% Début de la page de garde
+\begin{titlepage}
+  % Géométrie page de garde
+  \newgeometry{
+    top=20mm,
+    bottom=25mm,
+    left=15mm,
+    right=15mm,
+    nofoot,
+    nohead,
+    nomarginpar}
+  \centering
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+  %% Fond
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+  %\input{./figures/tikz_fond}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+  %% Logos
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+  % Les Fbox ne servent qu'au debug
+  % \fbox{
+  \begin{minipage}[t]{.95\textwidth}
+    \hspace{.1cm}
+    % \fbox{
+    \begin{minipage}[t]{5cm}
+      \centering
+      % Logo Université
+      \includegraphics[width=2cm]{example-image-1x1}
+      % Logo Ed
+      \includegraphics[width=2cm]{example-image-1x1}
+      \par
+      {\scriptsize
+        Université Paris-Est\par
+        École doctorale MSTIC
+      }
+    \end{minipage}
+    % }    
+    \hfill
+    % \fbox{
+    \begin{minipage}[t]{2.5cm}
+      \centering
+      % Logo CHOUCAS
+      \includegraphics[width=2cm]{./figures/logo-choucas.png}
+      \par
+      {\scriptsize Projet Choucas}
+    \end{minipage}
+    % }
+    \hfill
+    % \fbox{
+    \begin{minipage}[t]{5cm}
+      \centering
+      % Logo IGN
+      \includegraphics[width=2cm]{example-image-1x1}
+      % Logo Lastig
+      \includegraphics[width=2cm]{example-image-1x1}
+      \par
+      {\scriptsize
+        Institut national de l'information géographique et forestière\par
+        Laboratoire LASTIG
+      }
+    \end{minipage}
+    % }
+    \hspace{.1cm}
+  \end{minipage}
+  % }
+  \par
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+  %% Descriptif
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+  \vspace{.05\textheight}
+  % \fbox{
+  \begin{minipage}{0.6\textwidth}
+    \centering
+    % Pour l'obtention
+    {\usekomafont{subject} Thèse\par}
+    \vspace{.01\textheight}
+    {\usekomafont{titlehead}
+      Présentée pour l'obtention du grade de \par
+      Docteur de l'Université Paris-Est\par
+      \vspace{.01\textheight}
+      Spécialité: Sciences de l'information Géographique
+    }
+  \end{minipage}
+  % }
+  \par
+  \vfill
+  % \vspace{.025\textheight}
+  {\usekomafont{author} Mattia Bunel}\par
+  \vspace{.025\textheight}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+  %% Titre
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+  % \fbox{
+  \begin{minipage}{0.95\textwidth}
+    %\centering
+    \raggedright
+    % Titre
+    {\usekomafont{title}\Huge Modélisation et raisonnement spatial flou \par}
+    % Sous-Titre
+    {\usekomafont{subtitle} Appliqué à l'aide à la localisation de victimes en montagne \par}
+  \end{minipage}
+  % }
+  \vfill
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+  %% Illustration
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+  %\includegraphics[width=0.8\textwidth]{example-image-golden}
+  \vfill
+  \noindent
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+  %% Jury
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+  % \fbox{
+  \begin{minipage}[t]{0.95\textwidth}
+    \centering
+    Soutenue publiquement le 12 décembre 2019 devant le jury composé de :\par
+    \vspace{.01\textheight}
+    {\footnotesize
+      \begin{tabular}{m{0.95\textwidth}}
+        M. Jean \bsc{Dupont}, Professeur, Université de Franche-comté \dotfill
+        Rapporteur\\
+        M\up{me} Aline \bsc{Renaud}, Directrice de recherche, CNRS \dotfill Examinatrice\\
+        M. Robert \bsc{Dupont}, Professeur, Université Paris 1 \dotfill Rapporteur\\
+        M\up{me} Javeline \bsc{Renaud}, Directrice de recherche, IFSTTAR \dotfill Examinatrice\\
+        M\up{me} Ana-Maria \bsc{Olteanu-Raimond}, Chercheuse (HDR), IGN \dotfill Encadrante\\
+        M\up{me} Cécile \bsc{Duchêne}, Chercheuse (HDR), IGN  \dotfill Directrice de thèse\\
+      \end{tabular}
+    }
+  \end{minipage}
+  % }
+\end{titlepage}
+
+% Retour à la géométrie initiale
+\restoregeometry

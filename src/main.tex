@@ -1,23 +1,38 @@
 \documentclass[%
     a4paper,
     12pt,
-    toc=listof
+    toc=listof,
+    %DIV=clac
 ]{scrbook}
 
 % Prémbule
 \include{Meta/prembule}
 
+% Styles
+\include{Meta/styles_koma}
+
 % Options Komascript
-%\KOMAoptions{DIV=last}
+\KOMAoptions{DIV=last}
 
 \begin{document}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%
 % Commandes personalisées
+%%%%%%%%%%%%%%%%%%%%%%%%
 \include{Meta/commands}
-% Page de garde
-\import{Garde/}{page_de_garde.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
 % Plan du document
-\include{plan}
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Prémbule
+\frontmatter
+\import{Liminaire/}{plan_liminaire.tex}
+% Corps du document
+\mainmatter
+\import{Corps/}{plan_corps.tex}
+% Annexes
+\appendix
+\addpart{Annexes}
+\import{Annexes/}{plan_annexes.tex}
 \end{document}
 %%% Local Variables:
 %%% mode: lualatex

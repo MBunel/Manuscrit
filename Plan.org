@@ -1,0 +1,181 @@
+* Introduction générale
+
+Introduction de la thèse. Je penche plutôt pour une introduction et
+une conclusion assez courtes et mettre le maximum d'éléments dans le
+corps.
+
+* Partie 1 : /Contexte et problématique/
+
+Dans la première partie je veux présenter le contexte scientifique et
+professionel de la thèse. L'idée est qu'à la fin de cette partie
+(cf. conclusion) on ait une vision complète de la problématique et du
+positionement de la thèse
+
+** Introduction de la partie
+
+** Chapitre 1 : /Contexte/
+
+Chapitre destiné à présenter le contexte scientifique et professionel
+de la thèse.
+
+*** Introduction du chapitre
+
+*** Secours en montagne
+
+Cette partie présente le contexte professionnel. C'est quoi le secours
+en montagne, comment il s'organise. Puis je veux présenter leur
+méthodologie. Comment les secouristes travaillent, etc. Ensuite je
+pense aborder la question des limites de leur approche, en m'appuyant
+sur l'exemple du fil rouge.
+
+*** Le projet choucas
+
+Cette partie présente le projet Choucas. Elle est construite pour
+répondre à la partie précédente. La partie 'Secours en montange'
+explique les problèmes des secouristes et cette partie explique
+comment on compte y répondre. 
+
+Pour ça je pensais suivre une approche descendante. Je commence par
+présenter le projet dans son ensemble, puis ces objectifs
+scientifiques dans le détail. Puis j'explique dans quel axe cette
+thèse s'inscrit.
+
+*** Conclusion du chapitre
+
+À la fin de ce chapitre on doit avoir une bonne vision d'ensemble du
+contexte. Le lecteur doit savoir comment fonctionne le secours en
+montagne, quelles sont les limites de l’approche actuelle, comment le
+projet CHOUCAS veut y répondre et surtout dans quel axe du projet je
+m'inscrit et je ne m'inscrit pas.
+
+** Chapitre 2 : /Problématique/
+
+Ce chapitre est là pour problématiser ma thèse. Une fois que les
+grandes lignes ont étés décrites dans le chapitre précédent je peux
+aborder la problèmatique.
+
+C'est un chapitre sur lequel je ne suis pas très avancé. Je le trouve
+assez dur à faire. Pour l'instant j'ai identifié 4 objectfis
+scientifiques. L'idée est de les présenter individuellement en
+précisant quels sont les verrous pour chacun d'entre-eux. Chaque
+objectif devrait avoir son chapitre dans les parties suivantes. Mais
+ce n'est pas encore bien poli. Par ex. je pense que la prise en compte
+de l'incertitude est un objectif à part, mais ce n'est pas assez
+important pour que cette question fasse l'objet d'un chapitre à
+part. 
+
+J'avais aussi pensé à une autre approche qui était de présenter le
+travail en suivant le déroulé du code (Identification des RS ->
+Décomposition/identification des RSA -> Calcul/Spatialisation ->
+Agrégation -> Évaluation) mais ça pose d'autre problèmes notamment
+pour la présentaion d'aspects plus théoriques/conceptuels comme la
+modélisation de l'imprécision, qui dans ce cas ne sera pas abordée
+avant le chapitre sur la spatialisation et je trouve que c'est un
+problème car c'est un truc important qui vient asssez tard.
+
+*** Introduction du chapitre
+
+*** Objectifs scientifiques
+
+**** Prise en compte de l'imprécision du langage naturel
+
+**** Prise en compte du jugement du secouriste (incertitude)
+
+**** Modélisation floue de localisations indirectes
+
+**** Aggrégation d'indices
+
+**** Évaluation des résultats
+
+*** Problématisation
+
+Partie sur la problématisation de la thèse
+
+*** Conclusion du chapitre
+
+La conclusion synthétise la problématique de la thèse
+
+** Chapitre 3 : /État de l'art/
+
+Je ne sais pas si c'est mieux de faire un gros chapitre état de l'art
+comme ici, on de dispacher l'état de l'art en première partie des
+chapitres suivants. Je trouve que dans la configuratiuon actuelle
+c'est une structure assez artificielle.
+
+** Conclusion de la partie
+
+Cette conclusion fait office de résumé de la problématique et du
+positionnement de la thèse.
+
+* Partie 2 :
+
+Initialement j'avais pensé cette partie comme un regroupement de tout
+ce qui traitait de la construction d'une zone le localisation,
+organisée suivant le déroulement du code (j'en ai un peu parlé
+avant). Le problème c'est comment traiter des questions plus
+théoriques comme la modélisation floue.
+
+** Introduction de la partie
+
+** Modélisation de l'imprécison
+
+Ce chapitre est celui qui s'éloigne le plus de ma logique initiale
+(présenter les apports en suivant le déroulé de la modélisation). Dans
+l'ensemble cet article présente les problèmes liés à l'imprécision et
+à sa modélisation. Ce qui en fait un chapitre assez proche de
+l'article soumis à la Rig. Ce qui me pose problème ici c'est que dans
+la configuration du plan que je vous présente ce chapitre ne contient
+pas d'état de l'art (cf. chapitre précédent) et j'ai peur que ce soit
+assez artificiel comme structure.
+
+** Modélisation et décomposition d'indices
+
+Dans ce chapitre je pensais revenir sur la modélisation des indices et
+le processus de décomposition. L'idée et de présenter le modèle en
+triplets, d'expliquer le processus de décomposition et donc également
+de présenter les ontologies. Contrairement au précédent ce chapitre
+suit le déroulé logique de la modélisation. Il s'agit de la première
+étape, comment on traite les relations spatiales avant de les spatialiser.
+
+** Spatialisation
+
+Ce chapitre présente le processus de spatialisation. Il s'agit de
+présenter le processus en partant du calcul des RSA jusqu'a
+l'agrégation en un raster par indice. Je trouve ce chapitre assez
+logique dans son découpage, mais j'ai peur qu'il soit beaucoup trop
+gros par rapport aux autres chapitres. Puisqu'avec le découpage actuel
+toutes les relations spatiales atomiques modélisées dans la thése sont
+présentées ici. J'ai peur que ce chapitre soit vraiment
+déséquilibré. Mais je n'arrive pas à imaginer un découpage
+alternatif.
+
+NB : Peut-être en sortant l'agrégation des RSAs et des objets de ref.
+dans un nouveau chapitre ?
+
+** Agrégation et modélisation de la confiance
+
+Ce dernier chapitre de la partie 2 présente la phase d'agrégation des
+indices et la modélisation de la confiance.
+
+** Conclusion de la partie
+
+* Partie 3 :
+** Introduction de la partie
+
+** Chapitre X : Évaluation
+
+Un chapitre sur l'évaluation. Un travail toujours en cours.
+
+** Chapitre X : Évolutions 
+
+Je pensais faire un chapitre un peu 'bonus' dans lequel j'aborde en
+détail quelles sont les améliorations que je propose et les points que
+je n'ai pas pu aborder.
+
+** Conclusion de la partie
+
+* Conclusion générale
+
+Comme expliqué plus haut je suis partisan d'une conclusion plutôt
+courte, d'autant plus que les perspectives sont déjà abordées dans le
+chapitre final de la partie 3.

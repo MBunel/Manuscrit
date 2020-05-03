@@ -1,0 +1,111 @@
+﻿% Bibliothèqes supplémentaires
+\usetikzlibrary{patterns}
+\usetikzlibrary{fadings}
+\usetikzlibrary{calc}
+\usetikzlibrary{positioning}
+% Options
+%\tikzexternalize[prefix=TikZ_externalize/]
+% Styles
+
+% définition des couleurs
+\definecolor{RdBu-9-1}{RGB}{178,24,43}
+\definecolor{RdBu-9-B}{RGB}{178,24,43}
+\definecolor{RdBu-9-2}{RGB}{214,96,77}
+\definecolor{RdBu-9-D}{RGB}{214,96,77}
+\definecolor{RdBu-9-3}{RGB}{244,165,130}
+\definecolor{RdBu-9-F}{RGB}{244,165,130}
+\definecolor{RdBu-9-4}{RGB}{253,219,199}
+\definecolor{RdBu-9-G}{RGB}{253,219,199}
+\definecolor{RdBu-9-5}{RGB}{247,247,247}
+\definecolor{RdBu-9-H}{RGB}{247,247,247}
+\definecolor{RdBu-9-6}{RGB}{209,229,240}
+\definecolor{RdBu-9-I}{RGB}{209,229,240}
+\definecolor{RdBu-9-7}{RGB}{146,197,222}
+\definecolor{RdBu-9-J}{RGB}{146,197,222}
+\definecolor{RdBu-9-8}{RGB}{67,147,195}
+\definecolor{RdBu-9-L}{RGB}{67,147,195}
+\definecolor{RdBu-9-9}{RGB}{33,102,172}
+\definecolor{RdBu-9-N}{RGB}{33,102,172}
+
+\tikzset{%
+	ffa/.style={%
+		pattern=north west lines,
+		pattern color=RdBu-9-2, 
+		draw=none
+	},
+	ffa_fade/.style={%
+		ffa, 
+		path fading=east
+	},
+	ffc/.style={%
+		draw=RdBu-9-1, 
+		line width=1
+	},
+	% Rendu ligne transparente sans apparition des patterns en dessous
+	ffc_fade/.style={%
+		ffc, 
+		draw=white, 
+		postaction={%
+			draw=RdBu-9-1, 
+			path fading=east
+			}
+		},
+}
+
+\def\decalageX{-.2}
+\def\decalageY{-.2}
+
+\begin{tikzpicture}
+	% Courbe
+	\begin{scope}[transparency group]
+		% fond
+		\begin{scope}
+			\path[ffa] (1,0) -- (1,.3) -- (3 + .225, .3) -- (4.5,2)  -- (6 - .225, .3)  --  (8, .3) --  (8, 0) -- cycle;
+			\path[ffa_fade] (8, .3) rectangle (9.5,0);
+			\path[ffa_fade, fading angle=180] (0,0) rectangle (1,.3);
+		\end{scope}
+		%bords
+		\begin{scope}
+			\path[ffc_fade, fading angle=180] (0, .3) -- ++ (1,0) ;
+			\path[ffc] (1,.3) -- (3 + .225, .3) -- (4.5,2)  -- (6 - .225, .3)  --  (8, .3) ;
+			\path[ffc_fade] (8, .3) --  (9.5, .3);
+		\end{scope}
+	\end{scope}
+
+	\begin{scope}
+		\path[ffc, line width=.5, |<->|] (2, 1.95) --  (2, .35);
+		\node[left] at (2,1) {a};
+	\end{scope}
+
+
+	% Axes X, Y
+	\begin{scope}
+	  % Axe X
+	  \begin{scope}
+	    % Axe
+	    \draw[<->] (0, \decalageX) --++ (9.5, 0) coordinate (x axis);
+	    % Graduations
+	    \foreach \n/\t in {0.5/{},1.5/{},2.5/{},3.5/{},4.5/{},5.5/{},6.5/{},7.5/{},8.5/{}}
+	    {
+			\draw[-] (\n, \decalageX - .05) --++ (0, .1);
+			\node[below, font=\footnotesize] at (\n, \decalageX - .05) {\t};
+	    }
+	    % label
+	    \node[below left] at (x axis) {$Distance (m)$};
+	  \end{scope}
+	  % Axe Y
+	  \begin{scope}
+	    % Axe
+	    \draw[-] (\decalageY ,0) --++ (0, 2) coordinate (y axis);
+	    % Graduations
+	    \foreach \n/\t in {0/{0},2/{1}}
+	    {
+	      \draw[-] (\decalageY -.05, \n) --++ (.1, 0);
+	      \node[left, font=\footnotesize] at (\decalageY -.05, \n) {\t};
+	    }
+	    % Label
+	    \node[above] at (y axis) {$\mu$};
+	  \end{scope}
+	\end{scope}
+
+\end{tikzpicture}

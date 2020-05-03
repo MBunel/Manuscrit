@@ -1,0 +1,126 @@
+\chaptertoc{}
+
+\section{Bou}
+
+\blindtext
+
+\begin{table}
+  \centering
+  \begin{tabular}{
+      % Définition de la première colonne
+      % Barre verticale, puis texte en gras et bleu,
+      % puis valeur centrée, puis l'unitée
+    | >{\color{blue}\bfseries} c <{\degres C}
+    % La | est remplacée par une flèche 
+    !{$\rightarrow$} 
+    % Colonne 2, la valeur est précédée
+    % du mot eau, puis texte à gauche en italique
+    >{l'eau \itshape}l|
+    } 
+    \hline 
+    -1 & gel\\ 
+    \hline 
+    90 & bout\\ 
+    \hline 
+    22 & est bonne\\ 
+    \hline 
+  \end{tabular}
+  \caption{test array}
+\end{table}
+
+\blindtext
+
+\begin{equation}
+  FoldList \equiv \lambda f\, d\, xs\,.\, xs\ d\ \big(\lambda\ h\ t \,.\, f\ h\ (FoldList\ f\ d\ t)\big)
+\end{equation}
+
+
+\begin{equation}
+ FoldList ≡ λ f d xs . xs d (λ h t . f h (FoldList f d t))
+\end{equation}
+
+\begin{equation}
+  \begin{aligned}
+    &\to_\beta FoldList \left[\,f := zou,\ d := 0,\ xs := (1,2,3,4)\right]\\
+    & \equiv (1,2,3,4)\ 0\ \big(\lambda\,h\,t \,.\, zou\, h(FoldList \, zou \, 0 \, t)\big)\\
+    &\to_\beta \Big(\lambda\ h\ t \,.\, zou\, h[h := 1]\ \big(FoldList \ zou \ 0 \ t[t:=(2,3,4)]\big)\Big)\\
+    & \equiv zou\ 1\ \big(FoldList \ zou \ 0 \ (2,3,4)\big) \\
+    & \equiv zou\ 1\ \Big( zou\ 2\ \big(FoldList \ zou \ 0 \ (3,4)\big)\Big) \\
+    & \equiv zou\ 1\ \big( zou\ 2\ (zou\ 3\ (FoldList \ zou \, 0 \, (4))))) \\
+    & \equiv zou\ 1\ \big( zou\ 2\ (zou\ 3\ (zou\ 4 \ (FoldList \, zou \, 0 \, ()))))) \\
+    & \equiv zou\ 1\ \Big( zou\, 2\ \big(zou\, 3\ (zou\, 4\, 0) \big) \Big) \\
+    &\to_\beta zou\ 1\ ( zou\, 2\ (zou\, 3\ (zou\, 4\, 0)))))[zou := \lambda\,x\,y\,.\, x+y] \\
+    & \equiv 1 + \Big( 2 + \big( 3 + (4 + 0)\big)\Big) \\
+    & \equiv 1 + 2 + 3 + 4 + 0 \\
+  \end{aligned}
+\end{equation}
+\blindtext
+
+Voire le \autoref{lst:fuzzyfier} et le \autoref{lst:ff}
+
+\begin{code}
+  \begin{minted}{python}
+    class FuzzyfierMoreSpeeeeed(Fuzzyfier):
+        def __init__(self, context):
+            super().__init__(context)
+   \end{minted}
+   \caption{oputxff}
+      \label{lst:fuzzyfier}
+\end{code}
+
+\blindtext
+
+\begin{code}
+  \begin{minted}{python}
+    def def_fuzzyfy_function(self, *args, **kwargs):
+    """
+    fonction chargée de la génération de la fonction "fuzzy_fun".
+    "fuzzy_fun" crée une copie fuzzyfiée du raster donné en entrée.
+    """
+
+    # Tri des paramètres
+    sorted(args, key=lambda x: x[0])
+    largs = len(args)
+    # Définition de la fonction
+    # Liste de patterns en fonction du nombre de paramètres
+    fun_rules = {
+      # Cas crisp
+      1: (self._inf_vals,),
+      # Cas où la fonction est une droite
+      2: (self._inf_vals, self._fst_slp, self._sup_vals),
+      # la fonction est de forme triangulaire
+      3: (self._inf_vals, self._fst_slp, self._lst_slp, self._sup_vals),
+      # forme trapézoidale
+      4: (
+      self._inf_vals, self._fst_slp,
+      self._cnt_flt, self._lst_slp, self._sup_vals,
+      ),
+    }
+
+    # Caneva de la fonction "fuzzy fun"
+    def fuzzy_fun(raster):
+    raster_copy = np.zeros_like(raster)
+    try:
+    # On récupère la liste d'instruction correspondant
+    au nombre d'arguments
+    for ins in fun_rules[largs]:
+    # On applique les fonctions, dans l'ordre du tuple
+    # "fun_rules[largs]"
+    ins(raster, raster_copy, *args)
+    return raster_copy
+    except KeyError:
+    raise ValueError("2, 3 or 4 parameters needed")
+
+    # Renvoi de la fonction générée
+    return fuzzy_fun
+  \end{minted}
+  \caption{oputx}
+  \label{lst:ff}
+\end{code}
+
+\blindtext
+
+%%% Local Variables:
+%%% mode: lualatex
+%%% TeX-master: "../main"
+%%% End:
