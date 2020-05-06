@@ -2,14 +2,14 @@
     a4paper,
     12pt,
     toc=listof,
-    %DIV=clac
+    %DIV=calc
 ]{scrbook}
 
 % Prémbule
-\include{Meta/prembule}
+\input{Meta/prembule.tex}
 
 % Styles
-\include{Meta/styles_koma}
+\input{Meta/styles_koma}
 
 % Options Komascript
 \KOMAoptions{DIV=last}
@@ -18,7 +18,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%
 % Commandes personalisées
 %%%%%%%%%%%%%%%%%%%%%%%%
-\include{Meta/commands}
+\input{Meta/commands}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 % Plan du document
@@ -26,15 +26,13 @@
 % Prémbule
 \frontmatter
 \import{Liminaire/}{plan_liminaire.tex}
+
 % Corps du document
 \mainmatter
 \import{Corps/}{plan_corps.tex}
+
 % Annexes
 \appendix
 \addpart{Annexes}
 \import{Annexes/}{plan_annexes.tex}
 \end{document}
-%%% Local Variables:
-%%% mode: lualatex
-%%% TeX-master: t
-%%% End:

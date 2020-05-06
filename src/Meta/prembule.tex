@@ -19,6 +19,7 @@
 
 % Tikz
 \usepackage{tikz}
+\usepackage{varwidth}
 \usepackage{pgfornament}
 % Mes styles Tikz
 \input{Meta/tikzset.tex}
@@ -49,6 +50,8 @@
 % Tableaux
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{array}
+\usepackage{booktabs}
+\usepackage{multirow}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Gestion de la Géométrie
@@ -109,7 +112,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Glossaire
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage[acronym, subentrycounter, toc]{glossaries}
+\usepackage[acronym, automake]{glossaries}
+\makeglossaries
 %% Entrées glossaire
 \loadglsentries{Annexes/Glossaire/glossaire_def}
 
@@ -123,4 +127,4 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Makes
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\makeglossaries
+
