@@ -1,0 +1,67 @@
+﻿\begin{tikzpicture}[%
+  ev/.style={font=\tiny, text centered, inner sep=2pt, fill=white}
+  ]
+  % Création de la Frise
+  \begin{scope}
+    % Axe dégradé à gauche
+    \path[draw,-,path fading=west] (-.5,0) -- (0,0);
+    % Axe principal
+    \path[draw,->] (0,0) --++ (12,0);
+
+    % Trait vertical tous les .75 cm (10 ans)
+    \foreach \x in {0,.75,...,11.75}{
+      \path[draw] (\x,-.05) --(\x,.05);
+    }
+
+    % Étiquettes de décénine
+    \node[below, font=\tiny] at (0, -.05) {1860};
+    \node[below, font=\tiny] at (.75, -.05) {1870};
+    \node[below, font=\tiny] at (1.5, -.05) {1880};
+    \node[below, font=\tiny] at (2.25, -.05) {1890};
+    \node[below, font=\tiny] at (3, -.05) {1900};
+    \node[below, font=\tiny] at (3.75, -.05) {1910};
+    \node[below, font=\tiny] at (4.5, -.05) {1920};
+    \node[below, font=\tiny] at (5.25, -.05) {1930};
+    \node[below, font=\tiny] at (6, -.05) {1940};
+    \node[below, font=\tiny] at (6.75, -.05) {1950};
+    \node[below, font=\tiny] at (7.5, -.05) {1960};
+    \node[below, font=\tiny] at (8.25, -.05) {1970};
+    \node[below, font=\tiny] at (9, -.05) {1980};
+    \node[below, font=\tiny] at (9.75, -.05) {1990};
+    \node[below, font=\tiny] at (10.5, -.05) {2000};
+    \node[below, font=\tiny] at (11.25, -.05) {2010};  
+  \end{scope}
+
+  % Étiquettes partie supérieure
+  \foreach \date/\text/\y [evaluate=\date as \x using (\date - 1860)*.075] in {
+    1956/{Accident de Vincendon et Henry}/{3.5},
+    1874/{Création du \ac{caf}}/{2},
+    1946/{Lucien Devies publie \emph{L'organisation des secours en montagne}}/{2.5},
+    1958/{Plan \ac{orsec}}/{2},
+    1865/{Accident du Cervin}/{1.5},
+    2002/{Amendement à la loi sur la démocratie de proximité}/{1.5},
+    1929/{Création d'un comité de secours Briançonnais}/{1.2},
+    1970/{Avalanche à Val-d'Isère}/{1.2},
+    1897/{Création des Sauveteurs volontaires du Salève}/{.5},
+    1987/{Circulaire du 22 septembre 1987}/{.5}
+  } {
+    \node[shape=circle,fill=black, scale=.25] (a1) at (\x,0) {};
+    \path[draw, -|] (a1) --++ (0,\y) node[ev, above] {\begin{varwidth}{3.5cm}\centering\text\end{varwidth}};
+  }
+
+  % Étiquettes partie inférieure
+  \foreach \date/\text/\y [evaluate=\date as \x using (\date - 1860)*.075] in {
+    1972/{Couverture aérienne complète}/{4.125},
+    1980/{Généralisation de la présence des médecins dans les équipes de secours}/{3},
+    1956/{Premier secours aéroporté}/{2.5}, 	   	    
+    1985/{Création des \ac{gmsp}}/{2},
+    1910/{Création du comité de secours en montagne du Dauphiné}/{1.5},
+    1958/{Création du \ac{pghm}}/{1.5},
+    1946/{Création de l'\ac{ehm}, de la \ac{ffm} et des \ac{crsm}}/{.5},
+    1888/{Création des régiments alpins}/{.5},
+    2007/{La ministre de l'Intérieur confirme la gratuité des secours}/{.5}
+  } {
+    \node[shape=circle,fill=black, scale=.25] (a1) at (\x,0) {};
+    \path[draw,-|] (\x, -.4) --++ (0,-\y) node[ev, below] {\begin{varwidth}{3.5cm}\centering\text\end{varwidth}};
+  }
+\end{tikzpicture}
