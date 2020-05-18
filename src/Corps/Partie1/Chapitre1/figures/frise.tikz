@@ -34,11 +34,11 @@
 
   % Étiquettes partie supérieure
   \foreach \date/\text/\y [evaluate=\date as \x using (\date - 1860)*.075] in {
-    1956/{Accident de Vincendon et Henry}/{4.5},
+    1958/{Intégration des secours en montagne au plan \ac{orsec}}/{4.5},   
     1947/{Création de la commission des secours en montagne de la \ac{ffm}}/{3.25},
-    1985/{Création des \ac{gmsp}}/{3},
-    1958/{Plan \ac{orsec}}/{2.5},
+    1985/{Création des \ac{gmsp}}/{3},	    
     1897/{Création des Sauveteurs volontaires du Salève}/{2.5},
+    1956/{Accident de Vincendon et Henry}/{2.25},		
     1865/{Accident du Cervin}/{1.5},
     2002/{Amendement à la loi sur la démocratie de proximité}/{2},
     1929/{Création d'un comité de secours Savoyard}/{1.75},
