@@ -2,7 +2,7 @@
 
 Introduction de la thèse. Je penche plutôt pour une introduction et
 une conclusion assez courtes et mettre le maximum d'éléments dans le
-corps.
+corps du manuscrit.
 
 * Partie 1 : /Contexte et problématique/
 
@@ -12,13 +12,16 @@ professionel de la thèse. L'idée est qu'à la fin de cette partie
 positionement de la thèse
 
 ** Introduction de la partie
-
+   
 ** Chapitre 1 : /Contexte/
 
-Chapitre destiné à présenter le contexte scientifique et professionel
-de la thèse.
+Chapitre destiné à présenter le contexte "métier" de la
+thèse. C'est-à-dire d'une part le secours en montagne et de l'autre le
+projet Choucas.
 
 *** Introduction du chapitre
+
+Introduction du chapitre 1
 
 *** Secours en montagne
 
@@ -27,6 +30,47 @@ en montagne, comment il s'organise. Puis je veux présenter leur
 méthodologie. Comment les secouristes travaillent, etc. Ensuite je
 pense aborder la question des limites de leur approche, en m'appuyant
 sur l'exemple du fil rouge.
+
+**** Le secours en montagne en France
+
+***** Historique du secours en montagne français
+
+Cette partie dresse un rapide (qq. pages + frise chronologique)
+historique du secours en montagne français. L'objectif est de
+recontextualiser cette activité et d'expliquer comment certains
+aspects du secours en montagne qui aujourd'hui parraisent édivents
+(ex. secours publics, gratuits et héliporté) ne viennent pas de nulle
+part).
+
+****** Le Proto-secours en montagne (avant 1946)
+****** La comission de secours en montagne de la FFM (1947-1958)
+****** Le secours en montagne comme service public (1958)
+
+***** Le secours en montagne contemporain
+
+Cette partie parle de l'organisation actuelle des secours. Qui sont
+les différents acteurs, etc. Comme la partie précédente elle sera
+assez courte.
+
+**** Localiser des victimes, la méthodologie du PGHM
+
+Ici je commence à resserer le propos. La partie précédente parlait des
+différents acteurs et des différentes étapes du secours alors qu'ici
+je ne parle que du PGHM et de la phase de localisation des victimes.
+
+***** Le pocessus de localisation
+
+Comment les gendarmes procédent pour localiser une personne. C'est
+l'occasion de parler de GendLoc, du recoupement d'informations, des
+différentes données, etc.
+
+***** Limites de l'approche Actuelle
+
+Qu'elles sont les limites de l'approche utilisée actuellement. Cette
+partie est l'occasion d'introduire le fil rouge comme exemple de cas
+limite. Peut-être que je peux présenter rapidement les résultats du
+jeu pour montrer la disparité des réponses sur ce cas et donc appuyer
+sur le fait que c'est un cas difficile à traiter.
 
 *** Le projet choucas
 
@@ -39,6 +83,28 @@ Pour ça je pensais suivre une approche descendante. Je commence par
 présenter le projet dans son ensemble, puis ces objectifs
 scientifiques dans le détail. Puis j'explique dans quel axe cette
 thèse s'inscrit.
+
+**** Origine du projet
+
+Introduit le projet Choucas et son origine. L'idée est de faire le
+lien avec la partie précédente en expliquant que le projet vise à
+répondre aux limites de la méthodologie du PGHM, présentée juste
+avant.
+
+**** Problématique du projet
+
+Ici on rentre un peu plus dans le projet. ll s'agit de présenter la
+problématique du projet et les choix qui ont étés faits (fonctionement
+semi-automatique, fort appui sur les compétences du secouriste,
+intégration dans le fonctionnement habituel…)
+
+**** Objectifs scientifiques du projet
+
+Ici je veux présenter le détail du projet pour commencer à distinguer
+ce qui rentre dans le champ de ma thèse (lot 3) et ce qui y est
+totalement étranger (design d'interface par exemple). C'est une façon
+de commencer à cerner ma problématique avant de la définir, dans le
+chapitrre suivant.
 
 *** Conclusion du chapitre
 
@@ -109,68 +175,184 @@ positionnement de la thèse.
 
 * Partie 2 :
 
-Initialement j'avais pensé cette partie comme un regroupement de tout
-ce qui traitait de la construction d'une zone le localisation,
-organisée suivant le déroulement du code (j'en ai un peu parlé
-avant). Le problème c'est comment traiter des questions plus
-théoriques comme la modélisation floue.
-
 ** Introduction de la partie
 
-** Modélisation de l'imprécison
+** Chapitre 4: Présentation de la méthodologie
 
-Ce chapitre est celui qui s'éloigne le plus de ma logique initiale
-(présenter les apports en suivant le déroulé de la modélisation). Dans
-l'ensemble cet article présente les problèmes liés à l'imprécision et
-à sa modélisation. Ce qui en fait un chapitre assez proche de
-l'article soumis à la Rig. Ce qui me pose problème ici c'est que dans
-la configuration du plan que je vous présente ce chapitre ne contient
-pas d'état de l'art (cf. chapitre précédent) et j'ai peur que ce soit
-assez artificiel comme structure.
+Le premier chapitre (celui-ci) de la partie 2 présente la méthodologie
+de la thèse "à gros grains". Le détail de chaque point présenté dans
+ce chapitre sera détaillé dans un chapitre ultérieur.
 
-** Modélisation et décomposition d'indices
+*** Introduction du chapitre
 
-Dans ce chapitre je pensais revenir sur la modélisation des indices et
-le processus de décomposition. L'idée et de présenter le modèle en
-triplets, d'expliquer le processus de décomposition et donc également
-de présenter les ontologies. Contrairement au précédent ce chapitre
-suit le déroulé logique de la modélisation. Il s'agit de la première
-étape, comment on traite les relations spatiales avant de les spatialiser.
+*** Principes de la méthodologie
 
-** Spatialisation
+Cette première partie du chapitre 4 présente les grands principes qui
+ont guidé l'élaboration de la méthodologie, un peu comme ce qui avait
+été fait dans l'article de la RIG. L'ordre de présentation n'est pas
+très important puisque ces différents principes ne sont pas
+inter-dépendants, j'ai pris l'ordre qui me semblait être le plus
+logique.
 
-Ce chapitre présente le processus de spatialisation. Il s'agit de
-présenter le processus en partant du calcul des RSA jusqu'a
-l'agrégation en un raster par indice. Je trouve ce chapitre assez
-logique dans son découpage, mais j'ai peur qu'il soit beaucoup trop
-gros par rapport aux autres chapitres. Puisqu'avec le découpage actuel
-toutes les relations spatiales atomiques modélisées dans la thése sont
-présentées ici. J'ai peur que ce chapitre soit vraiment
-déséquilibré. Mais je n'arrive pas à imaginer un découpage
-alternatif.
+**** Principe de modélisation autonome
 
-NB : Peut-être en sortant l'agrégation des RSAs et des objets de ref.
-dans un nouveau chapitre ?
+**** Principe de décomposition
 
-** Agrégation et modélisation de la confiance
+**** Modélisation non-bivalente
 
-Ce dernier chapitre de la partie 2 présente la phase d'agrégation des
-indices et la modélisation de la confiance.
+*** Processus de modélisation
+
+Dans cette seconde partie je présente les 3 grandes étapes de la
+méthodologie (et qui seront détaillées dans les chapitres
+suivants). J'ai quelques doutes sur l'organisation de cette partie du
+chapitre. 
+
+**** Analyse des indices
+
+**** Spatialisation
+
+**** Agrégation
+
+*** Conclusion du chapitre
+
+** Chapitre 5: Modélisation et décomposition d'indices
+
+Ce chapitre correspond au premier point évoqué dans la partie
+"processus de modélisation" du chapitre précédent. C'et ici que je
+présente la modélisation des indices, le processus de décomposition,
+les RSA et l'ontologie des relations spatiales. L'organisation interne
+du chapitre est encore un peu fouillie.
+
+*** Introduction du chapitre
+
+*** Le modèle en triplets
+
+*** Le principe de décomposition
+
+*** Ontologie des re lations spatiales
+
+*** Conclusion du chapitre
+
+** Chapitre 6: Modélisation d'objets spatiaux imprécis
+
+Ce chapitre présente et justifie le choix du flou. Je ne sais pas
+comment l'organiser et quoi mettre dedans, puisqu'une grande partie de
+ce que j'ai a dire sur le sujet risque de passer dans le chapitre
+état de l'art.
+
+*** Introduction du chapitre
+
+*** Comparaison des modèles d'objet imprécis
+
+*** Le choix d'une approche raster
+
+*** Conclusion du chapitre
+
+
+** Chapitre 7: Spatialisation de relations spatiales atomiques
+
+Ce chapitre présente la méthodologie de la spatialisation. Ici je
+présente indépendamment les différentes étapes de la
+spatialisation. Je ne suis pas dutout convincu de ce que je propose
+ici, mais je n'ai pas d'inspiration.
+
+*** Introduction du chapitre
+
+*** Les étapes de la spatialiation
+
+*** La rasterisation
+
+*** Le calcul des métriques
+
+*** La sélection floue
+
+*** Conclusion du chapitre
+
+** Chapitre 8: Agrégation de relations spatiales
+
+Ce chapitre présente la méthodologie de l'aggrégation. La structure du
+chapitre n'est pas encore très aboutie, je ne sais pas encore quoi
+dire sur ces points. Par contre je pense faire une partie ou je
+présente en détail la logique de l'aggrégation et donc présenter les
+différentes phases qui le composent. J'ai aussi mis une seconde partie
+juste sur la confiance.
+   
+*** Introduction du chapitre
+
+*** Les différentes phases d'agrégation
+
+*** La prise en compte de la confiance
+
+*** Conclusion du chapitre
 
 ** Conclusion de la partie
-
+   
 * Partie 3 :
+
+La partie 3 présente l'implémentation de ma méthodologie et
+l'évaluation des résultats.
+
 ** Introduction de la partie
 
-** Chapitre X : Évaluation
+** Chapitre 9: Implémentation
 
-Un chapitre sur l'évaluation. Un travail toujours en cours.
+Ce chapitre détaille l'implémentation de tout ce qui a été formalisé
+dans la partie précédente. Contrairement à la partie 2, ce chapitre
+est organisé suivant le déroulé du code. Je pense qu'une fois que les
+grands principes ont étés exposés c'est plus simple de comprendre le
+fonctionnement et l'implémentation en suivant le déroulé du code.
 
-** Chapitre X : Évolutions 
+*** Introduction du chapitre
 
-Je pensais faire un chapitre un peu 'bonus' dans lequel j'aborde en
-détail quelles sont les améliorations que je propose et les points que
-je n'ai pas pu aborder.
+*** L'analyse des indices
+**** Extraction de la requête
+**** Décomposition
+*** Spatialisation
+**** Rasterisation des géométries
+**** Construction des métriques
+**** Sélection floue
+*** Agrégation
+**** Des relations spatiales
+**** Des objets
+**** Des indices
+
+*** Conclusion du chapitre
+
+
+
+** Chapitre 10: Analyse critique résultats
+
+L'objectif de ce chapitre est de présenter en détail la modélisation
+des alertes (celles qui ont étés modélisées de bout en bout et de
+critiquer les résultats. La structure de ce chapitre est simple, il ya
+une partie par alerte puis uns synthèse des critiques.
+
+*** Introduction du chapitre
+
+*** Alerte 1
+**** Présentation de l'alerte
+**** Modélisation de l'alerte
+**** Critique de la modélisation
+
+*** Alerte 2 (classées par ordre de difficulté de modélisation)
+**** Présentation de l'alerte
+**** Modélisation de l'alerte
+**** Critique de la modélisation
+
+*** Synthèse des critiques
+
+*** Conclusion du chapitre
+
+
+
+** Chapitre 11: Évaluation
+
+À voir si ce chapitre reste ou s'il est fusioné avec un autre.
+
+** Chapitre 12: Évolutions
+
+À voir si je conserve ce chapitre ou si je met la partie "évolutions"
+en conclusion.
 
 ** Conclusion de la partie
 
