@@ -2027,17 +2027,16 @@ The book should be read by all who seek to use geocomputational models and techn
 }
 
 @Article{Goodchild1992,
-  Title                    = {Geographical Data Modeling},
-  Author                   = {Goodchild, Michael},
-  Date                     = {1992},
-  Journaltitle             = {Computers & Geosciences},
-  Year                     = {1992},
-  Number                   = {4},
-  Pages                    = {401--408},
-  Volume                   = {18},
-
-  Owner                    = {mattia},
-  Timestamp                = {2019-08-29}
+  author       = {Goodchild, Michael},
+  date         = {1992},
+  journaltitle = {Computers \& Geosciences},
+  title        = {Geographical Data Modeling},
+  number       = {4},
+  pages        = {401--408},
+  volume       = {18},
+  owner        = {mattia},
+  timestamp    = {2019-08-29},
+  year         = {1992},
 }
 
 @Article{Goodchild2007,
@@ -4087,22 +4086,21 @@ The book should be read by all who seek to use geocomputational models and techn
 }
 
 @Article{vanderWalt2011,
-  Title                    = {The NumPy Array: A Structure for Efficient Numerical Computation},
-  Author                   = {{van der Walt}, Stefan and {Colbert}, Chris and {Varoquaux}, Gael},
-  Date                     = {2011},
-  Journaltitle             = {Computing in Science & Engineering},
-  Year                     = {2011},
-  Doi                      = {10.1109/MCSE.2011.37},
-  ISSN                     = {1558-366X},
-  Month                    = {March},
-  Number                   = {2},
-  Pages                    = {22-30},
-  Volume                   = {13},
-
-  Journal                  = {Computing in Science Engineering},
-  Keywords                 = {software},
-  Owner                    = {mattia},
-  Timestamp                = {2020-03-12}
+  author       = {{van der Walt}, Stefan and {Colbert}, Chris and {Varoquaux}, Gael},
+  date         = {2011},
+  journaltitle = {Computing in Science Engineering},
+  title        = {The NumPy Array: A Structure for Efficient Numerical Computation},
+  doi          = {10.1109/MCSE.2011.37},
+  issn         = {1558-366X},
+  number       = {2},
+  pages        = {22-30},
+  volume       = {13},
+  journal      = {Computing in Science Engineering},
+  keywords     = {software},
+  month        = {March},
+  owner        = {mattia},
+  timestamp    = {2020-03-12},
+  year         = {2011},
 }
 
 @Article{vanderWalt2014,
@@ -4970,166 +4968,11 @@ The book should be read by all who seek to use geocomputational models and techn
   origlanguage = {french},
   url          = {www.monde-diplomatique.fr/2018/01/DESCAMPS/58268},
   groups       = {Presse},
-  keywords     = {source},
   owner        = {mbunel},
   timestamp    = {2020-05-18},
 }
 
-@Article{Muscat2015,
-  author       = {Muscat, Aurélie and Favre, Olivier},
-  date         = {2015},
-  journaltitle = {Gend'info},
-  title        = {GENDLOC: Une géolocalisation simple et rapide},
-  issue        = {381},
-  language     = {french},
-  pages        = {39},
-  file         = {:PDF/Muscat2015.pdf:PDF},
-  groups       = {Presse},
-  keywords     = {source},
-  owner        = {mbunel},
-  timestamp    = {2020-05-19},
-}
-
-@WWW{Elie2006,
-  author    = {Elie, Antoine and Balmain, Olivier},
-  date      = {2006},
-  title     = {Historique du groupement hélicoptère sécurité civile en montagne},
-  url       = {http://helicomontage.fr/Securite_civile.html},
-  urldate   = {2020-05-19},
-  groups    = {Presse},
-  keywords  = {source},
-  owner     = {mbunel},
-  timestamp = {2020-05-19},
-}
-
-@Online{Lafond,
-  author    = {Lafond, Marc},
-  title     = {Quelques dates marquant l'évolution du Groupement Hélicoptère},
-  url       = {http://www.sdsm38.fr/page.php?al=histsm},
-  language  = {french},
-  urldate   = {2020-05-19},
-  groups    = {Presse},
-  keywords  = {source},
-  owner     = {mbunel},
-  timestamp = {2020-05-19},
-}
-
-@Article{Halle2007,
-  author       = {Halle, Caroline and Albasini, François},
-  date         = {2007},
-  journaltitle = {Médecine d'urgence},
-  title        = {Organisation des secours en montagne},
-  doi          = {10.1016/S0000-0000(07)41572-8},
-  file         = {:Halle2007.pdf:PDF},
-}
-
-@Online{Lafond2011b,
-  author    = {Lafond, Marc},
-  date      = {2011},
-  title     = {Historique de l'Hélitreuillage (2\up{ème} époque)},
-  url       = {http://www.sdsm38.fr/page.php?id=64},
-  urldate   = {2020-05-19},
-  keywords  = {source},
-  owner     = {mbunel},
-  timestamp = {2020-05-19},
-}
-
-@Online{Lafond2011a,
-  author    = {Lafond, Marc},
-  date      = {2011},
-  title     = {Historique de l'Hélitreuillage (1\up{ère} époque)},
-  url       = {http://www.sdsm38.fr/page.php?id=40},
-  urldate   = {2020-05-19},
-  keywords  = {source},
-  owner     = {mbunel},
-  timestamp = {2020-05-19},
-}
-
-@Online{Mollaret2016,
-  author    = {Mollaret, Raymond},
-  date      = {2016},
-  title     = {Une grosse opération SDSM et la première intervention des CRS en Montagne !},
-  url       = {http://www.sdsm38.fr/page.php?id=257},
-  language  = {french},
-  urldate   = {2020-05-19},
-  keywords  = {source},
-  owner     = {mbunel},
-  timestamp = {2020-05-19},
-}
-
-@Online{CFDLD,
-  author       = {{Centre Fédéral de Documentation Lucien Devies}},
-  title        = {Un historique du Secours en montagne jusqu'en 1972},
-  url          = {http://centrefederaldedocumentation.ffcam.fr/secoursenmontagne.html},
-  language     = {french},
-  organization = {{Club Alpin français}},
-  urldate      = {2020-05-19},
-  keywords     = {source},
-  owner        = {mbunel},
-  timestamp    = {2020-05-19},
-}
-
-@Online{Ministere2013,
-  author    = {{Ministère de l'Intérieur}},
-  date      = {2013},
-  title     = {1972 - Les patients anglais se souviennent},
-  url       = {https://www.interieur.gouv.fr/Archives/Archives-des-dossiers/2013-Dossiers/1972-Les-patients-anglais-se-souviennent},
-  urldate   = {2020-05-19},
-  keywords  = {source},
-  owner     = {mbunel},
-  timestamp = {2020-05-19},
-}
-
-@Article{Romanaz2018,
-  author       = {Romanaz, Sylvaine},
-  date         = {2018},
-  journaltitle = {Le Dauphiné Libéré},
-  title        = {L'histoire du dimanche... 1948, deux alpinistes piégés, 100 pour les sauver},
-  keywords     = {source},
-  owner        = {mbunel},
-  timestamp    = {2020-05-19},
-}
-
-@Article{Mollaret1993,
-  author       = {Mollaret, Raymond},
-  date         = {1993},
-  journaltitle = {La Montagne et Alpinisme : revue du Club alpin français et du Groupe de haute montagne},
-  title        = {Secours en montagne hier et aujourd'hui},
-  language     = {french},
-  url          = {https://gallica.bnf.fr/ark:/12148/bpt6k9765607p/f13.vertical},
-  urldate      = {2020-05-19},
-  keywords     = {source},
-  owner        = {mbunel},
-  timestamp    = {2020-05-19},
-}
-
-@Online{SDSM2013,
-  author    = {{Societe Dauphinoise de Secours en Montagne}},
-  date      = {2013},
-  title     = {L'Obiou ? Un seul sommet mais 2 interventions historiques de la S.D.S.M. !},
-  url       = {http://www.sdsm38.fr/page.php?id=139},
-  urldate   = {2020-05-19},
-  keywords  = {source},
-  owner     = {mbunel},
-  timestamp = {2020-05-19},
-}
-
-@Book{Ballu1997,
-  author       = {Ballu, Yves},
-  date         = {1997},
-  title        = {Naufrage au mont Blanc},
-  isbn         = {2-7234-2465-0},
-  origlanguage = {french},
-  publisher    = {Glénat},
-  subtitle     = {L'affaire Vincendon et Henry},
-  keywords     = {source},
-  owner        = {mbunel},
-  timestamp    = {2020-05-19},
-}
-
 @Comment{jabref-meta: databaseType:biblatex;}
-
-@Comment{jabref-meta: fileDirectoryLatex-mbunel-Kaiju:/home/mbunel/Documents/Thèse/Manuscrit;}
 
 @Comment{jabref-meta: grouping:
 0 AllEntriesGroup:;

@@ -22,6 +22,7 @@
      eprint=false,
      % Références citation
      backref=true,
+     block=ragged,
      bibencoding=utf8,
      backend=biber]{biblatex}
 
@@ -39,6 +40,16 @@
 
 \AtEveryCitekey{\clearfield{extrayear}}
 \AtEveryBibitem{\clearfield{extrayear}}
+
+% On modifie la configuration par défaut de la date
+% pour que la date de consultation de l'url ne soit
+% pas utilisée comme date
+\DeclareLabeldate{%
+  \field{date}
+  \field{year}
+  \field{event}
+  \literal{nodate}
+}
 
 %% Fichier bibliographie
 \addbibresource{Annexes/Bibliographie/bibliographie.bib}

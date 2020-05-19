@@ -1,7 +1,13 @@
 % Bibliographie générale
 \addsec{Bibliographie}
 \label{refs:biblio}
-\printbibliography[heading=none, notkeyword={software}]
+\printbibliography[heading=none, notkeyword={software},notkeyword={source}]
+
+\addsec{Sources}
+\label{ref:publi:src}
+
+\printbibliography[heading=none, keyword={source}]
+
 
 % Manuels de logiciels -> références demandées par les dévloppeurs
 \addsec{Logiciels}
@@ -21,13 +27,9 @@ bibliothèques utilisées durant ce travail.
 \addsec{Publications}
 \label{ref:publi}
 
-\subsection*{Publications thèse}
-\label{ref:publi:ths}
-
 \begin{refsection}
   % On recense les publications effectuées durant la thèse
   \nocite{Bunel2019,Bunel2019a,Bunel2019b,Bunel2018a,Bunel2018b}
   \newrefcontext[sorting=ynt]
   \printbibliography[heading=none]
 \end{refsection}
-
