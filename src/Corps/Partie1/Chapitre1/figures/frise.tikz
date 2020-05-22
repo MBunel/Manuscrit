@@ -40,7 +40,7 @@
     1897/{Création des Sauveteurs volontaires du Salève}/{2.5},
     1956/{Accident de Vincendon et Henry}/{2.25},		
     1865/{Accident du Cervin}/{1.5},
-    2002/{Amendement à la loi sur la démocratie de proximité}/{2},
+    2002/{loi \no 2002-276 relative a la démocratie de proximité}/{2},
     1929/{Création d'un comité de secours Savoyard}/{1.75},
     1970/{Avalanche à Val-d'Isère}/{1.5},
     1932/{Création d'un comité de secours Briançonnais}/{.5},
@@ -53,7 +53,7 @@
 
   % Étiquettes partie inférieure
   \foreach \date/\text/\y [evaluate=\date as \x using (\date - 1860)*.075] in {
-    1980/{Généralisation de la présence des médecins dans les équipes de secours}/{3.75},
+    1986/{Loi \no 86--11 relative à l'aide médicale urgente et aux transports sanitaires}/{3.75},
     1956/{Premier secours aéroporté}/{3},
     1958/{Création du \ac{pghm}}/{2},
     1910/{Création du comité de secours en montagne du Dauphiné}/{2},
