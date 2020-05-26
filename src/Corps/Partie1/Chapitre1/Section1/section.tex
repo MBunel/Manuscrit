@@ -614,12 +614,51 @@ données par les pisteurs d'une station et les autres.
 
 \paragraph{Le cas général}
 
-Lorsqu'une personne décrit sa position à partir
+Le processus de localisation d'une victime par les secouristes est
+unique dans chaque cas, mais on peut identifier certaines
+récurrences. Lorsque le requérant est mis en contact avec les
+secouristes il lui est rapidement demandé de donner sa
+position. Parfois le requérant est capable de la donner très
+précisément, \eg en n'en donnant les coordonées GPS. Mais dans la
+majorité des situations le requérant ne connait pas parfaitement sa
+position ou celle de la victime. Les secouristes doivent donc
+l'identifier, ou tout du moins l'approximer à partir des informations
+que le requérant peut leur donner. Cette tâche est cependant facilitée
+par deux éléments importants.
 
+% Discussion téléphonique
+D'une part, cette phase de localisation se place dans le cadre d'une
+conversation téléphonique entre requérant et secouriste. Ce dernier
+n'a donc pas à extrapoler le maximum d'informations à partir d'une
+description figée, au contraire il a donc la possibilité de poser des
+questions, de demander des précisions et donc de tester ses
+hypothèses. Les secouristes peuvent donc prodéder par essais-erreurs
+et adapter leur démarche en continu, en fonction de la situation et
+des nouvelles informations, ce qui ne peut qu'améliorer la précision
+et la certitude de la localisation.
 
+% Données
+Le second point essentiel est que ce travail de localisation peut
+s'appuyer sur des données venant compléter les connaissances des
+secouristes. En effet, ces derniers ont accès à un ensemble de données
+cartographiques, que ce soit au format papier ou numérique, qui leur
+permettent d'identifier des positions, de faire des hypothèses ou de
+poser des questions discriminantes, \eg \enquote{Est-ce que vous voyez
+  des chalets au loin ?} D'autres sources d'informations sont
+également disponibles pour les secouristes, comme un ensemble de
+\emph{topo-guides} \footnote{Guides pour les courses en montagne.} de
+la région, dans lesquels figure parfois la seule occurence d'un
+itinéraire précis, emprunté par la victime. 
 
+% Les trucs qui compliquent
+Malgrès ces atouts, il est parfois difficile pour les secouristes
+d'identifier avec précision la position de la victime. Notamment
+lorsque les informations données par le requérant sont peu précies ou
+vagues. Cela peut se produire lorsque le requérant est un tiers
+contactant les secouristes suite à une disparition ou lorsque la
+victime est complètement perdue, paniquée ou gravement blessée.
 
-\paragraph{Le cas des \emph{domaines skiables}}
+\paragraph{Le cas spécifique des \emph{domaines skiables}}
 
 Le processus d'identification des positions est assez différent
 lorsque les \ac{usem} sont amenées à intervenir sur un \emph{domaine
@@ -672,84 +711,157 @@ GSM à laquelle il est connecté. La seconde pcorrespond à une
 géolocalisation directe, utilisées par les \ac{usem} par le biais
 d'une application baptisée \emph{Gend'Loc.}
 
-\texttt{Parler uniquement des solutions côté secouriste, pas victime}
-
 \paragraph{La localisation des téléphones}
 
-\todo[inline]{Nécessité de réquisition des opérateurs}
+\todo[inline]{Pas de refs sur le sujet}
 
 Les \ac{usem} peuvent localiser indirectement le téléphone qui les
 contacte en faisant une réquisition judicière auprès de l'opérateur
-téléphonique.
-
-Ce dernier leur transmet, dans un délais plus ou moins court
-\todo{Délais}, la cellule GSM à laquelle le téléphone est connecté. La
-postion et l'angle de la cellule étant connus, cette information
+téléphonique. Ce dernier leur transmet, dans un délait plus ou moins
+court \todo{Délais}, la cellule GSM à laquelle le téléphone est
+connecté. La postion et l'angle de la cellule étant connus, ce qui
 permet de réduire grandement l'aire de recherche.
 
-Cependant cette solution n'est pas exempte de défauts. D'une part car
-l'antenne de rattachement n'est pas nécessairement la plus proche du
-téléphone.
-
-De plus la couverture des antennes varie selon les conditions météo.
+Cependant cette solution n'est pas exempte de défauts. En effet
+l'antenne de rattachement d'un téléphone mobile n'est pas
+systématiquement celle qui en est la plus proche. Divers facteurs
+peuvent influer sur le rattachement des téléphones, comme les
+conditions météo.
+% 
+Par conséquent il n'est pas frocément simple de localiser une personne
+à partir de la localisation de relais téléphonique auxquel elle est
+rattachée. 
 
 \paragraph{La solution \emph{Gend'Loc}}
 
-Une première solution à ce problème de localisation a été proposée
-avec le développement de \emph{Gend'Loc.} Ce logiciel, initialement
-développé au sein du \ac{pghm} isérois, permet de 
+Une autre solution de géolocalisation a été proposée avec le
+développement de \emph{Gend'Loc.} Ce logiciel, développé à partir de
+2013 au sein du \ac{pghm} de Grenoble permet la géolocalisation des
+victimes avec plus de précision et plus rapidement qu'avec une requête
+auprès des opérateurs téléphoniques.
 
+Le principe de fonctionnement de \emph{Gend'Loc} est assez simple, il
+consiste à envoyer, par SMS, une URL au requérant. Ce dernier conduit
+à une page web unique qui demande la localisation au récepteur GPS du
+téléphone et la renvoie directement au secouriste et l'affiche par le
+biais d'une interface cartographique \emph{ad hoc.}  Avec cette
+solution les secouristes peuvent connaitre rapidement la position de
+la victime, ce qui facilite grandement les opérations de secours
+\autocite{Muscat2015}.
 
-Permet d'éviter l'envoi trop fréquent des secours (envoit de plan)
+% Avantage 2
+Un autre avantage de cette solution est qu'elle offre également la
+possibilité d'envoyer à la victime un plan des environs de sa
+position, ainsi que l'itinéraire à suivre pour retrouver son
+chemin. Ce qui permet d'assister les personnes perdues sans procéder à
+leur évacuation \autocite{Muscat2015}.
 
 %Les limites de la solution
 Bien qu'extrèmement efficace cet outil ne peut pas apporter de
-solution satisfaisante à toutes les situations.
-
-On peut identifier trois cas principaux où la solution \emph{Gend'Loc}
-n'est pas adaptée.
-
+solution satisfaisante à toutes les situations. D'une part car, bien
+que plus précise et rapide, et moins contraignante, cette solution est
+moins flexible qu'une requête auprès des opérateurs téléphoniques.
 % Pas de gps
-Le premier cas est celui où la victime ne peut pas utiliser la
-solution pour des raisons techniques. Cet outil nécessite d'avoir
-accès à un \emph{smartphone} doté d'un récepteur GPS. Si la majorité
-de français dispose aujourd'hui de ce type de
-téléphone\todo[inline]{Note + lien arcep} \footnote{} il n'est pas
-exclu que la victime n'en dispose pas, ce qui rend le recours à
-\emph{Gend'Loc} impossible.
-
-% Requêrant n'est pas la victime
-Il est également possible que les secours soient contactés par tiers
-qui n'est pas à proximité de la victime. Les secouristes ne disposent
-donc que de son numéro de téléphone ce qui ne permet pas la
-localisation de la victime. Toutefois il peut être utile de localiser
-le requérant pour approximier la position de la victime.
+En effet, ces derniers peuvent connaitre la position de n'importe quel
+téléphone portable, qu'elle que soit sa marque, son type ou son
+modèle. Alors que la solution \emph{Gend'Loc} ne fonctionne qu'avec
+des téléphones dotés d'un GPS et d'un navigateur web, des
+\emph{smartphonnes}. Si la majorité des Français possède aujourd'hui
+ce type de téléphone \footnote{Plus précisément 77 \% en 2019, selon
+  le baromètre de l'\textcite{ARCEP2019}.} cette répartition présente
+une forte hétérogénéité iter-classes d'age \footnote{86 \% des 12-17
+  ans possèdent un \emph{smartphone,} contre 98 \% des 18-24 ans, 95
+  \% des 25-39 ans, 80 \% des 40-59 ans, 62 \% des 60-69 ans et 44 \%
+  des 70 ans et plus, selon le baromètre de
+  l'\textcite{ARCEP2019}.}. De plus, on peut faire l'hypothèse que les
+possesseurs de \emph{smartphones} n'emportent pas nécessairement un
+téléphone onéreux et fragile pour faire des balades en montagne, leur
+préférant des anciens modèles plus robustes. Par conséquent, une part,
+sans doute minoritaire, mais non négligeable des requérants n'a pas
+accès à un GPS, ce qui rend leur géolocalisation impossible par
+\emph{Gend'Loc,} mais pas par les opérateurs de téléphonie mobile.
+% Connexion internet
+Cette situation se présente également dans le cas où la victime ne
+dispose pas d'une coonection mobile d'assez bonne qualité pour povoir
+accèder à internet. Dans ce cas le téléphone est incapable d'envoyer
+sa position aux secouristes.
 
 % Victime incapable d'utiliser la solution
-Enfin, dans certains cas la victime ne peut tout simplement pas
-effectuer d'opérations complexes avec son téléphone.
+Un autre cas problématique est celui où la victime n'arrive pas à
+effectuer les manipulations nécessaires sur son téléphone. Cette
+situation peut se présenter dans le cas ou la victime n'est pas
+parfaitement lucide. De plus il arrive que les secouristes décident de
+ne pas utiliser cette solution, qui nécessite de raccrocher et de
+rappeler le secours, pour rester en contact avec des victimes
+paniquées ou blésées.
 
-Ces trois situations rendent la localisation par \emph{Gend'Loc}
-imposible et imposent de recouper les descriptions pour identififer la
-position de la victime. Cependant, dans un certain nomnre de cas il
-est très difficile d'identifier la postion de la victime.
-
-\subsubsection{Cas inlocalisables}
+\subsubsection{Cas …}
 \label{subsec:1-1-2-3}
 
-Un premier cas de 
+Dans certaines situations le recoupement manuel d'information, les
+outils de géolocalisation ou leur utilisation combinée ne permet pas
+d'identifier la position de la victime. 
 
-
-\paragraph{Le cas \enquote{fil rouge}}
+\paragraph{Le cas \enquote{\emph{fil rouge}}}
 
 Le cas dit du \emph{fil rouge} est parfaitement représentatif de ce
-type d'alertes pour lesquelles la position de la victime ne peut être
-identifée à l'aide de la géolocalisation ou d'un recoupement
-d'informations.
+type de situations. Il s'agit d'une opération de secours en montagne
+qui s'est déroulée en aout 2014, dans la région de Bourg-d'Oisans
+(\autoref{crt:fil_rouge}). Un randonneur, polytraumatisé suite à une
+chute, contacte les secours et est mis en relation avec le \ac{pghm}
+de Grenoble. Son état étant assez préocupant, le secouriste en
+fonction l'estime incapable d'utiliser \emph{Gend'Loc,}
+l'identification de sa position se fait donc manuellement, par
+recoupement d'informations.
 
-\texttt{Livrable 0.4}
+\begin{carte}
+  \centering
+  % \missingfigure{Carte}
+  \includegraphics{../figures/bourdOisans.jpg}
+  \caption{Région de Bourg-d'Oisans}
+  \label{crt:fil_rouge}
+\end{carte}
 
-\texttt{Présenter une image de la zone du fil rouge ?}
+Le problème principal est que la victime n'est pas toujours lucide et
+les informations que les secouristes finissent par obtenir sont peu
+précises. Au cours de la conversation les secouristes obtiennent de la
+victime les informations suivantes :
+
+\begin{itemize}
+\item Elle est partie de Bourg d'Oisans, à pied, sur chemin, en
+  direction d'une station de ski.
+\item Elle a marché plusieurs heures.
+ \item Elle a chuté de plusieurs mètres.
+ \item Elle voit une partie de plan d'eau.
+ \item Elle est sous une route et entend des véhicules.
+ \item Elle est sous une ligne électrique 3 brins.
+ \item Elle vient de passer du soleil à l'ombre.
+\end{itemize}
+
+Pour des raisons diverses, ces informations sont toutes difficiles à
+exploiter avec les moyens dont disposent les secouristes. D'une part
+le seul lieu nommé (et donc facilement identifiable) est le point de
+départ de la victime. De plus, toutes les informations qui
+permettreraient d'identifier la position actuelle à partir du point de
+départ sont imprécis, \enquote{quelques heures}, \enquote{plusieurs
+  métres}, etc. Plusieurs endroits dans la région de Bourg-d'Oisans
+correspondent à cette description, les secouristes complétent donc
+leurs informations avec une réquisition auprès de l'opérateur de
+téléphonie mobile, ce qui leur apporte une nouvelle information, le
+téléphone de la victime est connecté à une antenne \enquote{GSM SFR
+  située à la chapelle st-Philomene à Villard-Reymond (38520) et
+  orientée au 90°} \autocite{Lot 0.4}. Cette nouvelle information
+permet de réduire suffisamment la zone de recherche pour que les
+secouristes prennent la décision d'envoyer un hélicoptère pour
+chercher la victime de visu, avant que le soleil ne se couche.
+% Conclusion
+La victime est finalement repérée par l'équipage de l'hélicoptère en
+vol. De l'aveu même des secouristes la réussite de cette opération de
+secours tient beaucoup à la chance et leur difficulté à resoudre ce
+cas les a amenés à réfléchir à de nouvelles pistes d'amélioration de
+leur méthodologie.
+
+\todo[inline]{Présenter une image de la zone du fil rouge ?}
 
 %%% Local Variables:
 %%% mode: latex
