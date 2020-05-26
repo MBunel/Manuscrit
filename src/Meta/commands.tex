@@ -78,14 +78,6 @@
 
 \renewcommand{\glspluralsuffix}{}
 
-% Macros
-
-\newcommand\eg{\emph{e.g.\ }}
-\newcommand\ie{\emph{i.e.\ }}
-
-\newcommand\ac[1]{\acrshort{#1}}
-\newcommand\acp[1]{(\ac{#1})}
-
 
 % Pour les retranscriptions
 \renewcommand*\DialogueLabel[1]{%
@@ -103,3 +95,12 @@
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 % Espace vertical tableau
 \setlength{\extrarowheight}{5pt}
+
+% Macros
+
+\newcommand\eg{\emph{e.g.\ }}
+\newcommand\ie{\emph{i.e.\ }}
+\newcommand\ac[1]{\acrshort{#1}}
+\newcommand\acp[1]{(\ac{#1})}
+
+\newcommand\tdi[1]{\todo[inline]{#1}}

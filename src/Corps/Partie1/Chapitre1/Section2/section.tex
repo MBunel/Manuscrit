@@ -7,17 +7,14 @@ visant à faciliter la localisation de personnes perdues en montagne.
 \subsection{Origine du projet}
 \label{subsec:1-2-1}
 
-Ici on présente l'origine du projet choucas, comment il s'est
-construit, suite au fil rouge. 
-
 Le cas du \emph{fil rouge} a mis en évidence certaines limites dans la
 méthode de localisaiton des victimes par les \ac{usem}, a savoir que,
 dans le cas où la solution \emph{Gend'Loc} n'est pas utilisable, il
 peut s'avérer extrèmement difficile de localiser une personne perdue
 ou bléssée en montagne. Une réflexion a donc été amorcée au sein du
 \ac{pghm} du Grenoble pour trouver solutions permettant d'améliorer la
-gestion de ces cas, qui bien que minoritaires, sont extrèmement
-problématiques. Une des voies osuivie a été d'organiser des
+gestion de ces cas, qui bien que minoritaires, sont
+problématiques. Une des voies suivie a été d'organiser des
 collaborations avec des laboratoires de recherche pour mettre en place
 une réflecion autour de ces questions.
 
@@ -25,7 +22,7 @@ Une de ces collaborations a abouti à création du projet de recherche
 Choucas \footnote{\url{http://choucas.ign.fr/}}, dont la note
 d'intention est d'appliquer l'expérience des chercheurs de l'IGN dans
 la manipulation et le traitement de \emph{données géographiques
-  vagues} au secours en montagne.
+  vagues} au secours en montagne. 
 
 
 \subsection{Problématique du projet}
@@ -34,30 +31,94 @@ la manipulation et le traitement de \emph{données géographiques
 La résolution du cas \emph{fil rouge} s'est heurtée à deux problèmes
 principaux, le premier est celui de la disponibilité des données
 
+Le premier point exploré est celui de l'enrichissement des données. En
+effet, une partie des descriptions utilisées par les victimes pour
+décrire leur position peut se référer à des objets qui n'existent pas
+dans les bases de données géographiques utilisées (ou utilisables). De
+plus, si certains objets sont présents dans les bases leur
+qualification n'est pas forcément suffisamment précise pour que l'on
+puisse leur correspondre une description qui en serait donnée par la
+victime. Il est, par exemple, possible qu'un chemin soit décrit comme
+\enquote{pentu}, \enquote{en lacets} ou encore \enquote{en
+  balcon}. Ces qualificatifs ne se retrouvent pas dans les bases de
+données géographiques et il n'est donc pas possible de sélectionner
+des objets suivant ces qualificatifs. L'enrichissement de cette base
+de données permettrait donc d'élargir la richesse des sélecions.
+
 Le second est celui du raisonnement
+
+\tdi{parler du fait qu'on ne veut pas automatiser mais assister le
+  secouriste}
 
 \subsection{Objectifs scientifiques du projet}
 \label{subsec:1-2-3}
 
-Pour répondre à cette problématique, le projet s'organise autour de la
-réponse à 2 objectifs principaux.
+La réponse à la problématique du projet s'est organisée autour de
+quatres objectifs scientifiques principaux.
 
 \subsubsection{Structuration des données issues de sources textuelles
   hétérogènes}
 
-\subsubsection{Intégration de sources hétérogènes spatialisables}
+Le premier de ces objectifs est l'extraction et la structuration de
+donées issues de sources textuelles. Comme nous l'expliquoins
+précdement les bases de données géographiques ne contiennent pas
+l'ensemble des objets utilisés pour décrire une position en
+montagne. Si on y trouve la plupart des sentiers et des sommets, il
+est moins fréquent de trouver des représentations de barres rocheuses,
+ou de vires, alors qu'il s'agit de points de repères utilies sur le
+terrain. L'ajout de ce type d'objet dans la base de données utilisées
+par les secours permettrait d'affinier ou de faciliter la localisation
+des victimes.
+
+Pour ce faire, il a été proposé d'extraire ce type d'information à
+partir de descriptions textuelles d'itinéraires de randonnée. En
+effet, la majorité des informations disponible sur les itinéraires de
+randonnée est présentée (et diffusée) sous forme de texte. Notamment
+par le biais de \emph{topoguides,} de sites collaboratifs
+\footnote{Comme le site web \emph{camp2camp.}}, ou encore de
+blogs. Les itinéraires y sont généralement présentés sous la forme
+d'un texte décrivant principalement les points de bifuraction et les
+objets permettant de les repérer, \eg \enquote{prendre à droite à la
+  bifurcation située au niveau d'un gros rocher.} Or certains de ces
+objets peuvent être absents des bases de données géographiques, que ce
+soit à cause de leur taille ou de leur type. Ainsi, certains objets
+saillants peuvent être absents des bases de données de référence. Le
+développement d'une méthode automatisée d'extraction de ce type
+d'objets permettrait donc de compléter les données avec un ensemble
+d'objets géographiques utiles dans ce contexte.
 
 \subsubsection{Raisonnement spatial qualitatif flou}
 
+Le second objectif majeur de ce projet de recherche est l’élaboration
+de méthodes permettant d'automatiser le processus de localisation à
+partir des informations qui en sont données par les victimes, tout en
+prennant en compte l'imprécision des descriptions de
+positions. L'objectif principal de cette tâche est de proposer une
+solution logicielle susceptible d'être utilisée en direct par les
+secouristes lors de la phase de localisation. C'est dans cet axe que
+s'inscrit notre travail doctoral et nous préciserons donc cet objectif
+dans les chapitres suivants.
 
 \subsubsection{Géovisualisation de données multidimensionnelles et
   imparfaites pour la prise de décision}
 
-Vient enfin la question de la visualisation des résultats. L'objectif
-de cet axe de recherche est de 
+Un autre point abordé par ce projet de recherche est le développement
+d'une interface de géovisualisation permettant aux secouristes
+d'exploiter les données produites au sein du projet et d'interagir
+avec la solution de spatialisation développé durant notre thèse. Cette
+tâche impose de prendre en considération la nature imprécise des
+modélisations proposées en amont et d'étudier des solutions de
+visualisation adaptées à sa représentation.
 
+\subsubsection{Intégration de sources hétérogènes spatialisables}
 
-\texttt{infographie structure projet}
+Enfin le dernier objectif consite à proposer une structuration de
+l'ensemble des données hétérogènes dont disposent les secouristes et
+de développer des méthodes et des solutions logicielles permettant de
+les interroger.
+
+\missingfigure{infographie structure projet}
+
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../../../../main"
