@@ -23,12 +23,16 @@
      % Références citation
      backref=true,
      backrefstyle=three+,
-     block=ragged,
+     %block=ragged,
      bibencoding=utf8,
      backend=biber]{biblatex}
 
 % Customisation style bibliographie
-     
+
+% On autorise la coupe des urls et des dois
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
+
 %% Pas d'inversion PRÉNOM, NOM pour les auteurs 2 à n
 \DeclareNameAlias{sortname}{last-first}
 
