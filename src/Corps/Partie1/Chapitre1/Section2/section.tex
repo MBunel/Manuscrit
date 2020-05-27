@@ -1,22 +1,17 @@
-Une des solutions explorées par les secouristes pour améliorer la
-gestion de ces cas critiques a été de participer à la mise en place
-d'un projet de recherche destiné à développer des solution innovantes
-visant à faciliter la localisation de personnes perdues en montagne.
 
 
 \subsection{Origine du projet}
 \label{subsec:1-2-1}
 
 Le cas du \emph{fil rouge} a mis en évidence certaines limites dans la
-méthode de localisaiton des victimes par les \ac{usem}, a savoir que,
+méthode de localisaiton des victimes par le \ac{pghm}, a savoir que,
 dans le cas où la solution \emph{Gend'Loc} n'est pas utilisable, il
-peut s'avérer extrèmement difficile de localiser une personne perdue
-ou bléssée en montagne. Une réflexion a donc été amorcée au sein du
-\ac{pghm} du Grenoble pour trouver solutions permettant d'améliorer la
-gestion de ces cas, qui bien que minoritaires, sont
-problématiques. Une des voies suivie a été d'organiser des
-collaborations avec des laboratoires de recherche pour mettre en place
-une réflecion autour de ces questions.
+peut s'avérer difficile de localiser une personne perdue ou bléssée en
+montagne. Une réflexion a donc été amorcée au sein du \ac{pghm} du
+Grenoble pour trouver solutions permettant d'améliorer la gestion de
+ces cas, qui bien que minoritaires, sont problématiques. Une des voies
+suivie a été d'organiser des collaborations avec des laboratoires de
+recherche pour mettre en place une réflecion autour de ces questions.
 
 Une de ces collaborations a abouti à création du projet de recherche
 Choucas \footnote{\url{http://choucas.ign.fr/}}, dont la note
@@ -24,31 +19,41 @@ d'intention est d'appliquer l'expérience des chercheurs de l'IGN dans
 la manipulation et le traitement de \emph{données géographiques
   vagues} au secours en montagne. 
 
-
 \subsection{Problématique du projet}
 \label{subsec:1-2-2}
 
-La résolution du cas \emph{fil rouge} s'est heurtée à deux problèmes
-principaux, le premier est celui de la disponibilité des données
+L'objectif du projet Choucas et de développer des méthodes et des
+outils facilitant la localisation de victimes en montagne. Le cas du
+\emph{fil rouge} a mis en évidence deux lacunes principales sur
+lesquelles il est possible d'agir.
 
-Le premier point exploré est celui de l'enrichissement des données. En
-effet, une partie des descriptions utilisées par les victimes pour
-décrire leur position peut se référer à des objets qui n'existent pas
-dans les bases de données géographiques utilisées (ou utilisables). De
-plus, si certains objets sont présents dans les bases leur
-qualification n'est pas forcément suffisamment précise pour que l'on
-puisse leur correspondre une description qui en serait donnée par la
-victime. Il est, par exemple, possible qu'un chemin soit décrit comme
-\enquote{pentu}, \enquote{en lacets} ou encore \enquote{en
-  balcon}. Ces qualificatifs ne se retrouvent pas dans les bases de
-données géographiques et il n'est donc pas possible de sélectionner
-des objets suivant ces qualificatifs. L'enrichissement de cette base
-de données permettrait donc d'élargir la richesse des sélecions.
+La première d'entre-elle est la richesse sémantique des données à la
+disposition des secouristes. En effet, une partie des descriptions
+utilisées par les victimes pour décrire leur position peut se référer
+à des objets qui n'existent pas dans les bases de données
+géographiques utilisées (ou utilisables). De plus, si certains objets
+sont présents dans les bases leur qualification n'est pas forcément
+suffisamment précise pour que l'on puisse leur correspondre une
+description qui en serait donnée par la victime. Il est, par exemple,
+possible qu'un chemin soit décrit comme \enquote{pentu}, \enquote{en
+  lacets} ou encore \enquote{en balcon}. Ces qualificatifs ne se
+retrouvent pas dans les bases de données géographiques et il n'est
+donc pas possible de sélectionner des objets suivant ces
+qualificatifs. L'enrichissement de cette base de données permettrait
+donc d'élargir la richesse des sélecions.
 
-Le second est celui du raisonnement
-
-\tdi{parler du fait qu'on ne veut pas automatiser mais assister le
-  secouriste}
+Le second problème est celui du raisonnement sur ces données. Comme
+nous l'expliquions lors de la présentation du \emph{fil rouge}
+(\ref{subsec:1-1-2-3}), lorsque les objets utilisés comme points de
+repère ne sont pas nommés, mais définis par leur type ou leur nature,
+le nombre de positions correspondant à la description augmente
+considérablement. Dans ces conditions, il est difficile pour un
+opérateur humain d'identifier toutes ces possibilités, puis de les
+vérifier. Le développement d'une solution destinée à rechercher ces
+différentes possibilités et de les combiner entre-elles, permettrait
+de faciliter le travail de localisation. Toutefois nous ne souhaitons
+pas que cette solution se sustitue au secouriste, ces solutions sont
+concues pour être des outils d'aide à la décision.
 
 \subsection{Objectifs scientifiques du projet}
 \label{subsec:1-2-3}
@@ -91,33 +96,71 @@ d'objets géographiques utiles dans ce contexte.
 
 Le second objectif majeur de ce projet de recherche est l’élaboration
 de méthodes permettant d'automatiser le processus de localisation à
-partir des informations qui en sont données par les victimes, tout en
-prennant en compte l'imprécision des descriptions de
-positions. L'objectif principal de cette tâche est de proposer une
-solution logicielle susceptible d'être utilisée en direct par les
-secouristes lors de la phase de localisation. C'est dans cet axe que
-s'inscrit notre travail doctoral et nous préciserons donc cet objectif
-dans les chapitres suivants.
+partir des informations qui en sont données par les
+victimes. C'est-à-dire arriver à identifier la (ou les) position(s)
+coorespondant à une description de, \eg \enquote{je suis en forêt}. Le
+principal verrou scientifique de cet objectif et la nature imprécise
+du langage naturel, \ie qu'une même description peut être utilisée
+dans des contextes différents ou pour décrire des positions qui le
+sont tout autant. Il est donc nécessaire de prendre cet aspect en
+considèration et d'adapter la méthodologie pour qu'elle puisse prendre
+en compte l'imprécision.
+
+Un second point essentiel est que, comme nous l'expliquions
+précédement, un parti pris essentiel du projet Choucas est de
+développer des solutions \emph{ne se substituant pas} au secouriste,
+mais l’assistant. La solution développé doit alors être conçue pour
+prendre en compte les ajustements du secouriste et être capable d'être
+utilisée en direct par les secouristes lors de la phase de
+localisation.
+
+C'est dans cet axe que s'inscrit notre travail doctoral et nous
+détaillerons donc donc cet objectif dans les chapitres suivants.
 
 \subsubsection{Géovisualisation de données multidimensionnelles et
   imparfaites pour la prise de décision}
 
-Un autre point abordé par ce projet de recherche est le développement
-d'une interface de géovisualisation permettant aux secouristes
-d'exploiter les données produites au sein du projet et d'interagir
-avec la solution de spatialisation développé durant notre thèse. Cette
-tâche impose de prendre en considération la nature imprécise des
-modélisations proposées en amont et d'étudier des solutions de
-visualisation adaptées à sa représentation.
+Un autre point abordé par ce projet de recherche est la question de la
+visualisation des données géographiques et du développement
+d'interfaces homme-machine. Pour utiliser les outils d'aide au
+raisonnement proposés dans note thèse (et présentés ci-dessus), le
+secouriste doit disposer d'une interface adaptée, permettant de
+décrire la localisation de la victime et de visualiser les résultats
+de l'outil d'aide à la localisation. 
+
+Cette interface de géovisualisation est également destinée à afficher
+les résultats produits par l'outil d'aide à la localisation. Cet outil
+devant prendre en compte la nature imprécise des descriptions en
+langage naturel, il est nécessaire que l'interface puisse représenter
+ces résultats sans omettre leur nature imprécise.  
+
+Également confrontée à la question de l'imprécision du langage
+naturel, le développement de cette interface nécessite un
+questionement autour de la représentation de données de cette nature
+qui seront produites par l'outil. Cet objectif nécessite une réflexion
+autour de la question de la représentation de données imprécises,
+comme celles qui serons produites lors de notre travail de thèse.
 
 \subsubsection{Intégration de sources hétérogènes spatialisables}
 
-Enfin le dernier objectif consite à proposer une structuration de
-l'ensemble des données hétérogènes dont disposent les secouristes et
-de développer des méthodes et des solutions logicielles permettant de
-les interroger.
+Enfin le dernier objectif du projet Choucas consite à travailler à la
+structuration de l'ensemble des données dont disposent les
+secouristes. Comme nous l'expliquions lors de notre description du
+processus de localisation utilisé par les secouristes
+(\ref{subsec:1-1-2-1}), ces derniers disposent d'un important corpus
+de données. Mais ces dernières sont de types divers et ne sont pas
+organisées. Il est, par conséquent difficile de trouver une
+information utilise au processus de localisation sans savoir où
+chercher. La structuration de ces données offrirait la possibilité de
+les interroger conjointement et ainsi de disposer d'un maximum
+d'informations, ce qui améliora le processus de localisation.
 
-\missingfigure{infographie structure projet}
+Le principal verrou scientifique de cette tâche est la prise en compte
+de la contradiction entre sources. En effet, deux sources différentes
+peuvent placer un même sommet à des endroits différents, il est donc
+nécessaire d'être capable de traiter ces cas.
+
+%\missingfigure{infographie structure projet}
 
 %%% Local Variables:
 %%% mode: latex
