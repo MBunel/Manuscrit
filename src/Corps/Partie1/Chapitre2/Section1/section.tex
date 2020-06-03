@@ -9,9 +9,55 @@ leurs verrous et des contributions attendues dans le
 \subsection{Modélisation de localisations indirectes}
 \label{subsec:2-1-1}
 
-Un permier objectif de cette thèse est 
+Le premier objectif de cette thèse est de développer une méthode
+permettant d'identifier une position à partir de sa
+description.
+
+% Présentation de l'objectif
+Comme nous l'expliquions précédement, notre thèse s'inscrit dans un
+axe de recherche du projet Choucas dont l'objectif est de faciliter
+les secouristes à identifier une position décrite. Cette tâche
+nécessite d'arriver à définir des méthodes permettant de construire
+une zone à partir de descriptions, telles que \enquote{je suis sous
+  une route.} Cette tâche nécessite donc de travailler à
+l'identification de la sémantique des termes utilisés pour décrire une
+possition, puis d'en proposer une modélisation, à même de pouvoir
+systématiser la construction d'une \enquote{zone} à partir d'une
+description.
+
+% Pas nécessaire de faire de l'analyse du langage naturel
+Comme nous le mentionnons dans le chapitre précédent (\todo{mettre res
+  du passage où j'explique cet aspect dans le chapitre 1}), notre
+objectif n'est pas de déveloper une solution se sustituant aux
+secouristes, mais de leur proposer une solution s'intégrant dans leur
+processus métier actuel. Cela implique que nous pouvons toujours
+compter sur la présence du secouriste pour effectuer certaines
+actions. Parmi celles-ci, l'écoute et la compréhension du discours du
+requérant. En effet, il n'est pas nécessaire, voire souhaitable
+\footnote{Tout du moins du point de vue des pprofessionels du
+  secours.}, d'automatiser entièrement le processus de localisation de
+la victime. Un tel objectif nécessiterait par ailleurs de développer
+des solutions d'analyse automatisée du langage parlé, en vue d'en
+extraire les relations de localisation.
+
+Cette étape n'est pas nécessaire dans notre cas, puisque nous pouvons
+confier cette tache de \enquote{sémantisation} de la description orale
+d'une position au secouriste. 
+
+Notre travail se limitera donc à identifier les \enquote{types} de
+descriptions utilisées dans notre contexte, de les exprimer dans un
+vocabulaire controlé, puis d'en proposer une modélisation a même d'en
+permettre la spatialisation \todo{Attention terme non défini, attendre
+  chapitre 4 avant de l'introduire}.
 
 \subsubsection{Contexte scientifique}
+
+La question de l'indentification de positions décrites à fait l'objet
+de différents travaux, aux visées applicatives diverses.
+
+
+
+Enfin, dans une thématique plus proche de notre travail,  
 
 Vasardini
 Bloch
@@ -40,6 +86,7 @@ le requérant ne dit pas tout
 
 -> complexifie le raisonnement
 
+\subsubsection{Apports}
 
 \subsection{Prise en compte de l'imprécision}
 \label{subsec:2-1-2}
