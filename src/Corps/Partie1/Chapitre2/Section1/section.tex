@@ -285,10 +285,18 @@ pondérant. De même, la différence de précision entre deux indices doit
 % Différence des indices
 % Traitement 'indépendant' de la localisation
 
-Un autre point important est que la même méthode d'agrégation
-développée va être appliquée à des indices, potentiellement très
-différents et en nombre variable. De plus les indices spatialisés ne
-seront pas nécessairement transmis en même temps, 
+Un autre point important est que le processus d'agrégation sera
+potentiellement utilisé plusieurs fois lors du traitement d'une
+alerte. En effet, les \emph{indices de localisation} sont donnés par
+le requérant, au fur et à mesure du processus de localisation, parfois
+en répose aux questions des secouristes. L'ensemble des indices de
+localisation modélisés est donc amené à évoluer, comme la \emph{zone
+  de localisation compatible} qui résulte de leur agrégation. La
+méthode d’agrégation doit donc prendre cet aspect en considération et
+nous devons veiller à ce que les résultats de ce processus ne soient
+pas sensibles
+
+\tdi{revoir}
 
 \paragraph{La gestion des conflits}
 
