@@ -1,14 +1,22 @@
-Nous avons identifié cinq objectifs principaux pour ce travail de
-recherche.
+Comme nous l'expliquions lors de la présentation du projet Choucas,
+dans le chapitre précédent (voir \ref{subsec:1-2-3}, page
+\pageref{subsec:1-2-3}), notre thèse s'inscrit dans une réflexion plus
+générale, autour de l'aide à la localisation de personnes perdues en
+montagne. Plus spécifiquement, notre travail consiste à élaborer une
+solution permettant de délimiter la zone correspondant à une
+description orale de position.
+
+La réalisation de cet objectif principal nécessite de répondre à plu
 
 On trouvera une synthèse des objectifs scientifiques, ainsi que de
 leurs verrous et des contributions attendues dans le
 \autoref{tab:synthese_objectifs} page
 \pageref{tab:synthese_objectifs}.
 
-\subsection{Modélisation de localisations indirectes}
+\subsection{La spatialisation d'indices de localisation}
 \label{subsec:2-1-1}
 
+% int
 Le premier objectif de cette thèse est de développer une méthode
 permettant d'identifier une position à partir de sa
 description.
@@ -16,10 +24,11 @@ description.
 % Présentation de l'objectif
 Comme nous l'expliquions précédement, notre thèse s'inscrit dans un
 axe de recherche du projet Choucas dont l'objectif est de faciliter
-les secouristes à identifier une position décrite. Cette tâche
-nécessite d'arriver à définir des méthodes permettant de construire
-une zone à partir de descriptions, telles que \enquote{je suis sous
-  une route.} Cette tâche nécessite donc de travailler à
+les secouristes à identifier une position décrite.
+%
+Cette tâche nécessite d'arriver à définir des méthodes permettant de
+construire une zone à partir de descriptions, telles que \enquote{je
+  suis sous une route.} Cette tâche nécessite donc de travailler à
 l'identification de la sémantique des termes utilisés pour décrire une
 possition, puis d'en proposer une modélisation, à même de pouvoir
 systématiser la construction d'une \enquote{zone} à partir d'une
@@ -56,12 +65,67 @@ La question de l'indentification de positions décrites à fait l'objet
 de différents travaux, aux visées applicatives diverses.
 
 
+% Réflexions autour de la sémantique des relations spatiales
 
 Enfin, dans une thématique plus proche de notre travail,  
 
+Naive geography
+
+Mateh
+
+Moncla
+
+
+
 Vasardini
 Bloch
-Brézil icc
+Brézil icc\autocite{Egenhofer1995}
+
+vandeloise, kratch, augenarge, borillio 
+
+\paragraph{Formalisation des relations spatiales}
+\autocite{Vandeloise1986,Borillo1998,Bateman2010}
+\autocite{Kracht2002}
+\autocite{Aurnague1993}
+\autocite{Mark1999}
+\autocite{Freksa2018}
+\autocite{Carlson2005}
+\autocite{Lang1991}
+
+% vérifier
+\autocite{Hois2008}
+\autocite{Frank1992}
+\autocite{Moratz2008,Cohn2001}
+\autocite{Kordjamshidi2012}
+\autocite{Matsakis2010}
+\autocite{Frank1997}
+\autocite{Talmy2005}
+\autocite{Freeman1975}
+\autocite{Zelinsky-Wibbelt1993}
+\autocite{Carlson2004}
+\autocite{Gui-Wu2009}
+
+\paragraph{Applications}
+\autocite{Xu2007a,Xu2007,Xu2006}
+\autocite{Wolter2018}
+\autocite{Dittrich2015}
+\autocite{Vanegas2011}
+\autocite{Du2016}
+\autocite{Hornsby2009}
+\autocite{Mathet2000}
+\autocite{Hudelot2008a}
+\autocite{Bloch1996}
+\autocite{Hudelot2008}
+\autocite{Levit2007}
+\autocite{Evans2008}
+\autocite{Takemura2012}
+\autocite{Shariff1998}
+\autocite{Skubic2004}
+\autocite{Hall2015}
+\autocite{Leopold2015}
+\autocite{Denis1997}
+
+Purves "geographic information revieal''
 
 \subsubsection{Verrous}
 
@@ -146,34 +210,117 @@ Ana-Maria
 
 \paragraph{Quantification de l'incertitude}
 
+\paragraph{inscription dans le contexte métier}
+
+% Le secouriste doir pouvoir manipuler assez 'facilement' ces notions
 
 \subsubsection{Apports envisagés}
 
 \subsection{Agrégation d'indices}
 \label{subsec:2-1-4}
 
+La structure des alertes fait apparaitre un autre problème. En effet,
+comme nous l'avon vu lors de présentation du fil rouge (\ref{} page
+\pageref{} \todo{ajouter ref présentation du fil rouge}) les
+requérants décrivent généralement leur position à l'aide de
+différentes phrases, décrivant autant d'aspects de leur position
+actuelle. Chacune de ces descriptions, constitue, ce que nous appelons
+un \emph{indice de localisation.} Une description de localisation est
+donc composée d'au moins un, généralement plus, \emph{indice de
+  localisation}. Ce sont ces derniers que nous cherchons à
+\emph{spatialiser.} Toutefois, la spatialisation indivoduelle de ces
+indices de localisation, ne donne qu'une indication partielle sur la
+zone de localisation de la vicitime. Il est donc nécessaire de
+combiner la spatilisation des différents indices de localisation, afin
+de proposer la meilleure \emph{zone de localisation compatible}
+possible.
+
+La méthode développée à cet effet, doit conserver les caractéristiques
+que nous voulons voir validées par la méthode de spatilisation
+présentée ci-dessus. C'est-à-dire, que la méthode d'aggrégation doit
+prendre en compte la nature imprécise des résultats de la méthode de
+spatilisation des indices. De plus, elle doit être a-même de prendre
+en compte l'évaluation de la plausibilité de l'indice faite par le
+secouriste.
+
 \subsubsection{Contexte scientifique}
+
+\tdi{je ne sais quoi mettre ici, je ne suis pas sur d'avoir des
+  références sur ce sujet.}
 
 \subsubsection{Verrous}
 
-\paragraph{Contexte différent}
+Le processus d'agrégation des indices que nous souhaitons développer
+correspond à un stade éloigné de notre méthodologie, \ie qu'il est
+impacté par les choix effectués en amont. C'est notamment le cas de
+ceux portant sur la spatilisation des différents indices.
 
-\paragraph{Conflits}
+\paragraph{Compatibilité avec les méthodes de spatialisation}
+
+Comme nous l'expliquions lors de la présentation des objectifs
+\ref{subsec:2-1-2} et \ref{subsec:2-1-3}, nous souhaitons que la prise
+en compte de \emph{l'imprécision du langage naturel} et de la
+\emph{plausibilité des indices} soit intrinsèque à la méthode de
+spatialisation des \emph{indices de localisation} (objectif
+\ref{subsec:2-1-1}). Il est par conséquent nécessaire que la méthode
+d'agrégation des indices soit à même de conserver ces caractérisques.
+% 
+Or, ces deux composantes sont, par définition, variables. Deux indices
+issus d'une même alerte peuvent avoir une plausibilité considérée
+comme différente par le secouriste. Ce peut être, par exemple, le cas
+si un requérant décrit sa position comme étant : \enquote{proche d'un
+  chalet et probablement au sud du sommet}. Dans ce cas le premier
+indice de localisation : \enquote{je suis proche d'un chalet}, serait
+surement, considéré comme \emph{plus plausible} que le second :
+\enquote{je suis probablement au sud sommet}. La méthode d'agrégation
+des indices de localisation doit donc être capable de prendre en
+considération cette différence entre les deux indices, par exemple les
+pondérant. De même, la différence de précision entre deux indices doit
+être prise en compte lors du processus d'agrégation.
+
+\paragraph{\texttt{titre ??}}
+%\paragraph{Contexte différent}
+
+% La commutativité de l'agrégation
+% Différence des indices
+% Traitement 'indépendant' de la localisation
+
+Un autre point important est que la même méthode d'agrégation
+développée va être appliquée à des indices, potentiellement très
+différents et en nombre variable. De plus les indices spatialisés ne
+seront pas nécessairement transmis en même temps, 
+
+\paragraph{La gestion des conflits}
+
+\tdi{C'est pertinent ? Il n'y a pas vraiment de solution dans ma
+  méthodo pour les prendre en compte.}
+
+Un second verrou, fortement lié à la question de la modélisation de la
+plausibilité est celui de la gestion des conflits entre indices. Il
+n'est, en effet, pas exclu que deux indices d'une même alerte se
+contredisent, rendant dès lors impossible la construction de la
+\emph{zone de localisation probable.} La prise en compte de la
+plausibilité des indices permet, en partie, de contourner ce
+problème. Cependant, l'estimation de la plausibilité des indices reste
+à la charge du secouriste.
+
+
 
 \subsection{Évaluation des résulats}
 \label{subsec:2-1-5}
 
-Enfin, le dernier objectif scientifique de cette thèse consiste à
-définir une méthode d'évaluation des résultats produits.
-
-L'objectif de cette évaluation est de permettre une adaptation des
-résultats en fonction 
+Enfin, notre dernier objectif est de proposer une méthode d'évaluation
+de la (ou des) \emph{zone(s) de localisation probable} \todo{Veiller à
+  ce que le terme soit bien défini auparavant} construite(s). Cet
+objectif nécessite définir des critères d'évaluation pertinants et
+adaptés au contexye appliquatif de ce travail.
 
 \subsubsection{Contexte scientifique}
 
 \subsubsection{Verrous}
 
 \paragraph{Pas d'évaluation supervisée}
+Impossibilité de connaitre la réponse lors de l'évaluation
 
 
 % Tableau synthétique
