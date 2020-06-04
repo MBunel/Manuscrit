@@ -69,7 +69,7 @@ de différents travaux, aux visées applicatives diverses.
 
 Enfin, dans une thématique plus proche de notre travail,  
 
-Naive geography
+\emph{Naive geography} \autocite{Egenhofer1995}
 
 Mateh
 
@@ -79,12 +79,14 @@ Moncla
 
 Vasardini
 Bloch
-Brézil icc\autocite{Egenhofer1995}
+Brézil icc
 
 vandeloise, kratch, augenarge, borillio 
 
 \paragraph{Formalisation des relations spatiales}
-\autocite{Vandeloise1986,Borillo1998,Bateman2010}
+\autocite{Vandeloise1986}
+\autocite{Borillo1998}
+\autocite{Bateman2010}
 \autocite{Kracht2002}
 \autocite{Aurnague1993}
 \autocite{Mark1999}
@@ -95,7 +97,8 @@ vandeloise, kratch, augenarge, borillio
 % vérifier
 \autocite{Hois2008}
 \autocite{Frank1992}
-\autocite{Moratz2008,Cohn2001}
+\autocite{Moratz2008}
+\autocite{Cohn2001}
 \autocite{Kordjamshidi2012}
 \autocite{Matsakis2010}
 \autocite{Frank1997}
@@ -106,7 +109,9 @@ vandeloise, kratch, augenarge, borillio
 \autocite{Gui-Wu2009}
 
 \paragraph{Applications}
-\autocite{Xu2007a,Xu2007,Xu2006}
+\autocite{Xu2007a}
+\autocite{Xu2007}
+\autocite{Xu2006}
 \autocite{Wolter2018}
 \autocite{Dittrich2015}
 \autocite{Vanegas2011}
@@ -199,6 +204,31 @@ Dilo ?
 
 \subsection{Prise en compte du jugement du secouriste}
 \label{subsec:2-1-3}
+
+Si la prise en compte de \emph{l'imprécision} des descriptions de
+localisation (obj. \ref{subsec:2-1-1}) permet d'améliorer la qualité
+de leur modélisation, ce mécanisme ne permet pas d'en gérer la
+plausiblité. En effet, certains \emph{indices de localisation} donnés
+par le requérant peuvent être faux, ou, du moins, sujets à caution et
+ce indépendament de toute notion de \emph{précision.} La prise en
+considération ---~aveugle~--- de ce type d'indices ne peut qu'impacter
+négativement la qualité de la \emph{zone de localisation probable}
+créée par \emph{l'agrégation} des \emph{indices de localisation.} Les
+secouristes sont cependant, grace à leur connaissance du terrain et à
+leur expérience, à même d'identifier la plupart de ces erreurs et
+approximations, ou, tout du moins, d’émettre un doute sur la véracité
+de certains \emph{indices de localisation.} La prise en compte de ces
+connaissances, exogènes à l'indice, nous semble très importante, en
+plus d'être un excellent moyen pour controler la prise en
+considération d'indices de mauvaise qualitée.
+
+Un élément central du projet Choucas étant de développer des solutions
+d'assistance et non d'automatisation, nous pouvons prévoir des
+interactions avec le secouriste, notamment l'évaluation de la
+plausibilité des \emph{indices de localisation} donnés par le
+requérant. La prise en compte de la plausibilité des indices de
+localisation ajoute donc une nouvelle dimension à la spatialisation
+des \emph{indices de localisation.}
 
 \subsubsection{Contexte scientifique}
 
