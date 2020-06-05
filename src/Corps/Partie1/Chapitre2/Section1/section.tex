@@ -1,12 +1,11 @@
-Comme nous l'expliquions lors de la présentation du projet Choucas,
-dans le chapitre précédent (voir \ref{subsec:1-2-3}, page
-\pageref{subsec:1-2-3}), notre thèse s'inscrit dans une réflexion plus
-générale, autour de l'aide à la localisation de personnes perdues en
-montagne. Plus spécifiquement, notre travail consiste à élaborer une
-solution permettant de délimiter la zone correspondant à une
-description orale de position.
-
-La réalisation de cet objectif principal nécessite de répondre à plu
+Comme nous l'expliquions dans le chapitre précédent (voir
+\ref{subsec:1-2-3}, page \pageref{subsec:1-2-3}), notre thèse
+s'inscrit dans un projet de recherche dont l'objectif est de
+développer des solutions d'aide à la localisation de personnes perdues
+en montagne. Notre objectif principal consiste quant à lui à élaborer
+une solution permettant de délimiter la zone correspondant à une
+description orale de position. Pour ce faire nous avons identifié cinq
+objectifs scientifiques, présentés ci-dessous.
 
 On trouvera une synthèse des objectifs scientifiques, ainsi que de
 leurs verrous et des contributions attendues dans le
@@ -191,6 +190,12 @@ des limites du langage naturel.
 
 \subsubsection{Contexte scientifique}
 
+La notion d'imprécision a également été appliquée spécifiquement à des
+problématiques de spatialisation, comme celle que nous souhaitons
+mettre en place ici.
+
+
+
 Travail sur le flou
 Russell
 Varzi
@@ -242,6 +247,10 @@ Ana-Maria
 
 \paragraph{inscription dans le contexte métier}
 
+L'évaluation de la plausibilité des \emph{indices de localisation}
+étant déléguée aux secouristes, il est nécessaire que la solution
+développée soit a même de représenter l'opinion du secouriste.
+
 % Le secouriste doir pouvoir manipuler assez 'facilement' ces notions
 
 \subsubsection{Apports envisagés}
@@ -251,7 +260,7 @@ Ana-Maria
 
 La structure des alertes fait apparaitre un autre problème. En effet,
 comme nous l'avon vu lors de présentation du fil rouge (\ref{} page
-\pageref{} \todo{ajouter ref présentation du fil rouge}) les
+\pageref{}) \todo{ajouter ref présentation du fil rouge} les
 requérants décrivent généralement leur position à l'aide de
 différentes phrases, décrivant autant d'aspects de leur position
 actuelle. Chacune de ces descriptions, constitue, ce que nous appelons
@@ -353,13 +362,54 @@ de la (ou des) \emph{zone(s) de localisation probable} \todo{Veiller à
 objectif nécessite définir des critères d'évaluation pertinants et
 adaptés au contexye appliquatif de ce travail.
 
+
 \subsubsection{Contexte scientifique}
 
 \subsubsection{Verrous}
 
-\paragraph{Pas d'évaluation supervisée}
-Impossibilité de connaitre la réponse lors de l'évaluation
+Le principal verrou scientifique à la mise en place d'une méthode
+d'évaluation, réside dans le fait qu'il est insatisfaisant de nous
+baser uniquement sur une comparaison entre une \enquote{zone estimée},
+\ie la \emph{zone de localisation probable} et la position réele de la
+victime. En effet, l'absence ---~et inversement la présence~--- de la
+position de la victime dans la \emph{zone de localisation probable}
+construite, ne signifie pas nécessairement que la modélisation est
+erronée. Les \emph{indices de localisation} peuvent être incorrects,
+sans pour autant avoir étés identifiés comme tels par le secouriste,
+ou le requérant peut se référer à un objet qui n'existe pas dans les
+basses de données utilisées. De plus, avec ce critère, l'évaluation ne
+peut se faire sans la connaissance de la position réelle de la
+victime, ce qui ne permet pas d'envisager la mise en place d'une
+\enquote{évaluation dynamique} des résultats, à même de renseigner le
+secouriste sur la qualité des résultats lors de la phase de
+localisaqtion. L'évalution des résultats ne pouvant être réalisée
+qu'après avoir pris connaissance de la position de la victime. Une
+autre solution serait de considérer que, moins la \emph{zone de
+  localisation probable} est étendue, plus elle est précise et donc de
+\enquote{meilleure qualitée}. Cependant cette approche n'est pas plus
+satisfaisante.  En effet, la \emph{zone de localisation probable}
+correspond à l'ensemble des \emph{positions} validant la descrition
+---~transmise sous la forme \emph{d'indices de localisation}~---
+donnée par la victime. Or, plusieurs zones peuvent correspondre à
+cette descrition, à fortiori si les \emph{indices de localisations}
+donnés sont peu nombreux ou discriminants. Utiliser un critère de
+\enquote{taille de zone} reviendrait donc à estimer la qualité des
+\emph{indices de localisation} et non celle de leur modélisation.
 
+L'évalutation de la qualité de la \emph{zone de localisation probable}
+impose donc de développer une méthode à même d'estimer la qualité de
+la modélisation des \emph{indices de localisation} donnés par le
+requérant et non celle des \emph{indices} en eux-mêmes.
+
+\subsubsection{Apports envisagés}
+
+Nous souhaitons proposer une méthode d'évaluation de la qualité de la
+\emph{zone de localisation probable} qui ne soit pas influencée par la
+qualité intrinsèque des \emph{indices de localisation} donnés par le
+secouriste. De plus, nous souhaitons que ce processus d'évaluation
+puisse ce faire durant la phase de localisation de la victime, pour
+apporter aux secouristes une information supplémentataire, facilitant
+la résolution de l'alerte.
 
 % Tableau synthétique
 \begin{table}[h]
