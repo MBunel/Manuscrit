@@ -12,7 +12,7 @@ leurs verrous et des contributions attendues dans le
 \autoref{tab:synthese_objectifs} page
 \pageref{tab:synthese_objectifs}.
 
-\subsection{La spatialisation d'indices de localisation}
+\subsection{La spatialisation \emph{d'indices de localisation}}
 \label{subsec:2-1-1}
 
 % int
@@ -55,8 +55,8 @@ d'une position au secouriste.
 Notre travail se limitera donc à identifier les \enquote{types} de
 descriptions utilisées dans notre contexte, de les exprimer dans un
 vocabulaire controlé, puis d'en proposer une modélisation a même d'en
-permettre la spatialisation \todo{Attention terme non défini, attendre
-  chapitre 4 avant de l'introduire}.
+permettre la spatialisation \todo{Attention terme non défini, ajouter
+  une phrase de définition}.
 
 \subsubsection{Contexte scientifique}
 
@@ -131,7 +131,7 @@ vandeloise, kratch, augenarge, borillio
 
 Purves "geographic information revieal''
 
-\subsubsection{Verrous}
+\subsubsection{Verrous scientifiques}
 
 La mise en place d'une telle méthode de spatialisation se heurte
 néanmoins à deux verrous majeurs, l'un intrinsèquement lié à cet
@@ -145,6 +145,15 @@ des objets qui le sont tout autant. On peut être \enquote{sur}
 \emph{un chemin} comme \emph{une montagne.}
 
 \paragraph{Données}
+
+\begin{verbatim}
+- Peu de données
+- Impossibilité de faire de l'apprentissage
+- Pas de recoupement sur les positions
+- Description sensiblement différentes
+- Utilisation variable des mêmes relations spatiales
+- Variabilité sémantique des relations spatiales
+\end{verbatim}
 
 le second verrou est lié à la richesse des données dont nous disposons
 pour développer et tester nos méthodes de spatialisation.
@@ -189,9 +198,19 @@ connu du secouriste n'est pas nécessairement faux. Par conséquent, il
 est hasardeux, d'inférer des nouveaux \emph{indices} à partir d'une
 \emph{description de position.}
 
-\subsubsection{Apports}
+\subsubsection{Apports envisagés}
 
-\subsection{Prise en compte de l'imprécision}
+\begin{verbatim}
+- Identification des relations spatiales utilisées dans le contexte de
+la description d'une position en montagne.
+- Identification des objets de référence utilisés.
+- Définition de la sémantique de ces relations.
+- Définition d'une méthode permettant de construire la zone
+correspondant à cette sémantique.
+\end{verbatim}
+
+\subsection{La modélisation de \emph{l'imprécision} des \emph{indices
+    de localisation}}
 \label{subsec:2-1-2}
 
 La question de la spatialisation nécessiter cependant d'en s'en poser
@@ -238,11 +257,25 @@ Zadeh
 Dilo ?
 
 
-\subsubsection{Verrous}
+\subsubsection{Verrous scientifiques}
+
+\begin{verbatim}
+- Comment ajouter la prise en compte de l'imprécision au processus de
+spatialisation de manière satisfaisante
+- Comment estimer/quantifier la précision des relations spatiales
+\end{verbatim}
 
 \paragraph{Quantification de l'imprécision}
 
-\subsection{Prise en compte du jugement du secouriste}
+\subsubsection{Apports envisagés}
+
+\begin{verbatim}
+- Sélection d'une méthode de méthode de prise en compte de
+l'imprécision
+- Définition d'une méthode de quantification de l'imprécision
+\end{verbatim}
+
+\subsection{La modélisation de \emph{la certitude} des secouristes}
 \label{subsec:2-1-3}
 
 Si la prise en compte de \emph{l'imprécision} des descriptions de
@@ -276,9 +309,17 @@ Travaux sur l'incertitude
 
 Ana-Maria
 
-\subsubsection{Verrous}
+\subsubsection{Verrous scientifiques}
 
-\paragraph{Quantification de l'incertitude}
+\begin{verbatim}
+- Sélection d'une méthode de méthode de prise en compte de
+l'incertitude
+- Permettre au secouriste de manipuler cette information de manière
+'naturelle' 
+\end{verbatim}
+
+
+\paragraph{Cohabitation avec la méthodologie de spatialisation}
 
 \paragraph{inscription dans le contexte métier}
 
@@ -290,7 +331,13 @@ développée soit a même de représenter l'opinion du secouriste.
 
 \subsubsection{Apports envisagés}
 
-\subsection{Agrégation d'indices}
+\begin{verbatim}
+- Sélection de la méthode
+- Adaptaion de la méthode au contexte métier
+\end{verbatim}
+
+
+\subsection{L'agrégation des \emph{indices de localisation}}
 \label{subsec:2-1-4}
 
 La structure des alertes fait apparaitre un autre problème. En effet,
@@ -322,7 +369,7 @@ secouriste.
 \tdi{je ne sais quoi mettre ici, je ne suis pas sur d'avoir des
   références sur ce sujet.}
 
-\subsubsection{Verrous}
+\subsubsection{Verrous scientifiques}
 
 Le processus d'agrégation des indices que nous souhaitons développer
 correspond à un stade éloigné de notre méthodologie, \ie qu'il est
@@ -386,9 +433,13 @@ plausibilité des indices permet, en partie, de contourner ce
 problème. Cependant, l'estimation de la plausibilité des indices reste
 à la charge du secouriste.
 
+\subsubsection{Apports envisagés}
 
+\begin{verbatim}
+- Définition d'une méthode d'agrégation 
+\end{verbatim}
 
-\subsection{Évaluation des résulats}
+\subsection{L'évaluation de la \emph{zone de localisation probable}}
 \label{subsec:2-1-5}
 
 Enfin, notre dernier objectif est de proposer une méthode d'évaluation
@@ -400,7 +451,7 @@ adaptés au contexye appliquatif de ce travail.
 
 \subsubsection{Contexte scientifique}
 
-\subsubsection{Verrous}
+\subsubsection{Verrous scientifiques}
 
 Le principal verrou scientifique à la mise en place d'une méthode
 d'évaluation, réside dans le fait qu'il est insatisfaisant de nous
@@ -445,6 +496,11 @@ secouriste. De plus, nous souhaitons que ce processus d'évaluation
 puisse ce faire durant la phase de localisation de la victime, pour
 apporter aux secouristes une information supplémentataire, facilitant
 la résolution de l'alerte.
+
+\begin{verbatim}
+- Définition d'une méthode d'évaluation des résultats orientée
+métier. 
+\end{verbatim}
 
 % Tableau synthétique
 \begin{table}[h]
