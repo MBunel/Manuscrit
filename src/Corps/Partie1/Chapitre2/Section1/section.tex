@@ -152,20 +152,25 @@ pour développer et tester nos méthodes de spatialisation.
 Les seules données dont nous disposons (et pouvons disposer) sont des
 enregistrements d'alertes, traitées par le \ac{pghm} de
 Grenoble. Chaque enregistrement, contient \emph{l'ensemble des indices
-  de localisation} utilisés par le requérant. Chacune de ces alertes
-est, évidement, unique. De plus, il existe peu de similarités entre
-elles.
-
-
-
-% \paragraph{Peu de données et Faible recoupement}
-
-%\paragraph{Disparité des descriptions de localisation}
-
-Deux personnes ne décrivent pas une position de la même façon
+  de localisation} utilisés par le requérant. Un problème notable est
+que chacune de ces alertes est unique. Il nous est donc impossible de
+les confronter.
+% Peu de données et Faible recoupement
+Par exemple, nous n'avons pas à notre disposition, deux
+enregistrements différents, décrivant la même position. Il nous est
+donc impossible de comparer différentes descriptions qui auraient été
+faites de la même position. De même, les \emph{indices de
+  localisation} utilisés par les requérants sont si divers, que nous
+ne connaissons que peu de cas, où le même \emph{indice de
+  localisation} (\eg \enquote{je suis dans une forêt}) est utilisé
+pour décrire une position différente \footnote{La majorité de ces cas
+  concerne \emph{l'indice de localisation :} \enquote{je suis sur
+    \textins{un chemin, une route, un sentier, \emph{etc.}}}}. Notre
+démarche de spatialisation doit donc être à même de travailler à
+partir de descriptions potentiellement très différentes, sans que nous
+ne puissions réellement les confronter à d'autres descriptions.
 
 % Descriptions non exhaustives
-
 Un dernier problème notable est que le processus de localisation de la
 victime, basé sur l'interprétation par le secouriste d'une description
 de position, n'offre aucune garantie quant à la \emph{complétude} de
@@ -182,7 +187,7 @@ ce n'est pas parce que la victime ne précise pas qu'elle est en forêt,
 qu'elle n'est effectivement pas en forêt, \ie qu'un \emph{indice} non
 connu du secouriste n'est pas nécessairement faux. Par conséquent, il
 est hasardeux, d'inférer des nouveaux \emph{indices} à partir d'une
-\emph{description de position.} 
+\emph{description de position.}
 
 \subsubsection{Apports}
 
