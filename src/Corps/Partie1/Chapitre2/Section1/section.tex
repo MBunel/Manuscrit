@@ -82,7 +82,7 @@ Brézil icc
 
 vandeloise, kratch, augenarge, borillio 
 
-\paragraph{Formalisation des relations spatiales}
+\paragraph{La formalisation des \emph{relations de localisation}}
 \autocite{Vandeloise1986}
 \autocite{Borillo1998}
 \autocite{Bateman2010}
@@ -108,6 +108,11 @@ vandeloise, kratch, augenarge, borillio
 \autocite{Gui-Wu2009}
 
 \paragraph{Applications}
+
+De nombreux domaines de recherche utilisent la formalisation de
+relations spatiales pour répondre à des problématiques qui leur sont
+propres.
+
 \autocite{Xu2007a}
 \autocite{Xu2007}
 \autocite{Xu2006}
@@ -129,7 +134,10 @@ vandeloise, kratch, augenarge, borillio
 \autocite{Leopold2015}
 \autocite{Denis1997}
 
+
 Purves "geographic information revieal''
+
+\tdi{livrable 3.2.1}
 
 \subsubsection{Verrous scientifiques}
 
@@ -302,7 +310,38 @@ spatialisation de manière satisfaisante
 - Comment estimer/quantifier la précision des relations spatiales
 \end{verbatim}
 
-\paragraph{Quantification de l'imprécision}
+Dans notre cas, la prise en compte de \emph{l'imprécision} des
+\emph{relations de localisation} pose deux problèmes majeurs.
+
+\paragraph{L'intégration de \emph{l'imprécision} dans la \emph{spatialisation}}
+
+Le premier d'entre eux est la question de l'intégration de cette
+composante au sein du processus de \emph{spatialisation.}
+
+\paragraph{L'évaluation de \emph{l'imprécision}}
+
+Le second verrou est la question de l'évaluation de
+\emph{l'imprécision.} En effet, s'il est acquis que les
+\emph{relations de localisation} ---~et plus généralement le langage
+naturel~--- sont \emph{imprécis,} il reste qu'ils peuvent l'être à des
+degrés divers. Pour l'illustrer, nous pouvons utiliser les
+\emph{indices de localisation:} \enquote{je suis \emph{proche de}
+  Grenoble} et \enquote{je suis \emph{aux alentours de} Grenoble}. Ces
+deux indices ont une signification semblable, tous deux renseignent
+sur la proximité du locuteur avec la ville de Grenoble. On aurait
+toutefois du mal à les considérer comme parfaitement équivalents, la
+relation de localisation \enquote{\emph{aux alentours de}} nous
+semblant plus vague, \ie que l'aire que l'on peut définir comme étant
+\enquote{\emph{aux alentours de} Grenoble} est plus étendue que celle
+qui en est \emph{proche.} On ne peut pas, pour autant, considérer que
+la \emph{relation de localisation} \enquote{\emph{proche de}} est
+\emph{précise.} Ces deux relations sont \emph{imprécises,} mais a des
+degrés divers et si l'on peut les ordonner selon leur \enquote{degré
+  \emph{d'imprécision}}, on ne saurait quantifier cet écart et donc
+leurs différents degrés \emph{d'imprécision.}
+
+Cette quantification est cependant une étape indispensable à la prise
+en compte de l'imprécision des \emph{relations de localisation.}
 
 \subsubsection{Apports envisagés}
 
@@ -472,21 +511,30 @@ problème. Cependant, l'estimation de la plausibilité des indices reste
 
 \subsubsection{Apports envisagés}
 
-\begin{verbatim}
-- Définition d'une méthode d'agrégation 
-\end{verbatim}
+Notre apport principal pour répondre à cet objectif scientifique sera
+de développer une méthode agrégeant les résultats de la
+\emph{spatialisation} des différents \emph{indices de localisation}
+pour construire une \emph{zone de localisation compatible.}  Cette
+méthode sera implémentée à la suite de la méthode de
+\emph{spatialisation.} L'implémentation des méthodes de
+\emph{spatialisation} et \emph{d'agrégation,} permettra d'appliquer
+l'ensemble de notre méthodologie à la résolution de cas réels.
 
 \subsection{L'évaluation de la \emph{zone de localisation probable}}
 \label{subsec:2-1-5}
 
 Enfin, notre dernier objectif est de proposer une méthode d'évaluation
 de la (ou des) \emph{zone(s) de localisation probable} \todo{Veiller à
-  ce que le terme soit bien défini auparavant} construite(s). Cet
+  ce que le terme soit bien défini auparavant} construites. Cet
 objectif nécessite définir des critères d'évaluation pertinants et
 adaptés au contexye appliquatif de ce travail.
 
 
 \subsubsection{Contexte scientifique}
+
+\begin{verbatim}
+- Aucune idée de quoi mettre ici
+\end{verbatim}
 
 \subsubsection{Verrous scientifiques}
 
@@ -531,22 +579,19 @@ Nous souhaitons proposer une méthode d'évaluation de la qualité de la
 qualité intrinsèque des \emph{indices de localisation} donnés par le
 secouriste. De plus, nous souhaitons que ce processus d'évaluation
 puisse ce faire durant la phase de localisation de la victime, pour
-apporter aux secouristes une information supplémentataire, facilitant
-la résolution de l'alerte.
+apporter aux secouristes une information supplémentaire, facilitant la
+résolution de l'alerte.
 
-\begin{verbatim}
-- Définition d'une méthode d'évaluation des résultats orientée
-métier. 
-\end{verbatim}
-
-% Tableau synthétique
-\begin{table}[h]
+\begin{landscape}
+\begin{table}
   \centering
   \input{../tableaux/synthese_objectifs.tex}
   \caption{Synthèse des verrous et des apports attendus pour chaque
     objectif scientifique de la thèse}
   \label{tab:synthese_objectifs}
 \end{table}
+\end{landscape}
+
 
 %%% Local Variables:
 %%% mode: latex
