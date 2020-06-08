@@ -29,7 +29,7 @@ Cette tâche nécessite d'arriver à définir des méthodes permettant de
 construire une zone à partir de descriptions, telles que \enquote{je
   suis sous une route.} Cette tâche nécessite donc de travailler à
 l'identification de la sémantique des termes utilisés pour décrire une
-possition, puis d'en proposer une modélisation, à même de pouvoir
+position, puis d'en proposer une modélisation, à même de pouvoir
 systématiser la construction d'une \enquote{zone} à partir d'une
 description.
 
@@ -42,7 +42,7 @@ processus métier actuel. Cela implique que nous pouvons toujours
 compter sur la présence du secouriste pour effectuer certaines
 actions. Parmi celles-ci, l'écoute et la compréhension du discours du
 requérant. En effet, il n'est pas nécessaire, voire souhaitable
-\footnote{Tout du moins du point de vue des pprofessionels du
+\footnote{Tout du moins du point de vue des professionels du
   secours.}, d'automatiser entièrement le processus de localisation de
 la victime. Un tel objectif nécessiterait par ailleurs de développer
 des solutions d'analyse automatisée du langage parlé, en vue d'en
@@ -200,14 +200,51 @@ est hasardeux, d'inférer des nouveaux \emph{indices} à partir d'une
 
 \subsubsection{Apports envisagés}
 
-\begin{verbatim}
-- Identification des relations spatiales utilisées dans le contexte de
-la description d'une position en montagne.
-- Identification des objets de référence utilisés.
-- Définition de la sémantique de ces relations.
-- Définition d'une méthode permettant de construire la zone
-correspondant à cette sémantique.
-\end{verbatim}
+Le premier des apports que nous proposons est d'identifier les
+\emph{relations de localisation} utilisées dans notre contexte
+applicatif. On peut, en effet, supposer que seul un sous-ensemble des
+\emph{relations de localisation} présentes dans la langue française
+est utilisé, du moins régulièrement, pour décrire une position en
+montagne. L'identification de ces \emph{relations de localisation}
+nous permettra, d'une part, d'identifier les spécificités de la
+description d'une position en langage naturel, dans un contexte
+montagnard et, de l'autre, de nous concentrer sur la modélisation de
+ces \emph{relations de localisation.}
+
+Cet apport sera complété par un travail d'identification de la
+sémantique des relations de localisation utilisées dans notre
+contexte. Il est, en effet, possible que les \emph{relations de
+  localisations} utilisées dans notre contexte, le soient dans un sens
+particulier, plus réduit que le sens général. Ainsi, nous allons
+compléter le recensement des \emph{relations de localisation}
+utilisées dans notre contexte, par un travail d'identification de leur
+sémantique, dans ce même contexte.
+
+Ce même travail de recensement sera entrepris pour les \emph{objets de
+  référence.} Comme pour les \emph{relations de localisation,} on peut
+supposer que, seule une petite partie des objets pouvant être utilisés
+comme points de repère, le sont réellement, dans ce contexte. On
+s'attendra, par exemple, à trouver des \emph{indices de localisation}
+tels que \enquote{je suis au niveau \emph{du sommet}} ou \enquote{la
+  victime est dans \emph{une combe}}, alors que la phrase :
+\enquote{je suis proche \emph{d'un kiosque}}, semble peu
+probable. L'identification et le recensement de ces objets permettra
+---~comme pour les \emph{relations de localisation}~--- d'avoir à la
+fois une meilleure connaissance des descriptions de positions dans
+notre contexte applicatif, mais également de focaliser notre travail
+sur les objets (et les \emph{relations de localisation}) les plus
+pertinent(e)s.
+
+Enfin, notre apport principal ---~qui nécessite la bonne réalisation
+des points précédent~--- à cet objectif sera de développer une méthode
+de spatialisation de ces \emph{indices de localisation} et d'en
+proposer une implémentation fonctionnelle. La méthode développée devra
+être suffisamment générique pour fonctionner avec les différentes
+\emph{relations de localisation} et les différents \emph{objets de
+  référence} identifié$\cdot$es, tout en prenant en compte leurs
+spécificités, dans le but de proposer une solution de spatialisation
+précise et adaptée au contexte, mais suffisamment générique pour être
+enrichie ultérieurement voire étendue à des contextes différents.
 
 \subsection{La modélisation de \emph{l'imprécision} des \emph{indices
     de localisation}}
@@ -221,13 +258,13 @@ ne travaillons pas directement à l'interprétation du langage naturel,
 \ie que nous ene faisons pas de TAL, nous sommes tout de même
 confrontés à certaines de ces limites.
 
-La principale d'entre-elle est la question de l'imprécison du langage
+La principale d'entre elles est la question de l'imprécison du langage
 naturel. En effet, le langage naturel n'est pas un outil idéal pour
-exprimer clairement des propositions, celle-ci sont toujours
-soumisses à l'interpréatation et donc imprécises. Il en va
-nécessairement de même pour les propositions décrivants dune ou des
-positions? Ces dernières s'expriment en langage natuurel et son donc
-soumisses à l'iumprécisions.
+exprimer clairement des propositions, celle-ci sont toujours soumisses
+à l'interpréatation et donc imprécises. Il en va nécessairement de
+même pour les propositions décrivants dune ou des positions? Ces
+dernières s'expriment en langage natuurel et son donc soumisses à
+l'iumprécisions.
 
 Dans les faits ,cela implique qu'une même phrase, un même mot,
 peutvent -être utilisés pour décrire des localisations dans l'espace
@@ -468,7 +505,7 @@ peut se faire sans la connaissance de la position réelle de la
 victime, ce qui ne permet pas d'envisager la mise en place d'une
 \enquote{évaluation dynamique} des résultats, à même de renseigner le
 secouriste sur la qualité des résultats lors de la phase de
-localisaqtion. L'évalution des résultats ne pouvant être réalisée
+localisation. L'évalution des résultats ne pouvant être réalisée
 qu'après avoir pris connaissance de la position de la victime. Une
 autre solution serait de considérer que, moins la \emph{zone de
   localisation probable} est étendue, plus elle est précise et donc de
@@ -482,10 +519,10 @@ donnés sont peu nombreux ou discriminants. Utiliser un critère de
 \enquote{taille de zone} reviendrait donc à estimer la qualité des
 \emph{indices de localisation} et non celle de leur modélisation.
 
-L'évalutation de la qualité de la \emph{zone de localisation probable}
+L’évaluation de la qualité de la \emph{zone de localisation probable}
 impose donc de développer une méthode à même d'estimer la qualité de
 la modélisation des \emph{indices de localisation} donnés par le
-requérant et non celle des \emph{indices} en eux-mêmes.
+requérant et non celle des \emph{indices} en eux-mêmes. 
 
 \subsubsection{Apports envisagés}
 
