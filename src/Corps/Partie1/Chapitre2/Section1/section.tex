@@ -1,29 +1,24 @@
-Comme nous l'expliquions dans le chapitre précédent (voir
-\ref{subsec:1-2-3}, page \pageref{subsec:1-2-3}), notre thèse
-s'inscrit dans un projet de recherche dont l'objectif principal est de
-développer des solutions d'aide à la localisation de personnes perdues
-en montagne. Notre objectif principal consiste quant à lui à élaborer
-une solution permettant de délimiter la zone correspondant à une
-description orale de position. Pour ce faire nous avons identifié cinq
-objectifs scientifiques, présentés ci-dessous.
+% Introduction objectifs scientifiques
+\tdi{En cours}
 
+% Annonce tableau synthèse
 On trouvera une synthèse des objectifs scientifiques, ainsi que de
 leurs verrous et des contributions attendues dans le
 \autoref{tab:synthese_objectifs} page
 \pageref{tab:synthese_objectifs}.
 
-\subsection{La spatialisation \emph{d'indices de localisation}}
+\subsection{La \emph{spatialisation} des \emph{indices de
+    localisation}}
 \label{subsec:2-1-1}
 
-% int
-Le premier objectif de cette thèse est de développer une méthode
-permettant d'identifier une position à partir de sa
-description.
+% Introduction
 
 % Présentation de l'objectif
-Comme nous l'expliquions précédement, notre thèse s'inscrit dans un
-axe de recherche du projet Choucas dont l'objectif est de faciliter
-les secouristes à identifier une position décrite.
+Comme nous l'expliquions précédemment, notre objectif central est
+d'identifier une position à partir de sa description. Toutefois, nous
+n'avons pas encore détaillé ce concept de \enquote{description de
+  position}.
+
 %
 Cette tâche nécessite d'arriver à définir des méthodes permettant de
 construire une zone à partir de descriptions, telles que \enquote{je
@@ -36,7 +31,7 @@ description.
 % Pas nécessaire de faire de l'analyse du langage naturel
 Comme nous le mentionnons dans le chapitre précédent (\todo{mettre res
   du passage où j'explique cet aspect dans le chapitre 1}), notre
-objectif n'est pas de déveloper une solution se sustituant aux
+objectif n'est pas de déveloper une solution se substituant aux
 secouristes, mais de leur proposer une solution s'intégrant dans leur
 processus métier actuel. Cela implique que nous pouvons toujours
 compter sur la présence du secouriste pour effectuer certaines
@@ -83,9 +78,19 @@ Brézil icc
 vandeloise, kratch, augenarge, borillio 
 
 \paragraph{La formalisation des \emph{relations de localisation}}
+
+La réflexion autour de l'identification de la sémantique des
+\emph{relations de localisation} a été abordée par de nombreux travaux
+en linguistique, que ce soit francophone ou anglophone.
+
 \autocite{Vandeloise1986}
 \autocite{Borillo1998}
-\autocite{Bateman2010}
+
+En 2010 \textcite{Bateman2010} proposerons \emph{l'ontologie} GUM, qui
+formalise l'ensemble des \emph{relations de localisation.}
+
+\autocite{Aurnague1997}
+
 \autocite{Kracht2002}
 \autocite{Aurnague1993}
 \autocite{Mark1999}
@@ -263,21 +268,22 @@ enrichie ultérieurement voire étendue à des contextes différents.
 Le travail d'identification de la sémantique des \emph{relations de
   localisation,} présenté précédemment (obj. \ref{subsec:2-1-1}), se
 heurte à un autre problème, celui de \emph{l'imprécision du langage
-  naturel.}
-
-
-
-Orn bien que nous ne travaillons pas directement à l'interprétation du
-langage naturel, \ie que nous ene faisons pas de TAL, nous sommes tout
-de même confrontés à certaines de ces limites.
-
-La principale d'entre elles est la question de l'imprécison du langage
-naturel. En effet, le langage naturel n'est pas un outil idéal pour
-exprimer clairement des propositions, celle-ci sont toujours soumisses
-à l'interpréatation et donc imprécises. Il en va nécessairement de
-même pour les propositions décrivants dune ou des positions? Ces
-dernières s'expriment en langage naturel et sont donc soumises à
-l'imprécision.
+  naturel.} En effet, les \emph{relations de localisation} que nous
+cherchons a sémantiser (obj. \ref{sec:2-1}) sont exprimées en langage
+naturel et donc soumises à l'interprétation du locuteur. Par
+conséquent la \emph{limite} entre la zone qui correspond à un
+\emph{indice de localisation} et celle qui n'y correspond pas, n'est
+pas nécessairement ---~voir jamais~--- une ligne. Les conséquences de
+ce fait sont multiples. D'une part, cela complique la formalisation de
+la sémantique des \emph{relations de localisation.} En effet, comment
+définir formellement un concept, alors qu'on peine à en fixer les
+limites ? \textcite{Vandeloise1986}, se montre même particulièrement
+critique\footnote{\enquote{Aucun mot spatial ne se prête à une
+    description aussi rigide et des contre-exemples peuvent être
+    trouvés à toutes les définitions proposées.}
+  \autocite[p. 18]{Vandeloise1986}} envers les travaux proposant une
+formalisation des \emph{relations de localisation} à l'aide de la
+logique ---~classique~--- du premier ordre.
 
 Dans les faits ,cela implique qu'une même phrase, un même mot,
 peutvent -être utilisés pour décrire des localisations dans l'espace
@@ -294,31 +300,40 @@ des limites du langage naturel.
 
 \subsubsection{Contexte scientifique}
 
-La notion d'imprécision a également été appliquée spécifiquement à des
-problématiques de spatialisation, comme celle que nous souhaitons
-mettre en place ici.
+La notion \emph{d'imprécision} a longuement été étudiée en sciences,
+dans un premier temps sous l'impulsion des fondateurs de la logique
+mathématique \bsc{Fredge} et \bsc{Russell}, qui voyaient en elle, un
+frein à rigueur des raisonnements énoncés en langage naturel. Le
+projet fondateur de la logique mathématique étant en effet de
+développer un langage rationnel, dépourvu de toute imprécision.
 
+La logique dite \enquote{classique} n'accepte, en effet, aucune
+imprécision. Un de ses axiomes de base,
 
+\paragraph{Le concept \emph{d'imprécision} et sa modélisation}
 
 Travail sur le flou
 Russell
 Varzi
 Zadeh
-Dilo ?
 
+\paragraph{\emph{L'imprécision} spatiale}
+
+Les implications spatiales du concept \emph{d'imprécision} ont été
+traitées par…
+
+Dilo Schneider
+
+Enfin, certains travaux ont couplé la prise en compte de l'imprécision
+avec la spatialisation. C'est 
 
 \subsubsection{Verrous scientifiques}
-
-\begin{verbatim}
-- Comment ajouter la prise en compte de l'imprécision au processus de
-spatialisation de manière satisfaisante
-- Comment estimer/quantifier la précision des relations spatiales
-\end{verbatim}
 
 Dans notre cas, la prise en compte de \emph{l'imprécision} des
 \emph{relations de localisation} pose deux problèmes majeurs.
 
-\paragraph{L'intégration de \emph{l'imprécision} dans la \emph{spatialisation}}
+\paragraph{L'intégration de \emph{l'imprécision} dans la
+  \emph{spatialisation}}
 
 Le premier d'entre eux est la question de l'intégration de cette
 composante au sein du processus de \emph{spatialisation.}
@@ -354,11 +369,19 @@ ces deux aspects.
 
 \subsubsection{Apports envisagés}
 
-\begin{verbatim}
-- Sélection d'une méthode de méthode de prise en compte de
-l'imprécision
-- Définition d'une méthode de quantification de l'imprécision
-\end{verbatim}
+\tdi{Voir si nécessaire de le compléter}
+
+Sur la question de la modélisation de \emph{l'imprécision} des
+\emph{relations de localisation,} notre principal apport sera
+de développer une méthode permettant de prendre en compte
+l'imprécision des relations spatiales. Cette dernière devra être
+compatible avec la méthode de \emph{spatialisation} des
+\emph{relations de localisation} définie parallèlement.
+
+Comme nous l'expliquions lors de la présentation des verrous de cet
+objectif scientifique, nous devons également identifier une solution
+permettant de quantifier \emph{l'imprécision} des différentes
+\emph{relations de localisation.}
 
 \subsection{La modélisation de \emph{l'incertitude}}
 \label{subsec:2-1-3}
@@ -395,45 +418,68 @@ précédemment présentée, \emph{d'imprécision.}
 
 \subsubsection{Verrous scientifiques}
 
-\begin{verbatim}
-- Sélection d'une méthode de méthode de prise en compte de
-l'incertitude
-- Permettre au secouriste de manipuler cette information de manière
-'naturelle' 
-\end{verbatim}
+Les verrous à la prise en compte de \emph{l'incertitude} sont
+identiques à ceux que nous avons identifiés pour la prise en compte de
+\emph{l'imprécision.} Dans les deux cas, en effet, l'objectif est
+\enquote{d'enrichir} la \emph{spatialisation} des \emph{indices de
+  localisation,} en y apportant la prise en compte de critères qui
+nous semblent indispensables, à savoir \emph{l'imprécision des
+  relations de localisations} et \emph{l'incertitude} des
+\emph{indices de localisation.} Dans les deux cas, nous devons veiller
+---~et ce pour les mêmes raisons~---, à ce que les théories et les
+méthodes utilisées soient parfaitement compatibles avec la
+\emph{spatialisation,} mais également entre elles.
 
-
-\paragraph{Cohabitation avec la méthodologie de spatialisation}
-
-\paragraph{inscription dans le contexte métier}
-
-L'évaluation de la plausibilité des \emph{indices de localisation}
-étant déléguée aux secouristes, il est nécessaire que la solution
-développée soit a même de représenter l'opinion du secouriste.
-
-% Le secouriste doir pouvoir manipuler assez 'facilement' ces notions
+Le second verrou, également partagé avec \emph{l'imprécision,} est la
+question de la quantification. En effet, l'estimation de
+\emph{l'incertitude} de \emph{l'indice de localisation} est nécessaire
+à sa prise en compte. La question est d'autant plus délicate que
+\emph{l'incertitude,} contrairement à \emph{l'imprécision,} est
+contextuelle. Par conséquent, la présence du même \emph{indice de
+  localisation} dans deux alertes différentes n'implique pas qu'ils
+aient la même \emph{incertitude,} contrairement à leur
+\emph{imprécision} qui sera identique, car intrinsèquement liée à la
+sémantique de la \emph{relation de localisation.} Ainsi, l'évaluation
+de \emph{l'incertitude} devra être faite pour chaque \emph{indice de
+  localisation} d'une alerte donnée, contrairement à l'évaluation de
+\emph{l'imprécision} qui peut être faire en amont, lors de
+l’identification de la sémantique des \emph{relations de
+  localisations} (obj. \ref{sec:2-1}).
 
 \subsubsection{Apports envisagés}
 
-\begin{verbatim}
-- Sélection de la méthode
-- Adaptaion de la méthode au contexte métier
-\end{verbatim}
+De manière analogue aux \enquote{verrous scientifiques}, les apports
+envisagés sur la question de la prise en compte de
+\emph{l'incertitude} sont semblables à ceux identifiés pour la prise
+en compte de \emph{l'imprécision.}
 
+Le principal apport envisagé est la définition d'une méthode de prise
+en compte de \emph{l'incertitude} qui soit compatible avec celle
+utilisée pour la \emph{spatialisation} des \emph{indices de
+  localisation,} mais également, avec la solution retenue pour prendre
+en compte \emph{l'imprécision} des \emph{relations de localisation.}
+La réalisation de ces trois objectifs sera donc fortement
+inter-dépendante.
+
+Le second apport sera la définition d'une méthode de quantification de
+\emph{l'incertitude.} Comme nous l'avons expliqué, cette
+quantification doit être faite pour chaque \emph{indice de
+  localisation} de chaque alerte, \emph{l'incertitude} étant
+contextuelle. La solution de quantification de \emph{l'incertitude}
+retenue devra donc répondre à des contraintes spécifiques.
 
 \subsection{La fusion des \emph{indices de localisation}}
 \label{subsec:2-1-4}
 
 La structure des alertes fait apparaitre un autre problème. En effet,
-comme nous l'avon vu lors de présentation du fil rouge (\ref{} page
-\pageref{}) \todo{ajouter ref présentation du fil rouge} les
-requérants décrivent généralement leur position à l'aide de
-différentes phrases, décrivant autant d'aspects de leur position
-actuelle. Chacune de ces descriptions, constitue, ce que nous appelons
-un \emph{indice de localisation.} Une description de localisation est
-donc composée d'au moins un, généralement plus, \emph{indice de
-  localisation}. Ce sont ces derniers que nous cherchons à
-\emph{spatialiser.} Toutefois, la spatialisation indivoduelle de ces
+comme nous l'avons vu lors de présentation du fil rouge (\ref{} page
+\pageref{}) les requérants décrivent généralement leur position à
+l'aide de différentes phrases, décrivant autant d'aspects de leur
+position actuelle. Chacune de ces descriptions, constitue, ce que nous
+appelons un \emph{indice de localisation.} Une description de
+localisation est donc composée d'au moins un, généralement plus,
+\emph{indice de localisation}. Ce sont ces derniers que nous cherchons
+à \emph{spatialiser.} Toutefois, la spatialisation indivoduelle de ces
 indices de localisation, ne donne qu'une indication partielle sur la
 zone de localisation de la vicitime. Il est donc nécessaire de
 combiner la spatilisation des différents indices de localisation, afin
@@ -463,7 +509,7 @@ secouriste.
 Le processus d'agrégation des indices que nous souhaitons développer
 correspond à un stade éloigné de notre méthodologie, \ie qu'il est
 impacté par les choix effectués en amont. C'est notamment le cas de
-ceux portant sur la spatilisation des différents indices.
+ceux portant sur la spatialisation des différents indices.
 
 \paragraph{Compatibilité avec les méthodes de spatialisation}
 
@@ -473,7 +519,8 @@ en compte de \emph{l'imprécision du langage naturel} et de la
 \emph{plausibilité des indices} soit intrinsèque à la méthode de
 spatialisation des \emph{indices de localisation} (objectif
 \ref{subsec:2-1-1}). Il est par conséquent nécessaire que la méthode
-d'agrégation des indices soit à même de conserver ces caractérisques.
+d'agrégation des indices soit à même de conserver ces
+caractéristiques.
 % 
 Or, ces deux composantes sont, par définition, variables. Deux indices
 issus d'une même alerte peuvent avoir une plausibilité considérée
@@ -488,12 +535,13 @@ considération cette différence entre les deux indices, par exemple les
 pondérant. De même, la différence de précision entre deux indices doit
 être prise en compte lors du processus d'agrégation.
 
+
 \paragraph{\texttt{titre ??}}
 %\paragraph{Contexte différent}
 
 % La commutativité de l'agrégation
 % Différence des indices
-% Traitement 'indépendant' de la localisation
+% Traitement "indépendant" de la localisation
 
 Un autre point important est que le processus d'agrégation sera
 potentiellement utilisé plusieurs fois lors du traitement d'une
@@ -544,7 +592,8 @@ Enfin, notre dernier objectif est de proposer une méthode d'évaluation
 de la (ou des) \emph{zone·s de localisation probable} \todo{Veiller à
   ce que le terme soit bien défini auparavant} construites. Cet
 objectif nécessite définir des critères d'évaluation pertinants et
-adaptés au contexye appliquatif de ce travail.
+adaptés au contexte applicatif de ce travail.
+
 
 
 \subsubsection{Contexte scientifique}
@@ -554,6 +603,9 @@ adaptés au contexye appliquatif de ce travail.
 - Tests utilisateurs thèses Cogit, Marion
 - Supervisé vs non supervisé
 \end{verbatim}
+
+La question de l’évaluation des résultats est centrale dans la
+recherche scientifique.
 
 \subsubsection{Verrous scientifiques}
 
@@ -602,7 +654,7 @@ apporter aux secouristes une information supplémentaire, facilitant la
 résolution de l'alerte.
 
 \begin{landscape}
-\begin{table}
+\begin{table}[H]
   \centering
   \input{../tableaux/synthese_objectifs.tex}
   \caption{Synthèse des verrous et des apports attendus pour chaque
