@@ -234,31 +234,30 @@ compléter le recensement des \emph{relations de localisation}
 utilisées dans notre contexte, par un travail d'identification de leur
 sémantique, dans ce même contexte.
 
-Ce même travail de recensement sera entrepris pour les \emph{objets de
-  référence.} Comme pour les \emph{relations de localisation,} on peut
-supposer que, seule une petite partie des objets pouvant être utilisés
-comme points de repère, le sont réellement, dans ce contexte. On
-s'attendra, par exemple, à trouver des \emph{indices de localisation}
-tels que \enquote{je suis au niveau \emph{du sommet}} ou \enquote{la
-  victime est dans \emph{une combe}}, alors que la phrase :
-\enquote{je suis proche \emph{d'un kiosque}}, semble peu
-probable. L'identification et le recensement de ces objets permettra
----~comme pour les \emph{relations de localisation}~--- d'avoir à la
-fois une meilleure connaissance des descriptions de positions dans
-notre contexte applicatif, mais également de focaliser notre travail
-sur les objets (et les \emph{relations de localisation}) les plus
-pertinent·es.
+Ce travail de recensement sera également entrepris pour les
+\emph{objets de référence.} Comme pour les \emph{relations de
+  localisation,} on peut supposer que seule une petite partie des
+objets pouvant être utilisés comme points de repère le sont réellement
+dans ce contexte. On s'attendra, par exemple, à trouver des
+\emph{indices de localisation} tels que \enquote{je suis au niveau
+  \emph{du sommet}} ou \enquote{la victime est dans \emph{une combe}},
+alors que la phrase : \enquote{je suis proche \emph{d'un kiosque}},
+semble peu probable. Comme pour les \emph{relations de localisation,}
+l'identification et le recensement de ces objets permettront d'avoir,
+à la fois une meilleure connaissance des descriptions de positions
+dans notre contexte applicatif, mais aussi de focaliser notre travail
+sur les objets les plus pertinents.
 
-Enfin, notre apport principal ---~qui nécessite la bonne réalisation
-des points précédent~--- à cet objectif sera de développer une méthode
-de spatialisation de ces \emph{indices de localisation} et d'en
-proposer une implémentation fonctionnelle. La méthode développée devra
-être suffisamment générique pour fonctionner avec les différentes
-\emph{relations de localisation} et les différents \emph{objets de
-  référence} identifié$\cdot$es, tout en prenant en compte leurs
-spécificités, dans le but de proposer une solution de spatialisation
-précise et adaptée au contexte, mais suffisamment générique pour être
-enrichie ultérieurement voire étendue à des contextes différents.
+Enfin, notre apport principal à cet objectif sera de développer une
+méthode de spatialisation de ces \emph{indices de localisation} et
+d'en proposer une implémentation fonctionnelle. La méthode développée
+devra être suffisamment générique pour fonctionner avec les
+différentes \emph{relations de localisation} et les différents
+\emph{objets de référence} identifié$\cdot$es, tout en prenant en
+compte leurs spécificités, dans le but de proposer une solution de
+spatialisation précise et adaptée au contexte, mais suffisamment
+générique pour être enrichie ultérieurement voire étendue à des
+contextes différents.
 
 \subsection{La modélisation de \emph{l'imprécision} des \emph{indices
     de localisation}}
@@ -266,39 +265,63 @@ enrichie ultérieurement voire étendue à des contextes différents.
 
 % Introduction partie
 Le travail d'identification de la sémantique des \emph{relations de
-  localisation,} présenté précédemment (obj. \ref{subsec:2-1-1}), se
+  localisation,} présenté précédemment (obj. \ref{subsec:2-1}), se
 heurte à un autre problème, celui de \emph{l'imprécision du langage
   naturel.} En effet, les \emph{relations de localisation} que nous
-cherchons a sémantiser (obj. \ref{sec:2-1}) sont exprimées en langage
-naturel et donc soumises à l'interprétation du locuteur. Par
-conséquent la \emph{limite} entre la zone qui correspond à un
-\emph{indice de localisation} et celle qui n'y correspond pas, n'est
-pas nécessairement ---~voir jamais~--- une ligne. Les conséquences de
-ce fait sont multiples. D'une part, cela complique la formalisation de
-la sémantique des \emph{relations de localisation.} En effet, comment
-définir formellement un concept, alors qu'on peine à en fixer les
-limites ? \textcite{Vandeloise1986}, se montre même particulièrement
+cherchons à sémantiser sont exprimées en langage naturel et donc,
+soumises à l'interprétation du locuteur. Par conséquent, la
+\emph{limite} entre la zone qui correspond à un \emph{indice de
+  localisation} et celle qui n'y correspond pas, n'est pas
+nécessairement, voire jamais, une ligne. Les conséquences de ce fait
+sont multiples. D'une part, cela complique la formalisation des
+\emph{relations de localisation.} En effet, comment définir
+formellement un concept, alors qu'on peine à en fixer les limites ?
+\textcite{Vandeloise1986}, se montre même particulièrement
 critique\footnote{\enquote{Aucun mot spatial ne se prête à une
     description aussi rigide et des contre-exemples peuvent être
     trouvés à toutes les définitions proposées.}
   \autocite[p. 18]{Vandeloise1986}} envers les travaux proposant une
 formalisation des \emph{relations de localisation} à l'aide de la
-logique ---~classique~--- du premier ordre.
+logique ---~classique~--- du premier ordre. En effet, la logique
+\emph{classique} \footnote{C'est-à-dire, telle que formulée au début
+  du \bsc{xix}\up{ème} siècle, principalement par \bsc{Fredge} dans
+  son \emph{Idéographie} (\emph{Begriffsschrift}).}, repose sur un
+principe de \emph{bivalence,} qui implique qu'une \emph{proposition}
+logique est soit \enquote{vraie}, soit \enquote{fausse}. Formaliser
+des \emph{relations de localisation} à l'aide de la logique classique
+implique donc de définir une limite claire entre la zone où la
+\emph{relation de localisation} est valide et celle où elle ne l'est
+pas. Dans les faits, cette limite ne peut être qu'arbitraire. Prenons
+pour exemple la \emph{relation de localisation} \enquote{proche de} et
+considérons que la distance, seule, est un critère de modélisation
+satisfaisant. On pourra dire d'un point adjacent à \emph{l'objet de
+  référence} qu'il en est \emph{proche.} De même, si l'on s'éloigne un
+tout petit peu de l'objet de référence, mettons d'un pas, cette
+description reste valable. En prolongeant ce raisonnement par
+récurrence, on pourra augurer que toute position, quelque soit sa
+distance à \emph{l'objet de référence,} en est \emph{proche}. Ce
+raisonnement, calqué sur le \emph{paradoxe sorite}
+\autocite{Sorensen2018,Hyde2018}, illustre la difficulté à fixer une
+limite \emph{précise} à des concepts qui ne le sont pas. Pourquoi une
+position serait proche d'un objet, alors que celle qui en est éloignée
+d'un pas ne l'est pas ? Bien que courante, cette modélisation est une
+simplification extrême de la sémantique de la \emph{relation de
+  localisation} \enquote{proche de}.
 
-Dans les faits ,cela implique qu'une même phrase, un même mot,
-peutvent -être utilisés pour décrire des localisations dans l'espace
-différentes, voir même totalement incompatibles.
-
-Cette nature du langage naturel peut poser plusieurs soucis. D'une
-part il est impossible d'utiliser la langue comme un outil de
-raisonement précis. C'est d'ailleurs ce constat qui a conduit les
-philosophes analytiques, tels que Fredge ou Russel à travailler à la
-formalisation de la logique, outil à même d'affranchir la réflexion
-des limites du langage naturel.
-
-
+Ces considérations peuvent sembler inutilement complexes, d'autant
+plus que notre objectif est applicatif, pourtant elles sont
+indispensables. Ne pas tenir compte de \emph{l'imprécision} des
+\emph{relations de localisation} pourrait conduire à ignorer des zones
+pertinentes, ou au contraire à proposer une modélisation trop laxiste
+en cherchant à éviter les faux positifs. C'est pourquoi il nous semble
+indispensable de prendre systématiquement en compte
+\emph{l'imprécison} du langage naturel lors de la
+\emph{spatialisation} des \emph{relations de localisation.}
 
 \subsubsection{Contexte scientifique}
+
+Comme nous venons de le mentionner, la notion \emph{d'imprécison} est
+intimement liée aux travaux sur la définition d'un langage formel.
 
 La notion \emph{d'imprécision} a longuement été étudiée en sciences,
 dans un premier temps sous l'impulsion des fondateurs de la logique
