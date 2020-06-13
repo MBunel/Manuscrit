@@ -265,15 +265,14 @@ contextes différents.
 
 % Introduction partie
 Le travail d'identification de la sémantique des \emph{relations de
-  localisation,} présenté précédemment (obj. \ref{subsec:2-1}), se
-heurte à un autre problème, celui de \emph{l'imprécision du langage
-  naturel.} En effet, les \emph{relations de localisation} que nous
-cherchons à sémantiser sont exprimées en langage naturel et donc,
-soumises à l'interprétation du locuteur. Par conséquent, la
-\emph{limite} entre la zone qui correspond à un \emph{indice de
-  localisation} et celle qui n'y correspond pas, n'est pas
-nécessairement, voire jamais, une ligne. Les conséquences de ce fait
-sont multiples. D'une part, cela complique la formalisation des
+  localisation} se heurte à un autre problème, celui de
+l'interprétation du locuteur. En effet, les \emph{relations de
+  localisation} que nous cherchons à sémantiser sont exprimées en
+langage naturel et donc, soumises à son \emph{imprécision.} Par
+conséquent, la \emph{limite} entre la zone qui correspond à un
+\emph{indice de localisation} et celle qui n'y correspond pas, n'est
+pas nécessairement, voire jamais, une ligne. Les conséquences de ce
+fait sont multiples. D'une part, cela complique la formalisation des
 \emph{relations de localisation.} En effet, comment définir
 formellement un concept, alors qu'on peine à en fixer les limites ?
 \textcite{Vandeloise1986}, se montre même particulièrement
@@ -284,8 +283,8 @@ critique\footnote{\enquote{Aucun mot spatial ne se prête à une
 formalisation des \emph{relations de localisation} à l'aide de la
 logique ---~classique~--- du premier ordre. En effet, la logique
 \emph{classique} \footnote{C'est-à-dire, telle que formulée au début
-  du \bsc{xix}\up{ème} siècle, principalement par \bsc{Fredge} dans
-  son \emph{Idéographie} (\emph{Begriffsschrift}).}, repose sur un
+  du \bsc{xix}\up{ème} siècle, principalement par \bsc{Frege} dans son
+  \emph{Idéographie} (\emph{Begriffsschrift}).}, repose sur un
 principe de \emph{bivalence,} qui implique qu'une \emph{proposition}
 logique est soit \enquote{vraie}, soit \enquote{fausse}. Formaliser
 des \emph{relations de localisation} à l'aide de la logique classique
@@ -300,7 +299,7 @@ tout petit peu de l'objet de référence, mettons d'un pas, cette
 description reste valable. En prolongeant ce raisonnement par
 récurrence, on pourra augurer que toute position, quelque soit sa
 distance à \emph{l'objet de référence,} en est \emph{proche}. Ce
-raisonnement, calqué sur le \emph{paradoxe sorite}
+raisonnement, calqué sur le paradoxe sorite
 \autocite{Sorensen2018,Hyde2018}, illustre la difficulté à fixer une
 limite \emph{précise} à des concepts qui ne le sont pas. Pourquoi une
 position serait proche d'un objet, alors que celle qui en est éloignée
@@ -320,27 +319,74 @@ indispensable de prendre systématiquement en compte
 
 \subsubsection{Contexte scientifique}
 
-Comme nous venons de le mentionner, la notion \emph{d'imprécison} est
-intimement liée aux travaux sur la définition d'un langage formel.
+Si le paradoxe sorite, déjà présenté, a été formulé au
+\bsc{iv}\up{ème} siècle av. J.-C., \emph{l'imprécision} ne fut
+réellement étudiée qu'a partir de la fin du \bsc{xix}\up{ème} siècle
+\autocite{Williamson1994}, avec le développement de la logique
+mathématique dont la première formalisation est \emph{l'idéographie}
+du mathématicien \textcite{Frege1879} \footnote{Pour une traduction
+  française voir \autocite{Frege1999}.}. Ce dernier défendra son
+projet idéographique avec, en 1882, la publication de \emph{Que la
+  science justifie le recours à une idéographie} \autocite{Frege1882}
+\footnote{Voir \autocite{Frege2019} pour une traduction
+  récente.}. Dans cet article, \bsc{Frege} soutien que
+\emph{l'imprécision} du langage naturel est source d'erreurs de
+raisonnement et d'interprétation et que, par conséquent, les sciences
+ne peuvent s'en contenter. Elles nécessitent un moyen d'expression
+plus rigoureux, un langage formel, \emph{l'idéographie.} Cette
+\enquote{méfiance} envers le langage naturel est également partagée
+par \textcite{Russell1923}, qui proposera une formalisation du concept
+de \emph{vague,} synonyme \emph{d'imprécision.} Selon sa définition,
+\emph{l'imprécision} est intrinsèquement liée à la représentation de
+la réalité par un \emph{système de signes,} quel qu'il soit. 
 
-La notion \emph{d'imprécision} a longuement été étudiée en sciences,
-dans un premier temps sous l'impulsion des fondateurs de la logique
-mathématique \bsc{Fredge} et \bsc{Russell}, qui voyaient en elle, un
-frein à rigueur des raisonnements énoncés en langage naturel. Le
-projet fondateur de la logique mathématique étant en effet de
-développer un langage rationnel, dépourvu de toute imprécision.
+% Typologie
 
-La logique dite \enquote{classique} n'accepte, en effet, aucune
-imprécision. Un de ses axiomes de base,
+\autocite{Bunel2020}
 
-\paragraph{Le concept \emph{d'imprécision} et sa modélisation}
+\paragraph{La modélisation de \emph{l'imprécision}}
 
-Travail sur le flou
-Russell
-Varzi
-Zadeh
+Divers cadres théoriques ont été développés pour modéliser
+\emph{l'imprécision.} Si la logique classique n'en reconnait pas
+l'existence, d'autres formalisations intègrent directement cette
+notion dans leur grammaire. C'est le cas des logiques multivalentes,
+comme la logique de \bsc{Łukasiewicz} ou la logique floue
+\autocite{Williamson1994,Sorensen2018}. Ces logiques alternatives
+permettent de raisonner sur des valeurs de vérité intermédiaires,
+entre le \enquote{vrai} et le \enquote{faux}. Ces nouvelles logiques
+permettent de répondre au paradoxe sorite et autres raisonnements
+jouant sur \emph{l'imprécision} du langage naturel. Pour reprendre
+notre exemple précédent, si l'on se rapproche peu à peu d'un objet on
+finira par pouvoir décrire notre position comme étant \enquote{proche}
+de cet objet. Avec un raisonnement fondé sur la logique classique, on
+est contraints de définir arbitrairement la limite entre les positions
+qui sont \enquote{proches} de l'objet considéré et celles qui ne le
+sont pas. Alors que les logiques multivalentes permettent de définir
+un entre-deux, une partie de l'espace où les propositions logiques :
+\enquote{je suis proche} et \enquote{je ne suis pas proche} sont
+toutes les deux fausses ou partiellement vraies, en fonction de
+l'approche retenue. \textcite{Tye1994}, par exemple, propose une
+modélisation basée sur une logique trivalente, dont les valeurs de
+vérités sont : \enquote{vrai}, \enquote{faux} et
+\enquote{indéterminé}. Avec cette modélisation, la zone située entre
+celle validant la proposition \enquote{je suis proche} et celle ne la
+validant pas a une réponse \enquote{indéterminée} a cette
+proposition. Cette approche est assez différente des solutions fondées
+sur la logique floue, qui considèrent que la proposition \enquote{je
+  suis proche} à un degré de vérité qui décroit au fur et à mesure que
+l'on s'éloigne de l'objet en question. D'autres théories permettent
+également la prise en compte de \emph{l'imprécision,} comme celle des
+ensembles approximatifs de \textcite{Pawlak1982}, qui propose une
+modélisation trivalente, similaire à celle de \textcite{Tye1994}
+\autocite{Pawlak1997}, ou la théorie des fonctions de croyances.
 
-\paragraph{\emph{L'imprécision} spatiale}
+\paragraph{\emph{Imprécision} et espace}
+
+Si l'on étend ces questionnements à des sujets spatiaux.
+
+\autocite{Varzi2001,Varzi2015,Smith2000,Collins2000}
+
+Fisher sorites paradox
 
 Les implications spatiales du concept \emph{d'imprécision} ont été
 traitées par…
@@ -349,6 +395,24 @@ Dilo Schneider
 
 Enfin, certains travaux ont couplé la prise en compte de l'imprécision
 avec la spatialisation. C'est 
+
+La question de la formalisation et de l'implémentation de modèles
+théoriques permettant la manipulation d'objets géographiques
+\emph{imprécis} est, par ailleurs, un champ de recherche assez
+dynamique en sciences de l'information géographiques
+\autocite{Bunel2020}. De nombreux modèles théoriques ont étés
+proposés, qu'ils soient basés sur la théorie des ensembles
+approximatifs \autocite{Schneider1996,Cohn1996,Clementini1996} ou la
+théorie des ensembles flous \autocite{Schneider1999}. L’application de
+ces modèles et plus généralement des théories précédemment présentées,
+a des problématiques géographiques ou spatiales a concerné de nombreux
+sujets et thématiques, comme la recherche en archéologie
+\autocite{Runz2008a, Zoghlami2016}, en architecture
+\autocite{Arabacioglu2010}, en cartographie
+\autocite{Didelon2009,Didelon2011}, traitement d'image
+\autocite{Takemura2012,Vanegas2011,Bloch1996}, pour l'aide à la
+décision \autocite{Griot2007,Makropoulos2003} ou en appareillement de
+données géographiques\autocite{Olteanu-Raimond2008}.
 
 \subsubsection{Verrous scientifiques}
 
@@ -438,6 +502,9 @@ des \emph{indices de localisation.}
 
 La notion \emph{d'incertitude} est fortement liée à celle,
 précédemment présentée, \emph{d'imprécision.}
+
+cf. chapitre 1 livre 2019
+cf. lagacherie et al 1996
 
 \subsubsection{Verrous scientifiques}
 
