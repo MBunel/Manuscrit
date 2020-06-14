@@ -55,6 +55,8 @@ permettre la spatialisation \todo{Attention terme non défini, ajouter
 
 \subsubsection{Contexte scientifique}
 
+
+
 La question de l'indentification de positions décrites à fait l'objet
 de différents travaux, aux visées applicatives diverses.
 
@@ -113,6 +115,7 @@ formalise l'ensemble des \emph{relations de localisation.}
 \autocite{Gui-Wu2009}
 
 \paragraph{Applications}
+
 
 De nombreux domaines de recherche utilisent la formalisation de
 relations spatiales pour répondre à des problématiques qui leur sont
@@ -338,9 +341,16 @@ plus rigoureux, un langage formel, \emph{l'idéographie.} Cette
 par \textcite{Russell1923}, qui proposera une formalisation du concept
 de \emph{vague,} synonyme \emph{d'imprécision.} Selon sa définition,
 \emph{l'imprécision} est intrinsèquement liée à la représentation de
-la réalité par un \emph{système de signes,} quel qu'il soit. 
+la réalité par un \emph{système de signes,} quel qu'il soit. Pour
+\textcite{Russell1923} \emph{l'imprécision} est fondamentalement liée
+aux \emph{systèmes de signes} utilisés pour décrire la réalité. Ces
+derniers ne sont pas \emph{imprécis} dans l'absolu, c'est la relation
+entre deux \emph{systèmes de signes} qui est qualifiée de
+\emph{précise} ou \emph{d'imprécise.}
+\tdi{définition de Russell}
 
 % Typologie
+\emph{L'imprécision} est un concept qui est généralement rapproché 
 
 \autocite{Bunel2020}
 
@@ -382,7 +392,7 @@ modélisation trivalente, similaire à celle de \textcite{Tye1994}
 
 \paragraph{\emph{Imprécision} et espace}
 
-Si l'on étend ces questionnements à des sujets spatiaux.
+La notion d'\emph{imprécison} a également été appliquée à l'espace
 
 \autocite{Varzi2001,Varzi2015,Smith2000,Collins2000}
 
@@ -391,10 +401,6 @@ Fisher sorites paradox
 Les implications spatiales du concept \emph{d'imprécision} ont été
 traitées par…
 
-Dilo Schneider
-
-Enfin, certains travaux ont couplé la prise en compte de l'imprécision
-avec la spatialisation. C'est 
 
 La question de la formalisation et de l'implémentation de modèles
 théoriques permettant la manipulation d'objets géographiques
@@ -410,9 +416,12 @@ sujets et thématiques, comme la recherche en archéologie
 \autocite{Runz2008a, Zoghlami2016}, en architecture
 \autocite{Arabacioglu2010}, en cartographie
 \autocite{Didelon2009,Didelon2011}, traitement d'image
-\autocite{Takemura2012,Vanegas2011,Bloch1996}, pour l'aide à la
-décision \autocite{Griot2007,Makropoulos2003} ou en appareillement de
-données géographiques\autocite{Olteanu-Raimond2008}.
+\autocite{Brandtberg2002}, pour l'aide à la décision
+\autocite{Griot2007,Makropoulos2003} ou en appareillement de données
+géographiques \autocite{Olteanu-Raimond2008}. Ces théories ont
+également été utilisées pour prendre en compte \emph{l'imprécision}
+lors de la spatialisation de descriptions de positions
+\autocite{Takemura2012,Vanegas2011,Bloch1996,Hudelot2008}.
 
 \subsubsection{Verrous scientifiques}
 
@@ -422,8 +431,13 @@ Dans notre cas, la prise en compte de \emph{l'imprécision} des
 \paragraph{L'intégration de \emph{l'imprécision} dans la
   \emph{spatialisation}}
 
-Le premier d'entre eux est la question de l'intégration de cette
-composante au sein du processus de \emph{spatialisation.}
+Le premier des verrous à la prise en compte de \emph{l'imprécision}
+est l'identification d'une théorie qui permette sa modélisation, tout
+en étant compatible avec la solution de \emph{spatialisation} des
+\emph{indices de localisation} retenue. Chaque théorie capable de
+modéliser \emph{l'imprécision} ayant ses spécificités propres il est
+nécessaire de s'assurer de leur bonne intégration avec la méthode de
+spatialisation définie.
 
 \paragraph{L'évaluation de \emph{l'imprécision}}
 
@@ -432,7 +446,7 @@ Le second verrou est la question de l'évaluation de
 \emph{relations de localisation} ---~et plus généralement le langage
 naturel~--- sont \emph{imprécis,} il reste qu'ils peuvent l'être à des
 degrés divers. Pour l'illustrer, nous pouvons utiliser les
-\emph{indices de localisation:} \enquote{je suis \emph{proche de}
+\emph{indices de localisation :} \enquote{je suis \emph{proche de}
   Grenoble} et \enquote{je suis \emph{aux alentours de} Grenoble}. Ces
 deux indices ont une signification semblable, tous deux renseignent
 sur la proximité du locuteur avec la ville de Grenoble. On aurait
@@ -456,14 +470,12 @@ ces deux aspects.
 
 \subsubsection{Apports envisagés}
 
-\tdi{Voir si nécessaire de le compléter}
-
 Sur la question de la modélisation de \emph{l'imprécision} des
-\emph{relations de localisation,} notre principal apport sera
-de développer une méthode permettant de prendre en compte
-l'imprécision des relations spatiales. Cette dernière devra être
-compatible avec la méthode de \emph{spatialisation} des
-\emph{relations de localisation} définie parallèlement.
+\emph{relations de localisation,} notre principal apport sera de
+développer une méthode permettant de prendre en compte l'imprécision
+des relations spatiales. Cette dernière devra être compatible avec la
+méthode de \emph{spatialisation} des \emph{relations de localisation}
+définie parallèlement.
 
 Comme nous l'expliquions lors de la présentation des verrous de cet
 objectif scientifique, nous devons également identifier une solution
@@ -501,10 +513,38 @@ des \emph{indices de localisation.}
 \subsubsection{Contexte scientifique}
 
 La notion \emph{d'incertitude} est fortement liée à celle,
-précédemment présentée, \emph{d'imprécision.}
+précédemment présentée, \emph{d'imprécision}. Comme cette dernière,
+cette notion qualifie une connaissance. Mais là où la notion
+\emph{d'imprécision} désigne une caractéristique intrinsèque de la
+connaissance, \emph{l'incertitude} est liée à l'observateur, c'est une
+caractéristique contextuelle, qui qualifie le doute de l'observateur
+sur la véracité de la connaissance \autocite{Bunel2020}. Ces deux
+notions sont souvent confondues, notamment dans la littérature
+anglophone où des objets géographiques \emph{imprécis} sont qualifiés
+\emph{d'incertains}.
 
+La prise en compte de \emph{l'incertitude} n'est pas nécessairement
+possible avec les mêmes théories que celles utilisées pour modéliser
+l'imprécision. La logique floue, par exemple, permet la modélisation
+de \emph{l'imprécision,} mais non de \emph{l'incertitude,} à moins
+d'être complétée par la théorie des possibilités
+\autocite{Bouchon-Meunier1995,Bouchon-Meunier2007}. Au contraire, la
+théorie des fonctions de croyances permet de modéliser
+\emph{l'imprécision} et \emph{l'incertitude} sans adaptations. Enfin,
+d'autres théories ne permettent que la modélisation de
+\emph{l'incertitude,} sans prise en compte de \emph{l'imprécision,}
+c'est par exemple le cas de la théorie des probabilités, du moins dans
+leur interprétation épistémique \autocite{Hajek2019}.
+
+Nous n'avons pas connaissance de travaux portant uniquement sur la
+modélisation de \emph{l'incertitude} d'objets géographiques. Cette
+considération nous semble toujours couplée à une modélisation de
+\emph{l'imprécision.}
+
+\begin{verbatim}
 cf. chapitre 1 livre 2019
 cf. lagacherie et al 1996
+\end{verbatim}
 
 \subsubsection{Verrous scientifiques}
 
@@ -585,6 +625,9 @@ en compte l'évaluation de la plausibilité de l'indice faite par le
 secouriste.
 
 \subsubsection{Contexte scientifique}
+
+De nombreuses théories existent pour permettre la fusion
+d'informations issues de sources diverses.
 
 \begin{verbatim}
 - Présentation des théories
@@ -675,16 +718,19 @@ méthode sera implémentée à la suite de la méthode de
 \emph{spatialisation} et \emph{d'agrégation,} permettra d'appliquer
 l'ensemble de notre méthodologie à la résolution de cas réels.
 
-\subsection{L'évaluation de la \emph{zone de localisation probable}}
+\subsection{L'évaluation des \emph{zones de localisation}}
 \label{subsec:2-1-5}
 
 Enfin, notre dernier objectif est de proposer une méthode d'évaluation
-de la (ou des) \emph{zone·s de localisation probable} \todo{Veiller à
-  ce que le terme soit bien défini auparavant} construites. Cet
-objectif nécessite définir des critères d'évaluation pertinants et
-adaptés au contexte applicatif de ce travail.
-
-
+des \emph{zones de localisation} construites et ce qu'il s'agisse des
+\emph{zones de localisation compatibles} ou \emph{probables.} Il est,
+en effet, primordial de savoir si les zones construites à l'aide de
+notre méthodologie de \emph{spatialisation} des \emph{indices de
+  localisation} sont des \enquote{bonnes zones} ou non. Une mesure de
+qualité pertinente offrira la possibilité de juger de la qualité des
+méthodes de \emph{spatialisation} développées. Cependant cet objectif
+nécessite définir des critères d'évaluation pertinants et adaptés au
+contexte applicatif de ce travail.
 
 \subsubsection{Contexte scientifique}
 
