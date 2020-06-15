@@ -20,7 +20,6 @@
 % Ici un clone d'helvetica
 \newfontfamily{\dispfont}{Nimbus Sans L}
 
-% Ajout de caractères supplémentaires
+% Voir : https://gist.github.com/MBunel/37100e111fe19f288d32d65f643f3e79
 \usepackage{newunicodechar}
-% définition du point médian
-\newunicodechar{·}{$\cdot$}
+\newunicodechar{·}{\kern-.25em\textperiodcentered\kern-.25em}
