@@ -1,5 +1,7 @@
 % Introduction objectifs scientifiques
-\tdi{En cours}
+Nous avons identifié cinq objectifs scientifiques principaux pour
+élaborer une méthode permettant de construire une \emph{zone de
+  localisation} à partir d'une description de position.
 
 % Annonce tableau synthèse
 On trouvera une synthèse des objectifs scientifiques, ainsi que de
@@ -12,179 +14,132 @@ leurs verrous et des contributions attendues dans le
 \label{subsec:2-1-1}
 
 % Introduction
-
-% Présentation de l'objectif
-Comme nous l'expliquions précédemment, notre objectif central est
-d'identifier une position à partir de sa description. Toutefois, nous
-n'avons pas encore détaillé ce concept de \enquote{description de
-  position}.
-
-%
-Cette tâche nécessite d'arriver à définir des méthodes permettant de
-construire une zone à partir de descriptions, telles que \enquote{je
-  suis sous une route.} Cette tâche nécessite donc de travailler à
-l'identification de la sémantique des termes utilisés pour décrire une
-position, puis d'en proposer une modélisation, à même de pouvoir
-systématiser la construction d'une \enquote{zone} à partir d'une
-description.
-
-% Pas nécessaire de faire de l'analyse du langage naturel
-Comme nous le mentionnons dans le chapitre précédent (\todo{mettre res
-  du passage où j'explique cet aspect dans le chapitre 1}), notre
-objectif n'est pas de déveloper une solution se substituant aux
-secouristes, mais de leur proposer une solution s'intégrant dans leur
-processus métier actuel. Cela implique que nous pouvons toujours
-compter sur la présence du secouriste pour effectuer certaines
-actions. Parmi celles-ci, l'écoute et la compréhension du discours du
-requérant. En effet, il n'est pas nécessaire, voire souhaitable
-\footnote{Tout du moins du point de vue des professionels du
-  secours.}, d'automatiser entièrement le processus de localisation de
-la victime. Un tel objectif nécessiterait par ailleurs de développer
-des solutions d'analyse automatisée du langage parlé, en vue d'en
-extraire les relations de localisation.
-
-Cette étape n'est pas nécessaire dans notre cas, puisque nous pouvons
-confier cette tache de \enquote{sémantisation} de la description orale
-d'une position au secouriste. 
-
-Notre travail se limitera donc à identifier les \enquote{types} de
-descriptions utilisées dans notre contexte, de les exprimer dans un
-vocabulaire controlé, puis d'en proposer une modélisation a même d'en
-permettre la spatialisation \todo{Attention terme non défini, ajouter
-  une phrase de définition}.
+La construction d'une \emph{zone de localisation} à partir de
+descriptions nécessite d'arriver à définir des méthodes permettant
+d'interpréter des phrases telles que \enquote{je suis sous une route.}
+Nous devons donc travailler à l'identification de la sémantique des
+termes utilisés pour décrire une position, puis d'en proposer une
+modélisation, à même de pouvoir systématiser la construction d'une
+\enquote{zone} à partir d'une description. Comme nous le mentionnons
+dans le chapitre précédent (\ref{subsec:1-2-2}), notre objectif n'est
+pas de déveloper une solution se substituant aux secouristes, mais de
+leur proposer une solution s'intégrant dans leur démarche
+actuelle. Par conséquent, nous pouvons toujours compter sur la
+présence du secouriste pour effectuer certaines actions, comme
+l'écoute et l'analyse du discours du requérant. En effet, il n'est pas
+nécessaire, voire souhaitable \footnote{Tout du moins du point de vue
+  des professionels du secours.}, d'automatiser entièrement le
+processus de localisation de la victime, ce qui nécessiterait, par
+ailleurs, de développer des solutions d'analyse automatisée du langage
+oral. Cette étape n'est, cependant, pas nécessaire dans notre cas,
+puisque nous pouvons confier cette tache de \enquote{sémantisation} de
+la description orale d'une position au secouriste. Notre travail se
+limitera donc à identifier les \enquote{types} de descriptions
+utilisées dans notre contexte, de les exprimer dans un vocabulaire
+controlé, puis d'en proposer une modélisation à même d'en permettre la
+spatialisation.
 
 \subsubsection{Contexte scientifique}
 
-
-
-La question de l'indentification de positions décrites à fait l'objet
-de différents travaux, aux visées applicatives diverses.
-
-
-% Réflexions autour de la sémantique des relations spatiales
-
-Enfin, dans une thématique plus proche de notre travail,  
-
-\emph{Naive geography} \autocite{Egenhofer1995}
-
-Mateh
-
-Moncla
-
-
-
-Vasardini
-Bloch
-Brézil icc
-
-vandeloise, kratch, augenarge, borillio 
+La question de l’identification d'une position correspondant à une
+description donnée en langage naturel peut sembler être un sujet dont
+les applications sont limitées à des cas aussi spécifiques que notre
+contexte applicatif. Ce n'est cependant pas le cas, puisque ces
+travaux permettent de faciliter la communication entre machines et
+êtres humains. En effet, la représentation informatique de positions
+et plus généralement, d'objets géographiques, est assez éloignée de la
+façon dont les hommes et les femmes conçoivent l'espace et leur
+localisation.  Le concept de \emph{Naive geography}, proposé par
+\textcite{Egenhofer1995}, met justement en évidence cette dichotomie.
+%
+La situation actuelle est telle que, pour des raisons techniques, il
+est beaucoup plus simple, pour un ordinateur, d'identifier les
+coordonnées d'un point à la surface de la terre avec une précision
+submétrique, que d'identifier \enquote{le café sous ma maison}, alors
+que pour un être humain ce sera l'inverse \autocite{Duchene2019}. Le
+problème de ce genre d'exercice est qu'il est difficile d'identifier
+la sémantique des termes utilisés, celle-ci étant dépendante du
+contexte. Reprenons l'exemple du café. Vous aurez très certainement
+compris en lisant cet énoncé que \enquote{le café} était, par
+métonymie, un lieu. Cette phrase désigne un endroit et non une boisson
+psychotrope, le moment où on la consomme, ou les grains du
+caféiers. De la même manière, le terme \enquote{ma maison}, peut être
+interprété comme un synonyme d'\enquote{habitat individuel} ou comme
+une nouvelle métonymie désignant \enquote{mon foyer}. S'il est,
+généralement, facile pour un être humain d'interpréter correctement ce
+type de phases, ce qui n'est pas le cas pour une machine.
+%
+Cet exemple porte sur l'interprétation automatisée du langage naturel
+dans le cas général, mais les mêmes problèmes s'appliquent également
+aux \emph{relations de localisation.} Dans cet exemple, le
+\enquote{café} est \enquote{sous} mon domicile, mais comment faire
+comprendre à un ordinateur quelles sont les positions qui sont
+effectivement \enquote{sous ma maison} ? Pour ce faire il est
+nécessaire d'identifier la sémantique des \emph{relations de
+  localisation} utilisées dans le langage naturel.
 
 \paragraph{La formalisation des \emph{relations de localisation}}
 
-La réflexion autour de l'identification de la sémantique des
-\emph{relations de localisation} a été abordée par de nombreux travaux
-en linguistique, que ce soit francophone ou anglophone.
-
-\autocite{Vandeloise1986}
-\autocite{Borillo1998}
-
+Ce travail d'identification et de formalisation des \emph{relations de
+  localisation} a été entrepris par de nombreux chercheurs, comme
+\textcite{Vandeloise1986} qui a proposé une analyse complète de la
+sémantique de \emph{relations de localisation} utilisées en
+français. Ce travail a été consolidé par les travaux de
+\textcite{Borillo1998}, qui portent quant à eux sur la morphologie des
+descriptions de position, ou de \textcite{Aurnague1993, Aurnague1997},
+qui irons jusqu'à proposer une formalisation logique des
+\emph{relations de localisations.} Des travaux similaires ont été
+entrepris pour la langue anglaise, notamment par
+\autocite{Kracht2002,Mark1999,Freksa2018,Carlson2005,Lang1991,Matsakis2010}.
 En 2010 \textcite{Bateman2010} proposerons \emph{l'ontologie} GUM, qui
-formalise l'ensemble des \emph{relations de localisation.}
-
-\autocite{Aurnague1997}
-
-\autocite{Kracht2002}
-\autocite{Aurnague1993}
-\autocite{Mark1999}
-\autocite{Freksa2018}
-\autocite{Carlson2005}
-\autocite{Lang1991}
-
-% vérifier
-\autocite{Hois2008}
-\autocite{Frank1992}
-\autocite{Moratz2008}
-\autocite{Cohn2001}
-\autocite{Kordjamshidi2012}
-\autocite{Matsakis2010}
-\autocite{Frank1997}
-\autocite{Talmy2005}
-\autocite{Freeman1975}
-\autocite{Zelinsky-Wibbelt1993}
-\autocite{Carlson2004}
-\autocite{Gui-Wu2009}
+formalise l'ensemble des \emph{relations de localisation.} L'ensemble
+de ces travaux permet d'avoir de nombreuses connaissances sur la
+sémantique des \emph{relations de localisation,} mais ils ne sont pas
+destinés à une application particulière, pourtant de nombreux autres
+travaux ont eu besoin de spatialiser des \emph{relations de
+  localisation.}
 
 \paragraph{Applications}
 
-
-De nombreux domaines de recherche utilisent la formalisation de
-relations spatiales pour répondre à des problématiques qui leur sont
-propres.
-
-\autocite{Xu2007a}
-\autocite{Xu2007}
-\autocite{Xu2006}
-\autocite{Wolter2018}
-\autocite{Dittrich2015}
-\autocite{Vanegas2011}
-\autocite{Du2016}
-\autocite{Hornsby2009}
-\autocite{Mathet2000}
-\autocite{Hudelot2008a}
-\autocite{Bloch1996}
-\autocite{Hudelot2008}
-\autocite{Levit2007}
-\autocite{Evans2008}
-\autocite{Takemura2012}
-\autocite{Shariff1998}
-\autocite{Skubic2004}
-\autocite{Hall2015}
-\autocite{Leopold2015}
-\autocite{Denis1997}
+Parmi les applications de spatialisation des \emph{relations de
+  localisation} on peut retrouver des travaux en analyse d'image
+\autocite{Hudelot2008, Hudelot2008a,Bloch1996, Vanegas2011,
+  Takemura2012}, en robotique \autocite{Skubic2004}, en sciences de
+l'information géographique
+\autocite{Xu2007a,Xu2007,Xu2006,Wolter2018,Dittrich2015,Du2016,Hornsby2009,Mathet2000,Hall2015}
 
 
-Purves "geographic information revieal''
-
-\tdi{\autocite{Duchene2019}}
+%\autocite{Levit2007}
+%\autocite{Evans2008}
+%\autocite{Shariff1998}
+%\autocite{Leopold2015}
+%\autocite{Denis1997}
 
 \subsubsection{Verrous scientifiques}
 
-La mise en place d'une telle méthode de spatialisation se heurte
-néanmoins à deux verrous majeurs, l'un intrinsèquement lié à cet
-exercice, l'autre dépendant de notre contexte applicatif.
+La mise en place d'une méthode de spatialisation se heurte néanmoins à
+deux verrous majeurs, l'un intrinsèquement lié à cet exercice, l'autre
+dépendant de notre contexte applicatif.
 
-\paragraph{Nature des relations spatiales}
-
-Les victimes peuvent, certes, utiliser les mêmes mots pour décrire
-leur position, mais dans un contexte différent, ou en se rapportant à
-des objets qui le sont tout autant. On peut être \enquote{sur}
-\emph{un chemin} comme \emph{une montagne.}
-
-\paragraph{Données}
-
-\begin{verbatim}
-- Peu de données
-- Impossibilité de faire de l'apprentissage
-- Pas de recoupement sur les positions
-- Description sensiblement différentes
-- Utilisation variable des mêmes relations spatiales
-- Variabilité sémantique des relations spatiales
-\end{verbatim}
+Le premier verrou est la grande variabilité sémantique des
+\emph{relations de localisation.} Chacune d'entre elles peu prendre
+des sens légèrement différents, en fonction du contexte ou du
+locuteur. Par conséquent deux requérant peuvent utiliser les mêmes
+mots pour décrire des positions qui sont très différentes, par
+exemple, on peut être \enquote{sur} \emph{un chemin} comme \emph{une
+  montagne.}
 
 le second verrou est lié à la richesse des données dont nous disposons
-pour développer et tester nos méthodes de spatialisation.
-
-Les seules données dont nous disposons (et pouvons disposer) sont des
+pour développer et tester nos méthodes de spatialisation. Les seules
+données dont nous disposons (et pouvons disposer) sont des
 enregistrements d'alertes, traitées par le \ac{pghm} de
 Grenoble. Chaque enregistrement, contient \emph{l'ensemble des indices
   de localisation} utilisés par le requérant. Un problème notable est
 que chacune de ces alertes est unique. Il nous est donc impossible de
-les confronter.
-% Peu de données et Faible recoupement
-Par exemple, nous n'avons pas à notre disposition, deux
-enregistrements différents, décrivant la même position. Il nous est
-donc impossible de comparer différentes descriptions qui auraient été
-faites de la même position. De même, les \emph{indices de
+les confronter. Par exemple, nous n'avons pas à notre disposition,
+deux enregistrements différents, décrivant la même position. Il nous
+est donc impossible de comparer différentes descriptions qui auraient
+été faites de la même position. De même, les \emph{indices de
   localisation} utilisés par les requérants sont si divers, que nous
 ne connaissons que peu de cas, où le même \emph{indice de
   localisation} (\eg \enquote{je suis dans une forêt}) est utilisé
@@ -208,8 +163,8 @@ cela ne garantit pas pour autant qu'un \emph{indice} important, voire
 essentiel, ne puisse pas être oublié. Cette \emph{incomplétude} de la
 description, que l'on peut aisément supposer de systématique, a pour
 conséquence de rendre impossible la supposition de l’existence
-d'indices, non donnés explicitement par le.a requérant.e. Par exemple,
-ce n'est pas parce que la victime ne précise pas qu'elle est en forêt,
+d'indices, non donnés explicitement par le requérant. Par exemple, ce
+n'est pas parce que la victime ne précise pas qu'elle est en forêt,
 qu'elle n'est effectivement pas en forêt, \ie qu'un \emph{indice} non
 connu du secouriste n'est pas nécessairement faux. Par conséquent, il
 est hasardeux, d'inférer des nouveaux \emph{indices} à partir d'une
@@ -300,7 +255,7 @@ satisfaisant. On pourra dire d'un point adjacent à \emph{l'objet de
   référence} qu'il en est \emph{proche.} De même, si l'on s'éloigne un
 tout petit peu de l'objet de référence, mettons d'un pas, cette
 description reste valable. En prolongeant ce raisonnement par
-récurrence, on pourra augurer que toute position, quelque soit sa
+récurrence, on pourra augurer que toute position, quelle que soit sa
 distance à \emph{l'objet de référence,} en est \emph{proche}. Ce
 raisonnement, calqué sur le paradoxe sorite \footnote{Ce paradoxe,
   formulé par le philosophe Grec Eubulide au \bsc{iv}\up{ème} siècle
@@ -352,13 +307,32 @@ la réalité par un \emph{système de signes,} quel qu'il soit. Pour
 aux \emph{systèmes de signes} utilisés pour décrire la réalité. Ces
 derniers ne sont pas \emph{imprécis} dans l'absolu, c'est la relation
 entre deux \emph{systèmes de signes} qui est qualifiée de
-\emph{précise} ou \emph{d'imprécise.}
-\tdi{définition de Russell}
+\emph{précise} ou \emph{d'imprécise.} Cette dernière est qualifiée de
+\emph{précise} lorsqu'il existe une bijection entre les deux ensembles
+de signes, \ie que chaque signe a et n'a qu'un équivalent, par
+conséquent le passage d'un \emph{système de signes} à l'autre est sans
+équivoque. Dans le cas contraire, un même signe peut être
+\enquote{traduit} de diverses façon, laissant dès lors place à
+l'interprétation. Par exemple, la \emph{relation de localisation}
+\enquote{sous} en français a deux traductions en anglais,
+\enquote{\emph{under}} et \enquote{\emph{below}}, à la sémantique
+légèrement différente. \enquote{\emph{Under}} implique soit à
+proximité immédiate de l'objet de référence, dans son prolongement
+vertical, alors que \enquote{\emph{below}} non.
 
 % Typologie
-\emph{L'imprécision} est un concept qui est généralement rapproché 
-
-\autocite{Bunel2020}
+Le concept \emph{d'imprécision} est généralement rapproché d'autres
+concepts. En intelligence artificielle, par exemple,
+\emph{l'imprécision} est définie comme étant une des composantes de
+\emph{l'imperfection} avec \emph{l'incertitude,} que nous présenterons
+ci-dessous et \emph{l'incomplétude,} désignant le manque de
+connaissances
+\autocite{Bouchon-Meunier1995,Bouchon-Meunier2007}. D'autres
+typologies existent cependant, \textcite{Niskanen1989}, par exemple,
+ne parle pas \enquote{\emph{d'imperfection}}, mais de
+\enquote{\emph{non-précision}} et découpe cette notion en quatre
+composantes, \emph{généralité,} \emph{ambiguité,} \emph{imprécision}
+et \emph{incertitude.}
 
 \paragraph{La modélisation de \emph{l'imprécision}}
 
@@ -369,16 +343,16 @@ notion dans leur grammaire. C'est le cas des logiques multivalentes,
 comme la logique de \bsc{Łukasiewicz} ou la logique floue
 \autocite{Williamson1994,Sorensen2018}. Ces logiques alternatives
 permettent de raisonner sur des valeurs de vérité intermédiaires,
-entre le \enquote{vrai} et le \enquote{faux}. Ces nouvelles logiques
-permettent de répondre au paradoxe sorite et autres raisonnements
-jouant sur \emph{l'imprécision} du langage naturel. Pour reprendre
-notre exemple précédent, si l'on se rapproche peu à peu d'un objet on
-finira par pouvoir décrire notre position comme étant \enquote{proche}
-de cet objet. Avec un raisonnement fondé sur la logique classique, on
-est contraint de définir arbitrairement la limite entre les positions
-qui sont \enquote{proches} de l'objet considéré et celles qui ne le
-sont pas. Alors que les logiques multivalentes permettent de définir
-un entre-deux, une partie de l'espace où les propositions logiques :
+entre le \enquote{vrai} et le \enquote{faux}, et permettent de
+répondre au paradoxe sorite et autres raisonnements jouant sur
+\emph{l'imprécision} du langage naturel. Pour reprendre notre exemple
+précédent, si l'on se rapproche peu à peu d'un objet on finira par
+pouvoir décrire notre position comme étant \enquote{proche} de cet
+objet. Avec un raisonnement fondé sur la logique classique, on est
+contraint de définir arbitrairement la limite entre les positions qui
+sont \enquote{proches} de l'objet considéré et celles qui ne le sont
+pas. Alors que les logiques multivalentes permettent de définir un
+entre-deux, une partie de l'espace où les propositions logiques :
 \enquote{je suis proche} et \enquote{je ne suis pas proche} sont
 toutes les deux fausses ou partiellement vraies, en fonction de
 l'approche retenue. \textcite{Tye1994}, par exemple, propose une
@@ -398,15 +372,23 @@ modélisation trivalente, similaire à celle de \textcite{Tye1994}
 
 \paragraph{\emph{Imprécision} et espace}
 
-La notion d'\emph{imprécison} a également été appliquée à l'espace
-
-\autocite{Varzi2001,Varzi2015,Smith2000,Collins2000}
-
-Fisher sorites paradox
-
-Les implications spatiales du concept \emph{d'imprécision} ont été
-traitées par…
-
+Les implications spatiales du concept d'\emph{imprécison} ont
+également été spécifiquement étudiées. Comme l'illustrent les exemples
+que nous avons utilisés jusqu'ici, une \emph{relation de localisation}
+est sujette à \emph{l'imprécision,} comme n'importe quelle
+connaissance formulée en langage naturel. Les notions de \emph{limite}
+ou de \emph{frontière} étant centrales en géographie, l’existence
+d'objets difficilement délimitables ne va pas sans poser quelques
+problèmes épistémologiques. Dès la fin des années 1970 des géographes,
+comme \textcite{Gale1976} ou \textcite{Leung1979}, ont travaillé à
+appliquer la logique floue au problème de la \emph{régionalisation.}
+Toutefois, ces travaux ne nous semblent pas avoir eut un impact
+durable en géographie et de nouvelles propositions sont apparues au
+cours du temps \autocite{Bunel2020}. C'est principalement à partir des
+années 2000 que ces questions théoriques ont été remises au gout du
+jour. \textcite{Varzi2001,Varzi2015,Smith2000,Collins2000} ont, par
+exemple, travaillé sur la notion de frontière et son lien avec la
+notion \emph{d'imprécision.}
 
 La question de la formalisation et de l'implémentation de modèles
 théoriques permettant la manipulation d'objets géographiques
@@ -434,9 +416,6 @@ lors de la spatialisation de descriptions de positions
 Dans notre cas, la prise en compte de \emph{l'imprécision} des
 \emph{relations de localisation} pose deux problèmes majeurs.
 
-\paragraph{L'intégration de \emph{l'imprécision} dans la
-  \emph{spatialisation}}
-
 Le premier des verrous à la prise en compte de \emph{l'imprécision}
 est l'identification d'une théorie qui permette sa modélisation, tout
 en étant compatible avec la solution de \emph{spatialisation} des
@@ -444,8 +423,6 @@ en étant compatible avec la solution de \emph{spatialisation} des
 modéliser \emph{l'imprécision} ayant ses spécificités propres, il est
 nécessaire de s'assurer de leur bonne intégration avec la méthode de
 spatialisation définie.
-
-\paragraph{L'évaluation de \emph{l'imprécision}}
 
 Le second verrou est la question de l'évaluation de
 \emph{l'imprécision.} En effet, s'il est acquis que les
@@ -547,11 +524,6 @@ modélisation de \emph{l'incertitude} d'objets géographiques. Cette
 dernière est toujours couplée à une modélisation de
 \emph{l'imprécision.}
 
-\begin{verbatim}
-cf. chapitre 1 livre 2019
-cf. lagacherie et al 1996
-\end{verbatim}
-
 \subsubsection{Verrous scientifiques}
 
 Les verrous à la prise en compte de \emph{l'incertitude} sont
@@ -632,16 +604,33 @@ secouriste.
 
 \subsubsection{Contexte scientifique}
 
-De nombreuses théories existent pour permettre la fusion
-d'informations issues de sources diverses.
+Si le terme de \emph{fusion} qualifie, dans notre travail, une
+opération très spécifique, qui consiste à combiner plusieurs zones
+construites en spatialisant des \emph{indices de localisation,}
+l'usage de termes de \emph{fusion d'imformations} ou de \emph{fusion
+  de données} peut s'appliquer à un grand nombre de méthodes
+permettant de réduire l'information. Comme l'indique
+\textcite{Castanedo2013}, la fusion d'informations peut s'appliquer à
+de nombreux domaines de recherche, il s'agit par conséquent d'un sujet
+abondamment étudié.
 
-\begin{verbatim}
-- Présentation des théories
-- Thèse AM
-- Application
-- Chaque théorie à ses propres méthodes
-- Reprendre état de l'art Castenado \autocite{Castanedo2013}
-\end{verbatim}
+Dans un premier temps, des méthodes de classification comme les
+\emph{k-means} peuvent être considérées comme de la fusion
+d’information, car elles permettent de regrouper les individus selon
+un comportement commun. De même, les analyses factorielles permettent
+également de fusionner des informations multiples, en synthétisant le
+comportement de différentes variables. Les méthodes de \emph{fusion
+  des données} ne se limitent pas aux modèles statistiques et d'autres
+théories, comme la théorie des fonctions de croyances ou celle des
+sous-ensembles flous, permettent de fusionner des informations
+provenant de sources diverses. Cette démarche est, par exemple, au
+cœur du travail de \textcite{Olteanu-Raimond2008} qui a été amenée à
+fusionner des informations issues de son modèle dans le but de
+sélectionner le meilleur candidat à l'appareillement. Dans ce cas,
+l'opération de fusion des informations est réalisée à l'aide d'un
+opérateur particulier de la \emph{théorie des fonctions de croyances,}
+utilisée durant tout ce travail pour permettre la modélisation de
+\emph{l'imprécision.}
 
 \subsubsection{Verrous scientifiques}
 
@@ -649,8 +638,6 @@ Le processus d'agrégation des indices que nous souhaitons développer
 correspond à un stade éloigné de notre méthodologie, \ie qu'il est
 impacté par les choix effectués en amont. C'est notamment le cas de
 ceux portant sur la spatialisation des différents indices.
-
-\paragraph{Compatibilité avec les méthodes de spatialisation}
 
 Comme nous l'expliquions lors de la présentation des objectifs
 \ref{subsec:2-1-2} et \ref{subsec:2-1-3}, nous souhaitons que la prise
@@ -674,14 +661,6 @@ considération cette différence entre les deux indices, par exemple les
 pondérant. De même, la différence de précision entre deux indices doit
 être prise en compte lors du processus d'agrégation.
 
-
-\paragraph{\texttt{titre ??}}
-%\paragraph{Contexte différent}
-
-% La commutativité de l'agrégation
-% Différence des indices
-% Traitement "indépendant" de la localisation
-
 Un autre point important est que le processus d'agrégation sera
 potentiellement utilisé plusieurs fois lors du traitement d'une
 alerte. En effet, les \emph{indices de localisation} sont donnés par
@@ -692,17 +671,6 @@ localisation modélisés est donc amené à évoluer, comme la \emph{zone
 méthode d’agrégation doit donc prendre cet aspect en considération et
 nous devons veiller à ce que les résultats de ce processus ne soient
 pas sensibles
-
-\tdi{revoir}
-
-\paragraph{Sélection des opérateurs de fusion}
-
-\tdi{revoir}
-
-\paragraph{La gestion des conflits}
-
-\tdi{C'est pertinent ? Il n'y a pas vraiment de solution dans ma
-  méthodo pour les prendre en compte.}
 
 Un second verrou, fortement lié à la question de la modélisation de la
 plausibilité est celui de la gestion des conflits entre indices. Il
@@ -740,14 +708,46 @@ contexte applicatif de ce travail.
 
 \subsubsection{Contexte scientifique}
 
-\begin{verbatim}
-- Aucune idée de quoi mettre ici
-- Tests utilisateurs thèses Cogit, Marion
-- Supervisé vs non supervisé
-\end{verbatim}
-
 La question de l’évaluation des résultats est centrale dans la
-recherche scientifique.
+recherche scientifique. Le processus d'évaluation consiste à vérifier
+que les résultats produits sont une bonne approximation de la
+réalité. On peut définir deux grandes catégories de méthodes
+d'évaluation des résultats. La première est \emph{l'évaluation
+  supervisée,} où les résultats, quelle que soit leur forme sont
+comparés à un jeu de données ou d'observations représentatifs de la
+réalité. C'est la confrontation du comportement du modèle avec les
+résultats observés qui permet d'en évaluer la qualité. Généralement,
+tout écart tranche en défaveur du modèle ou de la théorie utilisée,
+cependant l'inverse est également possible, notamment lorsque la
+théorie utilisée est considérée comme très robuste, c'est par exemple
+le cas du \emph{modèle standard de la physique des particules,} que
+les physiciens considèrent comme si éprouvé que les écarts observés
+entre le modèle et les observations sont, par défaut, imputés à des
+erreurs d'observation. À notre connaissance, seule la physique
+théorique dispose de modèles si polis que leurs prédictions théoriques
+sont considérées comme plus fiables que les observations. On peut,
+cependant, également parler d'\enquote{\emph{approche supervisée}}
+lorsque les résultats sont comparés à une référence qui ne correspond
+pas nécessairement à la réalité. \textcite{OletanuRaimond2008}, par
+exemple, a été amenée à évaluer les résultats d'un appareillement de
+données géographiques. Pour ce faire les résultats de l'appareillement
+automatiques ont été comparés à ceux d'un appareillement manuel,
+faisant office de référence. Ce dernier ne correspond donc à aucune
+\enquote{réalité}, il s'agit juste d'un cas idéal, ce qui n’empêche
+pas de considérer cette méthode d’évaluation comme une \emph{approche
+  supervisée.} La seconde méthode d'évaluation existante est
+l'évaluation \emph{non-supervisée.}  Cette catégorie regroupe toutes
+les situations où on ne dispose pas d'observations de référence
+permettant d'évaluer les résultats produits. C'est, par exemple, le
+cas lorsque l'on cherche à évaluer des résultats par des tests
+utilisateurs, comme le propose \textcite{Dumont2018} pour évaluer la
+qualité d'une généralisation cartographique. Ces deux approches ne
+sont cependant pas incompatibles. Par exemple, \textcite{Jolivet2014}
+combine ces deux approches pour évaluer un modèle de simulation. Les
+trajectoires d’animaux construites par le modèle sont, d'une part
+comuiparées quantitativement aux observations instrumentales
+(\emph{approche supervisée}), mais également évaluées qualitativement
+par des experts de la thématique (\emph{approche non-supervisée}).
 
 \subsubsection{Verrous scientifiques}
 
