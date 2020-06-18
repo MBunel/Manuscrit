@@ -8,7 +8,7 @@ legende/.style={xshift=-2.5mm, anchor=west, text width=5cm},
 route/.style={draw=black, line width=.12mm}
 }
 
-\node[inner sep=0pt, anchor=south west] (image) at (0,0){\includegraphics{./figures/Out1.png}};
+\node[inner sep=0pt, anchor=south west] (image) at (0,0){\includegraphics{./figures/Carte_PSM/Out1.png}};
 \begin{scope}
 \node (P2) at ([xshift=.5cm]image.south east) {};
 \node (P1) at ([xshift=.5cm]image.north east) {};
@@ -28,6 +28,6 @@ Zone d'application du plan \ac{orsec}};
 
 
 % Échelle
-\draw[-] (P2 |- 1cm,0) --++ (1,0) node[pos=.5, above] {\footnotesize\SI{25}{\kilo\meter}};
+\draw[-] (P2 |- 1cm,0) --++ (1,0) node[pos=.5, above] {\footnotesize\SI{17.5}{\kilo\meter}};
 \end{scope}
 \end{tikzpicture}
