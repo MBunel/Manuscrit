@@ -1,0 +1,25 @@
+\begin{tikzpicture}
+
+\path[ffa] (0,0) circle [radius=30pt];
+\path[ffc] (0,0) circle [radius=30pt];
+
+\path[ffa, pattern color=RdBu-9-8] (0,0) ellipse (40pt and 20pt);
+\path[ffc, draw=RdBu-9-9] (0,0) ellipse (40pt and 20pt);
+
+\node[circle, inner sep=0pt,minimum size=4pt, fill] (c) at (0,0) {};
+
+%\node (0,.75) {\footnotesize \itshape zones de localisation probable};
+
+\path[draw, ->] (2.5,0) --++ (2.5,0)  node[pos=.5, above] {\footnotesize \itshape fusion};
+
+
+\begin{scope}[xshift=7cm]
+  \begin{scope}
+    \clip (0,0) ellipse (40pt and 20pt);
+    \fill[ffa] (0,0) circle [radius=30pt];
+  \end{scope}
+  \node[circle, inner sep=0pt,minimum size=4pt, fill] (c) at (0,0) {};	
+\end{scope}
+
+
+\end{tikzpicture}

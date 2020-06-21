@@ -1,0 +1,19 @@
+\begin{tikzpicture}
+
+\node[text width=4cm, align=center] (0,0) {\enquote{Je suis proche d'une maison}};
+
+\path[draw, ->] (2.5,0) --++ (2.5,0)  node[pos=.5, above] {\footnotesize \itshape spatialisation};
+
+\begin{scope}[xshift=7cm]
+\path[ffa] (0,0) circle [radius=30pt];
+\path[ffc] (0,0) circle [radius=30pt];
+
+\node[circle, inner sep=0pt,minimum size=4pt, fill] (c) at (0,0) {};
+\node[circle, inner sep=0pt,minimum size=8pt] (c2) at (0,0) {};
+\node[anchor=west] (m) at  (1.5,.5) {\footnotesize \itshape objet de référence};
+\path[draw, ->] (m.west) -- (c2);
+
+\node[anchor=west] (m2) at  (1.5,-.5) {\footnotesize \itshape zone de localisation compatible};
+\path[draw, ->] (m2.west) --++ (-.4,0);
+\end{scope}
+\end{tikzpicture}
