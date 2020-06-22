@@ -1,6 +1,6 @@
 \begin{tikzpicture}
 
-\node[text width=4cm, align=center] (0,0) {\enquote{Je suis proche d'une maison}};
+\node[text width=2.5cm, align=center] (0,0) {\small\enquote{Je suis proche d'une maison}};
 
 \path[draw, ->] (2,0) --++ (2.5,0)  node[pos=.5, above] {\footnotesize \itshape spatialisation};
 
