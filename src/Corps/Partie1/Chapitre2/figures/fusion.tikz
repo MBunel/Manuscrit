@@ -1,38 +1,35 @@
 \begin{tikzpicture}
-
-\path[ffa] (0,0) circle [radius=30pt];
-\path[ffc] (0,0) circle [radius=30pt];
-
-\path[ffa, pattern color=RdBu-9-3] (0,0) ellipse (40pt and 20pt);
-\path[ffc, draw=RdBu-9-2] (0,0) ellipse (40pt and 20pt);
-
-\node[circle, inner sep=0pt,minimum size=4pt, fill] (c) at (0,0) {};
-\node[circle, inner sep=0pt,minimum size=8pt] (c2) at (0,0) {};
-\node[anchor=west] (m) at  (1.75,1) {\footnotesize \itshape objet de référence};
-\path[draw, ->] (m.west) -- (c2);
-
-\node[anchor=north west, text width=3cm] (m2) at (1.75,-.4) {\footnotesize
-  \itshape zones de localisation compatibles};
-\path[draw, ->] (m2.west) --++ (-.8,0);
-\path[draw, ->] (m2.west) -- (1.2,-.6);
-
-\path[draw, ->] (2,0) --++ (2.5,0)  node[pos=.5, above] {\footnotesize \itshape fusion};
-
-
-\begin{scope}[xshift=6.5cm]
-  \begin{scope}
-    \clip (0,0) ellipse (40pt and 20pt);
-    \fill[ffa, pattern color=RdBu-9-8] (0,0) circle [radius=30pt];
-    \path[ffc, draw=RdBu-9-9] (0,0) circle [radius=30pt];
+  % ZLC 1
+  \path[ffa] (0,0) circle [radius=30pt]; % Aire
+  \path[ffc] (0,0) circle [radius=30pt]; % Contour
+  % ZLC 2
+  \path[ffa, pattern color=RdBu-9-3] (0,0) ellipse (40pt and 20pt); % Aire 
+  \path[ffc, draw=RdBu-9-2] (0,0) ellipse (40pt and 20pt); % Contour
+  % Objet de ref
+  \node[circle, inner sep=0pt,minimum size=4pt, fill] (c) at (0,0) {}; % visible
+  \node[circle, inner sep=0pt,minimum size=8pt] (c2) at (0,0) {}; % fictif
+  % Légende
+  \node[anchor=west] (m) at  (1.75,1) {\footnotesize \itshape objet de référence};
+  \path[draw, ->] (m.west) -- (c2);
+  \node[anchor=north west, text width=3cm] (m2) at (1.75,-.4) {\footnotesize
+    \itshape zones de localisation compatibles};
+  \path[draw, ->] (m2.west) --++ (-.8,0);
+  \path[draw, ->] (m2.west) -- (1.2,-.6);
+  % Fléche + texte
+  \path[draw, ->] (2,0) --++ (2.5,0)  node[pos=.5, above] {\footnotesize \itshape fusion};
+  % Fusion
+  \begin{scope}[xshift=6.5cm]
+    \begin{scope}
+      \clip (0,0) ellipse (40pt and 20pt);
+      \fill[ffa, pattern color=RdBu-9-8] (0,0) circle [radius=30pt];
+      \path[ffc, draw=RdBu-9-9] (0,0) circle [radius=30pt];
+    \end{scope}
+    \begin{scope}
+      \clip (0,0) circle [radius=30pt];
+      \path[ffc, draw=RdBu-9-9] (0,0) ellipse (40pt and 20pt);
+    \end{scope}
+    \node[circle, inner sep=0pt,minimum size=4pt, fill] (c) at (0,0) {};
+    \node[anchor=west, text width=3cm] (m2) at  (1.75,0) {\footnotesize \itshape zone de localisation probable};
+    \path[draw, ->] (m2.west) --++ (-.5,0);
   \end{scope}
-  \begin{scope}
-    \clip (0,0) circle [radius=30pt];
-    \path[ffc, draw=RdBu-9-9] (0,0) ellipse (40pt and 20pt);
-  \end{scope}
-  \node[circle, inner sep=0pt,minimum size=4pt, fill] (c) at (0,0) {};
-  \node[anchor=west, text width=3cm] (m2) at  (1.75,0) {\footnotesize \itshape zone de localisation probable};
-  \path[draw, ->] (m2.west) --++ (-.5,0);
-\end{scope}
-
-
 \end{tikzpicture}
