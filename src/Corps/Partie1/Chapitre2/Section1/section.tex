@@ -1,6 +1,143 @@
-Les cinq objectifs scientifiques de cette thèse nous permettent de
-cerner la problématique de ce travail de doctorat. Comme nous l'avons
-déjà mentionné, notre objectif principal est de construire la
+
+% Définir les concepts importants : alerte, indice de localisation,
+% zone de localisation
+
+
+% Expliciter les objectifs scientifiques
+Durant le premier chapitre de ce manuscrit nous avons fait emploi de
+nombreux termes, dans une acceptation non scientifique, 
+
+Les termes de \emph{description de position} et de \emph{zone,}
+utilisés jusqu'ici, l'étaient, volontairement, dans un sens assez
+large.
+
+
+Nous avons été, jusqu'ici, assez évasifs quant à la nature de ce que
+nous qualifions \emph{d'alertes} ou \emph{d'indices de localisation.}
+% Alertes
+Le terme \emph{d'alerte,} que nous avons abondamment employé depuis le
+début de ce manuscrit, désigne à la fois …
+%
+Dans son acceptation formelle,
+%
+Une alerte est l'ensemble des \emph{indices de localisation} à la
+disposition des secours pour identifier la position d'une victime
+donnée. Ainsi ce qui caractérise une alerte est, en plus des
+\emph{indices de localisation} qui la composent, son contexte, \ie
+l'événement particulier dont elle traite.
+
+
+
+
+% Indices de localisation
+Les \emph{indices de localisation} correspondent, quant à eux, à
+l'ensemble…
+%
+Par conséquent, une même alerte est composée d'un
+\footnote{\label{note:cas_1_indice}Cas que nous n'avons jamais
+  rencontré.} ou plusieurs \emph{indices de localisation} qu'il
+convient de spatialiser. Ainsi, pour une même alerte, on est amenées à
+\emph{spatialiser} plusieurs \emph{indices de localisation,}
+conduisant à la création d'autant de \emph{zones de localisation
+  compatibles.} Chacune d'entre elles contient une partir de
+l'information donnée par le requérant, il est donc nécessaire de les
+combiner, c'est ce processus que nous qualifions de \emph{fusion.}
+
+Ainsi, le \emph{fil rouge,} déjà présenté (\autoref{subsec:1-1-2-3}),
+est une \emph{alerte,} composée de XXXX \emph{indices de localisation.}
+
+% Deux objectifs
+Ainsi, la construction de la \emph{zone de localisation} correspondant
+à la localisation décrite par le requérant, nécessite toujours
+\footnote{À l'exception du cas, déjà mentionné, où le requérant ne
+  donne qu'un seul \emph{indice de localisation.} Toutefois, c'est un
+  cas que l'on rencontre pas en pratique
+  (cf. \autoref{note:cas_1_indice}).} un processus en deux
+étapes. Lequel commence par la création des \emph{zones de
+  localisation compatibles} correspondant à chaque \emph{indice de
+  localisation} donné par le requérant et ce termine par la
+construction de la \emph{zone de localisation probable} à partir des
+\emph{zones de localisation compatibles} construites.
+
+% Spatialisation
+La première étape de ce processus correspond à ce que nous appelons
+\emph{la spatialisation} d'un \emph{indice de localisation.} C'est un
+processus qui transforme un \emph{indice de localisation} en une
+\emph{zone de localisation compatible,} comme l'illustre la figure
+\ref{fig:obj_spa}.
+
+
+Lors du traitement d'une alerte il est
+nécessaire d'effectuer autant d'opérations de \emph{spatialisation}
+qu'il y a \emph{d'indices de localisation} uniques.
+%
+
+Cependant, contrairement à ce que la figure laisse
+supposer, \emph{l'indice de localisation} utilisé n'est pas contraint
+dans sa représentation. La figure \ref{fig:obj_spa} le présente sous
+la forme d'une phrase en langage naturel, mais il pourrait en être
+autrement. De même, la \emph{zone de localisation} proposée ne l'est
+qu'à titre d'illustration.
+%
+Il est souhaitable que la
+\emph{spatialisation} soit un processus déterministe, \ie que ce
+processus donnera toujours la même \emph{zone de localisation
+  compatible} pour un même \emph{indice de localisation.}
+
+\begin{figure}
+  \centering
+  \input{../figures/spatialisation.tikz}
+  \caption{Illustration du processus de \emph{spatialisation} d'un
+    \emph{indice de localisation.}}
+  \label{fig:obj_spa}
+\end{figure}
+
+% Fusion
+Chaque \emph{indice de localisation} donné par le requérant donne une
+information sur la position de la victime. Si l'on exclut le cas où
+certains d'entre-eux sont faux, on peut définir la \emph{zone de
+  localisation probable} comme la zone où tous les \emph{indices de
+  localisation } sont vérifiés.
+% Exemple
+Prenons pour exemple une version simplifiée du \emph{fil rouge}
+(cf. \autoref{subsec:1-1-2-3}), composée de seulement deux
+\emph{indices:} \emph{la victime voit une partie de plan d'eau} et
+\emph{vient de passer du soleil à l'ombre.}  La \emph{zone de
+  localisation} correspondant à cette description est, à la fois une
+zone à partir de laquelle on peut apercevoir une partie de plan d'eau
+(\ie que le premier \emph{indice de localisation} est validé), mais
+aussi une zone qui vient de passer du soleil à l'ombre (\ie le second
+\emph{indice de localisation} est validé). Par conséquent la
+\emph{zone de localisation probable} correspond à l'intersection des
+deux \emph{zones de localisation compatibles,} comme on peut le voir
+sur la figure \ref{fig:obj_fus}. Toutefois, comme pour \emph{la
+  spatialisation,} cette représentation est grandement
+simplifiée. D'une part car elle considère que les deux \emph{zones de
+  localisation compatibles} partagent le même objet de référence, ce
+qui n'est généralement pas le cas, comme on peut le voir dans la
+présentation du \emph{fil rouge} ou dans son extrait utilisé ici comme
+exemple. De plus, comme nous l'indiquions précédemment, cette
+illustration occulte le cas 
+
+
+La construction de la \emph{zone de localisation probable} s'effectue
+par le processus de \emph{fusion} des \emph{zones de localisation
+  compatibles.} L'objectif de cette étape est 
+
+
+\begin{figure}
+  \centering
+  \input{../figures/fusion.tikz}
+  \caption{Illustration du processus de construction de la \emph{zone
+      de localisation probable} par la \emph{fusion} des \emph{zones
+      de localisation compatibles.}}
+  \label{fig:obj_fus}
+\end{figure}
+
+Ces deux étapes, \emph{spatialisation} et \emph{fusion,} nécessitent
+des travaux divers.
+
+notre objectif principal est de construire la
 \emph{zone de localisation} correspondant à une description en langage
 naturel. Toutefois notre travail ne porte pas directement sur
 l'analyse du langage naturel, nous ne cherchons pas à identifier les
@@ -13,51 +150,9 @@ méthodes de spatialisation permettant construire les \emph{zones de
   localisation,} c'est le propos de notre premier objectif :
 scientifique \enquote{\nameref{subsec:2-1-1}}.
 
-Cependant, la simple définition de méthodes de \emph{spatialisations}
-ne peut suffire pour proposer un résultat satisfaisant. D'une part car
-les \emph{relatons de localisation} sont des concepts \emph{imprécis.}
-Ainsi, même si l'on est capable d'identifier des méthodes de
-\emph{spatialisation} adéquates, il ne sera pas aisé de définir la
-limite entre ce qui appartient à la \emph{zone de localisation} et ce
-qui n'y appartient pas. Il est par conséquent nécessaire de prendre en
-compte \emph{l'imprécision} lors de la définition de la méthode de
-spatialisation, comme nous l'indiquions lors de la présentation de
-notre second objectif scientifique :
-\enquote{\nameref{subsec:2-1-2}}. Il est également nécessaire de
-prendre en compte la fausseté potentielle des \emph{indices de
-  localisation.} Comme nous l'expliquions lors de la présentation de
-notre troisième objectif scientifique
-\enquote{\nameref{subsec:2-1-3}}, les \emph{indices de localisation}
-donnés par le requérant peuvent être faux. L'ajout de tels indices
-dans le processus de \emph{spatialisation} peut l'impacter
-considérablement, il est donc nécessaire de pouvoir gérer ces cas, en
-prenant en compte \emph{l'incertitude} des \emph{indices de
-  localisation,} \ie le doute que le secouriste a sur leur véracité.
-
-Les méthodes de \emph{spatialisation} élaborées au sein de l'objectif
-: \enquote{\nameref{subsec:2-1-1}}, sont destinées à spatialiser les
-\emph{indices de localisation} séparément. Il est donc nécessaire de
-définir une méthode de fusion, pour agréger les résultats
-(cf. objectif \ref{subsec:2-1-4}). Enfin l'ensemble des résultats
-produits doivent êtres évalués, comme décrit dans la présentation de
-l'objectif \enquote{\nameref{subsec:2-1-5}}.
-
-\begin{figure}[h]
-  \centering
-  \input{../figures/spatialisation.tikz}
-  \caption{Illustration du processus de spatialisation d'un
-    \emph{indice de localisation}}
-  \label{fig:obj_spa}
-\end{figure}
 
 
-\begin{figure}[h]
-  \centering
-  \input{../figures/fusion.tikz}
-  \caption{Illustration du processus de spatialisation d'un
-    \emph{indice de localisation}}
-  \label{fig:obj_spa}
-\end{figure}
+
 
 %%% Local Variables:
 %%% mode: latex
