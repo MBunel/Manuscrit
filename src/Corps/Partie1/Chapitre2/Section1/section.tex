@@ -27,7 +27,10 @@ le terme \emph{alerte} désigne l'ensemble des \emph{indices de
   localisation} à la disposition des secours pour identifier la
 position d'une victime donnée. Une alerte est également caractérisée
 par son contexte, \ie l'événement particulier dont elle traite.
-
+%
+C'est en traitant ces alertes que nous construisons la \emph{zone de
+localisation} qui y correspond
+%
 % Indices de localisation
 Les \emph{indices de localisation} correspondent, quant à eux, à
 l'ensemble des éléments donnés par le requérant pour décrire une
@@ -48,65 +51,55 @@ positions passées peuvent également exister, comme le montre le cas du
 pourraient donc apparaitre dans une \emph{alerte} réelle. Comme le
 laisse supposer sa définition, une \emph{alerte} est composée d'un
 \footnote{\label{note:cas_1_indice}Cas que nous n'avons jamais
-  rencontré.} ou plusieurs \emph{indices de localisation.} Le
-\emph{fil rouge} est, par exemple, une \emph{alerte,} composée d'une
-dizaine d'\emph{indices de localisation.}
-
+  rencontré.} ou plusieurs \emph{indices de localisation,} le cas
+\emph{fil rouge} en contient, par exemple, une dizaine.
+% 
 % Relations de localisation
 Les \emph{indices de localisation} sont eux-mêmes des objets composés
-de plusieurs éléments.
+de plusieurs éléments, un \emph{sujet} (\enquote{je}, \enquote{la
+  maison}), qui est l'élément dont la position est décrite ; un
+\emph{objet de référence} (\enquote{la maison}, \enquote{moi}), qui
+est l'élément a partir duquel est définie la position du \emph{sujet}
+et une \emph{relation de localisation} (\enquote{en face},
+\enquote{sous}) qui définit la relation entre \emph{sujet} et
+\emph{objet de référence.} C'est en interprétant ces trois éléments
+que l'on peut construire la \emph{zone de localisation} correspondant
+à une description de position, processus que nous nommons
+\emph{spatialisation.}
 
-La construction d'une zone correspondant à la description qui en est
-donnée par le requérant impose donc de traiter plusieurs
-\emph{indices,} possiblement très différents.
-
-qu'il
-convient de spatialiser. Ainsi, pour une même alerte, on est amenées à
-\emph{spatialiser} plusieurs \emph{indices de localisation,}
-conduisant à la création d'autant de \emph{zones de localisation
-  compatibles.} Chacune d'entre elles contient une partir de
-l'information donnée par le requérant, il est donc nécessaire de les
-combiner, c'est ce processus que nous qualifions de \emph{fusion.}
-
-% Deux objectifs
 Ainsi, la construction de la \emph{zone de localisation} correspondant
-à la localisation décrite par le requérant, nécessite toujours
-\footnote{À l'exception du cas, déjà mentionné, où le requérant ne
-  donne qu'un seul \emph{indice de localisation.} Toutefois, c'est un
-  cas que l'on rencontre pas en pratique
-  (cf. \autoref{note:cas_1_indice}).} un processus en deux
-étapes. Lequel commence par la création des \emph{zones de
-  localisation compatibles} correspondant à chaque \emph{indice de
-  localisation} donné par le requérant et ce termine par la
-construction de la \emph{zone de localisation probable} à partir des
-\emph{zones de localisation compatibles} construites.
+à une description de position ne peut se faire directement, il est
+nécessaire de procéder en deux étapes, la première destinée à
+\emph{spatialiser} les différents \emph{indices de localisation} et la
+seconde combinant les résultats des différentes \emph{spatialisations}
+pour aboutir à la \emph{zone de localisation} finale, \ie la
+\emph{fusion} des résultats de la spatialisation. On est donc amenées,
+pour une même alerte, à définir plusieurs \footnote{À l'exception du
+  cas, déjà mentionné, où le requérant ne donne qu'un seul
+  \emph{indice de localisation.}  Toutefois, c'est un cas que l'on
+  rencontre pas en pratique (cf. \autoref{note:cas_1_indice}).}
+\emph{zones de localisation,} une pour chaque \emph{indice de
+  localisation,} auxquelles s'ajoute une dernière zone, construite par
+la \emph{fusion} des résultats de la \emph{spatialisation.}
+L'ontologie \ac{oac} \autocite{Viry2019} fait donc la distinction
+entre les \emph{zones de localisation compatibles,} construites par la
+spatialisation des \emph{indices de localisation} et la \emph{zone de
+  localisation probable,} qui résulte de leur \emph{fusion.}
 
 % Spatialisation
-La première étape de ce processus correspond à ce que nous appelons
-\emph{la spatialisation} d'un \emph{indice de localisation.} C'est un
-processus qui transforme un \emph{indice de localisation} en une
-\emph{zone de localisation compatible,} comme l'illustre la figure
-\ref{fig:obj_spa}.
+Le processus de \emph{spatialisation} d'un \emph{indice de
+  localisation} est illustré par la figure \ref{fig:obj_spa}. Dans cet
+exemple, \emph{l'indice de localisation} \enquote{je suis proche d'une
+  maison} est \emph{spatialisé} à l'aide d'une zone tampon. On
+considère que la zone \enquote{proche d'une maison} correspond à
+toutes positions situées à moins d'une distance fixée de \emph{l'objet
+  de référence}, la zone résultante est donc un disque. Cette
+\emph{spatialisation} est simple, voire simpliste et il ne faut pas
+voir cette illustration comme une représentation de la méthode qui
+sera effectivement utilisée pour \emph{spatialiser} cet indice, mais
+plutôt comme une illustration du processus de \emph{spatialisation.}
 
-
-Lors du traitement d'une alerte il est
-nécessaire d'effectuer autant d'opérations de \emph{spatialisation}
-qu'il y a \emph{d'indices de localisation} uniques.
-%
-
-Cependant, contrairement à ce que la figure laisse
-supposer, \emph{l'indice de localisation} utilisé n'est pas contraint
-dans sa représentation. La figure \ref{fig:obj_spa} le présente sous
-la forme d'une phrase en langage naturel, mais il pourrait en être
-autrement. De même, la \emph{zone de localisation} proposée ne l'est
-qu'à titre d'illustration.
-%
-Il est souhaitable que la
-\emph{spatialisation} soit un processus déterministe, \ie que ce
-processus donnera toujours la même \emph{zone de localisation
-  compatible} pour un même \emph{indice de localisation.}
-
-\begin{figure}
+\begin{figure}[hb]
   \centering
   \input{../figures/spatialisation.tikz}
   \caption{Illustration du processus de \emph{spatialisation} d'un
@@ -115,37 +108,41 @@ processus donnera toujours la même \emph{zone de localisation
 \end{figure}
 
 % Fusion
-Chaque \emph{indice de localisation} donné par le requérant donne une
-information sur la position de la victime. Si l'on exclut le cas où
-certains d'entre-eux sont faux, on peut définir la \emph{zone de
-  localisation probable} comme la zone où tous les \emph{indices de
-  localisation } sont vérifiés.
+\emph{La spatialisation} est une étape qui doit être répétée pour tous
+les \emph{indices de localisation} donnés par le requérant, on dispose
+ainsi d'autant de \emph{zones de localisation compatibles} que
+d'indices. Chacun d'entre eux donne une information sur la position de
+la victime, qui, si l'on exclut le cas où certains indices sont faux,
+se situe dans une zone où tous les \emph{indices de localisation} sont
+vérifiés, \ie que la \emph{zone de localisation probable} est située à
+l'intersection de toutes les \emph{zones de localisation compatibles.}
+%
 % Exemple
 Prenons pour exemple une version simplifiée du \emph{fil rouge}
 (cf. \autoref{subsec:1-1-2-3}), composée de seulement deux
-\emph{indices:} \emph{la victime voit une partie de plan d'eau} et
-\emph{vient de passer du soleil à l'ombre.}  La \emph{zone de
-  localisation} correspondant à cette description est, à la fois une
-zone à partir de laquelle on peut apercevoir une partie de plan d'eau
-(\ie que le premier \emph{indice de localisation} est validé), mais
-aussi une zone qui vient de passer du soleil à l'ombre (\ie le second
-\emph{indice de localisation} est validé). Par conséquent la
-\emph{zone de localisation probable} correspond à l'intersection des
-deux \emph{zones de localisation compatibles,} comme on peut le voir
-sur la figure \ref{fig:obj_fus}. Toutefois, comme pour \emph{la
-  spatialisation,} cette représentation est grandement
-simplifiée. D'une part car elle considère que les deux \emph{zones de
-  localisation compatibles} partagent le même objet de référence, ce
-qui n'est généralement pas le cas, comme on peut le voir dans la
-présentation du \emph{fil rouge} ou dans son extrait utilisé ici comme
-exemple. De plus, comme nous l'indiquions précédemment, cette
-illustration occulte le cas 
-
-
-La construction de la \emph{zone de localisation probable} s'effectue
-par le processus de \emph{fusion} des \emph{zones de localisation
-  compatibles.} L'objectif de cette étape est 
-
+\emph{indices:} \enquote{la victime voit une partie de plan d'eau} et
+\enquote{elle vient de passer du soleil à l'ombre.}  La \emph{zone de
+  localisation probable} correspondant à cette description est, à la
+fois une zone à partir de laquelle on peut apercevoir une partie de
+plan d'eau (\ie que le premier \emph{indice de localisation} est
+validé), mais aussi une zone qui vient de passer du soleil à l'ombre
+(\ie le second \emph{indice de localisation} est validé). Par
+conséquent la \emph{zone de localisation probable} correspond à la
+zone validant les deux \emph{indices de localisation} de
+\emph{l'alerte}, \ie l'intersection des deux \emph{zones de
+  localisation compatibles} leur correspondant, comme l'illustre la
+figure \ref{fig:obj_fus}. Deux \emph{zones de localisation
+  compatibles} y sont représentées, lesquelles sont produites par le
+processus de \emph{spatialisation} décrit par la figure
+\ref{fig:obj_spa}. La méthode de fusion combine ces deux zones pour en
+construire une seule, la \emph{zone de localisation probable,}
+correspondant à l'intersection des deux \emph{zones de localisation
+  compatibles}. Toutefois, comme pour la figure \ref{fig:obj_spa},
+cette représentation est grandement simplifiée, notamment car les deux
+\emph{zones de localisation compatibles} sont similaires et partagent
+le même \emph{objet de référence,} ce qui n'est généralement pas le
+cas, comme le montre l'extrait du cas \emph{fil rouge} pris pour
+exemple ci-dessus.
 
 \begin{figure}
   \centering
@@ -156,25 +153,20 @@ par le processus de \emph{fusion} des \emph{zones de localisation
   \label{fig:obj_fus}
 \end{figure}
 
-Ces deux étapes, \emph{spatialisation} et \emph{fusion,} nécessitent
-des travaux divers.
-
-
-notre objectif principal est de construire la
-\emph{zone de localisation} correspondant à une description en langage
-naturel. Toutefois notre travail ne porte pas directement sur
-l'analyse du langage naturel, nous ne cherchons pas à identifier les
-\emph{relations de localisation,} ou les \emph{objets de référence} en
-direct lors de l'appel téléphonique du requérant aux secours ou à
-l'aide d'une retranscription de celui-ci. Notre travail ne porte que
-sur la \emph{spatialisation.} Cette étape nécessite de développer des
-méthodes de spatialisation permettant construire les \emph{zones de
-  localisation} correspondant à chaque \emph{relation de
-  localisation,} c'est le propos de notre premier objectif :
-scientifique \enquote{\nameref{subsec:2-1-1}}.
-
-
-
+La \emph{spatialisation} des \emph{indices de localisation} en des
+\emph{zones de localisation compatibles} et leur \emph{fusion} en une
+\emph{zone de localisation probable} sont les deux étapes majeures
+nécessaires à la transformation d'une description de localisation en
+une \emph{zone de localisation.} Par conséquent, ces deux étapes sont
+au cœur des deux objectifs principaux de cette thèse, à savoir le
+développement de méthodes de \emph{spatialisation} et de \emph{fusion}
+qui soient adaptées à notre contexte applicatif. En effet, les deux
+exemples présentés font ignorent tous les problèmes que l'on peut
+rencontrer dans des cas réels, comme la fausseté des \emph{indices de
+  localisation,} la difficulté d'interpréter la sémantique des
+\emph{relations de localisation, etc.} Les méthodes de
+\emph{spatialisation} et de \emph{fusion} devront donc prendre en
+compte ces différents enjeux pour être applicables à notre contexte.
 
 
 %%% Local Variables:
