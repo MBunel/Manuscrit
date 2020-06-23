@@ -1,5 +1,7 @@
 
-% Définir les concepts importants : alerte, indice de localisation,
+La construction d'une zone à partir de sa description 
+%
+Définir les concepts importants : alerte, indice de localisation,
 % zone de localisation
 
 
@@ -13,38 +15,58 @@ large.
 
 
 Nous avons été, jusqu'ici, assez évasifs quant à la nature de ce que
-nous qualifions \emph{d'alertes} ou \emph{d'indices de localisation.}
+nous qualifions d'alertes ou d'indices de localisation.
+
 % Alertes
-Le terme \emph{d'alerte,} que nous avons abondamment employé depuis le
+Le terme \enquote{alerte} que nous avons abondamment employé depuis le
 début de ce manuscrit, désigne à la fois …
 %
-Dans son acceptation formelle,
-%
-Une alerte est l'ensemble des \emph{indices de localisation} à la
-disposition des secours pour identifier la position d'une victime
-donnée. Ainsi ce qui caractérise une alerte est, en plus des
-\emph{indices de localisation} qui la composent, son contexte, \ie
-l'événement particulier dont elle traite.
-
-
-
+Dans son acceptation formelle, telle que formulé dans
+\emph{l’ontologie d'alerte Choucas} \autocite[\ac{oac},][]{Viry2019},
+le terme \emph{alerte} désigne l'ensemble des \emph{indices de
+  localisation} à la disposition des secours pour identifier la
+position d'une victime donnée. Une alerte est également caractérisée
+par son contexte, \ie l'événement particulier dont elle traite.
 
 % Indices de localisation
 Les \emph{indices de localisation} correspondent, quant à eux, à
-l'ensemble…
-%
-Par conséquent, une même alerte est composée d'un
+l'ensemble des éléments donnés par le requérant pour décrire une
+position. Par exemple \enquote{je suis sous une route} ou \enquote{il
+  était à La Grave} sont deux \emph{indices de localisation,} bien
+qu'ils soient très différents. En effet, le premier exemple décrit la
+position actuelle du locuteur (\enquote{je}), alors que le second
+décrit la position d'un tiers (\enquote{il}) à un instant révolu. On
+pourrait, dès lors, penser que le second exemple n'est pas
+représentatif des \emph{indices de localisation} apparaissant dans les
+\emph{alertes} traitées. Ce n'est cependant pas le cas, la position
+décrite par le locuteur n'est pas nécessairement la sienne, par
+exemple lorsque le requérant est un tiers décrivant la position de la
+victime. De plus des \emph{indices de localisation} décrivant des
+positions passées peuvent également exister, comme le montre le cas du
+\emph{fil rouge} (\eg \enquote{La victime est partie de
+  Bourg-d'Oisans}, cf. \autoref{subsec:1-1-2-3}). Ces exemples
+pourraient donc apparaitre dans une \emph{alerte} réelle. Comme le
+laisse supposer sa définition, une \emph{alerte} est composée d'un
 \footnote{\label{note:cas_1_indice}Cas que nous n'avons jamais
-  rencontré.} ou plusieurs \emph{indices de localisation} qu'il
+  rencontré.} ou plusieurs \emph{indices de localisation.} Le
+\emph{fil rouge} est, par exemple, une \emph{alerte,} composée d'une
+dizaine d'\emph{indices de localisation.}
+
+% Relations de localisation
+Les \emph{indices de localisation} sont eux-mêmes des objets composés
+de plusieurs éléments.
+
+La construction d'une zone correspondant à la description qui en est
+donnée par le requérant impose donc de traiter plusieurs
+\emph{indices,} possiblement très différents.
+
+qu'il
 convient de spatialiser. Ainsi, pour une même alerte, on est amenées à
 \emph{spatialiser} plusieurs \emph{indices de localisation,}
 conduisant à la création d'autant de \emph{zones de localisation
   compatibles.} Chacune d'entre elles contient une partir de
 l'information donnée par le requérant, il est donc nécessaire de les
 combiner, c'est ce processus que nous qualifions de \emph{fusion.}
-
-Ainsi, le \emph{fil rouge,} déjà présenté (\autoref{subsec:1-1-2-3}),
-est une \emph{alerte,} composée de XXXX \emph{indices de localisation.}
 
 % Deux objectifs
 Ainsi, la construction de la \emph{zone de localisation} correspondant
@@ -136,6 +158,7 @@ par le processus de \emph{fusion} des \emph{zones de localisation
 
 Ces deux étapes, \emph{spatialisation} et \emph{fusion,} nécessitent
 des travaux divers.
+
 
 notre objectif principal est de construire la
 \emph{zone de localisation} correspondant à une description en langage
