@@ -19,39 +19,46 @@ nous qualifions d'alertes ou d'indices de localisation.
 Le terme \enquote{alerte} que nous avons abondamment employé depuis le
 début de ce manuscrit, désigne à la fois …
 %
-Dans son acceptation formelle, telle que formulé dans
+Dans son acceptation formelle, telle que définie dans
 \emph{l’ontologie d'alerte Choucas} \autocite[\ac{oac},][]{Viry2019},
-le terme \emph{alerte} désigne l'ensemble des \emph{indices de
+le terme \enquote{alerte} désigne l'ensemble des \emph{indices de
   localisation} à la disposition des secours pour identifier la
-position d'une victime donnée. Une alerte est également caractérisée
-par son contexte, \ie l'événement particulier dont elle traite.
-%
-C'est en traitant ces alertes que nous construisons la \emph{zone de
-localisation} qui y correspond
-%
+position d'une victime donnée, pour une opération de secours
+donnée. Une alerte est donc caractérisée par l'ensemble des
+\emph{indices de localisation} qui s'y rattachent, mais également par
+sa temporalité et l'identité de la \emph{victime} et du
+\emph{requérant.}  L'objectif de cette thèse est de construire les
+zones correspondant à la position de la victime à partir de la
+description qui en est faite dans une alerte donnée, \ie à partir des
+différents \emph{indices de localisation} qui la composent
+
 % Indices de localisation
-Les \emph{indices de localisation} correspondent, quant à eux, à
-l'ensemble des éléments donnés par le requérant pour décrire une
-position. Par exemple \enquote{je suis sous une route} ou \enquote{il
-  était à La Grave} sont deux \emph{indices de localisation,} bien
-qu'ils soient très différents. En effet, le premier exemple décrit la
-position actuelle du locuteur (\enquote{je}), alors que le second
-décrit la position d'un tiers (\enquote{il}) à un instant révolu. On
-pourrait, dès lors, penser que le second exemple n'est pas
-représentatif des \emph{indices de localisation} apparaissant dans les
-\emph{alertes} traitées. Ce n'est cependant pas le cas, la position
-décrite par le locuteur n'est pas nécessairement la sienne, par
-exemple lorsque le requérant est un tiers décrivant la position de la
-victime. De plus des \emph{indices de localisation} décrivant des
-positions passées peuvent également exister, comme le montre le cas du
-\emph{fil rouge} (\eg \enquote{La victime est partie de
-  Bourg-d'Oisans}, cf. \autoref{subsec:1-1-2-3}). Ces exemples
-pourraient donc apparaitre dans une \emph{alerte} réelle. Comme le
-laisse supposer sa définition, une \emph{alerte} est composée d'un
-\footnote{\label{note:cas_1_indice}Cas que nous n'avons jamais
-  rencontré.} ou plusieurs \emph{indices de localisation,} le cas
-\emph{fil rouge} en contient, par exemple, une dizaine.
-% 
+Ces derniers correspondent à l'ensemble des éléments donnés par le
+requérant pour décrire une position. Par exemple \enquote{je suis sous
+  une route} ou \enquote{il était à La Grave} sont deux \emph{indices
+  de localisation,} bien qu'ils soient très différents. En effet, le
+premier exemple décrit la position actuelle du locuteur
+(\enquote{je}), alors que le second décrit la position d'un tiers
+(\enquote{il}) à un instant révolu. On pourrait, dès lors, penser que
+le second exemple n'est pas représentatif des \emph{indices de
+  localisation} apparaissant dans les alertes traitées, leur
+caractéristique commune étant de décrire la position d'une victime (et
+non d'un tiers) au moment de l'appel (et non il y a plusieurs
+heures). Ce n'est cependant pas le cas, la position décrite par le
+locuteur n'est pas nécessairement la sienne, par exemple lorsque le
+requérant est un tiers décrivant la position de la victime. De plus
+des \emph{indices de localisation} décrivant des positions passées
+peuvent s'avérer, comme dans le cas du \emph{fil rouge} où de nombreux
+\emph{indices de localisation} décrivent des positions passées (\eg
+\enquote{La victime est partie de Bourg-d'Oisans},
+cf. \autoref{subsec:1-1-2-3}). Le nombre \emph{d'indices de
+  localisation} présents dans \emph{une alerte} est très variable, le
+\emph{fil rouge}, par exemple, en contient une dizaine. S'il peut,
+théoriquement, être de un, ce n'est jamais le cas en pratique, les
+secouristes disposent toujours de plusieurs \emph{indices de
+  localisation,} même si l'un d'entre eux est extrêmement précis,
+comme des coordonnées GPS.
+ 
 % Relations de localisation
 Les \emph{indices de localisation} sont eux-mêmes des objets composés
 de plusieurs éléments, un \emph{sujet} (\enquote{je}, \enquote{la
@@ -132,15 +139,18 @@ zone validant les deux \emph{indices de localisation} de
 figure \ref{fig:obj_fus}. Deux \emph{zones de localisation
   compatibles} y sont représentées, lesquelles sont produites par le
 processus de \emph{spatialisation} décrit par la figure
-\ref{fig:obj_spa}. La méthode de fusion combine ces deux zones pour en
-construire une seule, la \emph{zone de localisation probable,}
+\ref{fig:obj_spa}. La méthode de \emph{fusion} combine ces deux zones
+pour en construire une seule, la \emph{zone de localisation probable,}
 correspondant à l'intersection des deux \emph{zones de localisation
   compatibles}. Toutefois, comme pour la figure \ref{fig:obj_spa},
 cette représentation est grandement simplifiée, notamment car les deux
 \emph{zones de localisation compatibles} sont similaires et partagent
 le même \emph{objet de référence,} ce qui n'est généralement pas le
 cas, comme le montre l'extrait du cas \emph{fil rouge} pris pour
-exemple ci-dessus.
+exemple ci-dessus. De plus, les différents \emph{indices de
+  localisation} ne sont pas donnés de manière concomitante, la
+description de position s'étoffe au fur et à mesure de la conversation
+et le résultat \emph{fusion} doit donc être mis à jour.
 
 \begin{figure}
   \centering
@@ -155,14 +165,15 @@ La \emph{spatialisation} des \emph{indices de localisation} en des
 \emph{zones de localisation compatibles} et leur \emph{fusion} en une
 \emph{zone de localisation probable} sont les deux étapes majeures
 nécessaires à la transformation d'une description de localisation en
-une \emph{zone de localisation.} Par conséquent, ces deux étapes sont
-au cœur des deux objectifs principaux de cette thèse, à savoir le
-développement de méthodes de \emph{spatialisation} et de \emph{fusion}
-qui soient adaptées à notre contexte applicatif. En effet, les deux
-exemples présentés font ignorent tous les problèmes que l'on peut
-rencontrer dans des cas réels, comme la fausseté des \emph{indices de
-  localisation,} la difficulté d'interpréter la sémantique des
-\emph{relations de localisation, etc.} Les méthodes de
+une \emph{zone de localisation} et sont, par conséquent, au cœur des
+deux objectifs principaux de cette thèse, à savoir le développement de
+méthodes de \emph{spatialisation} et de \emph{fusion} qui soient
+adaptées à notre contexte applicatif. En effet, les deux exemples
+présentés font ignorent tous les problèmes que l'on peut rencontrer
+dans des cas réels, comme la fausseté des \emph{indices de
+  localisation,} le fait que ces derniers ne soient pas connus de
+manière concomitante ou la difficulté d'interpréter la sémantique des
+\emph{relations de localisation,} \emph{etc.} Les méthodes de
 \emph{spatialisation} et de \emph{fusion} devront donc prendre en
 compte ces différents enjeux pour être applicables à notre contexte.
 
