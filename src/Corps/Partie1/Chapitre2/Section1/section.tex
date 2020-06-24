@@ -1,57 +1,55 @@
+La construction d'une zone à partir de sa description est une tache
+complexe, qui nécessite de prendre en compte de nombreux éléments que
+nous n'avons pas abordés lors de la présentation des objectifs
+scientifiques du projet Choucas. De plus, durant le premier chapitre
+de ce manuscrit nous avons fait emploi de nombreux termes, inhérents
+au projet, sans pour autant les définir.
 
-La construction d'une zone à partir de sa description 
-
-
-
-% Expliciter les objectifs scientifiques
-Durant le premier chapitre de ce manuscrit nous avons fait emploi de
-nombreux termes, dans une acceptation non scientifique, 
-
-Les termes de \emph{description de position} et de \emph{zone,}
-utilisés jusqu'ici, l'étaient, volontairement, dans un sens assez
-large.
-
-
-Nous avons été, jusqu'ici, assez évasifs quant à la nature de ce que
-nous qualifions d'alertes ou d'indices de localisation.
+\subsection{Définition des termes du sujet}
 
 % Alertes
 Jusqu'à présent nous avons abondamment employé le terme
-\enquote{d'alerte} pour désigner, à la fois la phase de localisation
-d'une opération de secours donnée, mais également l'ensemble des
-éléments décrivant une position donnés par le requérant lors de cette
-phase de localisation. Dans son acceptation formelle, telle que
-définie dans \emph{l’ontologie d'alerte Choucas}
+\enquote{d'alerte} pour désigner, à la fois une opération de secours
+donnée, sa phase de localisation et l'ensemble des éléments décrivant
+une position donnés par le requérant. Dans son acceptation formelle,
+\ie telle que définie dans \emph{l’ontologie d'alerte Choucas}
 \autocite[\ac{oac},][]{Viry2019}, le terme \enquote{alerte} désigne
 l'ensemble des \emph{indices de localisation} à la disposition des
 secours pour identifier la position d'une victime donnée, pour une
-opération de secours donnée. Une alerte est donc caractérisée par
-l'ensemble des \emph{indices de localisation} qui s'y rattachent, mais
-également par sa temporalité et l'identité de la \emph{victime} et du
-\emph{requérant.}  L'objectif de cette thèse est de construire les
-zones correspondant à la position de la victime à partir de la
-description qui en est faite dans une alerte donnée, \ie à partir des
-différents \emph{indices de localisation} qui la composent
+opération de secours donnée. Une alerte est donc caractérisée par un
+ensemble \emph{d'indices de localisation,} mais également par sa
+temporalité et l'identité de la \emph{victime} et du \emph{requérant.}
+L'objectif de cette thèse est de construire les zones correspondant à
+la position de la victime à partir de la description qui en est faite
+dans une alerte donnée, \ie à partir des différents \emph{indices de
+  localisation} qui la composent
 
 % Indices de localisation
 Ces derniers correspondent à l'ensemble des éléments donnés par le
-requérant pour décrire une position. Par exemple \enquote{je suis sous
-  une route} ou \enquote{il était à La Grave} sont deux \emph{indices
-  de localisation,} bien qu'ils soient très différents. En effet, le
-premier exemple décrit la position actuelle du locuteur
+requérant pour décrire une position. Par exemple, \enquote{je suis
+  sous une route} ou \enquote{il était à La Grave} sont deux
+\emph{indices de localisation,} bien qu'ils soient très différents. En
+effet, le premier exemple décrit la position actuelle du locuteur
 (\enquote{je}), alors que le second décrit la position d'un tiers
 (\enquote{il}) à un instant révolu. On pourrait, dès lors, penser que
 le second exemple n'est pas représentatif des \emph{indices de
-  localisation} apparaissant dans les alertes traitées, leur
-caractéristique commune étant de décrire la position d'une victime (et
-non d'un tiers) au moment de l'appel (et non il y a plusieurs
-heures). Ce n'est cependant pas le cas, la position décrite par le
-locuteur n'est pas nécessairement la sienne, par exemple lorsque le
-requérant est un tiers décrivant la position de la victime. De plus
-des \emph{indices de localisation} décrivant des positions passées
-peuvent s'avérer, comme dans le cas du \emph{fil rouge} où de nombreux
-\emph{indices de localisation} décrivent des positions passées (\eg
-\enquote{La victime est partie de Bourg-d'Oisans},
+  localisation} apparaissant dans les alertes traitées, leur objectif
+commun étant de décrire la position d'une victime (et non d'un tiers)
+au moment de l'appel (et non il y a plusieurs heures) et tout autre
+élément pourrait sembler, au mieux, inutile. Pourtant, il n'est pas
+rare que le requérant soit amené à décrire la position de la victime à
+partir de la sienne, donnant un ensemble d'indices de localisation de
+la forme :
+%
+\begin{enumerate*}[label=\alph*)]
+\item \enquote{Je suis dans un refuge},
+\item \enquote{la victime est en face de moi, sur le versant opposé}.
+\end{enumerate*}
+% 
+De plus des \emph{indices de localisation} décrivant des positions
+passées peuvent s'avérer utiles, comme dans le cas du \emph{fil rouge}
+où de nombreux \emph{indices de localisation} décrivent des positions
+passées (\eg \enquote{La victime est partie de Bourg-d'Oisans},
 cf. \autoref{subsec:1-1-2-3}). Le nombre \emph{d'indices de
   localisation} présents dans \emph{une alerte} est très variable, le
 \emph{fil rouge}, par exemple, en contient une dizaine. S'il peut,
@@ -73,19 +71,22 @@ que l'on peut construire la \emph{zone de localisation} correspondant
 à une description de position, processus que nous nommons
 \emph{spatialisation.}
 
-Ainsi, la construction de la \emph{zone de localisation} correspondant
-à une description de position ne peut se faire directement, il est
-nécessaire de procéder en deux étapes, la première destinée à
-\emph{spatialiser} les différents \emph{indices de localisation} et la
-seconde combinant les résultats des différentes \emph{spatialisations}
-pour aboutir à la \emph{zone de localisation} finale, \ie la
-\emph{fusion} des résultats de la spatialisation. On est donc amenées,
-pour une même alerte, à définir plusieurs \footnote{À l'exception du
-  cas, déjà mentionné, où le requérant ne donne qu'un seul
-  \emph{indice de localisation.}  Toutefois, c'est un cas que l'on
-  rencontre pas en pratique.} \emph{zones de localisation,} une pour
-chaque \emph{indice de localisation,} auxquelles s'ajoute une dernière
-zone, construite par la \emph{fusion} des résultats de la
+\subsection{TITRE}
+
+À cause de la nature composite des \emph{alertes,} la construction de
+la \emph{zone de localisation} correspondant à une description de
+position ne peut se faire directement. Il est nécessaire de procéder
+en deux étapes, la première destinée à \emph{spatialiser} les
+différents \emph{indices de localisation} et la seconde combinant les
+résultats des différentes \emph{spatialisations} pour aboutir à la
+\emph{zone de localisation} finale, \ie la \emph{fusion} des résultats
+de la \emph{spatialisation.} On est donc amenées, pour une même
+alerte, à définir plusieurs \footnote{À l'exception du cas, déjà
+  mentionné, où le requérant ne donne qu'un seul \emph{indice de
+    localisation.}  Toutefois, c'est un cas que l'on rencontre pas en
+  pratique.}  \emph{zones de localisation,} une pour chaque
+\emph{indice de localisation,} auxquelles s'ajoute une dernière zone,
+construite par la \emph{fusion} des résultats de la
 \emph{spatialisation.}  L'ontologie \ac{oac} \autocite{Viry2019} fait
 donc la distinction entre les \emph{zones de localisation
   compatibles,} construites par la spatialisation des \emph{indices de
