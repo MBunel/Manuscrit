@@ -32,7 +32,7 @@
 
     \node (rect) [anchor=north west, caisson, pattern=dots] at
     ([yshift=-3.5cm]P1) {}; \node[right of=rect, legende] {\scriptsize
-      Zone d'application du plan \ac{orsec}};
+      Zone d'application du \ac{pms}};
 
     \node (rect) [anchor=north west, caisson] at ([yshift=-4.25cm]P1)
     {}; \draw[anchor=north west, fill=RdBu-9-9, draw=none] (rect)
