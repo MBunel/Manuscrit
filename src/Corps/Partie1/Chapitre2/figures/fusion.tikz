@@ -3,35 +3,42 @@
   \path[ffa] (0,0) circle [radius=30pt]; % Aire
   \path[ffc] (0,0) circle [radius=30pt]; % Contour
   % ZLC 2
-  \path[ffa, pattern color=RdBu-9-3] (0,0) ellipse (40pt and 20pt); % Aire 
-  \path[ffc, draw=RdBu-9-2] (0,0) ellipse (40pt and 20pt); % Contour
+  \path[ffa, pattern color=RdBu-9-3] (.25,-.5) ellipse (40pt and 20pt); % Aire 
+  \path[ffc, draw=RdBu-9-2] (.25,-.5) ellipse (40pt and 20pt); % Contour
   % Objet de ref
+  % 1
   \node[circle, inner sep=0pt,minimum size=4pt, fill] (c) at (0,0) {}; % visible
   \node[circle, inner sep=0pt,minimum size=8pt] (c2) at (0,0) {}; % fictif
+  % 2
+  \node[circle, inner sep=0pt,minimum size=4pt, fill] (c1) at (.25,-.5) {}; % visible
+  \node[circle, inner sep=0pt,minimum size=8pt] (c12) at (.25,-.5) {}; % fictif
   % Légende
-  \node[anchor=west] (m) at  (1.75,1) {\footnotesize \itshape objet de référence};
-  \path[draw, ->] (m.west) -- (c2);
+  \node[anchor=east] (m) at  (-1.5,.25) {\footnotesize \itshape objets de référence};
+  \path[draw, ->] (m.east) -- (c2);
+   \path[draw, ->] (m.east) -- (c12);
   \node[anchor=north west, text width=3cm] (m2) at (1.75,-.4) {\footnotesize
     \itshape zones de localisation compatibles};
-  \path[draw, ->] (m2.west) --++ (-.8,0);
-  \path[draw, ->] (m2.west) -- (1.2,-.6);
+  \path[draw, ->] (m2.west) --++ (-1.7,0);
+  \path[draw, ->] (m2.west) -- (1.2,-.7);
   % Fléche + texte
-  \path[draw, ->] (2,0) --++ (2.5,0)  node[pos=.5, above] {\footnotesize \itshape fusion};
+  \path[draw, ->] (2.25,0) --++ (2.75,0)  node[pos=.5, above] {\footnotesize \itshape fusion};
   % Fusion
-  \begin{scope}[xshift=6.5cm]
+  \begin{scope}[xshift=6.75cm]
     \path[draw, dashed] (0,0) circle [radius=30pt]; % Contour
-    \path[draw, dashed] (0,0) ellipse (40pt and 20pt);
+    \path[draw, dashed] (.25,-.5) ellipse (40pt and 20pt);
     \begin{scope}
-      \clip (0,0) ellipse (40pt and 20pt);
+      \clip (.25,-.5) ellipse (40pt and 20pt);
       \fill[ffa, pattern color=RdBu-9-8] (0,0) circle [radius=30pt];
       \path[ffc, draw=RdBu-9-9] (0,0) circle [radius=30pt];
     \end{scope}
     \begin{scope}
       \clip (0,0) circle [radius=30pt];
-      \path[ffc, draw=RdBu-9-9] (0,0) ellipse (40pt and 20pt);
+      \path[ffc, draw=RdBu-9-9] (.25,-.5) ellipse (40pt and 20pt);
     \end{scope}
-    \node[circle, inner sep=0pt,minimum size=4pt, fill] (c) at (0,0) {};
-    \node[anchor=west, text width=3cm] (m2) at  (1.75,.75) {\footnotesize \itshape zone de localisation probable};
-    \path[draw, ->] (m2.west) --++ (-.7,-.15);
+    \node[circle, inner sep=0pt,minimum size=4pt, fill] (c) at (0,0)
+    {};
+    \node[circle, inner sep=0pt,minimum size=4pt, fill] (c) at (.25,-.5) {};
+    \node[anchor=west, text width=3cm] (m2) at  (1.25,.75) {\footnotesize \itshape zone de localisation probable};
+    \path[draw, ->] (m2.south west) --++ (-.6,-.4);
   \end{scope}
 \end{tikzpicture}
