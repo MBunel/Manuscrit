@@ -1,0 +1,1211 @@
+Lorsque George Perec relate sa visite d’une maison usonienne1 du
+Michigan, il en décrit le délicat cheminement vers l’intérieur :
+
+\begin{quotation}
+  « On commençait par suivre un sentier […]. Peu à peu, […] sans qu’à
+  aucun instant on ait été en droit d’affirmer avoir perçu quelque
+  chose comme une transition […], le sentier devenait […] une allée
+  […]. Puis apparaissait […] une toiture […] pratiquement
+  indissociable de la végétation […]. Mais en fait, il était déjà trop
+  tard pour savoir si l’on était dehors ou dedans. » (Perec, 1974,
+  pp. 52-53).
+\end{quotation}
+
+Les jeux avec l’environnement et les matériaux, relevés par
+l’écrivain, sont les éléments d’un parcours savamment orchestré par
+l’architecte pour fondre la construction dans son environnement,
+trompant le visiteur et l’empêchant d’identifier une délimitation
+claire entre dehors et dedans ; deux espaces tacitement considérés
+comme immiscibles. Ainsi, en lieu et place d’une rupture franche,
+c’est une transition progressive qui les sépare, rendant la définition
+d’une limite, autre qu’arbitraire, impossible.  Or, la délimitation
+d’espaces cohérents est centrale dans la réflexion géographique et
+l’existence d’objets spatiaux difficilement délimitables ne va pas
+sans soulever des questions techniques et épistémologiques (Burrough
+et Couclelis 1996), auxquelles de nombreux travaux, comme ceux
+cherchant à délimiter des espaces à partir de ressentis (Arabacioglu,
+2010), de descriptions de positions (Jones et al., 2007 ; Wolter et
+Yousaf, 2018 ; Bunel et al., 2019) ou de cartes mentales (Dutozia et
+al., 2014), ont été confrontés. Ces différents travaux ont pour point
+commun d’avoir nécessité l’emploi de modèles avancés, permettant la
+représentation d’objets spatiaux aux frontières mal délimitées. Mais
+le grand nombre de modèles de ce type et l’absence de consensus pour
+l’un d’eux rend délicat leur recensement et leur analyse en vue d’une
+application originale.  C’est ce travail de recensement et de
+classification que nous souhaitons entreprendre ici, en espérant qu’il
+puisse servir de point d’entrée à toute personne amenée à manipuler
+des objets spatiaux difficilement délimitables ou souhaitant se
+familiariser avec ces notions et leur modélisation. Nous présentons
+avant tout une catégorisation des différents modèles proposés dans la
+littérature, mais nous présenterons également le cadre conceptuel au
+quel ils se rattachent et notamment la notion d’imprécision au centre
+de ces questions. Les différentes implémentations des modèles
+présentés seront également abordées. Notre ambition est de traiter
+tous les aspects du problème, en partant des aspects les plus
+théoriques et conceptuels (définition des termes et présentation des
+théories de rattachement), avant d’aborder des points plus techniques
+(implémentations), en passant par la présentation des différentes
+modélisations proposées dans la littérature.  Nous ne souhaitons
+cependant pas proposer une typologie originale des différents
+concepts, la question ayant déjà été largement traitée
+(Bouchon-Meunier, 1995 ; Fisher et al., 2006 ; Devilliers et al.,
+2019). Nous présenterons également les différentes théories
+mathématiques permettant la modélisation de l’imprécison, comme l’ont
+récemment proposé Batton-Hubert et Pinet (2019), ainsi que les
+implémentations de modèles proposées.  Nous commencerons par présenter
+plus abondamment ces notions et définir les différents concepts, tels
+que le vague ou l’imprécision, nécessaires à leur compréhension
+(partie 2). Puis nous énumérerons les différentes théories
+mathématiques permettant de modéliser l’imprécision (partie 3). Enfin
+nous présenterons les différentes modélisations de l’imprécision
+spatiale proposées dans la littérature (partie 4).
+
+
+\subsection{Les concepts de \emph{vague} et d’\emph{imprécision} spatiale}
+
+Pour commencer, nous allons définir les notions d’\emph{imprécision}
+et de \emph{vague} et présenter leurs spécificités lorsqu’elles sont
+appliquées au contexte spatial. Nous présenterons d’abord les notions
+dans leur ensemble, avant de nous concentrer sur les liens entre
+\emph{imprécision} et géographie; puis, nous définirons\emph{
+  l’imprécision spatiale,} concept qui sera utilisé tout au long de
+cet état de l’art.  L’exercice de définition d’un concept équivoque,
+tel que le vague, n’est pas une tâche aisée, car l’on est rapidement
+confronté à l’imprécision sémantique du langage naturel. C’est, en
+partie, ce constat qui conduisit les philosophes Gottlob Frege
+(1848–1925) et Bertrand Russell (1872–1970) à travailler sur une
+formalisation mathématique de la logique, à même d’affranchir le
+processus de réflexion des ambiguïtés du langage naturel (Williamson,
+1994). La réflexion contemporaine sur les notions de précision, de
+vague et d’imprécision remonte, selon Williamson (1994), aux travaux
+de Russell et plus spécifiquement à la publication, en 1923, de son
+article Vagueness (Russell, 1923). Pour Russell, le vague est l’opposé
+de la précision. Les deux concepts ont pour domaine tout système de
+signes et ne se limitent donc pas au langage naturel. Ils concernent
+tout type de représentation (e.g. cartes, photographies, mots) et
+n’ont donc de sens que pour qualifier une relation entre deux systèmes
+de signes, définie comme précise si bijective, i.e. pour un système de
+signes donné, quel que soit le signe considéré, il ne partage sa
+signification qu’avec un et un seul signe d’un second système de
+signes. À l’inverse, la relation entre deux systèmes de signes est
+vague si une représentation a plus d’un (ou aucun) équivalent dans le
+second système, laissant dès lors place à l’interprétation. Pour
+illustrer le concept de vague, Russell prend l’exemple du mot “rouge”
+décrivant une teinte tacitement connue de tous, mais dont on ne peut
+qu’arbitrairement fixer les limites. De la même manière, les concepts
+de lac et île ne sont pas suffisamment précis pour que leur
+dénombrement soit trivial (Sarjakoski, 1996). On pourrait multiplier
+les exemples à loisir, car, dans la conception russellienne, aucun
+domaine n’échappe au vague ; toute représentation l’est1, à des degrés
+divers, et la précision n’est qu’un idéal, hors d’atteinte.  Dans la
+littérature, le terme imprécis est régulièrement utilisé comme
+synonyme de vague, notamment par Zadeh (1965) et dans une grande
+partie des travaux se rattachant à la logique floue. Par métonymie, le
+terme flou2 est également employé dans le sens de vague,
+imprécis. C’est, par exemple, le cas lorsque Lagacherie et al.  (1996)
+parlent de fuzziness ou encore quand Brunet et al. (1992, p. 218)
+définissent le flou comme : « la partie d’un système ou d’un espace
+dont les contours et les limites sont, soit imparfaitement connus ou
+connaissables, soit instables, soit imprécis […]". De nombreux autres
+termes sont ponctuellement utilisés, rendant la terminologie confuse
+(Tableau 1). Pour rendre notre propos le plus clair possible, nous
+n’emploierons le terme flou que pour qualifier des formalisations
+fondées sur la théorie des sous-ensembles flous de Zadeh. De plus,
+pour rester le plus proche possible du vocabulaire utilisé en
+géomatique nous préférerons le terme imprécis à celui de vague.
+
+\begin{table}
+  \centering
+  \input{../tableaux/termes_vague.tex}
+  \caption{Termes utilisés dans la littérature comme synonymes de
+    précis et d’imprécis}
+  \label{tab:termes_vague}
+\end{table}
+
+La notion d’imprécision peut être associée à d’autres concepts, comme
+l’exactitude chez Russell (1923), que l’on retrouve chez
+Bouchon-Meunier (1995, 2007) sous le nom d’incertitude. Ici,
+l’incertitude est entendue comme le doute que l’on peut avoir sur la
+validité d’une connaissance (Bouchon-Meunier, 1995). L’imprécision et
+l’incertitude sont foncièrement liées et varient généralement en sens
+inverse (Russell, 1923). Ainsi, si la proposition (1) : « la distance
+de la Terre à la Lune est de 384 397 km » est plus précise que la
+proposition (2) : « la distance de la Terre à la Lune est d’environ
+384 000 km », mais la seconde proposition est plus certaine car, son
+cadre de validité (la plage de valeurs de la distance Terre-Lune) est
+plus large. On peut en effet, considérer que la proposition (2) reste
+vraie pour une distance réelle de 383 500 ou 384 999 km alors que la
+moindre variation de l’ordre d’un kilomètre suffit à invalider la
+première proposition (1). Dans certains cas, et notamment lorsque ces
+notions sont appliquées à des objets spatiaux, il peut être délicat de
+distinguer ces deux concepts. Cependant, ils sont fondamentalement
+différents : l’imprécision est une caractéristique invariable, alors
+que l’incertitude est contextuelle. Pour reprendre l’exemple
+précédent, la proposition (2) est imprécise et le restera quel que
+soit le contexte, alors que sa certitude dépend des connaissances de
+l’observateur. La véracité des propositions (1) et (2) est, toutes
+choses égales par ailleurs, invariable, mais la certitude de cette
+véracité est contextuelle.  L’imprécision et l’incertitude sont
+également associées à la notion d’incomplétude, qui désigne une
+connaissance partielle. Ceci est dû au fait qu’un manque de
+connaissances peut entraîner des incertitudes, mais également des
+imprécisions (Bouchon-Meunier, 1995 ; Bouchon-Meunier, 2007). Pour
+Bouchon-Meunier et plus généralement pour la communauté de chercheurs
+en intelligence artificielle, la composition de ces trois concepts
+définit la notion d’imperfection (Bouchon-Meunier, 1995). Dans la
+suite de ce document, nous travaillerons à partir de cette typologie,
+même si de nombreuses autres typologies de concepts ont cependant été
+proposées, que ce soit dans le domaine de l’intelligence artificielle
+ou de la géomatique (Fisher et al.,, 2006).
+
+\subsubsection{Imprécision et géographie}
+
+Les objets et les concepts géographiques n’échappent évidemment pas à
+l’imprécision. Ainsi, Russell (1923) mentionnait déjà l’existence
+d’objets dont la délimitation spatiale est imprécise, tel que le
+système solaire. De nombreux autres objets spatiaux imprécis ont été
+identifiés, comme l’illustre l’exercice de définition du Brownfield1,
+entrepris par Alker et al. (2000) et relevé par Bennett (2001), qui y
+voit un bon exemple de la difficulté d’identifier une délimitation
+satisfaisante d’espaces naturels. Le Brownfield, tout comme les forêts
+(Bennett, 2001 ; Dilo, 2006 ; Fisher et al.,, 2006), les montagnes
+(Varzi, 2001, 2015 ; Fisher et al.,, 2006 ; Chaudhry et Mackaness,
+2008), les vallées (Schneider, 2003) ou même le Soleil (Simons, 1999),
+appartiennent à cette catégorie d’objets spatiaux dont on ne peut
+fixer une limite. Cette énumération pourrait laisser penser que
+l’imprécision ne concerne pas les artefacts, pourtant l’expérience de
+Perec (Introduction) nuance cette affirmation. Comme l’indique Campari
+(1996), l’identification des frontières d’un artefact, n’est pas aisée
+puisque dépendante du contexte d’observation. Ainsi, la limite d’une
+ville ou d’un village est tout aussi vague que celle d’une zone
+frontalière (Varzi, 2001 ; Fisher et al.,, 2006), comme l’illustre la
+grande variabilité des définitions du concept de ville.  Tous ces
+objets géographiques, généralement qualifiés de vagues (Erwig, 1997),
+imprécis (Winter, 2000), flous (Lagacherie et al., 1996) ou d’objets
+aux frontières indéterminées (Burrough, 1996), s’opposent aux objets
+dits nets (Schneider, 2001) ou précis. Smith et Varzi (1995, 1997,
+2000) font usage d’un vocabulaire très différent en opposant les fiat
+boundaries, i.e. les frontières précises qu’ils estiment profondément
+liées à un processus cognitif, aux bona fide boundaries, caractérisant
+les objets spatiaux dont la délimitation est univoque (Varzi,
+2015). Pour Couclelis (1996), les objets géographiques nets sont
+d’avantage l’exception que la norme. Ce constat est corollaire de
+l’avis d’Odd Ambrosetti (1987, p. 200) pour qui "[…] il est
+problématique et généralement arbitraire de tracer des limites […]"2,
+limites qui, selon Brunet (2001, p. 106), sont "[…] indécises, fuyant
+sans cesse devant l’analyse, et même, localement
+indécidables ». Dutozia et al. (1994) considèrent, quant à eux, que
+"[…] l’espace géographique est par essence flou […]".  Ainsi, si les
+concepts présentés jusqu’ici nous semblent actuellement peu utilisés
+en géographie, de nombreuses notions et objets entrant dans le champ
+d’étude de la discipline y sont fondamentalement liés. C’est notamment
+le cas des différents maillages administratifs, comme les régions
+(Brennetot et al., 2014), mais également les frontières (Brunet et
+al., 1992), les seuils (Brunet et al., 1992 ; Lévy et Lussault, 2013),
+les discontinuités (Brunet et al., 1992 ; 1997), les franges (Brunet
+et al., 1992), les confins (Brunet et al., 1997) ou encore les fronts
+pionniers (Brunet et al., 1992), qui, comme tous les concepts dérivant
+de la notion de limite sont généralement définis comme pouvant être
+graduels ou progressifs (Brunet et al., 1992 ; Lévy et Lussault,
+2013), c’est-à-dire foncièrement imprécis.  La question de la
+formalisation des objets spatiaux imprécis a cependant été abordée en
+géographie, avant même le développement des systèmes d’information
+géographiques (Robinson, 2003). Dans les années 1970 où, à la suite de
+l’élaboration de la théorie des sous-ensembles flous (Zadeh, 1965),
+plusieurs géographes, rattachés au courant béhavioriste, tels que Gale
+(1972 ; 1976), Pipkin (1978) ou Leung (1979, 1987) ont identifié les
+problèmes que l’existence d’objets géographiques aux limites
+imprécises pouvaient poser à la géographie. Parmi ces problèmes, Gale
+(1976) a identifié la question de la régionalisation. Cette
+problématique sera également abordée par Rolland-May (1996 ; 1999)
+lors de ses travaux sur la définition de territoires de cohérence. Les
+travaux béhavioristes aboutiront à la formalisation du concept d’objet
+géographique imprécis à l’aide de la théorie des sous-ensembles flous
+(Leung, 1987). Ces travaux n’auront, semble-t-il, pas suffi à inscrire
+durablement le concept d’imprécision dans le champ de la géographie;
+puisque des publications ré-introduisant ce concept en géographie,
+apparaîtront régulièrement. C’est notamment le cas de Fisher \& Wood
+(1998), Collins et de Varzi (2000), qui se fonderont indépendamment
+sur l’exemple de la définition d’une montagne pour introduire cette
+notion.  Parallèlement, Christiane Rolland-May (1984 ; 1987) se
+fondera notamment sur les travaux de Gale et Leung pour développer le
+concept d’espace géographique flou. Cette dénomination qualifie la
+formalisation, à l’aide de la théorie des sous-ensembles flous, de
+l’espace tel que conceptualisé en géographie. Ce travail permettra à
+Rolland-May de proposer une définition formelle de notions courantes
+utilisées en géographie, telles que les franges (Rolland-May ,1987),
+définies comme la limite floue d’un espace géographique, ou les
+discontinuités, décrites comme une configuration particulière
+d’ensemble flou (Rolland-May, 2003). Les différents travaux de
+Rolland-May autour de la question de l’imprécision en géographie ont
+permit à différents chercheurs d’aborder différemment des questions
+géographiques (Dutozia et al., 2014), comme, par exemple, de Ruffray
+et Hamez (2004), qui feront usage des concepts développés par
+Rolland-May pour quantifier la cohérence de territoires, ou Didelon et
+al. (2011) qui emploient la logique floue pour exploiter des cartes
+mentales.
+
+\subsubsection{L’imprécision spatiale}
+
+Nous proposons d’utiliser le terme d’imprécision spatiale pour décrire
+l’application du concept d’imprécision aux objets spatiaux. Par ce
+terme, nous entendons qualifier toutes les situations où un objet
+spatial, quelle que soit sa nature, voit ses limites difficilement
+identifiables. Il s’agit donc d’un concept ne portant que sur la
+dimension spatiale et non sur les autres aspects. Par exemple, la
+difficulté de délimitation spatiale d’un objet géographique tel que la
+forêt entre dans le cadre de l’imprécision spatiale. Ce n’est
+cependant pas le cas de la difficulté de définition du concept en
+lui-même, il s’agit dans ce cas d’imprécision sémantique. Ainsi,
+l’imprécision spatiale n’est qu’un cas spécifique du concept général
+d’imprécision, précédemment présenté, mais son cadre d’application et
+les spécificités de la question spatiale justifient la définition d’un
+nouveau concept.  Pour illustrer ce concept, nous allons nous appuyer
+l’exemple de la définition des rives d’un lac artificiel. La Figure 1
+est une orthophotographie de la partie ouest du lac du Chambon (Isère)
+sur laquelle a été dessinée la limite de l’eau. On peut cependant se
+demander si la limite que nous avons tracée est une délimitation
+satisfaisante de l’objet lac. En effet, le niveau de l’eau est amené à
+bouger au cours du temps. L’orthophotographie permet d’identifier ces
+zones, dépourvues de végétation et situées au-delà de la limite
+représentée sur la Figure 1. On peut donc tracer une seconde limite,
+celle de la zone atteignable par les eaux (Figure 2) et considérer que
+c’est ce nouveau tracé qui délimite l’objet lac.
+
+\begin{figure}
+  \centering
+  %\missingfigure
+  \caption{Saisie manuelle de la limite du lac du Chambom}
+  \label{fig:lim_champ}
+\end{figure}
+
+\begin{figure}
+  \centering
+  %\missingfigure
+  \caption{Saisie manuelle d'une limite alternative}
+  \label{fig:lim_champ_alt}
+\end{figure}
+
+Toutefois, aucune de ces délimitations n’est réellement
+satisfaisante. Peut-on considérer qu’une zone pouvant être découverte
+appartient autant à l’objet lac qu’une zone qui est toujours
+recouverte d’eau ? À l’inverse, peut-on considérer qu’une zone
+intermittemment située sous l’eau n’appartient pas au lac de la même
+manière que la forêt située à plusieurs dizaines de mètres de là ?
+Cette difficulté de délimitation est liée, comme nous l’expliquions
+précédemment, à l’imprécision de l’objet lac. On ne peut en définir
+une limite précise autrement qu’arbitrairement. Nous avons cependant
+pu tracer deux limites précises1, celle de la zone recouverte d’eau
+(Figure 1) et celle de l’étendue maximale du lac (Figure 2). Ces deux
+frontières délimitent une aire de transition, entre le lac et son
+extérieur (Figure 3), c’est-à-dire la frontière du lac.
+
+\begin{figure}
+  \centering
+  %\missingfigure
+  \caption{Mise en évidence de la limite imprécise du lac}
+  \label{fig:lim_champ_imp}
+\end{figure}
+
+De même que pour l’imprécision, le concept d’incertitude ne voit pas
+sa définition générale impactée par la prise en compte de la dimension
+spatiale. Cependant, la multiplicité des termes utilisés dans la
+littérature, les contradictions entre auteurs et les représentations
+graphiques utilisées pour présenter les concepts sont sources de
+nombreuses confusions entre les concepts d’imprécision et
+d’incertitude spatiale.
+
+Comme expliqué précédemment, l’incertitude qualifie le doute que l’on
+peut avoir sur une connaissance. On peut donc définir l’incertitude
+spatiale comme le doute sur la position d’un objet. Ce concept peut
+être, tout du moins selon Tøssebro et Nygård (2002), décomposé en deux
+éléments : l’incertitude positionnelle et l’incertitude
+morphologique. L’incertitude positionnelle qualifie un doute sur la
+position d’un objet spatial. Tøssebro et Nygård (2008) prennent comme
+exemple l’estimation par sonar de la position d’un sous-marin. Ce cas
+offre une bonne opportunité pour distinguer imprécision et incertitude
+spatiale. L’objet sous-marin, est, de part sa nature d’artefact, net ;
+l’identification de ses frontières, à une échelle donnée, ne pose pas
+de problèmes. Cependant, sa position est mal connue, puisqu’estimée à
+l’aide d’un outil peu précis qui ne peut qu’estimer une zone de
+présence. La position de l’objet est donc incertaine. L’incertitude
+morphologique qualifie, quant à elle, un doute sur la forme de
+l’objet, c’est-à-dire. sur la position de sa frontière. C’est pourquoi
+on peut considérer que l’incertitude morphologique correspond à une
+incertitude positionnelle portant uniquement sur la frontière de
+l’objet. On peut prendre comme exemple une nappe phréatique, dont
+l’étendue ne peut être qu’estimée par des relevés terrain. Il est donc
+possible de savoir si la nappe est présente ou non en un point de
+mesure, mais non d’en définir la frontière, ce qui se traduit par une
+incertitude sur la position de la frontière, une incertitude
+morphologique telle que définie par Tøssebro et Nygård. La proximité
+des concepts d’incertitude morphologique et positionnelle peut
+expliquer pourquoi les autres définitions de l’incertitude spatiale,
+notamment issues des travaux de Clementini (2008), Lagacherie et
+al. (1996), Freksa et Barkowsky1 (1996) ou Schneider (1999) fusionnent
+ces deux notions. Dutton (1992), quant à lui, inclut ces deux notions
+dans sa définition de l’incertitude positionnelle.
+
+On peut illustrer la notion d’incertitude spatiale en réutilisant
+l’exemple de la délimitation du lac du Chambon (Figures 1 et
+2). Lorsque nous avons tracé la limite du niveau maximal de l’eau
+(Figure 2), nous nous sommes appuyés sur l’emplacement de la
+végétation. Cependant, dans certains cas, notamment pour la rive sud
+du lac, il s’est avéré difficile d’identifier la bonne limite et ce à
+cause de la présence de certaines poches de végétation. Ainsi, la
+frontière sud de l’étendue maximale du lac est incertaine, son tracé
+est contestable, mais uniquement à cause de notre manque de
+connaissances. Il ne s’agit pas d’imprécision. La Figure 4 représente
+une zone au sein de laquelle le tracé exact de la frontière est
+incertain, c’est-à-dire qu’au sein de cette zone, tous les tracés sont
+envisageables2. Ainsi, le lac du Chambon, rentre dans la catégorie des
+objets spatiaux à la fois imprécis et incertains.
+
+\begin{figure}
+  \centering
+  %\missingfigure
+  \caption{Mise en évidence de l'incertitude pour la limite des hautes
+  eaux}
+  \label{fig:lim_champ_inc}
+\end{figure}
+
+L’incertitude et l’imprécision spatiales peuvent cohabiter, comme dans
+le cas du lac du Chambon. La Figure 5 donne un aperçu plus théorique
+de la différence qu’il peut y avoir entre ces deux
+notions. L’incertitude spatiale est représentée par plusieurs
+frontières, illustrant le doute sur la position de la limite de
+l’objet. L’imprécision spatiale est, quant à elle, représentée par une
+bande, marque d’une frontière progressive, non réductible à une ligne.
+
+\begin{figure}
+  \centering
+  %\missingfigure
+  \caption{Distinction entre les notions d’imprécision et
+    d'incertitude spatiale (pour des raisons de lisibilité seule la
+    frontière de l’objet spatial est représentée).}
+  \label{fig:inc_vs_imp}
+\end{figure}
+
+De façon similaire à ce qui a été décrit précédemment, l’incertitude
+et l’imprécision spatiales sont liées. Par exemple, le fait qu’un
+objet géographique soit imprécis complexifie l’identification de sa
+frontière, ce qui se traduit par une incertitude morphologique
+(Lagacherie et al., 1996). De plus, la précision et la certitude des
+attributs d’un objet géographique sont fortement liées à la précision
+et à la certitude spatiale de ce même objet et inversement (Mark et
+Csillag, 1989). Ainsi, la définition d’un objet géographique à partir
+de données imprécises le sera elle-même, et le recueil d’informations
+au sein d’un objet géographique dont la frontière est incertaine ne
+pourra qu’être une opération qui l’est tout autant.
+
+Différents auteurs ont listé des facteurs expliquant l’apparition de
+l’imprécision et de l’incertitude spatiales, comme Freksa et Barkowsky
+(1996) ou Dutton (1992) qui identifient quelques facteurs
+explicatifs. D’autres travaux (Hadzilacos, 1996 ; Evans et Waters,
+2008) vont plus loin dans le détail en proposant une typologie plus
+poussée de ces différents facteurs. Enfin, des typologies d’objets
+spatiaux imprécis, comme celle proposée par Liu et al. (2019),
+permettent d’identifier d’autres causes, inhérentes au processus de
+construction des objets spatiaux.
+
+Une première cause de l’imprécision spatiale, correspondant par
+ailleurs à la majorité des exemples précédents, est liée à
+l’imprécision de la définition. Par exemple, l’objet géographique
+montagne, n’est pas (seulement) imprécis à cause d’une quelconque
+difficulté technique limitant la précision des mesures, il l’est car
+le concept montagne n’est pas suffisamment clair pour permettre la
+délimitation précise d’une portion d’espace. C’est généralement
+l’imprécision du concept qui rend l’objet géographique imprécis
+(Freksa et Barkowsky, 1996). L’imprécision du concept est à distinguer
+des définitions concurrentes, ce qu’Evans et Waters (2008) nomment
+definitional disagreement1. C’est, par exemple, le cas des frontières
+contestées, nécessairement mutuellement exclusives ; qui, même si
+définies aussi précisément que possible, ne permettent pas de
+construire une frontière unique, sinon en admettant une part
+d’incertitude spatiale. Par conséquent, le definitional disagreement,
+et plus généralement, l’existence de géométries concurrentes pour un
+même individu (Hadzilacos, 1996), sont une source d’incertitude,
+inhérente au choix d’une possibilité parmi l’ensemble des possibles.
+
+Cependant, l’imprécision d’une définition peut être souhaitée,
+Hadzilacos (1996) parle alors de don't care [boundaries]1. C’est, par
+exemple, un cas que l’on retrouve fréquemment lors de la description
+en langage naturel d’une position. Un exemple de Bateman et
+al. (2010), illustre bien cette situation ; si pour décrire sa
+position, une personne dit : « Je suis à la Poste », on ne peut pas en
+conclure qu’elle est située à l’intérieur d’une agence postale. En
+effet, si la file d’attente sort du bâtiment, cette description sera
+toujours valable. La limite de « la Poste » est donc peu précise, mais
+dans ce contexte, il n’est pas nécessaire qu’elle le soit
+davantage. L’information que le locuteur cherche à communiquer est sa
+proximité et son interaction avec une agence postale, et non sa
+présence au sein du bâtiment.
+
+La dimension temporelle peut également être une source
+d’imprécision. Hadzilacos (1996) et Liu et al. (2019) mentionnent
+respectivement l’existence de time-varying [boundaries]1 et de dynamic
+boundary objects2 pour qualifier des objets géographiques dont la
+frontière varie dans le temps. C’est, par exemple, le cas d’un front
+de mer. Pour ce type d’objets, définir une frontière nécessite de
+“synthétiser” les différentes évolutions temporelles, ce qui conduit
+nécessairement à une frontière imprécise. Dans ce cas l’imprécision
+spatiale est un artefact, né de la modélisation atemporelle d’un objet
+qui ne l’est pas.
+
+On peut également relever des aspects plus techniques, comme
+l’imprécision liée aux instruments de mesure ou au producteur de
+données (Follin et al., 2019) et plus généralement au processus de
+production de données (Dutton, 1992 ; Evans et Waters, 2008 ; Follin
+et al., 2019). D’autres points plus spécifiques peuvent également être
+identifiés, comme les limites des modèles de représentation des
+données (Dutton, 1992 ; Follin et al., 2019), il est par exemple
+impossible de représenter tous les nombres réels informatiquement à
+cause de la précision finie des nombres flottants utilisés pour les
+figurer.
+
+Enfin, il convient de noter que l’imprécision et l’incertitude peuvent
+se transmettre lors de la définition de nouveaux objets à partir de
+mesures (Dutton, 1992) ou d’objets géographiques imprécis (Liu et al.,
+2019 ; Follin et al., 2019). On peut, dans ce cas, parler
+d’imprécision et d’incertitude de second ordre. C’est ce phénomène que
+décrivent Liu et al. (2019) lorsqu’ils définissent les
+element-clustering objects1, des objets spatiaux imprécis construits
+par l’agrégation d’autres objets (flous ou nets), et les
+object-referenced objects2, qui sont construits par subdivision
+d’objets spatiaux imprécis.
+
+\subsection{La modélisation de l'imprécision spatiale}
+
+La question de la modélisation de l’imprécision a conduit au
+développement de plusieurs théories mathématiques, dont la plus connue
+est la théorie des sous-ensembles flous (Zadeh, 1965). Nous avons
+choisi de nous centrer sur la présentation de cette théorie, car nous
+n’avons pas identifié dans la littérature des utilisations de théories
+alternatives comme la théorie des fonctions de croyances. Quant aux
+travaux basés sur la théorie des probabilités (Tøssebro et Nygård
+2002, 2008), ceux-ci traitent de la modélisation de l’incertitude,
+c’est pourquoi nous ne les incluons pas dans cet article.
+
+La théorie des sous-ensembles flous, ou, par abus de langage, théorie
+des ensembles flous (Bouchon-Meunier, 2007), proposée par Zadeh en
+1965 (Zadeh , 1965), vise à proposer un cadre théorique permettant de
+modéliser des appartenances partielles à une classe
+d’objets. Bouchon-Meunier (1995) présente les sous-ensembles flous
+comme un « assouplissement » des ensembles « classiques », ici
+qualifiés de « nets »1 (Smithson et Verkuilen, 2006). La possibilité
+de modéliser des appartenances partielles permet à la théorie des
+sous-ensembles flous de modéliser l’imprécision des connaissances, ce
+qui en fait un candidat idéal pour la modélisation d’objets spatiaux
+imprécis.
+
+Un ensemble flou A est défini comme un couple composé d’un ensemble
+net $X$ et d’une fonction $f_A$ nommée fonction d’appartenance (Zadeh,
+1965) :
+
+\begin{equation}
+A = (X, f_A)  
+\end{equation}
+
+La fonction $f_A$, associe à chaque élément de X une valeur comprise
+dans l’intervalle [0,1], nommée degré d’appartenance. Cette valeur
+peut être interprétée comme une mesure de l’appartenance d’un élément
+à $X$. Par exemple, si l’on définit $X$ comme l’ensemble des personnes
+de grande taille, le degré d’appartenance qualifie l’appartenance
+d’une personne à cet ensemble. Une personne mesurant 2,10 m aura un
+degré d’appartenance de 1, i.e. qu’elle est considérée comme grande. À
+l’inverse, une personne mesurant 1,75 m aura un degré d’appartenance
+compris entre 0 et 1 (0,6 par exemple), traduisant une appartenance
+partielle à l’ensemble des personnes de grande taille, ce qui revient
+à dire qu’il s’agit d’une personne grande, mais pas totalement.
+
+De la même manière, le degré d’appartenance peut illustrer
+l’appartenance d’une position à un objet spatial. Par exemple, la
+Figure 6 illustre la représentation du lac du Chambon à l’aide d’un
+sous-ensemble flou, les positions situées dans la zone d’imprécision
+(Figure 3) se voient attribuer un degré d’appartenance inférieur à
+1. Ce degré devient nul au-delà de la seconde frontière (Figure 2).
+
+\begin{figure}
+  \centering
+  %\missingfigure
+  \caption{Illustration de la modélisation du lac du Chambon à l’aide
+    de la théorie des sous-ensembles flous.}
+  \label{fig:champ_flou}
+\end{figure}
+
+L’ensemble des éléments ayant un degré d’appartenance non nul permet
+de définir le support $S$ de l’ensemble :
+
+\begin{equation}
+  S(A) = \{x ∈ X|f_A(x) > 0\}
+\end{equation}
+
+Avec $X$ un ensemble net, $x$ un élément de l’ensemble $X$. Le noyau
+$N$ de l’ensemble correspond, quant à lui, à l’ensemble des éléments
+ayant un degré d’appartenance égal à 1 :
+
+\begin{equation}
+  N(A) = \{x ∈ X|f_A(x) = 1\}
+\end{equation}
+
+Si $A$ et $B$, deux sous-ensembles flous d’un même ensemble $X$, $A$
+et $B$ sont égaux, si et seulement si, pour tout élément de $X$, le
+degré d’appartenance aux sous-ensembles $A$ et $B$ est égal, soit :
+
+\begin{equation}
+A = B ssi ∀x ∈ X, f_A(x) = f_B(x)
+\end{equation}
+
+Un sous-ensemble flou $A$ de $X$ est inclus dans un sous-ensemble flou
+$B$ de $X$ si et seulement si, pour tout élément $x$ appartenant à
+$X$, le degré d’appartenance de $x$ à $A$ est inférieur ou égal à son
+degré d’appartenance à $B$ :
+
+\begin{equation}
+A ⊆ B ssi ∀x ∈ X, f_A(x) ≤ f_B(x)
+\end{equation}
+
+Le complément $A^c$ d’un sous-ensemble flou $A$ de $X$ a pour fonction
+d’appartenance :
+
+\begin{equation}
+∀x ∈ X, f_{A^C}(x) = 1 − f_A(x)
+\end{equation}
+
+Ainsi, pour reprendre l’exemple précédent, on peut construire le
+complément de l’ensemble des personnes de grande taille, l’ensemble
+des personnes qui ne sont pas de grande taille. Une personne de 2,10 m
+aura un degré d’appartenance nul à ce second ensemble, et une personne
+de 1,75 m de 0,4.
+
+Zadeh (1965) définit l’intersection de deux sous-ensembles flous $A$
+et $B$ de $X$ comme le sous-ensemble flou $C$ de $X$ dont la fonction
+d’appartenance est la suivante :
+
+\begin{equation}
+  ∀x ∈ X, f_C (x) = min(f_A(x), f_B(x))
+\end{equation}
+
+De manière analogue, l’union de deux sous-ensembles flous A et B de X
+est un sous-ensemble C ∈ F(X) dont la fonction d’appartenance est :
+
+\begin{equation}
+    ∀x ∈ X, f_C (x) = max(f_A(x), f_B(x))
+  \end{equation}
+
+  Par exemple, l’ensemble des personnes grandes et âgées peut être
+  construit en intersectant l’ensemble des personnes âgées avec celui
+  des personnes de grande taille. En utilisant les opérateurs proposés
+  par Zadeh (1965), une personne dont le degré d’appartenance à ces
+  deux ensembles est respectivement de 0,8 et 0,5, aura un degré
+  d’appartenance à l’ensemble des personnes grandes et âgées de 0,5.
+
+  On notera cependant que les opérateurs d’union et d’intersection
+  proposés par Zadeh (1965) ne sont pas les seuls à avoir été
+  envisagés et d’autres opérateurs, aux caractéristiques diverses, ont
+  été proposés dans la littérature1. Cependant, la proposition de
+  Zadeh, permettant de conserver « presque toute la structure de la
+  théorie classique des ensembles » (Bouchon-Meunier, 2007), fait
+  office de standard.
+
+  \subsection{Modélisations et implémentations}
+
+
+  Comme l’indiquait Burrough (1996, p.15), « Les objets inexacts
+  requièrent des modèles de données inexacts ». L’objectif de cette
+  partie est de présenter les différents modèles proposés dans la
+  littérature pour modéliser les objets spatiaux flous. Nous
+  traiterons aussi bien de modèles uniquement théoriques que de leurs
+  implémentations, voire de leurs applications.
+  
+  Pour présenter ces différents modèles, nous proposons une
+  classification ad hoc, distinguant les modèles définis en extension
+  de ceux définis en intension. Nous commencerons par expliciter cette
+  classification, tout en la confrontant aux catégorisations présentes
+  dans la littérature, avant de présenter les différents modèles.
+
+  \subsubsection{Critères de classification}
+
+Un grand nombre de modèles ont été proposés pour permettre la
+manipulation d’objets spatiaux imprécis. Ils se distinguent par leur
+théorie de rattachement (Partie 3), par la nature des objets spatiaux
+modélisables (e.g. points, lignes, surfaces) ou leur implémentation
+(e.g. raster, vecteur, ad hoc ou inexistante).
+
+Chacun de ces points peut être utilisé comme critère de classement,
+mais à notre connaissance, toutes les catégorisations proposées dans
+la littérature se fondent sur le critère de la théorie de
+rattachement. Clementini (2008) ou Erwig \& Schneider (1997), par
+exemple, identifient trois catégories : les modèles probabilistes, les
+modèles flous et les modèles exacts, qui étendent le modèle simple
+features1 aux objets spatiaux imprécis. Certains auteurs (Schneider,
+2001 ; Schneider, 2008 ; Carniel et al., 2016) y ajoutent la catégorie
+des modèles approximatifs, basés sur la théorie des ensembles du même
+nom, moins populaire que les précédentes. Enfin Fisher (Fisher, 2003 ;
+Fisher et al., 2005 ; Fisher et al., 2006) propose une typologie des
+théories combinant la modélisation de l’incertitude spatiale à celle
+de l’imprécision spatiale et distinguant les modèles en fonction de
+quatre théories de rattachement : probabilités, sous-ensembles flous,
+fonctions de croyance et approbation. Bien qu’elle soit explicite et
+permette une bonne appréhension de la différence de popularité entre
+les différentes théories, cette catégorisation est critiquable, car
+elle passe outre un critère qui nous semble fondamental : la nature du
+processus de construction.
+
+On peut, suivant la logique du paradigme des ensembles de points2
+(Egenhofer et Herring, 1990), concevoir l’espace comme un ensemble
+infini de points, représentant autant de positions. Les objets
+spatiaux, nécessairement inclus dans cet espace, peuvent dès lors être
+conceptualisés comme un ensemble de positions3. Par extension, un
+objet spatial imprécis peut être conceptualisé comme un ensemble de
+positions dont certaines ont une appartenance partielle à
+l’ensemble. La nature du processus de construction décrit la méthode
+utilisée pour décider de l’appartenance d’une de ces positions à
+l’objet spatial et par extension pour construire un objet
+spatial. Nous distinguons deux approches : la construction en
+intension et celle en extension. Nous parlons de construction en
+extension lorsque l’objet spatial traité est construit par la
+sélection d’autres objets spatiaux (e.g. construction d’un département
+par l’union des communes le composant). La construction en intension
+désigne les cas où un objet spatial est construit par la délimitation
+d’un espace (e.g. construction de buffers).
+
+Cette distinction ne doit pas être confondue avec celle, faite en
+mathématiques, entre la définition en intension et la définition en
+extension, deux concepts qui qualifient la façon dont le contenu d’un
+ensemble est exprimé. Il s’agit de deux notions orthogonales, un objet
+spatial défini en intension pouvant être construit en extension et
+inversement (Tableau 2). La définition en intension consiste à fixer
+une ou plusieurs règles décrivant l’appartenance d’un élément à un
+ensemble. Par exemple, l’ensemble des géographes anarchistes peut être
+définit comme : tous les êtres humains, étudiant la géographie et
+favorables à l’anarchisme. De la même manière, on peut définir un
+objet géographique en intension. Par exemple, une zone économique
+exclusive (ZEE) est définie comme la zone située à moins de 200 miles
+marins des côtes d’un pays (Brunet et al., 1992). À l’inverse, la
+définition d’un ensemble en extension consiste à lister les différents
+éléments y appartenant. Pour reprendre l’exemple précédent, la
+définition en extension de l’ensemble géographes anarchistes serait :
+Élisée Reclus ; Pierre Kropotkine ; Léon Metchnikoff ; Simon
+Springer. Pour un objet spatial, sa construction en extension se
+résume à lister les positions ou les objets géographiques appartenant
+à l’ensemble, par exemple l’ensemble des régions ultramarines
+françaises est : La Guadeloupe ; La Guyane ; La Martinique ; La
+Réunion ; Mayotte.
+
+La distinction que nous faisons entre construction en extension et
+construction en intension peut sembler équivalente à celle qui a été
+faite entre les implémentations raster et vecteur, ou plus
+généralement, entre les modèles champs et objets tels que définis par
+Couclelis (1992) et Goodchild (1992). En effet, l’utilisation d’un
+modèle de type champ nécessite de renseigner, pour chaque élément, par
+exemple des pixels dans le cas d’une implémentation raster, son
+appartenance à l’objet spatial, ce qui équivaut à une construction en
+extension. Inversement, la construction d’un objet vectoriel est
+assimilable à une construction en intension. Cependant, le champ des
+possibles ne se limite pas à ces deux cas, laissant supposer une
+équivalence entre les deux catégorisations. Par exemple, la définition
+d’un objet spatial à partir de la sélection d’objets préexistants
+(e.g. on souhaite sélectionner les hôtels proches d’une station de
+métro donnée), entre dans le cadre du modèle objet tel que défini par
+Couclelis (1992), mais impose une construction en extension, i.e. la
+sélection d’objets spatiaux à partir d’un ensemble.
+
+\begin{table}
+  \centering
+  \input{../tableaux/extension_vs_intension.tex}
+  \caption{Comparaison entre la nature de construction et la nature de définition}
+  \label{tab:ext_vs_int}
+\end{table}
+
+\subsubsection{Modèles basé sur une construction en intension}
+
+Parmi les modèles construits en intension, on retrouve des
+propositions basées sur la théorie des sous-ensemble flous, présentée
+précédemment. Cependant, il existe une autre catégorie de modèles,
+fréquemment décrits comme « exacts » dans la littérature (Schneider,
+2003 ; Bejaoui et al., 2009).
+
+\paragraph{Les modèles \enquote{exacts}}
+
+
+Parmi les modèles construits en intension, on retrouve des
+propositions basées sur la théorie des sous-ensemble flous, présentée
+précédemment. Cependant, il existe une autre catégorie de modèles,
+fréquemment décrits comme « exacts » dans la littérature (Schneider,
+2003 ; Bejaoui et al., 2009).
+
+En 1996, Cohn et Gotts (Cohn et Gotts, 1996) ont proposé le modèle
+egg-yolk, qui demeure aujourd’hui la plus connue des solutions de
+modélisation de l’imprécision spatiale. Les auteurs proposent de
+modéliser des étendues imprécises à l’aide de régions délimitées par
+deux frontières. Par analogie avec un œuf au plat, la zone délimitée
+par la seconde frontière est baptisée « white » et celle délimitée par
+la première frontière, incluse dans « le blanc de l’œuf », est
+baptisée « yolk ». Pour poursuivre avec cette analogie, la partie du
+« blanc » non incluse dans le « jaune » correspond alors à la partie
+imprécise, i.e. dont l’appartenance à la région est contestable,
+contrairement à la zone appartenant au « jaune » Dans le cas où ces
+deux zones sont confondues, le modèle egg-yolk est équivalent au
+modèle simple features et aucune imprécision n’est modélisée.
+
+Parallèlement à ces travaux, Clementini et Di Felice (1996) ont
+proposé une modélisation des surfaces imprécises, qui sera par la
+suite étendue pour permettre la modélisation de tout type d’objet
+spatial imprécis. De la même façon que précédemment, une région vague
+possède deux frontières, dont la sémantique est identique à celle du
+modèle egg-yolk. Cependant, les propositions de Cohns et Gotts (1996)
+et de Clementini et Di Felice (1996) se distinguent par leur
+modélisation des relations topologiques (Cohn et Gotts, 1996). Le
+modèle egg-yolk est basé sur la théorie RCC1 proposée par Randell et
+Cohn (1989) alors que le modèle proposé par Clementini et Di Felice
+(1996) est basé sur la topologie des ensembles de points (Egenhofer et
+Herring, 1990) tout comme le modèle, similaire, qui sera proposé par
+Erwig et Schneider en 1997 (Erwig, 1997). En découle une modélisation
+différente des relations topologiques entre deux régions vagues. Pour
+Clementini et Di Felice (1996) le modèle egg-yolk se distingue par son
+approche topologique du problème, là où eux ont privilégié une
+approche géométrique. Clementini proposera ultérieurement une
+extension de ce modèle en vue d’y intégrer la modélisation des points
+et des polylignes (Clementini, 2005 ; Clementini, 2008), contrairement
+au modèle d’Erwig et Schneider (1997), limité aux régions imprécises.
+
+Schneider a proposé une modélisation exacte des objets imprécis1 en
+1996. Contrairement aux modèles présentés précédemment, ce dernier
+offre, dès sa première itération (Schneider, 1996), la possibilité de
+modéliser des points, des lignes et des régions imprécises qui peuvent
+être à trous ou composées de plusieurs noyaux. Cette proposition est
+basée sur le modèle Realm/Rose de Güting et Schneider (1995), qui
+propose de définir des objets spatiaux à partir d’une grille régulière
+de points. Chaque objet, quel que soit son type, est construit à
+partir d’un ou de plusieurs de ces points, ce qui s’apparente à une
+version discrète du paradigme des ensembles de points.
+
+Les modèles précédents ont pour point commun de ne pas permettre la
+modélisation des objets partiellement imprécis1, tel que l’on pourrait
+conceptualiser le lac du Chambon, dont la limite est précise par
+endroits, notamment le long du barrage (Figure 3). Bejaoui et
+al. (Bejaoui 2009 ; Bejaoui et al, 2009) proposent donc d’étendre le
+modèle egg-yolk à ce type d’objet tout en permettant la modélisation
+de points et de lignes imprécises. Pour ce faire, les auteurs
+proposent de re-formaliser le modèle à l’aide du paradigme des
+ensembles de points, abandonnant le modèle RCC initialement utilisé
+par Cohn et Gotts (1996). Mais la principale différence avec les
+propositions précédentes n’est pas due aux types d’objets modélisables
+ou à la théorie de rattachement, mais au raffinement de la sémantique
+des objets imprécis. Ainsi, les lignes imprécises, constituant un seul
+type d’objet dans le modèle de Clementini (2005) sont ici décomposées
+en neufs classes, en fonction de la nature (imprécise, partiellement
+imprécise ou précise) de leur intérieur et de leur frontière. Pour les
+régions imprécises, trois catégories sont proposées : les régions
+précises, les régions partiellement imprécises, dont certaines parties
+sont précises et d’autres non et les régions imprécises. Ce modèle
+offre donc une finesse dans la modélisation d’objets spatiaux imprécis
+qui était jusqu’ici inaccessible aux modèles exacts, mais au prix
+d’une importante complexification du modèle.
+
+\begin{figure}
+  \centering
+  %\missingfigure
+  \caption{Illustration de la modélisation du lac du Chambon avec un
+    modèle exact tel que proposé par Bejaoui et al. (2009). Comme pour
+    tous les modèles “exacts” la zone d’appartenance totale est
+    incluse dans la zone d’appartenance au moins partielle.}
+  \label{fig:champ_exact}
+\end{figure}
+
+\paragraph{Modèles et implémentation flous}
+
+Définir un objet spatial imprécis à l’aide de la théorie des
+sous-ensembles flous nécessite au préalable d’en élaborer un modèle de
+représentation. C’est un travail qui, à notre connaissance, n’a été
+entrepris que par Schneider (1999 ; 2001) qui a formalisé une version
+floue du modèle simple features.
+
+Le modèle de Schneider (1999) définit trois types de géométries
+floues : le fpoint, la fline et la fregion, équivalents flous des
+types point, line et region du modèle simple features. Comme pour ce
+modèle, la proposition de Schneider se base sur le paradigme des
+ensembles de points. Les fpoints sont définis comme une union de
+points flous1, i.e. un ensemble de positions disjointes, deux à deux,
+auxquelles est associée une valeur, le degré d’appartenance de la
+position au fpoint. Ainsi, contrairement à un point, un fpoint peut
+occuper plus d’une position (Figure 8). Les lignes floues (à ne pas
+confondre avec les flines), sont également définies comme un ensemble
+de points flous. Cependant, contrairement au fpoint, la construction
+de cet ensemble est contrainte et les points flous appartenant à une
+ligne floue doivent se trouver sur une même coube continue. De plus,
+chaque point flou doit avoir un degré d’appartenance unique,
+strictement croissant (ou décroissant) dans le sens de la coube. Les
+deux points flous situés aux extrémités d’une ligne floue ont donc,
+respectivement, le degré d’appartenance maximal et minimal à la ligne
+floue. Les blocs flous sont définis comme l’union d’un nombre fini de
+lignes floues, ne pouvant êtres connectées que par leurs extrémités2
+et les flines comme une union de blocs flous disjoints. Cette
+construction permet aux flines de représenter des objets linéaires
+complexes et composés de plusieurs géométries distinctes qui ne
+seraient pas représentables par le type line du modèle simple features
+(Figure 8). Enfin, les fregions sont définies comme étant un ensemble
+de points flous ne comportant pas d’anomalies géométriques
+(e.g. superpositions, croisements). Comme pour les fpoints et les
+flines, les fregions peuvent modéliser des géométries plus complexes
+que le type region du modèle simple features, une fregion pouvant être
+composée de plusieurs polygones disjoints (Figure 8). Schneider (2004)
+complétera ce modèle en définissant un ensemble de prédicats
+permettant de modéliser des relations topologiques entre géométries
+floues.
+
+\begin{figure}
+  \centering
+  %\missingfigure
+  \caption{Les trois types géométriques flous proposés par Schneider
+    (1999). D’après Schneider (1999).}
+  \label{fig:mod_schneider}
+\end{figure}
+
+Plusieurs implémentations de ce modèle ont été proposées, notamment
+par Kanjilal et al. (2010) ou par Dilo et al. (Dilo, 2006 ; Dilo et
+al., 2007). Mais, d’autres travaux ont également proposé des
+modélisations floues d’objets spatiaux imprécis, sans rattachement ou
+définition explicite d’un modèle théorique. C’est notamment le cas de
+Zoghalmi ou de Runz qui proposent une approche fondée sur les
+alpha-cuts (de Runz, 2008 ; de Runz et al., 2008 ; Zoghlami, 2013 ;
+Zoghlami et al., 2016) ou de Carniel et al. (2016).
+
+Kanjinal et al. (2010), proposent d’implémenter le type fregion défini
+par Schneider (1999) à l’aide de « région[s] plateau », définies comme
+un ensemble non nul et fini de polygones1 (ou multi-polygones) nets,
+représentant une plage de valeurs de degré d’appartenance. Cette
+implémentation est semblable à l’approche par alpha-cuts proposée par
+de Runz (2008) ou Zoghalmi (2013 ; 2016). Dans la théorie des
+sous-ensembles flous, une alpha-cut est définie comme l’ensemble des
+éléments d’un sous-ensemble flou ayant un degré d’appartenance
+supérieur à un seuil fixé2 (Bouchon-Meunier, 2007). Si les éléments du
+sous-ensemble flou sont des positions, une alpha-cut permet de définir
+une aire, modélisable par un polygone. Ainsi, les implémentations
+proposées par Kanjinal et al. (2010), Zoghalmi (2013 ; 2016) ou de
+Runz (2008) ont pour point commun de représenter un sous-ensemble flou
+en le discrétisant à l’aide de polygones. Mais ces approches ont une
+différence majeure: les contraintes de construction des
+polygones. L’approche de Kanjinal et al. (2010) impose aux polygones
+constitutif d’une région plateau d’être disjoints ou adjacents deux à
+deux, une même position ne peut donc appartenir qu’à un seul polygone,
+ce qui n’est pas pour les implémentations proposées par Zoghalmi
+(2013 ; 2016) ou de Runz (2008), où une position appartient, par
+définition, à toutes les alpha-cuts construites à partir d’un seuil
+inférieur à son degré d’appartenance. Cette distinction n’est pas
+visible sur la figure 9, les deux approches donnant, pour le même
+nombre de polygones, des résultats visuellement
+équivalents. Cependant, les trois polygones représentés sur la figure
+9 ont une sémantique différente selon l’implémentation choisie. Dans
+l’implémentation de Kanjinal et al. (2010), les trois polygones sont
+disjoints. Le premier délimite le noyau, le second l’aire ayant un
+degré d’appartenance compris entre 1 et 0,25 (exclus) et le dernier
+polygone délimitant l’aire dont le degré d’appartenance est
+strictement supérieur à 0 et inférieur à 0,25. Avec l’implémentation
+par alpha-cuts, les polygones sont superposés, et si le premier
+polygone délimite toujours le noyau, le second délimite l’aire dont le
+degré d’appartenance est supérieur à 0,25 et le troisième l’aire dont
+le degré d’appartenace est non nul3. Par conséquent, si l’on ne
+construit que les alpha-cuts du noyau et du support, le résultat de
+l’implémentation proposée par Zoghalmi (2013 ; 2016) ou de Runz (2008)
+est identique à celui des modèles de Cohn et Gotts (1996) ou de
+Clementini et di Felice (1996) présentés précédemment et qui
+superposent également la zone d’appartenance à la zone d’appartenance
+partielle; ce qui n’est pas le cas pour l’implémentation de Kanjinal
+et al. (2010), car les polygones définissant une région plateau y
+sont, par définition, disjoints.
+
+\begin{figure}
+  \centering
+  %\missingfigure
+  \caption{Illustration de la modélisation du lac du Chambon avec un modèle flou discrétisé par un ensemble de polygones.}
+  \label{fig:champ_polygones}
+\end{figure}
+
+Comme pour les implémentations précédentes, l’approche proposée par
+Dilo et al. (2007) ne s’applique qu’au cas des régions floues. Les
+auteurs proposent d’implémenter ces dernières à l’aide de deux
+linéaires, représentant les frontières du support et du noyau et d’un
+maillage, servant de support à une interpolation. Les modèles
+précédemment présentés imposent un échantillonnage des degrés
+d’appartenance, dont la précision varie en fonction du nombre de
+régions nettes (Kanjilal et al., 2010) ou d’alpha-cuts utilisées
+(Zoghlami et al., 2016). L’implémentation proposée par Dilo et
+al. vise à contourner ce problème en offrant la possibilité de
+calculer le degré d’appartenance en tout point de la région floue par
+interpolation (de manière similaire a la proposition de Tøssebro et
+Nygård, 2002). Ils proposent pour cela de définir un maillage à l’aide
+d’une triangulation de Delaunay contrainte aux frontières du noyau et
+du support, cette dernière devant être post-traitée pour supprimer les
+triangles créés dans les trous ou concavités. Le degré d’appartenance
+au sous-ensemble flou des points appartenant aux frontières étant
+connu, il est ainsi possible de calculer le degré d’appartenance en
+tout point à l’aide d’une interpolation triangulaire (Figure 10). La
+précision de l’estimation peut être améliorée par l’ajout de points
+intermédiaires dont le degré d’appartenance à l’ensemble est connu, ce
+qui peut être le cas lorsque, comme proposé par Dilo et al. (2007), la
+région floue est définie à partir d’un ensemble de points (les
+frontières sont alors définies à l’aide d’enveloppes concaves). Le
+principal problème de cette approche est qu’elle conduit à une
+importante complexification des opérations inter-ensembles. Là où les
+précédents modèles recouraient uniquement à des opérations
+géométriques quelconques et à une sélection du plus grand (ou plus
+petit, en fonction de l’opération concernée) degré d’appartenance, ce
+modèle impose la reconstruction du maillage et son post-traitement, ce
+qui peut rendre les opérations inter-ensembles (unions, intersections)
+coûteuses.
+
+Schneider (2003) a également proposé une implémentation de son propre
+modèle. Contrairement aux implémentations précédemment citées,
+celle-ci aborde tous les types formalisés dans le modèle théorique
+(fpoint, fline et fregion). Ce travail est assez proche de ce qu’avait
+proposé le même auteur avec sa proposition de modèle exact basé sur
+l’approche Realm/Rose (Schneider, 1996) (Partie 4.2.1), puisque
+l’auteur propose d’implémenter les types spatiaux flous à l’aide d’un
+ensemble fini de points répartis régulièrement. L’implémentation du
+type fpoint ne présente pas de particularités, il s’agit d’un point
+appartenant à l’ensemble des positions possibles et ayant un degré
+d’appartenance. De la même manière, l’implémentation du type fline est
+proche de la formalisation, la principale différence étant que les
+points composant cette dernière doivent nécessairement appartenir à
+l’ensemble des positions possibles. Pour le type fregion ce dernier
+est composé d’un ensemble de cellules auxquelles est attribué un degré
+d’appartenance à la région floue. Les règles présentées dans le modèle
+théorique s’appliquent toujours, ainsi les régions avec des anomalies
+géométriques ne peuvent pas être modélisées. On peut noter que cette
+implémentation des fregions est assez semblable à celle qui sera
+proposée plus tardivement par Kanjinal et al. (2010), avec une région
+floue modélisée comme un ensemble de polygones nets.
+
+\begin{figure}
+  \centering
+  %\missingfigure
+  \caption{Illustration de la modélisation du lac du Chambon avec un modèle flou tel qu’implémenté par Dilo et al. (2007)}
+  \label{fig:champ_dilo}
+\end{figure}
+
+Pour finir, on peut également citer l’implémentation proposée par
+Carniel et al. (2016). Ces derniers ne proposent qu’une implémentation
+des lignes et des points flous, délaissant le cas des régions
+floues. Cinq types sont définis et implémentés dans PostGIS par les
+auteurs. Le premier d’entre eux est le type générique FuzzyGeometry,
+qui se spécialise en FuzzyPoint, FuzzyLine et leurs équivalents
+complexes, FuzzyMultiPoint et FuzzyMultiLine. On notera que cette
+organisation reprend celle du modèle simple feature. Cette
+ressemblance ne se limite pas à cet élément, puisque les types
+complexes sont également définis comme des ensembles de types
+simples. Les différences avec le modèle simple feature apparaissent
+lors de la définition du type FuzzyPoint. Ce dernier est défini comme
+un triplet composé de deux coordonnées x, y et d’un degré
+d’appartenance. Par extension, le type FuzzyLine est défini comme un
+ensemble de FuzzyPoint, ainsi le degré d’appartenance d’une FuzzyLine
+est défini par les points qui la composent.
+
+\subsubsection{Modèles basés sur une construction en extension}
+
+Notre présentation des modèles basés sur une construction en extension
+est organisée selon une classification ad hoc, basée sur la nature des
+objets sélectionnés (Partie 4.3.1) et distinguant les modèles basés
+sur une construction en extension du premier ordre (Partie 1.1.1) de
+ceux basés sur une construction en extension d’ordre supérieur (Partie
+1.1.13).
+
+\paragraph{Critères de classement}
+
+Comme nous l’expliquions précédemment, toute définition d’un objet
+spatial par la sélection d’un ou plusieurs objets géographiques est
+une construction en extension. On peut distinguer ces modèles selon la
+nature des objets spatiaux sélectionnés.
+
+Une première possibilité consiste à définir un objet spatial par la
+sélection des positions qu’il occupe. La délimitation d’une zone à
+partir d’un ensemble de pixels est un exemple concret de ce type
+d’approche, notamment proposée par Zhan (1997). Cet exemple ne doit
+cependant pas laisser croire que la catégorisation proposée ici est
+fondée sur la nature de l’implémentation, mais bien sur la sélection
+de positions dont l’infinité ne peut qu’être approximée par des
+modèles champs, quelle que soit la nature de leur
+implémentation. Toutefois, l’ensemble des travaux que nous
+présenterons s’appuie sur une approche raster.
+
+À l’inverse, on peut imaginer construire des objets spatiaux à partir
+d’une sélection d’objets, d’ « agrégats » (Charrre, 1995) de
+positions. Cette approche définit des objets spatiaux de manière
+semblable aux Elements-Clustering Objects de Liu et al. (2019) (Partie
+2.2). Dans ce cas, le sous-ensemble spatialisé peut être défini à
+partir d’un groupe d’éléments ne couvrant pas l’intégralité de
+l’espace (e.g. sélection à partir d’un réseau routier). Nous
+qualifions ce second type de sélection d’ordre supérieur, car elle
+s’opère sur des objets complexes, eux-mêmes composés de positions, et
+non directement de positions comme c’est le cas pour une sélection
+directe de positions, que nous qualifions de sélection de premier
+ordre.
+
+\paragraph{Construction en extension du premier ordre}
+
+On peut présenter la définition en extension du premier ordre d’un
+sous-ensemble flou spatialisé à l’aide de l’exercice de définition
+d’une limite pour le lac du Chambon. La Figure 11 se distingue des
+exemples précédents par son découpage en pixels (dont la taille a
+volontairement été exagéré). Chacun se voit attribuer un degré
+d’appartenance, défini indépendamment. La tâche principale consiste
+donc à définir une méthode permettant de calculer le degré
+d’appartenance pour chaque pixel. Pour cet exemple, nous avons adopté
+une approche simple : le degré d’appartenance décroit avec la distance
+au rivage. Le degré d’appartenance est donc de 1 pour les pixels
+situés à l’intérieur du lac, puis il décroit en fonction de la
+distance du centroïde du pixel au point du rivage le plus proche. Ces
+règles peuvent être raffinées autant que nécessaire.
+
+Les travaux de Vanegass et al. (2011) et Takemura et al. (2012), par
+exemple, s’intéressent à la modélisation de relations spatiales,
+respectivement « entouré de » et « le long de ». L’objectif est de
+délimiter la zone validant la relation spatiale considérée,
+c’est-à-dire de construire un « paysage flou » selon la terminologie
+proposée par Bloch (1996). Ce type de modélisation est nécessairement
+impacté par l’imprécision du langage naturel. Une description de
+position est nécessairement imprécise, une même relation spatiale
+pouvant prendre un sens différent en fonction de l’objet de référence,
+du locuteur, etc. (Vandeloise, 1986 ; Borillo, 1998 ; Bateman, 2010),
+écueil justifiant le recours à la théorie des sous-ensembles
+flous. Ces deux travaux sont fondés sur une méthodologie
+similaire. Ils définissent tous deux un ensemble de métriques et de
+fonctions permettant de calculer, pour chaque pixel d’un raster, un
+degré d’appartenance quantifiant la validité de la relation spatiale
+modélisée pour la position considérée.
+
+\begin{figure}
+  \centering
+  %\missingfigure
+  \caption{Illustration de la modélisation du lac du Chambon par un modèle flou et une implémentation raster (i.e. construction en extension de premier ordre).)}
+  \label{fig:champ_raster}
+\end{figure}
+
+Si ces travaux proposent avant tout une réflexion théorique, d’autres
+auteurs utilisent cette même approche pour répondre à des
+problématiques plus appliquées. C’est notamment le cas d’Arabacioglu
+(2010) qui propose une application de la théorie des sous-ensembles
+flous à l’architecture, ou Kurtener et Badenko (2000), Makropoulos et
+al. (2003) et Girot (2007) qui se sont penchés sur des questions de
+prise de décision appliquées à la gestion du territoire. Comme
+précédemment, ces travaux utilisent un raster et calculent pour chaque
+pixel un degré d’appartenance à une zone, dont la sémantique varie en
+fonction de la problématique. Cependant, le calcul du degré
+d’appartenance dans les travaux de Griot (2007), Makropoulos et
+al. (2003) et Arabacioglu (2010) est réalisé à l’aide d’un système
+d’inférence flou et non directement comme dans les travaux de Vanegass
+et al. (2011) et Takemura et al. (2012). Les systèmes d’inférence
+flous, pendant flou des systèmes experts,  permettent également de
+calculer un degré d’appartenance pour chaque individu (quelle que soit
+sa nature), mais à partir de règles logiques formulées en langage
+naturel.  Leur utilisation permet donc de prendre en compte
+l’imprécision, ici liée à l’expression orale (Makropoulos et al.,
+2003 ; Griot, 2007), ou à la quantification de ressentis (Arabacioglu,
+2010), mais également de formaliser des connaissances expertes.
+
+La définition en extension du premier ordre d’un sous-ensemble
+spatialisé est courante dans la littérature et les publications
+présentées ici, l’appliquent à des thématiques diverses, comme
+l’interprétation d’images aériennes (Brandtberg, 2002 ; Fonte et
+Lodwick, 2005), la gestion du territoire (Griot, 2007 ; Makropoulos et
+al., 2003), la qualification de ressentis (Arabacioglu, 2010) ou la
+modélisation de relations spatiales floues (Takemura et al., 2012 ;
+Vanegas et al., 2011).
+
+\paragraph{Construction en extension d'ordre supérieur}
+
+La construction en extension d’ordre supérieur d’un sous-ensemble flou
+spatialisé est probablement l’approche qui nécessite le plus de
+s’appuyer sur un exemple concret (Figure 12). Comme nous l’expliquions
+précédemment, cette approche nécessite d’attribuer des degrés
+d’appartenance à des objets, des agrégats de position. Elle se
+distingue donc de la construction en extension du premier ordre, qui
+nécessite d’attribuer un degré d’appartenance à des positions (cas
+théorique) ou à un pavage régulier, une discrétisation de l’ensemble
+des positions (cas pratique, cf. Figure 11). La Figure 12 représente à
+la fois l’occupation du sol de la zone traitée et le degré
+d’appartenance1 de l’objet à la zone modélisée. Ainsi, on considère
+que le polygone du lac appartient totalement au sous-ensemble flou
+“lac”, que les berges y appartiennent moyennement et qu’une partie des
+forêts y appartient faiblement. Quant aux autres éléments, on
+considère qu’ils n’appartiennent pas à la zone modélisée.
+
+\begin{figure}
+  \centering
+  %\missingfigure
+  \caption{Illustration de la définition du lac du Chambon par
+    sélection floue d’objets géographiques (i.e. construction en
+    extension d’ordre supérieur).}
+  \label{fig:champ_raster_sel}
+\end{figure}
+
+Ce processus de construction, pendant spatial de la réflexion sur les
+requêtes floues (Wang, 1994 ; Moreau et al., 2018), est utilisé par
+Duračiová et Chalachanová (2017) qui illustrent leur méthodologie par
+la sélection floue « [des] grands parkings proches du stade et ayant
+été rénovés il y a environ deux ans ». Leur démarche est fortement
+similaire à celle de l’exemple précédent (Figure 12). Les autrices
+définissent des règles permettant de quantifier l’appartenance des
+objets spatiaux candidats à l’ensemble flou correspondant à la
+description. Là où nous n’utilisions qu’un seul critère, la proximité,
+ce nouvel exemple nécessite de prendre en compte la proximité mais
+aussi la date de la dernière rénovation. Chacun de ces critères permet
+de construire un sous-ensemble flou spatialisé (celui des parkings
+proches du stade et celui des parking rénovés il y a environ deux ans)
+et l’intersection de ces deux ensembles, réalisée à l’aide des
+opérateurs flous présentés précédemment (Partie 3) permet de
+construire le sous-ensemble flou désiré. Un processus similaire est
+utilisé par Bard et al. (2003) dans le cadre de l’évaluation de la
+généralisation cartographique. Les objets spatiaux sont ici classés
+dans des sous-ensembles flous figurant une description qualitative de
+la qualité de la généralisation. Cross et Firat (2000) utilisent quant
+à eux une approche similaire pour ajouter la prise en compte de
+l’imprécision aux modèles objets des systèmes d’information
+géographiques. Dans tous les cas, le sous-ensemble flou construit est
+spatialisé, mais cette spatialisation est exogène, puisque dépendante
+de la géométrie des objets spatiaux sélectionnés.
+
+% Conclusion de cybergéo
+
+Dans cet état de l’art, nous avons souhaité présenter les différents
+concepts permettant de décrire les objets géographiques dont la
+délimitation précise est impossible. Les différentes théories et
+implémentations recensées offrent de nombreuses possibilités pour
+modéliser l’imprécision spatiale. Nous nous sommes particulièrement
+penché sur les différentes implémentations que nous avons catégorisées
+selon leur méthode de construction. Ainsi, nous distinguons les
+implémentations basées sur une construction en intension et les
+implémentations basées sur une construction en extension.
+
+La modélisation de l’imprécision spatiale est donc un champ de
+recherche riche, qui offre au géographe de nombreux outils théoriques
+permettant de travailler efficacement avec les nombreux objets
+spatiaux aux frontières imprécises auxquels nous sommes régulièrement
+confrontés. Bien que la considération de l’imprécision des objets
+spatiaux soit assez ancienne, la formalisation de modèles et encore
+plus leur implémentation, est un champ de recherche encore actif comme
+le montre, par exemple, la récente réflexion autour de l’expression de
+l’imprécision spatiale au sein du format GML (Wei et al., 2017).
+
+Toutefois, l’application de ces différents modèles à une problématique
+concrète impose de sélectionner une implémentation avec laquelle
+travailler. Dans le cadre de notre travail de recherche, nous avons
+été amené à confronter certaines de ces implémentations en vue de
+spatialiser une position décrite en langage naturel, et donc,
+foncièrement imprécise. Nous avons adopté une démarche basée sur un
+principe de décomposition et de spatialisation indépendante des
+différentes relations spatiales utilisées pour exprimer une position
+(Auteur, 2019). Les contraintes liées à cette démarche, comme la
+nécessité de combiner les résultats de différentes spatialisations,
+nous ont amené à adopter une approche similaire à celle de Vanegass et
+al. (2011) et Takemura et al. (2012), i.e. une modélisation basée sur
+la théorie des sous-ensembles flous et implémentée à l’aide de
+rasters. Cette solution nous parait être le meilleur compromis entre
+minimisation des contraintes techniques et finesse de modélisation
+(Auteur, 2019).
+ 
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../../../../main"
+%%% End:
