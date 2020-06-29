@@ -497,11 +497,6 @@ c’est pourquoi nous ne les incluons pas dans cet article.
 \tdi{Doit aussi être abordé lors de la présentation de la modélisation
 de l'incertitude}
 
-\subsubsection{La théorie des ensembles approximatifs}
-
-\tdi{Doit aussi être abordé lors de la présentation de la modélisation
-  de l'incertitude}
-
 \subsubsection{La théorie des sous-ensembles flous}
 
 La théorie des sous-ensembles flous, ou, par abus de langage, théorie
@@ -632,6 +627,60 @@ est :
 % Lukasiewicz
 % Probabiliste
 % Drastique
+
+\subsubsection{La théorie des \emph{ensembles approximatifs}}
+
+\tdi{Doit aussi être abordé lors de la présentation de la modélisation
+  de l'incertitude}
+
+La théorie des \emph{ensembles approximatifs} \footnote{Ou théorie des
+  \emph{ensembles bruts,} selon les traductions proposées pour
+  l'anglais \enquote{rough sets}.} proposée par \textcite{Pawlak} en
+1982 propose, comme la \emph{théorie des sous-ensembles flous} de
+\textcite{Zadeh1965}, de généraliser la théorie des ensembles
+
+Cette théorie permet de définir un ensemble à partir de deux ensembles
+$A^-$ et $A^+$ faisant office de bornes inférieures et supérieures
+\autocite{Gacogne1997}.
+
+Un ensemble approximatif $A$ est définit par un couple d'ensembles :
+
+\begin{equation}
+  A = (A^-(x),A^+(x))  
+\end{equation}
+
+$A^-(x)$ et $A^+(x)$ sont, respectivement, les \emph{approximations}
+\emph{inférieures} et \emph{supérieures} de l'ensemble $X$ dans
+\emph{l'ensemble approximatif} $A$. Ces deux ensembles sont définis à
+partir d'une \emph{relation d'équivalence} $R$ vers l'ensemble univers
+$U$. C'est cette relation $R$ qui sert à construite \emph{l'ensemble
+  de approximatif,} de la manière suivante :
+
+\begin{equation}
+  A^-(X) = \{ x \in U \mid [x]_R \subset X \}
+\end{equation}
+\begin{equation}
+  A^+(X) = \{ x \in U \mid [x]_R \cap X \neq \emptyset \}
+\end{equation}
+
+Avec $[x]_R$ la classe d'équivalence de la relation $R$ sur l'élément
+$x$.
+
+Le premier ensemble, $A^-$, correspond à la frontière inférieure, à
+l'approximation la plus sévère. Pour reprendre la formulation de
+\textcite{Pawlak1985}, si un élément $x$ est dans $A^-(X)$, alors il
+est \enquote{surement} dans $X$. À l'inverse $A^+$ est la frontière
+supérieure, un élément $x$ présent dans $A^+(X)$ est
+\emph{possiblement} dans $X$.
+
+
+\tdi{Mauvais exemple ?}
+Pour faciliter la compréhension de ces équations on peut prendre pour
+exemple le cas d'une bibliothèque. Mettons que $U$ soit l'ensemble des
+livres imprimés qui existent. On cherche à construire l'ensemble des
+\emph{incunables,} \ie l'ensemble des livres imprimés avant
+1501. Comme la datation d'ouvrages anciens peut être 
+
 
   \subsection{Modélisations et implémentations}
 
