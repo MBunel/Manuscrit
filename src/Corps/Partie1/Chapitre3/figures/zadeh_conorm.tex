@@ -1,0 +1,12 @@
+\begin{tikzpicture}
+  \begin{axis}[
+    width = 7cm,
+    grid=major,
+    view={-25}{30},
+    xlabel=$x$,
+    ylabel=$y$,
+    zlabel=$\mu$]
+    \addplot3 [surf,color=black!10, domain = 0:1, samples = 10]
+      { max(x,y) };
+  \end{axis}
+\end{tikzpicture}

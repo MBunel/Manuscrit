@@ -596,6 +596,7 @@ et $B$ de $X$ comme le sous-ensemble flou $C$ de $X$ dont la fonction
 d’appartenance est la suivante :
 
 \begin{equation}
+  \label{eq:norm_zadeh}
   ∀x ∈ X, f_C (x) = \min(f_A(x), f_B(x))
 \end{equation}
 
@@ -604,6 +605,7 @@ de $X$ est un sous-ensemble $C ∈ F(X)$ dont la fonction d’appartenance
 est :
 
 \begin{equation}
+  \label{eq:conorm_zadeh}
   ∀x ∈ X, f_C (x) = \max(f_A(x), f_B(x))
 \end{equation}
 
@@ -623,9 +625,76 @@ envisagés et d’autres opérateurs, aux caractéristiques diverses, ont
 \autocite{Bouchon-Meunier2007}, fait office de standard.
 
 Une \emph{norme triangulaire} (\emph{t-norme}) est une fonction,
-généralement notée $\top$, est une fonction associant à chaque couple
+généralement notée $\top$, associant à chaque couple de valeurs,
+comprises entre 0 et 1, une valeur comprise dans le même intervalle
+(\ie $\top : [0,1] × [0,1] \rightarrow [0,1]$) et qui, pour tous les
+$x$, $y$ et $z$ dont la valeur est comprise dans l'ensemble $[0,1]$
+est :
+
+\begin{itemize}
+\item \emph{Commutative :} \(⊤(x,y) = ⊤(y,x)\)
+\item \emph{Associative :} \(⊤(x,⊤(y,z)) = ⊤(⊤(x,y),z)\)
+\item \emph{Monotone :} \(⊤(x,y) ≤ ⊤(z,t)\) si \(x ≤ z\) et \(y ≤ t\)
+\item À \(1\) pour \emph{élément neutre :} \(⊤(x,1) = x\)
+\end{itemize}
+
+Comme on peut facilement s'en convaincre, l'opérateur d'intersection
+(\autoref{eq:norm_zadeh}) proposé par \textcite{Zadeh1965} vérifie
+tous ces points, il s'agit donc d'une \emph{t-norme}
+\autocite{Bouchon-Meunier2007}. N'importe quelle fonction
+\emph{t-norme} peut être utilisée comme opérateur intersection
+ensembliste. On peut dès lors généraliser l'équation
+\ref{eq:norm_zadeh}, l'intersection de deux sous-ensembles flous \(A\)
+et \(B\) de \(X\) est un sous-ensemble \(C ∈ F(X)\) dont la fonction
+d’appartenance est :
+
+\begin{equation}
+   ∀x ∈ X, f_C (x) = ⊤(f_A(x), f_B(x))  
+\end{equation}
+
+De façon analogue, une \emph{conorme triangulaire} (\emph{t-conorme})
+est une fonction, généralement notée \(̱⊥\), associant à chaque couple
 de valeurs, comprises entre 0 et 1, une valeur comprise dans le même
-intervalle (\ie $\top : [0,1] × [0,1] \rightarrow [0,1]$)
+intervalle (\ie $⊥ : [0,1] × [0,1] \rightarrow [0,1]$) et qui, pour
+tous les $x$, $y$ et $z$ dont la valeur est comprise dans l'ensemble
+$[0,1]$ est :
+
+\begin{itemize}
+\item \emph{Commutative :} \(⊥(x,y) = ⊥(y,x)\)
+\item \emph{Associative :} \(⊥(x,⊥(y,z)) = ⊥(⊥(x,y),z)\)
+\item \emph{Monotone :} \(⊥(x,y) ≤ ⊥(z,t)\) si \(x ≤ z\) et \(y ≤ t\)
+\item À \(0\) pour \emph{élément neutre :} \(⊥(x,0) = x\)
+\end{itemize}
+
+Comme pour l'opérateur d'intersection, on peut remarquer que
+l'opérateur d'union proposé par \textcite{Zadeh1965} est une
+\emph{t-conorme} \autocite{Bouchon-Meunier2007}. On peut également
+généraliser l'équation \ref{eq:conorm_zadeh}, l'intersection de deux
+sous-ensembles flous \(A\) et \(B\) de \(X\) est un sous-ensemble
+\(C ∈ F(X)\) dont la fonction d’appartenance est :
+
+\begin{equation}
+     ∀x ∈ X, f_C (x) = ⊥(f_A(x), f_B(x))  
+\end{equation}
+
+Plusieurs couples (\emph{t-norme}, \emph{t-conorme}) ont été proposés
+dans la littérature.
+
+% Zadeh
+\begin{figure}
+  \begin{center}
+    \subfloat[\emph{t-normz} de Zadeh]{
+      \input{../figures/zadeh_norm.tex}
+      \label{fig:zadeh_norm}
+    }
+    \subfloat[\emph{t-conorme} de Zadeh]{
+      \input{../figures/zadeh_conorm.tex}
+      \label{fig:zadeh_norm}
+    }
+    \caption{Opérateurs de Zadeh}
+    \label{fig:zadeh_op}
+  \end{center}
+\end{figure}
 
 % Lukasiewicz
 % Probabiliste

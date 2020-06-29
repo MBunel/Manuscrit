@@ -1,0 +1,13 @@
+\begin{tikzpicture}
+  \begin{axis}[
+    width = 7cm,
+    grid=major,
+    view={-25}{30},
+    scatter/use mapped color={draw=black,fill=black},
+    xlabel=$x$,
+    ylabel=$y$,
+    zlabel=$\mu$]
+    \addplot3 [surf, scatter, color=black!25, draw=black!50, domain = 0:1, samples = 10] {
+      min(x,y) };
+  \end{axis}
+\end{tikzpicture}
