@@ -610,19 +610,22 @@ est :
 Par exemple, l’ensemble des personnes grandes et âgées peut être
 construit en intersectant l’ensemble des personnes âgées avec celui
 des personnes de grande taille. En utilisant les opérateurs proposés
-par Zadeh (1965), une personne dont le degré d’appartenance à ces
-deux ensembles est respectivement de 0,8 et 0,5, aura un degré
+par \textcite{Zadeh1965}, une personne dont le degré d’appartenance à
+ces deux ensembles est respectivement de 0,8 et 0,5, aura un degré
 d’appartenance à l’ensemble des personnes grandes et âgées de 0,5.
 
 On notera cependant que les opérateurs d’union et d’intersection
-proposés par Zadeh (1965) ne sont pas les seuls à avoir été
+proposés par \textcite{Zadeh1965} ne sont pas les seuls à avoir été
 envisagés et d’autres opérateurs, aux caractéristiques diverses, ont
 été proposés dans la littérature1. Cependant, la proposition de
-Zadeh, permettant de conserver « presque toute la structure de la
-théorie classique des ensembles » (Bouchon-Meunier, 2007), fait
-office de standard.
+\textcite{Zadeh1965}, permettant de conserver \enquote{presque toute
+  la structure de la théorie classique des ensembles}
+\autocite{Bouchon-Meunier2007}, fait office de standard.
 
-\tdi{Ajouter autres opérateurs}
+Une \emph{norme triangulaire} (\emph{t-norme}) est une fonction,
+généralement notée $\top$, est une fonction associant à chaque couple
+de valeurs, comprises entre 0 et 1, une valeur comprise dans le même
+intervalle (\ie $\top : [0,1] × [0,1] \rightarrow [0,1]$)
 
 % Lukasiewicz
 % Probabiliste
@@ -640,7 +643,7 @@ La théorie des \emph{ensembles approximatifs} \footnote{Ou théorie des
 \textcite{Zadeh1965}, de généraliser la théorie des ensembles
 
 Cette théorie permet de définir un ensemble à partir de deux ensembles
-$A^-$ et $A^+$ faisant office de bornes inférieures et supérieures
+$A⁻$ et $A⁺$ faisant office de bornes inférieures et supérieures
 \autocite{Gacogne1997}.
 
 Un ensemble approximatif $A$ est définit par un couple d'ensembles :
@@ -657,10 +660,11 @@ $U$. C'est cette relation $R$ qui sert à construite \emph{l'ensemble
   de approximatif,} de la manière suivante :
 
 \begin{equation}
-  A^-(X) = \{ x \in U \mid [x]_R \subset X \}
+  A⁻(X) = \{ x ∈ U ∣ [x]_R ⊂ X \}
 \end{equation}
+
 \begin{equation}
-  A^+(X) = \{ x \in U \mid [x]_R \cap X \neq \emptyset \}
+  A⁺(X) = \{ x ∈ U ∣ [x]_R ∩ X ≠ ∅ \}
 \end{equation}
 
 Avec $[x]_R$ la classe d'équivalence de la relation $R$ sur l'élément
@@ -668,9 +672,9 @@ $x$.
 
 Le premier ensemble, $A^-$, correspond à la frontière inférieure, à
 l'approximation la plus sévère. Pour reprendre la formulation de
-\textcite{Pawlak1985}, si un élément $x$ est dans $A^-(X)$, alors il
-est \enquote{surement} dans $X$. À l'inverse $A^+$ est la frontière
-supérieure, un élément $x$ présent dans $A^+(X)$ est
+\textcite{Pawlak1985}, si un élément $x$ est dans $A⁻(X)$, alors il
+est \enquote{surement} dans $X$. À l'inverse $A⁺$ est la frontière
+supérieure, un élément $x$ présent dans $A⁺(X)$ est
 \emph{possiblement} dans $X$.
 
 
