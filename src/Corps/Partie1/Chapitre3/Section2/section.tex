@@ -280,14 +280,14 @@ c’est ce nouveau tracé qui délimite l’objet lac.
 
 \begin{figure}
   \centering
-  %\missingfigure
+  % \missingfigure
   \caption{Saisie manuelle de la limite du lac du Chambom}
   \label{fig:lim_champ}
 \end{figure}
 
 \begin{figure}
   \centering
-  %\missingfigure
+  % \missingfigure
   \caption{Saisie manuelle d'une limite alternative}
   \label{fig:lim_champ_alt}
 \end{figure}
@@ -308,7 +308,7 @@ extérieur (Figure 3), c’est-à-dire la frontière du lac.
 
 \begin{figure}
   \centering
-  %\missingfigure
+  % \missingfigure
   \caption{Mise en évidence de la limite imprécise du lac}
   \label{fig:lim_champ_imp}
 \end{figure}
@@ -369,9 +369,9 @@ objets spatiaux à la fois imprécis et incertains.
 
 \begin{figure}
   \centering
-  %\missingfigure
+  % \missingfigure
   \caption{Mise en évidence de l'incertitude pour la limite des hautes
-  eaux}
+    eaux}
   \label{fig:lim_champ_inc}
 \end{figure}
 
@@ -385,7 +385,7 @@ bande, marque d’une frontière progressive, non réductible à une ligne.
 
 \begin{figure}
   \centering
-  %\missingfigure
+  % \missingfigure
   \caption{Distinction entre les notions d’imprécision et
     d'incertitude spatiale (pour des raisons de lisibilité seule la
     frontière de l’objet spatial est représentée).}
@@ -495,7 +495,7 @@ c’est pourquoi nous ne les incluons pas dans cet article.
 \subsubsection{La théorie des fonctions de croyance}
 
 \tdi{Doit aussi être abordé lors de la présentation de la modélisation
-de l'incertitude}
+  de l'incertitude}
 
 \subsubsection{La théorie des sous-ensembles flous}
 
@@ -516,7 +516,7 @@ net $X$ et d’une fonction $f_A$ nommée fonction d’appartenance (Zadeh,
 1965) :
 
 \begin{equation}
-A = (X, f_A)  
+  A = (X, f_A)  
 \end{equation}
 
 La fonction $f_A$, associe à chaque élément de X une valeur comprise
@@ -540,7 +540,7 @@ sous-ensemble flou, les positions situées dans la zone d’imprécision
 
 \begin{figure}
   \centering
-  %\missingfigure
+  % \missingfigure
   \caption{Illustration de la modélisation du lac du Chambon à l’aide
     de la théorie des sous-ensembles flous.}
   \label{fig:champ_flou}
@@ -566,7 +566,7 @@ et $B$ sont égaux, si et seulement si, pour tout élément de $X$, le
 degré d’appartenance aux sous-ensembles $A$ et $B$ est égal, soit :
 
 \begin{equation}
-A = B\ ssi\ ∀x ∈ X, f_A(x) = f_B(x)
+  A = B\ ssi\ ∀x ∈ X, f_A(x) = f_B(x)
 \end{equation}
 
 Un sous-ensemble flou $A$ de $X$ est inclus dans un sous-ensemble flou
@@ -575,14 +575,14 @@ $X$, le degré d’appartenance de $x$ à $A$ est inférieur ou égal à son
 degré d’appartenance à $B$ :
 
 \begin{equation}
-A ⊆ B\ ssi\ ∀x ∈ X, f_A(x) ≤ f_B(x)
+  A ⊆ B\ ssi\ ∀x ∈ X, f_A(x) ≤ f_B(x)
 \end{equation}
 
 Le complément $A^c$ d’un sous-ensemble flou $A$ de $X$ a pour fonction
 d’appartenance :
 
 \begin{equation}
-∀x ∈ X, f_{A^C}(x) = 1 − f_A(x)
+  ∀x ∈ X, f_{A^C}(x) = 1 − f_A(x)
 \end{equation}
 
 Ainsi, pour reprendre l’exemple précédent, on peut construire le
@@ -604,23 +604,23 @@ de $X$ est un sous-ensemble $C ∈ F(X)$ dont la fonction d’appartenance
 est :
 
 \begin{equation}
-    ∀x ∈ X, f_C (x) = \max(f_A(x), f_B(x))
-  \end{equation}
+  ∀x ∈ X, f_C (x) = \max(f_A(x), f_B(x))
+\end{equation}
 
-  Par exemple, l’ensemble des personnes grandes et âgées peut être
-  construit en intersectant l’ensemble des personnes âgées avec celui
-  des personnes de grande taille. En utilisant les opérateurs proposés
-  par Zadeh (1965), une personne dont le degré d’appartenance à ces
-  deux ensembles est respectivement de 0,8 et 0,5, aura un degré
-  d’appartenance à l’ensemble des personnes grandes et âgées de 0,5.
+Par exemple, l’ensemble des personnes grandes et âgées peut être
+construit en intersectant l’ensemble des personnes âgées avec celui
+des personnes de grande taille. En utilisant les opérateurs proposés
+par Zadeh (1965), une personne dont le degré d’appartenance à ces
+deux ensembles est respectivement de 0,8 et 0,5, aura un degré
+d’appartenance à l’ensemble des personnes grandes et âgées de 0,5.
 
-  On notera cependant que les opérateurs d’union et d’intersection
-  proposés par Zadeh (1965) ne sont pas les seuls à avoir été
-  envisagés et d’autres opérateurs, aux caractéristiques diverses, ont
-  été proposés dans la littérature1. Cependant, la proposition de
-  Zadeh, permettant de conserver « presque toute la structure de la
-  théorie classique des ensembles » (Bouchon-Meunier, 2007), fait
-  office de standard.
+On notera cependant que les opérateurs d’union et d’intersection
+proposés par Zadeh (1965) ne sont pas les seuls à avoir été
+envisagés et d’autres opérateurs, aux caractéristiques diverses, ont
+été proposés dans la littérature1. Cependant, la proposition de
+Zadeh, permettant de conserver « presque toute la structure de la
+théorie classique des ensembles » (Bouchon-Meunier, 2007), fait
+office de standard.
 
 \tdi{Ajouter autres opérateurs}
 
@@ -682,23 +682,23 @@ livres imprimés qui existent. On cherche à construire l'ensemble des
 1501. Comme la datation d'ouvrages anciens peut être 
 
 
-  \subsection{Modélisations et implémentations}
+\subsection{Modélisations et implémentations}
 
 
-  Comme l’indiquait Burrough (1996, p.15), « Les objets inexacts
-  requièrent des modèles de données inexacts ». L’objectif de cette
-  partie est de présenter les différents modèles proposés dans la
-  littérature pour modéliser les objets spatiaux flous. Nous
-  traiterons aussi bien de modèles uniquement théoriques que de leurs
-  implémentations, voire de leurs applications.
-  
-  Pour présenter ces différents modèles, nous proposons une
-  classification ad hoc, distinguant les modèles définis en extension
-  de ceux définis en intension. Nous commencerons par expliciter cette
-  classification, tout en la confrontant aux catégorisations présentes
-  dans la littérature, avant de présenter les différents modèles.
+Comme l’indiquait Burrough (1996, p.15), « Les objets inexacts
+requièrent des modèles de données inexacts ». L’objectif de cette
+partie est de présenter les différents modèles proposés dans la
+littérature pour modéliser les objets spatiaux flous. Nous
+traiterons aussi bien de modèles uniquement théoriques que de leurs
+implémentations, voire de leurs applications.
 
-  \subsubsection{Critères de classification}
+Pour présenter ces différents modèles, nous proposons une
+classification ad hoc, distinguant les modèles définis en extension
+de ceux définis en intension. Nous commencerons par expliciter cette
+classification, tout en la confrontant aux catégorisations présentes
+dans la littérature, avant de présenter les différents modèles.
+
+\subsubsection{Critères de classification}
 
 Un grand nombre de modèles ont été proposés pour permettre la
 manipulation d’objets spatiaux imprécis. Ils se distinguent par leur
@@ -880,7 +880,7 @@ d’une importante complexification du modèle.
 
 \begin{figure}
   \centering
-  %\missingfigure
+  % \missingfigure
   \caption{Illustration de la modélisation du lac du Chambon avec un
     modèle exact tel que proposé par Bejaoui et al. (2009). Comme pour
     tous les modèles “exacts” la zone d’appartenance totale est
@@ -931,7 +931,7 @@ floues.
 
 \begin{figure}
   \centering
-  %\missingfigure
+  % \missingfigure
   \caption{Les trois types géométriques flous proposés par Schneider
     (1999). D’après Schneider (1999).}
   \label{fig:mod_schneider}
@@ -992,7 +992,7 @@ sont, par définition, disjoints.
 
 \begin{figure}
   \centering
-  %\missingfigure
+  % \missingfigure
   \caption{Illustration de la modélisation du lac du Chambon avec un modèle flou discrétisé par un ensemble de polygones.}
   \label{fig:champ_polygones}
 \end{figure}
@@ -1054,7 +1054,7 @@ floue modélisée comme un ensemble de polygones nets.
 
 \begin{figure}
   \centering
-  %\missingfigure
+  % \missingfigure
   \caption{Illustration de la modélisation du lac du Chambon avec un modèle flou tel qu’implémenté par Dilo et al. (2007)}
   \label{fig:champ_dilo}
 \end{figure}
@@ -1151,7 +1151,7 @@ modélisée pour la position considérée.
 
 \begin{figure}
   \centering
-  %\missingfigure
+  % \missingfigure
   \caption{Illustration de la modélisation du lac du Chambon par un modèle flou et une implémentation raster (i.e. construction en extension de premier ordre).)}
   \label{fig:champ_raster}
 \end{figure}
@@ -1207,7 +1207,7 @@ considère qu’ils n’appartiennent pas à la zone modélisée.
 
 \begin{figure}
   \centering
-  %\missingfigure
+  % \missingfigure
   \caption{Illustration de la définition du lac du Chambon par
     sélection floue d’objets géographiques (i.e. construction en
     extension d’ordre supérieur).}
@@ -1278,7 +1278,7 @@ la théorie des sous-ensembles flous et implémentée à l’aide de
 rasters. Cette solution nous parait être le meilleur compromis entre
 minimisation des contraintes techniques et finesse de modélisation
 (Auteur, 2019).
- 
+
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../../../../main"
