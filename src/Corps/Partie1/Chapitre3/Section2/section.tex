@@ -680,6 +680,54 @@ sous-ensembles flous \(A\) et \(B\) de \(X\) est un sous-ensemble
 Plusieurs couples (\emph{t-norme}, \emph{t-conorme}) ont été proposés
 dans la littérature.
 
+Les opérateurs de Łukasiewicz sont définis de la manière suivante :
+\begin{equation}
+  ⊤_L(x,y) = \max(x + y - 1, 0) 
+\end{equation}
+
+\begin{equation}
+  ⊥_L(x,y) = \min(x + y, 1)
+\end{equation}
+
+La définition des opérateurs probabilistes est :
+\begin{equation}
+  ⊤_P(x,y) = x×y
+\end{equation}
+
+\begin{equation}
+  ⊥_P(x,y) = x+y - x×y
+\end{equation}
+
+Les opérateurs drastiques sont, quand à eux définis de la manière
+suivante:
+
+\begin{equation}
+  ⊤_D(x,y)  = \left \{
+    \begin{array}{ll}
+      x\ \text{si}\ y=1\\
+      y\ \text{si}\ x=1\\
+      0\ \text{sinon}
+    \end{array}
+  \right.
+\end{equation}
+
+
+\begin{equation}
+  ⊥_D(x,y)  = \left \{
+    \begin{array}{ll}
+      x\ \text{si}\ y=0\\
+      y\ \text{si}\ x=0\\
+      1\ \text{sinon}
+    \end{array}
+  \right.
+\end{equation}
+
+
+La \emph{t-norme} de \textcite{Zadeh1965} est, de toutes les
+\emph{t-normes} présentées, la moins stricte
+\autocite{Bouchon-Meunier2007}. À l'inverse, la \emph{t-conorme} de
+\bsc{Zadeh} est la plus stricte des \emph{t-conormes} présentées.
+
 % Zadeh
 \begin{figure}
   \begin{center}
