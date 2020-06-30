@@ -1,5 +1,15 @@
 \pgfmathdeclarefunction{naismith}{1}{%
-  \pgfmathparse{#1}%
+  \pgfmathparse{1 / ((1/#1) + tan(x) / 0.6)}%
+}
+
+\pgfmathdeclarefunction{langmuir1}{1}{%
+  \pgfmathparse{(1 / ((1/#1) + abs(tan(x)) * (0.16 /
+    0.3)))}%
+}
+
+\pgfmathdeclarefunction{langmuir2}{1}{%
+  \pgfmathparse{(1 / ((1/#1) - abs(tan(x)) * (0.16 /
+    0.3)))}%
 }
 
 \pgfmathdeclarefunction{tobler}{1}{%
@@ -19,7 +29,7 @@
     ylabel=Vitesse de marche (\si{\kilo\meter\per\hour}),
     every axis plot post/.append style={
       mark=none,domain=-60:60,samples=500,smooth},
-    ymax=8,
+    ymax=12,
     axis x line=bottom,
     axis y line*=left,
     enlargelimits=upper,
@@ -31,17 +41,25 @@
       draw=none},
     ]
 
-    \addplot[thick] {naismith(5)};
-    \addlegendentry{\textcite{Naismith1892}}
+    %\addplot[restrict x to domain={0:60}, thick] {naismith(5)};
+    %\addlegendentry{\textcite{Naismith1892}}
     
-    \addplot[thick] {naismith(4)};
-    \addlegendentry{\textcite{Naismith1892}}
+    \addplot[restrict x to domain={0:60}, thick] {naismith(4)};
+    %\addlegendentry{\textcite{Naismith1892}}
+
+    \addplot[restrict x to domain={-60:-12}, thick] {langmuir1(5)};
+    \addplot[restrict x to domain={-12:-5}, thick] {langmuir2(5)};
+    \addplot[restrict x to domain={-5:0}, thick] {5};
+    \addplot[restrict x to domain={0:60}, thick] {naismith(5)};
+
+    %\draw[black] (axis cs:-12,2) -- (axis cs:-12,12);
+    %\draw[black] (axis cs:-5,7) -- (axis cs:-5,5);
     
     \addplot[thick] {tobler(1)};
-    \addlegendentry{\textcite{Tobler1993}, \(g=1\)}
+    %\addlegendentry{\textcite{Tobler1993}, \(g=1\)}
     
     \addplot[thick] {tobler(0.6)};
-    \addlegendentry{\textcite{Tobler1993}, \(g=0,6\)}
+    %\addlegendentry{\textcite{Tobler1993}, \(g=0,6\)}
     
     %\addplot {ress};
 
