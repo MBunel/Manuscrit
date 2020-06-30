@@ -2,8 +2,8 @@
   \pgfmathparse{#1}%
 }
 
-\pgfmathdeclarefunction{tobler}{0}{%
-  \pgfmathparse{6*exp(-3.5*abs(x*0.05))}%
+\pgfmathdeclarefunction{tobler}{1}{%
+  \pgfmathparse{#1 * 6 * exp(-3.5 * abs(tan(x) + 0.05))}%
 }
 
 \pgfmathdeclarefunction{ress}{0}{%
@@ -11,18 +11,39 @@
 }
 
 \begin{tikzpicture}
-  \begin{axis}[every axis plot post/.append style={
-      mark=none,domain=-40:40,samples=500},
-    % All plots: from -2:2, 50 samples, smooth, no marks
-    ymax=10,
-    axis x line*=bottom, % no box around the plot, only x and y axis
-    axis y line*=left, % the * suppresses the arrow tips
-    enlargelimits=upper] % extend the axes a bit to the right and top
+  \begin{axis}[
+    width=12cm,
+    height=7cm,
+    grid=major,
+    xlabel=Pente,
+    ylabel=Vitesse de marche (\si{\kilo\meter\per\hour}),
+    every axis plot post/.append style={
+      mark=none,domain=-60:60,samples=500,smooth},
+    ymax=8,
+    axis x line=bottom,
+    axis y line*=left,
+    enlargelimits=upper,
+    legend style={
+      at={(0.5,-0.25)},
+      anchor=north,
+      legend columns=3,
+      font=\small,
+      draw=none},
+    ]
 
-    \addplot {naismith(5)};
-    \addplot {naismith(4)};
-    \addplot {tobler};
-    \addplot {ress};
+    \addplot[thick] {naismith(5)};
+    \addlegendentry{\textcite{Naismith1892}}
+    
+    \addplot[thick] {naismith(4)};
+    \addlegendentry{\textcite{Naismith1892}}
+    
+    \addplot[thick] {tobler(1)};
+    \addlegendentry{\textcite{Tobler1993}, \(g=1\)}
+    
+    \addplot[thick] {tobler(0.6)};
+    \addlegendentry{\textcite{Tobler1993}, \(g=0,6\)}
+    
+    %\addplot {ress};
 
   \end{axis}
 \end{tikzpicture}

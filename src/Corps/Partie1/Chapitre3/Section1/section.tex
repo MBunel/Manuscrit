@@ -123,7 +123,7 @@ des descriptions de positions.
 
 \autocite{Pustejovsky2017}
 
-\subsection{Classification des relations spatiales}
+\subsection{Classification des \emph{relations de localisation}}
 
 \subsubsection{Critères de classification}
 
@@ -134,10 +134,10 @@ des descriptions de positions.
 
 \subsection{Travaux sur différentes familles de relations}
 
-\subsubsection{Relations spatiales du point de vue géométrique et
+\subsubsection{\emph{Relations de localisation} du point de vue géométrique et
   computationel}
 
-\subsubsection{Relations spatiales du point de vue sémantique}
+\subsubsection{\emph{Relations de localisation} du point de vue sémantique}
 
 \paragraph{Proximité}
 
@@ -155,7 +155,7 @@ miles (\SI{5}{\kilo\meter}) en distance planaire et d'y ajouter une
 heure de marche par tranche de \SI{2000}{ft} (\SI{600}{\meter}) de
 dénivelé, positif ou négatif \autocite{Naismith1892}.
 
-Ce modèle sera corrigé plusieurs flois
+Ce modèle sera corrigé plusieurs fois, 
 
 % Aitken
 
@@ -163,7 +163,35 @@ Ce modèle sera corrigé plusieurs flois
 
 % Tobler
 \textcite{Tobler1993} proposera un modèle différent où la vitesse de
-marche est exprimée en fonction de la pente seule.
+marche est exprimée en fonction de la pente seule. Bien que présenté
+sous une forme analytique, ce modèle se base sur des données
+empiriques provenant de \textcite{Imhof1950} \autocite{Tobler1993}.
+
+\begin{equation}
+  \label{eq:marche_tobler}
+  V = g × 6 × e^{-3,5 × \left| S + 0,05 \right|}
+\end{equation}
+
+Avec \(V\) la vitesse de déplacement (en \si{\kilo\meter\per\hour}),
+\(S\) la pente, dont l'expression est:
+
+\begin{equation}
+ S = \frac{Δh}{Δx} = \tan θ
+\end{equation}
+
+Où \(θ\) est l'angle de la pente, \(Δh\) le dénivelé et \(Δx\) la
+distance planimétrique. Quant à \(g\), il s'agit d'un coefficient de
+pondération, permettant de faire varier l'estimation de la vitesse en
+fonction d'éléments exogènes, comme le mode de
+déplacement. \textcite{Tobler1993} en propose 3 valeurs :
+%
+\begin{enumerate*}[label=(\alph*)]
+\item \(g = 1\), le cas standard, pour estimer un temps de marche sur
+  sentier,
+\item \(g = 0,6\), lorsque la marche est faite hors-sentier et
+\item  \(g = 1.25\), pour un déplacement à cheval.
+\end{enumerate*}
+%
 
 % Modèle de Ress
 
