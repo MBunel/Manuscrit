@@ -722,11 +722,14 @@ suivante:
   \right.
 \end{equation}
 
+
+
 Ces quatres couples (\emph{t-norme}, \emph{t-conorme}) ont la
 particularité d'êtres \emph{duales,} ce qui signifie que pour tous
 \(x\) et \(y\) dont la valeur est comprise entre 0 et 1, \emph{la négation
 d'une \emph{t-norme}} est égale à la \emph{t-conorme} de la négation
 de \(x\) et de \(y\) et inversement, soit :
+
 \begin{equation}
   n(⊤(x,y)) = ⊥(n(x), n(y))
 \end{equation}
@@ -737,10 +740,32 @@ de \(x\) et de \(y\) et inversement, soit :
 
 Avec \(n\) la négation.
 
-La \emph{t-norme} de \textcite{Zadeh1965} est, de toutes les
-\emph{t-normes} présentées, la moins stricte
-\autocite{Bouchon-Meunier2007}. À l'inverse, la \emph{t-conorme} de
-\bsc{Zadeh} est la plus stricte des \emph{t-conormes} présentées.
+Ces couples d'opérateurs nous permettent de recalculer les résultats
+de l'exemple précédent. Si une personne à un degré d'appartenance de
+0,8 à l'ensemble des personnes âgées et un degré d'appartenance de 0,5
+à l'ensemble des personnes de grande taille, alors son degré
+d'appartenance à l'ensemble des personnes âgées et de grande taille
+est égal à la \emph{t-norme} de ces deux degrés d'appartenance. Si les
+opérateurs choisis sont ceux de \textcite{Zadeh1965}, comme ci-dessus,
+alors ce degré est de 0,5. Dans le cas où une autre \emph{t-norme} est
+choisie (\autoref{tab:conf_tnormes}) ce degré est inférieur à cette
+valeur.
+
+\begin{table}
+  \centering
+  \input{../tableaux/comparaison_tnormes.tex}
+  \caption{Comparaison du degré d'appartenance résultant de
+    l'intersection de deux ensembles, en fonction de la \emph{t-norme}
+    utilisée.}
+  \label{tab:conf_tnormes}
+\end{table}
+
+En effet, la \emph{t-norme} de \textcite{Zadeh1965} correspond
+toujours à l'intersection la moins sévère, alors que la \emph{t-norme}
+drastique correspond à l'intersection la plus sévère. À l'inverse, la
+\emph{t-conorme} de  \textcite{Zadeh1965} est l'opérateur d'union le
+plus sévère, alors que la \emph{t-conorme} drastique est l'opérateur
+d'union le plus large \autocite{Bouchon-Meunier2007}
 
 % Zadeh
 \begin{figure}
