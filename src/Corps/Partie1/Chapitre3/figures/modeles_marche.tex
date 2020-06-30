@@ -1,0 +1,28 @@
+\pgfmathdeclarefunction{naismith}{1}{%
+  \pgfmathparse{#1}%
+}
+
+\pgfmathdeclarefunction{tobler}{0}{%
+  \pgfmathparse{6*exp(-3.5*abs(x*0.05))}%
+}
+
+\pgfmathdeclarefunction{ress}{0}{%
+  \pgfmathparse{6*exp(-3.5*abs(x*0.05))}%
+}
+
+\begin{tikzpicture}
+  \begin{axis}[every axis plot post/.append style={
+      mark=none,domain=-40:40,samples=500},
+    % All plots: from -2:2, 50 samples, smooth, no marks
+    ymax=10,
+    axis x line*=bottom, % no box around the plot, only x and y axis
+    axis y line*=left, % the * suppresses the arrow tips
+    enlargelimits=upper] % extend the axes a bit to the right and top
+
+    \addplot {naismith(5)};
+    \addplot {naismith(4)};
+    \addplot {tobler};
+    \addplot {ress};
+
+  \end{axis}
+\end{tikzpicture}
