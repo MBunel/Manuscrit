@@ -1,5 +1,5 @@
-\pgfmathdeclarefunction{naismith}{1}{%
-  \pgfmathparse{1 / ((1/#1) + tan(x) / 0.6)}%
+\pgfmathdeclarefunction{naismith}{2}{%
+  \pgfmathparse{(#1 * #2) / (#2 + #1 * tan(x))}%
 }
 
 \pgfmathdeclarefunction{langmuir1}{1}{%
@@ -29,7 +29,7 @@
     ylabel=Vitesse de marche (\si{\kilo\meter\per\hour}),
     every axis plot post/.append style={
       mark=none,domain=-60:60,samples=500,smooth},
-    ymax=12,
+     ymax=12,
     axis x line=bottom,
     axis y line*=left,
     enlargelimits=upper,
@@ -41,24 +41,34 @@
       draw=none},
     ]
 
-    %\addplot[restrict x to domain={0:60}, thick] {naismith(5)};
-    %\addlegendentry{\textcite{Naismith1892}}
-    
-    \addplot[restrict x to domain={0:60}, thick] {naismith(4)};
+    % Naismith 1892
+    \addplot[restrict x to domain={0:60}, thick] {naismith(5,0.6)};
     %\addlegendentry{\textcite{Naismith1892}}
 
+    % Naismith corrigé
+    \addplot[restrict x to domain={0:60}, thick] {naismith(4,0.45)};
+    %\addlegendentry{\textcite{Naismith1892}}
+
+    % Langumir 1984
     \addplot[restrict x to domain={-60:-12}, thick] {langmuir1(5)};
     \addplot[restrict x to domain={-12:-5}, thick] {langmuir2(5)};
     \addplot[restrict x to domain={-5:0}, thick] {5};
-    \addplot[restrict x to domain={0:60}, thick] {naismith(5)};
+    \addplot[restrict x to domain={0:60}, thick] {naismith(5,0.6)};
 
+    % Langumir 2013
+    \addplot[restrict x to domain={-60:-12}, thick] {langmuir1(4)};
+    \addplot[restrict x to domain={-12:-5}, thick] {langmuir2(4)};
+    \addplot[restrict x to domain={-5:0}, thick] {4};
+    \addplot[restrict x to domain={0:60}, thick] {naismith(4,0.45)};
+
+    
     %\draw[black] (axis cs:-12,2) -- (axis cs:-12,12);
     %\draw[black] (axis cs:-5,7) -- (axis cs:-5,5);
     
-    \addplot[thick] {tobler(1)};
+    %\addplot[thick] {tobler(1)};
     %\addlegendentry{\textcite{Tobler1993}, \(g=1\)}
     
-    \addplot[thick] {tobler(0.6)};
+    %\addplot[thick] {tobler(0.6)};
     %\addlegendentry{\textcite{Tobler1993}, \(g=0,6\)}
     
     %\addplot {ress};
