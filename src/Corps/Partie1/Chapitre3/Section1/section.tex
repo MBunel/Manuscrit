@@ -143,7 +143,9 @@ des descriptions de positions.
 
 \paragraph{Durées de déplacement}
 
-Pour modéliser des 
+Pour modéliser des
+
+\autoref{fig:modeles_marche}
 
 % Naismith
 Le plus ancien d'entre eux est le modèle de
@@ -153,9 +155,69 @@ sortie dans un journal d'alpinisme. Cette règle énonce qu'une bonne
 estimation du temps de marche consisterait à compter une heure pour 3
 miles (\SI{5}{\kilo\meter}) en distance planaire et d'y ajouter une
 heure de marche par tranche de \SI{2000}{ft} (\SI{600}{\meter}) de
-dénivelé, positif ou négatif \autocite{Naismith1892}.
+dénivelé positif \autocite{Naismith1892}. Avec ce modèle, la vitesse
+de marche (\(V\)) peut s'exprimer en fonction de la pente (\(S\)), de
+la manière suivante:
 
-Ce modèle sera corrigé plusieurs fois, 
+\begin{equation}
+  \label{eq:marche_naismith}
+  V = \dfrac{5 × 0,6}{5 + 0,6 × S}
+\end{equation}
+
+Avec\(S\) la pente (\(S = \tan θ\), avec \(θ\), l'angle de la
+pente). Cette formule peut être généralisée pour s'adapter à
+différentes valeurs de vitesses planimétriques (\(Vₓ\)) et
+ascensionnelles (\(Vₕ\), en \si{\kilo\meter\hour}):
+
+\begin{equation}
+  \label{eq:marche_naismith_f}
+  V = \dfrac{Vₓ × Vₕ}{Vₓ + Vₕ × S}
+\end{equation}
+
+% Langmuir 
+Dans sa formulation originale, ce modèle ne propose pas d'estimation
+de la vitesse de marche en descente. \textcite{Langmuir1984} propose
+d'étendre ce modèle en :
+%
+\begin{enumerate*}[label=(\alph*)]
+\item \emph{réduisant} le temps de marche estimé de 10 minutes, tous les
+300 mètres de dénivelé négatif, si la pente est \emph{faible} (\ie
+comprise entre -5 et -12 degrés) et
+\item en \emph{augmentant} le temps de marche estimé de 10 minutes,
+  tous les 300 mètres de dénivelé négatif, si la pente est
+  \emph{forte} (\ie inférieure à -12 degrés).
+\end{enumerate*}
+%
+Dans la quatrième édition de son ouvrage de 1984,
+\textcite{Langmuir2013} proposera une version corrigée de sa
+précédente proposition pour l'adapter à l'estimation de la vitesse de
+marche d'un groupe. Cette seconde itération propose de réduire la
+vitesse de marche à \SI{4}{\kilo\meter\per\hour} et d'ajouter une
+heure de marche par tranche de \SI{450}{meter} de dénivelé
+positif. La version corrigée du modèle de \autocite{Naismith1892} par
+\textcite{Langmuir1984, Langmuir2013} peut s'exprimer de la manière
+suivante :
+
+\begin{equation}
+  \label{eq:marche_langumir}
+  \def\arraystretch{1.75}
+  V = \left\{
+    \begin{array}{ll}
+      \dfrac{Vₓ × V_{h1}}{Vₓ + V_{h1} × S} & \text{si}\ θ > -5° \\
+      \dfrac{Vₓ × V_{h2}}{Vₓ - V_{h2} × S} & \text{si}\ -12° ≤ θ ≤ -5° \\
+      \dfrac{Vₓ × V_{h2}}{Vₓ + V_{h2} × S} & \text{si}\ θ < -12°\\
+    \end{array}
+  \right.
+\end{equation}
+
+Avec \(V_{h1}\) la vitesse ascensionnelle pour les montées
+(\SI{600}{\meter\per\hour} dans \textcite{Langmuir1984} et
+\SI{450}{\meter\per\hour} dans \textcite{Langmuir2013}), \(V_{h2}\)
+ascensionnelle pour les descentes de plus de 5 degrés
+(\SI{1,8}{\kilo\meter\per\hour}). Comme on peut le voir sur la figure
+\ref{fig:modeles_marche} ce modèle, surtout dans sa formulation
+originale \autocite{Langmuir1984}:lcxkvlkxcjvlk
+
 
 % Aitken
 
@@ -176,7 +238,7 @@ Avec \(V\) la vitesse de déplacement (en \si{\kilo\meter\per\hour}),
 \(S\) la pente, dont l'expression est:
 
 \begin{equation}
- S = \frac{Δh}{Δx} = \tan θ
+ S = \dfrac{Δh}{Δx} = \tan θ
 \end{equation}
 
 Où \(θ\) est l'angle de la pente, \(Δh\) le dénivelé et \(Δx\) la
@@ -203,8 +265,7 @@ les phases d’ascension et de descente.
 % Sentiers ou terrain ?
 
 \begin{figure}
-  \centering
-  \input{../figures/modeles_marche.tex}
+  \centering \input{../figures/modeles_marche.tex}
   \caption{Vitesse de marche estimée en fonction de la pente par les
     différents modèles de marche proposés dans la littérature.}
   \label{fig:modeles_marche}
