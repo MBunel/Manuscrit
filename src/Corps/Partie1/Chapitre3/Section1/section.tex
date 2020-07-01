@@ -143,6 +143,8 @@ des descriptions de positions.
 
 \paragraph{Durées de déplacement}
 
+\tdi{équation fausses, vérifier}
+
 Pour modéliser des
 
 \autoref{fig:modeles_marche}
@@ -207,7 +209,7 @@ Dans la quatrième édition de son ouvrage de 1984,
 l'estimation de la vitesse de marche d'un groupe. La vitesse de marche
 est réduite à \SI{4}{\kilo\meter\per\hour} et les montées sont plus
 pénalisées, une heure de marche est ajoutée par tranche de
-\SI{450}{meter} de dénivelé positif. Ces deux versions corrigées du
+\SI{450}{\meter} de dénivelé positif. Ces deux versions corrigées du
 modèle de \autocite{Naismith1892} par \textcite{Langmuir1984,
   Langmuir2013} peuvent s'exprimer de la manière suivante :
 
@@ -225,21 +227,32 @@ modèle de \autocite{Naismith1892} par \textcite{Langmuir1984,
 
 Avec \(V_{h1}\) la vitesse ascensionnelle (\SI{600}{\meter\per\hour}
 dans \textcite{Langmuir1984} et \SI{450}{\meter\per\hour} dans
-\textcite{Langmuir2013}), \(V_{h2}\) ascensionnelle en descente.
-
-Le modèle \bsc{Langmuir-Naismith} a ceci d'intéressant que les
-estimations de vitesses de marche sont très différentes entre montées
-et descentes.
-
-Comme on peut le voir sur la figure \ref{fig:modeles_marche} modèle,
-surtout dans sa formulation originale \autocite{Langmuir1984}, a un
-comportement assez particulier pour les faibles pentes, la vitesse
-estimée par le modèle pouvant atteindre \SI{12}{\kilo\meter\per\hour},
-une vitesse de marche très élevée, même dans des conditions optimales
-\autocite{Kerouanton2020}. De plus, le modèle n'est pas continu, 
-
+\textcite{Langmuir2013}), \(V_{h2}\) ascensionnelle en descente. Avec
+ces corrections il devient possible d'évaluer le temps de marche
+nécessaire pour effectuer un parcours complet, descente
+comprise.
 % utilisé par R.cost
-
+Cependant le modèle de \bsc{Langmuir-Naismith} à un défaut majeur, son
+comportement pour les faibles pentes
+(cf. \autoref{fig:modeles_marche}). En effet les vitesses de marche en
+descente estimées sont très importantes et en fort décalage avec la
+tendance observée pour les courbes définies pour les montées et les
+grandes descentes. Cet effet est particulièrement marqué dans la
+formulation originale du modèle, où les vitesses estimées peuvent
+approcher les \SI{12}{\kilo\meter\per\hour}, une vitesse de marche
+très élevée, même dans des conditions optimales
+\autocite{Kerouanton2020}. Les vitesses de marche estimées par la
+seconde version du modèle \autocite{Langmuir2013} semblent plus
+réalistes, la vitesse maximale étant d'environ
+\SI{7}{\kilo\meter\per\hour}. Cependant, la rupture entre l'estimation
+pour les fortes descentes et celle pour les faibles descentes
+subsiste, puisque si la vitesse estimée pour une pente de 12 degrés
+est d'environ \SI{7}{\kilo\meter\per\hour}, celle pour une pente de 13
+degrés est d'environ \SI{2,5}{\kilo\meter\per\hour}. Malgré ses
+limites, le modèle \bsc{Langmuir-Naismith} propose une caractéristique
+intéressante, les vitesses de marches maximales ne sont pas atteintes
+sur le plat, mais dans les descentes, suffisamment pentues pour
+soulager le randonneur, mais pas assez prononcées pour être pénibles.
 
 % Tobler
 \textcite{Tobler1993} proposera un modèle différent où la vitesse de
@@ -280,10 +293,10 @@ Avec \(S\) la pente. Les valeurs des coefficients \(a\), \(b\) et
 \(c\), respectivement \SIlist{0,75;0,09;14,6}{\second\per\meter}, ont
 été estimés par \textcite{Rees2004} à l'aide
 
-% Colin
-\textcite{Kerouanton2020} propose quant à lui un modèle distinguant
-les phases d’ascension et de descente.
-
+% Modèle Irmisher
+\textcite{Irmisher2017,Kerouanton2020} proposent, dans la lignée de
+\textcite{Tobler1993}, deux modèles de marche construits à partir de
+données empiriques.
 
 % Sentiers ou terrain ?
 
