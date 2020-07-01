@@ -180,10 +180,18 @@ ascensionnelles (\(Vₕ\), en \si{\kilo\meter\hour}):
   V = \dfrac{Vₓ × Vₕ}{Vₓ + Vₕ × S}
 \end{equation}
 
-% Langmuir 
-Dans sa formulation originale, ce modèle ne propose pas d'estimation
-de la vitesse de marche en descente. \textcite{Langmuir1984} propose
-d'étendre ce modèle en :
+Une première correction de ce modèle sera proposée par
+\textcite{Aitken1977}, qui suggère d'utiliser la règle définie par
+\autocite{Naismith1892} pour estimer la vitesse de marche sur sentiers
+et de réduire la vitesse planimétrique (\(Vₓ\)) à
+\SI{4}{\kilo\meter\per\hour} pour estimer une vitesse de marche
+hors-sentier.
+
+% Langmuir
+Les modèles d'\textcite{Naismith1892,Aitken1977} ne permettent,
+cependant, pas d'estimer la vitesse de marche en descente. Cet ajout
+sera du fait de \textcite{Langmuir1984}, qui propose d'étendre le
+modèle de \textcite{Naismith1892} en :
 %
 \begin{enumerate*}[label=(\alph*)]
 \item \emph{réduisant} le temps de marche estimé de 10 minutes, tous les
@@ -195,14 +203,13 @@ comprise entre -5 et -12 degrés) et
 \end{enumerate*}
 %
 Dans la quatrième édition de son ouvrage de 1984,
-\textcite{Langmuir2013} proposera une version corrigée de sa
-précédente proposition pour l'adapter à l'estimation de la vitesse de
-marche d'un groupe. Cette seconde itération propose de réduire la
-vitesse de marche à \SI{4}{\kilo\meter\per\hour} et d'ajouter une
-heure de marche par tranche de \SI{450}{meter} de dénivelé
-positif. La version corrigée du modèle de \autocite{Naismith1892} par
-\textcite{Langmuir1984, Langmuir2013} peut s'exprimer de la manière
-suivante :
+\textcite{Langmuir2013} proposera un second modèle, plus adapté à
+l'estimation de la vitesse de marche d'un groupe. La vitesse de marche
+est réduite à \SI{4}{\kilo\meter\per\hour} et les montées sont plus
+pénalisées, une heure de marche est ajoutée par tranche de
+\SI{450}{meter} de dénivelé positif. Ces deux versions corrigées du
+modèle de \autocite{Naismith1892} par \textcite{Langmuir1984,
+  Langmuir2013} peuvent s'exprimer de la manière suivante :
 
 \begin{equation}
   \label{eq:marche_langumir}
@@ -216,22 +223,23 @@ suivante :
   \right.
 \end{equation}
 
-Avec \(V_{h1}\) la vitesse ascensionnelle pour les montées
-(\SI{600}{\meter\per\hour} dans \textcite{Langmuir1984} et
-\SI{450}{\meter\per\hour} dans \textcite{Langmuir2013}), \(V_{h2}\)
-ascensionnelle pour les descentes de plus de 5 degrés
-(\SI{1,8}{\kilo\meter\per\hour}). Comme on peut le voir sur la figure
-\ref{fig:modeles_marche} ce modèle, surtout dans sa formulation
-originale \autocite{Langmuir1984}, a un comportement assez particulier
-pour les faibles pentes, la vitesse estimée par le modèle pouvant
-atteindre \SI{12}{\kilo\meter\per\hour}, une vitesse de marche très
-élevée, même dans des conditions optimales.
+Avec \(V_{h1}\) la vitesse ascensionnelle (\SI{600}{\meter\per\hour}
+dans \textcite{Langmuir1984} et \SI{450}{\meter\per\hour} dans
+\textcite{Langmuir2013}), \(V_{h2}\) ascensionnelle en descente.
+
+Le modèle \bsc{Langmuir-Naismith} a ceci d'intéressant que les
+estimations de vitesses de marche sont très différentes entre montées
+et descentes.
+
+Comme on peut le voir sur la figure \ref{fig:modeles_marche} modèle,
+surtout dans sa formulation originale \autocite{Langmuir1984}, a un
+comportement assez particulier pour les faibles pentes, la vitesse
+estimée par le modèle pouvant atteindre \SI{12}{\kilo\meter\per\hour},
+une vitesse de marche très élevée, même dans des conditions optimales
+\autocite{Kerouanton2020}. De plus, le modèle n'est pas continu, 
 
 % utilisé par R.cost
 
-% Aitken
-
-% Langmuir 
 
 % Tobler
 \textcite{Tobler1993} proposera un modèle différent où la vitesse de
@@ -257,7 +265,20 @@ déplacement. \textcite{Tobler1993} en propose 3 valeurs :
 \end{enumerate*}
 %
 
+Une particularité intéressante de ce modèle est que la courbe n'est
+pas centrée sur zéro, la vitesse maximale est donc atteinte pour des
+faibles pentes
+
 % Modèle de Ress
+\textcite{Rees2004} a proposé d'estimer la vitesse de marche en
+fonction de la pente à l'aide d'une fonction quadratique :
+\begin{equation}
+  V = \dfrac{1}{a + b × S + c × S²}
+\end{equation}
+
+Avec \(S\) la pente. Les valeurs des coefficients \(a\), \(b\) et
+\(c\), respectivement \SIlist{0,75;0,09;14,6}{\second\per\meter}, ont
+été estimés par \textcite{Rees2004} à l'aide
 
 % Colin
 \textcite{Kerouanton2020} propose quant à lui un modèle distinguant
@@ -267,7 +288,7 @@ les phases d’ascension et de descente.
 % Sentiers ou terrain ?
 
 \begin{figure}
-  %\centering \input{../figures/modeles_marche.tex}
+  \centering \input{../figures/modeles_marche.tex}
   \caption{Vitesse de marche estimée en fonction de la pente par les
     différents modèles de marche proposés dans la littérature.}
   \label{fig:modeles_marche}
