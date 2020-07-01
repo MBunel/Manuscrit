@@ -29,6 +29,14 @@
   \pgfmathparse{1 / (0.208 + 0.025 * tan(x) + 4.06 * tan(x)^2)}%
 }
 
+%irmischer
+\pgfmathdeclarefunction{irmischer_1}{0}{%
+  \pgfmathparse{3.6 * (0.11 + exp(-((100*tan(x) + 5)^2)/ 1800 )))}%
+}
+
+\pgfmathdeclarefunction{irmischer_2}{0}{%
+  \pgfmathparse{3.6 * (0.11 + 0.67 * exp(-((100*tan(x) + 2)^2)/ 1800)))}%
+}
 
 \begin{tikzpicture}
   \begin{axis}[
@@ -57,16 +65,18 @@
       domain=-60:60,
       samples=500,
       smooth},
+    legend cell align=left,
     legend style={
       at={(0.5,-0.25)},
       anchor=north,
       legend columns=3,
       font=\small,
-      draw=none},
+      draw=none,
+      /tikz/every even column/.append style={column sep=.5cm},}
     ]
 
     % Naismith 1892
-     \addplot[restrict x to domain={0:60}, thick] {naismith(5,0.6)};
+    % \addplot[restrict x to domain={0:60}, thick] {naismith(5,0.6)};
     % \addlegendentry{\textcite{Naismith1892}}
 
     % Naismith corrigé
@@ -74,38 +84,40 @@
     % \addlegendentry{\textcite{Naismith1892}}
 
     % Langumir 1984
-    %\addplot[restrict x to domain={-60:-12}, thick, RdBu-9-2] {langmuir1(5)};
-    %\addplot[restrict x to domain={-12:-5}, thick, RdBu-9-2] {langmuir2(5)};
-    %\addplot[restrict x to domain={-5:0}, thick, RdBu-9-2] {5};
-    %\addplot[restrict x to domain={0:60}, thick, RdBu-9-2] {naismith(5,0.6)};
+    \addplot[restrict x to domain={-60:-12}, thick, RdBu-9-2] {langmuir1(5)};
+    \addplot[restrict x to domain={-12:-5}, thick, RdBu-9-2] {langmuir2(5)};
+    \addplot[restrict x to domain={-5:0}, thick, RdBu-9-2] {5};
+    \addplot[restrict x to domain={0:60}, thick, RdBu-9-2] {naismith(5,0.6)};
 
     % Langmuir 2013
-    %\addplot[restrict x to domain={-60:-12}, thick, dashed, RdBu-9-2] {langmuir1(4)};  
-    %\addplot[restrict x to domain={-12:-5}, thick, dashed, RdBu-9-2] {langmuir2(4)};
-    %\addplot[restrict x to domain={-5:0}, thick, dashed, RdBu-9-2] {4};
-    %\addplot[restrict x to domain={0:60}, thick, dashed, RdBu-9-2]
-    %{naismith(4,0.45)};
-
-
-
+    \addplot[restrict x to domain={-60:-12}, thick, dashed, RdBu-9-2] {langmuir1(4)};  
+    \addplot[restrict x to domain={-12:-5}, thick, dashed, RdBu-9-2] {langmuir2(4)};
+    \addplot[restrict x to domain={-5:0}, thick, dashed, RdBu-9-2] {4};
+    \addplot[restrict x to domain={0:60}, thick, dashed, RdBu-9-2]
+    {naismith(4,0.45)};
     
     % \draw[black] (axis cs:-12,2) -- (axis cs:-12,12);
     % \draw[black] (axis cs:-5,7) -- (axis cs:-5,5);
-    
-     \addplot[thick, RdBu-9-9] {tobler(1)};
-    %\addplot[thick, RdBu-9-6] {tobler(0.6)};
 
+    % Tobler
+    \addplot[thick, RdBu-9-9] {tobler(1)}; % Normal
+    \addplot[thick, dashed, RdBu-9-9] {tobler(0.6)}; % Sur sentier
+
+    % Rees
     \addplot[thick, RdBu-9-1] {rees};
-    
-    
-    % \addplot {ress};
 
-    %\legend{
-    %  \textcite{Langmuir1984},,,,
-    %  \textcite{Langmuir2013},,,,
-    %  {\textcite{Tobler1993}, \(g=1\)},
-    %  {\textcite{Tobler1993}, \(g=0,6\)}
-    %}
+    % Irmischer
+    \addplot[thick, RdBu-9-3] {irmischer_1}; % Normal
+    \addplot[ultra thick, RdBu-9-3] {irmischer_2}; % Sur sentier
+
+    \legend{
+     \textcite{Langmuir1984},,,,
+     \textcite{Langmuir2013},,,,
+     {\textcite{Tobler1993}, \(g=1\)},
+     {\textcite{Tobler1993}, \(g=0,6\)},
+     \textcite{Rees2004},
+     \textcite{Truc}
+     }
 
 
   \end{axis}
