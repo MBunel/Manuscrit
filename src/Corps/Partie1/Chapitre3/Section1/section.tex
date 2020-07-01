@@ -164,9 +164,15 @@ la manière suivante:
   V = \dfrac{5 × 0,6}{5 + 0,6 × S}
 \end{equation}
 
-Avec\(S\) la pente (\(S = \tan θ\), avec \(θ\), l'angle de la
-pente). Cette formule peut être généralisée pour s'adapter à
-différentes valeurs de vitesses planimétriques (\(Vₓ\)) et
+Avec \(S\) la pente, dont l'expression est:
+
+\begin{equation}
+ S = \dfrac{Δh}{Δx} = \tan θ
+\end{equation}
+
+Où \(θ\) est l'angle de la pente, \(Δh\) le dénivelé et \(Δx\) la
+distance planimétrique. Cette formule peut être généralisée pour
+s'adapter à différentes valeurs de vitesses planimétriques (\(Vₓ\)) et
 ascensionnelles (\(Vₕ\), en \si{\kilo\meter\hour}):
 
 \begin{equation}
@@ -216,7 +222,11 @@ Avec \(V_{h1}\) la vitesse ascensionnelle pour les montées
 ascensionnelle pour les descentes de plus de 5 degrés
 (\SI{1,8}{\kilo\meter\per\hour}). Comme on peut le voir sur la figure
 \ref{fig:modeles_marche} ce modèle, surtout dans sa formulation
-originale \autocite{Langmuir1984}:lcxkvlkxcjvlk
+originale \autocite{Langmuir1984}, a un comportement assez particulier
+pour les faibles pentes, la vitesse estimée par le modèle pouvant
+atteindre \SI{12}{\kilo\meter\per\hour}, une vitesse de marche très
+élevée, même dans des conditions optimales.
+
 % utilisé par R.cost
 
 % Aitken
@@ -234,15 +244,7 @@ empiriques provenant de \textcite{Imhof1950} \autocite{Tobler1993}.
   V = g × 6 × e^{-3,5 × \left| S + 0,05 \right|}
 \end{equation}
 
-Avec \(V\) la vitesse de déplacement (en \si{\kilo\meter\per\hour}),
-\(S\) la pente, dont l'expression est:
-
-\begin{equation}
- S = \dfrac{Δh}{Δx} = \tan θ
-\end{equation}
-
-Où \(θ\) est l'angle de la pente, \(Δh\) le dénivelé et \(Δx\) la
-distance planimétrique. Quant à \(g\), il s'agit d'un coefficient de
+Quant à \(g\), il s'agit d'un coefficient de
 pondération, permettant de faire varier l'estimation de la vitesse en
 fonction d'éléments exogènes, comme le mode de
 déplacement. \textcite{Tobler1993} en propose 3 valeurs :
