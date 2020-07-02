@@ -103,6 +103,9 @@ composite, \textcite{Aurnague1993} parlent alors de
 \tdi{citer Spatial representation and updating: Evidence from
   neuropsychological investigations}
 
+\tdi{citer The Role of Context in the Interpretation of Natural
+  Language Location Descriptions}
+
 Certaines \emph{relations de localisation} ne peuvent être
 interprétées (et donc spatialisées) qu'avec une connaissance
 supplémentaire sur la configuration de la position décrite. Par
@@ -120,13 +123,34 @@ que le locuteur utilise sa ligne de vue comme référence.
 
 \subsubsection{Modélisation formelle d'une relation}
 
-Différents travaux ont cherché à proposer une représentation formelle
-des descriptions de positions.
+\paragraph{Modèles morphologiques}
+
+
+
+\paragraph{Modèles sémantiques}
+
+Cette seconde catégorie de modèles formalise les \emph{relations de
+  localisations} indépendamment de toute considération linguistique
+et morphologique.
+
+\textcite{Aurngague1997} proposent
 
 % 1
 \autocite{Bateman2010}
 
-\autocite{Pustejovsky2017}
+\paragraph{\enquote{ISO-Space}, un modèle pivot}
+
+Le modèle normalisé \enquote{ISO-Space}, proposé par
+\textcite{Pustejovsky2017}, a pour objectif d'être un pivot entre les
+\emph{modèles morphologiques,} destinés à l'annotation et les
+\emph{modèles sémantiques,} construits pour interpréter les
+\emph{relations de localisation.}
+
+Ce modèle 
+
+
+
+
 
 \subsection{Classification des \emph{relations de localisation}}
 
@@ -139,14 +163,191 @@ des descriptions de positions.
 
 \subsection{Travaux sur différentes familles de relations}
 
-\subsubsection{\emph{Relations de localisation} du point de vue géométrique et
-  computationel}
 
-\subsubsection{\emph{Relations de localisation} du point de vue sémantique}
+Nous allons à présent détailler les différents travaux proposés pour
+modéliser des familles spécifiques de \emph{relations de
+  localisation.}
 
-\paragraph{Proximité}
+Ces différentes familles de \emph{relations de localisation} se
+distinguent également par leur complexité. Comme l'indiquent
+\textcite{Aurnague1997}, les travaux de \textcite{Piaget1948} sur le
+développement de la perception spatiale chez l'enfant ont mis en
+évidence que les premières notions développées étaient celles
+relatives à la topologie, suivies par les concepts relevant de la
+perception des distances, finalement suivies par la notion
+d'orientation.
+
+\subsubsection{Les relations topologiques}
+
+Les relations topologiques 
+
+Comme l'indique \textcite{Duchene2019}, ces relations sont
+\enquote{invariantes par déformation continue de l’espace}.
+
+
+\paragraph{Modèles computationnels}
+
+Dans le domaine des \ac{sig}, deux grandes \enquote{familles} de
+modèles topologiques coexistent.
+
+La première est celle du modèle RCC8, proposée par
+\textcite{Randell1992}. Ce modèle, se fonde sur la théorie des
+ensembles de points
+
+Huit relations topologiques et méréologiques y sont définies. Ces
+dernières sont mutuellement exclusives, par conséquent une et une
+seule d'entre-elles est vérifiée, quelque soit la configuration.
+
+Ce modèle permet également de raisonner sur les relations
+topologiques, à l'aide d'une \emph{table de transition.}
+
+\tdi{citer A More Expressive 3D Region Connection Calculus pour l'EDA
+  RCC}
+\tdi{Ajouter ler JEPD et si les extensions le valident}
+
+% RCC5
+% Bennett, 1994, Spatial reasoning with propositional logics
+\textcite{Bennett1994} propose
+
+% RCC23 A.G.  Cohn, B.  Bennet, J.  Dooday, and N.M.  Gotts,
+% Qualitative Spatial Representation and Reasoning with the Region
+% Connection Calculus, GeoInformatica 1(1), pp 1-44, 1997.
+Pour améliorer la modélisation des relations topologiques avec des
+régions concaves, \textcite{Cohn1997} proposerons une extension à 23
+relations du modèle RCC, définissant le modèle RCC-23. La relation
+\emph{externally connected} (EC) est décomposée en 9 nouvelles
+relations, permettant, par exemple, de faire la distinction entre un
+contact avec inclusion dans l'enveloppe convexe et sans. De même, la
+relation \emph{disconnected} (DC) est décomposée en 8 nouvelles
+relations, ce qui permet de distinguer une situation où un objet
+\enquote{enveloppe} l'autre. Un modèle RCC-62 sera également proposé
+pour répondre à ce même problème. Contrairement au modèle RCC-23, le
+modèle RCC-62 traite les régions en distinguant leur \emph{intérieur}
+de leur \emph{frontière} et de leur \emph{extérieur,} ce qui permet de
+définir plus de relations topologiques, au prix d'une complexification
+conséquente.
+
+\tdi{figures}
+
+% Exstention 3D
+% Extension temporelle : Wolter
+Le modèle RCC sera également étendu d'autres manières, notamment pour
+prendre en compte la troisième dimension avec les modèles RCC-3D,
+VRCC-3D et VRCC-3D+ ou la temporalité avec les travaux de XXXX
+couplant le modèle RCC-8 à l'algèbre temporelle d'Allen. Ces
+extensions s'éloignent cependant du cadre de ce travail.
+
+La seconde \enquote{famille} de modèle des relations topologiques est
+celle du \emph{modèle des 4 intersections,} (4IM) initialement
+proposée par \textcite{Egenhofer1989}. Comme pour le modèle RCC-8
+proposé par \textcite{Randell1992}, le \emph{modèle des intersections}
+a eut de nombreux dérivés et extensions. De plus ces deux modèles
+partagent des points communs, notamment leur principe de modélisation
+des objets géométriques, considérés comme des ensembles de points. De
+plus, dans les modèles RCC-8 \autocite{Randell1992} et 4IM, les
+relations topologiques définies sont exhaustives et mutuellement
+disjointes (JEPD). Les deux modèles ont cependant quelques
+différences, la première est que le modèle 4IM et ses dérivés ne
+permettent pas de raisonner à partir des \emph{relations
+  topologiques,} il n'est donc pas possible d'inférer une relation à
+partir de relations topologiques et d'objets connus. Cependant, le
+\emph{modèle des intersections} permet de modéliser des
+\emph{relations topologiques} entre des régions, des lignes et des
+points, contrairement au modèle RCC-8 qui se limite aux régions.
+
+Dans la première version du \emph{modèle des intersections,} le modèle
+4IM, 8 configurations, identiques à celles du modèle RCC-8
+\autocite{Duchene2019}, sont définies \textcite{Egenhofer1989}.
+
+Celles-ci sont construites en étudiant, les
+intersections entre les frontières et les intérieurs des deux objets
+étudiés. Chaque Pour chaque relation entre deux objets on peu alors
+définir une matrice de 4 valeurs possibles, indiquant si l'inter
+
+Une extension du modèle 4IM, le modèle 9IM, sera proposée par
+\textcite{Egenhofer1991}. Dans cette nouvelle version, la matrice
+initiale de 4 valeurs est étendue en une matrice de \(3 × 3\),
+permettant, de spécifier les intersections avec l'extérieur des objets
+(\ie tous les points qui n'appartiennent ni à l'intérieur, ni à la
+frontière de l'objet). Ce nouveau modèle ne permet pas de modéliser
+des configurations nouvelles entre deux régions, mais il permet de
+distinguer plus finement les configurations incluant une ligne.
+
+\tdi{Pour la norme ISO citer l'article DE9IM dans l'encyclopédie}
+
+Le modèle 9IM sera lui-même étendu par \textcite{Clementini1993}, qui
+proposeront le Modèle DE-9IM. Contrairement aux modèles 4IM et 9IM où
+les \emph{relations topologiques} sont définies en fonction de
+l’existence (ou non) d'une intersection entre deux ensembles de points
+(intérieur, frontière et extérieur pour le modèle 9IM), le modèle
+DE-9IM ajoute la possibilité de spécifier la \emph{dimension} de cette
+intersection. Ainsi, avec cette extension du modèle 9IM il devient
+possible de faire la distinction entre deux carrés qui se touchent en
+un point ou qui partagent une arrête (\ie de distinguer un voisinage
+de Von Neuman, d'un voisinage de Moore).  Ce modèle a part ailleurs
+été adopté comme norme par l'OGC et par l'ISO, ce qui a conduit à son
+adoption massive dans les \ac{sig} \autocite{Duchene2019}. Cependant,
+cette nouvelle proposition se heurte aux mêmes limites que les modèles
+RCC-23 et RCC-62, à savoir le grand nombre de cas possibles. Conscient
+de se problème \textcite{Clementini1993} proposeront un modèle
+complémentaire, le \emph{calculus based model} (CMB), regroupant
+diverses configurations de matrices sous cinq appellations (\emph{in,
+  cross, overlap, touch, et disjoint}), qui sont autant de
+\emph{relations topologiques.}
+
+\subsubsection{Les relations projectives}
+
+\paragraph{Les relations directionnelles}
+
+\paragraph{Les relations d'orientation relative}
+
+
+\subsubsection{Les relations de distance}
+
+Les relations de distance permettent de décrire l'éloignement entre le
+\emph{sujet} et un \emph{objet de référence.} Comme les relations
+directionnelles elles peuvent être exprimées de manière quantitative
+(\eg \enquote{Je suis à 50 mètres}) ou qualitatives (\eg \enquote{Je
+  suis proche}). Ce
+
+\tdi{Geographic Space and Time are Tightly Coupled}
+\tdi{Distances are Asymmetric}
+\tdi{Distance Inferences are Local, Not Global}
+\tdi{Distances Don’t Add Up Easily}
+
+\enquote{La distance \textelp{} semble \textelp{} numérique par
+  essence. Toutefois \textelp{} la notion sous-jacente essentielle est
+  en fait un ordre \textelp{}}, \textcite{Aurnague1997}.
+
+\paragraph{Distances quantitatives}
+
+Toutefois, l'utilisation de \emph{relations de distance quantitatives}
+n'implique pas nécessairement une plus grande précision. Les distances
+
+\tdi{attraction des nombres ronds : \url{https://www.persee.fr/doc/rfsoc_0035-2969_1961_num_2_3_5938}}
+
+Le phénomène \emph{d'attraction des nombres ronds}
+
+La mesure d'une distance entre deux objets 
+
+Types de distance, euclidienne, manhattan, réseaux Algo réseau,
+Dijkstra, A*, driving distance
+
+\paragraph{Distances qualitatives}
+
+\tdi{Robinson, V.: Interactive machine acquisition of a fuzzy spatial
+  relation. Comput.  Geosci. 16, 857–872 (1990). Robinson, V.:
+  Individual and multipersonal fuzzy spatial relations acquired using
+  human-machine interaction. Fuzzy Sets Syst. 113(1), 133–145 (2000)}
+
+\tdi{Spatial Natural Language Generation for Location Description in
+  Photo Captions Mark M. Hall 1 , Christopher B. Jones 2( B ) , and
+  Philip Smart 2}
 
 \paragraph{Durées de déplacement}
+
+\tdi{Borillo pas de différence fondamentatle entre distance et temps
+  de marche, voir aussi Naive geography}
 
 \tdi{Bonne ref An analysis of probability of area techniques for
   missing persons in Yosemite National Park}
@@ -316,15 +517,13 @@ données empiriques.
 % Sentiers ou terrain ?
 
 \begin{figure}
-  \centering \input{../figures/modeles_marche.tex}
+  %\centering \input{../figures/modeles_marche.tex}
   \caption{Vitesse de marche estimée en fonction de la pente par les
     différents modèles de marche proposés dans la littérature.}
   \label{fig:modeles_marche}
 \end{figure}
 
-\paragraph{Les relations de visibilité}
-
-
+\subsubsection{Les relations de visibilité}
 
 %%% Local Variables:
 %%% mode: latex
