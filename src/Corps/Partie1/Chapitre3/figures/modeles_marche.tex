@@ -84,31 +84,31 @@
     % \addlegendentry{\textcite{Naismith1892}}
 
     % Langumir 1984
-    \addplot[restrict x to domain={-60:-12}, thick, RdBu-9-2] {langmuir1(5)};
-    \addplot[restrict x to domain={-12:-5}, thick, RdBu-9-2] {langmuir2(5)};
-    \addplot[restrict x to domain={-5:0}, thick, RdBu-9-2] {5};
-    \addplot[restrict x to domain={0:60}, thick, RdBu-9-2] {naismith(5,0.6)};
+    \addplot[restrict x to domain={-60:-12},  thick, Q0-12] {langmuir1(5)};
+    \addplot[restrict x to domain={-12:-5},  thick, Q0-12] {langmuir2(5)};
+    \addplot[restrict x to domain={-5:0},  thick, Q0-12] {5};
+    \addplot[restrict x to domain={0:60},  thick, Q0-12] {naismith(5,0.6)};
 
     % Langmuir 2013
-    \addplot[restrict x to domain={-60:-12}, thick, dashed, RdBu-9-2] {langmuir1(4)};  
-    \addplot[restrict x to domain={-12:-5}, thick, dashed, RdBu-9-2] {langmuir2(4)};
-    \addplot[restrict x to domain={-5:0}, thick, dashed, RdBu-9-2] {4};
-    \addplot[restrict x to domain={0:60}, thick, dashed, RdBu-9-2]
+    \addplot[restrict x to domain={-60:-12},  thick, Q1-12] {langmuir1(4)};  
+    \addplot[restrict x to domain={-12:-5},  thick, Q1-12] {langmuir2(4)};
+    \addplot[restrict x to domain={-5:0},  thick, Q1-12] {4};
+    \addplot[restrict x to domain={0:60},  thick,  Q1-12]
     {naismith(4,0.45)};
     
     % \draw[black] (axis cs:-12,2) -- (axis cs:-12,12);
     % \draw[black] (axis cs:-5,7) -- (axis cs:-5,5);
 
     % Tobler
-    \addplot[thick, RdBu-9-9] {tobler(1)}; % Normal
-    \addplot[thick, dashed, RdBu-9-9] {tobler(0.6)}; % Sur sentier
+    \addplot[ thick, Q2-12] {tobler(1)}; % Normal
+    \addplot[ thick, Q3-12] {tobler(0.6)}; % Sur sentier
 
     % Rees
-    \addplot[thick, RdBu-9-1] {rees};
+    \addplot[ thick, Q4-12] {rees};
 
     % Irmischer
-    \addplot[thick, RdBu-9-3] {irmischer_1}; % Normal
-    \addplot[ultra thick, RdBu-9-3] {irmischer_2}; % Sur sentier
+    \addplot[ thick, Q5-12] {irmischer_1}; % Normal
+    \addplot[ thick, Q6-12] {irmischer_2}; % Sur sentier
 
     \legend{
      \textcite{Langmuir1984},,,,
