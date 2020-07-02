@@ -229,6 +229,14 @@ conséquente.
 
 \tdi{figures}
 
+\begin{figure}
+  \centering
+  \input{../figures/rcc.tikz}
+  \caption{test}
+  \label{fig:RCC}
+\end{figure}
+
+
 % Exstention 3D
 % Extension temporelle : Wolter
 Le modèle RCC sera également étendu d'autres manières, notamment pour
@@ -264,6 +272,15 @@ intersections entre les frontières et les intérieurs des deux objets
 étudiés. Chaque Pour chaque relation entre deux objets on peu alors
 définir une matrice de 4 valeurs possibles, indiquant si l'inter
 
+\begin{equation}
+  \label{eq:matrice_4IM}
+  \text{4IM}(a,b) =
+  \begin{bmatrix}
+    aᵒ ∩ bᵒ ≠ ∅ & aᵒ ∩ δb ≠ ∅ \\
+    δa ∩ bᵒ ≠ ∅ & δa ∩ δb ≠ ∅ \\
+  \end{bmatrix}
+\end{equation}
+
 Une extension du modèle 4IM, le modèle 9IM, sera proposée par
 \textcite{Egenhofer1991}. Dans cette nouvelle version, la matrice
 initiale de 4 valeurs est étendue en une matrice de \(3 × 3\),
@@ -272,6 +289,16 @@ permettant, de spécifier les intersections avec l'extérieur des objets
 frontière de l'objet). Ce nouveau modèle ne permet pas de modéliser
 des configurations nouvelles entre deux régions, mais il permet de
 distinguer plus finement les configurations incluant une ligne.
+
+\begin{equation}
+  \label{eq:matrice_9IM}
+  \text{9IM}(a,b) =
+  \begin{bmatrix}
+    aᵒ ∩ bᵒ ≠ ∅ & aᵒ ∩ δb ≠ ∅ & aᵒ ∩ bᵉ ≠ ∅ \\
+    δa ∩ bᵒ ≠ ∅ & δa ∩ δb ≠ ∅ & δa ∩ bᵉ ≠ ∅ \\
+    aᵉ ∩ bᵒ ≠ ∅ & aᵉ ∩ δb ≠ ∅ & aᵉ ∩ bᵉ ≠ ∅ \\
+  \end{bmatrix}
+\end{equation}
 
 \tdi{Pour la norme ISO citer l'article DE9IM dans l'encyclopédie}
 
@@ -294,6 +321,21 @@ complémentaire, le \emph{calculus based model} (CMB), regroupant
 diverses configurations de matrices sous cinq appellations (\emph{in,
   cross, overlap, touch, et disjoint}), qui sont autant de
 \emph{relations topologiques.}
+
+\begin{equation}
+  \label{eq:matrice_DE9IM}
+  \text{DE-9IM}(a,b) =
+  \begin{bmatrix}
+    dim(aᵒ ∩ bᵒ) & dim(aᵒ ∩ δb) & dim(aᵒ ∩ bᵉ)\\
+    dim(δa ∩ bᵒ) & dim(δa ∩ δb) & dim(δa ∩ bᵉ)\\
+    dim(aᵉ ∩ bᵒ) & dim(aᵉ ∩ δb) & dim(aᵉ ∩ bᵉ)\\
+  \end{bmatrix}
+\end{equation}
+
+\begin{equation}
+  \label{eq:DE9IM_to_9IM}
+  bin(\text{DE-9IM}(a,b)) = \text{9IM}(a,b)
+\end{equation}
 
 \subsubsection{Les relations projectives}
 
