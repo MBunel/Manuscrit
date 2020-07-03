@@ -1,14 +1,14 @@
 \subfloat[Exemple de décomposition de la relation topologique \emph{overlap}]{
-  \begin{tabular}{rC{4cm}C{4cm}}
+  \begin{tabular}{R{2.5cm}C{4cm}C{4cm}}
     \toprule
     & \scriptsize \(\begin{bmatrix}
-      V & V & F \\
-      V & V & F \\
-      V & F & F \\
+      V & V & V \\
+      V & V & V \\
+      \mathbf{V} & F & V \\
     \end{bmatrix}\) & \scriptsize  \(\begin{bmatrix}
       V & V & V \\
       V & V & V \\
-      V & V & V \\
+      \mathbf{F} & F & V \\
     \end{bmatrix}\) \\
     \midrule
     \scriptsize \(\text{overlap} ≡ \begin{bmatrix}
@@ -31,19 +31,19 @@
     \bottomrule    
   \end{tabular}
   \label{tab:RCC8_vs_RCC23_1}
-}
+} \bigskip
 
 \subfloat[Exemple de décomposition de la relation topologique \emph{meet}]{
-  \begin{tabular}{rC{4cm}C{4cm}}
+  \begin{tabular}{R{2.5cm}C{4cm}C{4cm}}
     \toprule
     &  \scriptsize \(\begin{bmatrix}
       F & F & V \\
-      F & V & F \\
-      F & V & F \\
+      F & V & V \\
+      F & \mathbf{V} & V \\
     \end{bmatrix}\) & \scriptsize  \(\begin{bmatrix}
       F & F & V \\
       F & V & V \\
-      V & F & V \\
+      F & \mathbf{F} & V \\
     \end{bmatrix}\) \\
     \midrule
     \scriptsize \(\text{meet} ≡ \begin{bmatrix}
