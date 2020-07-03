@@ -254,7 +254,7 @@ extensions s'éloignent cependant du cadre de ce travail.
 % 4IM et dérivés
 La seconde \enquote{famille} de modèle des relations topologiques est
 celle du \emph{modèle des 4 intersections}
-\autocite[4IM][]{Egenhofer1989} et de ses dérivés, qui, comme pour le
+\autocite[4IM,][]{Egenhofer1989} et de ses dérivés, qui, comme pour le
 modèle RCC-8, sont nombreux. Ces deux modèles partagent leurs
 fondements. Tous deux s’appuient sur le paradigme des \emph{ensembles
   de points} pour modéliser les objets géométriques et définissent les
@@ -274,19 +274,19 @@ régions.
 Dans la première version du \emph{modèle des intersections,} le modèle
 4IM, 8 \emph{relations tolopologiques}, équivalentes à celles du
 modèle RCC-8 \autocite{Duchene2019}, sont définies
-\textcite{Egenhofer1989}. Celles-ci sont définies à partir d'une
-matrice 4 valeurs booléenes, détaillant les intersections entre les
-composantes de deux objets géométriques \(a\) et \(b\). La première
-d'entre elles est \emph{l'intérieur} de l'objet, notée \(aᵒ\) ou
-\(bᵒ\), en fonction de l'objet concerné. La seconde, notée \(δa\) ou
-\(δb\), est la \emph{frontière} de l'objet. Ces deux ensembles,
-\emph{intérieur} et \emph{frontière,} sont définis pour chaque type de
-géométrie, par exemple la frontière d'une ligne est un ensemble de
-deux points, le premier et le dernier de la ligne. Pour un point les
-deux notions sont équivalentes. La construction de la \emph{matrice
-}d'intersection consiste alors en l'étude des intersections, deux à
-deux, de la \emph{frontière} et de l'intérieur de deux objets
-géométriques :
+\textcite{Egenhofer1989,Egenhofer1990,Egenhofer1991a}. Celles-ci sont
+définies à partir d'une matrice 4 valeurs booléenes, détaillant les
+intersections entre les composantes de deux objets géométriques \(a\)
+et \(b\). La première d'entre elles est \emph{l'intérieur} de l'objet,
+notée \(aᵒ\) ou \(bᵒ\), en fonction de l'objet concerné. La seconde,
+notée \(δa\) ou \(δb\), est la \emph{frontière} de l'objet. Ces deux
+ensembles, \emph{intérieur} et \emph{frontière,} sont définis pour
+chaque type de géométrie, par exemple la frontière d'une ligne est un
+ensemble de deux points, le premier et le dernier de la ligne. Pour un
+point les deux notions sont équivalentes. La construction de la
+\emph{matrice }d'intersection consiste alors en l'étude des
+intersections, deux à deux, de la \emph{frontière} et de l'intérieur
+de deux objets géométriques :
 
 \begin{equation}
   \label{eq:matrice_4IM}
@@ -332,12 +332,12 @@ configurations possibles sont toutes nomées (\emph{disjoint, contains,
 rend les \emph{relations topologiques} définies plus intelligible et
 facile à manipuler que des matrices de valeurs booléenes.
 
-une extension du modèle 4IM, le modèle 9IM, sera proposée par
-\textcite{Egenhofer1991}. Dans cette nouvelle version, la matrice
-initiale de 4 valeurs est étendue en une matrice de \(3 × 3\),
-permettant, de spécifier les intersections avec l'extérieur des objets
-(\ie tous les points qui n'appartiennent ni à l'intérieur, ni à la
-frontière de l'objet).
+Dans le modèle 9IM, une extension du modèle 4IM proposée par
+\textcite{Egenhofer1991}, la \emph{matrice des intersection} est
+étendue par l'ajout d'un nouvel ensemble, \emph{l'extérieur} (\ie tous
+les points qui n'appartiennent ni à l'intérieur, ni à la frontière de
+l'objet), noté \(aᵉ\) ou \(bᵉ\) en fonction de l'objet. La matrice
+initiale est alors étendue en une matrice de 9 valeurs booléennes :
 
 \begin{equation}
   \label{eq:matrice_9IM}
@@ -362,54 +362,45 @@ figure \ref{tab:4IM_vs_9IM}.
   \label{tab:4IM_vs_9IM}
 \end{table}
 
-
-\tdi{Pour la norme ISO citer l'article DE9IM dans l'encyclopédie}
-
-Le modèle 9IM sera lui-même étendu par \textcite{Clementini1993}, qui
-proposeront le Modèle DE-9IM. Contrairement aux modèles 4IM et 9IM où
-les \emph{relations topologiques} sont définies en fonction de
-l’existence (ou non) d'une intersection entre deux ensembles de points
-(intérieur, frontière et extérieur pour le modèle 9IM), le modèle
-DE-9IM ajoute la possibilité de spécifier la \emph{dimension} de cette
-intersection. La matrice
+Le modèle 9IM sera lui-même étendu par le modèle DE-9IM proposé par
+\textcite{Clementini1993}. Modèle qui sera par ailleurs normalisé par
+l'OGC et par l'ISO, ce qui a conduit à son adoption massive dans les
+\ac{sig} \autocite{Strobl2008}. Comme son sigle le laisse supposer, ce
+nouveau modèle conserve la matrice à 9 valeurs du modèle 9IM,
+cependant les valeurs qui y sont inscrites ne sont plus limitées aux
+booléens. En effet, le \emph{dimensions extend nine-intersection
+  model} (DE-9IM) ajoute la possibilité de spécifier la
+\emph{dimension} des intersections. La matrice d'intersection de deux
+objets \(a\) ou \(b\) est alors :
 
 \begin{equation}
   \label{eq:matrice_DE9IM}
   \text{DE-9IM}(a,b) =
   \begin{bmatrix}
-    dim(aᵒ ∩ bᵒ) & dim(aᵒ ∩ δb) & dim(aᵒ ∩ bᵉ)\\
-    dim(δa ∩ bᵒ) & dim(δa ∩ δb) & dim(δa ∩ bᵉ)\\
-    dim(aᵉ ∩ bᵒ) & dim(aᵉ ∩ δb) & dim(aᵉ ∩ bᵉ)\\
+    \text{dim}(aᵒ ∩ bᵒ)&\text{dim}(aᵒ ∩ δb)&\text{dim}(aᵒ ∩ bᵉ)\\
+    \text{dim}(δa ∩ bᵒ)&\text{dim}(δa ∩ δb)&\text{dim}(δa ∩ bᵉ)\\
+    \text{dim}(aᵉ ∩ bᵒ)&\text{dim}(aᵉ ∩ δb)&\text{dim}(aᵉ ∩ bᵉ)\\
   \end{bmatrix}
 \end{equation}
 
-Le modèle DE-9IM reste cependant fortement compatible avec le modèle
-9IM. En effet les matrices d'intersection pour ce second modèle
-correspondent à une version binaire des matrices de
-\textcite{Clementini1993}. On peut alors définir une fonction
-\(\text{bin}(a,b)\) permettant de transformer une matrice du modèle
-DE-9IM en une matrice du modèle 9IM, \ie transformant les valeurs
-numériques de la première matrice en valeurs booléennes compatibles
-avec la seconde matrice.
-
-Cette extension du modèle 9IM augmente encore expressivité du
-\emph{modèle des intersections} et offre la possibilité, par exemple,
-de distinguer un contact ponctuel, d'un contact en une ligne, \ie de
-distinguer un voisinage de Von Neuman, d'un voisinage de Moore).
-
-Ce modèle a part ailleurs été adopté comme norme par l'OGC et par
-l'ISO, ce qui a conduit à son adoption massive dans les \ac{sig}
-\autocite{Duchene2019}.
-
-Cependant, cette nouvelle proposition se heurte aux mêmes limites que
-les modèles RCC-23 et RCC-62, à savoir le grand nombre de cas
-possibles. Conscient de se problème \textcite{Clementini1993}
-proposeront un modèle complémentaire, le \emph{calculus based model}
-(CMB), regroupant diverses configurations de matrices sous cinq
-appellations (\emph{in, cross, overlap, touch, et disjoint}),
-permettant une manipulation plus intuitive du modèle.
-
-
+Avec \(\text{dim}(x)\), une fonction renvoyant la dimension de
+l'intersection, soit 0 pour un point, 1 pour une ligne et 2 pour une
+région. Malgrès cette modification substentielle, le modèle DE-9IM
+reste compatible avec le modèle 9IM, les matrices numériques du modèle
+DE-9IM étant faciles à convertir en matrices binaires, compatibles
+avec le modèle 9IM. Comme les autres extensions présentées, cette
+extension du modèle 9IM augmente l'expressivité du \emph{modèle des
+  intersections} et offre, par exemple, la possibilité de distinguer
+un contact ponctuel, d'un contact en une ligne, \ie de distinguer un
+voisinage de Von Neuman, d'un voisinage de Moore). Cependant, cette
+nouvelle proposition se heurte aux mêmes limites que les modèles
+RCC-23 et RCC-62, à savoir le grand nombre de cas possibles. Conscient
+de se problème \textcite{Clementini1993} complétent le modèle DE-9IM
+avec le \emph{calculus based model} (CMB). Ce second modèle propose de
+définir cinq \emph{prédicats topologiques} (\emph{in, cross, overlap,
+  touch, et disjoint}), correspondant à des configurations
+particulières de \emph{matrices d'intersection}, plus faciles à
+apprender et a manipuler.
 
 \subsubsection{Les relations projectives}
 
