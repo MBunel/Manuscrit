@@ -1,0 +1,25 @@
+\subfloat[Exemple de décomposition de la relation topologique EC]{
+  \begin{tabular}{rC{5.5cm}C{5.5cm}}
+    \toprule
+    & OUTSIDE\_OUTSIDE\_EC & P\_INSIDE\_INSIDEi\_EC \\
+    \midrule
+    EC & \tikz{\path[ffa] (0,0) circle [radius=15pt] node {A};}&
+                                                                 \tikz{\path[ffa] (0,0) circle [radius=15pt] node {B};} \\
+    \bottomrule    
+  \end{tabular}
+  \label{tab:RCC8_vs_RCC23_1}
+}
+
+\subfloat[Exemple de décomposition de la relation topologique DC]{
+  \begin{tabular}{rC{5.55cm}C{5.5cm}}
+    \toprule
+    & INTSIDE\_OUTSIDEi\_DC & P\_OUTSIDE\_OUTSIDE\_EC \\
+    \midrule
+    DC & \tikz{
+         \path[ffa] (0,10);}&
+                              \tikz{\path[ffa] (0,0) circle [radius=15pt] node {B};} \\
+    \bottomrule    
+  \end{tabular}
+  \label{tab:RCC8_vs_RCC23_2}
+}
+
