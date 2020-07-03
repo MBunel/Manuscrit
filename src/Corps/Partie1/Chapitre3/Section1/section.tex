@@ -234,7 +234,9 @@ de leur \emph{frontière} et de leur \emph{extérieur,} ce qui permet de
 définir plus de relations topologiques, au prix d'une complexification
 conséquente.
 
-\begin{table} \centering \input{../tableaux/rcc8_vs_rcc23.tex}
+\begin{table}
+  \centering
+  \input{../tableaux/rcc8_vs_rcc23.tex}
   \caption{Extrait des nouvelles relations topologiques proposées par
 le modèle RCC23.}
   \label{tab:RCC8_vs_RCC23}
@@ -250,22 +252,21 @@ couplant le modèle RCC-8 à l'algèbre temporelle d'Allen. Ces
 extensions s'éloignent cependant du cadre de ce travail.
 
 La seconde \enquote{famille} de modèle des relations topologiques est
-celle du \emph{modèle des 4 intersections,} (4IM) initialement
-proposée par \textcite{Egenhofer1989}. Comme pour le modèle RCC-8
-proposé par \textcite{Randell1992}, le \emph{modèle des intersections}
-a eut de nombreux dérivés et extensions. De plus ces deux modèles
-partagent des points communs, notamment leur principe de modélisation
-des objets géométriques, considérés comme des ensembles de points. De
-plus, dans les modèles RCC-8 \autocite{Randell1992} et 4IM, les
-relations topologiques définies sont exhaustives et mutuellement
-disjointes (JEPD). Les deux modèles ont cependant quelques
-différences, la première est que le modèle 4IM et ses dérivés ne
-permettent pas de raisonner à partir des \emph{relations
-  topologiques,} il n'est donc pas possible d'inférer une relation à
-partir de relations topologiques et d'objets connus. Cependant, le
-\emph{modèle des intersections} permet de modéliser des
-\emph{relations topologiques} entre des régions, des lignes et des
-points, contrairement au modèle RCC-8 qui se limite aux régions.
+celle du \emph{modèle des 4 intersections,} (4IM)
+\autocite{Egenhofer1989} et de ses dérivés, qui, comme pour le modèle
+RCC-8, sont assez nombreux. De plus ces deux modèles partagent des
+points communs, notamment leur principe de modélisation des objets
+géométriques, considérés comme des ensembles de points. De plus, dans
+les modèles RCC-8 \autocite{Randell1992} et 4IM, les relations
+topologiques définies sont exhaustives et mutuellement disjointes
+(JEPD). Les deux modèles ont cependant quelques différences, la
+première est que le modèle 4IM et ses dérivés ne permettent pas de
+raisonner à partir des \emph{relations topologiques,} il n'est donc
+pas possible d'inférer une relation à partir de relations topologiques
+et d'objets connus. Cependant, le \emph{modèle des intersections}
+permet de modéliser des \emph{relations topologiques} entre des
+régions, des lignes et des points, contrairement au modèle RCC-8 qui
+se limite aux régions.
 
 Dans la première version du \emph{modèle des intersections,} le modèle
 4IM, 8 configurations, identiques à celles du modèle RCC-8
@@ -290,9 +291,7 @@ Une extension du modèle 4IM, le modèle 9IM, sera proposée par
 initiale de 4 valeurs est étendue en une matrice de \(3 × 3\),
 permettant, de spécifier les intersections avec l'extérieur des objets
 (\ie tous les points qui n'appartiennent ni à l'intérieur, ni à la
-frontière de l'objet). Ce nouveau modèle ne permet pas de modéliser
-des configurations nouvelles entre deux régions, mais il permet de
-distinguer plus finement les configurations incluant une ligne.
+frontière de l'objet).
 
 \begin{equation}
   \label{eq:matrice_9IM}
@@ -303,6 +302,20 @@ distinguer plus finement les configurations incluant une ligne.
     aᵉ ∩ bᵒ ≠ ∅ & aᵉ ∩ δb ≠ ∅ & aᵉ ∩ bᵉ ≠ ∅ \\
   \end{bmatrix}
 \end{equation}
+
+Ce nouveau modèle ne permet pas de modéliser
+des configurations nouvelles entre deux régions, mais il permet de
+distinguer plus finement les configurations incluant une ligne.
+
+\begin{table}
+  \centering
+  \input{../tableaux/4im_vs_9im.tex}
+  \caption{Extrait des nouvelles relations topologiques proposées par
+le modèle 9IM.}
+  \label{tab:4IM_vs_9IM}
+\end{table}
+
+
 
 \tdi{Pour la norme ISO citer l'article DE9IM dans l'encyclopédie}
 

@@ -1,0 +1,55 @@
+\subfloat[Exemple de décomposition de la relation topologique \emph{overlap}]{
+  \begin{tabular}{rC{5.5cm}C{5.5cm}}
+    \toprule
+    & \scriptsize \(\begin{bmatrix}
+      V & V & F \\
+      V & V & F \\
+      V & F & F \\
+    \end{bmatrix}\) & \scriptsize  \(\begin{bmatrix}
+      V & V & V \\
+      V & V & V \\
+      V & V & V \\
+    \end{bmatrix}\) \\
+    \midrule
+    \scriptsize \(\text{overlap} ≡ \begin{bmatrix}
+      V & V \\
+      V & V \\
+    \end{bmatrix}\)
+    & \tikz{
+      \path[ffa] (0,0) circle [radius=15pt];
+      \path[ffc] (0,0) circle [radius=15pt] node {A};
+      \path[ffc, draw=RdBu-9-9] (0,15pt) to [out=90,in=0] (10pt,0) node[pos=0,blue]{} node[pos=1, blue]{};
+      }
+    & \tikz{
+      \path[ffa] (0,0) circle [radius=15pt];
+      \path[ffc] (0,0) circle [radius=15pt] node {A};
+      } \\
+    \bottomrule    
+  \end{tabular}
+  \label{tab:RCC8_vs_RCC23_1}
+}
+
+\subfloat[Exemple de décomposition de la relation topologique \emph{meet}]{
+  \begin{tabular}{rC{5.5cm}C{5.5cm}}
+    \toprule
+    &  \scriptsize \(\begin{bmatrix}
+      F & F & V \\
+      F & V & F \\
+      F & V & F \\
+    \end{bmatrix}\) & \scriptsize  \(\begin{bmatrix}
+      F & F & V \\
+      F & V & V \\
+      V & F & V \\
+    \end{bmatrix}\) \\
+    \midrule
+    \scriptsize \(\text{meet} ≡ \begin{bmatrix}
+      F & F \\
+      F & V \\
+    \end{bmatrix}\)
+    & \tikz{\path[ffa] (0,0) circle [radius=15pt] node {A};}&
+                                                              \tikz{\path[ffa] (0,0) circle [radius=15pt] node {B};} \\
+    \bottomrule    
+  \end{tabular}
+  \label{tab:RCC8_vs_RCC23_2}
+}
+
