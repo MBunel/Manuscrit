@@ -2,42 +2,68 @@
 \begin{tikzpicture}
 
   \begin{scope}[local bounding box=scope1]
-    \path[ffa] (0,0) circle [radius=15pt] node{A};
-    \path[ffa, pattern color=RdBu-9-8] (1.25,0) circle [radius=15pt] node{B}; % Contour
+    \path[ffa] (0,0) circle [radius=15pt];
+    \path[ffa, pattern color=RdBu-9-8] (1.25,0) circle [radius=15pt];
+    
+    \path[ffc] (0,0) circle [radius=15pt] node{A};
+    \path[ffc, draw=RdBu-9-9] (1.25,0) circle [radius=15pt] node{B};
+    
   \end{scope}
 
   \begin{scope}[local bounding box=scope2, shift={($(scope1.east)+(1cm,0)$)}]
-    \path[ffa] (0,0) circle [radius=15pt] node {A}; % Aire
-    \path[ffa, pattern color=RdBu-9-8] (30pt,0) circle [radius=15pt] node{B}; % Contour
+    \path[ffa] (0,0) circle [radius=15pt];
+    \path[ffa, pattern color=RdBu-9-8] (30pt,0) circle [radius=15pt];
+    
+    \path[ffc] (0,0) circle [radius=15pt] node{A};
+    \path[ffc, draw=RdBu-9-9] (30pt,0) circle [radius=15pt] node{B};
   \end{scope}
 
   \begin{scope}[local bounding box=scope3, shift={($(scope2.east)+(1cm,0)$)}]
-    \path[ffa] (0,0) circle [radius=15pt] node {A}; % Aire
-    \path[ffa, pattern color=RdBu-9-8] (0.6,0) circle [radius=15pt] node {B}; % Contour
+    \path[ffa] (0,0) circle [radius=15pt];
+    \path[ffa, pattern color=RdBu-9-8] (0.6,0) circle [radius=15pt];
+    
+    \path[ffc] (0,0) circle [radius=15pt] node{A};
+    \path[ffc, draw=RdBu-9-9] (0.6,0) circle [radius=15pt] node{B};
   \end{scope}
 
   \begin{scope}[local bounding box=scope4, shift={($(scope3.east)+(1cm,0)$)}]
-    \path[ffa] (0,0) circle [radius=15pt] node {A}; % Aire
-    \path[ffa, pattern color=RdBu-9-8] (-5pt,0) circle [radius=10pt] node {B}; % Contour
+    \path[ffa] (0,0) circle [radius=15pt];
+    \path[ffa, pattern color=RdBu-9-8] (-5pt,0) circle [radius=10pt];
+    
+    \path[ffc] (0,0) circle [radius=15pt] node{A};
+    \path[ffc, draw=RdBu-9-9] (-5pt,0) circle [radius=10pt] node{B};
   \end{scope}
 
   \begin{scope}[local bounding box=scope5, shift={($(scope4.east)+(1cm,0)$)}]
-    \path[ffa] (0,0) circle [radius=15pt] node {A}; % Aire
-    \path[ffa, pattern color=RdBu-9-8] (0,0) circle [radius=10pt] node {B}; % Contour
+    \path[ffa] (0,0) circle [radius=15pt]; node {A}; % Aire
+    \path[ffa, pattern color=RdBu-9-8] (0,0) circle [radius=10pt];
+    
+    \path[ffc] (0,0) circle [radius=15pt] node{A};
+    \path[ffc, draw=RdBu-9-9] (0,0) circle [radius=10pt] node{B};
   \end{scope}
 
   \begin{scope}[local bounding box=scope6, shift={($(scope5.east)+(1cm,0)$)}]
-    \path[ffa, pattern color=RdBu-9-8] (0,0) circle [radius=15pt] node {A}; % Aire
-    \path[ffa] (-5pt,0) circle [radius=10pt] node {B}; % Contour
+    \path[ffa, pattern color=RdBu-9-8] (0,0) circle [radius=15pt];
+    \path[ffa] (-5pt,0) circle [radius=10pt];
+    
+    \path[ffc, draw=RdBu-9-9] (0,0) circle [radius=16pt] node{B};
+    \path[ffc] (-5pt,0) circle [radius=10pt] node{A};
+    
   \end{scope}
 
   \begin{scope}[local bounding box=scope7, shift={($(scope6.east)+(1cm,0)$)}]
-    \path[ffa, pattern color=RdBu-9-8] (0,0) circle [radius=15pt] node {A}; % Aire
-    \path[ffa] (0,0) circle [radius=10pt] node {B}; % Contour
+    \path[ffa, pattern color=RdBu-9-8] (0,0) circle [radius=15pt];
+    \path[ffa] (0,0) circle [radius=10pt];
+
+    \path[ffc, draw=RdBu-9-9] (0,0) circle [radius=15pt] node{B};
+    \path[ffc] (0,0) circle [radius=10pt] node{A};
   \end{scope}
 
   \begin{scope}[local bounding box=scope8, shift={($(scope7.east)+(1cm,0)$)}]
-    \path[ffa, pattern color=RdBu-9-8] (0,0) circle [radius=15pt] node {A}; % Aire
-    \path[ffa] (0,0) circle [radius=15pt] node {B}; % Contour
+    \path[ffa, pattern color=RdBu-9-8] (0,0) circle [radius=15pt];
+    \path[ffa] (0,0) circle [radius=15pt];
+    
+    \path[ffc] (0,0) circle [radius=15pt] node{A};
+    \path[ffc, draw=RdBu-9-9] (0,0) circle [radius=15pt] node{B};
   \end{scope}
 \end{tikzpicture}
