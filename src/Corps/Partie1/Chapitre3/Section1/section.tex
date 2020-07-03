@@ -238,7 +238,7 @@ conséquente.
   \centering
   \input{../tableaux/rcc8_vs_rcc23.tex}
   \caption{Extrait des nouvelles relations topologiques proposées par
-le modèle RCC23.}
+le modèle RCC23, d'après XXXXXXX.}
   \label{tab:RCC8_vs_RCC23}
 \end{table}
 
@@ -257,13 +257,13 @@ celle du \emph{modèle des 4 intersections}
 \autocite[4IM][]{Egenhofer1989} et de ses dérivés, qui, comme pour le
 modèle RCC-8, sont nombreux. Ces deux modèles partagent leurs
 fondements. Tous deux s’appuient sur le paradigme des \emph{ensembles
-  de points} pour modéliser les objets géométriques et définissent
-donc les \emph{relations topologiques} à partir d'opérations
-ensemblistes sur ces ensembles de points. De plus, dans les modèles
-RCC-8 \autocite{Randell1992} et 4IM, les relations topologiques
-définies sont exhaustives et mutuellement disjointes (JEPD). Les deux
-modèles ont cependant quelques différences, la première est que le
-modèle 4IM et ses dérivés ne permettent pas de raisonner à partir des
+  de points} pour modéliser les objets géométriques et définissent les
+\emph{relations topologiques} à partir d'opérations ensemblistes sur
+ces ensembles de points. De plus, dans les modèles RCC-8
+\autocite{Randell1992} et 4IM, les relations topologiques définies
+sont exhaustives et mutuellement disjointes (JEPD). Les deux modèles
+ont cependant quelques différences, la première est que le modèle 4IM
+et ses dérivés ne permettent pas de raisonner à partir des
 \emph{relations topologiques,} il n'est donc pas possible d'inférer
 une relation à partir de relations topologiques et d'objets
 connus. Cependant, le \emph{modèle des intersections} permet de
@@ -272,13 +272,21 @@ lignes et des points, contrairement au modèle RCC-8 qui se limite aux
 régions.
 
 Dans la première version du \emph{modèle des intersections,} le modèle
-4IM, 8 configurations, identiques à celles du modèle RCC-8
-\autocite{Duchene2019}, sont définies \textcite{Egenhofer1989}.
-
-Celles-ci sont construites en étudiant, les
-intersections entre les frontières et les intérieurs des deux objets
-étudiés. Chaque Pour chaque relation entre deux objets on peu alors
-définir une matrice de 4 valeurs possibles, indiquant si l'inter
+4IM, 8 \emph{relations tolopologiques}, équivalentes à celles du
+modèle RCC-8 \autocite{Duchene2019}, sont définies
+\textcite{Egenhofer1989}. Celles-ci sont définies à partir d'une
+matrice 4 valeurs booléenes, détaillant les intersections entre les
+composantes de deux objets géométriques \(a\) et \(b\). La première
+d'entre elles est \emph{l'intérieur} de l'objet, notée \(aᵒ\) ou
+\(bᵒ\), en fonction de l'objet concerné. La seconde, notée \(δa\) ou
+\(δb\), est la \emph{frontière} de l'objet. Ces deux ensembles,
+\emph{intérieur} et \emph{frontière,} sont définis pour chaque type de
+géométrie, par exemple la frontière d'une ligne est un ensemble de
+deux points, le premier et le dernier de la ligne. Pour un point les
+deux notions sont équivalentes. La construction de la \emph{matrice
+}d'intersection consiste alors en l'étude des intersections, deux à
+deux, de la \emph{frontière} et de l'intérieur de deux objets
+géométriques :
 
 \begin{equation}
   \label{eq:matrice_4IM}
@@ -289,7 +297,42 @@ définir une matrice de 4 valeurs possibles, indiquant si l'inter
   \end{bmatrix}
 \end{equation}
 
-Une extension du modèle 4IM, le modèle 9IM, sera proposée par
+Si l'intersection entre deux ensembles donnés est vide, alors la
+valeur inscrite dans la matrice est \enquote{\(F\)}, dans le cas
+contraire, la valeur est \enquote{\(V\)}. Par exemple, une
+\emph{relation topologique} \emph{d'inclusion} (nomée \emph{overlap,}
+dans le modèle 4IM et correspondant au prédicat PO du modèle RCC-8,
+cf. figure \ref{fig:RCC}) correspond à la matrice :
+%
+\(\left[
+  \begin{smallmatrix}
+    V&V\\
+    V&V\\
+  \end{smallmatrix}
+\right]\),
+%
+étant donné que les quatres \emph{intersections} définies dans le
+modèle 4IM ne sont pas nulles. La \emph{matrice d'intersections} de ce
+modèle permet de définir 16 configurations différentes. Cependant la
+moitié d'entre-elles ne sont pas réalisables, comme par exemple la
+matrice :
+%
+\(\left[
+  \begin{smallmatrix}
+    F&V\\
+    V&F\\
+  \end{smallmatrix}
+\right]\),
+%
+qui décrit une situation où les deux intérieurs et les deux frontières
+ne s'intersectent pas, mais où la frontière de chaque objet intersecte
+l'intérieur de chaque objet. Comme pour le modèle RCC-8, les 8
+configurations possibles sont toutes nomées (\emph{disjoint, contains,
+  inside, equal, meet, covers, coveredBy} et \emph{overlap}), ce qui
+rend les \emph{relations topologiques} définies plus intelligible et
+facile à manipuler que des matrices de valeurs booléenes.
+
+une extension du modèle 4IM, le modèle 9IM, sera proposée par
 \textcite{Egenhofer1991}. Dans cette nouvelle version, la matrice
 initiale de 4 valeurs est étendue en une matrice de \(3 × 3\),
 permettant, de spécifier les intersections avec l'extérieur des objets
@@ -315,7 +358,7 @@ figure \ref{tab:4IM_vs_9IM}.
   \centering
   \input{../tableaux/4im_vs_9im.tex}
   \caption{Exemple des raffinements de \emph{relations topologiques}
-    permis par le modèle 9IM}
+    permis par le modèle 9IM, d'après \textcite{Egenhofer2011}.}
   \label{tab:4IM_vs_9IM}
 \end{table}
 
