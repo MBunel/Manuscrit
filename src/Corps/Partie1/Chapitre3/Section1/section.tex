@@ -251,22 +251,25 @@ VRCC-3D et VRCC-3D+ ou la temporalité avec les travaux de XXXX
 couplant le modèle RCC-8 à l'algèbre temporelle d'Allen. Ces
 extensions s'éloignent cependant du cadre de ce travail.
 
+% 4IM et dérivés
 La seconde \enquote{famille} de modèle des relations topologiques est
-celle du \emph{modèle des 4 intersections,} (4IM)
-\autocite{Egenhofer1989} et de ses dérivés, qui, comme pour le modèle
-RCC-8, sont assez nombreux. De plus ces deux modèles partagent des
-points communs, notamment leur principe de modélisation des objets
-géométriques, considérés comme des ensembles de points. De plus, dans
-les modèles RCC-8 \autocite{Randell1992} et 4IM, les relations
-topologiques définies sont exhaustives et mutuellement disjointes
-(JEPD). Les deux modèles ont cependant quelques différences, la
-première est que le modèle 4IM et ses dérivés ne permettent pas de
-raisonner à partir des \emph{relations topologiques,} il n'est donc
-pas possible d'inférer une relation à partir de relations topologiques
-et d'objets connus. Cependant, le \emph{modèle des intersections}
-permet de modéliser des \emph{relations topologiques} entre des
-régions, des lignes et des points, contrairement au modèle RCC-8 qui
-se limite aux régions.
+celle du \emph{modèle des 4 intersections}
+\autocite[4IM][]{Egenhofer1989} et de ses dérivés, qui, comme pour le
+modèle RCC-8, sont nombreux. Ces deux modèles partagent leurs
+fondements. Tous deux s’appuient sur le paradigme des \emph{ensembles
+  de points} pour modéliser les objets géométriques et définissent
+donc les \emph{relations topologiques} à partir d'opérations
+ensemblistes sur ces ensembles de points. De plus, dans les modèles
+RCC-8 \autocite{Randell1992} et 4IM, les relations topologiques
+définies sont exhaustives et mutuellement disjointes (JEPD). Les deux
+modèles ont cependant quelques différences, la première est que le
+modèle 4IM et ses dérivés ne permettent pas de raisonner à partir des
+\emph{relations topologiques,} il n'est donc pas possible d'inférer
+une relation à partir de relations topologiques et d'objets
+connus. Cependant, le \emph{modèle des intersections} permet de
+modéliser des \emph{relations topologiques} entre des régions, des
+lignes et des points, contrairement au modèle RCC-8 qui se limite aux
+régions.
 
 Dans la première version du \emph{modèle des intersections,} le modèle
 4IM, 8 configurations, identiques à celles du modèle RCC-8
@@ -311,8 +314,8 @@ figure \ref{tab:4IM_vs_9IM}.
 \begin{table}
   \centering
   \input{../tableaux/4im_vs_9im.tex}
-  \caption{Extrait des nouvelles relations topologiques proposées par
-le modèle 9IM.}
+  \caption{Exemple des raffinements de \emph{relations topologiques}
+    permis par le modèle 9IM}
   \label{tab:4IM_vs_9IM}
 \end{table}
 
@@ -325,19 +328,7 @@ les \emph{relations topologiques} sont définies en fonction de
 l’existence (ou non) d'une intersection entre deux ensembles de points
 (intérieur, frontière et extérieur pour le modèle 9IM), le modèle
 DE-9IM ajoute la possibilité de spécifier la \emph{dimension} de cette
-intersection. Ainsi, avec cette extension du modèle 9IM il devient
-possible de faire la distinction entre deux carrés qui se touchent en
-un point ou qui partagent une arrête (\ie de distinguer un voisinage
-de Von Neuman, d'un voisinage de Moore).  Ce modèle a part ailleurs
-été adopté comme norme par l'OGC et par l'ISO, ce qui a conduit à son
-adoption massive dans les \ac{sig} \autocite{Duchene2019}. Cependant,
-cette nouvelle proposition se heurte aux mêmes limites que les modèles
-RCC-23 et RCC-62, à savoir le grand nombre de cas possibles. Conscient
-de se problème \textcite{Clementini1993} proposeront un modèle
-complémentaire, le \emph{calculus based model} (CMB), regroupant
-diverses configurations de matrices sous cinq appellations (\emph{in,
-  cross, overlap, touch, et disjoint}), qui sont autant de
-\emph{relations topologiques.}
+intersection. La matrice
 
 \begin{equation}
   \label{eq:matrice_DE9IM}
@@ -349,10 +340,33 @@ diverses configurations de matrices sous cinq appellations (\emph{in,
   \end{bmatrix}
 \end{equation}
 
-\begin{equation}
-  \label{eq:DE9IM_to_9IM}
-  bin(\text{DE-9IM}(a,b)) = \text{9IM}(a,b)
-\end{equation}
+Le modèle DE-9IM reste cependant fortement compatible avec le modèle
+9IM. En effet les matrices d'intersection pour ce second modèle
+correspondent à une version binaire des matrices de
+\textcite{Clementini1993}. On peut alors définir une fonction
+\(\text{bin}(a,b)\) permettant de transformer une matrice du modèle
+DE-9IM en une matrice du modèle 9IM, \ie transformant les valeurs
+numériques de la première matrice en valeurs booléennes compatibles
+avec la seconde matrice.
+
+Cette extension du modèle 9IM augmente encore expressivité du
+\emph{modèle des intersections} et offre la possibilité, par exemple,
+de distinguer un contact ponctuel, d'un contact en une ligne, \ie de
+distinguer un voisinage de Von Neuman, d'un voisinage de Moore).
+
+Ce modèle a part ailleurs été adopté comme norme par l'OGC et par
+l'ISO, ce qui a conduit à son adoption massive dans les \ac{sig}
+\autocite{Duchene2019}.
+
+Cependant, cette nouvelle proposition se heurte aux mêmes limites que
+les modèles RCC-23 et RCC-62, à savoir le grand nombre de cas
+possibles. Conscient de se problème \textcite{Clementini1993}
+proposeront un modèle complémentaire, le \emph{calculus based model}
+(CMB), regroupant diverses configurations de matrices sous cinq
+appellations (\emph{in, cross, overlap, touch, et disjoint}),
+permettant une manipulation plus intuitive du modèle.
+
+
 
 \subsubsection{Les relations projectives}
 
