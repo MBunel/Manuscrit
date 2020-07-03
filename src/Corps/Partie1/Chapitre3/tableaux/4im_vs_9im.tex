@@ -1,5 +1,5 @@
 \subfloat[Exemple de décomposition de la relation topologique \emph{overlap}]{
-  \begin{tabular}{rC{5.5cm}C{5.5cm}}
+  \begin{tabular}{rC{4cm}C{4cm}}
     \toprule
     & \scriptsize \(\begin{bmatrix}
       V & V & F \\
@@ -18,14 +18,15 @@
     & \tikz{
       \path[ffa] (0,0) circle [radius=15pt];
       \path[ffc] (0,0) circle [radius=15pt] node {A};
-      \path[ffc, draw=RdBu-9-9,o-o,shorten >=-3pt,shorten <=-3pt]
-      (0,15pt).. controls (0pt, 35pt) and (30pt, 30pt) .. (10pt,0);
+      \path[ffc, draw=RdBu-9-9,*-*,shorten >=-3pt,shorten <=-3pt]
+      (0,15pt).. controls (0pt, 35pt) and (30pt, 30pt) .. (10pt,0)
+      node [pos=.5, above right]{B};
       }
     & \tikz{
       \path[ffa] (0,0) circle [radius=15pt];
       \path[ffc] (0,0) circle [radius=15pt] node {A};
-      \path[ffc, draw=RdBu-9-9,o-o,shorten >=-3pt,shorten <=-3pt]
-      (0,15pt) arc (90:0:15pt) -- (7.5pt,0);
+      \path[ffc, draw=RdBu-9-9,*-*,shorten >=-3pt,shorten <=-3pt]
+      (0,15pt) arc (90:0:15pt) -- (7.5pt,0) node [pos=.5, above right]{B};
       } \\
     \bottomrule    
   \end{tabular}
@@ -33,7 +34,7 @@
 }
 
 \subfloat[Exemple de décomposition de la relation topologique \emph{meet}]{
-  \begin{tabular}{rC{5.5cm}C{5.5cm}}
+  \begin{tabular}{rC{4cm}C{4cm}}
     \toprule
     &  \scriptsize \(\begin{bmatrix}
       F & F & V \\
@@ -49,8 +50,19 @@
       F & F \\
       F & V \\
     \end{bmatrix}\)
-    & \tikz{\path[ffa] (0,0) circle [radius=15pt] node {A};}&
-                                                              \tikz{\path[ffa] (0,0) circle [radius=15pt] node {B};} \\
+    & \tikz{
+      \path[ffa] (0,0) circle [radius=15pt];
+      \path[ffc] (0,0) circle [radius=15pt] node {A};
+      \path[ffc, draw=RdBu-9-9,*-*,shorten >=-3pt,shorten <=-3pt]
+      (0,15pt).. controls (0pt, 35pt) and (10pt, 35pt) .. (20pt,0)
+      node [pos=.5, right]{B};
+      }
+    & \tikz{
+      \path[ffa] (0,0) circle [radius=15pt];
+      \path[ffc] (0,0) circle [radius=15pt] node {A};
+      \path[ffc, draw=RdBu-9-9,*-*,shorten >=-3pt,shorten <=-3pt]
+      (0,15pt).. controls (0pt, 35pt) and (30pt, 30pt) .. (15pt,0) node [pos=.5, above]{B};
+      } \\
     \bottomrule    
   \end{tabular}
   \label{tab:RCC8_vs_RCC23_2}
