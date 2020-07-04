@@ -211,7 +211,19 @@ topologiques, à l'aide d'une \emph{table de transition.}
 
 % RCC5
 % Bennett, 1994, Spatial reasoning with propositional logics
-\textcite{Bennett1994} propose
+\textcite{Bennett1994} propose un premier modèle dérivé du travail de
+\textcite{Randell1992}, le modèle RCC-5, réduisant, comme son nom
+l'indique, le nombre der \emph{relations topologiques} modélisées à
+5. Les relations DC et EC sont regroupées en une nouvelle relation, DR
+(\enquote{\emph{discrete}}), indiquant que deux régions ne partagent
+pas leurs aires. De même, les relations TPP et NTPP (et leurs
+inverses) sont combinées en une seule relation (et son inverse), PP,
+pour \enquote{\emph{proper parts}}. En réduisant le nombre de
+\emph{relations topologiques} modélisées le modèle RCC-5 perd en
+expressivité, cependant l'objectif annoncé pour ce modèle n'est pas
+d’enrichir la sémantique du modèle RCC-8 (ce qui est le but de la
+majorité des extensions), mais de faciliter le raisonnement automatisé
+\textcite{Bennett1994}.
 
 \begin{figure}
   \centering
@@ -245,7 +257,6 @@ conséquente.
 le modèle RCC23, d'après XXXXXXX.}
   \label{tab:RCC8_vs_RCC23}
 \end{table}
-
 
 % Exstention 3D
 % Extension temporelle : Wolter
@@ -438,6 +449,11 @@ d'un panier (\(b\)).
 
 
 \subsubsection{Les relations de distance}
+
+\tdi{parler de la notion de réseau support
+  \url{https://www.cairn.info/revue-flux-2016-3-page-33.htm?contenu=bibliographie}
+  pailhous sur le fait que les plus proches chemins ne sont pas
+  nécessairement une bonne approximation}
 
 Les relations de distance permettent de décrire l'éloignement entre le
 \emph{sujet} et un \emph{objet de référence.} Comme les relations
@@ -652,13 +668,25 @@ données empiriques.
 % Sentiers ou terrain ?
 
 \begin{figure}
-  %\centering \input{../figures/modeles_marche.tex}
+  \centering \input{../figures/modeles_marche.tex}
   \caption{Vitesse de marche estimée en fonction de la pente par les
     différents modèles de marche proposés dans la littérature.}
   \label{fig:modeles_marche}
 \end{figure}
 
 \subsubsection{Les relations de visibilité}
+
+Comme pour les \enquote{durées de déplacement}, détaillées ci-dessus,
+les \enquote{relations de visibilité} ne ne s'expriment pas à l'aide
+d'une préposition spatiale, comme \enquote{sur} ou \enquote{dans}, il
+s'agit donc d'une \emph{relation de localisation,} mais pas d'une
+\emph{relation spatiale.}
+
+Cependant, la description de ce qui est
+visible d'une position donnée permet, sinon de l'identifier
+précisément, d'en faciliter la localisation.
+
+
 
 %%% Local Variables:
 %%% mode: latex
