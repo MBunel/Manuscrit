@@ -8,13 +8,15 @@
            \draw[ffa] (-15pt,5pt) -- (10pt,5pt) -- (10pt,0) arc
            (90:270:20pt) --++ (0,-5pt) --++(-25pt,0) -- cycle;
            \draw[ffc] (-15pt,5pt) -- (10pt,5pt) -- (10pt,0) arc
-           (90:270:20pt) --++ (0,-5pt) --++(-25pt,0) -- cycle;
+           (90:270:20pt) --++ (0,-5pt) --++(-25pt,0) -- cycle
+           node[pos=.5, left, color=RdBu-9-1] {A};
          \end{scope}
          \begin{scope}[xshift=20pt,xscale=-1]
            \draw[ffa2] (-15pt,5pt) -- (10pt,5pt) -- (10pt,0) arc
            (90:270:20pt) --++ (0,-5pt) --++(-25pt,0) -- cycle;
            \draw[ffc2] (-15pt,5pt) -- (10pt,5pt) -- (10pt,0) arc
-           (90:270:20pt) --++ (0,-5pt) --++(-25pt,0) -- cycle;
+           (90:270:20pt) --++ (0,-5pt) --++(-25pt,0) -- cycle 
+           node[pos=.5, right, color=RdBu-9-9] {B};
          \end{scope}
          }&
             \tikz{
@@ -22,11 +24,12 @@
               \draw[ffa] (-15pt,5pt) -- (10pt,5pt) -- (10pt,0) arc
               (90:270:20pt) --++ (0,-5pt) --++(-25pt,0) -- cycle;
               \draw[ffc] (-15pt,5pt) -- (10pt,5pt) -- (10pt,0) arc
-              (90:270:20pt) --++ (0,-5pt) --++(-25pt,0) -- cycle;
+              (90:270:20pt) --++ (0,-5pt) --++(-25pt,0) -- cycle
+              node[pos=.5, left, color=RdBu-9-1] {A};
             \end{scope}
             \begin{scope}[yshift=-20pt]
-              \path[ffa2] (0,0) circle [radius=10pt];
-              \path[ffc2] (0,0) circle [radius=10pt] node {B};
+              \path[ffa2] (0,0) circle [radius=10pt]; \path[ffc2]
+              (0,0) circle [radius=10pt] node[color=RdBu-9-9] {B};
             \end{scope}
             } \\
     \bottomrule    
@@ -44,11 +47,12 @@
            \draw[ffa] (-15pt,5pt) -- (10pt,5pt) -- (10pt,0) arc
            (90:270:20pt) --++ (0,-5pt) --++(-25pt,0) -- cycle;
            \draw[ffc] (-15pt,5pt) -- (10pt,5pt) -- (10pt,0) arc
-           (90:270:20pt) --++ (0,-5pt) --++(-25pt,0) -- cycle;
+           (90:270:20pt) --++ (0,-5pt) --++(-25pt,0) -- cycle 
+           node[pos=.5, left, color=RdBu-9-1] {A};
          \end{scope}
          \begin{scope}[xshift=2.5pt,yshift=-20pt]
            \path[ffa2] (0,0) circle [radius=10pt];
-           \path[ffc2] (0,0) circle [radius=10pt] node {B};
+           \path[ffc2] (0,0) circle [radius=10pt] node[color=RdBu-9-9] {B};
          \end{scope}
          }&
             \tikz{
@@ -56,11 +60,12 @@
               \draw[ffa] (-15pt,5pt) -- (10pt,5pt) -- (10pt,0) arc
               (90:270:20pt) --++ (0,-5pt) --++(-25pt,0) -- cycle;
               \draw[ffc] (-15pt,5pt) -- (10pt,5pt) -- (10pt,0) arc
-              (90:270:20pt) --++ (0,-5pt) --++(-25pt,0) -- cycle;
+              (90:270:20pt) --++ (0,-5pt) --++(-25pt,0) -- cycle
+              node[pos=.5, left, , color=RdBu-9-1] {A};
             \end{scope}
             \begin{scope}[xshift=30pt,yshift=-20pt]
               \path[ffa2] (0,0) circle [radius=10pt];
-              \path[ffc2] (0,0) circle [radius=10pt] node {B};
+              \path[ffc2] (0,0) circle [radius=10pt] node[color=RdBu-9-9] {B};
             \end{scope}
             } \\
     \bottomrule    
