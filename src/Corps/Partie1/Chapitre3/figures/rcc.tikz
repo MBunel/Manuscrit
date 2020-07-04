@@ -5,48 +5,48 @@
     \path[ffa] (0,0) circle [radius=15pt];
     \path[ffa2] (1.25,0) circle [radius=15pt];
     
-    \path[ffc] (0,0) circle [radius=15pt] node{A};
-    \path[ffc2] (1.25,0) circle [radius=15pt] node{B};
+    \path[ffc] (0,0) circle [radius=15pt] node[color=RdBu-9-1]{A};
+    \path[ffc2] (1.25,0) circle [radius=15pt] node[color=RdBu-9-9]{B};
   \end{scope}
 
   \begin{scope}[local bounding box=scope2, shift={($(scope1.east)+(1cm,0)$)}]
     \path[ffa] (0,0) circle [radius=15pt];
     \path[ffa2] (30pt,0) circle [radius=15pt];
     
-    \path[ffc] (0,0) circle [radius=15pt] node{A};
-    \path[ffc2] (30pt,0) circle [radius=15pt] node{B};
+    \path[ffc] (0,0) circle [radius=15pt] node[color=RdBu-9-1]{A};
+    \path[ffc2] (30pt,0) circle [radius=15pt] node[color=RdBu-9-9]{B};
   \end{scope}
 
   \begin{scope}[local bounding box=scope3, shift={($(scope2.east)+(1cm,0)$)}]
     \path[ffa] (0,0) circle [radius=15pt];
     \path[ffa2] (0.6,0) circle [radius=15pt];
     
-    \path[ffc] (0,0) circle [radius=15pt] node{A};
-    \path[ffc2] (0.6,0) circle [radius=15pt] node{B};
+    \path[ffc] (0,0) circle [radius=15pt] node[color=RdBu-9-1]{A};
+    \path[ffc2] (0.6,0) circle [radius=15pt] node[color=RdBu-9-9]{B};
   \end{scope}
 
   \begin{scope}[local bounding box=scope4, shift={($(scope3.east)+(1cm,0)$)}]
     \path[ffa] (0,0) circle [radius=15pt];
     \path[ffa2] (-5pt,0) circle [radius=10pt];
     
-    \path[ffc] (0,0) circle [radius=15pt] node{A};
-    \path[ffc2] (-5pt,0) circle [radius=10pt] node{B};
+    \path[ffc] (0,0) circle [radius=15pt] node[color=RdBu-9-1]{A};
+    \path[ffc2] (-5pt,0) circle [radius=10pt] node[color=RdBu-9-9]{B};
   \end{scope}
 
   \begin{scope}[local bounding box=scope5, shift={($(scope4.east)+(1cm,0)$)}]
     \path[ffa] (0,0) circle [radius=15pt]; node {A}; % Aire
     \path[ffa2] (0,0) circle [radius=10pt];
     
-    \path[ffc] (0,0) circle [radius=15pt] node{A};
-    \path[ffc2] (0,0) circle [radius=10pt] node{B};
+    \path[ffc] (0,0) circle [radius=15pt] node[color=RdBu-9-1]{A};
+    \path[ffc2] (0,0) circle [radius=10pt] node[color=RdBu-9-9]{B};
   \end{scope}
 
   \begin{scope}[local bounding box=scope6, shift={($(scope5.east)+(1cm,0)$)}]
     \path[ffa2] (0,0) circle [radius=15pt];
     \path[ffa] (-5pt,0) circle [radius=10pt];
     
-    \path[ffc2] (0,0) circle [radius=16pt] node{B};
-    \path[ffc] (-5pt,0) circle [radius=10pt] node{A};
+    \path[ffc2] (0,0) circle [radius=16pt] node[color=RdBu-9-9]{B};
+    \path[ffc] (-5pt,0) circle [radius=10pt] node[color=RdBu-9-1]{A};
     
   \end{scope}
 
@@ -54,15 +54,15 @@
     \path[ffa2] (0,0) circle [radius=15pt];
     \path[ffa] (0,0) circle [radius=10pt];
 
-    \path[ffc2] (0,0) circle [radius=15pt] node{B};
-    \path[ffc] (0,0) circle [radius=10pt] node{A};
+    \path[ffc2] (0,0) circle [radius=15pt] node[color=RdBu-9-9]{B};
+    \path[ffc] (0,0) circle [radius=10pt] node[color=RdBu-9-1]{A};
   \end{scope}
 
   \begin{scope}[local bounding box=scope8, shift={($(scope7.east)+(1cm,0)$)}]
     \path[ffa2] (0,0) circle [radius=15pt];
     \path[ffa] (0,0) circle [radius=15pt];
     
-    \path[ffc] (0,0) circle [radius=15pt] node{A};
-    \path[ffc2] (0,0) circle [radius=15pt] node{B};
+    \path[ffc] (0,0) circle [radius=15pt] node[color=RdBu-9-1]{A};
+    \path[ffc2] (0,0) circle [radius=15pt] node[color=RdBu-9-9]{B};
   \end{scope}
 \end{tikzpicture}
