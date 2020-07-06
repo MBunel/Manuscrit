@@ -172,8 +172,6 @@ La notion \emph{d'ontologie}
 
 La définition d'ontologies des relations spatiales
 
-
-
 \textcite{Duchene2019} ont identifié 4 ontologies qui se destinent à
 la modélisation de \emph{relations de localisation.}
 
@@ -198,16 +196,16 @@ Cette ontologie est l'extension spatiale de l'ontologie GUM
 Enfin, l'ontologie FRSO (\emph{Fuzzy Spatial Relation Ontology}),
 proposée par \textcite{Hudelot2008a}, a pour objectif de permettre
 l’interprétation d'images et plus spécifiquement la segmentation
-automatique d'images médicales.
+automatique d'images médicales. Les auteurs justifient le
+développement d'une ontologie des \emph{relations de localisation} par
+l'inadaptation des ontologies déjà existantes pour l'interprétation
+d'images.
 
-Les auteurs justifient le développement d'une ontologie des
-\emph{relations de localisation} par l'inadaptation des ontologies
-déjà existantes pour l'interprétation d'images.
+La particularité principale de l'ontologie FRSO est qu'elle est basée
+sur une extension floue de la \emph{logique de description.}
 
-Sa particularité principale est qu'elle est basée sur une extension
-floue de la \emph{logique de description.} Comme nous le mentions lors
-de la présentation de des objectifs scientifiques de la thèse, u
-
+Dans cette ontologies sont distinguées 8 relations directionnelles, 3
+relations de distance
 
 
 
@@ -537,7 +535,20 @@ directionnelles elles peuvent être exprimées de manière quantitative
 
 \tdi{deux aspects: réseau et distance}
 
-\paragraph{Distances quantitatives}
+Types de distance, euclidienne, manhattan, réseaux Algo réseau,
+Dijkstra, A*, driving distance, hausdorf
+
+\tdi{parler recalcul réseau Bunel2016, Berli2017 ?}
+
+\paragraph{Distances métriques quantitatives}
+
+L'expression de distances sous leur forme quantitative, correspond à
+la manière la plus classique d'exprimer une relation de distance.
+
+On peut supposer, qu'une fois la
+
+Cependant, l'expression de distances sous une forme quantitative
+n'implique pas nécessairement précision. 
 
 Toutefois, l'utilisation de \emph{relations de distance quantitatives}
 n'implique pas nécessairement une plus grande précision. Les distances
@@ -548,10 +559,9 @@ Le phénomène \emph{d'attraction des nombres ronds}
 
 La mesure d'une distance entre deux objets 
 
-Types de distance, euclidienne, manhattan, réseaux Algo réseau,
-Dijkstra, A*, driving distance
 
-\paragraph{Distances qualitatives}
+
+\paragraph{Distances métriques qualitatives}
 
 \tdi{Robinson, V.: Interactive machine acquisition of a fuzzy spatial
   relation. Comput.  Geosci. 16, 857–872 (1990). Robinson, V.:
@@ -562,7 +572,7 @@ Dijkstra, A*, driving distance
   Photo Captions Mark M. Hall 1 , Christopher B. Jones 2( B ) , and
   Philip Smart 2}
 
-\paragraph{Durées de déplacement}
+\paragraph{Distances-temps}
 
 \tdi{Borillo pas de différence fondamentatle entre distance et temps
   de marche, voir aussi Naive geography}
@@ -749,9 +759,9 @@ d'une préposition spatiale, comme \enquote{sur} ou \enquote{dans}, il
 s'agit donc d'une \emph{relation de localisation,} mais pas d'une
 \emph{relation spatiale.}
 
-Cependant, la description de ce qui est visible d'une position donnée
-permet, sinon de l'identifier précisément, d'en faciliter la
-localisation.
+La question de la visibilité est importante dans le domaine du SIG
+
+
 
 \tdi{citer \url{https://journals.openedition.org/cybergeo/27862}}
 
