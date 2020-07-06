@@ -149,25 +149,67 @@ Le modèle normalisé \enquote{ISO-Space}, proposé par
 Ce modèle 
 
 
-
-
-
 \subsection{Classification des \emph{relations de localisation}}
 
 \subsubsection{Critères de classification}
 
 \subsubsection{Classifications trouvées dans la littérature}
 
-\subsection{Les taxonomies et ontologies de relations spatiales
+\subsection{\texttt{TITRE}}
+
+\subsubsection{La notion d'ontologie}
+
+La notion \emph{d'ontologie}
+
+\tdi{Gruber (1993), comme la spécification d’une conceptualisation partagée d’un domaine.}
+\tdi{(Guarino, 1998) distingue trois niveaux d’ontologies}
+
+\tdi{Présentation de la logique de description et des extensions floues}
+\tdi{Présentation OWL}
+
+\subsubsection{Les taxonomies et ontologies de relations de localisations
   existantes}
 
-La définition d'ontologies des relations spatiales 
+La définition d'ontologies des relations spatiales
 
-Ontologies :
-- Bateman
-- Dasiopouilou
-- Miron
-- Hudelot
+
+
+\textcite{Duchene2019} ont identifié 4 ontologies qui se destinent à
+la modélisation de \emph{relations de localisation.}
+
+Bien que traitant des mêmes relations spatiales, ces ontologies sont
+souvent peu génériques et adaptée qu'au domaine d’application pour
+lequel elles ont été initialement conçues \autocite{Hudelot2008a}.
+
+% Bateman
+La plus récente, et probablement la plus ambitieuse, d'entre-elles est
+l'ontologie GUM-Space (aussi connue sous le nom d'OntoSpace), déjà
+présentée \autocite{Bateman2010}.
+%
+Cette ontologie est l'extension spatiale de l'ontologie GUM
+(\emph{Generalized Upper Model}), destinée
+
+% Ontoi 2
+
+% Onto 3
+
+
+% Hudelot 
+Enfin, l'ontologie FRSO (\emph{Fuzzy Spatial Relation Ontology}),
+proposée par \textcite{Hudelot2008a}, a pour objectif de permettre
+l’interprétation d'images et plus spécifiquement la segmentation
+automatique d'images médicales.
+
+Les auteurs justifient le développement d'une ontologie des
+\emph{relations de localisation} par l'inadaptation des ontologies
+déjà existantes pour l'interprétation d'images.
+
+Sa particularité principale est qu'elle est basée sur une extension
+floue de la \emph{logique de description.} Comme nous le mentions lors
+de la présentation de des objectifs scientifiques de la thèse, u
+
+
+
 
 
 \subsection{Travaux sur différentes familles de relations}
@@ -362,7 +404,7 @@ Dans le modèle 9IM, une extension du modèle 4IM proposée par
 \textcite{Egenhofer1991}, la \emph{matrice des intersection} est
 étendue par l'ajout d'un nouvel ensemble, \emph{l'extérieur} (\ie tous
 les points qui n'appartiennent ni à l'intérieur, ni à la frontière de
-l'objet), noté \(aᵉ\) ou \(bᵉ\) en fonction de l'objet. La matrice
+l'objet), noté \(aᵉ\) (ou \(bᵉ\) en fonction de l'objet). La matrice
 initiale est alors étendue en une matrice de 9 valeurs booléennes :
 
 \begin{equation}
@@ -418,15 +460,24 @@ avec le modèle 9IM. Comme les autres extensions présentées, cette
 extension du modèle 9IM augmente l'expressivité du \emph{modèle des
   intersections} et offre, par exemple, la possibilité de distinguer
 un contact ponctuel, d'un contact en une ligne, \ie de distinguer un
-voisinage de Von Neuman, d'un voisinage de Moore). Cependant, cette
-nouvelle proposition se heurte aux mêmes limites que les modèles
-RCC-23 et RCC-62, à savoir le grand nombre de cas possibles. Conscient
-de se problème \textcite{Clementini1993} complétent le modèle DE-9IM
-avec le \emph{calculus based model} (CMB). Ce second modèle propose de
-définir cinq \emph{prédicats topologiques} (\emph{in, cross, overlap,
-  touch, et disjoint}), correspondant à des configurations
-particulières de \emph{matrices d'intersection}, plus faciles à
-apprender et a manipuler.
+voisinage de Von Neuman, d'un voisinage de Moore
+(\autoref{tab:9IM_vs_DE9IM}). Cependant, cette nouvelle proposition se
+heurte aux mêmes limites que les modèles RCC-23 et RCC-62, à savoir le
+grand nombre de cas possibles. Conscient de se problème
+\textcite{Clementini1993} complétent le modèle DE-9IM avec le
+\emph{calculus based model} (CMB). Ce second modèle propose de définir
+cinq \emph{prédicats topologiques} (\emph{in, cross, overlap, touch,
+  et disjoint}), correspondant à des configurations particulières de
+\emph{matrices d'intersection}, plus faciles à apprender et a
+manipuler.
+
+\begin{table}
+  \centering
+  \input{../tableaux/9im_vs_de9im.tex}
+  \caption{Exemple des raffinements de \emph{relations topologiques}
+    permis par le modèle DE-9IM.}
+  \label{tab:9IM_vs_DE9IM}
+\end{table}
 
 Comme pour le modèle RCC-8, des extensions tridimensionnelles du
 \emph{modèle des intersection} ont été
