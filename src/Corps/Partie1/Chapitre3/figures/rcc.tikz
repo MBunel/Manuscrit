@@ -67,50 +67,29 @@
   \end{scope}
 
 
-  \begin{scope}[shift={($(scope1.south)+(0,-.5cm)$)}]
-    \node (0,0) {DC};
-  \end{scope}
 
-  \begin{scope}[shift={($(scope2.south)+(0,-.5cm)$)}]
-    \node (0,0) {EC};
-  \end{scope}
+    \node[shift={($(scope1.south)+(0,-.5cm)$)}] (dc) at (0,0) {DC};
+    \node[shift={($(scope2.south)+(0,-.5cm)$)}] (ec) at (0,0) {EC};
+    \node[shift={($(scope3.south)+(0,-.5cm)$)}] (po) at (0,0) {PO};
+    \node[shift={($(scope4.south)+(0,-.5cm)$)}] (ittp) at (0,0) {TTP\up{-1}};
+    \node[shift={($(scope5.south)+(0,-.5cm)$)}] (inttp) at (0,0) {NTTP\up{-1}};
+    \node[shift={($(scope6.south)+(0,-.5cm)$)}] (ttp) at (0,0) {TTP};
+    \node[shift={($(scope7.south)+(0,-.5cm)$)}] (nttp) at (0,0) {NTTP};
+    \node[shift={($(scope8.south)+(0,-.5cm)$)}] (eq) at (0,0) {\(\text{A}=\text{B}\)};
 
-  \begin{scope}[shift={($(scope3.south)+(0,-.5cm)$)}]
-    \node (0,0) {PO};
-  \end{scope}
 
-  \begin{scope}[shift={($(scope4.south)+(0,-.5cm)$)}]
-    \node (0,0) {TTP\up{-1}};
-  \end{scope}
+\draw [decorate,decoration={brace,amplitude=.2cm,
+raise=.4cm,mirror},line width=.75pt]
+(dc.west) -- (ec.east) node[midway, below, yshift=-.7cm] {DR};
 
-  \begin{scope}[shift={($(scope5.south)+(0,-.5cm)$)}]
-    \node (0,0) {NTTP\up{-1}};
-  \end{scope}
+\draw [decorate,decoration={brace,amplitude=.2cm,
+raise=.4cm,mirror},line width=.75pt]
+(ittp.west) -- (inttp.east) node[midway, below, yshift=-.7cm] {PP\up{-1}};
 
-  \begin{scope}[shift={($(scope6.south)+(0,-.5cm)$)}]
-    \node (0,0) {TTP};
-  \end{scope}
+\draw [decorate,decoration={brace,amplitude=.2cm,
+raise=.4cm,mirror},line width=.75pt]
+(ttp.west) -- (nttp.east) node[midway, below, yshift=-.7cm] {PP};
 
-  \begin{scope}[shift={($(scope7.south)+(0,-.5cm)$)}]
-    \node (0,0) {NTTP};
-  \end{scope}
 
-  \begin{scope}[shift={($(scope8.south)+(0,-.5cm)$)}]
-    \node (0,0) {\(\text{A}=\text{B}\)};
-  \end{scope}
 
-  \begin{scope}[shift={($(scope1.south)!0.5!(scope2.south)+(0,-1.5cm)$)}]
-    \node (0,0) {DR};
-  \end{scope}
-
-  \begin{scope}[shift={($(scope4.south)!0.5!(scope5.south)+(0,-1.5cm)$)}]
-    \node (0,0) {PP\up{-1}};
-  \end{scope}
-
-  
-  \begin{scope}[shift={($(scope6.south)!0.5!(scope7.south)+(0,-1.5cm)$)}]
-    \node (0,0) {PP};
-  \end{scope}
-
-  
 \end{tikzpicture}
