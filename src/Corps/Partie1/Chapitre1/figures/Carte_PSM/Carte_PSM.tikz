@@ -1,0 +1,50 @@
+\begin{tikzpicture}
+
+  % Styles
+  \tikzset{ caisson/.style={minimum width=1cm, minimum height=.5cm},
+    legende/.style={xshift=-2.5mm, anchor=west, text width=5cm},
+    etiquette/.style={anchor=base west, font=\tiny},
+    route/.style={draw=black, line width=.12mm} }
+
+  % Import figures
+  \node[inner sep=0pt, anchor=south west] (image) at
+  (0,0){\includegraphics{./figures/Carte_PSM/Out1.png}};
+
+  % \draw[help lines,xstep=.1,ystep=.1] (0,0) grid (image.north east);
+
+  \begin{scope}
+    \node[etiquette] (vs) at (5.55,3.85) {Le Versoud};
+    \node[etiquette, anchor=base east] (ah) at (6.7,3.05) {L'Alpe d'Huez};
+    \node[etiquette, anchor=base east] (bé) at (7.7,2.1) {La Bérarde};
+  \end{scope}
+
+  \begin{scope}
+    \node (P2) at ([xshift=.5cm]image.south east) {};
+    \node (P1) at ([xshift=.5cm]image.north east) {};
+
+    % Légende
+    \node (rect) [anchor=north west, caisson] at ([yshift=-2cm]P1) {};
+    \path[route](rect.west) -- (rect.north) -- (rect.east);
+    \node[right of=rect, legende] {\scriptsize Limies départementales};
+
+    \node (rect) [anchor=north west, caisson, fill=red] at ([yshift=-2.75cm]P1) {};
+    \node[right of=rect, legende] {\scriptsize Zones urbaines};
+
+    \node (rect) [anchor=north west, caisson, pattern=dots] at
+    ([yshift=-3.5cm]P1) {}; \node[right of=rect, legende] {\scriptsize
+      Zone d'application du \ac{pms}};
+
+    \node (rect) [anchor=north west, caisson] at ([yshift=-4.25cm]P1)
+    {}; \draw[anchor=north west, fill=RdBu-9-9, draw=none] (rect)
+    circle [radius=0.1cm]; \node[right of=rect, legende] {\scriptsize
+      Base permanente};
+
+    \node (rect) [anchor=north west, caisson] at ([yshift=-5cm]P1) {};
+    \draw[anchor=north west, fill=RdBu-9-8, draw=none] (rect) circle
+    [radius=0.1cm]; \node[right of=rect, legende] {\scriptsize Bases saisonnières};
+
+    % Échelle
+    \draw[-] (P2 |- 1cm,0) --++ (1,0) node[pos=.5, above] {\footnotesize\SI{17.5}{\kilo\meter}};
+  \end{scope}
+
+\end{tikzpicture}
