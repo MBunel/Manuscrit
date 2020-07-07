@@ -1,0 +1,823 @@
+\tdi{Voir comment citer les 2 naive physics manifestos}
+
+
+\subsection{Éléments généraux sur la localisation par référencement
+  indirect et formalisation d'une relation de localisation}
+
+% Mise au point vocabulaire
+Comme nous l'expliquions lors de la présentation du concept
+\emph{d'élément de localisation} (cf. \ref{}), ce dernier est
+composé de trois éléments :
+%
+\begin{enumerate*}[label=(\alph*)]
+\item \label{i:site} un \emph{sujet,}
+\item \label{i:cible} un \emph{objet de référence} et
+\item une \emph{relation de localisation,}
+\end{enumerate*}
+%
+qui, combinés, permettent d'exprimer un \emph{référencement indirect.} 
+Nous n'avons cependant pas pris le temps de détailler ces trois
+concepts, dont la compréhension est nécessaire au développement de
+méthodes de \emph{spatialisation.}
+
+\subsubsection{Les concepts de \emph{sujet} et \emph{d'objet de référence}}
+
+Les concepts de \emph{sujet} et \emph{d'objet de référence} sont
+présents dans toutes les formalisations des \emph{référencements
+  spatiaux indirects.} Tous les auteurs considèrent que ce type de
+description nécessite deux objets spatiaux, dont la position de l'un
+(le \emph{sujet}) est décrite par rapport à la position de l'autre
+(\emph{l'objet de référence}), qui est supposée connue.
+
+Toutefois, le vocabulaire utilisé pour décrire ces concepts ne fait
+pas l'objet d'un consensus, comme le montre la synthèse proposée par
+\textcite{RetzSchmidt1988}.  Les travaux francophones se rattachant au
+domaine de la linguistique, comme ceux de
+\textcite{Vandeloise1986,Borillo1998, Aurnague1997, Mathet2000},
+parlent de \emph{site} et de \emph{cible}, pour désigner,
+respectivement l'\emph{objet de référence} et le \emph{sujet.} La
+littérature anglophone parle quant à elle de \emph{primary object} et
+de \emph{reference object} ou de \emph{figure} et de \emph{ground}.
+
+\subsubsection{\emph{Relations spatiales} ou \emph{relations de
+    localisation ?}}
+
+Le terme de \enquote{relation spatiale}, massivement utilisé dans la
+littérature 
+
+\textcite{Duchene2019}, fait la distinction entre \emph{relations de
+  localisation} et \emph{relations spatiales.}
+
+Toutefois, ces expressions n'utilisant pas explicitement de
+\emph{prépositions spatiales} sont considérés comme des
+\emph{relations spatiales} par les linguistes comme
+\textcite{Vandeloise1986}, leur sémantique les ramenant à des notions
+spatiales.
+
+C'est par exemple le cas de la notion \emph{d'intervisibilité,} dont
+l'énoncé, de la forme : \enquote{Je vois un lac}, ne fait pas appel à
+une \emph{préposition spatiale.}
+
+% Relations ternaires
+Par ailleurs, contrairement à ce que pourraient laisser penser les
+différents exemples \emph{d'indices de localisation} présentés
+jusqu'ici, ces derniers peuvent contenir plus d'un \emph{objet de
+  référence} \autocite{Clementini2013}. Ce cas, relativement peu
+fréquent, se présente lorsque la \emph{relation de localisation}
+utilisée n'est pas \emph{binaire,} c'est-à-dire qu'elle n'implique pas
+qu'un \emph{sujet} et qu'un \emph{objet de référence.} Le cas le plus
+fréquent est celui de la \emph{relation de localisation}
+\enquote{entre} qui implique, au minimum, deux \emph{objets de
+  référence}. Si l'on peut, en effet, dire que \enquote{La poste est
+  entre le café et la banque}, il est incorrect d'utiliser cette
+\emph{relation de localisation} avec un seul \emph{objet de
+  référence.} La phrase \enquote{Je suis entre l'université}, par
+exemple, est fautive et incompréhensible. Cependant, touts les
+\emph{référencements indirects} liant trois objets, ne sont pas
+nécessairement composés d'une \emph{relation de localisation
+  ternaire.} \textcite{Duchene2019} identifient deux cas de ce
+type. D'une part l'un des objets peut être le support des deux autres,
+c'est par exemple lorsqu'une position est décrite sur un itinéraire,
+comme dans la phrase \enquote{le parking avant le pont}. De même, des
+phrases comme \enquote{Il est à l'angle de la rue Saint-Jacques et le
+  la rue Pierre et Marie Curie}. Dans ces deux cas on peut recombiner
+l'énoncé en un ensemble \emph{d'indices de localisation} utilisant des
+\emph{relations de localisation binaires.} Par exemple,
+\enquote{l'angle de la rue Saint-Jacques et de la rue Pierre et Marie
+  Curie} peut être considéré comme un seul \emph{objet de référence,}
+cette description de position peut s'interpréter comme deux indices de
+localisation : \enquote{Je suis à $\phi$ et $\phi$ est à
+  l'intersection de la rue Saint-Jacques et de la rue Pierre et Marie
+  Curie}. Ces exemples n’intègrent donc pas de \emph{relations de
+  localisation ternaires.} À l'inverse, des phrases ne contenant qu'un
+seul \emph{objet de référence} peuvent utiliser des \emph{relations de
+  localisation ternaires.} On pourra par exemple dire : \enquote{La
+  chèvre est entre les arbres}, dans ce cas, seul un \emph{objet de
+  référence,} \enquote{les arbres}, est présent, mais celui-ci est
+composite, \textcite{Aurnague1993} parlent alors de
+\enquote{\emph{collection}}. 
+
+
+\subsubsection{Contexte d'interprétation et cadre de référence}
+
+\tdi{citer Spatial representation and updating: Evidence from
+  neuropsychological investigations}
+
+\tdi{citer The Role of Context in the Interpretation of Natural
+  Language Location Descriptions}
+
+Certaines \emph{relations de localisation} ne peuvent être
+interprétées (et donc spatialisées) qu'avec une connaissance
+supplémentaire sur la configuration de la position décrite. Par
+exemple des \emph{relations de localisations} comme \enquote{devant}
+ou \enquote{à gauche} ne peuvent être interprétées sans la
+connaissance d'un \emph{référentiel de directions,} ou \emph{cadre de
+  référence} \autocite{Duchene2019}.
+
+Le \emph{cadre de référence} n'est pas nécessairement explicité dans
+un énoncé.
+
+Par exemple, dans la phrase \enquote{il est à ma gauche}, le cadre de
+\emph{référence} est explicité. L'article définit \enquote{ma} indique
+que le locuteur utilise sa ligne de vue comme référence.
+
+\subsubsection{Modélisation formelle d'une relation}
+
+\paragraph{Modèles morphologiques}
+
+
+
+\paragraph{Modèles sémantiques}
+
+Cette seconde catégorie de modèles formalise les \emph{relations de
+  localisations} indépendamment de toute considération linguistique
+et morphologique.
+
+\textcite{Aurngague1997} proposent
+
+% 1
+\autocite{Bateman2010}
+
+\paragraph{\enquote{ISO-Space}, un modèle pivot}
+
+Le modèle normalisé \enquote{ISO-Space}, proposé par
+\textcite{Pustejovsky2017}, a pour objectif d'être un pivot entre les
+\emph{modèles morphologiques,} destinés à l'annotation et les
+\emph{modèles sémantiques,} construits pour interpréter les
+\emph{relations de localisation.}
+
+Ce modèle 
+
+
+\subsection{Classification des \emph{relations de localisation}}
+
+\subsubsection{Critères de classification}
+
+\subsubsection{Classifications trouvées dans la littérature}
+
+interne vs externe \autocite{Borillo1998}
+
+\subsection{\texttt{TITRE}}
+
+\subsubsection{La notion d'ontologie}
+
+La notion \emph{d'ontologie}
+
+\tdi{Gruber (1993), comme la spécification d’une conceptualisation partagée d’un domaine.}
+\tdi{(Guarino, 1998) distingue trois niveaux d’ontologies}
+
+\tdi{Présentation de la logique de description et des extensions floues}
+\tdi{Présentation OWL}
+
+\subsubsection{Les taxonomies et ontologies de relations de localisations
+  existantes}
+
+La définition d'ontologies des relations spatiales
+
+\textcite{Duchene2019} ont identifié 4 ontologies qui se destinent à
+la modélisation de \emph{relations de localisation.}
+
+Bien que traitant des mêmes relations spatiales, ces ontologies sont
+souvent peu génériques et adaptée qu'au domaine d’application pour
+lequel elles ont été initialement conçues \autocite{Hudelot2008a}.
+
+% Bateman
+La plus récente, et probablement la plus ambitieuse, d'entre-elles est
+l'ontologie GUM-Space (aussi connue sous le nom d'OntoSpace), déjà
+présentée \autocite{Bateman2010}.
+%
+Cette ontologie est l'extension spatiale de l'ontologie GUM
+(\emph{Generalized Upper Model}), destinée
+
+% Ontoi 2
+
+% Onto 3
+
+
+% Hudelot 
+Enfin, l'ontologie FRSO (\emph{Fuzzy Spatial Relation Ontology}),
+proposée par \textcite{Hudelot2008a}, a pour objectif de permettre
+l’interprétation d'images et plus spécifiquement la segmentation
+automatique d'images médicales. Les auteurs justifient le
+développement d'une ontologie des \emph{relations de localisation} par
+l'inadaptation des ontologies déjà existantes pour l'interprétation
+d'images.
+
+La particularité principale de l'ontologie FRSO est qu'elle est basée
+sur une extension floue de la \emph{logique de description.}
+
+Dans cette ontologies sont distinguées 8 relations directionnelles, 3
+relations de diostance
+
+
+
+
+\subsection{Travaux sur différentes familles de relations}
+
+
+Nous allons à présent détailler les différents travaux proposés pour
+modéliser des familles spécifiques de \emph{relations de
+  localisation.}
+
+
+
+\subsubsection{Les relations topologiques}
+
+Les relations topologiques 
+
+Ces différentes familles de \emph{relations de localisation} se
+distinguent également par leur complexité. Comme l'indiquent
+\textcite{Aurnague1997}, les travaux de \textcite{Piaget1948} sur le
+développement de la perception spatiale chez l'enfant ont mis en
+évidence que les premières notions développées étaient celles
+relatives à la topologie, suivies par les concepts relevant de la
+perception des distances, finalement suivies par la notion
+d'orientation.
+
+Comme l'indique \textcite{Duchene2019}, ces relations sont
+\enquote{invariantes par déformation continue de l’espace}.
+
+
+\tdi{citer navive geography sur la topologie avant les distances}
+
+\paragraph{Modèles computationnels}
+
+Dans le domaine des \ac{sig}, deux grandes \enquote{familles} de
+modèles topologiques coexistent.
+
+La première est celle du modèle RCC8, proposé par
+\textcite{Randell1992} et de ses dérivés.
+
+Le modèle RCC-8 est un modèle formalisant les \emph{relations
+  topologiques} entre régions de deux dimensions. Dans ce modèle, les
+régions sont modélisées comme des \emph{ensembles de points}
+
+
+Huit relations topologiques et méréologiques y sont définies. Ces
+dernières sont mutuellement exclusives, par conséquent une et une
+seule d'entre-elles est vérifiée, quelque soit la configuration.
+
+Ce modèle permet également de raisonner sur les relations
+topologiques, à l'aide d'une \emph{table de transition.}
+
+\tdi{citer A More Expressive 3D Region Connection Calculus pour l'EDA
+  RCC}
+\tdi{Ajouter ler JEPD et si les extensions le valident}
+
+% RCC5
+% Bennett, 1994, Spatial reasoning with propositional logics
+\textcite{Bennett1994} propose un premier modèle dérivé du travail de
+\textcite{Randell1992}, le modèle RCC-5, réduisant, comme son nom
+l'indique, le nombre der \emph{relations topologiques} modélisées à
+5. Les relations DC et EC sont regroupées en une nouvelle relation, DR
+(\enquote{\emph{discrete}}), indiquant que deux régions ne partagent
+pas leurs aires. De même, les relations TPP et NTPP (et leurs
+inverses) sont combinées en une seule relation (et son inverse), PP,
+pour \enquote{\emph{proper parts}}. En réduisant le nombre de
+\emph{relations topologiques} modélisées le modèle RCC-5 perd en
+expressivité, cependant l'objectif annoncé pour ce modèle n'est pas
+d’enrichir la sémantique du modèle RCC-8 (ce qui est le but de la
+majorité des extensions), mais de faciliter le raisonnement automatisé
+\textcite{Bennett1994}.
+
+\begin{figure}
+  \centering
+  \input{../figures/rcc.tikz}
+  \caption{Les relations topologiques des modèles RCC-8 et RCC-5}
+  \label{fig:RCC}
+\end{figure}
+
+% RCC23 A.G.  Cohn, B.  Bennet, J.  Dooday, and N.M.  Gotts,
+% Qualitative Spatial Representation and Reasoning with the Region
+% Connection Calculus, GeoInformatica 1(1), pp 1-44, 1997.
+Pour améliorer la modélisation des relations topologiques avec des
+régions concaves, \textcite{Cohn1997} proposerons une extension à 23
+relations du modèle RCC, définissant le modèle RCC-23. La relation
+\emph{externally connected} (EC) est décomposée en 9 nouvelles
+relations, permettant, par exemple, de faire la distinction entre un
+contact avec inclusion dans l'enveloppe convexe et sans. De même, la
+relation \emph{disconnected} (DC) est décomposée en 8 nouvelles
+relations, ce qui permet de distinguer une situation où un objet
+\enquote{enveloppe} l'autre. Un modèle RCC-62 sera également proposé
+pour répondre à ce même problème. Contrairement au modèle RCC-23, le
+modèle RCC-62 traite les régions en distinguant leur \emph{intérieur}
+de leur \emph{frontière} et de leur \emph{extérieur,} ce qui permet de
+définir plus de relations topologiques, au prix d'une complexification
+conséquente.
+
+\begin{table}
+  \centering
+  \input{../tableaux/rcc8_vs_rcc23.tex}
+  \caption{Extrait des nouvelles relations topologiques proposées par
+le modèle RCC23, d'après XXXXXXX.}
+  \label{tab:RCC8_vs_RCC23}
+\end{table}
+
+% Exstention 3D
+% Extension temporelle : Wolter
+Le modèle RCC sera également étendu d'autres manières, notamment pour
+prendre en compte la troisième dimension avec les modèles RCC-3D,
+VRCC-3D et VRCC-3D+ ou la temporalité avec les travaux de XXXX
+couplant le modèle RCC-8 à l'algèbre temporelle d'Allen. Ces
+extensions s'éloignent cependant du cadre de ce travail.
+
+% 4IM et dérivés
+La seconde \enquote{famille} de modèle des relations topologiques est
+celle du \emph{modèle des 4 intersections}
+\autocite[4IM,][]{Egenhofer1989} et de ses dérivés, qui, comme pour le
+modèle RCC-8, sont nombreux. Ces deux modèles partagent leurs
+fondements. Tous deux s’appuient sur le paradigme des \emph{ensembles
+  de points} pour modéliser les objets géométriques et définissent les
+\emph{relations topologiques} à partir d'opérations ensemblistes sur
+ces ensembles de points. De plus, dans les modèles RCC-8
+\autocite{Randell1992} et 4IM, les relations topologiques définies
+sont exhaustives et mutuellement disjointes (JEPD). Les deux modèles
+ont cependant quelques différences, la première est que le modèle 4IM
+et ses dérivés ne permettent pas de raisonner à partir des
+\emph{relations topologiques,} il n'est donc pas possible d'inférer
+une relation à partir de relations topologiques et d'objets
+connus. Cependant, le \emph{modèle des intersections} permet de
+modéliser des \emph{relations topologiques} entre des régions, des
+lignes et des points, contrairement au modèle RCC-8 qui se limite aux
+régions.
+
+Dans la première version du \emph{modèle des intersections,} le modèle
+4IM, 8 \emph{relations tolopologiques}, équivalentes à celles du
+modèle RCC-8 \autocite{Duchene2019}, sont définies
+\textcite{Egenhofer1989,Egenhofer1990,Egenhofer1991a}. Celles-ci sont
+définies à partir d'une matrice 4 valeurs booléenes, détaillant les
+intersections entre les composantes de deux objets géométriques \(a\)
+et \(b\). La première d'entre elles est \emph{l'intérieur} de l'objet,
+notée \(aᵒ\) ou \(bᵒ\), en fonction de l'objet concerné. La seconde,
+notée \(δa\) ou \(δb\), est la \emph{frontière} de l'objet. Ces deux
+ensembles, \emph{intérieur} et \emph{frontière,} sont définis pour
+chaque type de géométrie, par exemple la frontière d'une ligne est un
+ensemble de deux points, le premier et le dernier de la ligne. Pour un
+point les deux notions sont équivalentes. La construction de la
+\emph{matrice }d'intersection consiste alors en l'étude des
+intersections, deux à deux, de la \emph{frontière} et de l'intérieur
+de deux objets géométriques :
+
+\begin{equation}
+  \label{eq:matrice_4IM}
+  \text{4IM}(a,b) =
+  \begin{bmatrix}
+    aᵒ ∩ bᵒ ≠ ∅ & aᵒ ∩ δb ≠ ∅ \\
+    δa ∩ bᵒ ≠ ∅ & δa ∩ δb ≠ ∅ \\
+  \end{bmatrix}
+\end{equation}
+
+Si l'intersection entre deux ensembles donnés est vide, alors la
+valeur inscrite dans la matrice est \enquote{\(F\)}, dans le cas
+contraire, la valeur est \enquote{\(V\)}. Par exemple, une
+\emph{relation topologique} \emph{d'inclusion} (nomée \emph{overlap,}
+dans le modèle 4IM et correspondant au prédicat PO du modèle RCC-8,
+cf. figure \ref{fig:RCC}) correspond à la matrice :
+%
+\(\left[
+  \begin{smallmatrix}
+    V&V\\
+    V&V\\
+  \end{smallmatrix}
+\right]\),
+%
+étant donné que les quatres \emph{intersections} définies dans le
+modèle 4IM ne sont pas nulles. La \emph{matrice d'intersections} de ce
+modèle permet de définir 16 configurations différentes. Cependant la
+moitié d'entre-elles ne sont pas réalisables, comme par exemple la
+matrice :
+%
+\(\left[
+  \begin{smallmatrix}
+    F&V\\
+    V&F\\
+  \end{smallmatrix}
+\right]\),
+%
+qui décrit une situation où les deux intérieurs et les deux frontières
+ne s'intersectent pas, mais où la frontière de chaque objet intersecte
+l'intérieur de chaque objet. Comme pour le modèle RCC-8, les 8
+configurations possibles sont toutes nomées (\emph{disjoint, contains,
+  inside, equal, meet, covers, coveredBy} et \emph{overlap}), ce qui
+rend les \emph{relations topologiques} définies plus intelligible et
+facile à manipuler que des matrices de valeurs booléenes.
+
+Dans le modèle 9IM, une extension du modèle 4IM proposée par
+\textcite{Egenhofer1991}, la \emph{matrice des intersection} est
+étendue par l'ajout d'un nouvel ensemble, \emph{l'extérieur} (\ie tous
+les points qui n'appartiennent ni à l'intérieur, ni à la frontière de
+l'objet), noté \(aᵉ\) (ou \(bᵉ\) en fonction de l'objet). La matrice
+initiale est alors étendue en une matrice de 9 valeurs booléennes :
+
+\begin{equation}
+  \label{eq:matrice_9IM}
+  \text{9IM}(a,b) =
+  \begin{bmatrix}
+    aᵒ ∩ bᵒ ≠ ∅ & aᵒ ∩ δb ≠ ∅ & aᵒ ∩ bᵉ ≠ ∅ \\
+    δa ∩ bᵒ ≠ ∅ & δa ∩ δb ≠ ∅ & δa ∩ bᵉ ≠ ∅ \\
+    aᵉ ∩ bᵒ ≠ ∅ & aᵉ ∩ δb ≠ ∅ & aᵉ ∩ bᵉ ≠ ∅ \\
+  \end{bmatrix}
+\end{equation}
+
+Ce nouveau modèle ne permet pas de modéliser des configurations
+nouvelles entre deux régions, mais il permet de distinguer plus
+finement les configurations incluant une ligne, comme le montre la
+figure \ref{tab:4IM_vs_9IM}.
+
+\begin{table}
+  \centering
+  \input{../tableaux/4im_vs_9im.tex}
+  \caption{Exemple des raffinements de \emph{relations topologiques}
+    permis par le modèle 9IM, d'après \textcite{Egenhofer2011}.}
+  \label{tab:4IM_vs_9IM}
+\end{table}
+
+Le modèle 9IM sera lui-même étendu par le modèle DE-9IM proposé par
+\textcite{Clementini1993}. Modèle qui sera par ailleurs normalisé par
+l'OGC et par l'ISO, ce qui a conduit à son adoption massive dans les
+\ac{sig} \autocite{Strobl2008}. Comme son sigle le laisse supposer, ce
+nouveau modèle conserve la matrice à 9 valeurs du modèle 9IM,
+cependant les valeurs qui y sont inscrites ne sont plus limitées aux
+booléens. En effet, le \emph{dimensions extend nine-intersection
+  model} (DE-9IM) ajoute la possibilité de spécifier la
+\emph{dimension} des intersections. La matrice d'intersection de deux
+objets \(a\) ou \(b\) est alors :
+
+\begin{equation}
+  \label{eq:matrice_DE9IM}
+  \text{DE-9IM}(a,b) =
+  \begin{bmatrix}
+    \text{dim}(aᵒ ∩ bᵒ)&\text{dim}(aᵒ ∩ δb)&\text{dim}(aᵒ ∩ bᵉ)\\
+    \text{dim}(δa ∩ bᵒ)&\text{dim}(δa ∩ δb)&\text{dim}(δa ∩ bᵉ)\\
+    \text{dim}(aᵉ ∩ bᵒ)&\text{dim}(aᵉ ∩ δb)&\text{dim}(aᵉ ∩ bᵉ)\\
+  \end{bmatrix}
+\end{equation}
+
+Avec \(\text{dim}(x)\), une fonction renvoyant la dimension de
+l'intersection, soit 0 pour un point, 1 pour une ligne et 2 pour une
+région. Malgrès cette modification substentielle, le modèle DE-9IM
+reste compatible avec le modèle 9IM, les matrices numériques du modèle
+DE-9IM étant faciles à convertir en matrices binaires, compatibles
+avec le modèle 9IM. Comme les autres extensions présentées, cette
+extension du modèle 9IM augmente l'expressivité du \emph{modèle des
+  intersections} et offre, par exemple, la possibilité de distinguer
+un contact ponctuel, d'un contact en une ligne, \ie de distinguer un
+voisinage de Von Neuman, d'un voisinage de Moore
+(\autoref{tab:9IM_vs_DE9IM}). Cependant, cette nouvelle proposition se
+heurte aux mêmes limites que les modèles RCC-23 et RCC-62, à savoir le
+grand nombre de cas possibles. Conscient de se problème
+\textcite{Clementini1993} complétent le modèle DE-9IM avec le
+\emph{calculus based model} (CMB). Ce second modèle propose de définir
+cinq \emph{prédicats topologiques} (\emph{in, cross, overlap, touch,
+  et disjoint}), correspondant à des configurations particulières de
+\emph{matrices d'intersection}, plus faciles à apprender et a
+manipuler.
+
+\begin{table}
+  \centering
+  \input{../tableaux/9im_vs_de9im.tex}
+  \caption{Exemple des raffinements de \emph{relations topologiques}
+    permis par le modèle DE-9IM.}
+  \label{tab:9IM_vs_DE9IM}
+\end{table}
+
+Comme pour le modèle RCC-8, des extensions tridimensionnelles du
+\emph{modèle des intersection} ont été
+proposées. \textcite{DelaLosa2000} propose, par exemple, une extension
+du modèle 9IM à la troisième dimension. Si le format et le processus
+de construction de la \emph{matrice d'intersection} demeurent
+identiques, l'ajout du volume comme primitive topologique conduit à
+l'apparition de nouvelles relations topologiques qui étaient
+irréalisables, comme par exemple, la relation correspondant à la
+matrice: 
+%
+\(\left[
+  \begin{smallmatrix}
+    F&V&F\\
+    F&F&V\\
+    V&V&V\\
+  \end{smallmatrix}
+\right]\),
+%
+décrivant une situation où la frontière d'une géométrie intersecte
+l'intérieur de la seconde géométrie, sans qu'il y ait intersection de
+leurs intérieurs, configuration uniquement possible en 3D,
+correspondant, par exemple, à l'intersection d'une anse et d'un
+panier.
+
+\subsubsection{Les relations de distance}
+
+La notion de \emph{relation de distance} regroupe de nombreux aspects
+de  
+
+\tdi{parler de la notion de réseau support
+  \url{https://www.cairn.info/revue-flux-2016-3-page-33.htm?contenu=bibliographie}
+  pailhous sur le fait que les plus proches chemins ne sont pas
+  nécessairement une bonne approximation}
+
+Les relations de distance permettent de décrire l'éloignement entre le
+\emph{sujet} et un \emph{objet de référence.} Comme les relations
+directionnelles elles peuvent être exprimées de manière quantitative
+(\eg \enquote{Je suis à 50 mètres}) ou qualitatives (\eg \enquote{Je
+  suis proche}). Ce
+
+\tdi{Geographic Space and Time are Tightly Coupled}
+\tdi{Distances are Asymmetric}
+\tdi{Distance Inferences are Local, Not Global}
+\tdi{Distances Don’t Add Up Easily}
+
+\enquote{La distance \textelp{} semble \textelp{} numérique par
+  essence. Toutefois \textelp{} la notion sous-jacente essentielle est
+  en fait un ordre \textelp{}}, \textcite{Aurnague1997}.
+
+\tdi{deux aspects: réseau et distance}
+
+Types de distance, euclidienne, manhattan, réseaux Algo réseau,
+Dijkstra, A*, driving distance, hausdorf
+
+\tdi{parler recalcul réseau Bunel2016, Berli2017 ?}
+
+\paragraph{Distances métriques quantitatives}
+
+L'expression de distances sous leur forme quantitative, correspond à
+la manière la plus classique d'exprimer une relation de distance.
+
+On peut supposer, qu'une fois la
+
+Cependant, l'expression de distances sous une forme quantitative
+n'implique pas nécessairement précision. 
+
+Toutefois, l'utilisation de \emph{relations de distance quantitatives}
+n'implique pas nécessairement une plus grande précision. Les distances
+
+\tdi{attraction des nombres ronds : \url{https://www.persee.fr/doc/rfsoc_0035-2969_1961_num_2_3_5938}}
+
+Le phénomène \emph{d'attraction des nombres ronds}
+
+La mesure d'une distance entre deux objets 
+
+
+
+\paragraph{Distances métriques qualitatives}
+
+\tdi{Robinson, V.: Interactive machine acquisition of a fuzzy spatial
+  relation. Comput.  Geosci. 16, 857–872 (1990). Robinson, V.:
+  Individual and multipersonal fuzzy spatial relations acquired using
+  human-machine interaction. Fuzzy Sets Syst. 113(1), 133–145 (2000)}
+
+\tdi{Spatial Natural Language Generation for Location Description in
+  Photo Captions Mark M. Hall 1 , Christopher B. Jones 2( B ) , and
+  Philip Smart 2}
+
+\paragraph{Distances-temps}
+
+\tdi{Borillo pas de différence fondamentatle entre distance et temps
+  de marche, voir aussi Naive geography}
+
+\tdi{Bonne ref An analysis of probability of area techniques for
+  missing persons in Yosemite National Park}
+
+\tdi{équation fausses, vérifier}
+
+PLa description d'une \emph{relation de localisation}
+
+L'évaluation des zones atteignables en une durée donnée, à partir
+d'une position donnée, nécessite de disposer d'un \emph{modèle de
+  vitesse,} permettant d'estimer la vitesse de déplacement en fonction
+de la nature du terrain, ou du moyen de déplacement.
+
+\tdi{Dire qu'il n'est pas nécessaire d'utiliser des modèles avancés,
+  par exemple en SMA; MAGS Project:
+Multi-agent GeoSimulation and Crowd Simulation}
+
+Certaines utilisation ne nécessitern
+
+% Naismith
+Le plus ancien d'entre eux est le modèle de
+\textcite{Naismith1892}. Comme l'indique \textcite{Duchene2019}, ce
+modèle ne consiste qu'en une phrase, concluant la présentation d'une
+sortie dans un journal d'alpinisme. Cette règle énonce qu'une bonne
+estimation du temps de marche consisterait à compter une heure pour 3
+miles (\SI{5}{\kilo\meter}) en distance planaire et d'y ajouter une
+heure de marche par tranche de \SI{2000}{ft} (\SI{600}{\meter}) de
+dénivelé positif \autocite{Naismith1892}. Avec ce modèle, la vitesse
+de marche (\(V\)) peut s'exprimer en fonction de la pente (\(S\)), de
+la manière suivante:
+
+\begin{equation}
+  \label{eq:marche_naismith}
+  V = \dfrac{5 × 0,6}{5 + 0,6 × S}
+\end{equation}
+
+Avec \(S\) la pente, dont l'expression est:
+
+\begin{equation}
+ S = \dfrac{Δh}{Δx} = \tan θ
+\end{equation}
+
+Où \(θ\) est l'angle de la pente, \(Δh\) le dénivelé et \(Δx\) la
+distance planimétrique. Cette formule peut être généralisée pour
+s'adapter à différentes valeurs de vitesses planimétriques (\(Vₓ\)) et
+ascensionnelles (\(Vₕ\), en \si{\kilo\meter\per\hour}):
+
+\begin{equation}
+  \label{eq:marche_naismith_f}
+  V = \dfrac{Vₓ × Vₕ}{Vₓ + Vₕ × S}
+\end{equation}
+
+Une première correction de ce modèle sera proposée par
+\textcite{Aitken1977}, qui suggère d'utiliser la règle définie par
+\autocite{Naismith1892} pour estimer la vitesse de marche sur sentiers
+et de réduire la vitesse planimétrique (\(Vₓ\)) à
+\SI{4}{\kilo\meter\per\hour} pour estimer une vitesse de marche
+hors-sentier.
+
+% Langmuir
+Les modèles d'\textcite{Naismith1892,Aitken1977} ne permettent,
+cependant, pas d'estimer la vitesse de marche en descente. Cet ajout
+sera du fait de \textcite{Langmuir1984}, qui propose d'étendre le
+modèle de \textcite{Naismith1892} en :
+%
+\begin{enumerate*}[label=(\alph*)]
+\item \emph{réduisant} le temps de marche estimé de 10 minutes, tous les
+300 mètres de dénivelé négatif, si la pente est \emph{faible} (\ie
+comprise entre -5 et -12 degrés) et
+\item en \emph{augmentant} le temps de marche estimé de 10 minutes,
+  tous les 300 mètres de dénivelé négatif, si la pente est
+  \emph{forte} (\ie inférieure à -12 degrés).
+\end{enumerate*}
+%
+Dans la quatrième édition de son ouvrage de 1984,
+\textcite{Langmuir2013} proposera un second modèle, plus adapté à
+l'estimation de la vitesse de marche d'un groupe. La vitesse de marche
+est réduite à \SI{4}{\kilo\meter\per\hour} et les montées sont plus
+pénalisées, une heure de marche est ajoutée par tranche de
+\SI{450}{\meter} de dénivelé positif. Ces deux versions corrigées du
+modèle de \autocite{Naismith1892} par \textcite{Langmuir1984,
+  Langmuir2013} peuvent s'exprimer de la manière suivante :
+
+\begin{equation}
+  \label{eq:marche_langumir}
+  \def\arraystretch{1.75}
+  V = \left\{
+    \begin{array}{ll}
+      \dfrac{Vₓ × V_{h1}}{Vₓ + V_{h1} × S} & \text{si}\ θ > -5° \\
+      \dfrac{Vₓ × V_{h2}}{Vₓ - V_{h2} × S} & \text{si}\ -12° ≤ θ ≤ -5° \\
+      \dfrac{Vₓ × V_{h2}}{Vₓ + V_{h2} × S} & \text{si}\ θ < -12°\\
+    \end{array}
+  \right.
+\end{equation}
+
+Avec \(V_{h1}\) la vitesse ascensionnelle (\SI{600}{\meter\per\hour}
+dans \textcite{Langmuir1984} et \SI{450}{\meter\per\hour} dans
+\textcite{Langmuir2013}), \(V_{h2}\) ascensionnelle en descente. Avec
+ces corrections il devient possible d'évaluer le temps de marche
+nécessaire pour effectuer un parcours complet, descente
+comprise.
+% utilisé par R.cost
+Cependant le modèle de \bsc{Langmuir-Naismith} à un défaut majeur, son
+comportement pour les faibles pentes
+(cf. \autoref{fig:modeles_marche}). En effet les vitesses de marche en
+descente estimées sont très importantes et en fort décalage avec la
+tendance observée pour les courbes définies pour les montées et les
+grandes descentes. Cet effet est particulièrement marqué dans la
+formulation originale du modèle, où les vitesses estimées peuvent
+approcher les \SI{12}{\kilo\meter\per\hour}, une vitesse de marche
+très élevée, même dans des conditions optimales
+\autocite{Kerouanton2020}. Les vitesses de marche estimées par la
+seconde version du modèle \autocite{Langmuir2013} semblent plus
+réalistes, la vitesse maximale étant d'environ
+\SI{7}{\kilo\meter\per\hour}. Cependant, la rupture entre l'estimation
+pour les fortes descentes et celle pour les faibles descentes
+subsiste, puisque si la vitesse estimée pour une pente de 12 degrés
+est d'environ \SI{7}{\kilo\meter\per\hour}, celle pour une pente de 13
+degrés est d'environ \SI{2,5}{\kilo\meter\per\hour}. Malgré ses
+limites, le modèle \bsc{Langmuir-Naismith} propose une caractéristique
+intéressante, les vitesses de marches maximales ne sont pas atteintes
+sur le plat, mais dans les descentes, suffisamment pentues pour
+soulager le randonneur, mais pas assez prononcées pour être pénibles.
+
+% Tobler
+Cette caractéristique est partagée avec le modèle de
+\textcite{Tobler1993}, où la vitesse de marche est exprimée en
+fonction de la pente seule. Bien que présenté sous une forme
+analytique, ce modèle se base sur des données empiriques provenant de
+\textcite{Imhof1950} \autocite{Tobler1993}.
+
+\begin{equation}
+  \label{eq:marche_tobler}
+  V = g × 6 × e^{-3,5 × \left| S + 0,05 \right|}
+\end{equation}
+
+Quant à \(g\), il s'agit d'un coefficient de
+pondération, permettant de faire varier l'estimation de la vitesse en
+fonction d'éléments exogènes, comme le mode de
+déplacement. \textcite{Tobler1993} en propose 3 valeurs :
+%
+\begin{enumerate*}[label=(\alph*)]
+\item \(g = 1\), le cas standard, pour estimer un temps de marche sur
+  sentier,
+\item \(g = 0,6\), lorsque la marche est faite hors-sentier et
+\item  \(g = 1.25\), pour un déplacement à cheval.
+\end{enumerate*}
+
+% Modèle de Ress
+\textcite{Rees2004} a proposé d'estimer la vitesse de marche en
+fonction de la pente à l'aide d'une fonction quadratique :
+\begin{equation}
+  V = \dfrac{1}{a + b × S + c × S²}
+\end{equation}
+
+Avec \(S\) la pente. Les valeurs des coefficients \(a\), \(b\) et
+\(c\), respectivement \SIlist{0,75;0,09;14,6}{\second\per\meter}, ont
+été estimés par \textcite{Rees2004} à l'aide
+
+% Modèle Irmisher
+\textcite{Irmischer2017,Kerouanton2020} proposent, dans la lignée de
+\textcite{Tobler1993}, deux modèles de marche construits à partir de
+données empiriques.
+
+% Modèle Jobe White
+
+% Sentiers ou terrain ?
+
+\begin{figure}
+  \centering \input{../figures/modeles_marche.tex}
+  \caption{Vitesse de marche estimée en fonction de la pente par les
+    différents modèles de marche proposés dans la littérature.}
+  \label{fig:modeles_marche}
+\end{figure}
+
+
+\subsubsection{Les relations projectives}
+
+\enquote{\textelp{} qui nécessitent recours à un espace projectif
+  \textelp{}} \autocite[p. 18]{Duchene2019}
+
+\paragraph{Les relations XXXXe}
+
+\paragraph{Les relations directionnelles}
+
+
+\textcite{Frank,} recense deux catégories, les modèles à secteur (ou
+\emph{cone-based}), dérivés du travail de \textcite{Peuquet1987} et
+les modèles utilisant des demi-plans, dont la première utilisation a
+été proposée par XXXXXX.
+
+
+% Cone based
+
+
+
+% Demi plan
+
+%
+Une autre catégorie de modèle 
+
+% Allen based
+
+
+% Modélisation floues
+
+Enfin, comme pour les modèles topologiques, des extensions
+tridimensionnelles de ces modèles ont été proposées.
+
+
+
+\paragraph{Les relations d'orientation relative}
+
+% Définition
+Les relations d'orientation relatives sont définies par
+\textcite{Duchene2019} comme des relations
+\enquote{concern\textins{ant} l'écart angulaire entre deux objets
+  ayant une direction privilégiée d'allongement et pouvant à ce titre
+  être assimilés à des segments \textelp{}}.
+
+% Exemple
+
+% Travaux
+
+
+
+
+
+\subsubsection{Les relations de visibilité}
+
+Comme pour les \enquote{durées de déplacement}, détaillées ci-dessus,
+les \enquote{relations de visibilité} ne ne s'expriment pas à l'aide
+d'une préposition spatiale, comme \enquote{sur} ou \enquote{dans}, il
+s'agit donc d'une \emph{relation de localisation,} mais pas d'une
+\emph{relation spatiale.}
+
+La question de la visibilité est importante dans le domaine du SIG
+
+
+
+\tdi{citer \url{https://journals.openedition.org/cybergeo/27862}}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../../../../main"
+%%% End:

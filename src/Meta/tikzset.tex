@@ -4,6 +4,8 @@
 \usetikzlibrary{external}
 \usetikzlibrary{calc}
 \usetikzlibrary{positioning}
+\usepgfplotslibrary{colormaps}
+\usetikzlibrary{arrows}
 % Options
 %\tikzexternalize[prefix=TikZ_externalize/]
 % Styles
@@ -13,12 +15,21 @@
 		pattern color=RdBu-9-2, 
 		draw=none
 	},
+        ffa2/.style={%
+		pattern=north east lines,
+		pattern color=RdBu-9-8, 
+		draw=none
+	},
 	ffa_fade/.style={%
 		ffa, 
 		path fading=east
 	},
 	ffc/.style={%
 		draw=RdBu-9-1, 
+		line width=1
+	},
+        ffc2/.style={%
+		draw=RdBu-9-9, 
 		line width=1
 	},
 	% Rendu ligne transparente sans apparition des patterns en dessous
