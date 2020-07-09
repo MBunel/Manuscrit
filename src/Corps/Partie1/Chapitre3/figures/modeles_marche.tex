@@ -38,6 +38,16 @@
   \pgfmathparse{3.6 * (0.11 + 0.67 * exp(-((100*tan(x) + 2)^2)/ 1800)))}%
 }
 
+\pgfmathdeclarefunction{kerouanton_1}{0}{%
+  \pgfmathparse{3.6 * exp(0.551 - 0.037*x)}%
+}
+
+\pgfmathdeclarefunction{kerouanton_2}{0}{%
+  \pgfmathparse{3.6 * exp(0.627 + 0.032*x)}%
+}
+
+
+
 \begin{tikzpicture}
   \begin{axis}[
     semithick,
@@ -69,7 +79,7 @@
     legend style={
       at={(0.5,-0.25)},
       anchor=north,
-      legend columns=3,
+      legend columns=2,
       font=\small,
       draw=none,
       /tikz/every even column/.append style={column sep=.5cm},}
@@ -100,15 +110,20 @@
     % \draw[black] (axis cs:-5,7) -- (axis cs:-5,5);
 
     % Tobler
-    \addplot[ thick, Q2-12] {tobler(1)}; % Normal
-    \addplot[ thick, Q3-12] {tobler(0.6)}; % Sur sentier
+    \addplot[thick, Q2-12] {tobler(1)}; % Normal
+    \addplot[thick, Q3-12] {tobler(0.6)}; % Sur sentier
 
     % Rees
     \addplot[ thick, Q4-12] {rees};
 
     % Irmischer
-    \addplot[ thick, Q5-12] {irmischer_1}; % Normal
-    \addplot[ thick, Q6-12] {irmischer_2}; % Sur sentier
+    \addplot[thick, Q5-12] {irmischer_1}; % Normal
+    \addplot[thick, Q6-12] {irmischer_2}; % Sur sentier
+
+    % Kerouanton
+
+    \addplot[restrict x to domain={5:60}, ultra thick, Q9-12] {kerouanton_1}; % Up
+    \addplot[restrict x to domain={-60:-5}, ultra thick, Q9-12] {kerouanton_2}; % Down
 
     \legend{
      \textcite{Langmuir1984},,,,
@@ -116,7 +131,9 @@
      {\textcite{Tobler1993}, \(g=1\)},
      {\textcite{Tobler1993}, \(g=0,6\)},
      \textcite{Rees2004},
-     \textcite{Irmischer2017}
+     {\textcite{Irmischer2017}},
+     {\textcite{Irmischer2017}, \emph{sur sentier}},
+     \textcite{Kerouanton2020}
      }
 
 
