@@ -6,8 +6,8 @@
 
 % Mise au point vocabulaire
 Comme nous l'expliquions lors de la présentation du concept
-\emph{d'élément de localisation} (cf. \ref{}), ce dernier est
-composé de trois éléments :
+\emph{d'élément de localisation} (\autoref{subsec:2-1}), ce dernier
+est composé de trois éléments :
 %
 \begin{enumerate*}[label=(\alph*)]
 \item \label{i:site} un \emph{sujet,}
@@ -15,87 +15,125 @@ composé de trois éléments :
 \item une \emph{relation de localisation,}
 \end{enumerate*}
 %
-qui, combinés, permettent d'exprimer un \emph{référencement indirect.} 
-Nous n'avons cependant pas pris le temps de détailler ces trois
-concepts, dont la compréhension est nécessaire au développement de
-méthodes de \emph{spatialisation.}
+qui, combinés, permettent d'exprimer un \emph{référencement indirect,}
+que nous cherchons à transformer en un référencement direct. Ces trois
+concepts n'ont cependant pas été présentés dans tous leurs
+aspects. L'objectif de cette partie est donc définir chacun de ces
+trois termes, mais également de présenter les différents modèles
+proposés dans la littérature pour les formaliser.
 
-\subsubsection{Les concepts de \emph{sujet} et \emph{d'objet de référence}}
+\subsubsection{Les concepts de \emph{sujet} et \emph{d'objet de
+    référence}}
 
-Les concepts de \emph{sujet} et \emph{d'objet de référence} sont
-présents dans toutes les formalisations des \emph{référencements
-  spatiaux indirects.} Tous les auteurs considèrent que ce type de
-description nécessite deux objets spatiaux, dont la position de l'un
-(le \emph{sujet}) est décrite par rapport à la position de l'autre
-(\emph{l'objet de référence}), qui est supposée connue.
+Toutes les formalisations des \emph{référencements spatiaux indirects}
+que nous avons rencontré se fondent sur les trois mêmes concepts de
+base, le \emph{sujet,} dont la position est décrite par rapport à la
+position d'un \emph{objet de référence} à l'aide d'une relation de
+localisation. Toutefois, en fonction des auteurs, ces trois concepts
+portent des noms bien différents, comme le montre la synthèse des
+différents termes utilisés, proposée par
+\textcite{RetzSchmidt1988}. Le vocabulaire varie bien évidement en
+fonction de la langue de publication, mais également en fonction de la
+discipline des auteurs. En linguistique francophone
+\autocite{Vandeloise1986,Borillo1998, Aurnague1997, Mathet2000}, par
+exemple, les termes de \emph{site} et de \emph{cible} sont employés
+pour désigner, respectivement, l'\emph{objet de référence} et le
+\emph{sujet.}
+%
+La littérature anglophone abonde de termes pour désigner ces deux
+concepts, comme \emph{primary object} et \emph{reference object}
+employés par \textcite{RetzSchmidt1988, Clementini2013}, \emph{figure}
+et \emph{ground} utilisés par \textcite{Talmy1983} ou encore
+\emph{trajector} et \emph{landmark,} qui sont la utilisée par
+\textcite{Vandeloise1984} des termes \emph{site} et \emph{cible.}
+%
+Mais sous cette grande disparité de vocabulaire se cachent en réalité
+les deux mêmes concepts
 
-Toutefois, le vocabulaire utilisé pour décrire ces concepts ne fait
-pas l'objet d'un consensus, comme le montre la synthèse proposée par
-\textcite{RetzSchmidt1988}.  Les travaux francophones se rattachant au
-domaine de la linguistique, comme ceux de
-\textcite{Vandeloise1986,Borillo1998, Aurnague1997, Mathet2000},
-parlent de \emph{site} et de \emph{cible}, pour désigner,
-respectivement l'\emph{objet de référence} et le \emph{sujet.} La
-littérature anglophone parle quant à elle de \emph{primary object} et
-de \emph{reference object} ou de \emph{figure} et de \emph{ground}.
+\subsubsection{\emph{Relations spatiales, relations de localisation}}
 
-\subsubsection{\emph{Relations spatiales} ou \emph{relations de
-    localisation ?}}
+Comme pour les termes de \emph{sujet} et \emph{d'objet de référence,}
+différents termes sont utilisés comme synonymes de
+\enquote{\emph{relation de localisation}}, comme
+\enquote{\emph{relation spatiale}}, qui est le terme le plus
+fréquemment utilisé. Toutefois, contrairement aux différents synonymes
+de \emph{sujet} et \emph{d'objet de référence}, les termes de
+\emph{relation spatiale} et de \emph{relation de localisation} ne sont
+pas nécessairement considérés comme
+équivalents. \textcite{Duchene2019}, par exemple, font la distinction
+entre les \emph{relations spatiales,} qui sont énoncées avec une
+préposition spatiale (\eg \emph{sur, sous, dans, à côté,} etc.) et les
+\emph{relations de localisation} qui décrivent une position sans
+nécessairement faire appel à une \emph{préposition spatiale}, comme
+dans les phrases : \enquote{Je suis à cinq minutes de marche} ou
+\enquote{Je vois un chalet}. Cependant, cette distinction est souvent
+occultée, pour \textcite{Vandeloise1986} toute relation décrivant une
+position, avec ou sans \emph{préposition spatiale,} est une
+\emph{relation spatiale}. Du point de vue de \textcite{Vandeloise1986}
+la sémantique prime sur la morphologie.
 
-Le terme de \enquote{relation spatiale}, massivement utilisé dans la
-littérature 
+De plus, dans certains travaux \autocite{Bateman2010}, les relations
+décrivant l'organisation spatiale d'un groupe (\eg \enquote{être
+  alignés}) sont considérés comme des \emph{relations spatiales,} bien
+que ne décrivant pas une position. Si l'on accepte de qualifier ces
+relations, décrivant une organisation intra-groupe, comme des
+\emph{relations spatiales} alors on ne peut pas considérer que
+l'ensemble des \emph{relations spatiales} est inclus dans l'ensemble
+des \emph{relations de localisation,} \ie que toute \emph{relation
+  spatiale} et une \emph{relation de localisation.}
 
-\textcite{Duchene2019}, fait la distinction entre \emph{relations de
-  localisation} et \emph{relations spatiales.}
+Nous pourrions donc utiliser exclusivement le terme de \emph{relation
+  spatiale,} cependant, le vocabulaire proposé par
+\textcite{Duchene2019} permet de distinguer les relations susceptibles
+d'être \emph{spatialisées}, \ie les \emph{relations de localisation}
+des \emph{relations spatiales,} qui, si l'on intègre les
+configurations intra-groupe, comme le propose \textcite{Bateman2010},
+ne le sont pas nécessairement. Ainsi, dans la suite de ce travail nous
+parlerons exclusivement de \emph{relations de localisation.}
 
-Toutefois, ces expressions n'utilisant pas explicitement de
-\emph{prépositions spatiales} sont considérés comme des
-\emph{relations spatiales} par les linguistes comme
-\textcite{Vandeloise1986}, leur sémantique les ramenant à des notions
-spatiales.
+\subsubsection{\emph{Relations de localisation ternaires}}
 
-C'est par exemple le cas de la notion \emph{d'intervisibilité,} dont
-l'énoncé, de la forme : \enquote{Je vois un lac}, ne fait pas appel à
-une \emph{préposition spatiale.}
+Contrairement à ce que pourraient laisser penser les différents
+exemples \emph{d'indices de localisation} présentés jusqu'ici, ces
+derniers peuvent contenir plus d'un \emph{objet de référence}
+\autocite{Clementini2013}. Ce cas, relativement peu fréquent, se
+présente lorsque la \emph{relation de localisation} utilisée n'est pas
+\emph{binaire,} c'est-à-dire qu'elle n'implique pas qu'un \emph{sujet}
+et qu'un \emph{objet de référence.} Le cas le plus fréquent est celui
+de la \emph{relation de localisation} \enquote{entre} qui implique, au
+minimum, deux \emph{objets de référence,} on parle alors de
+\emph{relation de localisation ternaire}. Si l'on peut, en effet, dire
+que \enquote{La poste est entre le café et la banque}, il est
+incorrect d'utiliser cette \emph{relation de localisation} avec un
+seul \emph{objet de référence.} La phrase \enquote{Je suis entre
+  l'université}, par exemple, est fautive et incompréhensible.
 
-% Relations ternaires
-Par ailleurs, contrairement à ce que pourraient laisser penser les
-différents exemples \emph{d'indices de localisation} présentés
-jusqu'ici, ces derniers peuvent contenir plus d'un \emph{objet de
-  référence} \autocite{Clementini2013}. Ce cas, relativement peu
-fréquent, se présente lorsque la \emph{relation de localisation}
-utilisée n'est pas \emph{binaire,} c'est-à-dire qu'elle n'implique pas
-qu'un \emph{sujet} et qu'un \emph{objet de référence.} Le cas le plus
-fréquent est celui de la \emph{relation de localisation}
-\enquote{entre} qui implique, au minimum, deux \emph{objets de
-  référence}. Si l'on peut, en effet, dire que \enquote{La poste est
-  entre le café et la banque}, il est incorrect d'utiliser cette
-\emph{relation de localisation} avec un seul \emph{objet de
-  référence.} La phrase \enquote{Je suis entre l'université}, par
-exemple, est fautive et incompréhensible. Cependant, touts les
-\emph{référencements indirects} liant trois objets, ne sont pas
-nécessairement composés d'une \emph{relation de localisation
-  ternaire.} \textcite{Duchene2019} identifient deux cas de ce
-type. D'une part l'un des objets peut être le support des deux autres,
-c'est par exemple lorsqu'une position est décrite sur un itinéraire,
-comme dans la phrase \enquote{le parking avant le pont}. De même, des
-phrases comme \enquote{Il est à l'angle de la rue Saint-Jacques et le
-  la rue Pierre et Marie Curie}. Dans ces deux cas on peut recombiner
-l'énoncé en un ensemble \emph{d'indices de localisation} utilisant des
-\emph{relations de localisation binaires.} Par exemple,
-\enquote{l'angle de la rue Saint-Jacques et de la rue Pierre et Marie
-  Curie} peut être considéré comme un seul \emph{objet de référence,}
-cette description de position peut s'interpréter comme deux indices de
-localisation : \enquote{Je suis à $\phi$ et $\phi$ est à
-  l'intersection de la rue Saint-Jacques et de la rue Pierre et Marie
-  Curie}. Ces exemples n’intègrent donc pas de \emph{relations de
-  localisation ternaires.} À l'inverse, des phrases ne contenant qu'un
-seul \emph{objet de référence} peuvent utiliser des \emph{relations de
-  localisation ternaires.} On pourra par exemple dire : \enquote{La
-  chèvre est entre les arbres}, dans ce cas, seul un \emph{objet de
-  référence,} \enquote{les arbres}, est présent, mais celui-ci est
-composite, \textcite{Aurnague1993} parlent alors de
-\enquote{\emph{collection}}. 
+Cependant, touts les \emph{indices de localisation} composés de trois
+objets, n'impliquent pas nécessairement une \emph{relation de
+  localisation ternaire} \autocite{Duchene2019}. L'un des objets peut,
+par exemple, être le support des deux autres, c'est par exemple
+lorsqu'une position est décrite sur un itinéraire, comme dans la
+phrase \enquote{le parking avant le pont}. De même, une phrases comme
+: \enquote{Il est à l'angle de la rue Saint-Jacques et de la rue
+  Pierre et Marie Curie}, qui contient trois objets spatiaux :
+\emph{le sujet} (\enquote{Il}) et deux objets de référence
+(\enquote{rue Saint-Jacques} et \enquote{rue Pierre et Marie Curie}),
+ne contient pas \emph{relation de localisation ternaire}. Dans ces
+deux cas on peut recombiner l'énoncé en un ensemble \emph{d'indices de
+  localisation} utilisant des \emph{relations de localisation
+  binaires.} Par exemple, \enquote{l'angle de la rue Saint-Jacques et
+  de la rue Pierre et Marie Curie} peut être considéré comme un seul
+\emph{objet de référence,} cette description de position peut
+s'interpréter comme deux indices de localisation : \enquote{Je suis à
+  $\phi$ et $\phi$ est à l'intersection de la rue Saint-Jacques et de
+  la rue Pierre et Marie Curie}. Ces exemples n’intègrent donc pas de
+\emph{relations de localisation ternaires.} À l'inverse, des phrases
+ne contenant qu'un seul \emph{objet de référence} peuvent utiliser des
+\emph{relations de localisation ternaires.} On pourra par exemple dire
+: \enquote{La chèvre est entre les arbres}, dans ce cas, seul un
+\emph{objet de référence,} \enquote{les arbres}, est présent, mais
+celui-ci est composite, \textcite{Aurnague1993} parlent alors de
+\enquote{\emph{collection}}.
 
 
 \subsubsection{Contexte d'interprétation et cadre de référence}
@@ -106,20 +144,38 @@ composite, \textcite{Aurnague1993} parlent alors de
 \tdi{citer The Role of Context in the Interpretation of Natural
   Language Location Descriptions}
 
-Certaines \emph{relations de localisation} ne peuvent être
-interprétées (et donc spatialisées) qu'avec une connaissance
-supplémentaire sur la configuration de la position décrite. Par
-exemple des \emph{relations de localisations} comme \enquote{devant}
-ou \enquote{à gauche} ne peuvent être interprétées sans la
-connaissance d'un \emph{référentiel de directions,} ou \emph{cadre de
-  référence} \autocite{Duchene2019}.
+Comme les différents exemples utilisés jusqu'ici le laissent supposer,
+certaines \emph{relations de localisation} ne peuvent être
+interprétées ---~et donc spatialisées~--- sans une connaissance
+supplémentaire sur la configuration de la position décrite. C'est par
+exemple le cas dans des phrases telles que : \enquote{Elle est devant
+  l'université} ou \enquote{la poste est à gauche}. Les
+\emph{relations de localisation} \enquote{devant} et \enquote{à
+  gauche} ont une signification dépendante du contexte.
 
-Le \emph{cadre de référence} n'est pas nécessairement explicité dans
-un énoncé.
+Notre gauche
+et notre droite sont dépendantes de notre orientation et le
+\enquote{devant} de notre sens de déplacement
+\autocite{Vandeloise1986}. On pourra facilement se convaincre qu'il
+est illusoire d'interpréter ces \emph{relations de localisation} sans
+une connaissance exogène, qui ici prend la forme d'un
+\emph{référentiel de directions} (ou \emph{cadre de référence,} selon
+\cite{Clementini2013}).
+
+Ces \emph{relations de localisation} dont l'interprétation nécessite
+un \emph{cadre de référence} sont généralement qualifiées de
+\emph{projectives} et \emph{directionnelles}.
+
+L'interprétation de ces \emph{relations de localisation} est
+compliquée par le fait que le \emph{cadre de référence} ne soit pas
+nécessairement explicité dans \emph{l'indice de localisation,} comme
+dans l'exemple précédent, \enquote{Elle est devant l'université}.
 
 Par exemple, dans la phrase \enquote{il est à ma gauche}, le cadre de
 \emph{référence} est explicité. L'article définit \enquote{ma} indique
 que le locuteur utilise sa ligne de vue comme référence.
+
+\missingfigure{Figure sur les frames of reference}
 
 \subsubsection{Modélisation formelle d'une relation}
 
@@ -153,15 +209,109 @@ Ce modèle
 
 \subsubsection{Critères de classification}
 
+Les classification des \emph{relations de localisation} proposées dans
+la littérature sont généralement organisées suivant un critère donné.
+
+Mais on trouve également des organisations \enquote{hybrides}, fondées
+sur plusieurs critères de classement.
+
+Le choix du critère de classement nous semble fortement lié au domaine
+d’application de la classification et plus encore à sa discipline de
+rattachement. Dans le domaine de la linguistique, les classifications
+sont majoritairement organisées suivant un critère sémantique, les
+groupes de \emph{relations de localisation} sont constitués en
+fonction de leur sens et non en fonction de critères comme leur
+formalisation. À l'inverse, les classifications constituées en vue
+d'une implémentation, quel qu'en soit le type, comme celles proposées
+par \textcite{Hudelot2008a,Bloch2013}, sont généralement fondées sur
+des critères tels que la méthode de formalisation.
+
 \subsubsection{Classifications trouvées dans la littérature}
 
-interne vs externe \autocite{Borillo1998}
+
+
+
+Dans le domaine de la linguistique plusieurs catégorisations des
+\emph{relations de localisation} ont été
+proposées. \textcite{Pustejovsky2017} distingue quatre classes de
+\emph{relations de localisation} :
+%
+\begin{enumerate*}[label=(\alph*)]
+\item les \emph{relations topologiques},
+  \item les relations \enquote{directionnelles ou
+  orientationnelles},
+  \item \emph{les relations métriques} et
+  \item les relations liées au mouvement d'un objet.
+\end{enumerate*}
+%
+
+\textcite{Bateman2010} distinguent quand à eux les \emph{relations de
+  distance}, les \emph{relations fonctionnelles} et les
+\emph{relations relatives.}
+
+\textcite{Borillo1998} propose quand à elle une classification selon
+deux critères sémantiques, distinguant les \emph{relations spatiales
+  statiques} des \emph{dynamiques}, et les \emph{relations spatiales
+  internes} (ou \emph{topologiques}) des \emph{relations spatiales
+  externes} (ou \emph{projectives}). Le premier critère différencie
+les relations décrivant un mouvement (\emph{dynamiques}) de celles
+désignant une position invariable dans le temps (\emph{statique}). Le
+second critère distingue les \emph{relations spatiales} décrivant une
+situation où le sujet partage sa position, ou du moins une partie,
+avec l'objet de référence (\ie les relations caractérisées
+d'internes), des situations où la position du sujet et de l'objet de
+référence sont disjointes (\ie les relations caractérisées
+d'externes). Pour \textcite{Borillo1998}, l'ensemble des relations de
+localisation est réductible à deux catégories sémantiques, les
+\emph{relations topologiques} (ou \emph{internes}) et les
+\emph{relations projectives} (ou \emph{externes}). La définition des
+\emph{relations topologiques} utilisée par \textcite{Borillo1998} est
+donc équivalente à celle que l'on retrouve dans les autres
+classifications présentées. La catégories des \emph{relations
+  projectives} a, quand à elle, une définition beaucoup plus large que
+celle qui en est donnée dans d'autres classifications. Pour
+\textcite{Borillo1998}, les relations dérivant une orientation (\eg
+\enquote{au nord de}), une distance (\eg \enquote{proche de}) ou une
+position sur l'axe vertical (\eg \enquote{sous}), qui sont distinguées
+dans d'autres classifications, sont ici regroupés en une seule classe.
+% 
+Cette catégorisation XXXX
+
+D'autres travaux \autocite{Hudelot2008a} utilisent également une
+catégorisation en deux classes, similaire à celle de
+\textcite{Borillo1998}, mais basés sur des critères
+différents. \textcite{Hudelot2008a}, par exemple, distingues les
+\emph{relations topologiques} des autres relations, qualifiées de
+\emph{métriques,} classe elle-même subdivisée en deux catégories, les
+\emph{relations directionnelles} et de \emph{distance.} Bien que
+similaires, ces classes ne sont pas équivalentes à celles proposées
+par \textcite{Borillo1998}.
+%
+\textcite{Bloch2013} proposera une extension de la classification
+d'\textcite{Hudelot2008a}, en y ajoutant une nouvelle classe au
+premier niveau hiérarchique, celle des \emph{relations de localisation
+  complexes,} incluant les \emph{relations ternaires,} \emph{n-aires}
+et certaines \emph{relations binaires} comme celle énoncée par la
+préposition \enquote{parallèle à}.
+
+
+Comme le font remarquer \textcite{Duchene2019}, l'ensemble des
+classifications présentées ici, qu'elles soient organisés suivant une
+logique fonctionnelle ou formelle, proposent toujours une classe bien
+définie pour les \emph{relations topologiques.} Les autres catégories
+sont plus variables, par exemple, la classe des \emph{relations
+  projectives} peut inclure les relations métriques, comme dans la
+classification de \textcite{Borillo1998}, ou non, comme dans les
+classification de \textcite{Bateman2010, Pustejovsky2017}.
 
 \subsection{\texttt{TITRE}}
 
 \subsubsection{La notion d'ontologie}
 
 La notion \emph{d'ontologie}
+
+Les ontologies se distinguent des classifications précédemment
+présentées par leur XXXXXX
 
 \tdi{Gruber (1993), comme la spécification d’une conceptualisation partagée d’un domaine.}
 \tdi{(Guarino, 1998) distingue trois niveaux d’ontologies}
@@ -214,12 +364,9 @@ relations de diostance
 
 \subsection{Travaux sur différentes familles de relations}
 
-
 Nous allons à présent détailler les différents travaux proposés pour
 modéliser des familles spécifiques de \emph{relations de
   localisation.}
-
-
 
 \subsubsection{Les relations topologiques}
 
@@ -507,13 +654,11 @@ panier.
 
 \subsubsection{Les relations de distance}
 
+Si la notion de distance est \enquote{fondamentale} en géographie
+\autocite{Pumain1997}
+
 La notion de \emph{relation de distance} regroupe de nombreux aspects
 de  
-
-\tdi{parler de la notion de réseau support
-  \url{https://www.cairn.info/revue-flux-2016-3-page-33.htm?contenu=bibliographie}
-  pailhous sur le fait que les plus proches chemins ne sont pas
-  nécessairement une bonne approximation}
 
 Les relations de distance permettent de décrire l'éloignement entre le
 \emph{sujet} et un \emph{objet de référence.} Comme les relations
@@ -526,37 +671,124 @@ directionnelles elles peuvent être exprimées de manière quantitative
 \tdi{Distance Inferences are Local, Not Global}
 \tdi{Distances Don’t Add Up Easily}
 
+\tdi{Borillo pas de différence fondamentatle entre distance et temps
+  de marche, voir aussi Naive geography}
+
 \enquote{La distance \textelp{} semble \textelp{} numérique par
   essence. Toutefois \textelp{} la notion sous-jacente essentielle est
   en fait un ordre \textelp{}}, \textcite{Aurnague1997}.
 
-\tdi{deux aspects: réseau et distance}
+Un élément important des relations de distance est qu'elles peuvent
+être exprimées de différentes manières, toutes disposant de leurs
+propres contraintes et par conséquent spécificités lors de leur
+spatialisation. Tout d'abord les distances peuvent être exprimées de
+manière quantitative, c'est par exemple le cas dans des phrases telles
+que : \enquote{Elle est à 50 mètres}. Mais cette même notion de
+distance peut être exprimée de manière qualitative, comme dans la
+phrase \enquote{Le meilleur restaurant Japonnais de la ville est juste
+  à côté}. Dans les deux cas, la \emph{relation de localisation}
+utilisée traduit une notion de distance, mais d'une manière
+différente, qui imposera une adaptation de la méthode de
+\emph{spatialisation.}
 
-Types de distance, euclidienne, manhattan, réseaux Algo réseau,
-Dijkstra, A*, driving distance, hausdorf
+Mais, les \emph{relations de distance} ne se limitent pas
+nécessairement à l'expression de distances métriques. Les temps de
+déplacement, par exemple, sont également une forme de distance et par
+conséquent, il n'y a pas de différence sémantique entre les phrases :
+\enquote{Il est proche}, \enquote{Il est à cent mètres} et \enquote{Il
+  est à quelques minutes de marche}. Comme les distances métriques,
+les temps de déplacement peuvent aussi bien s'exprimer de manière
+qualitative, comme dans l'exemple précédent, ou quantitative, comme
+dans la phrase : \enquote{C'est à trois minutes de marche}.  Ces
+différents types de distance peuvent toutes se retrouver dans les
+alertes que nous traitons, ainsi nous présenterons ici aussi bien les
+distances métriques (qualitatives et quantitatives) que les temps de
+déplacement.
 
-\tdi{parler recalcul réseau Bunel2016, Berli2017 ?}
+Un second aspect important à prendre en compte est la méthode de
+calcul de la distance. Celle-ci doit t-elle être calculée à vol
+d'oiseau (\ie distance euclidienne) ou sur le réseau ? On peut
+également adopter d'autres approches, comme la distance de Manhattan,
+offrant une bonne approximation de la \emph{distance réseau} pour des
+maillages orthogonaux. Dans notre contexte d’application différentes
+méthodes de calcul de la distance peuvent être employées. La
+\emph{distance euclidienne} semble, en effet, plus adaptée au calcul
+de distances estimées visuellement, comme dans la phrase : \enquote{Il
+  y a un chalet loin devant moi}, alors que la distance réseau est
+plus pertinente pour \emph{spatialiser} des \emph{indices de
+  localisation} décrivant une durée ou un distance de déplacement,
+comme dans la phrase : \enquote{Nous avons marché pendant 2 heures}.
+
+Si le calcul de la \emph{distance euclidienne} ne pose pas de
+problèmes spécifiques ce n'est pas le cas pour la \emph{distance
+  réseau.}  Divers algorithmes existent, dont les plus connus sont
+l'algorithme du plus court chemin de \textcite{Dijkstra1959}, et
+l'algorithme A* \autocite{Hart1968}, plus rapide mais ne renvoyant pas
+nécessairement le chemin le plus court. Ces deux algorithmes peuvent
+être utilisés pour approximer le trajet suivit sur un réseau donné et
+entre deux points, comme le proposent \textcite{Berli2018, Bunel2018}
+dans leurs travaux de reconstitution de flux maritimes à partir de
+matrices origine-destination. Mais cet usage implique de faire
+l'hypothèse que le trajet réellement suivit est le chemin le plus
+court (ou le moins couteux), ou tout du moins qu'il tend à s'en
+rapprocher. Or cette hypothèse est assez contraignante, aussi bien
+pour la modélisation des flux maritimes, puisqu'elle peut contredire
+certaines réalités météorologiques ou historiques, que du trafic
+routier, bien que ces deux algorithmes soient régulièrement utilisés à
+cet effet. Une illustration de ce problème peut être trouvée dans les
+travaux de \textcite{Pailhous1970}, sur les itinéraires suivis par les
+chauffeurs de taxi (avant l'introduction des systèmes d'aide à la
+navigation). Dans ses travaux, \textcite{Pailhous1970} met en évidence
+que, lors de leurs déplacements, les chauffeurs de taxis cherchent en
+priorité à rejoindre le réseau routier principal, composé des grandes
+avenues et des voies périphériques, le long desquels ils effectuons la
+majorité du trajet. L'entrée dans le réseau routier secondaire, qui
+est repoussée au plus tard possible, s'effectue généralement à
+proximité de la destination \autocite{Lagesse2016}. Ce type
+d'itinéraire est sensiblement différent du plus court chemin,
+l'utilisation des algorithmes de \textcite{Dijkstra1959} ou A*
+\autocite{Hart1968} est donc à relativiser. Ce même problème se pose
+également, mais d'une manière différente, dans notre contexte
+applicatif. En effet, des \emph{indices de localisation} tels que :
+\enquote{J'ai marché 10 kilomètres depuis mon point de départ} ne
+seraient pas nécessairement spatialisés de manière satisfaisante en
+utilisant un algorithme renvoyant le plus court chemin, la plupart des
+alertes concernant des trajets touristiques qui, par définition, sont
+plus proches de la déambulation que du déplacement rationnel.
 
 \paragraph{Distances métriques quantitatives}
 
-L'expression de distances sous leur forme quantitative, correspond à
-la manière la plus classique d'exprimer une relation de distance.
+Lorsqu'une relation de distance entre le sujet et l'objet de référence
+est exprimée de manière quantitative, comme dans la phrase :
+\enquote{Je suis à 300 mètres}, on peut s'attendre à ce que l'exercice
+de \emph{spatialisation} soit assez simple. Il n'est en effet pas
+nécessaire, contrairement aux distances qualitatives, d'estimer la
+distance à modéliser, celle-ci étant déjà connue. Cependant, une
+valeur de distance quantifiée n'est pas nécessairement précise. En
+effet, compte tenu de notre contexte, les distances quantitatives sont
+quasi-exclusivement estimées par une personne, généralement le
+requérant et non à l'aide d'une mesure, ce qui pourrait être le cas si
+nous avions a \emph{spatialiser} des phrases telles que :
+\enquote{D'après le GPS, j'ai a roulé 123 km}. Bien entendu, une
+distance mesurée peut également être imprécise, par exemple, à cause
+d'une mauvaise calibration de l'outil de mesure, mais il s'agit d'un
+cas assez différent, car lié à un événement particulier, alors que la
+mauvaise estimation d'une distance par un être humain est systémique.
 
-On peut supposer, qu'une fois la
+Au problème de la mauvaise estimation des distances s'ajoute un autre
+phénomène impactant la qualité des estimations des distances,
+\emph{l'attraction des nombres ronds} \autocite{Durand1961}. Ce
+phénomène, initialement mis en évidence lors de l'étude de la
+distribution des ages, implique une surreprésentation des valeurs se
+terminant par 0 et 5, à cause d'un arrondi de la personne
+recensée. Par conséquent, on peut s'attendre à ce que les distances
+exprimées à \enquote{vue de nez} soient impactées par ce phénomène et
+toute autre forme d'arrondi.
 
-Cependant, l'expression de distances sous une forme quantitative
-n'implique pas nécessairement précision. 
-
-Toutefois, l'utilisation de \emph{relations de distance quantitatives}
-n'implique pas nécessairement une plus grande précision. Les distances
-
-\tdi{attraction des nombres ronds : \url{https://www.persee.fr/doc/rfsoc_0035-2969_1961_num_2_3_5938}}
-
-Le phénomène \emph{d'attraction des nombres ronds}
-
-La mesure d'une distance entre deux objets 
-
-
+Il est donc inutile d'espérer obtenir une bonne estimation de la
+distance, la \emph{spatialisation} des \emph{relations de distance}
+exprimant une distance métrique qualitative doit donc se faire en
+prenant en compte les différentes imprécisions qui peuvent exister.
 
 \paragraph{Distances métriques qualitatives}
 
@@ -569,28 +801,40 @@ La mesure d'une distance entre deux objets
   Photo Captions Mark M. Hall 1 , Christopher B. Jones 2( B ) , and
   Philip Smart 2}
 
-\paragraph{Distances-temps}
-
-\tdi{Borillo pas de différence fondamentatle entre distance et temps
-  de marche, voir aussi Naive geography}
+\paragraph{Distances-temps et modèles de marche}
 
 \tdi{Bonne ref An analysis of probability of area techniques for
   missing persons in Yosemite National Park}
 
 \tdi{équation fausses, vérifier}
 
-PLa description d'une \emph{relation de localisation}
+S'il n'y a pas de différences sémantiques fondamentales entre une
+distance métriques et une distance-temps, leur processus de
+spatialisation est cependant légèrement différent. En effet, toute
+spatialisation d'une distance-temps impose de transformer une durée de
+parcours en une distance parcourue à l'aide d'un modèle.
 
-L'évaluation des zones atteignables en une durée donnée, à partir
-d'une position donnée, nécessite de disposer d'un \emph{modèle de
-  vitesse,} permettant d'estimer la vitesse de déplacement en fonction
-de la nature du terrain, ou du moyen de déplacement.
+La solution la plus simple consiste à définir une vitesse de
+déplacement moyenne et de transformer le temps parcouru en une
+distance à l'aide d'une règle de proportionnalité. Cette approche est
+assez restrictive, mais elle peut être satisfaisante pour des modèles
+à petite échelle et simulant des environnements où la difficulté de
+déplacement est homogène, comme dans le modèle multi-agent MAGS
+\autocite{Moulin2003}, destiné à simuler des comportements humains en
+milieu urbain. Dans ce modèle \autocite{Moulin2003}, la vitesse de
+déplacement moyenne d'un marcheur a été fixée à
+\SI{5}{\kilo\meter\per\hour}. Cette valeur à également été retenue
+dans l'outil \enquote{zones de desserte} d'ArcGIS \autocite{ESRI2020},
+permettant de calculer des isochrones de déplacement pédestre.
 
-\tdi{Dire qu'il n'est pas nécessaire d'utiliser des modèles avancés,
-  par exemple en SMA; MAGS Project:
-Multi-agent GeoSimulation and Crowd Simulation}
-
-Certaines utilisation ne nécessitern
+Cette approche n'est cependant pas satisfaisante dans notre contexte
+applicatif. En effet, les contraintes de déplacement en milieu urbain
+ne sont pas comparables à celles que l'on rencontre en montagne, où il
+est fréquent de rencontrer des longues montées et des descentes
+escarpées qui influent sur la vitesse de marche. L'estimation des
+distances de déplacement en milieu montagneux est donc réalisée avec
+des \emph{modèles de marche} plus avancés, adaptant l'estimation de la
+vitesse de déplacement en fonction du terrain.
 
 % Naismith
 Le plus ancien d'entre eux est le modèle de
@@ -677,7 +921,7 @@ comprise.
 % utilisé par R.cost
 Cependant le modèle de \bsc{Langmuir-Naismith} à un défaut majeur, son
 comportement pour les faibles pentes
-(cf. \autoref{fig:modeles_marche}). En effet les vitesses de marche en
+(\autoref{fig:modeles_marche}). En effet les vitesses de marche en
 descente estimées sont très importantes et en fort décalage avec la
 tendance observée pour les courbes définies pour les montées et les
 grandes descentes. Cet effet est particulièrement marqué dans la
@@ -742,7 +986,8 @@ données empiriques.
 % Sentiers ou terrain ?
 
 \begin{figure}
-  \centering \input{../figures/modeles_marche.tex}
+  \centering
+  \input{../figures/modeles_marche.tex}
   \caption{Vitesse de marche estimée en fonction de la pente par les
     différents modèles de marche proposés dans la littérature.}
   \label{fig:modeles_marche}
@@ -798,10 +1043,16 @@ Les relations d'orientation relatives sont définies par
 % Travaux
 
 
-
-
-
 \subsubsection{Les relations de visibilité}
+
+Peut-on réellement parler de géographie sans parler de la vision ?
+Sans doute pas, du moins selon \textcite{Brunet1992}, pour qui la vue
+est \enquote{le sens premier du géographe}. Mais cette assertion nous
+semble réductrice, selon nous le sens de la vision est fondamental
+dans notre rapport à l'espace. Il est par conséquent courant de
+décrire une position à partir de ce que l'on y voit. Il nous semble
+donc indispensable de pouvoir \emph{spatialiser} des descriptions
+visuelles.
 
 Comme pour les \enquote{durées de déplacement}, détaillées ci-dessus,
 les \enquote{relations de visibilité} ne ne s'expriment pas à l'aide
@@ -809,8 +1060,16 @@ d'une préposition spatiale, comme \enquote{sur} ou \enquote{dans}, il
 s'agit donc d'une \emph{relation de localisation,} mais pas d'une
 \emph{relation spatiale.}
 
-La question de la visibilité est importante dans le domaine du SIG
+Contrairement aux distances, où leur expression peu prendre plusieurs
+formes, les \emph{relations de localisation visuelles} sont toujours
+exprimé d'une même manière. On décrit ce qu'on a (ou pas) dans notre
+champ de vision. Ainsi la spatialisation de ce type \emph{d'indice de
+  localisation} nécessite de pouvoir construire le champ de visibilité
+d'un objet, quelque soit sa nature.
 
+La question de la construction de zones de visibilités a été
+longuement abordée dans le domaine des SIG, notamment en vue
+d’applications pour l'étude de paysages.
 
 
 \tdi{citer \url{https://journals.openedition.org/cybergeo/27862}}
