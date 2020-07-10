@@ -28,8 +28,8 @@
     \path[draw, dashed] (.25,-.5) ellipse (40pt and 20pt);
     \begin{scope}
       \clip (.25,-.5) ellipse (40pt and 20pt);
-      \fill[ffa, pattern color=RdBu-9-8] (0,0) circle [radius=30pt];
-      \path[ffc, draw=RdBu-9-9] (0,0) circle [radius=30pt];
+      \fill[ffa2] (0,0) circle [radius=30pt];
+      \path[ffc2] (0,0) circle [radius=30pt];
     \end{scope}
     \begin{scope}
       \clip (0,0) circle [radius=30pt];
