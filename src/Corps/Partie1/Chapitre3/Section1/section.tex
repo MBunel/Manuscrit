@@ -671,6 +671,9 @@ directionnelles elles peuvent être exprimées de manière quantitative
 \tdi{Distance Inferences are Local, Not Global}
 \tdi{Distances Don’t Add Up Easily}
 
+\tdi{Borillo pas de différence fondamentatle entre distance et temps
+  de marche, voir aussi Naive geography}
+
 \enquote{La distance \textelp{} semble \textelp{} numérique par
   essence. Toutefois \textelp{} la notion sous-jacente essentielle est
   en fait un ordre \textelp{}}, \textcite{Aurnague1997}.
@@ -803,26 +806,38 @@ prenant en compte les différentes imprécisions qui peuvent exister.
 
 \paragraph{Distances-temps}
 
-\tdi{Borillo pas de différence fondamentatle entre distance et temps
-  de marche, voir aussi Naive geography}
-
 \tdi{Bonne ref An analysis of probability of area techniques for
   missing persons in Yosemite National Park}
 
 \tdi{équation fausses, vérifier}
 
-PLa description d'une \emph{relation de localisation}
+S'il n'y a pas de différences sémantiques fondamentales entre une
+distance métriques et une distance-temps, leur processus de
+spatialisation est cependant légèrement différent. En effet, toute
+spatialisation d'une distance-temps impose de transformer une durée de
+parcours en une distance parcourue à l'aide d'un modèle.
 
-L'évaluation des zones atteignables en une durée donnée, à partir
-d'une position donnée, nécessite de disposer d'un \emph{modèle de
-  vitesse,} permettant d'estimer la vitesse de déplacement en fonction
-de la nature du terrain, ou du moyen de déplacement.
+La solution la plus simple consiste à définir une vitesse de
+déplacement moyenne et de transformer le temps parcouru en une
+distance à l'aide d'une règle de proportionnalité. Cette approche est
+assez restrictive, mais elle peut être satisfaisante pour des modèles
+à petite échelle et simulant des environnements où la difficulté de
+déplacement est homogène, comme dans le modèle multi-agent MAGS
+\autocite{Moulin2003}, destiné à simuler des comportements humains en
+milieu urbain. Dans ce modèle \autocite{Moulin2003}, la vitesse de
+déplacement moyenne d'un marcheur a été fixée à
+\SI{5}{\kilo\meter\per\hour}. Cette valeur à également été retenue
+dans l'outil \enquote{zones de desserte} d'ArcGIS \autocite{ESRI2020},
+permettant de calculer des isochrones de déplacement pédestre.
 
-\tdi{Dire qu'il n'est pas nécessaire d'utiliser des modèles avancés,
-  par exemple en SMA; MAGS Project:
-Multi-agent GeoSimulation and Crowd Simulation}
-
-Certaines utilisation ne nécessitern
+Cette approche n'est cependant pas satisfaisante dans notre contexte
+applicatif. En effet, les contraintes de déplacement en milieu urbain
+ne sont pas comparables à celles que l'on rencontre en montagne, où il
+est fréquent de rencontrer des longues montées et des descentes
+escarpées qui influent sur la vitesse de marche. L'estimation des
+distances de déplacement en milieu montagneux est donc réalisée avec
+des \emph{modèles de marche} plus avancés, adaptant l'estimation de la
+vitesse de déplacement en fonction du terrain.
 
 % Naismith
 Le plus ancien d'entre eux est le modèle de
