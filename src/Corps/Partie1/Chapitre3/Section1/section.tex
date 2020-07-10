@@ -699,9 +699,8 @@ conséquent, il n'y a pas de différence sémantique entre les phrases :
   est à quelques minutes de marche}. Comme les distances métriques,
 les temps de déplacement peuvent aussi bien s'exprimer de manière
 qualitative, comme dans l'exemple précédent, ou quantitative, comme
-dans la phrase : \enquote{C'est à trois minutes de marche}.
-
-Ces différents types de distance peuvent toutes se retrouver dans les
+dans la phrase : \enquote{C'est à trois minutes de marche}.  Ces
+différents types de distance peuvent toutes se retrouver dans les
 alertes que nous traitons, ainsi nous présenterons ici aussi bien les
 distances métriques (qualitatives et quantitatives) que les temps de
 déplacement.
@@ -711,16 +710,14 @@ calcul de la distance. Celle-ci doit t-elle être calculée à vol
 d'oiseau (\ie distance euclidienne) ou sur le réseau ? On peut
 également adopter d'autres approches, comme la distance de Manhattan,
 offrant une bonne approximation de la \emph{distance réseau} pour des
-maillages orthogonaux.
-
-Dans notre contexte d’application différentes méthodes de calcul de la
-distance peuvent être employées. La \emph{distance euclidienne}
-semble, en effet, plus adaptée au calcul de distances estimées
-visuellement, comme dans la phrase : \enquote{Il y a un chalet loin
-  devant moi}, alors que la distance réseau est plus pertinente pour
-\emph{spatialiser} des \emph{indices de localisation} décrivant une
-durée ou un distance de déplacement, comme dans la phrase :
-\enquote{Nous avons marché pendant 2 heures}.
+maillages orthogonaux. Dans notre contexte d’application différentes
+méthodes de calcul de la distance peuvent être employées. La
+\emph{distance euclidienne} semble, en effet, plus adaptée au calcul
+de distances estimées visuellement, comme dans la phrase : \enquote{Il
+  y a un chalet loin devant moi}, alors que la distance réseau est
+plus pertinente pour \emph{spatialiser} des \emph{indices de
+  localisation} décrivant une durée ou un distance de déplacement,
+comme dans la phrase : \enquote{Nous avons marché pendant 2 heures}.
 
 Si le calcul de la \emph{distance euclidienne} ne pose pas de
 problèmes spécifiques ce n'est pas le cas pour la \emph{distance
@@ -924,7 +921,7 @@ comprise.
 % utilisé par R.cost
 Cependant le modèle de \bsc{Langmuir-Naismith} à un défaut majeur, son
 comportement pour les faibles pentes
-(cf. \autoref{fig:modeles_marche}). En effet les vitesses de marche en
+(\autoref{fig:modeles_marche}). En effet les vitesses de marche en
 descente estimées sont très importantes et en fort décalage avec la
 tendance observée pour les courbes définies pour les montées et les
 grandes descentes. Cet effet est particulièrement marqué dans la
@@ -1046,10 +1043,16 @@ Les relations d'orientation relatives sont définies par
 % Travaux
 
 
-
-
-
 \subsubsection{Les relations de visibilité}
+
+Peut-on réellement parler de géographie sans parler de la vision ?
+Sans doute pas, du moins selon \textcite{Brunet1992}, pour qui la vue
+est \enquote{le sens premier du géographe}. Mais cette assertion nous
+semble réductrice, selon nous le sens de la vision est fondamental
+dans notre rapport à l'espace. Il est par conséquent courant de
+décrire une position à partir de ce que l'on y voit. Il nous semble
+donc indispensable de pouvoir \emph{spatialiser} des descriptions
+visuelles.
 
 Comme pour les \enquote{durées de déplacement}, détaillées ci-dessus,
 les \enquote{relations de visibilité} ne ne s'expriment pas à l'aide
@@ -1057,9 +1060,16 @@ d'une préposition spatiale, comme \enquote{sur} ou \enquote{dans}, il
 s'agit donc d'une \emph{relation de localisation,} mais pas d'une
 \emph{relation spatiale.}
 
-La question de la visibilité est importante dans le domaine du SIG
+Contrairement aux distances, où leur expression peu prendre plusieurs
+formes, les \emph{relations de localisation visuelles} sont toujours
+exprimé d'une même manière. On décrit ce qu'on a (ou pas) dans notre
+champ de vision. Ainsi la spatialisation de ce type \emph{d'indice de
+  localisation} nécessite de pouvoir construire le champ de visibilité
+d'un objet, quelque soit sa nature.
 
-Visibilité Brunet ?
+La question de la construction de zones de visibilités a été
+longuement abordée dans le domaine des SIG, notamment en vue
+d’applications pour l'étude de paysages.
 
 
 \tdi{citer \url{https://journals.openedition.org/cybergeo/27862}}
