@@ -93,48 +93,50 @@
     % \addplot[restrict x to domain={0:60}, thick] {naismith(4,0.45)};
     % \addlegendentry{\textcite{Naismith1892}}
 
-    % Langumir 1984
-    \addplot[restrict x to domain={-60:-12},  thick, Q0-12] {langmuir1(5)};
-    \addplot[restrict x to domain={-12:-5},  thick, Q0-12] {langmuir2(5)};
-    \addplot[restrict x to domain={-5:0},  thick, Q0-12] {5};
-    \addplot[restrict x to domain={0:60},  thick, Q0-12] {naismith(5,0.6)};
 
-    % Langmuir 2013
-    \addplot[restrict x to domain={-60:-12},  thick, Q1-12] {langmuir1(4)};  
-    \addplot[restrict x to domain={-12:-5},  thick, Q1-12] {langmuir2(4)};
-    \addplot[restrict x to domain={-5:0},  thick, Q1-12] {4};
-    \addplot[restrict x to domain={0:60},  thick,  Q1-12]
-    {naismith(4,0.45)};
-    
     % \draw[black] (axis cs:-12,2) -- (axis cs:-12,12);
     % \draw[black] (axis cs:-5,7) -- (axis cs:-5,5);
 
     % Tobler
-    \addplot[thick, Q2-12] {tobler(1)}; % Normal
-    \addplot[thick, Q3-12] {tobler(0.6)}; % Sur sentier
+    \addplot[ultra thick, Q3-12] {tobler(1)}; % Normal
+    \addplot[dashed, ultra thick, Q3-12] {tobler(0.6)}; % Sur sentier
 
     % Rees
-    \addplot[ thick, Q4-12] {rees};
+    \addplot[ultra thick, Q4-12] {rees};
 
     % Irmischer
-    \addplot[thick, Q5-12] {irmischer_1}; % Normal
-    \addplot[thick, Q6-12] {irmischer_2}; % Sur sentier
+    \addplot[ultra thick, Q5-12] {irmischer_1}; % Normal
+    \addplot[dashed, ultra thick, Q5-12] {irmischer_2}; % Sur sentier
 
     % Kerouanton
 
     \addplot[restrict x to domain={5:60}, ultra thick, Q9-12] {kerouanton_1}; % Up
     \addplot[restrict x to domain={-60:-5}, ultra thick, Q9-12] {kerouanton_2}; % Down
 
+    % Langumir 1984
+    \addplot[restrict x to domain={-60:-12}, ultra  thick, Q0-12] {langmuir1(5)};
+    \addplot[restrict x to domain={-12:-5},  ultra thick, Q0-12] {langmuir2(5)};
+    \addplot[restrict x to domain={-5:0},  ultra thick, Q0-12] {5};
+    \addplot[restrict x to domain={0:60},  ultra thick, Q0-12] {naismith(5,0.6)};
+
+    % Langmuir 2013
+    \addplot[restrict x to domain={-60:-12}, dashed, ultra thick, Q0-12] {langmuir1(4)};  
+    \addplot[restrict x to domain={-12:-5}, dashed, ultra thick, Q0-12] {langmuir2(4)};
+    \addplot[restrict x to domain={-5:0}, dashed, ultra thick, Q0-12] {4};
+    \addplot[restrict x to domain={0:60}, dashed, ultra thick,  Q0-12]
+    {naismith(4,0.45)};
+    
+    
     \legend{
-     \textcite{Langmuir1984},,,,
-     \textcite{Langmuir2013},,,,
-     {\textcite{Tobler1993}, \(g=1\)},
-     {\textcite{Tobler1993}, \(g=0,6\)},
-     \textcite{Rees2004},
-     {\textcite{Irmischer2017}},
-     {\textcite{Irmischer2017}, \emph{sur sentier}},
-     \textcite{Kerouanton2020}
-     }
+      {\textcite{Tobler1993}, \(g=1\)},
+      {\textcite{Tobler1993}, \(g=0,6\)},
+      \textcite{Rees2004},
+      {\textcite{Irmischer2017}},
+      {\textcite{Irmischer2017}, \emph{sur sentier}},
+      \textcite{Kerouanton2020},,
+      \textcite{Langmuir1984},,,,
+      \textcite{Langmuir2013},,,,
+    }
 
 
   \end{axis}
