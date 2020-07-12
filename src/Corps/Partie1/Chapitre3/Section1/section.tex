@@ -317,7 +317,30 @@ présentées par leur XXXXXX
 \tdi{(Guarino, 1998) distingue trois niveaux d’ontologies}
 
 \tdi{Présentation de la logique de description et des extensions floues}
-\tdi{Présentation OWL}
+
+% OWL
+Les ontologies peuvent être représentées avec une grande variété de
+langages.
+
+\textcite{Gruber1993}, utilise par exemple le langage KIF, dont la
+syntaxe est inspirée du langage de programmation LISP.
+
+La majeure partie des ontologies récentes sont formalisées à l'aide du
+langage OWL, qui est lui-même une extension du langage RDFS. Ces deux
+langages, portés par le W3C, ont étés développés dans le cadre du web
+sémantique.
+
+Le Langage OWL a comme particularité d'avoir trois dialectes
+différents, qui correspondent à autant de types de logiques de
+description. Le plus simple d'entre-eux est le langage OWL-lite,
+correspondant à la logique de description SHIF(D), puis vient le
+langage OWL-DL, correspondant à la logique de description SHOIN(D) et
+enfin le langage OWL-full, correspondant à la logique de description
+SROIQ(D). Le dialect OWL-DL inclut donc le dialecte OWL-Lite et est
+lui-même inclut dans le dialecte OWL-full. L’intérêt de l'existance de
+ces trois dialectes est d’offrir la possibilité d'adapter la richesse
+de la sémantique et la complexité des calculs à la situation
+modélisée.
 
 \subsubsection{Les taxonomies et ontologies de relations de localisations
   existantes}
@@ -335,14 +358,44 @@ lequel elles ont été initialement conçues \autocite{Hudelot2008a}.
 La plus récente, et probablement la plus ambitieuse, d'entre-elles est
 l'ontologie GUM-Space (aussi connue sous le nom d'OntoSpace), déjà
 présentée \autocite{Bateman2010}.
-%
-Cette ontologie est l'extension spatiale de l'ontologie GUM
-(\emph{Generalized Upper Model}), destinée
+Cette dernière définit une hiérarchie assez complète des différentes
+\emph{relations de localisations.} Le premier niveau hiérarchique de
+l'ontologie distingue trois classes :
+% 
+\begin{enumerate*}
+\item les relations de distance (\emph{SpatialDistanceModality}),
+\item les relations fonctionnelles
+  (\emph{FunctionalSpatialModality}) et
+\item les relations relatives (\emph{RelativeSpatialModality}).
+\end{enumerate*}
+% 
+Ces trois catégories ne sont cependant pas mutuellement disjointes, un
+même concept peut donc hériter de plusieurs de ces classes. C'est par
+exemple le cas des \emph{relations de localisation} \emph{Front, Back,
+  Left} ou \emph{RightProjectionExternal,} qui décrivent une situation
+où le sujet est à l'extérieur et, respectivement, devant, derrière, à
+gauche ou à droite de l'objet de référence. \textcite{Bateman2010}
+considèrent que ces concepts se rattachent, à la fois, aux
+\emph{RelativeSpatialModality,} puisqu'il s'agit de \emph{relations
+  projectives,} mais également aux \emph{SpatialDistanceModality,}
+puisqu'une notion de proximité est implicitement présente dans ces
+concepts. En effet, on ne dira pas de deux objets très éloignés, que
+l'un est \enquote{devant} l'autre.
 
 % Ontoi 2
+Contrairement GUM-Space, les ontologies des \emph{relations de
+  localisation} proposées par
+\textcite{Dasiopoulou2005,Miron2007,Hudelot2008a} ont été construites
+pour application spécifique. L'ontologie de \textcite{Dasiopoulou2005}
+est, par exemple, destinée à l'identification automatisée d'objets
+dans des vidéos. Cette dernière définit des relations topologiques et
+directionnelles. 
 
-% Onto 3
-
+Quant a ONTOAST \autocite{Miron2007}, il s'agit d'une ontologie ne
+définissant que des \emph{relations de localisation} qualitatives. Ces
+dernières peuvent êtres topologiques (les relations définies sont
+équivalentes à celles du modèle RCC8), directionnelles ou bien de
+distance.
 
 % Hudelot 
 Enfin, l'ontologie FRSO (\emph{Fuzzy Spatial Relation Ontology}),
@@ -352,15 +405,12 @@ automatique d'images médicales. Les auteurs justifient le
 développement d'une ontologie des \emph{relations de localisation} par
 l'inadaptation des ontologies déjà existantes pour l'interprétation
 d'images.
-
+%
 La particularité principale de l'ontologie FRSO est qu'elle est basée
 sur une extension floue de la \emph{logique de description.}
-
+%
 Dans cette ontologies sont distinguées 8 relations directionnelles, 3
-relations de diostance
-
-
-
+relations de distance et 8 relations topologiques sont définies.
 
 \subsection{Travaux sur différentes familles de relations}
 
@@ -1045,6 +1095,11 @@ Les relations d'orientation relatives sont définies par
 
 \subsubsection{Les relations de visibilité}
 
+\tdi{citer \url{https://journals.openedition.org/cybergeo/27862}}
+
+\autocite{Llobera2003}
+
+% Cadre théorique
 Peut-on réellement parler de géographie sans parler de la vision ?
 Sans doute pas, du moins selon \textcite{Brunet1992}, pour qui la vue
 est \enquote{le sens premier du géographe}. Mais cette assertion nous
@@ -1053,6 +1108,8 @@ dans notre rapport à l'espace. Il est par conséquent courant de
 décrire une position à partir de ce que l'on y voit. Il nous semble
 donc indispensable de pouvoir \emph{spatialiser} des descriptions
 visuelles.
+
+\paragraph{La visibilité comme relation spatiale}
 
 Comme pour les \enquote{durées de déplacement}, détaillées ci-dessus,
 les \enquote{relations de visibilité} ne ne s'expriment pas à l'aide
@@ -1071,8 +1128,25 @@ La question de la construction de zones de visibilités a été
 longuement abordée dans le domaine des SIG, notamment en vue
 d’applications pour l'étude de paysages.
 
+% Applications
 
-\tdi{citer \url{https://journals.openedition.org/cybergeo/27862}}
+\paragraph{Visibilité bivalente}
+
+\paragraph{Visibilité multivalente}
+
+D'autres travaux proposent de traiter les relations de visibilité de
+manière multivalente, \ie en distinguant les situations où la
+visibilité est partielle de celles ou la visibilité est
+totale. \textcite{Ramos2003}, par exemple, définit la notion de
+\emph{fenêtre de visibilité,} qui est la géométrie 3D englobant toutes
+les lignes reliant la géométrie observée à la géométrie de
+l'observateur. Cette modélisation vectorielle permet de construire
+l'intersection de la fenêtre de visibilité avec le relief et le
+sursol. \textcite{Ramos203} définit 3 types de visibilité en fonction
+de l'intersection de la \emph{fenêtre de visibilité.} Si elle est
+entièrement visible la visibilité est totale, si elle est totalement
+obstrué alors l'objet est invisible et si elle est partielle obstruée
+la visibilité est partielle.
 
 
 
