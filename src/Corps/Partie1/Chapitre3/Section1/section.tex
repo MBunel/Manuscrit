@@ -209,31 +209,74 @@ Le modèle normalisé \enquote{ISO-Space}, proposé par
 Ce modèle 
 
 
-\subsection{Classification des \emph{relations de localisation}}
+\subsection{\texttt{Titre}}
 
-\subsubsection{Critères de classification}
+Comme nous expliquions précédemment, plusieurs catégories de
+\emph{relations de localisation} peuvent êtres définies. On peut par
+exemple distinguer celles qui sont exprimées à l'aide d'une
+\emph{préposition spatiale} (\ie les relations spatiales) et celles
+qui ne le sont pas. Mais on peut également utiliser d'autres critères,
+par exemple sémantiques ou morphologiques. De nombreux travaux ont
+cherché a catégoriser les \emph{relations de localisation} en fonction
+de ces critères (ou d'autres) à la fois pour en faciliter la
+compréhension, pour mettre en évidence des similarités ou des
+redondances, mais également dans le but d'appliquer ces
+classifications à des cas concrets, comme la \emph{spatialisation
+  d'indices de localisation.} Nous allons présenter ces différentes
+classifications proposées dans la littérature et ce à l'aide d'une
+démarche en deux étapes. Dans un premier temps, nous présenterons les
+différentes classifications des \emph{relations de localisation}
+proposées dans la littérature, puis nous focaliserons sur une
+catégorie particulière de classification, les \emph{ontologies,} qui
+formalisent ces classifications.
 
-Les classification des \emph{relations de localisation} proposées dans
-la littérature sont généralement organisées suivant un critère donné.
+\subsubsection{Classification des \emph{relations de localisation}}
 
-Mais on trouve également des organisations \enquote{hybrides}, fondées
-sur plusieurs critères de classement.
 
-Le choix du critère de classement nous semble fortement lié au domaine
+
+\paragraph{Critères de classification}
+
+La définition de classes de relations de localisation nécessite de
+définir un ensemble de critères de catégorisation. La majorité des
+catégorisations de \emph{relations de localisation} que nous avons
+rencontrées utilisent un seul critère, par exemple la
+\emph{sémantique,} ou le\emph{ niveau d'astraction.} Mais on trouve
+également des organisations \enquote{hybrides}, utilisant plusieurs
+critères de classement.
+
+Le choix de ce critère nous semble fortement lié au domaine
 d’application de la classification et plus encore à sa discipline de
-rattachement. Dans le domaine de la linguistique, les classifications
-sont majoritairement organisées suivant un critère sémantique, les
-groupes de \emph{relations de localisation} sont constitués en
-fonction de leur sens et non en fonction de critères comme leur
-formalisation. À l'inverse, les classifications constituées en vue
-d'une implémentation, quel qu'en soit le type, comme celles proposées
-par \textcite{Hudelot2008a,Bloch2013}, sont généralement fondées sur
-des critères tels que la méthode de formalisation.
+rattachement. En linguistique, par exemple, les classifications sont
+généralement organisées suivant un critère sémantique. Par exemple, on
+distinguera les \emph{relations de localisation} traduisant un
+mouvement, de celles décrivant une position fixe
+\autocite{Borillo1998}. À l'inverse, les classifications réalisées
+dans des domaines se rattachant à l'informatique et généralement
+constituées en vue d'une implémentation utilisent des critères qui
+renvoient à la méthode de formalisation de la relation de
+localisation, par exemple en distinguant les \emph{relations
+  topologiques} (\ie invariantes par déformation) et les relations
+métriques, nécessitant des mesures de distance ou d'angles.
 
-\subsubsection{Classifications trouvées dans la littérature}
+Ce qui différencie ces deux types de classification est leur degré
+d'abstraction. En effet, les classifications basés sur la sémantique
+des \emph{relation de localisation} adoptent un point de vue proche de
+l'utilisateur et de sa perception de l'espace. Alors que les
+classifications utilisant la formalisation des \emph{relations de
+  localisation} comme critère de classification son plus proches de
+considérations mathématiques ou
+informatiques. Par ailleurs, \textcite{Clementini2008,Bucher2012}
+utilisent le critère de l’abstraction pour distinguer les \emph{relations de
+localisations.} \textcite{Clementini2008}, par exemple distinguent
+trois classes, le niveau mathématique qui trait à la formalisation des
+\emph{relations de localisation,} le niveau informatique, qui
+correspond à l'implémentation de cette formalisation et enfin le
+\emph{niveau utilisateur} où les \emph{relations de localisation} sont
+définies d'une manière plus concrète du point de vue de l'utilisateur,
+\ie équivalente à une classification basée sur la sémantique des
+\emph{relations de localisation.}
 
-
-
+\paragraph{Classifications trouvées dans la littérature}
 
 Dans le domaine de la linguistique plusieurs catégorisations des
 \emph{relations de localisation} ont été
@@ -308,11 +351,10 @@ sont plus variables, par exemple, la classe des \emph{relations
 classification de \textcite{Borillo1998}, ou non, comme dans les
 classification de \textcite{Bateman2010, Pustejovsky2017}.
 
-\subsection{\texttt{TITRE}}
 
-\subsubsection{La notion d'ontologie}
+\subsubsection{Taxonomies et ontologies des \emph{relations de localisation}}
 
-La notion \emph{d'ontologie}
+\paragraph{La notion \emph{d'ontologie}}
 
 Les ontologies se distinguent des classifications précédemment
 présentées par leur XXXXXX
@@ -346,7 +388,7 @@ ces trois dialectes est d’offrir la possibilité d'adapter la richesse
 de la sémantique et la complexité des calculs à la situation
 modélisée.
 
-\subsubsection{Les taxonomies et ontologies de relations de localisations
+\paragraph{Les taxonomies et ontologies de relations de localisations
   existantes}
 
 La définition d'ontologies des relations spatiales
