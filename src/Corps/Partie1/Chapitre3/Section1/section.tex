@@ -1,5 +1,9 @@
 \tdi{Voir comment citer les 2 naive physics manifestos}
 
+La \emph{spatialisation} des \emph{indices de localisation} nécessite
+de développer des méthodes adaptées
+
+
 
 \subsection{Éléments généraux sur la localisation par référencement
   indirect et formalisation d'une relation de localisation}
@@ -1053,12 +1057,24 @@ données empiriques.
 
 \paragraph{Les relations directionnelles}
 
-
-\textcite{Frank,} recense deux catégories, les modèles à secteur (ou
+\textcite{Frank1992} recense deux catégories de modèles permettant de
+modéliser les directions : les modèles à secteur (ou
 \emph{cone-based}), dérivés du travail de \textcite{Peuquet1987} et
-les modèles utilisant des demi-plans, dont la première utilisation a
-été proposée par XXXXXX.
+les modèles à demi-plans. Dans les modèles à secteur la direction est
+définie en fonction d'un cône d'angle donné. Dans les modèles à
+demi-plan les directions sont définies à l'aide de deux plans,
+séparant l'espace en deux direction, par exemple le nord et le
+sud. Ces plans peuvent ensuite être combinés pour raffiner les
+directions. Par exemple, la combinaison des demi-plans définissant le
+nord, le sud, l'est et l'ouest permet de créer quatre nouvelles
+directions cardinales, le nord-ouest, le nord-est, le sud-est et le
+sud-ouest.
 
+\missingfigure{}
+
+\textcite{Frank1992} propose une extension du modèle a demi-plans
+définissant une zone neutre, plus adaptée aux objets d'extension
+spatiale non-nulle.
 
 % Cone based
 
@@ -1128,11 +1144,20 @@ La question de la construction de zones de visibilités a été
 longuement abordée dans le domaine des SIG, notamment en vue
 d’applications pour l'étude de paysages.
 
+Mais la notion de visibilité peu également s'appliquer à des éléments
+de localisation tels que : \enquote{Je suis à l'ombre}, que l'on
+retrouve notamment dans le \emph{fil rouge} (\ref{}). En effet, être,
+ou non, à l'ombre revient à avoir, ou non, une relation de visibilité
+avec le Soleil. Or, dans un contexte montagnard les ombres sont très
+présentes à cause des reliefs, la possibilité d'identifier les zones
+situés au Soleil ou à l'ombre est donc utile pour localiser des
+personnes \autocite{Houpert2003}.
+
 % Applications
 
-\paragraph{Visibilité bivalente}
+\paragraph{Visibilité planaire}
 
-\paragraph{Visibilité multivalente}
+\tdi{viewshed}
 
 D'autres travaux proposent de traiter les relations de visibilité de
 manière multivalente, \ie en distinguant les situations où la
@@ -1148,7 +1173,42 @@ entièrement visible la visibilité est totale, si elle est totalement
 obstrué alors l'objet est invisible et si elle est partielle obstruée
 la visibilité est partielle.
 
+\textcite{Lonergan2016} ont, quant a eux, proposé de prendre en compte
+les capacités perspectives des observateurs. En effet, dans les
+approches précédemment présentée, l'observateur est modélisé par une
+géométrie, sans que ces caractéristiques perspectives, comme son champ
+de vision, soient prises en compte. \textcite{Lonergan2016}
+définissent le concept de \emph{fenêtre de visibilité} comme un
+sous-ensemble du \emph{bassin de visibilité,} du quel on aurait retiré
+toutes les zones invisibles, compte-tenu des capacités perspectives de
+l'observateur. Un être humain, par exemple, ne peut voir que dans une
+direction donnée, et pas à 360 degrés autour de lui. La prise en
+compte des capacités perspectives permet à \textcite{Lonergan2016} de
+définir une typologies des relations de visibilité, distinguant, par
+exemple, les moments où l'observateur se focalise sur un point (ce qui
+tend à réduire son champ de vision) de ceux où il scanne le paysage
+(et ou l'observateur regarde dans toutes les directions autour de
+lui).
 
+\paragraph{Études tangentielles ??}
+
+D'autres travaux proposent quant à eux d'étudier les positions
+relatives des objets dans le champ de vision de l'observateur.
+
+\textcite{Santos2015} proposent, par exemple, une typologie des
+relations de visibilité fondée sur les relations de Allen. Cette
+typologie permet de décrire les relations entre deux objets, du point
+de vue d'un observateur qui aurait un champ de vision de 180 degrés.
+
+% ROC 20
+\textcite{Randell2001} proposent une solution similaire avec le ROC-20
+(\emph{Region Occlusion Calculus}), une formalisation des relations
+topologiques entre les silhouettes des objets vus par
+l'utilisateur. Ce modèle permet également de modéliser des positions
+relatives entre objets vus (\eg du point de vue de l'utilisateur
+l'objet \emph{a} est à gauche de \emph{b}), mais également des
+relations d'occlusion relative (\eg \emph{a} cache un bout de \emph{b}
+et inversement).
 
 %%% Local Variables:
 %%% mode: latex
