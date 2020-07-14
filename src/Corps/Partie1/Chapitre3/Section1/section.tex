@@ -234,13 +234,13 @@ formalisent ces classifications.
 
 \paragraph{Critères de classification}
 
-La définition de classes de relations de localisation nécessite de
+La classification de \emph{relations de localisation} nécessite de
 définir un ensemble de critères de catégorisation. La majorité des
 catégorisations de \emph{relations de localisation} que nous avons
 rencontrées utilisent un seul critère, par exemple la
 \emph{sémantique,} ou le\emph{ niveau d'astraction.} Mais on trouve
-également des organisations \enquote{hybrides}, utilisant plusieurs
-critères de classement.
+également des organisations \enquote{hybrides}, qui combinent
+plusieurs critères.
 
 Le choix de ce critère nous semble fortement lié au domaine
 d’application de la classification et plus encore à sa discipline de
@@ -253,8 +253,9 @@ dans des domaines se rattachant à l'informatique et généralement
 constituées en vue d'une implémentation utilisent des critères qui
 renvoient à la méthode de formalisation de la relation de
 localisation, par exemple en distinguant les \emph{relations
-  topologiques} (\ie invariantes par déformation) et les relations
-métriques, nécessitant des mesures de distance ou d'angles.
+  topologiques} (\ie invariantes par déformation) et les
+\emph{relations métriques,} nécessitant des mesures de distance ou
+d'angles.
 
 Ce qui différencie ces deux types de classification est leur degré
 d'abstraction. En effet, les classifications basés sur la sémantique
@@ -276,25 +277,10 @@ définies d'une manière plus concrète du point de vue de l'utilisateur,
 
 \paragraph{Classifications trouvées dans la littérature}
 
-Dans le domaine de la linguistique plusieurs catégorisations des
-\emph{relations de localisation} ont été
-proposées. \textcite{Pustejovsky2017} distingue quatre classes de
-\emph{relations de localisation} :
-%
-\begin{enumerate*}[label=(\alph*)]
-\item les \emph{relations topologiques},
-  \item les relations \enquote{directionnelles ou
-  orientationnelles},
-  \item \emph{les relations métriques} et
-  \item les relations liées au mouvement d'un objet.
-\end{enumerate*}
-%
-
-\textcite{Bateman2010} distinguent quand à eux les \emph{relations de
-  distance}, les \emph{relations fonctionnelles} et les
-\emph{relations relatives.}
-
-\textcite{Borillo1998} propose quand à elle une classification selon
+Parmi les différentes classifications de relations de localisation que
+nous avons recensées, la classification de \textcite{Borillo1998} est
+représentative des classifications fondées sur un critère
+sémantique. \textcite{Borillo1998} propose une classification selon
 deux critères sémantiques, distinguant les \emph{relations spatiales
   statiques} des \emph{dynamiques}, et les \emph{relations spatiales
   internes} (ou \emph{topologiques}) des \emph{relations spatiales
@@ -319,8 +305,29 @@ celle qui en est donnée dans d'autres classifications. Pour
 \enquote{au nord de}), une distance (\eg \enquote{proche de}) ou une
 position sur l'axe vertical (\eg \enquote{sous}), qui sont distinguées
 dans d'autres classifications, sont ici regroupés en une seule classe.
-% 
-Cette catégorisation XXXX
+
+\textcite{Pustejovsky2017} distingue quand à lui quatre classes de
+\emph{relations de localisation} :
+%
+\begin{enumerate*}[label=(\alph*)]
+\item les \emph{relations topologiques},
+  \item les relations \enquote{directionnelles ou
+  orientationnelles},
+  \item \emph{les relations métriques} et
+  \item les relations liées au mouvement d'un objet.
+\end{enumerate*}
+%
+
+
+\textcite{Bateman2010} distinguent quand à eux les \emph{relations de
+  distance}, les \emph{relations fonctionnelles} et les
+\emph{relations relatives.} Cette proposition de classification adopte
+une démarche hybride, combinant à la fois des critères sémantiques et
+des critères liés à l'implémentation. Les \emph{relations
+  fonctionnelles} correspondent, en effet, à des \emph{relations de
+  localisation} définies du point de vue de l'utilisateur, alors que
+les \emph{relations de distance} sont plus proches de
+l'implémentation.
 
 D'autres travaux \autocite{Hudelot2008a} utilisent également une
 catégorisation en deux classes, similaire à celle de
@@ -330,15 +337,31 @@ différents. \textcite{Hudelot2008a}, par exemple, distingues les
 \emph{métriques,} classe elle-même subdivisée en deux catégories, les
 \emph{relations directionnelles} et de \emph{distance.} Bien que
 similaires, ces classes ne sont pas équivalentes à celles proposées
-par \textcite{Borillo1998}.
-%
-\textcite{Bloch2013} proposera une extension de la classification
-d'\textcite{Hudelot2008a}, en y ajoutant une nouvelle classe au
-premier niveau hiérarchique, celle des \emph{relations de localisation
-  complexes,} incluant les \emph{relations ternaires,} \emph{n-aires}
-et certaines \emph{relations binaires} comme celle énoncée par la
-préposition \enquote{parallèle à}.
-
+par \textcite{Borillo1998}. En effet, la classification de
+\textcite{Borillo1998} se fonde sur des critères fonctionnels, plus
+proche du point de vue de l'utilisateur. Même si le terme de
+\enquote{topologique} est utilisé, il ne qualifie pas la théorie
+mathématique, mais, plus généralement, les \emph{relations de
+  localisation} impliquant un partage de position, comme l'indique
+l'utilisation par \textcite{Borillo1998} du terme, ici employé comme
+synonyme, de \emph{relation interne.} La classification proposée par
+\textcite{Hudelot2008a} est très similaire à celle proposée par
+\textcite{Kuipers1988} (qui distinguent les relations
+\emph{topologiques} ou \emph{métriques}). \textcite{Louwsma2006}
+adoptent quand à eux une logique différente, le premier niveau de leur
+classification distingue les relations \emph{métriques} et
+\emph{non-métriques}, ce qui peut sembler similaire aux travaux de
+\textcite{kuipers1988,Hudelot2008a}, mais \textcite{Louwsma2006}
+incluent dans les relations \emph{non-métriques} les \emph{relations
+  projectives} et les \emph{relations topologiques.} Par conséquent,
+propose avant tout une distinction entre \emph{xrelations de
+  localisation qualitatives} et \emph{relations de localisation
+  quantitatives.} \textcite{Bloch2013} proposera une extension de la
+classification d'\textcite{Hudelot2008a}, en y ajoutant une nouvelle
+classe au premier niveau hiérarchique, celle des \emph{relations de
+  localisation complexes,} incluant les \emph{relations ternaires,}
+\emph{n-aires} et certaines \emph{relations binaires} comme celle
+énoncée par la préposition \enquote{parallèle à}.
 
 Comme le font remarquer \textcite{Duchene2019}, l'ensemble des
 classifications présentées ici, qu'elles soient organisés suivant une
@@ -348,7 +371,6 @@ sont plus variables, par exemple, la classe des \emph{relations
   projectives} peut inclure les relations métriques, comme dans la
 classification de \textcite{Borillo1998}, ou non, comme dans les
 classification de \textcite{Bateman2010, Pustejovsky2017}.
-
 
 \subsubsection{Taxonomies et ontologies des \emph{relations de localisation}}
 
@@ -1081,7 +1103,7 @@ données empiriques.
 
 \begin{figure}
   \centering
-  \input{../figures/modeles_marche.tex}
+  %\input{../figures/modeles_marche.tex}
   \caption{Vitesse de marche estimée en fonction de la pente par les
     différents modèles de marche proposés dans la littérature.}
   \label{fig:modeles_marche}
@@ -1129,7 +1151,7 @@ sud-ouest.
 
 \textcite{Frank1992} propose une extension du modèle a demi-plans
 définissant une zone neutre, plus adaptée aux objets d'extension
-spatiale non-nulle. 
+spatiale non-nulle (\autoref{fig:mod_orient_half2}).
 
 \begin{figure}
   \centering
@@ -1154,11 +1176,8 @@ différentes. Comme dans les modèles dérivés du modèle 4IM, ces
 relations sont formalisées à l'aide d'une matrice, ou chacune des 5
 valeurs correspond à une des 5 zones définies par le modèle.
 
-% Modélisation floues
-
 Enfin, comme pour les modèles topologiques, des extensions
 tridimensionnelles de ces modèles ont été proposées.
-
 
 
 \paragraph{Les relations d'orientation relative}
