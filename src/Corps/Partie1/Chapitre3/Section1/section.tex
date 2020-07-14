@@ -179,35 +179,134 @@ Par exemple, dans la phrase \enquote{il est à ma gauche}, le cadre de
 \emph{référence} est explicité. L'article définit \enquote{ma} indique
 que le locuteur utilise sa ligne de vue comme référence.
 
-\subsubsection{Modélisation formelle d'une relation}
+\subsubsection{Modélisation formelle d'un \emph{indice de localisation}}
 
-\paragraph{Modèles morphologiques}
+Dans leur ontologie \textcite{Bateman2010} définissent les notions
+\emph{d'objet} (qui peut être localisé) et de \emph{place,} le lieu où
+un \emph{objet} peut être localisé. La particularité des \emph{places}
+est qu'elles peuvent êtres définies à partir d'un \emph{objet de
+  référence,} ce qui permet la modélisation \emph{d'indices de
+  localisation récursifs,} comme dans la phrase \enquote{À gauche de
+  l'ordinateur il y a une clé USB}, tirée de
+\textcite{Bateman2010}. On retrouve dans cet exemple deux
+\emph{indices de localisation distincts.} Le premier, décrit la
+position d'une clé USB à partir d'un \emph{objet de référence} (ou
+\emph{place} selon le vocabulaire de \textcite{Bateman2010}) dont la
+position est définie par un second \emph{indice de localisation.} Dans
+cette ontologie, le lieu \enquote{À gauche de l'ordinateur} est
+qualifié de \emph{GeneralizedLocalisation}. Cet objet est lui-même
+composé de deux parties, la \emph{SpatialModality,} qui correspond à
+ce que nous appelons \emph{relation de localisation} (ici \emph{À
+  gauche de} et le \emph{relatum,} ou \emph{objet de référence} selon
+notre vocabulaire (ici \emph{l'ordinateur}). On peut remarquer que cet
+ontologie conserve la structure en trois éléments distincts
+(\emph{objet à localiser,} \emph{objet de référence} et \emph{relation
+  de localisation}) que nous avions déjà présentés. C'est une
+caractéristique également partagée avec la formalisation des
+\emph{indices de localisation} proposée par \textcite{Vasardini2013},
+dans le but de construire des croquis de situations à partir de
+descriptions textuelles de positions. \textcite{Vasardini2013}
+proposent de représenter les \emph{indices de localisation} par des
+\emph{triplets,} de la forme : \(\langle L, r, R_o\rangle\) où \(L\)
+est l'objet à localiser, \(r\) la \emph{relation de localisation} et
+\(R_o\) \emph{l'objet de référence.} Par exemple, la phrase
+\enquote{Je suis à côté d'une pizzeria} sera formalisée de la manière
+suivante :
+\(\langle \text{Je},\ \text{à côté},\ \text{pizzeria} \rangle\). Ce
+formalise en triplets et ensuite utilisé pour définir un graphe, dont
+les objets spatiaux (\ie le \(L\) et le \(R_o\) d'un triplet) sont les
+nœuds et la \emph{relation de localisation} les arêtes
+orientées. Cette formalisation permet, comme dans l'ontologie de
+\textcite{Bateman2010}, de définir des indices de localisation
+récursifs.
 
+Comme le modèle de \textcite{Vasardini2013}, le modèle normalisé
+\enquote{ISO-Space}, proposé par \textcite{Pustejovsky2017}, a pour
+objectif de faire le lien entre une description de position textuelle
+et sa représentation spatiale. Ce modèle est cependant beaucoup plus
+détaillé que la proposition de \textcite{Vasardini2013}. D'une part
+car le modèle ISO-Space offre la possibilité de modéliser des
+déplacements. Une autre particularité de ce modèle est qu'il est
+construit au dessus de l'ontologie de \textcite{Bateman2010}, ainsi
+certains concepts, comme la \emph{spatial entity} (qui est l'objet à
+localiser) sont directement repris de GUM-Space.
 
+D'autres formalisations des \emph{relations de localisation} ont été
+proposées dans le domaine de la géomatique, plusieurs travaux
+nécessitant l'interprétation de \emph{relations de localisation.}
+C'est par exemple le cas de la généralisation automatique, dont
+l'objectif est de simplifier l'information cartographiée, tout en
+conservant les relations géographiques entre objets. Par exemple si
+l'on simplifie la géométrie d'une rue il est souhaitable que les
+bâtiments qui la longent, longent également la rue simplifiée. Ainsi,
+même si la donnée cartographiée ne correspond pas parfaitement à la
+réalité elle en conserve une caractéristique importante, les bâtiments
+sont alignés le long de la rue. Pour ce faire il est nécessaire
+d'expliciter ces relations entre objets
+cartographiés. \textcite{Duchene2004,Gaffuri2008} proposent, par
+exemple, de représenter ces relations sous la forme d'objets portant
+des contraintes quant à leur localisation. Quant à
+\textcite{Touya2012}, ils proposent une ontologie permettant de
+représenter les \emph{relations de localisation} entre objets
+cartographiques, mais également les méthodes permettant de vérifier
+ces relations.
 
-\paragraph{Modèles sémantiques}
+Toujours dans le deomaine de la généralisation cartographique,
+\textcite{Jaara2012} ont proposé un modèle permettant d'exprimer les
+\emph{relations de localisation} entre des objets géographiques, liés
+à une base de données et des objets thématiques qui s'y
+positionnent. Par exemple, un accident de la route est un objet
+thématique, lié à un objet géographique, le réseau routier. La
+modélisation de ces relations permet de conserver un lien cohérent
+entre ces deux types d'objets lors du changement des objets
+géographiques, par exemple lors du passage à un autre niveau de
+détail. Comme dans les travaux de \textcite{Duchene2004,Gaffuri2008,
+  Touya2012}, ce modèle permet donc d'exprimer des relations entre
+objets que l'on veut voir conservées lors d'une modification. Bien que
+trainant de \emph{relations de localisation,} ces travaux adoptent une
+modélisation très centrée sur leur domaine
+d’application. \textcite{Jaara2012} identifient, par exemple, deux
+types d'objets, les \emph{objets supports} et les \emph{objets
+  thématiques.} Bien que pouvant tout deux jouer le rôle de
+\emph{sujet} ou \emph{d'objet de référence} ils ne sont pas distingués
+selon ce critère, mais en fonction de leur nature, ce qui rend ce
+modèle assez différent de ce que proposent
+\textcite{Bateman2010,Pustejovsky2017}.
 
-Cette seconde catégorie de modèles formalise les \emph{relations de
-  localisations} indépendamment de toute considération linguistique
-et morphologique.
+Dans un domaine d’application assez différent, l'ontologie FRSO
+\textcite{Hudelot2008a} propose une formalisation des \emph{indices de
+  localisation} destinée à la segmentation automatique d'images
+médicales. Les positions relatives des organes humains étant connues à
+priori, la formalisation de cette connaissance permet d'ajouter des
+connaissances exogène lors de la segmentation automatisée des
+images. Une des particularités de l'ontologie de
+\textcite{Hudelot2008a} est qu'elle définir un concpet,
+\emph{ReferenceSystem,} qui permet de définir un \emph{cadre de
+  référence.}
 
-\textcite{Aurngague1997} proposent
+Enfin, \textcite{Trinh2012} propose un modèle permettant de formaliser
+des \emph{relations de localisations} entre objets au sein d'une scène
+3D. Comme dans l'ontologie FRSO, les \emph{relations de localisation}
+sont modélisées comme des concepts et non comme des relations. Ce
+modèle propose également la prise en compte de la notion de
+\emph{cadre de référence,} sauf que, contrairement à la proposition
+d'\textcite{Hudelot2008a}, deux cadres de référence distincts sont
+définis. Le premier définit implicitement et un second défini
+explicitement, lorsque les contraintes modélisées impliquent la
+présence d'un observateur.
 
-% 1
-\autocite{Bateman2010}
+Pour conclure sur ces différentes formalisation des \emph{indices de
+  localisation} on peut remarquer que, comme le signale
+\textcite{Duchene2019}, deux point essentiels. Le premier est celle
+qui consiste à modéliser les \emph{relations de localisation} comme
+des concepts, ce qui par ailleurs la solution majoritairement
+retenue. Le second point à noter est que la notion de \emph{cadre de
+  référence} est rarement modélisée alors que, comme nous
+l'expliquions précédemment, elle est indispensable à l'interprétation
+de certaines \emph{relations de localisation.}
 
-\paragraph{\enquote{ISO-Space}, un modèle pivot}
-
-Le modèle normalisé \enquote{ISO-Space}, proposé par
-\textcite{Pustejovsky2017}, a pour objectif d'être un pivot entre les
-\emph{modèles morphologiques,} destinés à l'annotation et les
-\emph{modèles sémantiques,} construits pour interpréter les
-\emph{relations de localisation.}
-
-Ce modèle 
-
-
-\subsection{\texttt{Titre}}
+\subsection{Classification et ontologies des \emph{relations de
+    localisation}}
 
 Comme nous expliquions précédemment, plusieurs catégories de
 \emph{relations de localisation} peuvent êtres définies. On peut par
@@ -429,22 +528,30 @@ modélisée.
 \paragraph{Les taxonomies et ontologies de relations de localisations
   existantes}
 
-La définition d'ontologies des relations spatiales
-
-\textcite{Duchene2019} ont identifié 4 ontologies qui se destinent à
-la modélisation de \emph{relations de localisation.}
-
-Bien que traitant des mêmes relations spatiales, ces ontologies sont
-souvent peu génériques et adaptée qu'au domaine d’application pour
-lequel elles ont été initialement conçues \autocite{Hudelot2008a}.
+On retrouve dans la littérature scientifique plusieurs propositions
+d'ontologies des \emph{relations de localisation.}
+\textcite{Duchene2019} en ont identifié 4 : GUM-Space
+\autocite{Bateman2010}, ONTOAST \autocite{Miron2007}, FRSO
+\autocite{Hudelot2008a} et l'ontologie proposée par
+\textcite{Dasiopoulou2005}. Ces 4 ontologies ne sont pas
+nécessairement construites pour formaliser exclusivement des
+\emph{relations de localisation.} Il peut, en effet, s'agir
+d'ontologies applicatives ayant, pour diverses raisons, nécessité
+l'ajout de \emph{relations de localisation,} c'est pas exemple le cas
+de l'ontologie de \textcite{Dasiopoulou2005}. Ainsi, les différents
+choix de modélisation qui ont été faits peuvent être très spécifiques
+au domaine d’application de l'ontologie. C'est d'ailleurs cette
+spécificité des ontologies préexistantes qui peut amener certains
+auteurs, notamment \textcite{Hudelot2008a}, à construire une nouvelle
+ontologie \emph{ad hoc.}
 
 % Bateman
 La plus récente, et probablement la plus ambitieuse, d'entre-elles est
 l'ontologie GUM-Space (aussi connue sous le nom d'OntoSpace), déjà
-présentée \autocite{Bateman2010}.
-Cette dernière définit une hiérarchie assez complète des différentes
-\emph{relations de localisations.} Le premier niveau hiérarchique de
-l'ontologie distingue trois classes :
+présentée \autocite{Bateman2010}.  Cette dernière définit une
+hiérarchie assez complète des différentes \emph{relations de
+  localisations.} Le premier niveau hiérarchique de l'ontologie
+distingue trois classes :
 % 
 \begin{enumerate*}
 \item les relations de distance (\emph{SpatialDistanceModality}),
