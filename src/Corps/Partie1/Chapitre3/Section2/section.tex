@@ -87,8 +87,8 @@ dans leur ensemble, avant de nous concentrer sur les liens entre
 cet état de l’art.  L’exercice de définition d’un concept équivoque,
 tel que le vague, n’est pas une tâche aisée, car l’on est rapidement
 confronté à l’imprécision sémantique du langage naturel. C’est, en
-partie, ce constat qui conduisit les philosophes Gottlob Frege
-(1848–1925) et Bertrand Russell (1872–1970) à travailler sur une
+partie, ce constat qui conduisit les philosophes Gottlob \bsc{Frege}
+(1848–1925) et Bertrand \bsc{Russell} (1872–1970) à travailler sur une
 formalisation mathématique de la logique, à même d’affranchir le
 processus de réflexion des ambiguïtés du langage naturel
 \autocite{Williamson1994}. La réflexion contemporaine sur les notions
@@ -177,49 +177,53 @@ préférerons le terme imprécis à celui de vague.
   \label{tab:termes_vague}
 \end{table}
 
-La notion d’imprécision peut être associée à d’autres concepts, comme
-l’exactitude chez \textcite{Russell1923}, que l’on retrouve chez
-\textcite{Bouchon-Meunier1995, Bouchon-Meunier2007} sous le nom
-d’incertitude. Ici, l’incertitude est entendue comme le doute que l’on
-peut avoir sur la validité d’une connaissance
-\autocite{Bouchon-Meunier1995}. L’imprécision et l’incertitude sont
-foncièrement liées et varient généralement en sens inverse
-\autocite{Russell1923}. Ainsi, si la proposition :
+La notion d’\emph{imprécision} peut être associée à d’autres concepts,
+comme l’\emph{exactitude} chez \textcite{Russell1923}, que l’on
+retrouve chez \textcite{Bouchon-Meunier1995, Bouchon-Meunier2007} sous
+le nom d’\emph{incertitude}. Ici, l’\emph{incertitude} est entendue
+comme le doute que l’on peut avoir sur la validité d’une connaissance
+\autocite{Bouchon-Meunier1995}. L’\emph{imprécision} et
+l’\emph{incertitude} sont foncièrement liées et varient généralement
+en sens inverse \autocite{Russell1923}. Ainsi, si la proposition :
 %
 \begin{enumerate*}[label=(\alph*)]
-  \item \enquote{la distance
-de la Terre à la Lune est de \SI{384397}{\kilo\meter}} est plus précise que la
-proposition :
+\item \enquote{la distance de la Terre à la Lune est de
+    \SI{384397}{\kilo\meter}} est plus \emph{précise} que la
+  proposition : \label{p1}
 \item \enquote{la distance de la Terre à la Lune est d’environ
-\SI{384000}{\kilo\meter}},
+\SI{384000}{\kilo\meter}}, \label{p2}
 \end{enumerate*}
 %
-mais la seconde proposition est plus certaine car, son
-cadre de validité (la plage de valeurs de la distance Terre-Lune) est
-plus large. On peut en effet, considérer que la proposition (2) reste
-vraie pour une distance réelle de 383 500 ou 384 999 km alors que la
-moindre variation de l’ordre d’un kilomètre suffit à invalider la
-première proposition (1). Dans certains cas, et notamment lorsque ces
-notions sont appliquées à des objets spatiaux, il peut être délicat de
-distinguer ces deux concepts. Cependant, ils sont fondamentalement
-différents : l’imprécision est une caractéristique invariable, alors
-que l’incertitude est contextuelle. Pour reprendre l’exemple
-précédent, la proposition (2) est imprécise et le restera quel que
-soit le contexte, alors que sa certitude dépend des connaissances de
-l’observateur. La véracité des propositions (1) et (2) est, toutes
-choses égales par ailleurs, invariable, mais la certitude de cette
-véracité est contextuelle.  L’imprécision et l’incertitude sont
-également associées à la notion d’incomplétude, qui désigne une
-connaissance partielle. Ceci est dû au fait qu’un manque de
-connaissances peut entraîner des incertitudes, mais également des
-imprécisions (Bouchon-Meunier, 1995 ; Bouchon-Meunier, 2007). Pour
-Bouchon-Meunier et plus généralement pour la communauté de chercheurs
-en intelligence artificielle, la composition de ces trois concepts
-définit la notion d’imperfection (Bouchon-Meunier, 1995). Dans la
-suite de ce document, nous travaillerons à partir de cette typologie,
-même si de nombreuses autres typologies de concepts ont cependant été
+mais la seconde proposition est plus \textsf{certaine} car, son cadre
+de validité (la plage de valeurs de la distance Terre-Lune) est plus
+large. On peut en effet, considérer que la proposition \ref{p2} reste
+vraie pour une distance réelle de \num{383500} ou
+\SI{384999}{\kilo\meter} alors que la moindre variation de l’ordre
+d’un kilomètre suffit à invalider la première proposition
+\ref{p1}. Dans certains cas, et notamment lorsque ces notions sont
+appliquées à des objets spatiaux, il peut être délicat de distinguer
+ces deux concepts. Cependant, ils sont fondamentalement différents :
+l’\emph{imprécision} est une caractéristique invariable, alors que
+l’\emph{incertitude} est contextuelle. Pour reprendre l’exemple
+précédent, la proposition \ref{p2} est imprécise et le restera quel
+que soit le contexte, alors que sa certitude dépend des connaissances
+de l’observateur. La véracité des propositions \ref{p1} et \ref{p2}
+est, toutes choses égales par ailleurs, invariable, mais la certitude
+de cette véracité est contextuelle.
+
+L’\emph{imprécision} et l’\emph{incertitude} sont également associées
+à la notion d’\emph{incomplétude}, qui désigne une connaissance
+partielle. Ceci est dû au fait qu’un manque de connaissances peut
+entraîner des \emph{incertitudes}, mais également des
+\emph{imprécisions}
+\autocite{Bouchon-Meunier1995,Bouchon-Meunier2007}. Pour
+\textcite{Bouchon-Meunier1995} et plus généralement pour la communauté
+de chercheurs en intelligence artificielle, la composition de ces
+trois concepts définit la notion d’\emph{imperfection.} Dans la suite
+de ce document, nous travaillerons à partir de cette typologie, même
+si de nombreuses autres typologies de concepts ont cependant été
 proposées, que ce soit dans le domaine de l’intelligence artificielle
-ou de la géomatique (Fisher et al.,, 2006).
+ou de la géomatique \autoref{Fisher2006}.
 
 \subsubsection{Imprécision et géographie}
 
@@ -394,48 +398,52 @@ d’incertitude spatiale.
 Comme expliqué précédemment, l’incertitude qualifie le doute que l’on
 peut avoir sur une connaissance. On peut donc définir l’incertitude
 spatiale comme le doute sur la position d’un objet. Ce concept peut
-être, tout du moins selon Tøssebro et Nygård (2002), décomposé en deux
-éléments : l’incertitude positionnelle et l’incertitude
-morphologique. L’incertitude positionnelle qualifie un doute sur la
-position d’un objet spatial. Tøssebro et Nygård (2008) prennent comme
-exemple l’estimation par sonar de la position d’un sous-marin. Ce cas
-offre une bonne opportunité pour distinguer imprécision et incertitude
-spatiale. L’objet sous-marin, est, de part sa nature d’artefact, net ;
-l’identification de ses frontières, à une échelle donnée, ne pose pas
-de problèmes. Cependant, sa position est mal connue, puisqu’estimée à
-l’aide d’un outil peu précis qui ne peut qu’estimer une zone de
-présence. La position de l’objet est donc incertaine. L’incertitude
-morphologique qualifie, quant à elle, un doute sur la forme de
-l’objet, c’est-à-dire. sur la position de sa frontière. C’est pourquoi
-on peut considérer que l’incertitude morphologique correspond à une
-incertitude positionnelle portant uniquement sur la frontière de
-l’objet. On peut prendre comme exemple une nappe phréatique, dont
+être, tout du moins selon \textcite{Tossebro2002}, décomposé en deux
+éléments : l’\emph{incertitude positionnelle} et l’\emph{incertitude
+  morphologique.} \emph{L’incertitude positionnelle} qualifie un doute
+sur la position d’un objet spatial. \textcite{Tossebro2008} prennent
+comme exemple l’estimation par sonar de la position d’un
+sous-marin. Ce cas offre une bonne opportunité pour distinguer
+\emph{imprécision} et \emph{incertitude spatiale.} L’objet sous-marin,
+est, de part sa nature d’artefact, net ; l’identification de ses
+frontières, à une échelle donnée, ne pose pas de problèmes. Cependant,
+sa position est mal connue, puisqu’estimée à l’aide d’un outil peu
+précis qui ne peut qu’estimer une zone de présence. La position de
+l’objet est donc \emph{incertaine.} \emph{L’incertitude morphologique}
+qualifie, quant à elle, un doute sur la forme de l’objet,
+c’est-à-dire. sur la position de sa frontière. C’est pourquoi on peut
+considérer que \emph{l’incertitude morphologique} correspond à une
+\emph{incertitude positionnelle} portant uniquement sur la frontière
+de l’objet. On peut prendre comme exemple une nappe phréatique, dont
 l’étendue ne peut être qu’estimée par des relevés terrain. Il est donc
 possible de savoir si la nappe est présente ou non en un point de
 mesure, mais non d’en définir la frontière, ce qui se traduit par une
-incertitude sur la position de la frontière, une incertitude
-morphologique telle que définie par Tøssebro et Nygård. La proximité
-des concepts d’incertitude morphologique et positionnelle peut
-expliquer pourquoi les autres définitions de l’incertitude spatiale,
-notamment issues des travaux de Clementini (2008), Lagacherie et
-al. (1996), Freksa et Barkowsky1 (1996) ou Schneider (1999) fusionnent
-ces deux notions. Dutton (1992), quant à lui, inclut ces deux notions
-dans sa définition de l’incertitude positionnelle.
+\emph{incertitude} sur la position de la frontière, \ie une
+\emph{incertitude morphologique} telle que déqfinie par
+\textcite{Tossebro2002,Tossebro2008}. La proqximité des concepts
+\emph{d’incertitude morphologique} et \emph{positionnelle} peut
+expliquer pourquoi les autres définitions de l’\emph{incertitude}
+spatiale, notamment issues des travaux de \textcite{Clementini2008},
+\textcite{Lagacherie1996}, \textcite{Freksa1996}\footnote{} ou
+\textcite{Schneider1999} fusionnent ces deux
+notions. \textcite{Dutton1992}, quant à lui, inclut ces deux notions
+dans sa définition de \emph{l’incertitude positionnelle.}
 
-On peut illustrer la notion d’incertitude spatiale en réutilisant
-l’exemple de la délimitation du lac du Chambon (Figures 1 et
-2). Lorsque nous avons tracé la limite du niveau maximal de l’eau
+On peut illustrer la notion \emph{d’incertitude spatiale} en
+réutilisant l’exemple de la délimitation du lac du Chambon (Figures 1
+et 2). Lorsque nous avons tracé la limite du niveau maximal de l’eau
 (Figure 2), nous nous sommes appuyés sur l’emplacement de la
 végétation. Cependant, dans certains cas, notamment pour la rive sud
 du lac, il s’est avéré difficile d’identifier la bonne limite et ce à
 cause de la présence de certaines poches de végétation. Ainsi, la
-frontière sud de l’étendue maximale du lac est incertaine, son tracé
-est contestable, mais uniquement à cause de notre manque de
-connaissances. Il ne s’agit pas d’imprécision. La Figure 4 représente
-une zone au sein de laquelle le tracé exact de la frontière est
-incertain, c’est-à-dire qu’au sein de cette zone, tous les tracés sont
-envisageables2. Ainsi, le lac du Chambon, rentre dans la catégorie des
-objets spatiaux à la fois imprécis et incertains.
+frontière sud de l’étendue maximale du lac est \emph{incertaine}, son
+tracé est contestable, mais uniquement à cause de notre manque de
+connaissances. Il ne s’agit pas d’\emph{imprécision}. La Figure 4
+représente une zone au sein de laquelle le tracé exact de la frontière
+est \emph{incertain}, c’est-à-dire qu’au sein de cette zone, tous les
+tracés sont envisageables\footnote{}. Ainsi, le lac du Chambon, rentre
+dans la catégorie des objets spatiaux à la fois \emph{imprécis} et
+\emph{incertains}.
 
 \begin{figure}
   \centering
@@ -445,13 +453,14 @@ objets spatiaux à la fois imprécis et incertains.
   \label{fig:lim_champ_inc}
 \end{figure}
 
-L’incertitude et l’imprécision spatiales peuvent cohabiter, comme dans
-le cas du lac du Chambon. La Figure 5 donne un aperçu plus théorique
-de la différence qu’il peut y avoir entre ces deux
-notions. L’incertitude spatiale est représentée par plusieurs
-frontières, illustrant le doute sur la position de la limite de
-l’objet. L’imprécision spatiale est, quant à elle, représentée par une
-bande, marque d’une frontière progressive, non réductible à une ligne.
+\emph{L’incertitude} et \emph{l’imprécision spatiales} peuvent
+cohabiter, comme dans le cas du lac du Chambon. La figure
+\ref{fig:inc_vs_imp} donne un aperçu plus théorique de la différence
+qu’il peut y avoir entre ces deux notions. \emph{L’incertitude
+  spatiale} est représentée par plusieurs frontières, illustrant le
+doute sur la position de la limite de l’objet. \emph{L’imprécision
+  spatiale} est, quant à elle, représentée par une bande, marque d’une
+frontière progressive, non réductible à une ligne.
 
 \begin{figure}
   \centering
@@ -462,105 +471,114 @@ bande, marque d’une frontière progressive, non réductible à une ligne.
   \label{fig:inc_vs_imp}
 \end{figure}
 
-De façon similaire à ce qui a été décrit précédemment, l’incertitude
-et l’imprécision spatiales sont liées. Par exemple, le fait qu’un
-objet géographique soit imprécis complexifie l’identification de sa
-frontière, ce qui se traduit par une incertitude morphologique
-(Lagacherie et al., 1996). De plus, la précision et la certitude des
-attributs d’un objet géographique sont fortement liées à la précision
-et à la certitude spatiale de ce même objet et inversement (Mark et
-Csillag, 1989). Ainsi, la définition d’un objet géographique à partir
-de données imprécises le sera elle-même, et le recueil d’informations
-au sein d’un objet géographique dont la frontière est incertaine ne
-pourra qu’être une opération qui l’est tout autant.
+De façon similaire à ce qui a été décrit précédemment,
+\emph{l’incertitude et l’imprécision spatiales} sont liées. Par
+exemple, le fait qu’un objet géographique soit \emph{imprécis}
+complexifie l’identification de sa frontière, ce qui se traduit par
+une \emph{incertitude morphologique} \autocite{Lagacherie1996}. De
+plus, la \emph{précision} et la \emph{certitude} des attributs d’un
+objet géographique sont fortement liées à la \emph{précision} et à la
+\emph{certitude spatiale} de ce même objet et inversement
+\autocite{Mark1989}. Ainsi, la définition d’un objet géographique à
+partir de données imprécises le sera elle-même, et le recueil
+d’informations au sein d’un objet géographique dont la frontière est
+\emph{incertaine} ne pourra qu’être une opération qui l’est tout
+autant.
 
 Différents auteurs ont listé des facteurs expliquant l’apparition de
-l’imprécision et de l’incertitude spatiales, comme Freksa et Barkowsky
-(1996) ou Dutton (1992) qui identifient quelques facteurs
-explicatifs. D’autres travaux (Hadzilacos, 1996 ; Evans et Waters,
-2008) vont plus loin dans le détail en proposant une typologie plus
-poussée de ces différents facteurs. Enfin, des typologies d’objets
-spatiaux imprécis, comme celle proposée par Liu et al. (2019),
+\textsf{l’imprécision} et de \emph{l’incertitude spatiales}, comme
+\textcite{Freksa1996,Dutton1992} qui identifient quelques facteurs
+explicatifs. D’autres travaux \autocite{Hadzilacos1996,Evans2008} vont
+plus loin dans le détail en proposant une typologie plus poussée de
+ces différents facteurs. Enfin, des typologies d’objets spatiaux
+\emph{imprécis,} comme celle proposée par \textcite{Liu2019},
 permettent d’identifier d’autres causes, inhérentes au processus de
 construction des objets spatiaux.
 
-Une première cause de l’imprécision spatiale, correspondant par
+Une première cause de \emph{l’imprécision spatiale,} correspondant par
 ailleurs à la majorité des exemples précédents, est liée à
-l’imprécision de la définition. Par exemple, l’objet géographique
-montagne, n’est pas (seulement) imprécis à cause d’une quelconque
-difficulté technique limitant la précision des mesures, il l’est car
-le concept montagne n’est pas suffisamment clair pour permettre la
-délimitation précise d’une portion d’espace. C’est généralement
-l’imprécision du concept qui rend l’objet géographique imprécis
-(Freksa et Barkowsky, 1996). L’imprécision du concept est à distinguer
-des définitions concurrentes, ce qu’Evans et Waters (2008) nomment
-definitional disagreement1. C’est, par exemple, le cas des frontières
-contestées, nécessairement mutuellement exclusives ; qui, même si
-définies aussi précisément que possible, ne permettent pas de
-construire une frontière unique, sinon en admettant une part
-d’incertitude spatiale. Par conséquent, le definitional disagreement,
-et plus généralement, l’existence de géométries concurrentes pour un
-même individu (Hadzilacos, 1996), sont une source d’incertitude,
-inhérente au choix d’une possibilité parmi l’ensemble des possibles.
+\emph{l’imprécision }de la définition. Par exemple, l’objet
+géographique \enquote{montagne}, n’est pas (seulement) \emph{imprécis}
+à cause d’une quelconque difficulté technique limitant la précision
+des mesures, il l’est car le concept montagne n’est pas suffisamment
+clair pour permettre la délimitation précise d’une portion
+d’espace. C’est généralement \emph{l’imprécision du concept} qui rend
+\emph{l’objet géographique imprécis}
+\autocite{Freksa1996}. \emph{L’imprécision du concept} est à
+distinguer des \emph{définitions concurrentes,} ce
+qu’\textcite{Evans2008} nomment \enquote{definitional
+  disagreement}. C’est, par exemple, le cas des frontières contestées,
+nécessairement mutuellement exclusives ; qui, même si définies aussi
+précisément que possible, ne permettent pas de construire une
+frontière unique, sinon en admettant une part d’incertitude
+spatiale. Par conséquent, le \enquote{definitional disagreement}, et
+plus généralement, l’existence de géométries concurrentes pour un même
+individu \autocite{Hadzilacos1996}, sont une source
+\emph{d’incertitude,} inhérente au choix d’une possibilité parmi
+l’ensemble des possibles.
 
 Cependant, l’imprécision d’une définition peut être souhaitée,
-Hadzilacos (1996) parle alors de don't care [boundaries]1. C’est, par
-exemple, un cas que l’on retrouve fréquemment lors de la description
-en langage naturel d’une position. Un exemple de Bateman et
-al. (2010), illustre bien cette situation ; si pour décrire sa
-position, une personne dit : « Je suis à la Poste », on ne peut pas en
-conclure qu’elle est située à l’intérieur d’une agence postale. En
-effet, si la file d’attente sort du bâtiment, cette description sera
-toujours valable. La limite de « la Poste » est donc peu précise, mais
+\textcite{Hadzilacos1996} parle alors de \enquote{don't care
+  \textins{boundaries}}. C’est, par exemple, un cas que l’on retrouve
+fréquemment lors de la description en langage naturel d’une
+position. Un exemple de \textcite{Bateman2010}, illustre bien cette
+situation ; si pour décrire sa position, une personne dit :
+\enquote{Je suis à la Poste}, on ne peut pas en conclure qu’elle est
+située à l’intérieur d’une agence postale. En effet, si la file
+d’attente sort du bâtiment, cette description sera toujours
+valable. La limite de \enquote{la Poste} est donc peu précise, mais
 dans ce contexte, il n’est pas nécessaire qu’elle le soit
 davantage. L’information que le locuteur cherche à communiquer est sa
 proximité et son interaction avec une agence postale, et non sa
 présence au sein du bâtiment.
 
 La dimension temporelle peut également être une source
-d’imprécision. Hadzilacos (1996) et Liu et al. (2019) mentionnent
-respectivement l’existence de time-varying [boundaries]1 et de dynamic
-boundary objects2 pour qualifier des objets géographiques dont la
-frontière varie dans le temps. C’est, par exemple, le cas d’un front
-de mer. Pour ce type d’objets, définir une frontière nécessite de
-“synthétiser” les différentes évolutions temporelles, ce qui conduit
-nécessairement à une frontière imprécise. Dans ce cas l’imprécision
-spatiale est un artefact, né de la modélisation atemporelle d’un objet
-qui ne l’est pas.
+d’imprécision. \textcite{Hadzilacos1996,Liu2019} mentionnent
+respectivement l’existence de \enquote{time-varying
+  \textins{boundaries}} et de \enquote{Dynamic boundary objects} pour
+qualifier des objets géographiques dont la frontière varie dans le
+temps. C’est, par exemple, le cas d’un front de mer. Pour ce type
+d’objets, définir une frontière nécessite de \enquote{synthétiser} les
+différentes évolutions temporelles, ce qui conduit nécessairement à
+une frontière \emph{imprécise}. Dans ce cas \emph{l’imprécision
+  spatiale} est un artefact, né de la modélisation atemporelle d’un
+objet qui ne l’est pas.
 
 On peut également relever des aspects plus techniques, comme
 l’imprécision liée aux instruments de mesure ou au producteur de
-données (Follin et al., 2019) et plus généralement au processus de
-production de données (Dutton, 1992 ; Evans et Waters, 2008 ; Follin
-et al., 2019). D’autres points plus spécifiques peuvent également être
-identifiés, comme les limites des modèles de représentation des
-données (Dutton, 1992 ; Follin et al., 2019), il est par exemple
-impossible de représenter tous les nombres réels informatiquement à
-cause de la précision finie des nombres flottants utilisés pour les
-figurer.
+données \autocite{Follin2019} et plus généralement au processus de
+production de données
+\autocite{Dutton1992,Evans2008,Follin2019}. D’autres points plus
+spécifiques peuvent également être identifiés, comme les limites des
+modèles de représentation des données
+\autocite{Dutton1992,Follin2019}, il est par exemple impossible de
+représenter tous les nombres réels informatiquement à cause de la
+précision finie des nombres flottants utilisés pour les figurer.
 
-Enfin, il convient de noter que l’imprécision et l’incertitude peuvent
-se transmettre lors de la définition de nouveaux objets à partir de
-mesures (Dutton, 1992) ou d’objets géographiques imprécis (Liu et al.,
-2019 ; Follin et al., 2019). On peut, dans ce cas, parler
-d’imprécision et d’incertitude de second ordre. C’est ce phénomène que
-décrivent Liu et al. (2019) lorsqu’ils définissent les
-element-clustering objects1, des objets spatiaux imprécis construits
-par l’agrégation d’autres objets (flous ou nets), et les
-object-referenced objects2, qui sont construits par subdivision
+Enfin, il convient de noter que \emph{l’imprécision} et
+\emph{l’incertitude} peuvent \enquote{se transmettre} lors de la
+définition de nouveaux objets à partir de mesures
+\autocite{Dutton1992} ou d’objets géographiques imprécis
+\autocite{Liu2019,Follin2019}. On peut, dans ce cas, parler
+\emph{d’imprécision \emph{et} d’incertitude de second ordre.} C’est ce
+phénomène que décrivent \textcite{Liu2019} lorsqu’ils définissent les
+\enquote{element-clustering objects}, des objets spatiaux imprécis
+construits par l’agrégation d’autres objets (flous ou nets), et les
+\enquote{object-referenced objects}, construits par subdivision
 d’objets spatiaux imprécis.
 
 \subsection{La modélisation de l'imprécision spatiale}
 
 La question de la modélisation de l’imprécision a conduit au
 développement de plusieurs théories mathématiques, dont la plus connue
-est la théorie des sous-ensembles flous (Zadeh, 1965). Nous avons
-choisi de nous centrer sur la présentation de cette théorie, car nous
-n’avons pas identifié dans la littérature des utilisations de théories
-alternatives comme la théorie des fonctions de croyances. Quant aux
-travaux basés sur la théorie des probabilités (Tøssebro et Nygård
-2002, 2008), ceux-ci traitent de la modélisation de l’incertitude,
-c’est pourquoi nous ne les incluons pas dans cet article.
+est la théorie des sous-ensembles flous \autocite{Zadeh1965}. Nous
+avons choisi de nous centrer sur la présentation de cette théorie, car
+nous n’avons pas identifié dans la littérature des utilisations de
+théories alternatives comme la théorie des fonctions de
+croyances. Quant aux travaux basés sur la théorie des probabilités
+(Tøssebro et Nygård 2002, 2008), ceux-ci traitent de la modélisation
+de l’incertitude, c’est pourquoi nous ne les incluons pas dans cet
+article.
 
 \subsubsection{La théorie des fonctions de croyance}
 
@@ -771,6 +789,7 @@ Les opérateurs de Łukasiewicz sont définis de la manière suivante :
 \end{equation}
 
 La définition des opérateurs probabilistes est :
+
 \begin{equation}
   ⊤_P(x,y) = x×y
 \end{equation}
@@ -778,8 +797,6 @@ La définition des opérateurs probabilistes est :
 \begin{equation}
   ⊥_P(x,y) = x+y - x×y
 \end{equation}
-
-\tdi{Nilpotents}
 
 Les opérateurs drastiques sont, quand à eux définis de la manière
 suivante:
@@ -974,38 +991,40 @@ livres imprimés qui existent. On cherche à construire l'ensemble des
 \subsection{Modélisations et implémentations}
 
 
-Comme l’indiquait Burrough (1996, p.15), « Les objets inexacts
-requièrent des modèles de données inexacts ». L’objectif de cette
-partie est de présenter les différents modèles proposés dans la
-littérature pour modéliser les objets spatiaux flous. Nous
-traiterons aussi bien de modèles uniquement théoriques que de leurs
+Comme l’indiquait \textcite[p. 15]{Burrough1996}, \enquote{Les objets
+  inexacts requièrent des modèles de données inexacts}. L’objectif de
+cette partie est de présenter les différents modèles proposés dans la
+littérature pour modéliser les objets spatiaux flous. Nous traiterons
+aussi bien de modèles uniquement théoriques que de leurs
 implémentations, voire de leurs applications.
 
 Pour présenter ces différents modèles, nous proposons une
-classification ad hoc, distinguant les modèles définis en extension
-de ceux définis en intension. Nous commencerons par expliciter cette
-classification, tout en la confrontant aux catégorisations présentes
-dans la littérature, avant de présenter les différents modèles.
+classification \emph{ad hoc,} distinguant les modèles \emph{définis en
+  extension} de ceux \emph{définis en intension.} Nous commencerons
+par expliciter cette classification, tout en la confrontant aux
+catégorisations présentes dans la littérature, avant de présenter les
+différents modèles.
 
 \subsubsection{Critères de classification}
 
 Un grand nombre de modèles ont été proposés pour permettre la
 manipulation d’objets spatiaux imprécis. Ils se distinguent par leur
 théorie de rattachement (Partie 3), par la nature des objets spatiaux
-modélisables (e.g. points, lignes, surfaces) ou leur implémentation
-(e.g. raster, vecteur, ad hoc ou inexistante).
+modélisables (\eg points, lignes, surfaces) ou leur implémentation
+(\eg raster, vecteur, ad hoc ou inexistante).
 
 Chacun de ces points peut être utilisé comme critère de classement,
 mais à notre connaissance, toutes les catégorisations proposées dans
 la littérature se fondent sur le critère de la théorie de
-rattachement. Clementini (2008) ou Erwig \& Schneider (1997), par
-exemple, identifient trois catégories : les modèles probabilistes, les
-modèles flous et les modèles exacts, qui étendent le modèle simple
-features1 aux objets spatiaux imprécis. Certains auteurs (Schneider,
-2001 ; Schneider, 2008 ; Carniel et al., 2016) y ajoutent la catégorie
-des modèles approximatifs, basés sur la théorie des ensembles du même
-nom, moins populaire que les précédentes. Enfin Fisher (Fisher, 2003 ;
-Fisher et al., 2005 ; Fisher et al., 2006) propose une typologie des
+rattachement. \textcite{Clementini2008} ou \textcite{Erwig1997}, par
+exemple, identifient trois catégories : \emph{les modèles
+  probabilistes,} \emph{les modèles flous} et \emph{les modèles
+  exacts,} qui étendent le modèle \emph{simple features} aux objets
+spatiaux imprécis. Certains auteurs, comme
+\textcite{Schneider2001,Schneider2008,Carniel2016} y ajoutent la
+catégorie des \emph{modèles approximatifs,} basés sur la théorie des
+ensembles du même nom, moins populaire que les précédentes. Enfin
+\textcite{Fisher2003,Fisher2005,Fisher2006} propose une typologie des
 théories combinant la modélisation de l’incertitude spatiale à celle
 de l’imprécision spatiale et distinguant les modèles en fonction de
 quatre théories de rattachement : probabilités, sous-ensembles flous,
@@ -1015,7 +1034,7 @@ les différentes théories, cette catégorisation est critiquable, car
 elle passe outre un critère qui nous semble fondamental : la nature du
 processus de construction.
 
-On peut, suivant la logique du paradigme des ensembles de points2
+On peut, suivant la logique du paradigme des ensembles de points
 (Egenhofer et Herring, 1990), concevoir l’espace comme un ensemble
 infini de points, représentant autant de positions. Les objets
 spatiaux, nécessairement inclus dans cet espace, peuvent dès lors être
@@ -1031,7 +1050,7 @@ extension lorsque l’objet spatial traité est construit par la
 sélection d’autres objets spatiaux (e.g. construction d’un département
 par l’union des communes le composant). La construction en intension
 désigne les cas où un objet spatial est construit par la délimitation
-d’un espace (e.g. construction de buffers).
+d’un espace (\eg construction de buffers).
 
 Cette distinction ne doit pas être confondue avec celle, faite en
 mathématiques, entre la définition en intension et la définition en
@@ -1554,22 +1573,6 @@ plus leur implémentation, est un champ de recherche encore actif comme
 le montre, par exemple, la récente réflexion autour de l’expression de
 l’imprécision spatiale au sein du format GML (Wei et al., 2017).
 
-Toutefois, l’application de ces différents modèles à une problématique
-concrète impose de sélectionner une implémentation avec laquelle
-travailler. Dans le cadre de notre travail de recherche, nous avons
-été amené à confronter certaines de ces implémentations en vue de
-spatialiser une position décrite en langage naturel, et donc,
-foncièrement imprécise. Nous avons adopté une démarche basée sur un
-principe de décomposition et de spatialisation indépendante des
-différentes relations spatiales utilisées pour exprimer une position
-(Auteur, 2019). Les contraintes liées à cette démarche, comme la
-nécessité de combiner les résultats de différentes spatialisations,
-nous ont amené à adopter une approche similaire à celle de Vanegass et
-al. (2011) et Takemura et al. (2012), i.e. une modélisation basée sur
-la théorie des sous-ensembles flous et implémentée à l’aide de
-rasters. Cette solution nous parait être le meilleur compromis entre
-minimisation des contraintes techniques et finesse de modélisation
-(Auteur, 2019).
 
 %%% Local Variables:
 %%% mode: latex
