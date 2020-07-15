@@ -1,12 +1,19 @@
 \begin{tikzpicture}
   \begin{axis}[
     width = 7cm,
-    grid=none,
+    3d box,
+    grid=major,
+    tick align = outside,
+    enlargelimits=false,
+    line cap = round,
+    clip = false,
     view={-25}{30},
+    xtick={0,0.5,1},
+    ytick={0,0.5,1},
+    ztick={0,0.5,1},
     xlabel=$x$,
     ylabel=$y$,
     zlabel=$\mu$]
-    
     \addplot3 [surf, colormap/bone, domain = 0:1, samples = 20] {
       max(x + y -1, 0) };
     

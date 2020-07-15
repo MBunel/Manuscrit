@@ -1,5 +1,3 @@
-r
-
 \tdi{Voir comment citer les 2 naive physics manifestos}
 
 La \emph{spatialisation} des \emph{indices de localisation} nécessite
@@ -1218,8 +1216,12 @@ données empiriques.
 
 \subsubsection{Les relations projectives}
 
-\enquote{\textelp{} qui nécessitent recours à un espace projectif
-  \textelp{}} \autocite[p. 18]{Duchene2019}
+Contrairement aux relations topologiques et aux relations de distance
+déjà présentées, les relations projectives ne peuvent être
+interprétées qu'a l'aide d'un \enquote{espace projectif}
+\autocite{Duchene2019}. Nous avons choisi de présenter les relations
+directionelles et les relations orientationelles séparément, comme
+proposé par \textcite{Duchene2019}.
 
 %\paragraph{Les relations XXXXe}
 
@@ -1289,7 +1291,7 @@ tridimensionnelles de ces modèles ont été proposées.
 
 \paragraph{Les relations d'orientation relative}
 
-\tdi{Voir si c'est nécessaire de compléter}
+%\tdi{Voir si c'est nécessaire de compléter}
 
 % Définition
 Les relations d'orientation relatives sont définies par
@@ -1298,61 +1300,59 @@ Les relations d'orientation relatives sont définies par
   ayant une direction privilégiée d'allongement et pouvant à ce titre
   être assimilés à des segments \textelp{}}. Comme nous l'expliquions
 précédemment, la phrase : \enquote{J'ai pris la première à droite}
-correspond à une \emph{relation d'orientation relative.}
-
-Des modèles spécifiques à ce type de relations ont été proposés dans
-la littérature, comme les \emph{calculi} de
+correspond à une \emph{relation d'orientation relative.} Des modèles
+spécifiques à ce type de relations ont été proposés dans la
+littérature, comme les \emph{calculi} de
 \textcite{Schlider1995,Isli2000}.
 
 \subsubsection{Les relations de visibilité}
-
-\tdi{citer \url{https://journals.openedition.org/cybergeo/27862}}
-
-\autocite{Llobera2003}
-
-% Cadre théorique
-Peut-on réellement parler de géographie sans parler de la vision ?
-Sans doute pas, du moins selon \textcite{Brunet1992}, pour qui la vue
-est \enquote{le sens premier du géographe}. Mais cette assertion nous
-semble réductrice, selon nous le sens de la vision est fondamental
-dans notre rapport à l'espace. Il est par conséquent courant de
-décrire une position à partir de ce que l'on y voit. Il nous semble
-donc indispensable de pouvoir \emph{spatialiser} des descriptions
-visuelles.
-
-\paragraph{La visibilité comme relation spatiale}
 
 Comme pour les \enquote{durées de déplacement}, détaillées ci-dessus,
 les \enquote{relations de visibilité} ne ne s'expriment pas à l'aide
 d'une préposition spatiale, comme \enquote{sur} ou \enquote{dans}, il
 s'agit donc d'une \emph{relation de localisation,} mais pas d'une
-\emph{relation spatiale.}
-
-Contrairement aux distances, où leur expression peu prendre plusieurs
-formes, les \emph{relations de localisation visuelles} sont toujours
-exprimé d'une même manière. On décrit ce qu'on a (ou pas) dans notre
-champ de vision. Ainsi la spatialisation de ce type \emph{d'indice de
-  localisation} nécessite de pouvoir construire le champ de visibilité
-d'un objet, quelque soit sa nature.
+\emph{relation spatiale.} Contrairement aux distances, où leur
+expression peu prendre plusieurs formes, les \emph{relations de
+  localisation visuelles} sont toujours exprimé d'une même manière. On
+décrit ce qu'on a (ou pas) dans notre champ de vision. Ainsi la
+spatialisation de ce type \emph{d'indice de localisation} nécessite de
+pouvoir construire le champ de visibilité d'un objet, quelque soit sa
+nature.
 
 La question de la construction de zones de visibilités a été
 longuement abordée dans le domaine des SIG, notamment en vue
-d’applications pour l'étude de paysages.
-
-Mais la notion de visibilité peu également s'appliquer à des éléments
-de localisation tels que : \enquote{Je suis à l'ombre}, que l'on
-retrouve notamment dans le \emph{fil rouge} (\ref{}). En effet, être,
-ou non, à l'ombre revient à avoir, ou non, une relation de visibilité
-avec le Soleil. Or, dans un contexte montagnard les ombres sont très
-présentes à cause des reliefs, la possibilité d'identifier les zones
-situés au Soleil ou à l'ombre est donc utile pour localiser des
-personnes \autocite{Houpert2003}.
+d’applications pour l'étude de paysages. Mais la notion de visibilité
+peu également s'appliquer à des éléments de localisation tels que :
+\enquote{Je suis à l'ombre}, que l'on retrouve notamment dans le
+\emph{fil rouge} (\ref{}). En effet, être, ou non, à l'ombre revient à
+avoir, ou non, une relation de visibilité avec le Soleil. Or, dans un
+contexte montagnard les ombres sont très présentes à cause des
+reliefs, la possibilité d'identifier les zones situés au Soleil ou à
+l'ombre est donc utile pour localiser des personnes
+\autocite{Houpert2003}. \textcite{Sahraoui2016} distinguent deux types
+d'analyses de visibilités différentes, les analyses planimétriques
+\enquote{consist\textins{ant} à caractériser les relations
+  d’intervisibilité entre des lieux d’observation et leur espace
+  environnant \textelp{}} et les analyses tangentielles qui
+\enquote{\textelp{} mesur\textins{ent} le paysage visible dans la
+  rétine d’un observateur virtuel en tenant compte du développement
+  vertical des objets du paysage \textelp{}}.
 
 % Applications
 
 \paragraph{Approche planaire}
 
-\tdi{viewshed}
+% \tdi{viewshed}
+
+La spatialisation d'une \emph{relation de visibilité} nécessite de
+construire une zone où l'objet de référence est visible. Cette zone,
+généralement qualifiée de \emph{bassin de visibilité,} est construite
+à partir d'un \ac{mnt} décrivant le relief. Les algorithmes de
+construction des bassins de visibilité vérifient ensuite, pour toutes
+les positions de la zone étudiée, si l'objet de référence est visible,
+ou non. Par conséquent les \emph{bassins de visibilité} sont
+généralement binaires, on distingue les positions d'où l'on voit de
+celle où on ne voit pas.
 
 D'autres travaux proposent de traiter les relations de visibilité de
 manière multivalente, \ie en distinguant les situations où la
@@ -1389,12 +1389,10 @@ lui).
 
 D'autres travaux proposent quant à eux d'étudier les positions
 relatives des objets dans le champ de vision de l'observateur.
-
 \textcite{Santos2015} proposent, par exemple, une typologie des
 relations de visibilité fondée sur les relations de Allen. Cette
 typologie permet de décrire les relations entre deux objets, du point
 de vue d'un observateur qui aurait un champ de vision de 180 degrés.
-
 % ROC 20
 \textcite{Randell2001} proposent une solution similaire avec le ROC-20
 (\emph{Region Occlusion Calculus}), une formalisation des relations

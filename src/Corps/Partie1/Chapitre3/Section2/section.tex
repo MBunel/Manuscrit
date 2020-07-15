@@ -1,8 +1,8 @@
-\tdi{Ajouter notion ``espace liminal''
-  https://journals.openedition.org/rga/2115}
+% \tdi{Ajouter notion ``espace liminal''
+%   https://journals.openedition.org/rga/2115}
 
-\tdi{Citation
-  https://www.sciencedirect.com/science/article/pii/B9780444886507500287}
+% \tdi{Citation
+%   https://www.sciencedirect.com/science/article/pii/B9780444886507500287}
 
 Lorsque George \bsc{Perec} relate sa visite d’une maison
 usonienne\footnote{Néologisme de Frank \bsc{Lloyd Wright}, créé comme
@@ -580,16 +580,21 @@ croyances. Quant aux travaux basés sur la théorie des probabilités
 de l’incertitude, c’est pourquoi nous ne les incluons pas dans cet
 article.
 
-\subsubsection{La théorie des fonctions de croyance}
+% \subsubsection{La théorie des fonctions de croyance}
 
-\tdi{Doit aussi être abordé lors de la présentation de la modélisation
-  de l'incertitude}
+% La \emph{théorie des fonctions de croyances} (également nommée
+% \emph{théorie de l'évidence} ou \emph{théorie de
+%   \bsc{Dempster-Shafer}}) a été proposée par \textcite{Shafer1976} à
+% la suite des travaux de \textcite{Dempster1967}.
 
-La \emph{théorie des fonctions de croyances} (également nommée
-\emph{théorie de l'évidence} ou \emph{théorie de
-  \bsc{Dempster-Shafer}}) a été proposée par \textcite{Shafer1976} à
-la suite des travaux de \textcite{Dempster1967}.
-  
+% Dans la théorie des fonctions de croyances on s'intéresse à un certain
+% nombre d'hypothèses \(H_i\) dont l'ensemble forme le cadre de
+% discernement \(\Theta\). L'ensemble de tous les sous-ensembles de
+% \(\Theta\) correspond au référentiel de définition, noté
+% \(2^\Theta\). Ce dernier représente tous les couples d’hypothèses
+% possibles.
+
+% La théorie des fonctions de croyance permet d'attribuer une telle fonction
 
 \subsubsection{La théorie des sous-ensembles flous}
 
@@ -779,7 +784,8 @@ sous-ensembles flous \(A\) et \(B\) de \(X\) est un sous-ensemble
 Plusieurs couples (\emph{t-norme}, \emph{t-conorme}) ont été proposés
 dans la littérature.
 
-Les opérateurs de Łukasiewicz sont définis de la manière suivante :
+Les opérateurs de Łukasiewicz (\autoref{fig:luka_op}) sont définis de
+la manière suivante :
 \begin{equation}
   ⊤_L(x,y) = \max(x + y - 1, 0) 
 \end{equation}
@@ -788,7 +794,8 @@ Les opérateurs de Łukasiewicz sont définis de la manière suivante :
   ⊥_L(x,y) = \min(x + y, 1)
 \end{equation}
 
-La définition des opérateurs probabilistes est :
+La définition des opérateurs probabilistes (\autoref{fig:prob_op}) est
+:
 
 \begin{equation}
   ⊤_P(x,y) = x×y
@@ -798,8 +805,8 @@ La définition des opérateurs probabilistes est :
   ⊥_P(x,y) = x+y - x×y
 \end{equation}
 
-Les opérateurs drastiques sont, quand à eux définis de la manière
-suivante:
+Les opérateurs drastiques (\autoref{fig:drast_op}) sont, quand à eux
+définis de la manière suivante:
 
 \begin{equation}
   ⊤_D(x,y)  = \left \{
@@ -872,11 +879,11 @@ d'union le plus large \autocite{Bouchon-Meunier2007}
 \begin{figure}
   \begin{center}
     \subfloat[\emph{t-norme} de Zadeh]{
-      %\input{../figures/zadeh_norm.tex}
+      \input{../figures/zadeh_norm.tex}
       \label{fig:zadeh_norm}
     }
     \subfloat[\emph{t-conorme} de Zadeh]{
-      %\input{../figures/zadeh_conorm.tex}
+      \input{../figures/zadeh_conorm.tex}
       \label{fig:zadeh_norm}
     }
     \caption{Opérateurs de Zadeh}
@@ -888,11 +895,11 @@ d'union le plus large \autocite{Bouchon-Meunier2007}
 \begin{figure}
   \begin{center}
     \subfloat[\emph{t-norme} de Łukasiewicz]{
-      %\input{../figures/luka_norm.tex}
+      \input{../figures/luka_conorm.tex}
       \label{fig:luka_norm}
     }
     \subfloat[\emph{t-conorme} de Łukasiewicz]{
-      %\input{../figures/luka_conorm.tex}
+      \input{../figures/luka_norm.tex}
       \label{fig:luka_norm}
     }
     \caption{Opérateurs de Łukasiewicz}
@@ -904,11 +911,11 @@ d'union le plus large \autocite{Bouchon-Meunier2007}
 \begin{figure}
   \begin{center}
     \subfloat[\emph{t-norme} probabiliste]{
-      %\input{../figures/prob_norm.tex}
+      \input{../figures/prob_norm.tex}
       \label{fig:prob_norm}
     }
     \subfloat[\emph{t-conorme} probabiliste]{
-      %\input{../figures/prob_conorm.tex}
+      \input{../figures/prob_conorm.tex}
       \label{fig:prob_norm}
     }
     \caption{Opérateurs probabilistes}
@@ -920,11 +927,11 @@ d'union le plus large \autocite{Bouchon-Meunier2007}
 \begin{figure}
   \begin{center}
     \subfloat[\emph{t-norme} drastique]{
-     %\input{../figures/drast_norm.tex}
+     \input{../figures/drast_norm.tex}
       \label{fig:prob_norm}
     }
     \subfloat[\emph{t-conorme} drastique]{
-      %\input{../figures/prob_conorm.tex}
+     \input{../figures/drast_conorm.tex}
       \label{fig:drast_norm}
     }
     \caption{Opérateurs probabilistes}
@@ -933,9 +940,6 @@ d'union le plus large \autocite{Bouchon-Meunier2007}
 \end{figure}
 
 \subsubsection{La théorie des \emph{ensembles approximatifs}}
-
-\tdi{Doit aussi être abordé lors de la présentation de la modélisation
-  de l'incertitude}
 
 La théorie des \emph{ensembles approximatifs} \footnote{Ou théorie des
   \emph{ensembles bruts,} selon les traductions proposées pour
@@ -978,15 +982,7 @@ est \enquote{surement} dans $X$. À l'inverse $A⁺$ est la frontière
 supérieure, un élément $x$ présent dans $A⁺(X)$ est
 \emph{possiblement} dans $X$.
 
-
-\tdi{Mauvais exemple ?}
-Pour faciliter la compréhension de ces équations on peut prendre pour
-exemple le cas d'une bibliothèque. Mettons que $U$ soit l'ensemble des
-livres imprimés qui existent. On cherche à construire l'ensemble des
-\emph{incunables,} \ie l'ensemble des livres imprimés avant
-1501. Comme la datation d'ouvrages anciens peut être 
-
-\tdi{Voir papiers beauboeuf}
+% \tdi{Voir papiers beauboeuf}
 
 \subsection{Modélisations et implémentations}
 
