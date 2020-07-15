@@ -1,0 +1,10 @@
+\begin{tikzpicture}
+  \foreach \x/\v in {0/E,1/NE, 2/N,3/NO,4/O,5/SO,6/S,7/SE} {
+    \path[draw] (0,0) -- (45*\x+22.5:1);	
+    \path[draw, dashed] (45*\x+22.5:1) -- (45*\x+22.5:2.5);
+    \node at (45*\x:1cm) {\v};
+  }
+
+  \path[draw, <->, thick] (22.5:1.5) arc (22.5:-22.5:1.5)
+  node[pos=.5,right] {\SI{45}{\degree}};
+\end{tikzpicture}
