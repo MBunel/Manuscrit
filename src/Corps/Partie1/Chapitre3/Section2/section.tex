@@ -576,9 +576,9 @@ avons choisi de nous centrer sur la présentation de cette théorie, car
 nous n’avons pas identifié dans la littérature des utilisations de
 théories alternatives comme la théorie des fonctions de
 croyances. Quant aux travaux basés sur la théorie des probabilités
-(Tøssebro et Nygård 2002, 2008), ceux-ci traitent de la modélisation
-de l’incertitude, c’est pourquoi nous ne les incluons pas dans cet
-article.
+\autocite{Tossebro2002,Tossebro2008}, ceux-ci traitent de la
+modélisation de l’\emph{incertitude}, c’est pourquoi nous ne les
+incluons pas dans cet article.
 
 % \subsubsection{La théorie des fonctions de croyance}
 
@@ -599,20 +599,19 @@ article.
 \subsubsection{La théorie des sous-ensembles flous}
 
 La théorie des sous-ensembles flous, ou, par abus de langage, théorie
-des ensembles flous (Bouchon-Meunier, 2007), proposée par Zadeh en
-1965 (Zadeh , 1965), vise à proposer un cadre théorique permettant de
+des ensembles flous \autocite{Bouchon-Meunier2007}, proposée par
+\textcite{Zadeh1965}, vise à proposer un cadre théorique permettant de
 modéliser des appartenances partielles à une classe
-d’objets. Bouchon-Meunier (1995) présente les sous-ensembles flous
-comme un « assouplissement » des ensembles « classiques », ici
-qualifiés de « nets »1 (Smithson et Verkuilen, 2006). La possibilité
-de modéliser des appartenances partielles permet à la théorie des
-sous-ensembles flous de modéliser l’imprécision des connaissances, ce
-qui en fait un candidat idéal pour la modélisation d’objets spatiaux
-imprécis.
+d’objets. \textcite{Bouchon-Meunier1995} présente les sous-ensembles
+flous comme un \enquote{assouplissement} des ensembles
+\enquote{classiques}, ici qualifiés de \enquote{nets} \footnote{}
+\autocite{Smithson2006}. La possibilité de modéliser des appartenances
+partielles permet à la théorie des sous-ensembles flous de modéliser
+l’imprécision des connaissances, ce qui en fait un candidat idéal pour
+la modélisation d’objets spatiaux imprécis.
 
 Un ensemble flou $A$ est défini comme un couple composé d’un ensemble
-net $X$ et d’une fonction $f_A$ nommée fonction d’appartenance (Zadeh,
-1965) :
+net $X$ et d’une fonction $f_A$ nommée fonction d’appartenance :
 
 \begin{equation}
   A = (X, f_A)  
@@ -632,10 +631,11 @@ partielle à l’ensemble des personnes de grande taille, ce qui revient
 
 De la même manière, le degré d’appartenance peut illustrer
 l’appartenance d’une position à un objet spatial. Par exemple, la
-Figure 6 illustre la représentation du lac du Chambon à l’aide d’un
-sous-ensemble flou, les positions situées dans la zone d’imprécision
-(Figure 3) se voient attribuer un degré d’appartenance inférieur à
-1. Ce degré devient nul au-delà de la seconde frontière (Figure 2).
+figure \ref{fig:champ_flou} illustre la représentation du lac du
+Chambon à l’aide d’un sous-ensemble flou, les positions situées dans
+la zone d’imprécision (\autoref{fig:lim_champ_imp}) se voient
+attribuer un degré d’appartenance inférieur à 1. Ce degré devient nul
+au-delà de la seconde frontière (\autoref{fig:lim_champ_alt}).
 
 \begin{figure}
   \centering
@@ -1031,19 +1031,19 @@ elle passe outre un critère qui nous semble fondamental : la nature du
 processus de construction.
 
 On peut, suivant la logique du paradigme des ensembles de points
-(Egenhofer et Herring, 1990), concevoir l’espace comme un ensemble
-infini de points, représentant autant de positions. Les objets
-spatiaux, nécessairement inclus dans cet espace, peuvent dès lors être
-conceptualisés comme un ensemble de positions3. Par extension, un
-objet spatial imprécis peut être conceptualisé comme un ensemble de
-positions dont certaines ont une appartenance partielle à
+\autocite{Egenhofer1990}, concevoir l’espace comme un ensemble infini
+de points, représentant autant de positions. Les objets spatiaux,
+nécessairement inclus dans cet espace, peuvent dès lors être
+conceptualisés comme un ensemble de positions \footnote{}. Par
+extension, un objet spatial imprécis peut être conceptualisé comme un
+ensemble de positions dont certaines ont une appartenance partielle à
 l’ensemble. La nature du processus de construction décrit la méthode
 utilisée pour décider de l’appartenance d’une de ces positions à
 l’objet spatial et par extension pour construire un objet
 spatial. Nous distinguons deux approches : la construction en
 intension et celle en extension. Nous parlons de construction en
 extension lorsque l’objet spatial traité est construit par la
-sélection d’autres objets spatiaux (e.g. construction d’un département
+sélection d’autres objets spatiaux (\eg construction d’un département
 par l’union des communes le composant). La construction en intension
 désigne les cas où un objet spatial est construit par la délimitation
 d’un espace (\eg construction de buffers).
@@ -1060,7 +1060,7 @@ définit comme : tous les êtres humains, étudiant la géographie et
 favorables à l’anarchisme. De la même manière, on peut définir un
 objet géographique en intension. Par exemple, une zone économique
 exclusive (ZEE) est définie comme la zone située à moins de 200 miles
-marins des côtes d’un pays (Brunet et al., 1992). À l’inverse, la
+marins des côtes d’un pays \autocite{Brunet1992}. À l’inverse, la
 définition d’un ensemble en extension consiste à lister les différents
 éléments y appartenant. Pour reprendre l’exemple précédent, la
 définition en extension de l’ensemble géographes anarchistes serait :
@@ -1075,7 +1075,7 @@ La distinction que nous faisons entre construction en extension et
 construction en intension peut sembler équivalente à celle qui a été
 faite entre les implémentations raster et vecteur, ou plus
 généralement, entre les modèles champs et objets tels que définis par
-Couclelis (1992) et Goodchild (1992). En effet, l’utilisation d’un
+\textcite{Couclelis1992,Goodchild1992}. En effet, l’utilisation d’un
 modèle de type champ nécessite de renseigner, pour chaque élément, par
 exemple des pixels dans le cas d’une implémentation raster, son
 appartenance à l’objet spatial, ce qui équivaut à une construction en
@@ -1083,11 +1083,11 @@ extension. Inversement, la construction d’un objet vectoriel est
 assimilable à une construction en intension. Cependant, le champ des
 possibles ne se limite pas à ces deux cas, laissant supposer une
 équivalence entre les deux catégorisations. Par exemple, la définition
-d’un objet spatial à partir de la sélection d’objets préexistants
-(e.g. on souhaite sélectionner les hôtels proches d’une station de
-métro donnée), entre dans le cadre du modèle objet tel que défini par
-Couclelis (1992), mais impose une construction en extension, i.e. la
-sélection d’objets spatiaux à partir d’un ensemble.
+d’un objet spatial à partir de la sélection d’objets préexistants (\eg
+on souhaite sélectionner les hôtels proches d’une station de métro
+donnée), entre dans le cadre du modèle objet tel que défini par
+\textcite{Couclelis1992}, mais impose une construction en extension,
+\ie la sélection d’objets spatiaux à partir d’un ensemble.
 
 \begin{table}
   \centering
@@ -1101,93 +1101,87 @@ sélection d’objets spatiaux à partir d’un ensemble.
 Parmi les modèles construits en intension, on retrouve des
 propositions basées sur la théorie des sous-ensemble flous, présentée
 précédemment. Cependant, il existe une autre catégorie de modèles,
-fréquemment décrits comme « exacts » dans la littérature (Schneider,
-2003 ; Bejaoui et al., 2009).
+fréquemment décrits comme \enquote{exacts} dans la littérature
+\autocite{Schneider2003,Bejaoui2009}.
 
 \paragraph{Les modèles \enquote{exacts}}
 
+\textcite{Cohn1996} ont proposé le modèle \emph{egg-yolk,} qui demeure
+aujourd’hui la plus connue des solutions de modélisation de
+l’imprécision spatiale. Les auteurs proposent de modéliser des
+étendues imprécises à l’aide de régions délimitées par deux
+frontières. Par analogie avec un œuf au plat, la zone délimitée par la
+seconde frontière est baptisée « white » et celle délimitée par la
+première frontière, incluse dans « le blanc de l’œuf », est baptisée
+« yolk ». Pour poursuivre avec cette analogie, la partie du « blanc »
+non incluse dans le « jaune » correspond alors à la partie imprécise,
+\ie dont l’appartenance à la région est contestable, contrairement à
+la zone appartenant au « jaune » Dans le cas où ces deux zones sont
+confondues, le modèle \emph{egg-yolk} est équivalent au modèle simple
+features et aucune imprécision n’est modélisée.
 
-Parmi les modèles construits en intension, on retrouve des
-propositions basées sur la théorie des sous-ensemble flous, présentée
-précédemment. Cependant, il existe une autre catégorie de modèles,
-fréquemment décrits comme « exacts » dans la littérature (Schneider,
-2003 ; Bejaoui et al., 2009).
+Parallèlement à ces travaux, \textcite{Clementini1996} ont proposé une
+modélisation des surfaces imprécises, qui sera par la suite étendue
+pour permettre la modélisation de tout type d’objet spatial
+imprécis. De la même façon que précédemment, une région vague possède
+deux frontières, dont la sémantique est identique à celle du modèle
+egg-yolk. Cependant, les propositions de \textcite{Cohns1996} et de
+\textcite{Clementini1996} se distinguent par leur modélisation des
+relations topologiques \autocite{Cohn1996}. Le modèle \emph{egg-yolk}
+est basé sur le modèle RCC-8 alors que le modèle proposé par
+\textcite{Clementini1996} est basé sur le modèle 9IM tout comme le
+modèle, similaire, qui sera proposé par \textcite{Erwig1997}. En
+découle une modélisation différente des relations topologiques entre
+deux régions vagues. Pour \textcite{Clementini1996} le modèle
+\emph{egg-yolk} se distingue par son approche topologique du problème,
+là où eux ont privilégié une approche géométrique. Clementini
+proposera ultérieurement une extension de ce modèle en vue d’y
+intégrer la modélisation des points et des polylignes
+\autocite{Clementini2005,Clementini2008}, contrairement au modèle
+d’\textcite{Erwig1997}, limité aux régions imprécises.
 
-En 1996, Cohn et Gotts (Cohn et Gotts, 1996) ont proposé le modèle
-egg-yolk, qui demeure aujourd’hui la plus connue des solutions de
-modélisation de l’imprécision spatiale. Les auteurs proposent de
-modéliser des étendues imprécises à l’aide de régions délimitées par
-deux frontières. Par analogie avec un œuf au plat, la zone délimitée
-par la seconde frontière est baptisée « white » et celle délimitée par
-la première frontière, incluse dans « le blanc de l’œuf », est
-baptisée « yolk ». Pour poursuivre avec cette analogie, la partie du
-« blanc » non incluse dans le « jaune » correspond alors à la partie
-imprécise, i.e. dont l’appartenance à la région est contestable,
-contrairement à la zone appartenant au « jaune » Dans le cas où ces
-deux zones sont confondues, le modèle egg-yolk est équivalent au
-modèle simple features et aucune imprécision n’est modélisée.
-
-Parallèlement à ces travaux, Clementini et Di Felice (1996) ont
-proposé une modélisation des surfaces imprécises, qui sera par la
-suite étendue pour permettre la modélisation de tout type d’objet
-spatial imprécis. De la même façon que précédemment, une région vague
-possède deux frontières, dont la sémantique est identique à celle du
-modèle egg-yolk. Cependant, les propositions de Cohns et Gotts (1996)
-et de Clementini et Di Felice (1996) se distinguent par leur
-modélisation des relations topologiques (Cohn et Gotts, 1996). Le
-modèle egg-yolk est basé sur la théorie RCC1 proposée par Randell et
-Cohn (1989) alors que le modèle proposé par Clementini et Di Felice
-(1996) est basé sur la topologie des ensembles de points (Egenhofer et
-Herring, 1990) tout comme le modèle, similaire, qui sera proposé par
-Erwig et Schneider en 1997 (Erwig, 1997). En découle une modélisation
-différente des relations topologiques entre deux régions vagues. Pour
-Clementini et Di Felice (1996) le modèle egg-yolk se distingue par son
-approche topologique du problème, là où eux ont privilégié une
-approche géométrique. Clementini proposera ultérieurement une
-extension de ce modèle en vue d’y intégrer la modélisation des points
-et des polylignes (Clementini, 2005 ; Clementini, 2008), contrairement
-au modèle d’Erwig et Schneider (1997), limité aux régions imprécises.
-
-Schneider a proposé une modélisation exacte des objets imprécis1 en
-1996. Contrairement aux modèles présentés précédemment, ce dernier
-offre, dès sa première itération (Schneider, 1996), la possibilité de
-modéliser des points, des lignes et des régions imprécises qui peuvent
-être à trous ou composées de plusieurs noyaux. Cette proposition est
-basée sur le modèle Realm/Rose de Güting et Schneider (1995), qui
-propose de définir des objets spatiaux à partir d’une grille régulière
-de points. Chaque objet, quel que soit son type, est construit à
-partir d’un ou de plusieurs de ces points, ce qui s’apparente à une
-version discrète du paradigme des ensembles de points.
+\textcite{Schneider1996} a proposé une modélisation exacte des objets
+imprécis \footnote{} en 1996. Contrairement aux modèles présentés
+précédemment, ce dernier offre, dès sa première itération la
+possibilité de modéliser des points, des lignes et des régions
+imprécises qui peuvent être à trous ou composées de plusieurs
+noyaux. Cette proposition est basée sur le modèle Realm/Rose de
+\textcite{Guting1995}, qui propose de définir des objets spatiaux à
+partir d’une grille régulière de points. Chaque objet, quel que soit
+son type, est construit à partir d’un ou de plusieurs de ces points,
+ce qui s’apparente à une version discrète du paradigme des ensembles
+de points.
 
 Les modèles précédents ont pour point commun de ne pas permettre la
-modélisation des objets partiellement imprécis1, tel que l’on pourrait
-conceptualiser le lac du Chambon, dont la limite est précise par
-endroits, notamment le long du barrage (Figure 3). Bejaoui et
-al. (Bejaoui 2009 ; Bejaoui et al, 2009) proposent donc d’étendre le
+modélisation des objets partiellement imprécis \footnote{}, tel que
+l’on pourrait conceptualiser le lac du Chambon, dont la limite est
+précise par endroits, notamment le long du barrage (Figure
+3). \textcite{Bejaoui2009,Bejaoui2009a} proposent donc d’étendre le
 modèle egg-yolk à ce type d’objet tout en permettant la modélisation
 de points et de lignes imprécises. Pour ce faire, les auteurs
 proposent de re-formaliser le modèle à l’aide du paradigme des
 ensembles de points, abandonnant le modèle RCC initialement utilisé
-par Cohn et Gotts (1996). Mais la principale différence avec les
+par \textcite{Cohn1996}. Mais la principale différence avec les
 propositions précédentes n’est pas due aux types d’objets modélisables
 ou à la théorie de rattachement, mais au raffinement de la sémantique
 des objets imprécis. Ainsi, les lignes imprécises, constituant un seul
-type d’objet dans le modèle de Clementini (2005) sont ici décomposées
-en neufs classes, en fonction de la nature (imprécise, partiellement
-imprécise ou précise) de leur intérieur et de leur frontière. Pour les
-régions imprécises, trois catégories sont proposées : les régions
-précises, les régions partiellement imprécises, dont certaines parties
-sont précises et d’autres non et les régions imprécises. Ce modèle
-offre donc une finesse dans la modélisation d’objets spatiaux imprécis
-qui était jusqu’ici inaccessible aux modèles exacts, mais au prix
-d’une importante complexification du modèle.
+type d’objet dans le modèle de \textcite{Clementini2005} sont ici
+décomposées en neufs classes, en fonction de la nature (imprécise,
+partiellement imprécise ou précise) de leur intérieur et de leur
+frontière. Pour les régions imprécises, trois catégories sont
+proposées : les régions précises, les régions partiellement
+imprécises, dont certaines parties sont précises et d’autres non et
+les régions imprécises. Ce modèle offre donc une finesse dans la
+modélisation d’objets spatiaux imprécis qui était jusqu’ici
+inaccessible aux modèles exacts, mais au prix d’une importante
+complexification du modèle.
 
 \begin{figure}
   \centering
   \includegraphics{../figures/fig7.png}
   \caption{Illustration de la modélisation du lac du Chambon avec un
-    modèle exact tel que proposé par Bejaoui et al. (2009). Comme pour
-    tous les modèles “exacts” la zone d’appartenance totale est
+    modèle exact tel que proposé par \textcite{Bejaoui2009}. Comme
+    pour tous les modèles “exacts” la zone d’appartenance totale est
     incluse dans la zone d’appartenance au moins partielle.}
   \label{fig:champ_exact}
 \end{figure}
@@ -1197,133 +1191,138 @@ d’une importante complexification du modèle.
 Définir un objet spatial imprécis à l’aide de la théorie des
 sous-ensembles flous nécessite au préalable d’en élaborer un modèle de
 représentation. C’est un travail qui, à notre connaissance, n’a été
-entrepris que par Schneider (1999 ; 2001) qui a formalisé une version
-floue du modèle simple features.
+entrepris que par \textcite{Schneider1999,Schneider2001} qui a
+formalisé une version floue du modèle \emph{simple features.}
 
-Le modèle de Schneider (1999) définit trois types de géométries
-floues : le fpoint, la fline et la fregion, équivalents flous des
-types point, line et region du modèle simple features. Comme pour ce
-modèle, la proposition de Schneider se base sur le paradigme des
-ensembles de points. Les fpoints sont définis comme une union de
-points flous1, i.e. un ensemble de positions disjointes, deux à deux,
-auxquelles est associée une valeur, le degré d’appartenance de la
-position au fpoint. Ainsi, contrairement à un point, un fpoint peut
-occuper plus d’une position (Figure 8). Les lignes floues (à ne pas
-confondre avec les flines), sont également définies comme un ensemble
-de points flous. Cependant, contrairement au fpoint, la construction
-de cet ensemble est contrainte et les points flous appartenant à une
-ligne floue doivent se trouver sur une même coube continue. De plus,
-chaque point flou doit avoir un degré d’appartenance unique,
-strictement croissant (ou décroissant) dans le sens de la coube. Les
-deux points flous situés aux extrémités d’une ligne floue ont donc,
-respectivement, le degré d’appartenance maximal et minimal à la ligne
-floue. Les blocs flous sont définis comme l’union d’un nombre fini de
-lignes floues, ne pouvant êtres connectées que par leurs extrémités2
-et les flines comme une union de blocs flous disjoints. Cette
-construction permet aux flines de représenter des objets linéaires
-complexes et composés de plusieurs géométries distinctes qui ne
-seraient pas représentables par le type line du modèle simple features
-(Figure 8). Enfin, les fregions sont définies comme étant un ensemble
-de points flous ne comportant pas d’anomalies géométriques
-(e.g. superpositions, croisements). Comme pour les fpoints et les
-flines, les fregions peuvent modéliser des géométries plus complexes
-que le type region du modèle simple features, une fregion pouvant être
-composée de plusieurs polygones disjoints (Figure 8). Schneider (2004)
-complétera ce modèle en définissant un ensemble de prédicats
-permettant de modéliser des relations topologiques entre géométries
-floues.
+Le modèle de \textcite{Schneider1999}q définit trois types de
+géométries floues : le fpoint, la fline et la fregion, équivalents
+flous des types point, line et region du modèle simple features. Comme
+pour ce modèle, la proposition de Schneider se base sur le paradigme
+des ensembles de points. Les fpoints sont définis comme une union de
+points flous \footnote{}, \ie un ensemble de positions disjointes,
+deux à deux, auxquelles est associée une valeur, le degré
+d’appartenance de la position au fpoint. Ainsi, contrairement à un
+point, un fpoint peut occuper plus d’une position (Figure 8). Les
+lignes floues (à ne pas confondre avec les flines), sont également
+définies comme un ensemble de points flous. Cependant, contrairement
+au fpoint, la construction de cet ensemble est contrainte et les
+points flous appartenant à une ligne floue doivent se trouver sur une
+même coube continue. De plus, chaque point flou doit avoir un degré
+d’appartenance unique, strictement croissant (ou décroissant) dans le
+sens de la coube. Les deux points flous situés aux extrémités d’une
+ligne floue ont donc, respectivement, le degré d’appartenance maximal
+et minimal à la ligne floue. Les blocs flous sont définis comme
+l’union d’un nombre fini de lignes floues, ne pouvant êtres connectées
+que par leurs extrémités2 et les flines comme une union de blocs flous
+disjoints. Cette construction permet aux flines de représenter des
+objets linéaires complexes et composés de plusieurs géométries
+distinctes qui ne seraient pas représentables par le type line du
+modèle simple features (Figure 8). Enfin, les fregions sont définies
+comme étant un ensemble de points flous ne comportant pas d’anomalies
+géométriques (e.g. superpositions, croisements). Comme pour les
+fpoints et les flines, les fregions peuvent modéliser des géométries
+plus complexes que le type region du modèle simple features, une
+fregion pouvant être composée de plusieurs polygones disjoints (Figure
+8). \textcite{Schneider2004} complétera ce modèle en définissant un
+ensemble de prédicats permettant de modéliser des relations
+topologiques entre géométries floues.
 
 \begin{figure}
   \centering
   \includegraphics{../figures/fig8.png}
-  \caption{Les trois types géométriques flous proposés par Schneider
-    (1999). D’après Schneider (1999).}
+  \caption{Les trois types géométriques flous proposés par
+    \textcite{Schneider1999}. D’après \textcite{Schneider1999}.}
   \label{fig:mod_schneider}
 \end{figure}
 
 Plusieurs implémentations de ce modèle ont été proposées, notamment
-par Kanjilal et al. (2010) ou par Dilo et al. (Dilo, 2006 ; Dilo et
-al., 2007). Mais, d’autres travaux ont également proposé des
-modélisations floues d’objets spatiaux imprécis, sans rattachement ou
-définition explicite d’un modèle théorique. C’est notamment le cas de
-Zoghalmi ou de Runz qui proposent une approche fondée sur les
-alpha-cuts (de Runz, 2008 ; de Runz et al., 2008 ; Zoghlami, 2013 ;
-Zoghlami et al., 2016) ou de Carniel et al. (2016).
+par \textcite{Kanjilal2010} ou par \textcite{Dilo2006,Dilo2007}. Mais,
+d’autres travaux ont également proposé des modélisations floues
+d’objets spatiaux imprécis, sans rattachement ou définition explicite
+d’un modèle théorique. C’est notamment le cas de \bsc{Zoghalmi} ou
+\bsc{de Runz} qui proposent une approche fondée sur les
+\emph{alpha-cuts} \autocite{de Runz2008,de
+  Runz2008,Zoghlami2013,Zoghlami2016} ou de \textcite{Carniel2016}.
 
-Kanjinal et al. (2010), proposent d’implémenter le type fregion défini
-par Schneider (1999) à l’aide de « région[s] plateau », définies comme
-un ensemble non nul et fini de polygones1 (ou multi-polygones) nets,
-représentant une plage de valeurs de degré d’appartenance. Cette
-implémentation est semblable à l’approche par alpha-cuts proposée par
-de Runz (2008) ou Zoghalmi (2013 ; 2016). Dans la théorie des
+\textcite{Kanjina2100}, proposent d’implémenter le type fregion défini
+par \textcite{Schneider1999} à l’aide de « région[s] plateau »,
+définies comme un ensemble non nul et fini de polygones1 (ou
+multi-polygones) nets, représentant une plage de valeurs de degré
+d’appartenance. Cette implémentation est semblable à l’approche par
+alpha-cuts proposée par \textcite{de Runz2008} ou
+\textcite{Zoghalmi2013,Zoghalmi2016}. Dans la théorie des
 sous-ensembles flous, une alpha-cut est définie comme l’ensemble des
 éléments d’un sous-ensemble flou ayant un degré d’appartenance
-supérieur à un seuil fixé2 (Bouchon-Meunier, 2007). Si les éléments du
-sous-ensemble flou sont des positions, une alpha-cut permet de définir
-une aire, modélisable par un polygone. Ainsi, les implémentations
-proposées par Kanjinal et al. (2010), Zoghalmi (2013 ; 2016) ou de
-Runz (2008) ont pour point commun de représenter un sous-ensemble flou
-en le discrétisant à l’aide de polygones. Mais ces approches ont une
-différence majeure: les contraintes de construction des
-polygones. L’approche de Kanjinal et al. (2010) impose aux polygones
-constitutif d’une région plateau d’être disjoints ou adjacents deux à
-deux, une même position ne peut donc appartenir qu’à un seul polygone,
-ce qui n’est pas pour les implémentations proposées par Zoghalmi
-(2013 ; 2016) ou de Runz (2008), où une position appartient, par
-définition, à toutes les alpha-cuts construites à partir d’un seuil
-inférieur à son degré d’appartenance. Cette distinction n’est pas
-visible sur la figure 9, les deux approches donnant, pour le même
-nombre de polygones, des résultats visuellement
-équivalents. Cependant, les trois polygones représentés sur la figure
-9 ont une sémantique différente selon l’implémentation choisie. Dans
-l’implémentation de Kanjinal et al. (2010), les trois polygones sont
-disjoints. Le premier délimite le noyau, le second l’aire ayant un
-degré d’appartenance compris entre 1 et 0,25 (exclus) et le dernier
-polygone délimitant l’aire dont le degré d’appartenance est
-strictement supérieur à 0 et inférieur à 0,25. Avec l’implémentation
-par alpha-cuts, les polygones sont superposés, et si le premier
-polygone délimite toujours le noyau, le second délimite l’aire dont le
-degré d’appartenance est supérieur à 0,25 et le troisième l’aire dont
-le degré d’appartenace est non nul3. Par conséquent, si l’on ne
-construit que les alpha-cuts du noyau et du support, le résultat de
-l’implémentation proposée par Zoghalmi (2013 ; 2016) ou de Runz (2008)
-est identique à celui des modèles de Cohn et Gotts (1996) ou de
-Clementini et di Felice (1996) présentés précédemment et qui
-superposent également la zone d’appartenance à la zone d’appartenance
-partielle; ce qui n’est pas le cas pour l’implémentation de Kanjinal
-et al. (2010), car les polygones définissant une région plateau y
-sont, par définition, disjoints.
+supérieur à un seuil fixé \footnote{}
+\autoref{Bouchon-Meunier2007}. Si les éléments du sous-ensemble flou
+sont des positions, une alpha-cut permet de définir une aire,
+modélisable par un polygone. Ainsi, les implémentations proposées par
+\textcite{Kanjinal2010}, \textcite{Zoghalmi2013,Zoghalmi2016} ou
+\textcite{de Runz2008} ont pour point commun de représenter un
+sous-ensemble flou en le discrétisant à l’aide de polygones. Mais ces
+approches ont une différence majeure: les contraintes de construction
+des polygones. L’approche de \textcite{Kanjinal2010} impose aux
+polygones constitutif d’une région plateau d’être disjoints ou
+adjacents deux à deux, une même position ne peut donc appartenir qu’à
+un seul polygone, ce qui n’est pas pour les implémentations proposées
+par \textcite{Zoghalmi2013,Zoghalmi2016} ou \textcite{de Runz2008}, où
+une position appartient, par définition, à toutes les alpha-cuts
+construites à partir d’un seuil inférieur à son degré
+d’appartenance. Cette distinction n’est pas visible sur la figure 9,
+les deux approches donnant, pour le même nombre de polygones, des
+résultats visuellement équivalents. Cependant, les trois polygones
+représentés sur la figure 9 ont une sémantique différente selon
+l’implémentation choisie. Dans l’implémentation de Kanjinal et
+al. (2010), les trois polygones sont disjoints. Le premier délimite le
+noyau, le second l’aire ayant un degré d’appartenance compris entre 1
+et 0,25 (exclus) et le dernier polygone délimitant l’aire dont le
+degré d’appartenance est strictement supérieur à 0 et inférieur à
+0,25. Avec l’implémentation par alpha-cuts, les polygones sont
+superposés, et si le premier polygone délimite toujours le noyau, le
+second délimite l’aire dont le degré d’appartenance est supérieur à
+0,25 et le troisième l’aire dont le degré d’appartenace est non
+nul3. Par conséquent, si l’on ne construit que les alpha-cuts du noyau
+et du support, le résultat de l’implémentation proposée par
+\textcite{Zoghalmi2013,Zoghalmi2016} ou \textcite{de Runz2008} est
+identique à celui des modèles de \textcite{Cohn1996} ou de
+\textcite{Clementini1996} présentés précédemment et qui superposent
+également la zone d’appartenance à la zone d’appartenance partielle;
+ce qui n’est pas le cas pour l’implémentation de
+\textcite{Kanjinal2010}, car les polygones définissant une région
+plateau y sont, par définition, disjoints.
 
 \begin{figure}
   \centering
   \includegraphics{../figures/fig9.png}
-  \caption{Illustration de la modélisation du lac du Chambon avec un modèle flou discrétisé par un ensemble de polygones.}
+  \caption{Illustration de la modélisation du lac du Chambon avec un
+    modèle flou discrétisé par un ensemble de polygones.}
   \label{fig:champ_polygones}
 \end{figure}
 
 Comme pour les implémentations précédentes, l’approche proposée par
-Dilo et al. (2007) ne s’applique qu’au cas des régions floues. Les
+\textcite{Dilo2007} ne s’applique qu’au cas des régions floues. Les
 auteurs proposent d’implémenter ces dernières à l’aide de deux
 linéaires, représentant les frontières du support et du noyau et d’un
 maillage, servant de support à une interpolation. Les modèles
 précédemment présentés imposent un échantillonnage des degrés
 d’appartenance, dont la précision varie en fonction du nombre de
-régions nettes (Kanjilal et al., 2010) ou d’alpha-cuts utilisées
-(Zoghlami et al., 2016). L’implémentation proposée par Dilo et
-al. vise à contourner ce problème en offrant la possibilité de
-calculer le degré d’appartenance en tout point de la région floue par
-interpolation (de manière similaire a la proposition de Tøssebro et
-Nygård, 2002). Ils proposent pour cela de définir un maillage à l’aide
-d’une triangulation de Delaunay contrainte aux frontières du noyau et
-du support, cette dernière devant être post-traitée pour supprimer les
+régions nettes \autocite{Kanjilal2010} ou d’alpha-cuts utilisées
+\autocite{Zoghlami2016}. L’implémentation proposée par
+\textcite{Zoghalmi2013,Zoghalmi2016} ou \textcite{de Runz2008} vise à
+contourner ce problème en offrant la possibilité de calculer le degré
+d’appartenance en tout point de la région floue par interpolation (de
+manière similaire a la proposition de \textcite{Tossebro2002}. Ils
+proposent pour cela de définir un maillage à l’aide d’une
+triangulation de Delaunay contrainte aux frontières du noyau et du
+support, cette dernière devant être post-traitée pour supprimer les
 triangles créés dans les trous ou concavités. Le degré d’appartenance
 au sous-ensemble flou des points appartenant aux frontières étant
 connu, il est ainsi possible de calculer le degré d’appartenance en
 tout point à l’aide d’une interpolation triangulaire (Figure 10). La
 précision de l’estimation peut être améliorée par l’ajout de points
 intermédiaires dont le degré d’appartenance à l’ensemble est connu, ce
-qui peut être le cas lorsque, comme proposé par Dilo et al. (2007), la
-région floue est définie à partir d’un ensemble de points (les
+qui peut être le cas lorsque, comme proposé par \textcite{Dilo2007},
+la région floue est définie à partir d’un ensemble de points (les
 frontières sont alors définies à l’aide d’enveloppes concaves). Le
 principal problème de cette approche est qu’elle conduit à une
 importante complexification des opérations inter-ensembles. Là où les
@@ -1334,16 +1333,16 @@ modèle impose la reconstruction du maillage et son post-traitement, ce
 qui peut rendre les opérations inter-ensembles (unions, intersections)
 coûteuses.
 
-Schneider (2003) a également proposé une implémentation de son propre
-modèle. Contrairement aux implémentations précédemment citées,
+\textcite{Schneider2003} a également proposé une implémentation de son
+propre modèle. Contrairement aux implémentations précédemment citées,
 celle-ci aborde tous les types formalisés dans le modèle théorique
 (fpoint, fline et fregion). Ce travail est assez proche de ce qu’avait
 proposé le même auteur avec sa proposition de modèle exact basé sur
-l’approche Realm/Rose (Schneider, 1996) (Partie 4.2.1), puisque
-l’auteur propose d’implémenter les types spatiaux flous à l’aide d’un
-ensemble fini de points répartis régulièrement. L’implémentation du
-type fpoint ne présente pas de particularités, il s’agit d’un point
-appartenant à l’ensemble des positions possibles et ayant un degré
+l’approche Realm/Rose \textcite{Schneider1996}, puisque l’auteur
+propose d’implémenter les types spatiaux flous à l’aide d’un ensemble
+fini de points répartis régulièrement. L’implémentation du type fpoint
+ne présente pas de particularités, il s’agit d’un point appartenant à
+l’ensemble des positions possibles et ayant un degré
 d’appartenance. De la même manière, l’implémentation du type fline est
 proche de la formalisation, la principale différence étant que les
 points composant cette dernière doivent nécessairement appartenir à
@@ -1353,25 +1352,25 @@ d’appartenance à la région floue. Les règles présentées dans le modèle
 théorique s’appliquent toujours, ainsi les régions avec des anomalies
 géométriques ne peuvent pas être modélisées. On peut noter que cette
 implémentation des fregions est assez semblable à celle qui sera
-proposée plus tardivement par Kanjinal et al. (2010), avec une région
+proposée plus tardivement par \textcite{Kanjinal2010}, avec une région
 floue modélisée comme un ensemble de polygones nets.
 
 \begin{figure}
   \centering
   \includegraphics{../figures/fig10.png}
   \caption{Illustration de la modélisation du lac du Chambon avec un
-    modèle flou tel qu’implémenté par Dilo et al. (2007)}
+    modèle flou tel qu’implémenté par \textcite{Dilo2007}}
   \label{fig:champ_dilo}
 \end{figure}
 
 Pour finir, on peut également citer l’implémentation proposée par
-Carniel et al. (2016). Ces derniers ne proposent qu’une implémentation
-des lignes et des points flous, délaissant le cas des régions
-floues. Cinq types sont définis et implémentés dans PostGIS par les
-auteurs. Le premier d’entre eux est le type générique FuzzyGeometry,
-qui se spécialise en FuzzyPoint, FuzzyLine et leurs équivalents
-complexes, FuzzyMultiPoint et FuzzyMultiLine. On notera que cette
-organisation reprend celle du modèle simple feature. Cette
+\textcite{Carniel2016}. Ces derniers ne proposent qu’une
+implémentation des lignes et des points flous, délaissant le cas des
+régions floues. Cinq types sont définis et implémentés dans PostGIS
+par les auteurs. Le premier d’entre eux est le type générique
+FuzzyGeometry, qui se spécialise en FuzzyPoint, FuzzyLine et leurs
+équivalents complexes, FuzzyMultiPoint et FuzzyMultiLine. On notera
+que cette organisation reprend celle du modèle simple feature. Cette
 ressemblance ne se limite pas à cet élément, puisque les types
 complexes sont également définis comme des ensembles de types
 simples. Les différences avec le modèle simple feature apparaissent
@@ -1400,21 +1399,21 @@ nature des objets spatiaux sélectionnés.
 Une première possibilité consiste à définir un objet spatial par la
 sélection des positions qu’il occupe. La délimitation d’une zone à
 partir d’un ensemble de pixels est un exemple concret de ce type
-d’approche, notamment proposée par Zhan (1997). Cet exemple ne doit
-cependant pas laisser croire que la catégorisation proposée ici est
-fondée sur la nature de l’implémentation, mais bien sur la sélection
-de positions dont l’infinité ne peut qu’être approximée par des
-modèles champs, quelle que soit la nature de leur
+d’approche, notamment proposée par \textcite{Zhan1997}. Cet exemple ne
+doit cependant pas laisser croire que la catégorisation proposée ici
+est fondée sur la nature de l’implémentation, mais bien sur la
+sélection de positions dont l’infinité ne peut qu’être approximée par
+des modèles champs, quelle que soit la nature de leur
 implémentation. Toutefois, l’ensemble des travaux que nous
 présenterons s’appuie sur une approche raster.
 
 À l’inverse, on peut imaginer construire des objets spatiaux à partir
-d’une sélection d’objets, d’ « agrégats » (Charrre, 1995) de
+d’une sélection d’objets, d’ « agrégats » \autocite{Charrre1995} de
 positions. Cette approche définit des objets spatiaux de manière
-semblable aux Elements-Clustering Objects de Liu et al. (2019) (Partie
-2.2). Dans ce cas, le sous-ensemble spatialisé peut être défini à
-partir d’un groupe d’éléments ne couvrant pas l’intégralité de
-l’espace (e.g. sélection à partir d’un réseau routier). Nous
+semblable aux\emph{ Elements-Clustering Objects} de \textcite{Liu2019}
+(Partie 2.2). Dans ce cas, le sous-ensemble spatialisé peut être
+défini à partir d’un groupe d’éléments ne couvrant pas l’intégralité
+de l’espace (\eg sélection à partir d’un réseau routier). Nous
 qualifions ce second type de sélection d’ordre supérieur, car elle
 s’opère sur des objets complexes, eux-mêmes composés de positions, et
 non directement de positions comme c’est le cas pour une sélection
@@ -1437,16 +1436,16 @@ situés à l’intérieur du lac, puis il décroit en fonction de la
 distance du centroïde du pixel au point du rivage le plus proche. Ces
 règles peuvent être raffinées autant que nécessaire.
 
-Les travaux de Vanegass et al. (2011) et Takemura et al. (2012), par
-exemple, s’intéressent à la modélisation de relations spatiales,
-respectivement « entouré de » et « le long de ». L’objectif est de
-délimiter la zone validant la relation spatiale considérée,
-c’est-à-dire de construire un « paysage flou » selon la terminologie
-proposée par Bloch (1996). Ce type de modélisation est nécessairement
+Les travaux de \textcite{Vanegass2011,Takemura2012}, par exemple,
+s’intéressent à la modélisation de relations spatiales, respectivement
+« entouré de » et « le long de ». L’objectif est de délimiter la zone
+validant la relation spatiale considérée, c’est-à-dire de construire
+un « paysage flou » selon la terminologie proposée par
+\textcite{Bloch1996}. Ce type de modélisation est nécessairement
 impacté par l’imprécision du langage naturel. Une description de
 position est nécessairement imprécise, une même relation spatiale
 pouvant prendre un sens différent en fonction de l’objet de référence,
-du locuteur, etc. (Vandeloise, 1986 ; Borillo, 1998 ; Bateman, 2010),
+du locuteur, etc. \autocite{Vandeloise1986,Borillo1998,Bateman2010},
 écueil justifiant le recours à la théorie des sous-ensembles
 flous. Ces deux travaux sont fondés sur une méthodologie
 similaire. Ils définissent tous deux un ensemble de métriques et de
@@ -1465,34 +1464,35 @@ modélisée pour la position considérée.
 
 Si ces travaux proposent avant tout une réflexion théorique, d’autres
 auteurs utilisent cette même approche pour répondre à des
-problématiques plus appliquées. C’est notamment le cas d’Arabacioglu
-(2010) qui propose une application de la théorie des sous-ensembles
-flous à l’architecture, ou Kurtener et Badenko (2000), Makropoulos et
-al. (2003) et Girot (2007) qui se sont penchés sur des questions de
-prise de décision appliquées à la gestion du territoire. Comme
-précédemment, ces travaux utilisent un raster et calculent pour chaque
-pixel un degré d’appartenance à une zone, dont la sémantique varie en
-fonction de la problématique. Cependant, le calcul du degré
-d’appartenance dans les travaux de Griot (2007), Makropoulos et
-al. (2003) et Arabacioglu (2010) est réalisé à l’aide d’un système
-d’inférence flou et non directement comme dans les travaux de Vanegass
-et al. (2011) et Takemura et al. (2012). Les systèmes d’inférence
-flous, pendant flou des systèmes experts,  permettent également de
-calculer un degré d’appartenance pour chaque individu (quelle que soit
-sa nature), mais à partir de règles logiques formulées en langage
-naturel.  Leur utilisation permet donc de prendre en compte
-l’imprécision, ici liée à l’expression orale (Makropoulos et al.,
-2003 ; Griot, 2007), ou à la quantification de ressentis (Arabacioglu,
-2010), mais également de formaliser des connaissances expertes.
+problématiques plus appliquées. C’est notamment le cas
+d’\textcite{Arabacioglu2010} qui propose une application de la théorie
+des sous-ensembles flous à l’architecture, ou
+\textcite{Kurtener2000,Makropoulos2003,Girot2007} qui se sont penchés
+sur des questions de prise de décision appliquées à la gestion du
+territoire. Comme précédemment, ces travaux utilisent un raster et
+calculent pour chaque pixel un degré d’appartenance à une zone, dont
+la sémantique varie en fonction de la problématique. Cependant, le
+calcul du degré d’appartenance dans les travaux de
+\textcite{Griot2007,Makropoulos2003,Arabacioglu2010} est réalisé à
+l’aide d’un système d’inférence flou et non directement comme dans les
+travaux de \textcite{Vanegass2011,Takemura2012}. Les systèmes
+d’inférence flous, pendant flou des systèmes experts, permettent
+également de calculer un degré d’appartenance pour chaque individu
+(quelle que soit sa nature), mais à partir de règles logiques
+formulées en langage naturel.  Leur utilisation permet donc de prendre
+en compte l’imprécision, ici liée à l’expression orale
+\autocite{Makropoulos2003,Griot2007}, ou à la quantification de
+ressentis \autocite{Arabacioglu2010}, mais également de formaliser des
+connaissances expertes.
 
 La définition en extension du premier ordre d’un sous-ensemble
 spatialisé est courante dans la littérature et les publications
 présentées ici, l’appliquent à des thématiques diverses, comme
-l’interprétation d’images aériennes (Brandtberg, 2002 ; Fonte et
-Lodwick, 2005), la gestion du territoire (Griot, 2007 ; Makropoulos et
-al., 2003), la qualification de ressentis (Arabacioglu, 2010) ou la
-modélisation de relations spatiales floues (Takemura et al., 2012 ;
-Vanegas et al., 2011).
+l’interprétation d’images aériennes \autocite{Brandtberg2002,
+  Fonte2005}, la gestion du territoire
+\autocite{Griot2007,Makropoulos2003}, la qualification de ressentis
+\autocite{Arabacioglu2010}, ou la modélisation de relations spatiales
+floues \textcite{Vanegass2011,Takemura2012}.
 
 \paragraph{Construction en extension d'ordre supérieur}
 
@@ -1516,16 +1516,16 @@ considère qu’ils n’appartiennent pas à la zone modélisée.
   \centering
   \includegraphics{../figures/fig12.png}
   \caption{Illustration de la définition du lac du Chambon par
-    sélection floue d’objets géographiques (i.e. construction en
+    sélection floue d’objets géographiques (\ie construction en
     extension d’ordre supérieur).}
   \label{fig:champ_raster_sel}
 \end{figure}
 
 Ce processus de construction, pendant spatial de la réflexion sur les
-requêtes floues (Wang, 1994 ; Moreau et al., 2018), est utilisé par
-Duračiová et Chalachanová (2017) qui illustrent leur méthodologie par
-la sélection floue « [des] grands parkings proches du stade et ayant
-été rénovés il y a environ deux ans ». Leur démarche est fortement
+requêtes floues \textcite{Wang1994,Moreau2018}, est utilisé par
+\textcite{Duraciova2017} qui illustrent leur méthodologie par la
+sélection floue « [des] grands parkings proches du stade et ayant été
+rénovés il y a environ deux ans ». Leur démarche est fortement
 similaire à celle de l’exemple précédent (Figure 12). Les autrices
 définissent des règles permettant de quantifier l’appartenance des
 objets spatiaux candidats à l’ensemble flou correspondant à la
@@ -1537,10 +1537,10 @@ proches du stade et celui des parking rénovés il y a environ deux ans)
 et l’intersection de ces deux ensembles, réalisée à l’aide des
 opérateurs flous présentés précédemment (Partie 3) permet de
 construire le sous-ensemble flou désiré. Un processus similaire est
-utilisé par Bard et al. (2003) dans le cadre de l’évaluation de la
+utilisé par \textcite{Bard2003} dans le cadre de l’évaluation de la
 généralisation cartographique. Les objets spatiaux sont ici classés
 dans des sous-ensembles flous figurant une description qualitative de
-la qualité de la généralisation. Cross et Firat (2000) utilisent quant
+la qualité de la généralisation. \textcite{Cross2000} utilisent quant
 à eux une approche similaire pour ajouter la prise en compte de
 l’imprécision aux modèles objets des systèmes d’information
 géographiques. Dans tous les cas, le sous-ensemble flou construit est
@@ -1567,7 +1567,7 @@ confrontés. Bien que la considération de l’imprécision des objets
 spatiaux soit assez ancienne, la formalisation de modèles et encore
 plus leur implémentation, est un champ de recherche encore actif comme
 le montre, par exemple, la récente réflexion autour de l’expression de
-l’imprécision spatiale au sein du format GML (Wei et al., 2017).
+l’imprécision spatiale au sein du format GML \autocite{Wei2017}.
 
 
 %%% Local Variables:
