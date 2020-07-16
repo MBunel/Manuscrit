@@ -3,8 +3,8 @@
   \path[ffa] (0,0) circle [radius=30pt]; % Aire
   \path[ffc] (0,0) circle [radius=30pt]; % Contour
   % ZLC 2
-  \path[ffa, pattern color=RdBu-9-3] (.25,-.5) ellipse (40pt and 20pt); % Aire 
-  \path[ffc, draw=RdBu-9-2] (.25,-.5) ellipse (40pt and 20pt); % Contour
+  \path[ffa2, pattern color=RdBu-9-3] (.25,-.5) ellipse (40pt and 20pt); % Aire 
+  \path[ffc2, draw=RdBu-9-2] (.25,-.5) ellipse (40pt and 20pt); % Contour
   % Objet de ref
   % 1
   \node[circle, inner sep=0pt,minimum size=4pt, fill] (c) at (0,0) {}; % visible
@@ -33,7 +33,7 @@
     \end{scope}
     \begin{scope}
       \clip (0,0) circle [radius=30pt];
-      \path[ffc, draw=RdBu-9-9] (.25,-.5) ellipse (40pt and 20pt);
+      \path[ffc2] (.25,-.5) ellipse (40pt and 20pt);
     \end{scope}
     \node[circle, inner sep=0pt,minimum size=4pt, fill] (c) at (0,0)
     {};
