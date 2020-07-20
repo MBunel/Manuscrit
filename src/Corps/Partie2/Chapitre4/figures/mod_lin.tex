@@ -1,0 +1,47 @@
+﻿\begin{tikzpicture}
+
+  \begin{scope}
+    \path[fill=red] (0,0) rectangle (2,2);
+	\path[draw, dashed] (0,0) rectangle (2,2);
+  \end{scope}
+
+  \path[draw, ->] (2.25,1) --++ (2.75,0)  node[pos=.5, above] {\footnotesize \itshape spatialisation};
+
+  \begin{scope}[xshift=6cm]
+	\path[draw, dashed] (0,0) rectangle (2,2);
+	\begin{scope}
+	    \begin{scope}
+	      \clip (0,0) rectangle (2,2);
+	      \fill[red] (1.25,.7) circle [radius=15pt];
+	      \path[draw] (1.25,.7) circle [radius=15pt];
+	    \end{scope}
+	\end{scope}
+    \node[circle, inner sep=0pt,minimum size=4pt, fill] (c) at (1.25,.7)
+    {};
+  \end{scope}
+
+
+
+  \path[draw, ->] (8.5,1) --++ (2.75,0)  node[pos=.5, above] {\footnotesize \itshape spatialisation};
+
+
+
+
+  \begin{scope}[xshift=12cm]
+	\path[draw, dashed] (0,0) rectangle (2,2);
+	\path[draw] (1.25,.7) circle [radius=15pt];
+    \path[draw](.8,1) circle [radius=20pt];
+	\begin{scope}
+	    \begin{scope}
+	      \clip (1.25,.7) circle [radius=15pt];
+	      \fill[red] (.8,1) circle [radius=20pt];
+	    \end{scope}
+	\end{scope}
+    \node[circle, inner sep=0pt,minimum size=4pt, fill] (c) at (1.25,.7)
+    {};
+    \node[circle, inner sep=0pt,minimum size=4pt, fill] (c) at (.8,1)
+    {};
+  \end{scope}
+
+
+\end{tikzpicture}
