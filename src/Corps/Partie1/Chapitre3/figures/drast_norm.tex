@@ -17,9 +17,5 @@
     
     \addplot3 [surf, colormap/bone, domain = 0:1, samples = 20] {
        x == 1 ? y : ( y== 1 ? x : 0)  };
-    
-    \addplot3 [domain = 0:1, contour gnuplot = {number=11, labels={false}, draw color=black},
-    samples=50,z filter/.code={\def\pgfmathresult{1}}]
-    { x == 1 ? y : ( y== x ? 1 : 0)};
   \end{axis}
 \end{tikzpicture}
