@@ -1,6 +1,45 @@
 
 \subsection{Principe de modélisation autonome}
 
+Un autre principe que nous souhaitons développer est celui de la
+séparation maximale des étapes du processus.
+
+Comme nous l'expliquions dans le \autoref{chap:2} deux étapes sont
+nécessaires pour transformer une position décrite en une \emph{zone de
+  localisation probable,} la \emph{spatialisation} et la
+\emph{fusion.} Mais ces deux étapes peuvent être combinées
+différemment.
+
+Une première solution consiste à \enquote{chainer} la
+\emph{spatialisation} des différents \emph{indices de localisation,}
+comme on peut le voir sur la figure \ref{fig:comp_approches_lin}. Avec
+cette approche les différentes \emph{zones de localisation
+  compatibles} sont créées les unes à la suite des autres, ainsi la
+zone de recherche en entrée de chaque étape de \emph{spatialisation}
+dépend des \emph{spatialisations} précédentes. Avec cette approche,
+l'opération de \emph{fusion} est implicite, elle s'opère, en partie, à
+chaque nouvelle \emph{spatialisation,} puisque les zones ne
+correspondant pas aux \emph{indices de localisation} sont retirées peu
+à peu. La \emph{zone de localisation probable,} en bleu sur la figure
+\ref{fig:comp_approches}, est obtenue une fois que l'on a
+\emph{spatialisé} tous les \emph{indices de localisation.} Cette
+approche est la première que nous ayons envisagée. Elle a pour
+avantage d'être simple à concevoir et à développer. Cependant cette
+approche à un problème majeur. À cause de l'enchainement des étapes de
+\emph{spatialisation} les erreurs se répercutent d'une étape à
+l'autre. Ainsi, si un des \emph{indices de localisation} est mal
+\emph{spatialisé}, que ce soit à cause de la méthode utilisée ou d'une
+mauvaise description, cela se répercute sur toutes les
+\emph{spatialisations} ultérieures. La moindre correction impose donc
+de refaire l'ensemble des traitements.
+
+Une seconde solution, plus robuste, consiste à effectuer l'ensemble
+des opérations de \emph{spatialisation} en parallèle, comme le montre
+la figure \ref{fig:comp_approches_sep}. Avec cette approche la
+\emph{spatialisation} des différents \emph{indices de localisation}
+est effectuée séparément et leur \emph{fusion} est effectuée dans un
+second temps.
+
 \begin{figure}
   \centering
   \subfloat[Construction suivant une démarche linéaire]{
