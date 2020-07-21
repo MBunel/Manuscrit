@@ -1,0 +1,18 @@
+﻿\begin{tikzpicture}
+  \begin{scope}
+    \fill[ffa] (1,1) arc(90:270:1) -- cycle;% [radius=.75cm];
+    \path[ffc] (1,1) arc(90:270:1) -- cycle;
+    \node[color=RdBu-9-1] at (.625,0) {V};
+  \end{scope}
+  \begin{scope}
+    \fill[ffa2] (1,1) arc(270:90:-1) -- cycle;% [radius=.75cm];
+    \path[ffc2] (1,1) arc(270:90:-1) -- cycle;
+    \node[color=RdBu-9-9] at (1.375,0) {F};
+  \end{scope}
+  \begin{scope}
+    \path[ffc, draw=black] (1,0) circle [radius=.75cm];
+    \node[text width=3cm] (leg) at (4,1)
+    {\footnotesize \itshape Ensemble des règles connues};
+    \path[draw, ->] (leg.west) --++ (25:-.9);
+  \end{scope}
+\end{tikzpicture}
