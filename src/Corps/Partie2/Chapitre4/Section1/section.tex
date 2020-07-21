@@ -38,7 +38,17 @@ des opérations de \emph{spatialisation} en parallèle, comme le montre
 la figure \ref{fig:comp_approches_sep}. Avec cette approche la
 \emph{spatialisation} des différents \emph{indices de localisation}
 est effectuée séparément et leur \emph{fusion} est effectuée dans un
-second temps.
+second temps. Comme pour la démarche \enquote{chainée} une
+\emph{spatialisation} erronée peut impacter la \emph{zone de
+  localisation probable,} toutefois il est plus facile de corriger ces
+erreurs. En effet, si les différentes \emph{zones de localisation
+  compatibles} ont été conservées il est possible de faire une
+nouvelle \emph{fusion} en retirant un, ou plusieurs \emph{indices de
+  localisation.} Alors qu'avec une approche \enquote{chainée} il est
+nécessaire de refaire toutes les opérations de \emph{spatialisations}
+ultérieures à celle de \emph{l'indice de localisation} que l'on
+souhaite modifier ou retirer et ce même si les résultats
+intermédiaires ont été conservés.
 
 \begin{figure}
   \centering
@@ -56,6 +66,8 @@ second temps.
       de localisation}.}
   \label{fig:comp_approches}
 \end{figure}
+
+Les 
 
 \subsection{Principe de décomposition}
 
