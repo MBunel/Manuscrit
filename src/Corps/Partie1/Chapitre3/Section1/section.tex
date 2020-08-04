@@ -1011,8 +1011,6 @@ que les distances perçues peuvent êtres asymétriques.
 \tdi{Bonne ref An analysis of probability of area techniques for
   missing persons in Yosemite National Park}
 
-\tdi{équation fausses, vérifier}
-
 S'il n'y a pas de différences sémantiques fondamentales entre une
 distance métrique et une distance-temps, leur processus de
 spatialisation est cependant légèrement différent. En effet, toute
@@ -1056,7 +1054,7 @@ suivante:
 
 \begin{equation}
   \label{eq:marche_naismith}
-  V = \dfrac{5 × 0,6}{5 + 0,6 × S}
+  V = \dfrac{5 × 0,6}{0,6 + 5 × S}
 \end{equation}
 
 Avec \(S\) la pente, dont l'expression est:
@@ -1072,7 +1070,7 @@ ascensionnelles (\(Vₕ\), en \si{\kilo\meter\per\hour}):
 
 \begin{equation}
   \label{eq:marche_naismith_f}
-  V = \dfrac{Vₓ × Vₕ}{Vₓ + Vₕ × S}
+  V = \dfrac{Vₓ × Vₕ}{Vₕ + Vₓ × S}
 \end{equation}
 
 Une première correction de ce modèle sera proposée par
@@ -1111,9 +1109,9 @@ modèle de \autocite{Naismith1892} par \textcite{Langmuir1984,
   \def\arraystretch{1.75}
   V = \left\{
     \begin{array}{ll}
-      \dfrac{Vₓ × V_{h1}}{Vₓ + V_{h1} × S} & \text{si}\ θ > -5° \\
-      \dfrac{Vₓ × V_{h2}}{Vₓ - V_{h2} × S} & \text{si}\ -12° ≤ θ ≤ -5° \\
-      \dfrac{Vₓ × V_{h2}}{Vₓ + V_{h2} × S} & \text{si}\ θ < -12°\\
+      \dfrac{Vₓ × V_{h1}}{V_{h1} + Vₓ × S} & \text{si}\ θ > -5° \\
+      \dfrac{Vₓ × V_{h2}}{V_{h2} - Vₓ × S} & \text{si}\ -12° ≤ θ ≤ -5° \\
+      \dfrac{Vₓ × V_{h2}}{V_{h2} + Vₓ × S} & \text{si}\ θ < -12°\\
     \end{array}
   \right.
 \end{equation}
