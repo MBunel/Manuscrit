@@ -1020,7 +1020,7 @@ que les distances perçues peuvent êtres asymétriques.
 \tdi{équation fausses, vérifier}
 
 S'il n'y a pas de différences sémantiques fondamentales entre une
-distance métriques et une distance-temps, leur processus de
+distance métrique et une distance-temps, leur processus de
 spatialisation est cependant légèrement différent. En effet, toute
 spatialisation d'une distance-temps impose de transformer une durée de
 parcours en une distance parcourue à l'aide d'un modèle.
@@ -1031,7 +1031,7 @@ distance à l'aide d'une règle de proportionnalité. Cette approche est
 assez restrictive, mais elle peut être satisfaisante pour des modèles
 agrégés ou à petite échelle et simulant des environnements isotropes
 (où la difficulté de déplacement est homogène), comme dans le modèle
-multi-agent MAGS \autocite{Moulin2003}, destiné à simuler des
+multi-agents MAGS \autocite{Moulin2003} destiné à simuler des
 comportements humains en milieu urbain. Dans ce modèle
 \autocite{Moulin2003}, la vitesse de déplacement moyenne d'un marcheur
 a été fixée à \SI{5}{\kilo\meter\per\hour} et ne varie pas. Cette
@@ -1097,10 +1097,10 @@ modèle de \textcite{Naismith1892} en :
 \begin{enumerate*}[label=(\alph*)]
 \item \emph{réduisant} le temps de marche estimé de 10 minutes, tous les
 300 mètres de dénivelé négatif, si la pente est \emph{faible} (\ie
-comprise entre -5 et -12 degrés) et
+si comprise entre -5 et -12 degrés) et
 \item en \emph{augmentant} le temps de marche estimé de 10 minutes,
   tous les 300 mètres de dénivelé négatif, si la pente est
-  \emph{forte} (\ie inférieure à -12 degrés).
+  \emph{forte} (\ie si inférieure à -12 degrés).
 \end{enumerate*}
 %
 Dans la quatrième édition de son ouvrage de 1984,
@@ -1134,9 +1134,9 @@ modèle de \textcite{Naismith1892} modifié par \textcite{Aitken1977} et
 dans les \ac{sig}, il est par exemple implémenté dans grass
 \autocite{Grass2020}.
 
-Cependant le modèle de \bsc{Langmuir-Naismith} à un défaut majeur, son
-comportement pour les faibles pentes
-(\autoref{fig:modeles_marche}). En effet les vitesses de marche en
+Cependant, le modèle de \bsc{Langmuir-Naismith} à un défaut majeur,
+son comportement pour les faibles pentes
+(\autoref{fig:modeles_marche}). En effet, les vitesses de marche en
 descente estimées sont très importantes et en fort décalage avec la
 tendance observée pour les courbes définies pour les montées et les
 grandes descentes. Cet effet est particulièrement marqué dans la
@@ -1227,7 +1227,7 @@ de \textcite{Peuquet1987} et les modèles à demi-plans
 (\autoref{{fig:mod_orient_half}}). Dans les modèles à secteur la
 direction est définie en fonction d'un cône d'angle donné. Dans les
 modèles à demi-plan les directions sont définies à l'aide de deux
-plans, séparant l'espace en deux direction, par exemple le nord et le
+plans, séparant l'espace en deux directions, par exemple le nord et le
 sud. Ces plans peuvent ensuite être combinés pour raffiner les
 directions. Par exemple, la combinaison des demi-plans définissant le
 nord, le sud, l'est et l'ouest permet de créer quatre nouvelles
@@ -1268,7 +1268,7 @@ Ces trois modèles ne permettent cependant que de définir des relations
 orientationnelles cardinales et non entre deux objets, contrairement à
 des modèles comme le modèle des cinq interactions de
 \textcite{Clementini2006}. Ce modèle se fonde sur un principe
-similaire au modèle des 9 intersections, déjà présentées. Il permet de
+similaire au modèle des 9 intersections, déjà présenté. Il permet de
 modèliser 5 relations projectives entre un objet à localiser et deux
 autres objets servant de référence. À partir de ces deux objets 5
 zones sont définies, correspondant aux relations \emph{avant, après,
@@ -1276,7 +1276,7 @@ zones sont définies, correspondant aux relations \emph{avant, après,
 ces objets avec ces cinq zones on peut construire 34 relations
 différentes. Comme dans les modèles dérivés du modèle 4IM, ces
 relations sont formalisées à l'aide d'une matrice, ou chacune des 5
-valeurs correspond à une des 5 zones définies par le modèle.
+valeurs correspond à une des 5 zones définie par le modèle.
 
 Enfin, comme pour les modèles topologiques, des extensions
 tridimensionnelles de ces modèles ont été proposées.
@@ -1301,16 +1301,16 @@ littérature, comme les \emph{calculi} de
 \subsubsection{Les relations de visibilité}
 
 Comme pour les \enquote{durées de déplacement}, détaillées ci-dessus,
-les \enquote{relations de visibilité} ne ne s'expriment pas à l'aide
+les \enquote{relations de visibilité} ne s'expriment pas à l'aide
 d'une préposition spatiale, comme \enquote{sur} ou \enquote{dans}, il
 s'agit donc d'une \emph{relation de localisation,} mais pas d'une
 \emph{relation spatiale.} Contrairement aux distances, où leur
 expression peu prendre plusieurs formes, les \emph{relations de
-  localisation visuelles} sont toujours exprimé d'une même manière. On
-décrit ce qu'on a (ou pas) dans notre champ de vision. Ainsi la
-spatialisation de ce type \emph{d'indice de localisation} nécessite de
-pouvoir construire le champ de visibilité d'un objet, quelque soit sa
-nature.
+  localisation visuelles} sont toujours exprimées d'une même
+manière. On décrit ce qu'on a (ou pas) dans notre champ de
+vision. Ainsi la spatialisation de ce type \emph{d'indice de
+  localisation} nécessite de pouvoir construire le champ de visibilité
+d'un objet, quelque soit sa nature.
 
 La question de la construction de zones de visibilités a été
 longuement abordée dans le domaine des SIG, notamment en vue
@@ -1350,16 +1350,16 @@ celle où on ne voit pas.
 D'autres travaux proposent de traiter les relations de visibilité de
 manière multivalente, \ie en distinguant les situations où la
 visibilité est partielle de celles ou la visibilité est
-totale. \textcite{Ramos2003}, par exemple, définit la notion de
-\emph{fenêtre de visibilité,} qui est la géométrie 3D englobant toutes
-les lignes reliant la géométrie observée à la géométrie de
-l'observateur. Cette modélisation vectorielle permet de construire
-l'intersection de la fenêtre de visibilité avec le relief et le
-sursol. \textcite{Ramos203} définit 3 types de visibilité en fonction
-de l'intersection de la \emph{fenêtre de visibilité.} Si elle est
-entièrement visible la visibilité est totale, si elle est totalement
-obstrué alors l'objet est invisible et si elle est partielle obstruée
-la visibilité est partielle.
+totale. \textcite{Ramos2003} définit la notion de \emph{fenêtre de
+  visibilité,} qui est la géométrie 3D englobant toutes les lignes
+reliant la géométrie observée à la géométrie de l'observateur. Cette
+modélisation vectorielle permet de construire l'intersection de la
+fenêtre de visibilité avec le relief et le sursol. \textcite{Ramos203}
+définit 3 types de visibilité en fonction de l'intersection de la
+\emph{fenêtre de visibilité.} Si elle est entièrement visible la
+visibilité est totale, si elle est totalement obstrué alors l'objet
+est invisible et si elle est partielle obstruée la visibilité est
+partielle.
 
 \textcite{Lonergan2016} ont, quant a eux, proposé de prendre en compte
 les capacités perspectives des observateurs. En effet, dans les
@@ -1382,7 +1382,7 @@ lui).
 
 D'autres travaux proposent quant à eux d'étudier les positions
 relatives des objets dans le champ de vision de l'observateur.
-\textcite{Santos2015} proposent, par exemple, une typologie des
+\textcite{Santos2015} proposent une typologie des
 relations de visibilité fondée sur les relations de Allen. Cette
 typologie permet de décrire les relations entre deux objets, du point
 de vue d'un observateur qui aurait un champ de vision de 180 degrés.
