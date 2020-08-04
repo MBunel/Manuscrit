@@ -1212,34 +1212,38 @@ géométries floues : le \emph{fpoint,} la \emph{fline} et la
 \emph{fregion,} équivalents flous des types \emph{point, line} et
 \emph{region} du modèle \emph{simple features.} La proposition de
 \textcite{Schneider1999} se base sur le paradigme des ensembles de
-points. Les fpoints sont définis comme une union de points flous
-\footnote{}, \ie un ensemble de positions disjointes, deux à deux,
-auxquelles est associée une valeur, le degré d’appartenance de la
-position au fpoint. Ainsi, contrairement à un point, un fpoint peut
-occuper plus d’une position (Figure 8). Les lignes floues (à ne pas
-confondre avec les flines), sont également définies comme un ensemble
-de points flous. Cependant, contrairement au fpoint, la construction
-de cet ensemble est contrainte et les points flous appartenant à une
-ligne floue doivent se trouver sur une même coube continue. De plus,
-chaque point flou doit avoir un degré d’appartenance unique,
-strictement croissant (ou décroissant) dans le sens de la coube. Les
-deux points flous situés aux extrémités d’une ligne floue ont donc,
-respectivement, le degré d’appartenance maximal et minimal à la ligne
-floue. Les blocs flous sont définis comme l’union d’un nombre fini de
-lignes floues, ne pouvant êtres connectées que par leurs extrémités2
-et les flines comme une union de blocs flous disjoints. Cette
-construction permet aux flines de représenter des objets linéaires
-complexes et composés de plusieurs géométries distinctes qui ne
-seraient pas représentables par le type line du modèle simple features
-(Figure 8). Enfin, les fregions sont définies comme étant un ensemble
-de points flous ne comportant pas d’anomalies géométriques
-(e.g. superpositions, croisements). Comme pour les fpoints et les
-flines, les fregions peuvent modéliser des géométries plus complexes
-que le type region du modèle simple features, une fregion pouvant être
-composée de plusieurs polygones disjoints (Figure
-8). \textcite{Schneider2004} complétera ce modèle en définissant un
-ensemble de prédicats permettant de modéliser des relations
-topologiques entre géométries floues.
+points. Les fpoints sont définis comme une union de \emph{points
+  flous} \footnote{}, \ie un ensemble de positions disjointes, deux à
+deux, auxquelles est associée une valeur, le degré d’appartenance de
+la position au \emph{fpoint.} Ainsi, contrairement à un \emph{point,}
+un \emph{fpoint} peut occuper plus d’une position
+(\autoref{fig:mod_schneider}). Les \emph{lignes floues} (à ne pas
+confondre avec les \emph{flines}), sont également définies comme un
+ensemble de \emph{points flous.} Cependant, contrairement au
+\emph{fpoint,} la construction de cet ensemble est contrainte et les
+points flous appartenant à une \emph{ligne floue} doivent se trouver
+sur une même coube continue. De plus, chaque \emph{point flou} doit
+avoir un degré d’appartenance unique, strictement croissant (ou
+décroissant) dans le sens de la coube. Les deux \emph{points flous}
+situés aux extrémités d’une \emph{ligne floue} ont donc,
+respectivement, le degré d’appartenance maximal et minimal à la
+\emph{ligne floue.} Les \emph{blocs flous} sont définis comme l’union
+d’un nombre fini de \emph{lignes floues,} ne pouvant êtres connectées
+que par leurs extrémités\footnote{} et les \emph{flines} comme une
+union de \emph{blocs flous} disjoints. Cette construction permet aux
+\emph{flines} de représenter des objets linéaires complexes et
+composés de plusieurs géométries distinctes qui ne seraient pas
+représentables par le type \emph{line} du modèle \emph{simple
+  features} (Figure 8). Enfin, les \emph{fregions} sont définies comme
+étant un ensemble de \emph{points flous} ne comportant pas d’anomalies
+géométriques (\eg superpositions, croisements). Comme pour les
+\emph{fpoints} et les \emph{flines,} les \emph{fregions} peuvent
+modéliser des géométries plus complexes que le type \emph{region} du
+modèle \emph{simple features}, une \emph{fregion} pouvant être
+composée de plusieurs polygones disjoints
+(\autoref{fig:mod_schneider}). \textcite{Schneider2004} complétera ce
+modèle en définissant un ensemble de prédicats permettant de modéliser
+des relations topologiques entre géométries floues.
 
 \begin{figure}
   \centering
@@ -1260,11 +1264,11 @@ d’un modèle théorique. C’est notamment le cas de \bsc{Zoghalmi} ou
   Runz2008,Zoghlami2013,Zoghlami2016} ou de \textcite{Carniel2016}.
 
 \textcite{Kanjina2100}, proposent d’implémenter le type fregion défini
-par \textcite{Schneider1999} à l’aide de « région[s] plateau »,
-définies comme un ensemble non nul et fini de polygones1 (ou
-multi-polygones) nets, représentant une plage de valeurs de degré
-d’appartenance. Cette implémentation est semblable à l’approche par
-alpha-cuts proposée par \textcite{de Runz2008} ou
+par \textcite{Schneider1999} à l’aide de \enquote{région\textins{s}
+  plateau}, définies comme un ensemble non nul et fini de
+polygones\footnote{} (ou multi-polygones) nets, représentant une plage
+de valeurs de degré d’appartenance. Cette implémentation est semblable
+à l’approche par alpha-cuts proposée par \textcite{de Runz2008} ou
 \textcite{Zoghalmi2013,Zoghalmi2016}. Dans la théorie des
 sous-ensembles flous, une alpha-cut est définie comme l’ensemble des
 éléments d’un sous-ensemble flou ayant un degré d’appartenance
