@@ -19,8 +19,8 @@ src/_minted-main/*
 **.out
 **.lot
 **.toc
-**.pdf
 **.lomc
+*main.pdf
 *main.mtc*
 *main.maf
 *main.acr
