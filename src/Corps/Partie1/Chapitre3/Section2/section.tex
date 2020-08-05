@@ -726,21 +726,28 @@ avec \emph{celui des personnes de grande taille.} En utilisant les
 opérateurs proposés par \textcite{Zadeh1965}, une personne dont le
 degré d’appartenance à ces deux ensembles est respectivement de 0,8 et
 0,5, aura un degré d’appartenance à \emph{l’ensemble des personnes
-  grandes et âgées} de 0,5. La \autoref{fig:zadeh_op} donne un aperçu
-plus détaillé du comportement des opérateurs de \textcite{Zadeh1965}.
+  grandes et âgées} de 0,5. La \autoref{fig:zadeh_op} propose une
+représentation graphique du comportement des opérateurs d'union
+(\autoref{fig:zadeh_conorm}) et d'intersection
+(\autoref{fig:zadeh_norm}) de \textcite{Zadeh1965}, ce qui permet de
+généraliser le précédent exemple pour toutes les valeurs de degré
+d'appartenance aux deux ensembles intersectés.
 
 % Zadeh
 \begin{figure}[hb]
   \begin{center}
-    \subfloat[\emph{t-norme} de Zadeh (\autoref{eq:norm_zadeh})]{
+    \subfloat[Opérateur d'intersection de \bsc{Zadeh}
+    (\emph{t-norme}, \autoref{eq:norm_zadeh})]{
       \input{../figures/zadeh_norm.tex}
       \label{fig:zadeh_norm}
-    }
-    \subfloat[\emph{t-conorme} de Zadeh (\autoref{eq:conorm_zadeh})]{
+    } \hfill \subfloat[Opérateur d'union de \bsc{Zadeh}
+    (\emph{t-conorme}, \autoref{eq:conorm_zadeh})]{
       \input{../figures/zadeh_conorm.tex}
-      \label{fig:zadeh_norm}
+      \label{fig:zadeh_conorm}
     }
-    \caption{Opérateurs de Zadeh}
+    \caption{Degré d'appartenance \(\mu\) calculé par les opérateurs
+      de \textcite{Zadeh1965} en fonction des degrés d'appartenance
+      \(x\) et \(y\).}
     \label{fig:zadeh_op}
   \end{center}
 \end{figure}
@@ -819,7 +826,7 @@ la \autoref{fig:luka_op}, sont définis de la manière suivante :
   \label{eq:norm_luka}
   ⊤_L(x,y) = \max(x + y - 1, 0) 
 \end{equation}
-
+%
 \begin{equation}
   \label{eq:conorm_luka}
   ⊥_L(x,y) = \min(x + y, 1)
@@ -844,7 +851,9 @@ comme pour tout \(x \in ]0,1[\) : \(⊤_L(x,x) < x\) et
       \input{../figures/luka_norm.tex}
       \label{fig:luka_norm}
     }
-    \caption{Opérateurs de Łukasiewicz}
+    \caption{Degré d'appartenance \(\mu\) calculé par les opérateurs
+      de \bsc{Łukasiewicz} en fonction des degrés d'appartenance \(x\)
+      et \(y\).}
     \label{fig:luka_op}
   \end{center}
 \end{figure}
@@ -853,10 +862,12 @@ comme pour tout \(x \in ]0,1[\) : \(⊤_L(x,x) < x\) et
 La définition des opérateurs probabilistes est la suivante :
 
 \begin{equation}
+  \label{eq:norm_proba}
   ⊤_P(x,y) = x×y
 \end{equation}
-
+%
 \begin{equation}
+  \label{eq:conorm_proba}
   ⊥_P(x,y) = x+y - x×y
 \end{equation}
 
@@ -870,15 +881,17 @@ sont continus, les opérateurs de \textcite{Zadeh1965} ou de
 % Probabiliste
 \begin{figure}
   \begin{center}
-    \subfloat[\emph{t-norme} probabiliste]{
+    \subfloat[\emph{t-norme} probabiliste (\autoref{eq:norm_proba})]{
       \input{../figures/prob_norm.tex}
       \label{fig:prob_norm}
-    }
-    \subfloat[\emph{t-conorme} probabiliste]{
-      \input{../figures/prob_conorm.tex}
+    } \hfill
+    \subfloat[\emph{t-conorme} probabiliste
+    (\autoref{eq:conorm_proba})]{ \input{../figures/prob_conorm.tex}
       \label{fig:prob_norm}
     }
-    \caption{Opérateurs probabilistes}
+    \caption{Degré d'appartenance \(\mu\) calculé par les opérateurs
+      probabilistes en fonction des degrés d'appartenance \(x\) et
+      \(y\).}
     \label{fig:prob_op}
   \end{center}
 \end{figure}
@@ -887,6 +900,7 @@ Les opérateurs drastiques sont, quand à eux définis de la manière
 suivante:
 
 \begin{equation}
+  \label{eq:norm_drast}
   ⊤_D(x,y)  = \left \{
     \begin{array}{ll}
       x\ \text{si}\ y=1\\
@@ -895,7 +909,9 @@ suivante:
     \end{array}
   \right.
 \end{equation}
+%
 \begin{equation}
+  \label{eq:conorm_drast}
   ⊥_D(x,y)  = \left \{
     \begin{array}{ll}
       x\ \text{si}\ y=0\\
@@ -911,25 +927,28 @@ d'être \emph{discontinus,} contrairement aux opérateurs précédents.
 % Drastique
 \begin{figure}
   \begin{center}
-    \subfloat[\emph{t-norme} drastique]{
+    \subfloat[\emph{t-norme} drastique (\autoref{eq:norm_drast})]{
      \input{../figures/drast_norm.tex}
       \label{fig:prob_norm}
-    }
-    \subfloat[\emph{t-conorme} drastique]{
-     \input{../figures/drast_conorm.tex}
+    } \hfill
+    \subfloat[\emph{t-conorme} drastique
+    (\autoref{eq:conorm_drast})]{ \input{../figures/drast_conorm.tex}
       \label{fig:drast_norm}
     }
-    \caption{Opérateurs drastiques}
+    \caption{Degré d'appartenance \(\mu\) calculé par les opérateurs
+      drastiques en fonction des degrés d'appartenance \(x\) et
+      \(y\).}
     \label{fig:drast_op}
   \end{center}
 \end{figure}
 
 
 Ces quatres couples (\emph{t-norme}, \emph{t-conorme}) ont la
-particularité d'êtres \emph{duales,} ce qui signifie que pour tous
-\(x\) et \(y\) dont la valeur est comprise entre 0 et 1, \emph{la négation
-d'une \emph{t-norme}} est égale à la \emph{t-conorme} de la négation
-de \(x\) et de \(y\) et inversement, soit :
+particularité d'êtres \emph{duals} \autocite{Bouchon-Meunier2007}, ce
+qui signifie que pour tous \(x\) et \(y\) dont la valeur est comprise
+entre 0 et 1, \emph{la négation d'une \emph{t-norme}} est égale à la
+\emph{t-conorme} de la négation de \(x\) et de \(y\) et inversement,
+soit :
 
 \begin{equation}
   n(⊤(x,y)) = ⊥(n(x), n(y))
@@ -973,9 +992,10 @@ d'union le plus large \autocite{Bouchon-Meunier2007}
 
 La théorie des \emph{ensembles approximatifs} \footnote{Ou théorie des
   \emph{ensembles bruts,} selon les traductions proposées pour
-  l'anglais \enquote{rough sets}.} proposée par \textcite{Pawlak1982}
-propose, comme la \emph{théorie des sous-ensembles flous} de
-\textcite{Zadeh1965}, de généraliser la théorie des ensembles
+  l'anglais \foreignquote{english}{\emph{rough sets}}.} proposée par
+\textcite{Pawlak1982} propose, comme la \emph{théorie des
+  sous-ensembles flous} de \textcite{Zadeh1965}, de généraliser la
+théorie des ensembles
 
 Cette théorie permet de définir un ensemble à partir de deux ensembles
 $A⁻$ et $A⁺$ faisant office de bornes inférieures et supérieures
@@ -997,7 +1017,7 @@ $U$. C'est cette relation $R$ qui sert à construite \emph{l'ensemble
 \begin{equation}
   A⁻(X) = \{ x ∈ U ∣ [x]_R ⊂ X \}
 \end{equation}
-
+%
 \begin{equation}
   A⁺(X) = \{ x ∈ U ∣ [x]_R ∩ X ≠ ∅ \}
 \end{equation}
