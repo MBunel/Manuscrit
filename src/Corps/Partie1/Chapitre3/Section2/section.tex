@@ -830,8 +830,7 @@ Comme les opérateurs de \textcite{Zadeh1965} la \emph{t-norme} et la
 comme pour tout \(x \in ]0,1[\) : \(⊤_L(x,x) < x\) et
 \( ⊥_L(x,x) > x\) ces opérateurs sont dis \emph{archimédiens}
 \autocite{Bouchon-Meunier1995}, contrairement aux opérateurs de
-\textcite{Zadeh1965}. Comme le montrent aussi bien ces propriétés que
-la \autoref{fig:luka_op}, les opérateurs de \bsc{Łukasiewicz} mo 
+\textcite{Zadeh1965}.
 
 % Lukasiewicz
 \begin{figure}
@@ -851,8 +850,7 @@ la \autoref{fig:luka_op}, les opérateurs de \bsc{Łukasiewicz} mo
 \end{figure}
 
 
-La définition des opérateurs probabilistes (\autoref{fig:prob_op}) est
-:
+La définition des opérateurs probabilistes est la suivante :
 
 \begin{equation}
   ⊤_P(x,y) = x×y
@@ -862,20 +860,22 @@ La définition des opérateurs probabilistes (\autoref{fig:prob_op}) est
   ⊥_P(x,y) = x+y - x×y
 \end{equation}
 
-Comme les opérateurs de \textcite{Zadeh1965} ou de \bsc{Łukasiewicz}
-les opérateurs probabilistes sont \emph{continus.} De plus ils sont
+Comme le montre la \autoref{fig:prob_op}, les opérateurs probabilistes
+sont continus, les opérateurs de \textcite{Zadeh1965} ou de
+\bsc{Łukasiewicz}. Ils ont également la caractéristique d'être
 \emph{archimédiens stricts,} \ie que pour tout \(x < v\) et \(y < w\)
-: \(⊤_P(x,y) < ⊤_P(v,w)\) et \(⊥_P(x,y) > ⊥_P(v,w)\).
+: \(⊤_P(x,y) < ⊤_P(v,w)\) et \(⊥_P(x,y) > ⊥_P(v,w)\)
+\autocite{Bouchon-Meunier1995}.
 
 % Probabiliste
 \begin{figure}
   \begin{center}
     \subfloat[\emph{t-norme} probabiliste]{
-      %\input{../figures/prob_norm.tex}
+      \input{../figures/prob_norm.tex}
       \label{fig:prob_norm}
     }
     \subfloat[\emph{t-conorme} probabiliste]{
-      %\input{../figures/prob_conorm.tex}
+      \input{../figures/prob_conorm.tex}
       \label{fig:prob_norm}
     }
     \caption{Opérateurs probabilistes}
@@ -883,8 +883,8 @@ les opérateurs probabilistes sont \emph{continus.} De plus ils sont
   \end{center}
 \end{figure}
 
-Les opérateurs drastiques (\autoref{fig:drast_op}) sont, quand à eux
-définis de la manière suivante:
+Les opérateurs drastiques sont, quand à eux définis de la manière
+suivante:
 
 \begin{equation}
   ⊤_D(x,y)  = \left \{
@@ -895,8 +895,6 @@ définis de la manière suivante:
     \end{array}
   \right.
 \end{equation}
-
-
 \begin{equation}
   ⊥_D(x,y)  = \left \{
     \begin{array}{ll}
@@ -907,21 +905,21 @@ définis de la manière suivante:
   \right.
 \end{equation}
 
-Contrairement aux opérateurs précédents, les \emph{opérateurs
-  drastiques} ne sont ni \emph{continus,} ni \emph{archimédiens.}
+Le première particularité, visible sur la \autoref{fig:drast_op}, est
+d'être \emph{discontinus,} contrairement aux opérateurs précédents.
 
 % Drastique
 \begin{figure}
   \begin{center}
     \subfloat[\emph{t-norme} drastique]{
-     %\input{../figures/drast_norm.tex}
+     \input{../figures/drast_norm.tex}
       \label{fig:prob_norm}
     }
     \subfloat[\emph{t-conorme} drastique]{
-     %\input{../figures/drast_conorm.tex}
+     \input{../figures/drast_conorm.tex}
       \label{fig:drast_norm}
     }
-    \caption{Opérateurs probabilistes}
+    \caption{Opérateurs drastiques}
     \label{fig:drast_op}
   \end{center}
 \end{figure}
