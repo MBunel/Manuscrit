@@ -304,15 +304,14 @@ de certaines \emph{relations de localisation.}
 \subsection{Classification et ontologies des \emph{relations de
     localisation}}
 
-Comme nous expliquions précédemment, plusieurs catégories de
-\emph{relations de localisation} peuvent êtres définies. On peut par
-exemple distinguer celles qui sont exprimées à l'aide d'une
-\emph{préposition spatiale} (\ie les relations spatiales) et celles
-qui ne le sont pas. Mais on peut également utiliser d'autres critères,
-par exemple sémantiques ou morphologiques. De nombreux travaux ont
-cherché a catégoriser les \emph{relations de localisation} en fonction
-de ces critères (ou d'autres) à la fois pour en faciliter la
-compréhension, pour mettre en évidence des similarités ou des
+Plusieurs catégories de \emph{relations de localisation} peuvent êtres
+définies. On peut par exemple distinguer celles qui sont exprimées à
+l'aide d'une \emph{préposition spatiale} (\ie les relations spatiales)
+et celles qui ne le sont pas. Mais on peut également utiliser d'autres
+critères, par exemple sémantiques ou morphologiques. De nombreux
+travaux ont cherché a catégoriser les \emph{relations de localisation}
+en fonction de ces critères (ou d'autres) à la fois pour en faciliter
+la compréhension, pour mettre en évidence des similarités ou des
 redondances, mais également dans le but d'appliquer ces
 classifications à des cas concrets, comme la \emph{spatialisation
   d'indices de localisation.} Nous allons présenter ces différentes
@@ -579,58 +578,92 @@ sur une extension floue de la \emph{logique de description.}
 Dans cette ontologies sont distinguées 8 relations directionnelles, 3
 relations de distance et 8 relations topologiques sont définies.
 
-\subsection{Travaux sur différentes familles de relations}
+\subsection{Travaux sur la modélisation des différentes familles de
+  relations}
 
 Nous allons à présent détailler les différents travaux proposés pour
 modéliser des familles spécifiques de \emph{relations de
   localisation.} Pour ce faire nous allons aborder chaque famille de
 \emph{relations de localisation} en commençant par les \emph{relations
   topologiques} qui, comme l'indiquent \textcite{Aurnague1997} sont
-les relations les plus simples a manipuler pour un être humain, mais
-également extrêmement importantes pour la description d'une
-localisation \autocite{Egenhofer1995}.
+les relations les plus simples a manipuler pour un être humain en plus
+d'être importantes pour la description d'une localisation
+\autocite{Egenhofer1995}.
 
 \subsubsection{Les relations topologiques}
 
-Dans le domaine des \ac{sig}, deux grandes \enquote{familles} de
-modèles topologiques coexistent. La première est celle du modèle
-RCC-8, proposé par \textcite{Randell1992} et de ses dérivés. Le modèle
-RCC-8 est un modèle formalisant les \emph{relations topologiques}
-entre régions de deux dimensions. Dans ce modèle, les régions sont
-modélisées comme des \emph{ensembles de points.} Ce modèle définit
-huit relations topologiques et méréologiques (\autoref{fig:RCC}),
-mutuellement exclusives. Par conséquent une et une seule d'entre-elles
-est vérifiée, quelque soit la configuration. Ce modèle permet
-également de raisonner sur les relations topologiques, à l'aide d'une
-\emph{table de transition.} Ainsi si l'on connait deux des trois
-relations topologique entre trois objets deux à deux, il est possible
-d'inférer automatiquement la troisième relation à l'aide de la table
-de transition.
-
 \tdi{citer A More Expressive 3D Region Connection Calculus pour l'EDA
   RCC}
-\tdi{Ajouter ler JEPD et si les extensions le valident}
+
+
+Dans le domaine des \ac{sig}, deux grandes \enquote{familles} de
+modèles topologiques coexistent. La première est celle du modèle
+\texttt{RCC-8}, proposé par \textcite{Randell1992} et de ses
+dérivés. Le modèle RCC-8 est un modèle formalisant les \emph{relations
+  topologiques} entre régions de deux dimensions. Dans ce modèle, les
+régions sont modélisées comme des \emph{ensembles de points.} Ce
+modèle définit huit relations topologiques et méréologiques :
+%
+\begin{enumerate*}[label=(\alph*)]
+\item DC, pour \emph{Disconnected,} décrivant une situation où les
+  deux régions \textcolor{RdBu-9-1}{A} et \textcolor{RdBu-9-9}{B} n'ont
+  aucun contact ;
+\item EC, pour \emph{Externally connected,} lorsque
+  \textcolor{RdBu-9-1}{A} et \textcolor{RdBu-9-9}{B} ne partagent
+  qu'une partie de leur frontière;
+\item PO (\emph{Partially overlapping}), correspondant au cas où
+  \textcolor{RdBu-9-1}{A} et \textcolor{RdBu-9-9}{B} partagent une
+  partie de leur intérieur ;
+\item TTP (\emph{Tangential proper part}) et son inverse (TTP\up{-1}),
+  deux relations non commutatives, décrivant le cas où l'une des deux
+  régions est incluse dans l'autre tout en partagant une partie de
+  leur frontière ;
+\item NTTP (\emph{Non tangential proper part}) et son inverse
+  (NTTP\up{-1}), qui impliquent également une inclusion d'une des
+  régions dans l'autre, mais sans frontière partagée ; et
+\item A=B (\emph{Equals}), décrivant une situation où
+  \textcolor{RdBu-9-1}{A} et \textcolor{RdBu-9-9}{B} sont identiques
+\end{enumerate*}
+%
+(\autoref{fig:RCC}).
+%
+Ces dernières couvrent l'ensemble des possibles et sont mutuellement
+exclusives. Par conséquent, quelque soit la configuration des deux
+régions \textcolor{RdBu-9-1}{A} et \textcolor{RdBu-9-9}{B}, une et une
+seule relation du modèle RCC est vérifiée, on parle alors de relations
+\foreigntextquote{english}[{\cite{Duchene2019}}]{\emph{Jointly
+    Exhaustive Parwise Disjoint}} (JEPD).
+
+Une caractéristique essentielle du modèle RCC-8 est qu'il permet le
+raisonnement sur les relations qu'il formalise. Ainsi, si l'on connait
+deux des trois relations topologique entre trois objets deux à deux,
+il est possible d'inférer automatiquement la troisième relation. Ce
+processus s’effectue à l'aide d'une \emph{table de transition.}
+
 
 % RCC5
 % Bennett, 1994, Spatial reasoning with propositional logics
 \textcite{Bennett1994} propose un premier modèle dérivé du travail de
 \textcite{Randell1992}, le modèle RCC-5, réduisant, comme son nom
-l'indique, le nombre der \emph{relations topologiques} modélisées à 5
-\autoref{fig:RCC}). Les relations DC et EC sont regroupées en une
+l'indique, le nombre des \emph{relations topologiques} modélisées à 5
+(\autoref{fig:RCC}). Les relations DC et EC sont regroupées en une
 nouvelle relation, DR (\enquote{\emph{discrete}}), indiquant que deux
-régions ne partagent pas leurs aires. De même, les relations TPP et
-NTPP (et leurs inverses) sont combinées en une seule relation (et son
-inverse), PP, pour \enquote{\emph{proper parts}}. En réduisant le
-nombre de \emph{relations topologiques} modélisées le modèle RCC-5
-perd en expressivité, cependant l'objectif annoncé pour ce modèle
-n'est pas d’enrichir la sémantique du modèle RCC-8 (ce qui est le but
-de la majorité des extensions), mais de faciliter le raisonnement
-automatisé \textcite{Bennett1994}.
+régions ne partagent pas leurs intérieur. De même, les relations TPP
+et NTPP (et leurs inverses) sont combinées en une seule relation (et
+son inverse), PP (\emph{Proper parts}), indiquant qu'une région est
+incluse dans la seconde. En réduisant le nombre de \emph{relations
+  topologiques} modélisées le modèle RCC-5 perd en expressivité,
+cependant l'objectif annoncé pour ce modèle n'est pas d’enrichir la
+sémantique du modèle RCC-8 (ce qui est le but de la majorité des
+extensions), mais de faciliter le raisonnement automatisé en
+simplifiant la \emph{table de transition} \autocite{Bennett1994}.
 
-\begin{figure}
+\begin{figure}[hb]
   \centering
   \input{../figures/rcc.tikz}
-  \caption{Les relations topologiques des modèles RCC-8 et RCC-5}
+  \caption[Les modèles RCC-8 et RCC-5 et leurs relations
+  topologiques]{Les modèles RCC-8 et RCC-5 et leurs relations
+    topologiques.}
   \label{fig:RCC}
 \end{figure}
 
