@@ -695,6 +695,7 @@ Le complément $A^c$ d’un sous-ensemble flou $A$ de $X$ a pour fonction
 d’appartenance :
 
 \begin{equation}
+  \label{eq:comp}
   ∀x ∈ X, f_{A^C}(x) = 1 − f_A(x)
 \end{equation}
 
@@ -730,8 +731,8 @@ degré d’appartenance à ces deux ensembles est respectivement de 0,8 et
 0,5, aura un degré d’appartenance à \emph{l’ensemble des personnes
   grandes et âgées} de 0,5. La \autoref{fig:zadeh_op} propose une
 représentation graphique du comportement des opérateurs d'union
-(\autoref{fig:zadeh_conorm}) et d'intersection
-(\autoref{fig:zadeh_norm}) de \textcite{Zadeh1965}, ce qui permet de
+(Figure \ref{fig:zadeh_conorm}) et d'intersection (Figure
+\ref{fig:zadeh_norm}) de \textcite{Zadeh1965}, ce qui permet de
 généraliser le précédent exemple pour toutes les valeurs de degré
 d'appartenance aux deux ensembles intersectés.
 
@@ -839,7 +840,40 @@ Comme les opérateurs de \textcite{Zadeh1965} la \emph{t-norme} et la
 comme pour tout \(x \in ]0,1[\) : \(⊤_L(x,x) < x\) et
 \( ⊥_L(x,x) > x\) ces opérateurs sont dis \emph{archimédiens}
 \autocite{Bouchon-Meunier1995}, contrairement aux opérateurs de
-\textcite{Zadeh1965}.
+\textcite{Zadeh1965}. Une autre caractéristique des opérateurs de
+\bsc{Łukasiewicz} est que, contrairement aux opérateurs de
+\textcite{Zadeh1965}, ils satisfont les loisde
+\emph{non-contradiction} et du \emph{tiers exclu.} Ainsi, conformément
+à la loi de \emph{non-contradiction,} l’application de la
+\emph{t-norme} de \bsc{Łukasiewicz} à un degré appartenance et à sa
+négation est toujours nulle :
+
+\begin{equation}
+  ⊤_L(x,1-x) = 0
+\end{equation}
+
+Quant à loi du \emph{tiers exclu,} celle-ci conduit à ce que
+l’application de \emph{t-conorme} de \bsc{Łukasiewicz} à un degré
+appartenance et à sa négation soir toujours égale à 1 :
+ 
+\begin{equation}
+  ⊥_L(x,1-x) = 1
+\end{equation}
+
+Par conséquent, l'intersection d'un sous-ensemble flou \(A\) (de
+\(X\)) avec son complément \(A^C\) (\autoref{eq:comp}) avec ces
+opérateurs est toujours égale à l'ensemble vide :
+
+\begin{equation}
+  A \cap A^C = \emptyset
+\end{equation}
+
+et l'union de ces deux sous-ensembles avec les opérateurs de
+\bsc{Łukasiewicz} est toujours égale à l'ensemble net \(X\):
+ 
+\begin{equation}
+  A \cup A^C = X
+\end{equation}
 
 % Lukasiewicz
 \begin{figure}
@@ -860,8 +894,8 @@ comme pour tout \(x \in ]0,1[\) : \(⊤_L(x,x) < x\) et
   \end{center}
 \end{figure}
 
-
-La définition des opérateurs probabilistes est la suivante :
+La troisième famille d'opérateurs est celle des opérateurs
+probabilistes, définis de la manière suivante :
 
 \begin{equation}
   \label{eq:norm_proba}
@@ -878,7 +912,9 @@ sont continus, les opérateurs de \textcite{Zadeh1965} ou de
 \bsc{Łukasiewicz}. Ils ont également la caractéristique d'être
 \emph{archimédiens stricts,} \ie que pour tout \(x < v\) et \(y < w\)
 : \(⊤_P(x,y) < ⊤_P(v,w)\) et \(⊥_P(x,y) > ⊥_P(v,w)\)
-\autocite{Bouchon-Meunier1995}.
+\autocite{Bouchon-Meunier1995}. Cependant, comme les opérateurs de
+\textcite{Zadeh1965}, les opérateur probabilistes ne satisfont pas les
+lois de \emph{non-contradiction} et du \emph{tiers exclus.}
 
 % Probabiliste
 \begin{figure}
@@ -923,8 +959,13 @@ suivante:
   \right.
 \end{equation}
 
-Le première particularité, visible sur la \autoref{fig:drast_op}, est
-d'être \emph{discontinus,} contrairement aux opérateurs précédents.
+Leur principale caractéristique, visible sur la
+\autoref{fig:drast_op}, est d'être \emph{discontinus,} contrairement à
+tous les opérateurs présentés jusqu'ici. De plus ces opérateurs ne
+sont pas \emph{archimédiens,} la continuité étant une condition
+nécessaire à cette propriété \autocite{Bouchon-Meunier1995}. Comme les
+opérateurs de \bsc{Łukasiewicz} ces opérateurs satisfont les lois de
+\emph{non-contradiction} et du \emph{tiers exclu.}
 
 % Drastique
 \begin{figure}
@@ -944,13 +985,12 @@ d'être \emph{discontinus,} contrairement aux opérateurs précédents.
   \end{center}
 \end{figure}
 
-
-Ces quatres couples (\emph{t-norme}, \emph{t-conorme}) ont la
-particularité d'êtres \emph{duals} \autocite{Bouchon-Meunier2007}, ce
-qui signifie que pour tous \(x\) et \(y\) dont la valeur est comprise
-entre 0 et 1, \emph{la négation d'une \emph{t-norme}} est égale à la
-\emph{t-conorme} de la négation de \(x\) et de \(y\) et inversement,
-soit :
+Si leurs propriétés différent, ces quatres couples partagent la
+caractéristique d'êtres \emph{duals} \autocite{Bouchon-Meunier2007},
+ce qui signifie que pour tous \(x\) et \(y\) dont la valeur est
+comprise entre 0 et 1, \emph{la négation d'une \emph{t-norme}} est
+égale à la \emph{t-conorme} de la négation de \(x\) et de \(y\) et
+inversement, soit :
 
 \begin{equation}
   n(⊤(x,y)) = ⊥(n(x), n(y))
@@ -971,7 +1011,12 @@ est égal à la \emph{t-norme} de ces deux degrés d'appartenance. Si les
 opérateurs choisis sont ceux de \textcite{Zadeh1965}, comme ci-dessus,
 alors ce degré est de 0,5. Dans le cas où une autre \emph{t-norme} est
 choisie (\autoref{tab:conf_tnormes}) ce degré est inférieur à cette
-valeur.
+valeur. En effet, la \emph{t-norme} de \textcite{Zadeh1965} correspond
+toujours à l'intersection la moins sévère, alors que la \emph{t-norme}
+drastique correspond à l'intersection la plus sévère. À l'inverse, la
+\emph{t-conorme} de \textcite{Zadeh1965} est l'opérateur d'union le
+plus sévère, alors que la \emph{t-conorme} drastique est l'opérateur
+d'union le plus large \autocite{Bouchon-Meunier2007}.
 
 \begin{table}
   \centering
@@ -983,12 +1028,7 @@ valeur.
   \label{tab:conf_tnormes}
 \end{table}
 
-En effet, la \emph{t-norme} de \textcite{Zadeh1965} correspond
-toujours à l'intersection la moins sévère, alors que la \emph{t-norme}
-drastique correspond à l'intersection la plus sévère. À l'inverse, la
-\emph{t-conorme} de  \textcite{Zadeh1965} est l'opérateur d'union le
-plus sévère, alors que la \emph{t-conorme} drastique est l'opérateur
-d'union le plus large \autocite{Bouchon-Meunier2007}
+Le choix d'une paire d'opérateurs 
 
 \subsubsection{La théorie des \emph{ensembles approximatifs}}
 
