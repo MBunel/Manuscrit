@@ -1123,23 +1123,23 @@ modélisables (\eg points, lignes, surfaces) ou leur implémentation
 Chacun de ces points peut être utilisé comme critère de classement,
 mais à notre connaissance, toutes les catégorisations proposées dans
 la littérature se fondent sur le critère de la théorie de
-rattachement. \textcite{Clementini2008} ou \textcite{Erwig1997}, par
-exemple, identifient trois catégories : \emph{les modèles
-  probabilistes,} \emph{les modèles flous} et \emph{les modèles
-  exacts,} qui étendent le modèle \emph{simple features} aux objets
-spatiaux imprécis. Certains auteurs, comme
-\textcite{Schneider2001,Schneider2008,Carniel2016} y ajoutent la
-catégorie des \emph{modèles approximatifs,} basés sur la théorie des
-ensembles du même nom, moins populaire que les précédentes. Enfin
-\textcite{Fisher2003,Fisher2005,Fisher2006} propose une typologie des
-théories combinant la modélisation de l’incertitude spatiale à celle
-de l’imprécision spatiale et distinguant les modèles en fonction de
-quatre théories de rattachement : probabilités, sous-ensembles flous,
-fonctions de croyance et approbation. Bien qu’elle soit explicite et
-permette une bonne appréhension de la différence de popularité entre
-les différentes théories, cette catégorisation est critiquable, car
-elle passe outre un critère qui nous semble fondamental : la nature du
-processus de construction.
+rattachement. \textcite{Clementini2008} ou \textcite{Erwig1997}
+identifient trois catégories : \emph{les modèles probabilistes,}
+\emph{les modèles flous} et \emph{les modèles exacts,} qui étendent le
+modèle \emph{simple features} aux objets spatiaux imprécis. Certains
+auteurs, comme \textcite{Schneider2001,Schneider2008,Carniel2016} y
+ajoutent la catégorie des \emph{modèles approximatifs,} basés sur la
+théorie des ensembles du même nom, moins populaire que les
+précédentes. Enfin \textcite{Fisher2003,Fisher2005,Fisher2006}
+proposent une typologie des théories combinant la modélisation de
+l’incertitude spatiale à celle de l’imprécision spatiale et
+distinguent les modèles en fonction de quatre théories de
+rattachement : \emph{probabilités,} \emph{sous-ensembles flous,}
+\emph{fonctions de croyance} et \emph{approbation.} Bien qu’elle soit
+explicite et permette une bonne appréhension de la différence de
+popularité entre les différentes théories, cette catégorisation est
+critiquable, car elle passe outre un critère qui nous semble
+fondamental : la nature du processus de construction.
 
 On peut, suivant la logique du \emph{paradigme des ensembles de
   points} \footnote{Ou \foreignquote{english}{\emph{point set
@@ -1153,14 +1153,14 @@ extension, un objet spatial imprécis peut être conceptualisé comme un
 ensemble de positions dont certaines ont une appartenance partielle à
 l’ensemble. La nature du processus de construction décrit la méthode
 utilisée pour décider de l’appartenance d’une de ces positions à
-l’objet spatial et par extension pour construire un objet
-spatial. Nous distinguons deux approches : la construction en
-intension et celle en extension. Nous parlons de construction en
-extension lorsque l’objet spatial traité est construit par la
+l’objet spatial et donc pour construire un objet spatial. Nous
+distinguons deux approches : \emph{la construction en intension} et
+celle \emph{en extension.} Nous parlons de \emph{construction en
+  extension} lorsque l’objet spatial traité est construit par la
 sélection d’autres objets spatiaux (\eg construction d’un département
-par l’union des communes le composant). La construction en intension
-désigne les cas où un objet spatial est construit par la délimitation
-d’un espace (\eg construction de buffers).
+par l’union des communes le composant). La c\emph{onstruction en
+  intension} désigne les cas où un objet spatial est construit par la
+délimitation d’un espace (\eg construction de \emph{buffers}).
 
 Cette distinction ne doit pas être confondue avec celle, faite en
 mathématiques, entre la définition en intension et la définition en
@@ -1372,7 +1372,7 @@ d’un modèle théorique. C’est notamment le cas de \bsc{Zoghalmi} ou
 \emph{alpha-cuts} \autocite{de Runz2008,de
   Runz2008,Zoghlami2013,Zoghlami2016} ou de \textcite{Carniel2016}.
 
-\textcite{Kanjina2100}, proposent d’implémenter le type fregion défini
+\textcite{Kanjina2010}, proposent d’implémenter le type fregion défini
 par \textcite{Schneider1999} à l’aide de \enquote{région\textins{s}
   plateau}, définies comme un ensemble non nul et fini de polygones
 \footnote{Tels que définis dans le modèle \emph{simple features.}} (ou
@@ -1386,8 +1386,9 @@ supérieur à un seuil fixé \footnote{Par exemple, une \emph{alpha-cut}
   dont le seuil est de 1 est équivalente au noyau du sous-ensemble
   flou.} \autocite{Bouchon-Meunier2007}. Si les éléments du
 sous-ensemble flou sont des positions, une alpha-cut permet de définir
-une aire, modélisable par un polygone. Ainsi, les implémentations
-proposées par \textcite{Kanjinal2010},
+une aire, modélisable par un polygone.
+
+Ainsi, les implémentations proposées par \textcite{Kanjinal2010},
 \textcite{Zoghalmi2013,Zoghalmi2016} ou \textcite{de Runz2008} ont
 pour point commun de représenter un sous-ensemble flou en le
 discrétisant à l’aide de polygones. Mais ces approches ont une
@@ -1395,7 +1396,7 @@ différence majeure: les contraintes de construction des
 polygones. L’approche de \textcite{Kanjinal2010} impose aux polygones
 constitutif d’une région plateau d’être disjoints ou adjacents deux à
 deux, une même position ne peut donc appartenir qu’à un seul polygone,
-ce qui n’est pas pour les implémentations proposées par
+ce qui n’est pas le cas pour les implémentations proposées par
 \textcite{Zoghalmi2013,Zoghalmi2016} ou \textcite{de Runz2008}, où une
 position appartient, par définition, à toutes les alpha-cuts
 construites à partir d’un seuil inférieur à son degré
@@ -1421,7 +1422,7 @@ identique à celui des modèles de \textcite{Cohn1996} ou de
 \textcite{Clementini1996} présentés précédemment et qui superposent
 également la zone d’appartenance à la zone d’appartenance partielle;
 ce qui n’est pas le cas pour l’implémentation de
-\textcite{Kanjinal2010}, car les polygones définissant une région
+\textcite{Kanjilal2010}, car les polygones définissant une région
 plateau y sont, par définition, disjoints.
 
 \begin{figure}
@@ -1486,7 +1487,7 @@ d’appartenance à la région floue. Les règles présentées dans le modèle
 théorique s’appliquent toujours, ainsi les régions avec des anomalies
 géométriques ne peuvent pas être modélisées. On peut noter que cette
 implémentation des fregions est assez semblable à celle qui sera
-proposée plus tardivement par \textcite{Kanjinal2010}, avec une région
+proposée plus tardivement par \textcite{Kanjilal2010}, avec une région
 floue modélisée comme un ensemble de polygones nets.
 
 \begin{figure}
@@ -1519,10 +1520,9 @@ est défini par les points qui la composent.
 
 Notre présentation des modèles basés sur une construction en extension
 est organisée selon une classification \emph{ad hoc}, basée sur la
-nature des objets sélectionnés (Partie 4.3.1) et distinguant les
-modèles basés sur une construction en extension du premier ordre
-(Partie 1.1.1) de ceux basés sur une construction en extension d’ordre
-supérieur (Partie 1.1.13).
+nature des objets sélectionnés et distinguant les modèles basés sur
+une construction en extension du premier ordre de ceux basés sur une
+construction en extension d’ordre supérieur.
 
 \paragraph{Critères de classement}
 
@@ -1531,39 +1531,39 @@ spatial par la sélection d’un ou plusieurs objets géographiques est
 une construction en extension. On peut distinguer ces modèles selon la
 nature des objets spatiaux sélectionnés.
 
-Une première possibilité consiste à définir un objet spatial par la
-sélection des positions qu’il occupe. La délimitation d’une zone à
-partir d’un ensemble de pixels est un exemple concret de ce type
-d’approche, notamment proposée par \textcite{Zhan1997}. Cet exemple ne
-doit cependant pas laisser croire que la catégorisation proposée ici
-est fondée sur la nature de l’implémentation, mais bien sur la
+Un premier type de sélection consiste à définir un objet spatial par
+la sélection des positions qu’il occupe. La délimitation d’une zone à
+partir d’un ensemble de pixels est un exemple concret de ce type de
+construction, notamment proposée par \textcite{Zhan1997}. Cet exemple
+ne doit, cependant, pas laisser croire que la catégorisation proposée
+ici est fondée sur la nature de l’implémentation, mais bien sur la
 sélection de positions dont l’infinité ne peut qu’être approximée par
 des modèles champs, quelle que soit la nature de leur
 implémentation. Toutefois, l’ensemble des travaux que nous
-présenterons s’appuie sur une approche raster.
+présenterons s’appuie sur une approche raster. Nous qualifions cette
+configuration de \emph{sélection de premier ordre.}
 
 À l’inverse, on peut imaginer construire des objets spatiaux à partir
-d’une sélection d’objets, d’ « agrégats » \autocite{Charrre1995} de
-positions. Cette approche définit des objets spatiaux de manière
-semblable aux\emph{ Elements-Clustering Objects} de \textcite{Liu2019}
-(Partie 2.2). Dans ce cas, le sous-ensemble spatialisé peut être
+d’une sélection d’objets, \enquote{d’agrégats} de positions
+\autocite{Charrre1995}. Cette approche définit des objets spatiaux de
+manière semblable aux \emph{Elements-Clustering Objects} de
+\textcite{Liu2019}. Dans ce cas, le sous-ensemble spatialisé peut être
 défini à partir d’un groupe d’éléments ne couvrant pas l’intégralité
 de l’espace (\eg sélection à partir d’un réseau routier). Nous
 qualifions ce second type de sélection d’ordre supérieur, car elle
 s’opère sur des objets complexes, eux-mêmes composés de positions, et
 non directement de positions comme c’est le cas pour une sélection
-directe de positions, que nous qualifions de sélection de premier
-ordre.
+directe de positions.
 
 \paragraph{Construction en extension du premier ordre}
 
 On peut présenter la définition en extension du premier ordre d’un
-sous-ensemble flou spatialisé à l’aide de l’exercice de définition
-d’une limite pour le lac du Chambon. La Figure 11 se distingue des
-exemples précédents par son découpage en pixels (dont la taille a
-volontairement été exagéré). Chacun se voit attribuer un degré
-d’appartenance, défini indépendamment. La tâche principale consiste
-donc à définir une méthode permettant de calculer le degré
+sous-ensemble flou spatialisé à l’aide de l’exercice de définition de
+la limite du lac du Chambon. La \autoref{fig:champ_raster} se
+distingue des exemples précédents par son découpage en pixels (dont la
+taille a volontairement été exagéré). Chacun se voit attribuer un
+degré d’appartenance, défini indépendamment. La tâche principale
+consiste donc à définir une méthode permettant de calculer le degré
 d’appartenance pour chaque pixel. Pour cet exemple, nous avons adopté
 une approche simple : le degré d’appartenance décroit avec la distance
 au rivage. Le degré d’appartenance est donc de 1 pour les pixels
@@ -1621,8 +1621,8 @@ ressentis \autocite{Arabacioglu2010}, mais également de formaliser des
 connaissances expertes.
 
 La définition en extension du premier ordre d’un sous-ensemble
-spatialisé est courante dans la littérature et les publications
-présentées ici, l’appliquent à des thématiques diverses, comme
+spatialisé est courante dans la littérature et les publications ici
+citées, l’appliquent à des thématiques diverses, comme
 l’interprétation d’images aériennes \autocite{Brandtberg2002,
   Fonte2005}, la gestion du territoire
 \autocite{Griot2007,Makropoulos2003}, la qualification de ressentis
@@ -1633,54 +1633,55 @@ floues \textcite{Vanegass2011,Takemura2012}.
 
 La construction en extension d’ordre supérieur d’un sous-ensemble flou
 spatialisé est probablement l’approche qui nécessite le plus de
-s’appuyer sur un exemple concret (Figure 12). Comme nous l’expliquions
+s’appuyer sur un exemple concret
+(\autoref{fig:champ_raster_sel}). Comme nous l’expliquions
 précédemment, cette approche nécessite d’attribuer des degrés
 d’appartenance à des objets, des agrégats de position. Elle se
 distingue donc de la construction en extension du premier ordre, qui
 nécessite d’attribuer un degré d’appartenance à des positions (cas
 théorique) ou à un pavage régulier, une discrétisation de l’ensemble
-des positions (cas pratique, cf. Figure 11). La Figure 12 représente à
-la fois l’occupation du sol de la zone traitée et le degré
-d’appartenance \footnote{La valeur du degré d'appartenance est
-  discrétisée pour la représentation, mais il s’agit d’une valeur
-  continue comme pour les exemples précédents.} de l’objet à la zone
-modélisée. Ainsi, on considère que le polygone du lac appartient
-totalement au sous-ensemble flou “lac”, que les berges y appartiennent
-moyennement et qu’une partie des forêts y appartient faiblement. Quant
-aux autres éléments, on considère qu’ils n’appartiennent pas à la zone
-modélisée.
+des positions (cas pratique, cf. \autoref{fig:champ_raster}). La
+\autoref{fig:champ_raster_sel} représente à la fois l’occupation du
+sol de la zone traitée et le degré d’appartenance \footnote{La valeur
+  du degré d'appartenance est discrétisée pour la représentation, mais
+  il s’agit d’une valeur continue comme pour les exemples précédents.}
+de l’objet à la zone modélisée. Ainsi, on considère que le polygone du
+lac appartient totalement au sous-ensemble flou \enquote{lac}, que les
+berges y appartiennent moyennement et qu’une partie des forêts y
+appartient faiblement. Quant aux autres éléments, on considère qu’ils
+n’appartiennent pas à la zone modélisée.
 
 \begin{figure}
   \centering
   \includegraphics{../figures/fig12.png}
   \caption{Illustration de la définition du lac du Chambon par
-    sélection floue d’objets géographiques (\ie construction en
-    extension d’ordre supérieur). Extrait de \textcite{Bunel2020}.}
+    sélection floue d’objets géographiques (\ie \emph{construction en
+      extension d’ordre supérieur}). Extrait de \textcite{Bunel2020}.}
   \label{fig:champ_raster_sel}
 \end{figure}
 
 Ce processus de construction, pendant spatial de la réflexion sur les
 requêtes floues \textcite{Wang1994,Moreau2018}, est utilisé par
 \textcite{Duraciova2017} qui illustrent leur méthodologie par la
-sélection floue « [des] grands parkings proches du stade et ayant été
-rénovés il y a environ deux ans ». Leur démarche est fortement
-similaire à celle de l’exemple précédent (Figure 12). Les autrices
-définissent des règles permettant de quantifier l’appartenance des
-objets spatiaux candidats à l’ensemble flou correspondant à la
-description. Là où nous n’utilisions qu’un seul critère, la proximité,
-ce nouvel exemple nécessite de prendre en compte la proximité mais
-aussi la date de la dernière rénovation. Chacun de ces critères permet
-de construire un sous-ensemble flou spatialisé (celui des parkings
-proches du stade et celui des parking rénovés il y a environ deux ans)
-et l’intersection de ces deux ensembles, réalisée à l’aide des
-opérateurs flous présentés précédemment (Partie 3) permet de
+sélection floue \enquote{\textins{des} grands parkings proches du
+  stade et ayant été rénovés il y a environ deux ans}. Leur démarche
+est fortement similaire à celle de l’exemple précédent
+(\autoref{fig:champ_raster}). Les autrices définissent des règles
+permettant de quantifier l’appartenance des objets spatiaux candidats
+à l’ensemble flou correspondant à la description. Là où nous
+n’utilisions qu’un seul critère, la proximité, ce nouvel exemple
+nécessite de prendre en compte la proximité mais aussi la date de la
+dernière rénovation. Chacun de ces critères permet de construire un
+sous-ensemble flou spatialisé (celui des parkings proches du stade et
+celui des parking rénovés il y a environ deux ans) et l’intersection
+de ces deux ensembles, réalisée à l’aide des opérateurs flous
 présentés précédemment (\autoref{subsec:theorie_flou}) permet de
 construire le sous-ensemble flou désiré. Un processus similaire est
 utilisé par \textcite{Bard2003} dans le cadre de l’évaluation de la
 généralisation cartographique. Les objets spatiaux sont ici classés
 dans des sous-ensembles flous figurant une description qualitative de
-la qualité de la généralisation. \textcite{Cross2000} utilisent quant
-à eux une approche similaire pour ajouter la prise en compte de
+la qualité de la généralisation. \textcite{Cross2000} utilisent ,quant
+à eux, une approche similaire pour ajouter la prise en compte de
 l’imprécision aux modèles objets des systèmes d’information
 géographiques. Dans tous les cas, le sous-ensemble flou construit est
 spatialisé, mais cette spatialisation est exogène, puisque dépendante
