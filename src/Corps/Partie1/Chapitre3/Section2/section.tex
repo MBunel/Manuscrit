@@ -720,25 +720,40 @@ est :
   ∀x ∈ X, f_C (x) = \max(f_A(x), f_B(x))
 \end{equation}
 
-Par exemple, l’ensemble des personnes grandes et âgées peut être
-construit en intersectant l’ensemble des personnes âgées avec celui
-des personnes de grande taille. En utilisant les opérateurs proposés
-par \textcite{Zadeh1965}, une personne dont le degré d’appartenance à
-ces deux ensembles est respectivement de 0,8 et 0,5, aura un degré
-d’appartenance à l’ensemble des personnes grandes et âgées de 0,5.
+Par exemple, \emph{l’ensemble des personnes grandes et âgées} peut
+être construit en intersectant \emph{l’ensemble des personnes âgées}
+avec \emph{celui des personnes de grande taille.} En utilisant les
+opérateurs proposés par \textcite{Zadeh1965}, une personne dont le
+degré d’appartenance à ces deux ensembles est respectivement de 0,8 et
+0,5, aura un degré d’appartenance à \emph{l’ensemble des personnes
+  grandes et âgées} de 0,5. La \autoref{fig:zadeh_op} donne un aperçu
+plus détaillé du comportement des opérateurs de \textcite{Zadeh1965}.
 
-On notera cependant, que les opérateurs d’union et d’intersection
-proposés par \textcite{Zadeh1965} ne sont pas les seuls à avoir été
-envisagés et d’autres opérateurs, aux caractéristiques diverses, ont
-été proposés dans la littérature
-\autocite{Klir1995,Bouchon-Meunier1995}. Cependant, la proposition de
+% Zadeh
+\begin{figure}[hb]
+  \begin{center}
+    \subfloat[\emph{t-norme} de Zadeh (\autoref{eq:norm_zadeh})]{
+      \input{../figures/zadeh_norm.tex}
+      \label{fig:zadeh_norm}
+    }
+    \subfloat[\emph{t-conorme} de Zadeh (\autoref{eq:conorm_zadeh})]{
+      \input{../figures/zadeh_conorm.tex}
+      \label{fig:zadeh_norm}
+    }
+    \caption{Opérateurs de Zadeh}
+    \label{fig:zadeh_op}
+  \end{center}
+\end{figure}
+
+Bien que les opérateurs d’union et d’intersection proposés par
 \textcite{Zadeh1965}, permettant de conserver
 \textquote[\cite{Bouchon-Meunier2007}]{presque toute la structure de
-  la théorie classique des ensembles}, fait office de standard. La
-définition de nouveaux opérateurs d'intersection et d'union nécessite
-de généraliser les équations \ref{eq:norm_zadeh} et
-\ref{eq:conorm_zadeh}, à l'aide des concepts de \emph{norme \emph{et
-    de} conorme triangulaire.}
+  la théorie classique des ensembles}, fassent office de standard, des
+alternatives, aux caractéristiques diverses, ont été proposés dans la
+littérature \autocite{Klir1995,Bouchon-Meunier1995}. La définition de
+nouveaux opérateurs d'intersection et d'union nécessite de généraliser
+les équations \ref{eq:norm_zadeh} et \ref{eq:conorm_zadeh}, à l'aide
+des concepts de \emph{norme \emph{et de} conorme triangulaire.}
 
 Une \emph{norme triangulaire} (\emph{t-norme}) est une fonction,
 généralement notée $\top$, associant à chaque couple de valeurs,
@@ -794,17 +809,47 @@ sous-ensembles flous \(A\) et \(B\) de \(X\) est un sous-ensemble
 \end{equation}
 
 Plusieurs couples (\emph{t-norme}, \emph{t-conorme}) ont été proposés
-dans la littérature.
+dans la littérature. Nous ne présenterons ici que les plus fréquemment
+utilisés. 
 
-Les opérateurs de Łukasiewicz (\autoref{fig:luka_op}) sont définis de
-la manière suivante :
+Les opérateurs de \bsc{Łukasiewicz}, dont on peut voir le comportement sur
+la \autoref{fig:luka_op}, sont définis de la manière suivante :
+
 \begin{equation}
+  \label{eq:norm_luka}
   ⊤_L(x,y) = \max(x + y - 1, 0) 
 \end{equation}
 
 \begin{equation}
+  \label{eq:conorm_luka}
   ⊥_L(x,y) = \min(x + y, 1)
 \end{equation}
+
+Comme les opérateurs de \textcite{Zadeh1965} la \emph{t-norme} et la
+\emph{t-conorme} de \bsc{Łukasiewicz} sont \emph{continues.} De plus,
+comme pour tout \(x \in ]0,1[\) : \(⊤_L(x,x) < x\) et
+\( ⊥_L(x,x) > x\) ces opérateurs sont dis \emph{archimédiens}
+\autocite{Bouchon-Meunier1995}, contrairement aux opérateurs de
+\textcite{Zadeh1965}. Comme le montrent aussi bien ces propriétés que
+la \autoref{fig:luka_op}, les opérateurs de \bsc{Łukasiewicz} mo 
+
+% Lukasiewicz
+\begin{figure}
+  \begin{center}
+    \subfloat[\emph{t-norme} de \bsc{Łukasiewicz}
+    (\autoref{eq:norm_luka})]{
+      \input{../figures/luka_conorm.tex}
+      \label{fig:luka_norm}
+    } \subfloat[\emph{t-conorme} de \bsc{Łukasiewicz}
+    (\autoref{eq:conorm_luka})]{
+      \input{../figures/luka_norm.tex}
+      \label{fig:luka_norm}
+    }
+    \caption{Opérateurs de Łukasiewicz}
+    \label{fig:luka_op}
+  \end{center}
+\end{figure}
+
 
 La définition des opérateurs probabilistes (\autoref{fig:prob_op}) est
 :
@@ -816,6 +861,27 @@ La définition des opérateurs probabilistes (\autoref{fig:prob_op}) est
 \begin{equation}
   ⊥_P(x,y) = x+y - x×y
 \end{equation}
+
+Comme les opérateurs de \textcite{Zadeh1965} ou de \bsc{Łukasiewicz}
+les opérateurs probabilistes sont \emph{continus.} De plus ils sont
+\emph{archimédiens stricts,} \ie que pour tout \(x < v\) et \(y < w\)
+: \(⊤_P(x,y) < ⊤_P(v,w)\) et \(⊥_P(x,y) > ⊥_P(v,w)\).
+
+% Probabiliste
+\begin{figure}
+  \begin{center}
+    \subfloat[\emph{t-norme} probabiliste]{
+      %\input{../figures/prob_norm.tex}
+      \label{fig:prob_norm}
+    }
+    \subfloat[\emph{t-conorme} probabiliste]{
+      %\input{../figures/prob_conorm.tex}
+      \label{fig:prob_norm}
+    }
+    \caption{Opérateurs probabilistes}
+    \label{fig:prob_op}
+  \end{center}
+\end{figure}
 
 Les opérateurs drastiques (\autoref{fig:drast_op}) sont, quand à eux
 définis de la manière suivante:
@@ -841,6 +907,24 @@ définis de la manière suivante:
   \right.
 \end{equation}
 
+Contrairement aux opérateurs précédents, les \emph{opérateurs
+  drastiques} ne sont ni \emph{continus,} ni \emph{archimédiens.}
+
+% Drastique
+\begin{figure}
+  \begin{center}
+    \subfloat[\emph{t-norme} drastique]{
+     %\input{../figures/drast_norm.tex}
+      \label{fig:prob_norm}
+    }
+    \subfloat[\emph{t-conorme} drastique]{
+     %\input{../figures/drast_conorm.tex}
+      \label{fig:drast_norm}
+    }
+    \caption{Opérateurs probabilistes}
+    \label{fig:drast_op}
+  \end{center}
+\end{figure}
 
 
 Ces quatres couples (\emph{t-norme}, \emph{t-conorme}) ont la
@@ -886,70 +970,6 @@ drastique correspond à l'intersection la plus sévère. À l'inverse, la
 \emph{t-conorme} de  \textcite{Zadeh1965} est l'opérateur d'union le
 plus sévère, alors que la \emph{t-conorme} drastique est l'opérateur
 d'union le plus large \autocite{Bouchon-Meunier2007}
-
-% Zadeh
-\begin{figure}
-  \begin{center}
-    \subfloat[\emph{t-norme} de Zadeh]{
-      \input{../figures/zadeh_norm.tex}
-      \label{fig:zadeh_norm}
-    }
-    \subfloat[\emph{t-conorme} de Zadeh]{
-      \input{../figures/zadeh_conorm.tex}
-      \label{fig:zadeh_norm}
-    }
-    \caption{Opérateurs de Zadeh}
-    \label{fig:zadeh_op}
-  \end{center}
-\end{figure}
-
-% Lukasiewicz
-\begin{figure}
-  \begin{center}
-    \subfloat[\emph{t-norme} de Łukasiewicz]{
-      \input{../figures/luka_conorm.tex}
-      \label{fig:luka_norm}
-    }
-    \subfloat[\emph{t-conorme} de Łukasiewicz]{
-      \input{../figures/luka_norm.tex}
-      \label{fig:luka_norm}
-    }
-    \caption{Opérateurs de Łukasiewicz}
-    \label{fig:luka_op}
-  \end{center}
-\end{figure}
-
-% Probabiliste
-\begin{figure}
-  \begin{center}
-    \subfloat[\emph{t-norme} probabiliste]{
-      \input{../figures/prob_norm.tex}
-      \label{fig:prob_norm}
-    }
-    \subfloat[\emph{t-conorme} probabiliste]{
-      \input{../figures/prob_conorm.tex}
-      \label{fig:prob_norm}
-    }
-    \caption{Opérateurs probabilistes}
-    \label{fig:prob_op}
-  \end{center}
-\end{figure}
-
-% Drastique
-\begin{figure}
-  \begin{center}
-    \subfloat[\emph{t-norme} drastique]{
-     \input{../figures/drast_norm.tex}
-      \label{fig:prob_norm}
-    }
-    \subfloat[\emph{t-conorme} drastique]{
-     \input{../figures/drast_conorm.tex}
-      \label{fig:drast_norm}
-    }
-    \caption{Opérateurs probabilistes}
-    \label{fig:drast_op}
-  \end{center}
-\end{figure}
 
 \subsubsection{La théorie des \emph{ensembles approximatifs}}
 
