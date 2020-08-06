@@ -1047,33 +1047,47 @@ déjà relevée par \textcite{Egenhofer1995} dans son article \emph{naive
 \tdi{Bonne ref An analysis of probability of area techniques for
   missing persons in Yosemite National Park}
 
-S'il n'y a pas de différences sémantiques fondamentales entre une
-distance métrique et une distance-temps, leur processus de
-spatialisation est cependant légèrement différent. En effet, toute
-spatialisation d'une distance-temps impose de transformer une durée de
-parcours en une distance parcourue à l'aide d'un modèle.
+S'il n'y a pas de différence sémantique fondamentale entre une
+\emph{distance métrique} et une \emph{distance-temps,} cela n'est pas
+le cas de leur processus de \emph{spatialisation.} En effet, alors
+qu'une \emph{distance métrique} peut être \emph{spatialisée}
+directement, comme expliqué ci-dessus, il est nécessaire de
+transformer la \emph{durée de parcours} en une distance parcourue pour
+\emph{spatialiser} une \emph{distance-temps.} On obtient alors une
+\emph{distance métrique quantitative} que l'on peut alors traiter
+comme n'importe qu'elle distance de ce type. La \emph{spatialisation}
+d'une \emph{distance-temps} nécessite donc une étape supplémentaire,
+permettant de la transformer en une \emph{distance métrique
+  quantitative.} Pour ce faire il nécessaire d'employer un modèle
+\emph{ad hoc.}
 
 La solution la plus simple consiste à définir une vitesse de
 déplacement moyenne et de transformer le temps parcouru en une
-distance à l'aide d'une règle de proportionnalité. Cette approche est
-assez restrictive, mais elle peut être satisfaisante pour des modèles
-agrégés ou à petite échelle et simulant des environnements isotropes
-(où la difficulté de déplacement est homogène), comme dans le modèle
-multi-agents MAGS \autocite{Moulin2003} destiné à simuler des
-comportements humains en milieu urbain. Dans ce modèle
-\autocite{Moulin2003}, la vitesse de déplacement moyenne d'un marcheur
-a été fixée à \SI{5}{\kilo\meter\per\hour} et ne varie pas. Cette
-approche (et cette valeur) à également été retenue dans l'outil
-\enquote{zones de desserte} d'ArcGIS \autocite{ESRI2020}, permettant
-de calculer des isochrones de déplacement pédestre. Cette approche
-n'est cependant pas satisfaisante dans notre contexte applicatif. En
-effet, les contraintes de déplacement en milieu urbain ne sont pas
-comparables à celles que l'on rencontre en montagne, où il est
-fréquent de rencontrer des longues montées et des descentes escarpées
-qui influent sur la vitesse de marche. L'estimation des distances de
-déplacement en milieu montagneux est donc réalisée avec des
-\emph{modèles de marche} plus avancés, adaptant l'estimation de la
-vitesse de déplacement en fonction du terrain.
+\emph{distance métrique quantitative} à l'aide d'une règle de
+proportionnalité. Cette approche est assez restrictive, mais elle peut
+être satisfaisante pour des modèles agrégés ou à petite échelle et
+simulant des environnements isotropes (\ie où la difficulté de
+déplacement est homogène), comme dans le modèle multi-agents MAGS
+\autocite{Moulin2003} simulant des comportements humains en milieu
+urbain. Dans ce modèle \autocite{Moulin2003}, la vitesse de
+déplacement moyenne d'un marcheur est fixée à
+\SI{5}{\kilo\meter\per\hour} et ne varie pas, que ce soit en fonction
+du temps ou de l'espace. Cette approche et cette vitesse de
+déplacement ont également été retenues dans l'outil \enquote{zones de
+  desserte} d'ArcGIS \autocite{ESRI2020}, permettant de calculer des
+isochrones de déplacement pédestre. Cette approche à \enquote{gros
+  grain} n'est cependant pas adaptée à notre travail. En effet,
+l’hypothèse d'isotropie, inhérente à cette approche, ne permet pas de
+prendre en compte l'asymétrie des distances perçues. Cette
+approximation est permise par les (relativement) faibles contraintes
+de déplacement en milieu urbain. Mais elles ne sont pas comparables à
+celles du milieux montagnard, où il est fréquent de rencontrer de
+longues montées, des descentes escarpées ou des pierriers qui influent
+sur la vitesse de marche. L'estimation des distances de déplacement en
+milieu montagneux est donc réalisée, que ce soit dans le milieux
+scientifique ou par les pratiquants, avec des \emph{modèles de marche}
+plus avancés, adaptant l'estimation de la vitesse de déplacement à la
+configuration du terrain.
 
 % Naismith
 Le plus ancien d'entre eux est le modèle de
