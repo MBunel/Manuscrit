@@ -888,7 +888,6 @@ panier.
 \subsubsection{Les relations de distance}
 
 \tdi{Geographic Space and Time are Tightly Coupled}
-\tdi{Distances are Asymmetric}
 \tdi{Distance Inferences are Local, Not Global}
 \tdi{Distances Don’t Add Up Easily}
 
@@ -1044,8 +1043,8 @@ déjà relevée par \textcite{Egenhofer1995} dans son article \emph{naive
 
 \paragraph{Distances-temps et modèles de marche}
 
-\tdi{Bonne ref An analysis of probability of area techniques for
-  missing persons in Yosemite National Park}
+% \tdi{Bonne ref An analysis of probability of area techniques for
+%   missing persons in Yosemite National Park}
 
 S'il n'y a pas de différence sémantique fondamentale entre une
 \emph{distance métrique} et une \emph{distance-temps,} cela n'est pas
@@ -1090,16 +1089,15 @@ plus avancés, adaptant l'estimation de la vitesse de déplacement à la
 configuration du terrain.
 
 % Naismith
-Le plus ancien d'entre eux est le modèle de
-\textcite{Naismith1892}. Comme l'indique \textcite{Duchene2019}, la
-formulation de ce modèle ne consiste qu'en une phrase, concluant la
-présentation d'une sortie dans un journal d'alpinisme. Cette règle
-énonce qu'une bonne estimation du temps de marche consisterait à
-compter une heure pour 3 miles (\SI{5}{\kilo\meter}) en distance
-planaire et d'y ajouter une heure de marche par tranche de
-\SI{2000}{ft} (\SI{600}{\meter}) de dénivelé positif
-\autocite{Naismith1892}. Avec ce modèle, la vitesse de marche (\(V\))
-peut s'exprimer en fonction de la pente (\(S\)), de la manière
+Le plus ancien d'entre eux est le modèle de \textcite{Naismith1892},
+dont la formulation ne consiste qu'en une phrase, concluant la
+présentation d'une sortie dans un journal d'alpinisme
+\autocite{Duchene2019}. Cette règle énonce qu'une bonne estimation du
+temps de marche consisterait à compter une heure pour 3 miles
+(\SI{5}{\kilo\meter}) en distance planaire et d'y ajouter une heure de
+marche par tranche de \SI{2000}{ft} (\SI{600}{\meter}) de dénivelé
+positif \autocite{Naismith1892}. Avec ce modèle, la vitesse de marche
+(\(V\)) peut s'exprimer en fonction de la pente (\(S\)), de la manière
 suivante:
 
 \begin{equation}
@@ -1176,8 +1174,8 @@ modèle de \textcite{Naismith1892} modifié par \textcite{Aitken1977} et
 dans les \ac{sig}, il est par exemple implémenté dans grass
 \autocite{Grass2020}.
 
-Cependant, le modèle de \bsc{Langmuir-Naismith} à un défaut majeur,
-son comportement pour les faibles pentes
+Cependant, le modèle de \bsc{Langmuir-Naismith} à un défaut majeur, à
+savoir son comportement pour les faibles pentes
 (\autoref{fig:modeles_marche}). En effet, les vitesses de marche en
 descente estimées sont très importantes et en fort décalage avec la
 tendance observée pour les courbes définies pour les montées et les
@@ -1197,22 +1195,21 @@ limites, le modèle \bsc{Langmuir-Naismith} propose une caractéristique
 intéressante, les vitesses de marches maximales ne sont pas atteintes
 sur le plat, mais dans les descentes, suffisamment pentues pour
 soulager le randonneur, mais pas assez prononcées pour être pénibles.
-
 % Tobler
 Cette caractéristique est partagée avec le modèle de
 \textcite{Tobler1993}, où la vitesse de marche est exprimée en
 fonction de la pente seule. Bien que présenté sous une forme
 analytique, ce modèle se base sur des données empiriques provenant de
-\textcite{Imhof1950} \autocite{Tobler1993}.
+\textcite{Imhof1950}.
 
 \begin{equation}
   \label{eq:marche_tobler}
   V = g × 6 × e^{-3,5 × \left| S + 0,05 \right|}
 \end{equation}
 
-Quant à \(g\), il s'agit d'un coefficient de
-pondération, permettant de faire varier l'estimation de la vitesse en
-fonction d'éléments exogènes, comme le mode de
+Ce modèle possède la particularité de disposer d'un coefficient de
+pondération \(g\), permettant de faire varier l'estimation de la
+vitesse en fonction d'éléments exogènes, comme le mode de
 déplacement. \textcite{Tobler1993} en propose 3 valeurs :
 %
 \begin{enumerate*}[label=(\alph*)]
@@ -1222,23 +1219,63 @@ déplacement. \textcite{Tobler1993} en propose 3 valeurs :
 \item  \(g = 1.25\), pour un déplacement à cheval.
 \end{enumerate*}
 
-% Modèle de Ress
-\textcite{Rees2004} a proposé d'estimer la vitesse de marche en
-fonction de la pente à l'aide d'une fonction quadratique :
+Les modèles de \textcite{Tobler1993} et de \bsc{Langmuir-Naismith}
+sont les plus cités dans la littérature, probablement en raison de
+leur ancienneté et de leur simplicité. De nombreux autres modèles ont
+cependant été proposés, notamment par
+\textcite{Rees2004,Irmischer2017,Kerouanton2020}. Comme le modèle de
+\textcite{Tobler1993} ces différents modèles sont basés sur des
+données empiriques, dont le comportement est modélisé par un modèle de
+régression. \textcite{Rees2004} propose par exemple d'estimer la
+vitesse de marche en fonction de la pente à l'aide d'une fonction
+quadratique :
+
 \begin{equation}
   V = \dfrac{1}{a + b × S + c × S²}
 \end{equation}
 
 Avec \(S\) la pente. Les valeurs des coefficients \(a\), \(b\) et
-\(c\) sont respectivement \SIlist{0,75;0,09;14,6}{\second\per\meter}.
-\textcite{Irmischer2017,Kerouanton2020} proposent, dans la lignée de
-\textcite{Tobler1993}, deux modèles de marche construits à partir de
-données empiriques.
+\(c\) sont respectivement
+\SIlist{0,75;0,09;14,6}{\second\per\meter}. Ce modèle à un
+comportement similaire à celui de \textcite{Tobler1993}, mais
+contrairement à ce dernier, la vitesse de marche maximale est atteinte
+sur le plat et non sur une pente faiblement négative. Le modèle de
+\textcite{Irmischer2017} est également similaire à celui de
+\textcite{Tobler1993}. Comme ce dernier et contrairement au modèle de
+\textcite{Rees2004}, la vitesse de marche maximale est atteinte pour
+une pente faiblement négative. Comme le modèle de
+\textcite{Tobler1993}, le modèle de \textcite{Irmischer2017} propose
+une variation pour l'estimation des vitesses hors-sentiers, mais
+également en fonction des genres (non représenté sur la
+\autoref{fig:modeles_marche}). \textcite{Kerouanton2020} propose
+également de prendre en compte des variables sociologiques lors de
+l'élaboration de son modèle, mais de manière plus approfondie que
+\textcite{Irmischer2017}. Sont, par exemple, pris en compte : la
+classe d'âge ou la régularité de l'activité.
 
-% Modèle Jobe White
-\tdi{Modèle Jobe White}
-
-\tdi{Sentiers ou terrain ?}
+Comme l'illustre la \autoref{fig:modeles_marche}, ces différents
+\emph{modèles de marche} ont un comportement (relativement)
+similaire. Tous font l'hypothèse que la vitesse de marche décroit avec
+la pente (que ce soit en montée ou en descente) et tous considèrent
+que la vitesse maximale est atteinte entre 0 et -5 degrés. La
+principale différence entre ces modèles se situe au niveau de la
+vitesse de marche maximale et de la rapidité de sa diminution. Si l'on
+ne tient pas compte des variantes \enquote{hors sentier} c'est les
+modèle proposé par \textcite{Irmischer2017} qui estime la vitesse
+maximale la plus faible et c'est le modèle de \bsc{Langmuir-Naismith}
+qui en fait l'estimation la plus forte, même si cette dernière
+estimation nous semble irréaliste. À l'inverse c'est le modèle de
+\textcite{Irmischer2017} qui décroit le plus lentement et le modèle de
+\textcite{Tobler1993} qui décroit le plus rapidement. Cette proximité
+de comportement nous permet de supposer que tous ces modèles
+pourraient être adaptés pour \emph{spatialiser} des
+\emph{distances-temps,} si l'estimation de la distance parcourue
+variera nécessairement en fonction du modèle choisi, toutes les
+estimations seront impactées de manière similaire par les variations
+de relief. Seul le modèle de \bsc{Langmuir-Naismith} à un comportement
+fondamentalement différent, qui, comme nous l'expliquions
+précédemment, nous semble irréaliste, nous n’emploierons donc pas ce
+modèle.
 
 \begin{figure}
   \centering
