@@ -1048,22 +1048,35 @@ d'union le plus large \autocite{Bouchon-Meunier2007}.
   \label{tab:conf_tnormes}
 \end{table}
 
-Ces différents couples d'opérateurs ont des caractéristiques
-différentes et le choix de l'un d'entre eux doit se faire en fonction
-de ces caractéristiques. Comme nous l'indiquions précédemment, les
+Comme ces couples d'opérateurs différent par leurs caractéristiques
+leur choix doit se faire en fonction des caractéristiques que l'on
+souhaite conserver. Comme nous l'indiquions précédemment, les
 opérateurs de \textcite{Zadeh1965} constituent le \enquote{choix par
-  défaut}, leurs propriétés étant assez proches des opérateurs d'union
-et d'intersection utilisés dans la théorie des ensembles. Ces
-opérateurs ne permettent cependant pas de satisfaire les lois de
-\emph{non-contradiction} et du \emph{tiers exclu,} ce qui peut poser
-problème pour certaines applications. À l'inverse, d'autres opérateurs
-comme les opérateurs de \bsc{Łukasiewicz} ou probabilistes sont
-\emph{archimédiens,} ce qui modifie la sémantique de la
-\emph{conjonction} et de la \emph{disjonction} logique, en valorisant
-la \emph{conjonction} de deux valeurs de degré d'appartenance
-similaire (et pénalisant la \emph{disjonction}). Ainsi le choix d'une
-famille d'opérateur doit ce faire en connaissance de cause, en
-fonction des caractéristiques que l'on souhaite voir conservées.
+  défaut}, bien qu'ils ne permettent pas de satisfaire les lois de
+\emph{non-contradiction} et du \emph{tiers exclu.} Ainsi, si l'on
+reprend l'exemple précédent, l'intersection avec la \emph{t-norme} de
+\textcite{Zadeh1965} de \emph{l'ensemble des personnes âgées} avec
+celui des \emph{personnes non âgées} donnera un ensemble non nul, ce
+qui, d'un point de vue sémantique, revient à considérer qu'une
+personne peut, toutes choses égales par ailleurs, être âgée et ne pas
+l'être. Si cette propriété n'est pas souhaité on peut employer les
+opérateurs drastiques ou de \bsc{Łukasiewicz.} Mais les premiers ne
+sont pas continus, en plus de proposer une \emph{t-norme} très
+contraignante (et inversement une \emph{t-conorme} très large), ce qui
+ne les rend pas adaptés à tous les cas d'utilisation. Quant aux
+opérateurs de \bsc{Łukasiewicz} ceux-ci sont \emph{archimédiens,} ce
+qui impacte la sémantique des conjonctions et des disjonctions
+logiques. Ainsi une personne appartenant partiellement aux ensembles
+des \emph{personnes âgées} et des \emph{personnes de grande taille}
+(\ie la configuration illustrée par le \autoref{tab:conf_tnormes}),
+aura un degré d'appartenance à l'intersection de ces deux ensembles
+inférieur à ses degrés d'appartenance aux ensembles intersectés
+(\autoref{tab:conf_tnorme_t1}). Cette propriété, que l'on retrouve sur
+les opérateurs probabilistes, est difficile à illustrer
+
+Ainsi le choix d'une famille d'opérateur doit ce faire en connaissance
+de cause, en fonction des caractéristiques que l'on souhaite voir
+conservées.
 
 \subsubsection{La théorie des \emph{ensembles approximatifs}}
 
