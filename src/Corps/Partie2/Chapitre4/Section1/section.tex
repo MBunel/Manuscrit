@@ -1,7 +1,89 @@
+Pour guider la définition de notre méthode nous avons identifié
+plusieurs principes que nous voulons voir respectés.
 
-\subsection{Principe de décomposition}
+\subsection{Intégration dans le contexte métier}
 
-\subsection{Principe de modélisation autonome}
+Le premier des principes que nous voulons voir respecté par notre
+méthodologie est celui de sa bonne intégration dans le contexte
+métier.
+%
+C'est un point que nous avons déjà évoqué a plusieurs reprises. Nous
+souhaitons que notre méthode soit conçue dans l'optique de son
+application finale, \ie que nous avons à cœur de réfléchir à son
+appropriation et son développement par les secouristes. Pour autant
+nous ne souhaitons pas sacrifier la généricité de notre méthode, c'est
+pourquoi son développement relève d'un équilibre entre la généricité
+de la méthode et la spécificité de certains paramétrages.
+
+\subsubsection{\texttt{Le secouriste comme super joker + ZIR}}
+
+Parmi les choix visant à faciliter l'intégration de notre méthode il y
+en a un dont nous avons déjà parlé, le rôle du secouriste. En effet,
+comme nous l'indiquions dans la première partie, nous ne souhaitons
+pas que notre méthode se substitue au secouriste, mais au contraire
+qu'elle l’assiste. Ce choix (tout du moins tel que présenté dans le
+\autoref{chap:01}) est hérité d'une décision faite au sein du projet
+CHOUCAS dans son ensemble, celle de ne pas travailler sur
+l'interprétation automatisée du requérant, nécessitant dès lors un
+intermédiaire, le secouriste, entre le combiné téléphonique et
+l'interface.
+
+\begin{figure}
+  \centering
+  % \input{../figures/diag_activ_secours.tex}
+  \caption{dcsqd}
+  \label{fig:diag_acti_secours}
+\end{figure}
+
+\subsubsection{La modélisation explicite des connaissances}
+
+Pour faciliter l'intégration de notre méthode dans le contexte métier
+du secours en montagne nous avons décidé d'adopter une démarche basée
+sur les connaissances.
+
+\subsection{Principes de modélisation}
+
+\subsubsection{Décomposition des \emph{relations de localisation}}
+
+Comme nous l’annoncions dans le second chapitre
+(cf. \ref{subsec:2-1-1}) une même \emph{relation de localisation} peut
+avoir une sémantique différente en fonction de son contexte
+d'utilisation \autocite[16]{Borillo1998}, comme l'illustre la relation
+de localisation \enquote{\emph{sous}}. Comme nous l'expliquions plus
+haut (cf. \ref{subsec:2-1-1}), on peut être \enquote{sous \emph{un
+    pont}} ou \enquote{sous \emph{une route}}, si la sémantique de ces
+deux exemples diffère c'est que le premier cas sous-entend un
+\emph{recouvrement} (\ie \emph{le pont est entre le locuteur et le
+  ciel}) alors que ce n'est pas le cas pour le second. Cette
+différence s'explique par la nature des objets de référence. On peut
+être recouvert par \emph{un pont} (ou un arbre, le ciel, \emph{etc.})
+mais pas par une route (ou un bâtiment). Ainsi il est nécessaire
+d'identifier ces différences sémantiques pour pouvoir
+\emph{spatialiser} une \emph{relation de localisation.}
+%
+On pourrait augurer que, du fait de leur différence sémantique, ces
+deux exemple d'utilisation du \enquote{\emph{sous}} correspondent en
+réalité à deux \emph{relations de localisation} différentes, mais
+désignées par la même \emph{préposition spatiale.}
+%
+Ces deux \emph{relations de localisation} ont cependant un point
+commun, qui justifie l'utilisation de la même préposition, leur
+\emph{sujet} est situé à une altitude inférieure à celle de
+\emph{l'objet de référence.} Ce sont ces régularités sémantiques que
+nous proposons d'exploiter \autocite{Bunel2019a}.
+
+
+
+
+\begin{figure}
+  \centering
+  \caption[Illustration de la décomposition d'un \emph{indice de
+    localisation}]{Décomposition de \emph{l'indice de localisation:}
+    \enquote{Je suis sous une ligne électrique}}
+  \label{fig:dec_sous}
+\end{figure}
+
+\subsubsection{Modélisation autonome}
 
 Un autre principe que nous souhaitons développer est celui de la
 séparation maximale des étapes du processus.
@@ -22,8 +104,8 @@ dépend des \emph{spatialisations} précédentes. Avec cette approche,
 l'opération de \emph{fusion} est implicite, elle s'opère, en partie, à
 chaque nouvelle \emph{spatialisation,} puisque les zones ne
 correspondant pas aux \emph{indices de localisation} sont retirées peu
-à peu. La \emph{zone de localisation probable,} en bleu sur la figure
-\ref{fig:comp_approches}, est obtenue une fois que l'on a
+à peu. La \emph{zone de localisation probable} (en bleu sur la figure
+\ref{fig:comp_approches}) est obtenue une fois que l'on a
 \emph{spatialisé} tous les \emph{indices de localisation.} Cette
 approche est la première que nous ayons envisagée. Elle a pour
 avantage d'être simple à concevoir et à développer. Cependant cette
@@ -74,18 +156,20 @@ principe de décomposition précédemment présenté.
 
 % Justifier choix
 
-\subsection{Principe de modélisation non bivalente}
+\subsection{Principes sémantiques}
 
-\subsection{Principe de modélisation explicite des connaissances}
+\subsubsection{Modélisation non bivalente}
+\texttt{Ref images EDA}
 
-\subsection{Principe d'intégration dans le contexte métier}
+La présentation de la méthode de modélisation de l'imprécision choisie
+sera abordée dans le chapitre suivant (\autoref{chap:05}).
 
-\subsection{Principe de raisonnement en monde ouvert}
+\subsubsection{Le raisonnement en monde ouvert}
 
 
-Comme le montre la figure \ref{fig:md_ferme} dans \emph{l'hypothèse du
-  monde clos} toute règle inconnue est considérée comme fausse. Alors
-que dans \emph{l'hypothèse du monde ouvert} (Figure
+Comme le montre la figure \ref{fig:md_ferme}, dans \emph{l'hypothèse
+  du monde clos} toute règle inconnue est considérée comme
+fausse. Alors que dans \emph{l'hypothèse du monde ouvert} (Figure
 \ref{fig:md_ouvert}) les règles inconnues sont considérées comme
 telles, \ie que l'on estime qu'elles peuvent être vraies, comme
 fausses.
@@ -99,14 +183,16 @@ peut être décomposée en deux assertions logiques, \enquote{ma
   bibliothèque contient l'ouvrage \emph{méthodes de logique}} et
 \enquote{ma bibliothèque contient l'ouvrage \emph{le projet
     \emph{Cybersyn}}.} Avec \emph{l'hypothèse du monde clos} toute
-autre proposition logique est considérée comme fause, ainsi à la
-question \enquote{Est-ce que tu as tel livre ?} (à l'exception deux
-précédemment mentionnés) la réponse sera toujours \enquote{non}, dans
-ce contexte cela revient à considérer que j'ai donné une description
-exhaustive du contenu de ma bibliothèque. Avec \emph{l'hypothèse du
-  monde ouvert} on considère que les règles qui nous sont inconnues
-peuvent être vraies ou fausses, ainsi, dans ce cadre on ne peut que
-répondre \enquote{Je ne sais pas} à la question précédente. Dans
+autre proposition logique est considérée comme fausse, comme
+l'illustre la figure \ref{fig:md_ferme}. Ainsi à la question
+\enquote{Est-ce que tu as \emph{l'espace en français,} de Claude
+  \bsc{Vandeloise} ?} ---~ou tout autre livre~--- la réponse sera
+\enquote{non}. Cela revient à considérer que j'ai donné une
+description exhaustive du contenu de ma bibliothèque. Si l'on fait
+\emph{l'hypothèse d'un monde ouvert} on considère que les règles qui
+nous sont inconnues peuvent être vraies ou fausses (figure
+\ref{fig:md_ouvert}). Ainsi, dans ce cadre on ne peut que répondre
+\enquote{Je ne sais pas} à la question précédente. Dans
 \emph{l'hypothèse d'un monde ouvert,} l’absence d'une règle n'implique
 pas sa fausseté.
 
@@ -125,6 +211,21 @@ pas sa fausseté.
   \label{fig:comp_md}
 \end{figure}
 
+Appliqué à notre cas d'étude le choix d'une de ces deux hypothèses
+revient à se demander si la description d'une position donnée par les
+requérants est systématiquement exhaustive. Si la réponse est
+\enquote{oui} on peut alors faire \emph{l'hypothèse d'un monde clos}
+et considérer que toute information qui n'est pas donnée par le
+requérant est fausse. Ainsi, s'il décrit sa position en indiquant
+qu'il \enquote{est sur une route} on pourra en conclure qu'il est pas
+en forêt, puisque cette information ne nous a pas été donnée. Par
+conséquent on pourra \emph{spatialiser} cette alerte à l'aide de deux
+\emph{indices de localisation} l'un explicite (\enquote{je suis sur
+  une route}) et l'autre inféré (\enquote{je ne suis pas en
+  forêt}). Or cet exemple illustre bien que cette approche n'est pas
+satisfaisante, des routes peuvent traverser des forêts, ou non et rien
+dans cette alerte ne permet de rejeter cette hypothèse, le
+raisonnement en monde ouvert est donc plus approprié.
 
 %%% Local Variables:
 %%% mode: latex

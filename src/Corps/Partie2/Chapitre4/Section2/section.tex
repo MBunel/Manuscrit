@@ -9,10 +9,24 @@ les \emph{indices de localisation} d'une alerte dans le but de créer
 la \emph{zone de localisation probable,} \ie le résultat final de
 notre processus.
 
-Dans cette partie nous allons détailler la présentation de notre
-méthodologie, en présentant les étapes composant notre méthodologie.
+Dans cette partie nous allons présenter une première formalisation de
+notre méthodologie. L'objectif n'est cependant pas de présenter tous
+les aspects des étapes de \emph{décomposition,} de
+\emph{spatialisation} et de \emph{fusion} chaque étape de la méthode
+étant détaillée dans un chapitre dédié (respectivement les chapitres
+\ref{chap:05}, \ref{chap:07} et \ref{chap:08}). Nous ne parlerons donc
+pas de certains aspects avancés de la modélisation, comme la prise en
+compte de l'imprécision (cf. \autoref{chap:07}) ou de l'incertitude
+(cf.). La méthode ici présentée est la plus générique possible  
+
+La \autoref{fig:methodo_1} présente une synthèse visuelle de la
+méthodologie que nous avons définie.
 
 \subsection{Décomposition}
+
+La décomposition est une composante de \emph{l'étape de spatialisation}
+
+Ce principe sera détaillé dans le \autoref{chap:05}
 
 \subsection{Spatialisation}
 
@@ -20,7 +34,52 @@ Faite pour chaque indice (chap2)
 Nécessite des méthodes spécifiques (eda)
 Plusieurs objets de référence
 
+Ce principe sera détaillé dans le \autoref{chap:07}
+
+Pour rappel, l'opération de \emph{spatialisation} consiste à
+construire une zone (dite de \emph{localisation compatible})
+correspondant à \emph{l'indice de localisation}
+(\autoref{fig:obj_spa}). Ainsi on peut définir une \emph{zone de
+localisation compatible} (pour un \emph{indice de localisation} donné)
+comme l'ensemble des positions où \emph{l'indice de localisation} est
+vrai, soit :
+
+
+\begin{equation}
+  \text{\textsf{ZLC}}_i = \{(x,y) \ |\ \text{\textsf{RL}}_i(x,y) \wedge (x,y) ∈ \mathbb{R}^2\}
+\end{equation}
+
+Avec \textsf{ZLC} la \emph{zone de localisation compatible,} \(i\) un
+\emph{indice de localisation,} \((x,y)\) un couple de réels formant
+une position et \(\text{\textsf{RL}}_i(x,y)\) une fonction vraie si la
+position \((x,y)\) est dans la \emph{zone de localisation compatible}
+correspondant à \emph{l'indice de localisation} \(i\).
 
 \subsection{Fusion}
 
-\missingfigure{Schéma synthèse méthode}
+De toutes les étapes de notre méthodologie, la phase de \emph{fusion}
+est, de loin, la plus simple. Son objectif est de combiner les
+différentes \emph{zones de localisation compatibles} créées lors de la
+phase de \emph{spatialisation} en une seule, la \emph{zone de
+  localisation probable} (ZLP).
+
+Ce principe sera détaillé dans le \autoref{chap:08}
+
+
+\begin{equation}
+  \text{\textsf{ZLP}}_I = ⋂_{i \in I} \text{\textsf{ZLC}}ᵢ
+\end{equation}
+
+Avec \textsf{ZLP} la \emph{zone de localisation probable,} \(I\),
+l'ensemble des \emph{indices de localisation} pris en compte, \(i\) un
+\emph{indice de localisation} et \textsf{ZLP} un \emph{zone de
+  localisation compatible.}
+
+\begin{landscape}
+  \begin{figure}[H]
+    \centering
+    \input{../figures/methodologie.tex}
+    \caption{Méthodologie}
+    \label{fig:methodo_1}
+  \end{figure}
+\end{landscape}
