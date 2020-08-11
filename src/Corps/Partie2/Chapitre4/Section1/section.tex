@@ -35,12 +35,17 @@ l'interface.
   \label{fig:diag_acti_secours}
 \end{figure}
 
-L'interaction avec le secouriste nous permet également de demander la
-saisie d'une \emph{zone initiale de recherche} (ZIR, \cite{Viry2019})
-fixant l'aire initiale et maximale de recherche de la victime, \ie la
-zone où la présence de la victime est, selon le secouriste,
-certaine. La définition d'une telle zone est indispensable car, en la
-présence \emph{d'indices de localisation} se référant à des objets
+L'interaction avec le secouriste nous permet également de disposer
+d'une \emph{zone initiale de recherche} (ZIR, \cite{Viry2019}),
+délimitant la zone où la présence de la victime est, selon le
+secouriste, certaine. La définition d'une telle zone est un préalable
+indispensable à la \emph{spatialisation} des \emph{indices de
+  localisation.}
+%
+car de grandes régions peuvent appartenir à la zone de
+localisation compatible spatialisée, pour peu que l'a
+%
+lorsque ces derniers se référent à des objets
 indéfinis (\eg \enquote{un lac}, \enquote{une ville}, \enquote{un
   sommet}) tous les objets de ce type doivent êtres considérés, aucune
 autre information ne permettant d'en raffiner la sélection. Cette
@@ -50,9 +55,42 @@ l'ensemble de la zone d'intervention de l'\ac{usem} contactée.
 
 \subsubsection{La modélisation explicite des connaissances}
 
-Pour faciliter l'intégration de notre méthode dans le contexte métier
-du secours en montagne nous avons décidé d'adopter une démarche basée
-sur les connaissances.
+Les phases de spatialisation et de fusion différent par un point
+essentiel. La fusion consiste à regrouper diddérentes zones de
+localisaiton compatibles dans le but de construire une seule zone de
+localisation probable. Par conséquent, tous les individus en entrée de
+cette opération sont de la même nature, \ie des objets
+géographiques. L'opération de fusion ne nécessite donc pas la
+définition de comportements particuliers, adaptés à des cas qui le
+sont tout autant. La spatialisation par contre nécessite le
+développement d'une méthode adaptée à chaque \emph{relation de
+  localisation.} En effet on spatialise pas la \emph{relation}
+\enquote{sous} de la même manière que la \emph{relation}
+\enquote{entre}. Il est donc nécessaire de définir une méthode de
+\emph{spatialisation} pour chaque \emph{relation de localisation} et
+d'en proposer une implémentation. Une possibilité serait d'écrire des
+fonctions \emph{ad hoc} lors de l'implémentation et de les détailler
+ici. Ce faisant l'ensemble des connaissances produites lors de
+l'élaboration des méthodes de spatialisation se retrouverait dans le
+code, ce qui ne faciliterait pas la compréhension et l'utilisation
+appliquée de notre travail.
+
+Pour faciliter l'intégration de notre travail dans le contexte métier
+du secours en montagne nous avons choisi d'adopter une démarche
+imposant la modélisation explicite des connaissances. Cette démarche
+est inspirée des \emph{systèmes à base de connaissances} où ces
+dernières sont formalisées au sein d'une ontologie lue et interprétée
+par le code. Ainsi, on peut imaginer que les règles de
+\emph{spatialisation} de toutes les \emph{relations de localisations}
+soient formalisées dans une ontologie des \emph{ad hoc,} lisible et
+modifiable à chaque instant. Cette approche offre plusieurs
+avantages. D'une part, comme énoncé précédemment elle permet aux
+utilisateurs de nos méthodes de \emph{spatialisation} de disposer
+d'une forme d'auto-documentation, permise par la centralisation de
+toutes les règles de spatialisation. Cette centralisation facilite
+également la modification où l'ajout de règles de
+\emph{spatialisation.} De plus cette ontologie peut être exploitée et
+diffusée séparément.
 
 \subsection{Principes de modélisation}
 
