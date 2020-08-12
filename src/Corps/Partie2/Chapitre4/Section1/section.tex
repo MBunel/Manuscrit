@@ -17,19 +17,85 @@ de la méthode et la spécificité de certains paramétrages.
 
 \subsubsection{\texttt{Titre}}
 
-Parmi les choix visant à faciliter l'intégration de notre méthode il y
-en a un dont nous avons déjà parlé, le rôle du secouriste. En effet,
-comme nous l'indiquions dans la première partie, nous ne souhaitons
-pas que notre méthode se substitue au secouriste, mais au contraire
-qu'elle l’assiste. Ce choix (tout du moins tel que présenté dans le
-\autoref{chap:01}) est hérité d'une décision faite au sein du projet
-CHOUCAS dans son ensemble, celle de ne pas travailler sur
-l'interprétation automatisée du requérant, nécessitant dès lors un
-intermédiaire, le secouriste, entre le combiné téléphonique et
-l'interface.
+Comme nous l'indiquions dans la première partie, un des partis-pris
+fondamentaux du projet CHOUCAS est d'intégrer pleinement les
+secouristes au processus de localisation de la victime, ce qui impose
+le développement de solutions d'aide à la décision et non
+d'automatisation de la localisation. Si ce choix n'appose pas de
+contraintes spécifiques sur nos travaux, il nous offre des
+possibilités inédites. En effet, ce parti-pris impose la présence
+constante d'un secouriste, en contact avec le requérant et
+interagissant avec notre méthode de localisation par le biais de
+l'interface développée au sein du lot 4
+(cf. \ref{subsec:1-2-3-3}). Par conséquent nous pouvons développer une
+méthode nécessitant la participation active d'un secouriste lors de
+son application.
 
-Le secouriste peut alors effectuer un travail de désambiguïsation des
-propos du requérant. 
+Nous avons donc décidé de compter sur les secouristes pour construire
+les \emph{indices de localisation} à partir des informations données
+par le requérant. Cette opération consiste à identifier les différents
+élément constituant \emph{l'indice de localisation} (\emph{sujet,}
+\emph{objet de référence,} \emph{relation de localisation}) dans le
+discours du requérant, puis de les renseigner dans l'interface. Ce
+travail ne se résume cependant pas à une opération de saisie et impose
+également un travail d'analyse et de désambiguïsation du discours du
+requérant. Pour l'illustrer prenons l'exemple de la phrase :
+\enquote{Je suis à deux pas d'une maison}. La première tâche que nous
+confions au secouriste est celle de l'identification des éléments de
+la phrase, \enquote{je} est le \emph{sujet,} \enquote{à deux pas} est
+une \emph{relation de localisation} et \enquote{une maison} est
+\emph{l'objet de référence.} Mais cette segmentation ne suffit pas à
+\emph{spatialiser} cet \emph{indice de localisation.} Pour ce faire il
+est nécessaire d'interpréter ces trois chaines de caractères pour
+identifier l'objet ou le concept auquel elles se référent. Dans le cas
+d'une automatisation intégrale il serait nécessaire de définir une
+méthode à cet effet, mais nous pouvons déléguer cette tâche au
+secouriste. La \emph{relation de localisation} \enquote{à deux pas}
+peut, par exemple, être considérée comme une \emph{relation de
+  distance métrique quantitative} (cf. \ref{sec:3-1-dist_met_quant}),
+pourtant on peut supposer que la notion centrale de cet exemple est la
+notion de \emph{proximité} est non une quantification de
+distance. L'automatisation de ce travail de désambiguïsation est
+extrêmement difficile et est un champ de recherche spécifique, c'est
+pourquoi nous le déléguons au secouriste. Dans les faits cela implique
+que c'est à ce dernier de choisir la \emph{relation spatiale,} à
+partir d'une liste prédéfinie, en fonction du contexte et de sa
+compréhension de \emph{l'indice de localisation}. Ainsi, pour
+reprendre l'exemple précédent, c'est au secouriste de choisir si la
+\emph{relation de localisation} \enquote{à deux pas} doit être
+modélisée comme une relation de \emph{proximité} où une \emph{distance
+  métrique quantitative.} De manière analogue il revient au secouriste
+d'analyser l'objet de référence. Dans notre exemple, \emph{l'objet de
+  référence} (\enquote{une maison}) désigne un type d'objet (\ie un
+\emph{géotype}) auquel plusieurs objets (\ie les \emph{géons}) peuvent
+correspondre. Ce travail d'identification des objets géographiques
+utilisés comme référence par le requérant peut également être délégué
+au secouriste, par le biais de l'interface. Pour notre exemple le
+secouriste devra sélectionner tous les objets correspondant à la
+description donnée par le secouriste. Cette approche pose néanmoins un
+problème, celui de l'aire de la sélection. En effet, sans information
+supplémentaire tout objet géographique correspondant à la section peut
+être considéré comme un objet de référence valide. Il est donc
+nécessaire de définir une \emph{zone de travail} délimitant l'aire de
+recherche de la victime, et par conséquent de sélection des
+\emph{objets de référence.} Dans l'ontologie d'alerte CHOUCAS (OAC,
+\cite{Viry2019}), cette région est qualifiée de \emph{zone initiale de
+  recherche} (ZIR). La définition d'une telle zone est un préalable
+indispensable à la \emph{spatialisation} des \emph{indices de
+  localisation.}
+
+Ainsi notre méthodologie impose trois tâches au secouriste. La
+première, effectuée au début de la phase de localisation, consiste à
+définir la ZIR. La seconde consiste à identifier, à partir d'une liste
+préalablement définir, \emph{la relation de localisation}
+correspondant au mieux à \emph{l'indice de localisation,} puis, le
+secouriste doit sélectionner les \emph{objets de référence} utilisés
+par le requérant.
+%
+Ainsi, en entrée de notre méthode nous disposons, pour chaque
+\emph{indice de localisation} d'une \emph{relation de localisation}
+exprimée dans un vocabulaire contrôlé et d'un ensemble d'objets
+géographiques, servant de référence.
 
 
 \begin{figure}
@@ -38,24 +104,6 @@ propos du requérant.
   \caption{dcsqd}
   \label{fig:diag_acti_secours}
 \end{figure}
-
-L'interaction avec le secouriste nous permet également de disposer
-d'une \emph{zone initiale de recherche} (ZIR, \cite{Viry2019}),
-délimitant la zone où la présence de la victime est, selon le
-secouriste, certaine. La définition d'une telle zone est un préalable
-indispensable à la \emph{spatialisation} des \emph{indices de
-  localisation.}
-%
-car de grandes régions peuvent appartenir à la zone de
-localisation compatible spatialisée, pour peu que l'a
-%
-lorsque ces derniers se référent à des objets
-indéfinis (\eg \enquote{un lac}, \enquote{une ville}, \enquote{un
-  sommet}) tous les objets de ce type doivent êtres considérés, aucune
-autre information ne permettant d'en raffiner la sélection. Cette
-première saisie nous permet de restreindre la zone de recherche de la
-victime, qui, en l'absence de cette information ne peut-être que
-l'ensemble de la zone d'intervention de l'\ac{usem} contactée.
 
 \subsubsection{La modélisation explicite des connaissances}
 
