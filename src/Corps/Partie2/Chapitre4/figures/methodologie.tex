@@ -16,31 +16,30 @@
 
 \matrix [matrix of math nodes,row sep=0.1cm,column sep=0.1cm,
 anchor=south west, nodes={anchor=base, baseline}] (is) at
-([xshift=2cm]I.north east)
+([xshift=1.5cm]I.north east)
 {i_1\\i_2\\\vdots{}\\i_n\\};
 
 \matrix [matrix of math nodes,row sep=0.1cm,column sep=0.1cm,
 anchor=south west, nodes={baseline}] (is_o) at
-([xshift=2cm]is-1-1.north east) {i_1o_1\\i_1o_2\\\vdots{}\\i_1o_n\\};
+([xshift=1.5cm,yshift=.5cm]is-1-1.east) {o_1\\o_2\\\vdots{}\\o_n\\};
+
+\matrix [matrix of math nodes,row sep=0.1cm,column sep=1.5cm,
+anchor=south west, nodes={minimum height=5mm}] (is_o_r) at ([xshift=1.5cm,yshift=.5cm]is_o-1-1.east)
+{
+  \text{RSA}_1&\text{ZLC}_{rsa1}\\
+  \text{RSA}_2&\text{ZLC}_{rsa_2}\\
+  \vdots{}&\vdots{}\\
+  \text{RSA}_n&\text{ZLC}_{rsa_n}\\};
 
 \matrix [matrix of math nodes,row sep=0.1cm,column sep=0.1cm,
-anchor=south west, nodes={baseline}] (is_o_r) at ([xshift=2cm]is_o-1-1.north
-east)
-{i_1o_1r_1\\i_1o_1r_2\\\vdots{}\\i_1o_1r_n\\};
+anchor=west, nodes={baseline}] (zlb) at ([xshift=1.5cm]is_o_r.east  |- is_o)
+{ZLC_{o_1}\\ZLC_{o_2}\\\vdots{}\\ZLC_{o_n}\\};
 
 \matrix [matrix of math nodes,row sep=0.1cm,column sep=0.1cm,
-anchor=west, nodes={baseline}] (zla) at ([xshift=2cm]is_o_r.east)
-{ZLA_1\\ZLA_2\\\vdots{}\\ZLA_n\\};
+anchor=west, nodes={anchor=base, baseline}] (zlc) at ([xshift=1.5cm]zlb.east  |- is)
+{ZLC_1\\ZLC_2\\\vdots{}\\ZLC_n\\};
 
-\matrix [matrix of math nodes,row sep=0.1cm,column sep=0.1cm,
-anchor=west, nodes={baseline}] (zlb) at ([xshift=2cm]zla.east  |- is_o)
-{ZLB_1\\ZLB_2\\\vdots{}\\ZLB_n\\};
-
-\matrix [matrix of math nodes,row sep=0.1cm,column sep=0.1cm,
-anchor=west, nodes={anchor=base, baseline}] (zlc) at ([xshift=2cm]zlb.east  |- is)
-{zlc_1\\zlc_2\\\vdots{}\\zlc_n\\};
-
-\node [anchor=west] (zlp) at ([xshift=2cm]zlc.east |- I)
+\node [anchor=west] (zlp) at ([xshift=1.5cm]zlc.east |- I)
 {ZLP};
 
 
@@ -54,15 +53,15 @@ anchor=west, nodes={anchor=base, baseline}] (zlc) at ([xshift=2cm]zlb.east  |- i
   \draw[acc] (is_o-1-1.north east) -- (is_o-1-1.south east);
   \draw[acc] (is_o_r-1-1.north east) -- (is_o_r-1-1.south east);
 
-  \draw[accm] (zla-1-1.north west) -- (zla-1-1.south west);
+  \draw[accm] (is_o_r-1-2.north west) -- (is_o_r-1-2.south west);
   \draw[accm] (zlb-1-1.north west) -- (zlb-1-1.south west);
-  \draw[accm] (zlc-1-1.north west) --
-    (zlc-1-1.south west);
+  \draw[accm] (zlc-1-1.north west) -- (zlc-1-1.south west);
 
-  \draw[acc3] (zla.north east) -- (zla.south east);
+  \draw[acc3] (is_o_r.north east) -- (is_o_r.south east);
   \draw[acc3] (zlb.north east) -- (zlb.south east);
   \draw[acc3] (zlc.north east) -- (zlc.south east);
 \end{scope}
+
 
 \begin{scope}
   \draw[->, black] (I.east) -- (is.west) node[pos=0,below] {1} node[pos=1,below]{1..*};
@@ -73,10 +72,10 @@ anchor=west, nodes={anchor=base, baseline}] (zlc) at ([xshift=2cm]zlb.east  |- i
   (is_o_r.west) node[pos=0,below]
   {1} node[pos=1,below]{1..*}; 
   
-  \draw[->, black] (is_o_r-1-1.east) -- (zla-1-1.west) node[pos=0,below]
+  \draw[->, black] (is_o_r-1-1.east) -- (is_o_r-1-2.west) node[pos=0,below]
   {1} node[pos=1,below]{1}; 
   
-  \draw[->, black] (zla.east) -- (zlb-1-1.west) node[pos=0,below] {1..*} node[pos=1,below]{1}; 
+  \draw[->, black] (is_o_r.east) -- (zlb-1-1.west) node[pos=0,below] {1..*} node[pos=1,below]{1}; 
   
   \draw[->, black]
   (zlb.east) -- (zlc-1-1.west) node[pos=0,below] {1..*} node[pos=1,below]{1}; 
@@ -84,14 +83,15 @@ anchor=west, nodes={anchor=base, baseline}] (zlc) at ([xshift=2cm]zlb.east  |- i
   \draw[->, black] (zlc.east) -- (zlp.west) node[pos=0,below] {1..*} node[pos=1,below]{1}; 
 \end{scope}
 
+
 \begin{scope}
-    \draw[->, black, dotted] (I.east) -- (zlp.west) node[pos=0,below]
+    \draw[->, black, dotted] ([xshift=.5cm]I.east) -- ([xshift=-.5cm]zlp.west) node[pos=0,below]
   {1} node[pos=1,below]{1}; 
 
-  \draw[->, black, dotted] (is.east) -- (zlc.west) node[pos=0,below]
+  \draw[->, black, dotted] ([xshift=.5cm]is.east) -- ([xshift=-.5cm]zlc.west) node[pos=0,below]
   {1} node[pos=1,below]{1}; 
 
-  \draw[->, black, dotted] (is_o.east) -- (zlb.west) node[pos=0,below]
+  \draw[->, black, dotted] ([xshift=.5cm]is_o.east) -- ([xshift=-.5cm]zlb.west) node[pos=0,below]
   {1} node[pos=1,below]{1}; 
 \end{scope}
 
@@ -100,7 +100,7 @@ anchor=west, nodes={anchor=base, baseline}] (zlc) at ([xshift=2cm]zlb.east  |- i
 \begin{scope}[below of=I]
   \draw[acc3m] (0,0) --++ (8,0) node[pos=.5, yshift=-.5cm] {\emph{Décomposition}};
   \draw[acc3m] (8,0) --++ (3,0) node[pos=.5, yshift=-.5cm] {\emph{Spatialisation}};
-  \draw[acc3m] (13.4,0) --++ (8,0) node[pos=.5, yshift=-.5cm] {\emph{Fusion}};
+  \draw[acc3m] (13.4,0) --++ (2,0) node[pos=.5, yshift=-.5cm] {\emph{Fusion}};
 \end{scope}
 
   % \path[ffa] (0,0) rectangle ++(2,-12);

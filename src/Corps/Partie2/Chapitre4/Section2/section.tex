@@ -1,14 +1,14 @@
-Dans le \autoref{chap:2} nous identifions deux étapes, la
-\emph{spatialisation} et \emph{la fusion,} permettant de construire
-une \emph{zone de localisation probable} correspondant à \emph{une
-  description de position.} Ce découpage n'est cependant pertinent
-qu'en première approche, la \emph{fusion} et (surtout) la
-\emph{spatialisation} étant elles-mêmes des opérations complexes et
-décomposables.
-%
-Les principes présentés précédemment
-
-
+Dans le \autoref{chap:2} nous identifions deux étapes centrales de
+notre méthode permettant de construire une \emph{zone de localisation
+  probable} correspondant à \emph{une description de position,} la
+\emph{spatialisation} et \emph{la fusion.} Cette présentation n'est
+cependant satisfaisante qu'en première approximation. En effet, les
+principes introduits dans ce chapitre (et plus particulièrement le
+principe de décomposition) complexifient la méthodologie en y ajoutant
+de nouvelles étapes, comme différentes phases de décomposition et de
+fusion. Ainsi nos précédentes définitions (\autoref{chap:02}) de la
+\emph{spatialisation} et de la \emph{fusion} doivent êtres complétées,
+ce qui sera fait au fur et à mesure de cette partie.
 
 Dans cette partie nous allons présenter une première formalisation de
 notre méthodologie. L'objectif n'est cependant pas de présenter tous
@@ -23,14 +23,54 @@ compte de l'imprécision (cf. \autoref{chap:07}) ou de l'incertitude
 La \autoref{fig:methodo_1} présente une synthèse visuelle de la
 méthodologie que nous avons définie.
 
-\subsection{\texttt{XXXXX}}
+\subsection{La phase de décomposition}
 
-Le \emph{principe de décomposition,} précédemment formulé, implique
-d'introduire une étape préalable aux opérations de
-\emph{spatialisation} et de \emph{fusion,} la \emph{décomposition} des
-\emph{relations de localisation.}
+La \emph{décomposition} est la première phase de notre méthode. C'est
+un ensemble de trois étapes permettant de passer d'un ensemble
+\emph{d'indices de localisation} à un ensemble décomposé de ces
+indices, prêt à être \emph{spatialisé.} Seule une de ces étapes (la
+dernière) découle du principe de \emph{décomposition} des \emph{relations de localisation.}
 
-La décomposition est une composante de \emph{l'étape de spatialisation}
+
+La première étape de cette phase est celle de la décomposition de
+\emph{l'ensemble des indices de localisation}, \(I\)
+(\autoref{fig:methodo_1}). Cet ensemble contient tous les
+\emph{indices de localisation} qui nous sont transmis par les
+secouristes, par le biais de l'interface de géovisualisation. Comme
+l'indique la \autoref{fig:diag_acti_secours}, c'est la réception de
+cet ensemble qui déclenche le processus de construction de la
+\emph{zone de localisation probable.} La décomposition de l'ensemble
+\(I\) permet d'extraire les différents \emph{indices de localisation}
+(\(i_n\) sur la \autoref{fig:methodo_1}), à partir desquels serons
+construites les\emph{ zones de localisation compatibles.} Cette
+transformation était qualifée de \emph{spatialisation} dans le
+\autoref{chap:02}, cependant, comme le montre la
+\autoref{fig:methodo_1}, ce n'est pas à cette étape qu'apparaissent
+les objets géographiques, sous la forme des \emph{zones de
+  localisation compatibles,} mais après deux nouvelles étapes de
+\emph{décomposition.} C'est pourquoi nous préférons réserver l'usage
+de ce terme à l'étape centrale de la méthode, la création d'objets
+géographiques. L'étape de décomposition de \emph{l'ensemble des
+  indices de décomposition,} ne présente pas de difficultés techniques
+ou d'apport scientifique, mais elle permet la \emph{spatialisation
+  autonome des indices de localisation.} Comme on peut le voir sur la
+\autoref{fig:methodo_1}, les indices décomposés lors de la première
+étape du processus sont fusionnés au dernier moment, conformément au
+principe de modélisation autonome.
+
+La seconde étape de la phase de décomposition aborde un point que
+nous n'avons pas encore présenté.
+%
+les \emph{indices de localisation} contiennent toujours un (ou
+plusieurs si la relation de localisation est n-aire) \emph{objet de
+  référence.} Cependant ce dernier peut être une instance clairement
+définie, que l'on peut alors facilement identifier (\eg
+\enquote{Grenoble}, \enquote{Le bois des Ayes}, \emph{etc.}) ou un
+objet décrit par sa nature, qu'il est alors impossible d'identifier
+sans informations supplémentaires (\eg \enquote{une ville},
+\enquote{un bois}). Dans ce second cas
+
+
 
 Ce principe sera détaillé dans le \autoref{chap:05}
 
@@ -98,3 +138,9 @@ l'ensemble des \emph{indices de localisation} pris en compte, \(i\) un
     \label{fig:methodo_1}
   \end{figure}
 \end{landscape}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../../../../main"
+%%% End:
