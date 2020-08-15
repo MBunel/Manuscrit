@@ -23,14 +23,19 @@ compte de l'imprécision (cf. \autoref{chap:07}) ou de l'incertitude
 La \autoref{fig:methodo_1} présente une synthèse visuelle de la
 méthodologie que nous avons définie.
 
-\subsection{La phase de décomposition}
+\subsection{La phase de \emph{décomposition}}
 
 La \emph{décomposition} est la première phase de notre méthode. C'est
 un ensemble de trois étapes permettant de passer d'un ensemble
 \emph{d'indices de localisation} à un ensemble décomposé de ces
 indices, prêt à être \emph{spatialisé.} Seule une de ces étapes (la
-dernière) découle du principe de \emph{décomposition} des \emph{relations de localisation.}
+dernière) découle du principe de \emph{décomposition} des
+\emph{relations de localisation.}
 
+Ce principe sera détaillé dans le \autoref{chap:05}
+
+\subsubsection{La décomposition de \emph{l'ensemble des indices de
+    localisation}}
 
 La première étape de cette phase est celle de la décomposition de
 \emph{l'ensemble des indices de localisation}, \(I\)
@@ -58,10 +63,19 @@ ou d'apport scientifique, mais elle permet la \emph{spatialisation
 étape du processus sont fusionnés au dernier moment, conformément au
 principe de modélisation autonome.
 
-\tdi{équations}
+\tdi{équations ?}
+
+\subsubsection{La décomposition des \emph{objets de référence indéfinis}}
 
 La seconde étape de la phase de décomposition aborde un point que
 nous n'avons pas encore présenté.
+%
+Contrairement à la première étape de \emph{la phase de décomposition,}
+la seconde et la troisième phase peuvent être interverties, sans que
+cela n'impacte la modélisation. L'ordre de présentation que nous
+utilisons ici correspond à celui que nous avons implémenté
+(cf. \autoref{chap:08}), mais également à une progression que nous
+estimons plus simple à présenter.
 %
 les \emph{indices de localisation} contiennent toujours un (ou
 plusieurs, si la relation de localisation est n-aire) \emph{objet de
@@ -100,20 +114,52 @@ seconde étape de décomposition on dispose de \(i\) \emph{indices de
 plusieurs \emph{indices de localisation,} en fonction du nombre
 \emph{d'objets de référence} à prendre en compte.
 
-La troisième est dernière phase de décomposition est celle de la
-décomposition des \emph{relations spatiales.}
+\subsubsection{La décomposition des \emph{relations de localisation}}
 
-Ce principe sera détaillé dans le \autoref{chap:05}
+La troisième est dernière étape de cette phase est celle de la
+décomposition des \emph{relations de localisation.} C'est durant cette
+étape qu'est appliqué le \emph{principe de décomposition} des
+\emph{relations de localisation.} Comme nous l'expliquions lors de la
+présentation de ce principe, cette étape consiste à décomposer les
+\emph{relations de localisation} en un ensemble de composantes
+sémantiquement indépendantes, les \emph{relations de localisation
+  atomiques.} Comme pour les deux précédentes étapes, cette
+décomposition n'est pas toujours nécessaire, \emph{la relation de
+  localisation utilisée} pouvant être atomique (\eg
+\enquote{proche}). La principale différence entre cette étape et les
+précédentes est qu'il est nécessaire de disposer d'une information
+supplémentaire pour savoir comment l'effectuer. En effet lorsqu'un
+ensemble d'indice de localisation nous est transmis, les différents
+\emph{indices de localisation} qui le composent sont déjà identifiés,
+puisque saisis tels quels par le secouriste, de la même manière les
+différents \emph{objets de référence.} Par conséquent, les deux
+premières étapes de la \emph{phase de décomposition} ne présentent pas
+de difficultés particulières, contrairement à la \emph{décomposition
+  des relations de localisation.} En effet note souhait est de
+permettre au secouriste de sélectionner la \emph{relation de
+  localisation} correspondant à la description du requérant à partir
+d'une liste pré-définie de \emph{relations de localisation}
+(cf. principe de modélisation explicite des connaissances). Ainsi le
+secouriste n'a pas à manipuler directement les \emph{relations de
+  localisation atomiques.} Il est donc nécessaire de connaitre la
+\emph{décomposition des relations de localisation} et de s'y référer
+lors de cette étape. Ce processus sera détaillé plus longuement dans
+le \autoref{chap:05}.
 
-\subsubsection{objets de ref}
 
-\subsubsection{La décomposition des relations spatiales}
+Au terme de ces trois phases de décomposition nous disposons donc d'un
+ensemble \emph{d'indices de localisation}
 
-\subsection{Spatialisation des \emph{indices de localisation}}
+Par exemple si \emph{l'ensemble des indices de localisation} (\(I\))
+qui nous est transmis est de la forme : \enquote{je suis proche du
+  \emph{Pic de Jean Ray} et suis sur une crête}, alors après
+la phase de \emph{décomposition} 
 
-\subsubsection{La décomposition des relations de localisation}
 
-\subsubsection{La spatialisation des relations de localisation atomiques}
+
+
+
+\subsection{La phase de \emph{spatialisation}}
 
 
 Faite pour chaque indice (chap2)
@@ -141,7 +187,7 @@ une position et \(\text{\textsf{RL}}_i(x,y)\) une fonction vraie si la
 position \((x,y)\) est dans la \emph{zone de localisation compatible}
 correspondant à \emph{l'indice de localisation} \(i\).
 
-\subsection{Fusion}
+\subsection{La phase de fusion}
 
 De toutes les étapes de notre méthodologie, la phase de \emph{fusion}
 est, de loin, la plus simple. Son objectif est de combiner les
