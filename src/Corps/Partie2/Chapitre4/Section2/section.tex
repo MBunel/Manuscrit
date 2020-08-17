@@ -211,15 +211,17 @@ est atomique, contrairement à \emph{l'ensemble des indices de
 Comme le montre cette longue énumération, \emph{le processus de
   décomposition,} même lorsqu'il est appliqué à un petit
 \emph{ensemble d'indices de localisation} (ici deux), peut générer de
-nombreux \emph{indices de localisation décomposés}.
-
-Au terme de ces trois phases de décomposition nous
-disposons donc d'un ensemble \emph{d'indices de localisation}
-
-
-
+nombreux \emph{indices de localisation décomposés,} qu'il est
+difficile d'énumérer. Nous sommes cependant convaincus que les apports
+permis par cette approche compensent la multiplication des
+\emph{indices de localisation.}
 
 \subsection{La phase de \emph{spatialisation}}
+
+Une fois que les \emph{indices de localisation} ont été décomposé il
+est possible de les \emph{spatialiser.}
+
+La phase de \emph{spatialisation} consiste
 
 
 Faite pour chaque indice (chap2)
@@ -249,6 +251,12 @@ correspondant à \emph{l'indice de localisation} \(i\).
 
 \subsection{La phase de fusion}
 
+La \emph{phase de fusion} des \emph{zones de localisation} se
+décompose en trois étapes, répondant aux trois étapes de la
+\emph{phase de décomposition.}
+
+
+
 De toutes les étapes de notre méthodologie, la phase de \emph{fusion}
 est, de loin, la plus simple. Son objectif est de combiner les
 différentes \emph{zones de localisation compatibles} créées lors de la
@@ -268,6 +276,15 @@ Ce principe sera détaillé dans le \autoref{chap:08}
 
 \subsubsection{La \emph{fusion} des \emph{indices de localisation}}
 
+La dernière étape de \emph{la phase de fusion} est celle de la fusion
+des \emph{indices de localisation} en vue de construire la \emph{zone
+  de localisation probable} correspondant à \emph{l'ensemble des
+  indices de localisation} en entrée de la méthode. Contrairement aux
+\emph{zones de localisation compatibles,} seule une \emph{zone de
+  localisation probable} est construite, même si cette dernière peut
+être fragmentée ou vide (mais ce cas traduit une erreur dans la
+description de la position, dans sa saisie ou sa
+\emph{spatialisation}).
 
 Contrairement à la
 décomposition de l'ensemble des \emph{indices de localisation}
