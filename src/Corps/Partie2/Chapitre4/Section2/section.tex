@@ -67,8 +67,6 @@ principe de modélisation autonome.
   I = \{i_1, i_2, \dots, i_n \}
 \end{equation}
 
-\tdi{équations ?}
-
 \subsubsection{La décomposition des \emph{objets de référence indéfinis}}
 
 La seconde étape de la phase de décomposition aborde un point que
@@ -151,19 +149,72 @@ lors de cette étape. Ce processus sera détaillé plus longuement dans
 le \autoref{chap:05}.
 
 
-Au terme de ces trois phases de décomposition nous disposons donc d'un
-ensemble \emph{d'indices de localisation}
-
-
 Pour illustrer l'ensemble de la \emph{phase de décomposition,}
-imagions que \emph{l'ensemble des indices de localisation} (\(I\))
-dont nous souhaitons construire la ZLP est de la forme :
-%
+imagions que \emph{l'ensemble des indices de localisation} (\(I\)
+saisi par un secouriste à partir de la description suivante :
 \enquote{je suis proche du \emph{Pic de Jean Ray} et suis sur une
-  crête}
+  crête}. Ce dernier est composé de deux \emph{indices de
+  localisation,} séparés lors de la première étape de la \emph{phase
+  de décomposition.} Les deux \emph{indices de localisation :}
+\enquote{je suis proche du \emph{Pic de Jean Ray}} et \enquote{je suis
+  sur une crête} peuvent être alors traités indépendamment. La seconde
+étape de la \emph{phase de décomposition} fragmente chaque
+\emph{indice de localisation} en fonction des \emph{objets de
+  référence.} Le premier \emph{indice de localisation} (\enquote{je
+  suis proche du \emph{Pic de Jean Ray}}) se réfère à un objet nommé
+et unique, il n'est donc pas nécessaire de le décomposer,
+contrairement au second \emph{indice de localisation,} que l'on peut
+décomposer en six nouveaux \emph{indices de localisation,} comme
+illustré précédement : \enquote{je suis sur la \emph{crête de Roche
+    Motte} ou je suis sur la \emph{crête de Font Froide} ou je suis
+  sur la \emph{crête de Serre Chapelle} ou je suis sur la \emph{crête
+    des Barres} ou je suis sur la \emph{crête du Petit Puy}.} Enfin,
+la dernière étape de la phase de \emph{décomposition,} nécessite la
+définition préalable d'un ensemble de \emph{relations de localisation
+  atomiques,} ce qui sera abordé dans le \autoref{chap:05}. Cependant,
+pour aller au bout de cet exemple nous allons considérer que la
+relation de localisation \enquote{proche} est une \emph{relation
+  spatiale atomique} (hypothèse déjà utilisée précédemment) et que la
+relation de localisation \enquote{sur} se décompose en deux
+\emph{relations spatiales atomiques,} \emph{proximité} et
+\emph{différence d'altitude positive} \footnote{Comme nous le verrons
+  ultérieurement cette décomposition est fortement
+  simplificatrice. Cet exemple n'est donc pas à considérer comme
+  représentatif de la décomposition de la \emph{relation de
+    localisation} \enquote{sur}, mais bien comme une illustration de
+  la phase de décomposition dans son ensemble.}. Ainsi, le premier
+\emph{indice de localisation} n'est pas décomposé, puisque nous
+considérons que la \emph{relation de localisation} \enquote{proche}
+est atomique, contrairement à \emph{l'ensemble des indices de
+  localisation} issus de la décomposition de l'indice : \enquote{je
+  suis sur une crête}, qui voient tous leur relation de localisation
+(\enquote{sur}) décomposée. Ainsi, au terme de la \emph{phase de
+  décomposition,} l'ensemble des \emph{indices de localisation :}
+\enquote{je suis proche du \emph{Pic de Jean Ray}} et \enquote{je suis
+  sur une crête} devient :
 %
-, alors après la phase de \emph{décomposition}
+\begin{quote}
+  \enquote{je suis proche du \emph{Pic de Jean Ray}} et ((\enquote{je
+    suis proche de la \emph{crête de Roche Motte}} et \enquote{je suis
+    à une altitude supérieure à la \emph{crête de Roche Motte}}) ou
+  (\enquote{je suis proche de la \emph{crête de Font Froide}} et
+  \enquote{je suis à une altitude supérieure à la \emph{crête de Font
+      Froide}}) ou (\enquote{je suis proche de la \emph{crête de Serre
+      Chapelle}} et \enquote{je suis à une altitude supérieure à la
+    \emph{crête de Serre Chapelle}}) ou (\enquote{je suis proche de la
+    \emph{crête des Barres}} et \enquote{je suis à une altitude
+    supérieure à la \emph{crête des Barres}}) ou (\enquote{je suis
+    proche de la \emph{crête du Petit Puy}} et \enquote{je suis à une
+    altitude supérieure à la \emph{crête du Petit Puy}})).
+\end{quote}
+%
+Comme le montre cette longue énumération, \emph{le processus de
+  décomposition,} même lorsqu'il est appliqué à un petit
+\emph{ensemble d'indices de localisation} (ici deux), peut générer de
+nombreux \emph{indices de localisation décomposés}.
 
+Au terme de ces trois phases de décomposition nous
+disposons donc d'un ensemble \emph{d'indices de localisation}
 
 
 
