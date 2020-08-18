@@ -220,7 +220,8 @@ décomposition sémantique) compensent la multiplication des
 \subsection{La phase de \emph{spatialisation}}
 
 Une fois que les \emph{indices de localisation} ont été décomposé il
-est possible de les \emph{spatialiser.}
+est nécessaire de les \emph{spatialiser.} 
+
 
 La phase de \emph{spatialisation} consiste
 
@@ -257,7 +258,9 @@ décompose en trois étapes, chacune analogue à l'une des étapes de la
 \emph{phase de décomposition} (cf. \autoref{fig:methodo_1}). Cette
 phase permet de fusionner les \emph{zones de localisation compatibles}
 créées lors de la \emph{spatialisation} en une seule, la zone de
-localisation probable, correspondant à l'ensemble des indices de localisation.
+localisation probable, correspondant à l'ensemble des indices de
+localisation. La particularité de cette phase est que la sémantique de
+fusion varie en fonction de l'étape. 
 
 
 
@@ -273,10 +276,51 @@ Ce principe sera détaillé dans le \autoref{chap:08}
 \subsubsection{La \emph{fusion} des \emph{relations de localisation
     atomiques}}
 
+La première étape de la \emph{phase de fusion} est la \emph{fusion}
+des \emph{zones de localisation compatibles} issues de la
+\emph{spatialisation.} Cette étape correspond à l'étape de
+\emph{décomposition des relations de localisation} de \emph{la phase
+  de décomposition,} \ie que le nombre de \emph{zones de localisation}
+en résultant est identique au nombre \emph{d'indices de localisation}
+avant la \emph{décomposition des relations de localisation.}
+
+Conformément au \emph{principe de décomposition,} les \emph{relations
+  de localisation} se décomposent en une série de \emph{relations de
+  localisation atomiques} liées par des conjonctions. Par conséquent
+pour valider une \emph{relation de localisation} il est nécessaire de
+valider toutes les relations de localisation atomiques qui la
+composent. La méthode de \emph{fusion} des \emph{relations de
+  localisation atomiques} ne doit donc retourner que les positions
+présentes dans toutes les \emph{zones de localisations} qu'elle
+fusionne.
+
+\begin{equation}
+  \text{\textsf{ZLC}}_{o_i} = ⋂_{i \in I} \text{\textsf{ZLC}}_{rsa_i}
+\end{equation}
+
+
+Cette étape permet de construire une \emph{zone de localisation
+  compatible} pour chaque \emph{objet de référence} de chaque
+\emph{indice de localisation.} Ainsi, si l'on reprend l'exemple de
+\emph{l'ensemble d'indices de localisation :} \enquote{je suis proche
+  du \emph{Pic de Jean Ray} et suis sur une crête}, on obtiendra,
+après l'étape de \emph{fusion} des \emph{relations de localisation
+  atomiques,} sept \emph{zones de localisation compatibles,}
+correspondant aux \emph{indices de localisation :} \enquote{je suis
+  proche du \emph{Pic de Jean Ray}}, \enquote{je suis sur la
+  \emph{crête de Roche Motte}}, \enquote{je suis sur la \emph{crête de
+    Font Froide}}, \enquote{je suis sur la \emph{crête de Serre
+    Chapelle}}, \enquote{je suis sur la \emph{crête des Barres}}, et
+\enquote{je suis sur la \emph{crête du Petit Puy}}.
+
 \subsubsection{La \emph{fusion} des \emph{objets de référence
     indéfinis}}
 
 \tdi{Revoir titre}
+
+\begin{equation}
+  \text{\textsf{ZLC}}_{i} = ⋃_{i \in I} \text{\textsf{ZLC}}_{o_i}
+\end{equation}
 
 \subsubsection{La \emph{fusion} des \emph{indices de localisation}}
 
