@@ -288,39 +288,82 @@ Conformément au \emph{principe de décomposition,} les \emph{relations
   de localisation} se décomposent en une série de \emph{relations de
   localisation atomiques} liées par des conjonctions. Par conséquent
 pour valider une \emph{relation de localisation} il est nécessaire de
-valider toutes les relations de localisation atomiques qui la
+valider toutes les \emph{relations de localisation atomiques} qui la
 composent. La méthode de \emph{fusion} des \emph{relations de
   localisation atomiques} ne doit donc retourner que les positions
 présentes dans toutes les \emph{zones de localisations} qu'elle
-fusionne.
+fusionne. Comme chaque \emph{zone de localisation} peut être
+formalisée comme l'ensemble des points validant une \emph{relation de
+  localisation} on peut construire la \emph{zone de localisation
+  compatible} correspondant à une \emph{relation de localisation}
+composée en intersectant les \emph{zones de localisation compatibles}
+correspondant à la \emph{spatialisation} des \emph{relations de
+  localisation atomiques.} Ainsi, la \emph{zone de localisation}
+correspondant à la fusion de plusieurs \emph{relations de
+  localisation} correspond à :
 
 \begin{equation}
-  \text{\textsf{ZLC}}_{o_i} = ⋂_{i \in I} \text{\textsf{ZLC}}_{rsa_i}
+  \text{\textsf{ZLC}}_{o_i} = ⋂ \text{\textsf{ZLC}}_{rsa_i}
 \end{equation}
 
-
-Cette étape permet de construire une \emph{zone de localisation
-  compatible} pour chaque \emph{objet de référence} de chaque
-\emph{indice de localisation.} Ainsi, si l'on reprend l'exemple de
-\emph{l'ensemble d'indices de localisation :} \enquote{je suis proche
-  du \emph{Pic de Jean Ray} et suis sur une crête}, on obtiendra,
-après l'étape de \emph{fusion} des \emph{relations de localisation
-  atomiques,} sept \emph{zones de localisation compatibles,}
-correspondant aux \emph{indices de localisation :} \enquote{je suis
-  proche du \emph{Pic de Jean Ray}}, \enquote{je suis sur la
-  \emph{crête de Roche Motte}}, \enquote{je suis sur la \emph{crête de
-    Font Froide}}, \enquote{je suis sur la \emph{crête de Serre
-    Chapelle}}, \enquote{je suis sur la \emph{crête des Barres}}, et
-\enquote{je suis sur la \emph{crête du Petit Puy}}.
+Avec \(\text{\textsf{ZLC}}_{o_i}\), la \emph{zone de localisation
+  compatible} correspondant à \emph{l'objet de référence} \(oᵢ\) et
+\(\text{\textsf{ZLC}}_{rsa_i}\) la \emph{zone de localisation
+  compatible} correspondant à la \emph{spatialisation} de la
+\emph{relation de localisation atomique} \(i\). Conformément à cette
+formalisation, si l'on reprend l'exemple de \emph{l'ensemble d'indices
+  de localisation :} \enquote{je suis proche du \emph{Pic de Jean Ray}
+  et suis sur une crête}, on obtiendra, après l'étape de \emph{fusion}
+des \emph{relations de localisation atomiques,} sept \emph{zones de
+  localisation compatibles,} correspondant aux \emph{indices de
+  localisation :} \enquote{je suis proche du \emph{Pic de Jean Ray}},
+\enquote{je suis sur la \emph{crête de Roche Motte}}, \enquote{je suis
+  sur la \emph{crête de Font Froide}}, \enquote{je suis sur la
+  \emph{crête de Serre Chapelle}}, \enquote{je suis sur la \emph{crête
+    des Barres}}, et \enquote{je suis sur la \emph{crête du Petit
+    Puy}}.
 
 \subsubsection{La \emph{fusion} des \emph{objets de référence
     indéfinis}}
 
-\tdi{Revoir titre}
+La seconde étape de la \emph{phase de fusion} est la fusion des
+différents \emph{objets de référence.} Cette étape répond à la l'étape
+de décomposition des objets de référence inidéfinis, présentée
+précédemment. Comme nous l'indiquions lors de la présentation de la
+\emph{phase de décomposition,} les étapes de \emph{décomposition des
+  relations de localisation} et de décomposition des \emph{objets de
+  référence indéfinies} sont interchangeables et il en va de même pour
+les étapes de fusion leur correspondant. Ainsi cette étape de fusion
+pourrait être interchangée avec l'étape, précédemment présentée, de
+fusion des relations de localisation atomiques, sans que cela
+n'impacte le résultat de la modélisation.
+
+La \emph{fusion des objets de référence indéfinis} se distingue des
+autres étapes de fusion car elle est conjonctive. Comme nous
+l'indiquions lors de la présentation de l'étape de décomposition y
+correspondant, les différents \emph{objets de référence} candidats
+(pour un même indice de localisation) sont concurrents. Ainsi pour que
+\emph{l'indice de localisation spatialisé} soit valable en une
+position il est nécessaire qu'il soit vrai pour au moins un des objets
+de référence candidats. Ainsi la \emph{zone de localisation
+  compatible} correspondant à un \emph{indice de localisation} dont
+\emph{l'objet de référence} est indéfini peut être construite en
+faisant l'union de l'ensemble des \emph{zones de localisation
+  compatibles} construites en \emph{spatialisant} l'indice de
+localisation pour chaque objet de référence candidat :
 
 \begin{equation}
   \text{\textsf{ZLC}}_{i} = ⋃_{i \in I} \text{\textsf{ZLC}}_{o_i}
 \end{equation}
+
+Avec \(\text{\textsf{ZLC}}_{i}\) la \emph{zone de localisation
+  compatible} correspondant à un \emph{indice de localisation} \(i\)
+et \(\text{\textsf{ZLC}}_{o_i}\) la \emph{zone de localisation
+  compatible} pour l'objet \(i\) de l'indice de localisation \(i\).
+Appliqué à l'exemple précédent la \emph{zone de localisation
+  compatible} de \emph{l'indice de localisation} \enquote{je suis sur
+  une crête} correspond à la zone où chaque position est \enquote{sur}
+une des crêtes candidates.
 
 \subsubsection{La \emph{fusion} des \emph{indices de localisation}}
 
