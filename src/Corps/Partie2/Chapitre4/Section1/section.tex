@@ -15,18 +15,89 @@ nous ne souhaitons pas sacrifier la généricité de notre méthode, c'est
 pourquoi son développement relève d'un équilibre entre la généricité
 de la méthode et la spécificité de certains paramétrages.
 
-\subsubsection{\texttt{Le secouriste comme super joker + ZIR}}
+\subsubsection{\texttt{Titre}}
+\label{sec:4-1-1-1}
 
-Parmi les choix visant à faciliter l'intégration de notre méthode il y
-en a un dont nous avons déjà parlé, le rôle du secouriste. En effet,
-comme nous l'indiquions dans la première partie, nous ne souhaitons
-pas que notre méthode se substitue au secouriste, mais au contraire
-qu'elle l’assiste. Ce choix (tout du moins tel que présenté dans le
-\autoref{chap:01}) est hérité d'une décision faite au sein du projet
-CHOUCAS dans son ensemble, celle de ne pas travailler sur
-l'interprétation automatisée du requérant, nécessitant dès lors un
-intermédiaire, le secouriste, entre le combiné téléphonique et
-l'interface.
+Comme nous l'indiquions dans la première partie, un des partis-pris
+fondamentaux du projet CHOUCAS est d'intégrer pleinement les
+secouristes au processus de localisation de la victime, ce qui impose
+le développement de solutions d'aide à la décision et non
+d'automatisation de la localisation. Si ce choix n'appose pas de
+contraintes spécifiques sur nos travaux, il nous offre des
+possibilités inédites. En effet, ce parti-pris impose la présence
+constante d'un secouriste, en contact avec le requérant et
+interagissant avec notre méthode de localisation par le biais de
+l'interface développée au sein du lot 4
+(cf. \ref{subsec:1-2-3-3}). Par conséquent nous pouvons développer une
+méthode nécessitant la participation active d'un secouriste lors de
+son application.
+
+Nous avons donc décidé de compter sur les secouristes pour construire
+les \emph{indices de localisation} à partir des informations données
+par le requérant. Cette opération consiste à identifier les différents
+élément constituant \emph{l'indice de localisation} (\emph{sujet,}
+\emph{objet de référence,} \emph{relation de localisation}) dans le
+discours du requérant, puis de les renseigner dans l'interface. Ce
+travail ne se résume cependant pas à une opération de saisie et impose
+également un travail d'analyse et de désambiguïsation du discours du
+requérant. Pour l'illustrer prenons l'exemple de la phrase :
+\enquote{Je suis à deux pas d'une maison}. La première tâche que nous
+confions au secouriste est celle de l'identification des éléments de
+la phrase, \enquote{je} est le \emph{sujet,} \enquote{à deux pas} est
+une \emph{relation de localisation} et \enquote{une maison} est
+\emph{l'objet de référence.} Mais cette segmentation ne suffit pas à
+\emph{spatialiser} cet \emph{indice de localisation.} Pour ce faire il
+est nécessaire d'interpréter ces trois chaines de caractères pour
+identifier l'objet ou le concept auquel elles se référent. Dans le cas
+d'une automatisation intégrale il serait nécessaire de définir une
+méthode à cet effet, mais nous pouvons déléguer cette tâche au
+secouriste. La \emph{relation de localisation} \enquote{à deux pas}
+peut, par exemple, être considérée comme une \emph{relation de
+  distance métrique quantitative} (cf. \ref{sec:3-1-dist_met_quant}),
+pourtant on peut supposer que la notion centrale de cet exemple est la
+notion de \emph{proximité} est non une quantification de
+distance. L'automatisation de ce travail de désambiguïsation est
+extrêmement difficile et est un champ de recherche spécifique, c'est
+pourquoi nous le déléguons au secouriste. Dans les faits cela implique
+que c'est à ce dernier de choisir la \emph{relation spatiale,} à
+partir d'une liste prédéfinie, en fonction du contexte et de sa
+compréhension de \emph{l'indice de localisation}. Ainsi, pour
+reprendre l'exemple précédent, c'est au secouriste de choisir si la
+\emph{relation de localisation} \enquote{à deux pas} doit être
+modélisée comme une relation de \emph{proximité} où une \emph{distance
+  métrique quantitative.} De manière analogue il revient au secouriste
+d'analyser l'objet de référence. Dans notre exemple, \emph{l'objet de
+  référence} (\enquote{une maison}) désigne un type d'objet (\ie un
+\emph{géotype}) auquel plusieurs objets (\ie les \emph{géons}) peuvent
+correspondre. Ce travail d'identification des objets géographiques
+utilisés comme référence par le requérant peut également être délégué
+au secouriste, par le biais de l'interface. Pour notre exemple le
+secouriste devra sélectionner tous les objets correspondant à la
+description donnée par le secouriste. Cette approche pose néanmoins un
+problème, celui de l'aire de la sélection. En effet, sans information
+supplémentaire tout objet géographique correspondant à la section peut
+être considéré comme un objet de référence valide. Il est donc
+nécessaire de définir une \emph{zone de travail} délimitant l'aire de
+recherche de la victime, et par conséquent de sélection des
+\emph{objets de référence.} Dans l'ontologie d'alerte CHOUCAS (OAC,
+\cite{Viry2019}), cette région est qualifiée de \emph{zone initiale de
+  recherche} (ZIR). La définition d'une telle zone est un préalable
+indispensable à la \emph{spatialisation} des \emph{indices de
+  localisation.}
+
+Ainsi notre méthodologie impose trois tâches au secouriste. La
+première, effectuée au début de la phase de localisation, consiste à
+définir la ZIR. La seconde consiste à identifier, à partir d'une liste
+préalablement définir, \emph{la relation de localisation}
+correspondant au mieux à \emph{l'indice de localisation,} puis, le
+secouriste doit sélectionner les \emph{objets de référence} utilisés
+par le requérant.
+%
+Ainsi, en entrée de notre méthode nous disposons, pour chaque
+\emph{indice de localisation} d'une \emph{relation de localisation}
+exprimée dans un vocabulaire contrôlé et d'un ensemble d'objets
+géographiques, servant de référence.
+
 
 \begin{figure}
   \centering
@@ -37,29 +108,61 @@ l'interface.
 
 \subsubsection{La modélisation explicite des connaissances}
 
-Pour faciliter l'intégration de notre méthode dans le contexte métier
-du secours en montagne nous avons décidé d'adopter une démarche basée
-sur les connaissances.
+Les phases de spatialisation et de fusion différent par un point
+essentiel. La fusion consiste à regrouper diddérentes zones de
+localisaiton compatibles dans le but de construire une seule zone de
+localisation probable. Par conséquent, tous les individus en entrée de
+cette opération sont de la même nature, \ie des objets
+géographiques. L'opération de fusion ne nécessite donc pas la
+définition de comportements particuliers, adaptés à des cas qui le
+sont tout autant. La spatialisation par contre nécessite le
+développement d'une méthode adaptée à chaque \emph{relation de
+  localisation.} En effet on spatialise pas la \emph{relation}
+\enquote{sous} de la même manière que la \emph{relation}
+\enquote{entre}. Il est donc nécessaire de définir une méthode de
+\emph{spatialisation} pour chaque \emph{relation de localisation} et
+d'en proposer une implémentation. Une possibilité serait d'écrire des
+fonctions \emph{ad hoc} lors de l'implémentation et de les détailler
+ici. Ce faisant l'ensemble des connaissances produites lors de
+l'élaboration des méthodes de spatialisation se retrouverait dans le
+code, ce qui ne faciliterait pas la compréhension et l'utilisation
+appliquée de notre travail.
+
+Pour faciliter l'intégration de notre travail dans le contexte métier
+du secours en montagne nous avons choisi d'adopter une démarche
+imposant la modélisation explicite des connaissances. Cette démarche
+est inspirée des \emph{systèmes à base de connaissances} où ces
+dernières sont formalisées au sein d'une ontologie lue et interprétée
+par le code. Ainsi, on peut imaginer que les règles de
+\emph{spatialisation} de toutes les \emph{relations de localisations}
+soient formalisées dans une ontologie des \emph{ad hoc,} lisible et
+modifiable à chaque instant. Cette approche offre plusieurs
+avantages. D'une part, comme énoncé précédemment elle permet aux
+utilisateurs de nos méthodes de \emph{spatialisation} de disposer
+d'une forme d'auto-documentation, permise par la centralisation de
+toutes les règles de spatialisation. Cette centralisation facilite
+également la modification où l'ajout de règles de
+\emph{spatialisation.} De plus cette ontologie peut être exploitée et
+diffusée séparément.
 
 \subsection{Principes de modélisation}
 
 \subsubsection{Décomposition des \emph{relations de localisation}}
 
-Comme nous l’annoncions dans le second chapitre
-(cf. \ref{subsec:2-1-1}) une même \emph{relation de localisation} peut
-avoir une sémantique différente en fonction de son contexte
-d'utilisation \autocite[16]{Borillo1998}, comme l'illustre la relation
-de localisation \enquote{\emph{sous}}. Comme nous l'expliquions plus
-haut (cf. \ref{subsec:2-1-1}), on peut être \enquote{sous \emph{un
-    pont}} ou \enquote{sous \emph{une route}}, si la sémantique de ces
-deux exemples diffère c'est que le premier cas sous-entend un
-\emph{recouvrement} (\ie \emph{le pont est entre le locuteur et le
-  ciel}) alors que ce n'est pas le cas pour le second. Cette
-différence s'explique par la nature des objets de référence. On peut
-être recouvert par \emph{un pont} (ou un arbre, le ciel, \emph{etc.})
-mais pas par une route (ou un bâtiment). Ainsi il est nécessaire
-d'identifier ces différences sémantiques pour pouvoir
-\emph{spatialiser} une \emph{relation de localisation.}
+Comme nous l'indiquions précédemment (cf. \ref{subsec:2-1-1}) une même
+\emph{relation de localisation} peut voir sa sémantique varier en
+fonction de son contexte d'utilisation \autocite[16]{Borillo1998}.
+C'est par exemple le cas de la relation de localisation
+\enquote{\emph{sous}}. On peut être \enquote{sous \emph{un pont}} ou
+\enquote{sous \emph{une route}}. Or la sémantique de ces deux exemples
+diffère quelque peu. Le premier cas sous-entend un \emph{recouvrement}
+(\ie \emph{le pont est entre le locuteur et le ciel}) alors que ce
+n'est pas le cas pour le second. Cette différence s'explique par la
+nature des objets de référence. On peut être recouvert par \emph{un
+  pont} (ou un arbre, le ciel, \emph{etc.})  mais pas par une route
+(ou un bâtiment). Ainsi il est nécessaire d'identifier ces différences
+sémantiques pour pouvoir \emph{spatialiser} une \emph{relation de
+  localisation.}
 %
 On pourrait augurer que, du fait de leur différence sémantique, ces
 deux exemple d'utilisation du \enquote{\emph{sous}} correspondent en
@@ -72,8 +175,33 @@ commun, qui justifie l'utilisation de la même préposition, leur
 \emph{l'objet de référence.} Ce sont ces régularités sémantiques que
 nous proposons d'exploiter \autocite{Bunel2019a}.
 
-
-
+Pour ce faire, nous proposons de décomposer les \emph{relations de
+  localisation} en un ensemble de \emph{relations de localisation
+  atomiques} que nous aurons préalablement identifiées et explicitées,
+conformément au \emph{principe de modélisation explicite des
+  connaissances.} Chaque relation de \emph{localisation atomique}
+correspondant alors à une composante sémantique indépendante. Par
+exemple la \emph{relation de localisation} \enquote{\emph{sous}}, dans
+l'indice de localisation \enquote{je suis \emph{sous} un pont}
+pourrait être décomposée en plusieurs \emph{relations de localisation
+  atomiques} une première indiquant que le \emph{sujet} est situé à
+une altitude inférieure de \emph{l'objet de référence} et une seconde
+indiquant que le \emph{sujet} est recouvert par \emph{l'objet de
+  référence.} La décomposition de la \emph{relation de localisation}
+conduit à construire deux nouveaux \emph{indices de localisation,} qui
+ne diffèrent que par leur \emph{relation de localisation.} On peut
+alors \emph{spatialiser} \emph{l'indice de localisation} en combinant
+les \emph{spatialisations} des \emph{relations de localisations
+  atomiques.} Par exemple, si l'on cherche à modéliser l'\emph{indice
+  de localisation} \enquote{je \emph{suis sous} un pont} on pourra
+construire la \emph{zone de localisation} correspondant à
+\emph{l'indice de localisation} \enquote{je suis \emph{recouvert} par
+  un pont} et la \emph{zone de localisation} correspondant à
+\emph{l'indice de localisation} \enquote{je suis \emph{à une altitude
+    inférieure} à un pont}, puis les combiner à l'aide d'un opérateur
+de fusion \emph{ad hoc,} pour obtenir la \emph{zone de localisation
+  compatible} correspondant à \emph{l'indice de localisation}
+\enquote{je suis \emph{sous} un pont}.
 
 \begin{figure}
   \centering
@@ -83,7 +211,29 @@ nous proposons d'exploiter \autocite{Bunel2019a}.
   \label{fig:dec_sous}
 \end{figure}
 
-\subsubsection{Modélisation autonome}
+Cette approche a pour objectif et intérêt principal de permettre
+l'exploitation des récurrences sémantiques que l'on peut trouver entre
+différentes \emph{relations de localisation.} Par exemple, la notion
+de \emph{proximité} est à la base de nombreuses \emph{relations de
+  localisation} comme \enquote{\emph{à côté}}, \enquote{\emph{aux
+    alentours de}}, \enquote{\emph{devant}}, \emph{etc.} En
+définissant une méthode de \emph{spatialisation} de cette
+\emph{relation de localisation atomique} il devient possible de la
+réutiliser et de la combiner à d'autres \emph{relations de
+  localisation atomiques} permettant ainsi de modéliser un grand
+ensemble de \emph{relations de localisations.}
+
+On peut cependant s'attendre à ce que plusieurs \emph{relations de
+  localisation} ne soient pas décomposables en un ensemble de
+\emph{relations de localisation atomiques.} C'est par exemple le cas
+de la notion de \emph{proximité} qui peut être employée
+indépendamment, comme dans la phrase \enquote{je suis proche d'un
+  supermarché}. Ainsi certaines \emph{relations de localisation} sont
+des \emph{relations atomiques,} non décomposables.
+
+\tdi{Ajouter le principe de décomposition des objets ?}
+
+\subsubsection{Autonomie de la \emph{spatialisation}}
 
 Un autre principe que nous souhaitons développer est celui de la
 séparation maximale des étapes du processus.
@@ -160,6 +310,8 @@ principe de décomposition précédemment présenté.
 
 \subsubsection{Modélisation non bivalente}
 \texttt{Ref images EDA}
+
+
 
 La présentation de la méthode de modélisation de l'imprécision choisie
 sera abordée dans le chapitre suivant (\autoref{chap:05}).

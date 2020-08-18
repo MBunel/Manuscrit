@@ -1,8 +1,17 @@
-\usepackage{amsmath}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Fontes
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath}
 \input{Meta/fontes.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Gestion de la Géométrie
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Modification de la géométrie (page de garde)
+\usepackage{geometry}
+% Environnement pdflscape
+\usepackage{pdflscape}
+\usepackage{scrhack}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Babel
@@ -18,21 +27,33 @@
 \input{Meta/colors.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Tikz
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{tikz}
-\usepackage{pgfplots}
-\usepackage{varwidth}
-% Mes styles Tikz
-\input{Meta/tikzset.tex}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Flottants
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Permet d'éviter les flottants hors-section
 \usepackage[below]{placeins}
 % Permet sous-figures
 \usepackage[lofdepth,lotdepth, position=bottom]{subfig}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Tableaux
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{multirow}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Listes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% introduit les environements
+% enumerate* et itemize* pour
+% des listes inline
+\usepackage[inline]{enumitem}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Extraits de code
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\input{Meta/config_listings.tex}
+\input{Meta/config_minted.tex}
 
 % Paratexte
 \usepackage[babel, autostyle]{csquotes}
@@ -51,34 +72,13 @@
 \usepackage{dialogue}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Tableaux
+% Tikz
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{array}
-\usepackage{booktabs}
-\usepackage{multirow}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Listes
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% introduit les environements
-% enumerate* et itemize* pour
-% des listes inline
-\usepackage[inline]{enumitem}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Gestion de la Géométrie
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Modification de la géométrie (page de garde)
-\usepackage{geometry}
-% Environnement pdflscape
-\usepackage{pdflscape}
-\usepackage{scrhack}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Extraits de code
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\input{Meta/config_listings.tex}
-\input{Meta/config_minted.tex}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{varwidth}
+% Mes styles Tikz
+\input{Meta/tikzset.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliographie
