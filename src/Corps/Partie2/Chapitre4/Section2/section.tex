@@ -153,7 +153,6 @@ secouriste n'a pas à manipuler directement les \emph{relations de
 lors de cette étape. Ce processus sera détaillé plus longuement dans
 le \autoref{chap:05}.
 
-
 Pour illustrer l'ensemble de la \emph{phase de décomposition,}
 imagions que \emph{l'ensemble des indices de localisation} (\(I\)
 saisi par un secouriste à partir de la description suivante :
@@ -224,38 +223,48 @@ décomposition sémantique) compensent la multiplication des
 
 \subsection{La phase de \emph{spatialisation}}
 
-Une fois que les \emph{indices de localisation} ont été décomposé il
-est nécessaire de les \emph{spatialiser.} 
+Une fois que les \emph{indices de localisation} ont été entièrement
+décomposés il est possible de procéder à leur \emph{spatialisation.}
+Comme nous expliquions précédemment, la phase de spatialisation
+consiste à transformer un \emph{indice de localisation} en une
+\emph{zone de localisation compatible.}
+%
+Il s'agit de la seule étape de notre méthode qui ne modifie pas le
+nombre d'objets traité (la phase de \emph{décomposition} les augmente
+et celle de \emph{fusion} les réduit) et qui crée un nouveau type de
+données, des objets géographiques sous la forme de \emph{zones de
+  localisation compatibles.}
 
-
-La phase de \emph{spatialisation} consiste
-
-
-Faite pour chaque indice (chap2)
-Nécessite des méthodes spécifiques (eda)
-Plusieurs objets de référence
-
-Ce principe sera détaillé dans le \autoref{chap:07}
-
-Pour rappel, l'opération de \emph{spatialisation} consiste à
-construire une zone (dite de \emph{localisation compatible})
-correspondant à \emph{l'indice de localisation}
-(\autoref{fig:obj_spa}). Ainsi on peut définir une \emph{zone de
-localisation compatible} (pour un \emph{indice de localisation} donné)
-comme l'ensemble des positions où \emph{l'indice de localisation} est
-vrai, soit :
-
+Pour construire la \emph{zone de localisation compatible}
+correspondant à un \emph{indice de localisation} donné il est
+nécessaire d'identifier les positions pour lesquelles \emph{l'indice
+  de localisation} est vrai :
 
 \begin{equation}
-  \text{\textsf{ZLC}}_i = \{(x,y) \ |\ \text{\textsf{RL}}_i(x,y) \wedge (x,y) ∈ \mathbb{R}^2\}
+  \text{\textsf{ZLC}}_i = \{p \ |\ \text{\textsf{S}}_i(p) \wedge p ∈ \text{\textsf{ZIR}}\}
 \end{equation}
 
-Avec \textsf{ZLC} la \emph{zone de localisation compatible,} \(i\) un
-\emph{indice de localisation,} \((x,y)\) un couple de réels formant
-une position et \(\text{\textsf{RL}}_i(x,y)\) une fonction vraie si la
-position \((x,y)\) est dans la \emph{zone de localisation compatible}
-correspondant à \emph{l'indice de localisation} \(i\).
+Avec \(\text{\textsf{ZLC}}_i\) la \emph{zone de localisation
+  compatible} pour l'indice de localisation $i$, \(S_i\) la fonction
+de \emph{spatialisation} de ce même indice et \(p\) un point
+appartenant à la \emph{zone initiale de recherche,}
+\(\text{\textsf{ZIR}}\), elle-même un sous-ensemble de
+\(\mathbb{R}^2\), défini par le secouriste. L'objectif de la fonction
+de \emph{spatialisation} \(S_i\) est de vérifier si le point $p$ est
+situé dans la \emph{zone de localisation compatible,} \ie que cette
+position valide l'indice de localisation \(i\). Toute la difficulté de
+la phase de \emph{spatialisation} tien en la définition de cette
+fonction de spatialisation \(S\), dont la méthode de définition sera
+présentée dans le \autoref{chap:07}.
 
+Au terme de la phase de \emph{spatialisation} on dispose d'autant de
+\emph{zones de localisation} qu'il y a d'indices au terme de la
+\emph{phase de décomposition.} Ces différentes \emph{zones de
+  localisation} contiennent l'ensemble des informations produites par
+notre méthode, mais leur (potentiel) grand nombre rend leur
+exploitation directe, sinon impossible délicate, il est donc
+nécessaire de les fusionner pour obtenir une seule zone, la ZLP.
+ 
 \subsection{La phase de fusion}
 
 La \emph{phase de fusion} des \emph{zones de localisation} se
