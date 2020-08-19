@@ -1,53 +1,51 @@
-Dans le \autoref{chap:2} nous identifions deux étapes centrales de
-notre méthode permettant de construire une \emph{zone de localisation
-  probable} correspondant à \emph{une description de position,} la
-\emph{spatialisation} et \emph{la fusion.} Cette présentation n'est
-cependant satisfaisante qu'en première approximation. En effet, les
-principes introduits dans ce chapitre (et plus particulièrement le
-principe de décomposition) complexifient la méthodologie en y ajoutant
-de nouvelles étapes, comme différentes phases de décomposition et de
-fusion. Ainsi nos précédentes définitions (\autoref{chap:02}) de la
-\emph{spatialisation} et de la \emph{fusion} doivent êtres complétées,
-ce qui sera fait au fur et à mesure de cette partie.
+Dans le \autoref{chap:2} nous ébauchions une méthode de construction
+d'une \emph{zone de localisation probable} à partir \emph{d'une
+  description de position,} en deux étapes : la \emph{spatialisation}
+et la \emph{fusion.} Cette présentation n'est cependant satisfaisante
+qu'en première approximation. En effet, les principes de modélisation
+introduits dans ce chapitre (et plus particulièrement le
+\emph{principe de décomposition}) complexifient la méthodologie en y
+ajoutant de nouvelles étapes, ne pouvant être distinguées avec ces
+anciennes définitions. C'est pourquoi ces dernières seront complétées
+et revues au fur et à mesure de cette partie.
 
-Dans cette partie nous allons présenter une première formalisation de
-notre méthodologie. L'objectif n'est cependant pas de présenter tous
-les aspects des étapes de \emph{décomposition,} de
-\emph{spatialisation} et de \emph{fusion} chaque étape de la méthode
-étant détaillée dans un chapitre dédié (respectivement les chapitres
-\ref{chap:05}, \ref{chap:07} et \ref{chap:08}). Nous ne parlerons donc
-pas de certains aspects avancés de la modélisation, comme la prise en
-compte de l'imprécision (cf. \autoref{chap:07}) ou de l'incertitude
-(cf.). La méthode ici présentée est la plus générique possible  
+Nous allons à présent formaliser notre méthode de construction de
+\emph{zones de localisation probables}. L'objectif n'est cependant pas
+d'en présenter tous les aspects, mais d'en décrire le fonctionnement
+global et les interactions entre les différentes phases de la
+méthode. Ainsi les considérations les plus avancées, comme la prise en
+compte de \emph{l'incertitude} ou de \emph{l'imprécision,} ou les
+points spécifiques à une phase particulière de la méthodologie seront
+détaillés dans des chapitres dédiés. Ce chapitre ne se destine donc qu'à
+présenter le socle de notre méthode.
 
-La \autoref{fig:methodo_1} présente une synthèse visuelle de la
-méthodologie que nous avons définie.
+La méthode que nous proposons (et dont la \autoref{fig:methodo_1}
+présente une synthèse visuelle) est décomposable en trois phases, la
+\emph{décomposition,} la \emph{spatialisation} et la \emph{fusion.}
 
 \subsection{La phase de \emph{décomposition}}
 
-La \emph{décomposition} est la première phase de notre méthode. C'est
-un ensemble de trois étapes permettant de passer d'un ensemble
+La phase de \emph{décomposition} (détaillé dans le \autoref{chap:05})
+est un ensemble de trois étapes permettant de passer d'un ensemble
 \emph{d'indices de localisation} à un ensemble décomposé de ces
-indices, prêt à être \emph{spatialisé.} Seule une de ces étapes (la
-dernière) découle du principe de \emph{décomposition} des
-\emph{relations de localisation.}
-
-Ce principe sera détaillé dans le \autoref{chap:05}
+indices, prêts à être \emph{spatialisés.}
 
 \subsubsection{La décomposition de \emph{l'ensemble des indices de
     localisation}}
 
-La première étape de cette phase est celle de la décomposition de
-\emph{l'ensemble des indices de localisation}, \(I\)
-(\autoref{fig:methodo_1}). Cet ensemble contient tous les
-\emph{indices de localisation} qui nous sont transmis par les
-secouristes, par le biais de l'interface de géovisualisation. Comme
-l'indique la \autoref{fig:diag_acti_secours}, c'est la réception de
-cet ensemble qui déclenche le processus de construction de la
-\emph{zone de localisation probable.} La décomposition de l'ensemble
-\(I\) permet d'extraire les différents \emph{indices de localisation}
-(\(i_n\) sur la \autoref{fig:methodo_1}), à partir desquels serons
-construites les\emph{ zones de localisation compatibles.} Cette
+La première de ces étapes est la décomposition de \emph{l'ensemble des
+  indices de localisation}, \(I\) (\autoref{fig:methodo_1}). Cet
+ensemble contient tous les \emph{indices de localisation} (\(i_n\))
+qui nous sont transmis par les secouristes, par le biais de
+l'interface de géovisualisation :
+
+\begin{equation}
+  I = \{i_1, i_2, \dots, i_n \}
+\end{equation}
+
+La \emph{décomposition} de l'ensemble \(I\) permet d'extraire les
+différents \emph{indices de localisation} (\(i_n\), à partir desquels
+serons construites les \emph{zones de localisation compatibles.} Cette
 transformation était qualifée de \emph{spatialisation} dans le
 \autoref{chap:02}, cependant, comme le montre la
 \autoref{fig:methodo_1}, ce n'est pas à cette étape qu'apparaissent
@@ -55,31 +53,36 @@ les objets géographiques, sous la forme des \emph{zones de
   localisation compatibles,} mais après deux nouvelles étapes de
 \emph{décomposition.} C'est pourquoi nous préférons réserver l'usage
 de ce terme à l'étape centrale de la méthode, la création d'objets
-géographiques. L'étape de décomposition de \emph{l'ensemble des
-  indices de décomposition,} ne présente pas de difficultés techniques
-ou d'apport scientifique, mais elle permet la \emph{spatialisation
-  autonome des indices de localisation.} Comme on peut le voir sur la
-\autoref{fig:methodo_1}, les indices décomposés lors de la première
-étape du processus sont fusionnés au dernier moment, conformément au
-principe de modélisation autonome.
+géographiques.
 
-\begin{equation}
-  I = \{i_1, i_2, \dots, i_n \}
-\end{equation}
+Cette étape de \emph{décomposition} ne présente pas de difficultés
+techniques ou scientifique, mais elle est nécessaire à l’application
+du \emph{principe de spatialisation autonome des indices de
+  localisation.} Comme on peut le voir sur la \autoref{fig:methodo_1,}
+les indices décomposés lors de la première étape du processus sont
+fusionnés lors de la dernière étape de la \emph{phase de fusion.}
+Ainsi les différents \emph{indices de localisation} sont traités
+indépendamment, conformément au principe de modélisation précédemment
+mentionné. On peut illustrer ce principe avec l'exemple de
+\emph{l'ensemble d'indices de localisation} : \enquote{je suis proche
+  du \emph{Pic de Jean Ray} et sur une crête.} Ce dernier est composé
+de deux \emph{indices de localisation,} liés par une conjonction. Le
+but de cette étape de \emph{décomposition} est de les séparer pour en
+permettre le traitement autonome. Au terme de cette étape on dispose
+ainsi de deux \emph{indices de localisation} (\enquote{je suis proche
+  du \emph{Pic de Jean Ray}} et \enquote{je suis sur une crête}),
+indépendamment transmis à l'étape suivante de décomposition.
 
 \subsubsection{La décomposition des \emph{objets de référence indéfinis}}
 
-La seconde étape de la phase de décomposition aborde un point que
-nous n'avons pas encore présenté.
-%
 Contrairement à la première étape de \emph{la phase de décomposition,}
 la seconde et la troisième phase peuvent être interverties, sans que
 cela n'impacte la modélisation. L'ordre de présentation que nous
 utilisons ici correspond à celui que nous avons implémenté
 (cf. \autoref{chap:08}), mais également à une progression que nous
 estimons plus simple à présenter.
-%
-les \emph{indices de localisation} contiennent toujours un (ou
+
+Les \emph{indices de localisation} contiennent toujours un (ou
 plusieurs, si la relation de localisation est n-aire) \emph{objet de
   référence.} Cependant ce dernier peut être une instance clairement
 définie, que l'on peut alors facilement identifier (\eg
@@ -88,23 +91,25 @@ objet décrit par sa nature, qu'il est alors impossible d'identifier
 sans informations supplémentaires (\eg \enquote{une ville},
 \enquote{un bois}). Par conséquent, lorsque le secouriste identifie
 les objets correspondant à la description du requérant (conformément
-au principe \texttt{XXXX}, cf. \ref{sec:4-1-1-1}) il peut sélectionner
-un ou plusieurs objets. Si \emph{l'indice de localisation} qui nous
-est transmis contient plus d'un objet (dans le cas où la relation
-modélisée n'est pas bi ou n-aire) alors \emph{l'objet de référence}
-est indéfini est \emph{l'indice de localisation} doit être
-\emph{spatialisé} pour chacun d'entre eux et la position correspondant
-à \emph{l'indice de localisation} et l'une des positions possibles.
-La seconde étape de la \emph{phase de décomposition} permet donc de
-transformer un \emph{indice de localisation} comportant plusieurs
-\emph{objets de référence} concurrents en un ensemble \emph{d'indices
-  de localisation} portant chacun sur un des \emph{objets de référence
-  possible.} Prenons l'exemple de \emph{l'indice de localisation}
-\enquote{je suis sur une crête}. Le secouriste peut alors sélectionner
-à l'aide de l'interface l'ensemble des objets géographiques
-\enquote{crêtes} situés dans la ZIR \footnote{Voir dans un espace plus
-  réduit si le secouriste décide, compte-tenu de ses connaissances et
-  de la situation, de réduire la zone de recherche de cette catégorie
+au principe \texttt{TITRE principe}, cf. \ref{sec:4-1-1-1}) il peut
+sélectionner un ou plusieurs objets. Si \emph{l'indice de
+  localisation} qui nous est transmis contient plus d'un objet (dans
+le cas où la relation modélisée n'est pas bi ou n-aire) alors
+\emph{l'objet de référence} est indéfini est \emph{l'indice de
+  localisation} doit être \emph{spatialisé} pour chacun d'entre eux et
+la position correspondant à \emph{l'indice de localisation} et l'une
+des positions possibles.  La seconde étape de la \emph{phase de
+  décomposition} permet donc de transformer un \emph{indice de
+  localisation} comportant plusieurs \emph{objets de référence}
+concurrents en un ensemble \emph{d'indices de localisation} portant
+chacun sur un des \emph{objets de référence possible.}
+
+Prenons l'exemple de \emph{l'indice de localisation} \enquote{je suis
+  sur une crête}. Le secouriste peut alors sélectionner à l'aide de
+l'interface l'ensemble des objets géographiques \enquote{crêtes}
+situés dans la ZIR \footnote{Voir dans un espace plus réduit si le
+  secouriste décide, compte-tenu de ses connaissances et de la
+  situation, de réduire la zone de recherche de cette catégorie
   d'objets.}. Admettons qu'elles soient au nombre de six,
 \emph{l'indice de localisation} qui nous sera transmis sera donc de la
 forme \enquote{je suis sur la \emph{crête de Roche Motte} ou je suis
@@ -375,22 +380,22 @@ chacune des une des crêtes candidates.
 
 \subsubsection{La \emph{fusion} des \emph{indices de localisation}}
 
-La dernière étape de \emph{la phase de fusion} est celle de la fusion
-des \emph{indices de localisation} en vue de construire la \emph{zone
-  de localisation probable} correspondant à \emph{l'ensemble des
-  indices de localisation} en entrée de la méthode. Contrairement aux
-\emph{zones de localisation compatibles,} seule une \emph{zone de
-  localisation probable} est construite, même si cette dernière peut
-être fragmentée ou vide (mais ce cas traduit une erreur dans la
-description de la position, dans sa saisie ou sa
+La dernière étape de \emph{la phase de fusion} est celle de la
+\emph{fusion} des \emph{indices de localisation} en vue de construire
+la \emph{zone de localisation probable,} \ie le résultat final de
+notre méthode. Contrairement aux \emph{zones de localisation
+  compatibles,} la \emph{zone de localisation probable} est toujours
+unique, même si elle peut être fragmentée ou vide (mais ce cas traduit
+une erreur dans la description de la position, dans sa saisie ou sa
 \emph{spatialisation}).
 
-Contrairement à la
-décomposition de l'ensemble des \emph{indices de localisation}
-(l'étape précédente) on ne s'attend pas ici à ce que toutes les
-possibilités soient vraies, mais seulement l'une d'entre-elles (d'où
-la formulation contenant des \enquote{ou} et non des \enquote{et})
-
+Comme lors de l'étape de \emph{fusion} des \emph{relations de
+  localisation atomiques,} les différentes \emph{zones de localisation
+  compatibles} sont \emph{fusionnées} à l'aide d'une intersection
+ensembliste. En effet, la \emph{zone de localisation probable} est
+définie comme l'ensemble des positions appartenant à toutes les
+\emph{zones de localisation compatibles.} On peut donc exprimer la
+zone de localisation probable de la manière suivante :
 
 \begin{equation}
   \text{\textsf{ZLP}}_I = ⋂_{i \in I} \text{\textsf{ZLC}}ᵢ
@@ -399,7 +404,12 @@ la formulation contenant des \enquote{ou} et non des \enquote{et})
 Avec \textsf{ZLP} la \emph{zone de localisation probable,} \(I\),
 l'ensemble des \emph{indices de localisation} pris en compte, \(i\) un
 \emph{indice de localisation} et \textsf{ZLP} un \emph{zone de
-  localisation compatible.}
+  localisation compatible.} Ainsi, dans notre exemple, la \emph{zone
+  de localisation probable} correspond à \emph{l'intersection} de deux
+\emph{zones de localisation compatibles,} celle construite à partir de
+\emph{l'indice de localisation} \enquote{je suis proche du \emph{Pic
+    de Jean Ray}} et celle construite à partir de \emph{l'indice de
+  localisation} \enquote{je suis sur une crête}.
 
 \begin{landscape}
   \begin{figure}[H]
