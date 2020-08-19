@@ -278,11 +278,12 @@ Ce principe sera détaillé dans le \autoref{chap:08}
 
 La première étape de la \emph{phase de fusion} est la \emph{fusion}
 des \emph{zones de localisation compatibles} issues de la
-\emph{spatialisation.} Cette étape correspond à l'étape de
+\emph{spatialisation.} Cette étape répond donc à l'étape de
 \emph{décomposition des relations de localisation} de \emph{la phase
   de décomposition,} \ie que le nombre de \emph{zones de localisation}
 en résultant est identique au nombre \emph{d'indices de localisation}
-avant la \emph{décomposition des relations de localisation.}
+avant la \emph{décomposition des relations de localisation}
+(cf. \autoref{fig:methodo_1}).
 
 Conformément au \emph{principe de décomposition,} les \emph{relations
   de localisation} se décomposent en une série de \emph{relations de
@@ -326,31 +327,33 @@ des \emph{relations de localisation atomiques,} sept \emph{zones de
 \subsubsection{La \emph{fusion} des \emph{objets de référence
     indéfinis}}
 
-La seconde étape de la \emph{phase de fusion} est la fusion des
-différents \emph{objets de référence.} Cette étape répond à la l'étape
-de décomposition des objets de référence inidéfinis, présentée
-précédemment. Comme nous l'indiquions lors de la présentation de la
-\emph{phase de décomposition,} les étapes de \emph{décomposition des
-  relations de localisation} et de décomposition des \emph{objets de
-  référence indéfinies} sont interchangeables et il en va de même pour
-les étapes de fusion leur correspondant. Ainsi cette étape de fusion
-pourrait être interchangée avec l'étape, précédemment présentée, de
-fusion des relations de localisation atomiques, sans que cela
-n'impacte le résultat de la modélisation.
+La seconde étape de cette phase est la \emph{fusion} des différents
+\emph{objets de référence} candidats. Cette étape répond à
+\emph{l'étape de décomposition des objets de référence indéfinis.}
+Comme nous l'indiquions lors de la présentation de la \emph{phase de
+  décomposition,} les étapes de \emph{décomposition des relations de
+  localisation} et de décomposition des \emph{objets de référence
+  indéfinies} sont interchangeables et il en va de même pour les
+étapes de \emph{fusion} leur correspondant. Ainsi cette étape de
+fusion pourrait être interchangée avec l'étape, précédemment
+présentée, de \emph{fusion des relations de localisation atomiques,}
+sans que cela n'impacte le résultat de la modélisation.
 
 La \emph{fusion des objets de référence indéfinis} se distingue des
-autres étapes de fusion car elle est conjonctive. Comme nous
-l'indiquions lors de la présentation de l'étape de décomposition y
-correspondant, les différents \emph{objets de référence} candidats
-(pour un même indice de localisation) sont concurrents. Ainsi pour que
-\emph{l'indice de localisation spatialisé} soit valable en une
-position il est nécessaire qu'il soit vrai pour au moins un des objets
-de référence candidats. Ainsi la \emph{zone de localisation
-  compatible} correspondant à un \emph{indice de localisation} dont
-\emph{l'objet de référence} est indéfini peut être construite en
-faisant l'union de l'ensemble des \emph{zones de localisation
-  compatibles} construites en \emph{spatialisant} l'indice de
-localisation pour chaque objet de référence candidat :
+autres étapes de \emph{fusion} sa forme conjonctive. Comme nous
+l'indiquions lors de la présentation de \emph{l'étape de décomposition
+  des objets de référence indéfinis,} les différents \emph{objets de
+  référence} candidats (pour un même indice de localisation) sont
+concurrents. Ainsi pour que \emph{l'indice de localisation spatialisé}
+soit valable en une position il est nécessaire qu'il soit vrai pour au
+moins un des \emph{objets de référence} et non pour tous (comme c'est
+le cas lors de la \emph{fusion} des \emph{relations de localisation
+  atomiques}). La \emph{zone de localisation compatible} correspondant
+à un \emph{indice de localisation} dont \emph{l'objet de référence}
+est indéfini peut, par conséquent, être construite en faisant l'union
+de l'ensemble des \emph{zones de localisation compatibles} construites
+en \emph{spatialisant} l'indice de localisation pour chaque objet de
+référence candidat :
 
 \begin{equation}
   \text{\textsf{ZLC}}_{i} = ⋃_{i \in I} \text{\textsf{ZLC}}_{o_i}
@@ -360,10 +363,15 @@ Avec \(\text{\textsf{ZLC}}_{i}\) la \emph{zone de localisation
   compatible} correspondant à un \emph{indice de localisation} \(i\)
 et \(\text{\textsf{ZLC}}_{o_i}\) la \emph{zone de localisation
   compatible} pour l'objet \(i\) de l'indice de localisation \(i\).
-Appliqué à l'exemple précédent la \emph{zone de localisation
-  compatible} de \emph{l'indice de localisation} \enquote{je suis sur
-  une crête} correspond à la zone où chaque position est \enquote{sur}
-une des crêtes candidates.
+Appliqué à l'exemple précédent on obtient, au terme de cette étape de
+\emph{fusion,} deux \emph{zones de localisation compatibles.} La
+première (inchangée depuis la \emph{spatialisation}) correspond à
+\emph{l'indice de localisation} \enquote{je suis proche du \emph{Pic
+    de Jean Ray}}. Comme \emph{l'objet de référence} est unique aucune
+\emph{fusion} n'est à effectuer, contrairement au second \emph{indice
+  de localisation,} \enquote{je suis sur une crête} qui correspond à
+l'union des \emph{zones de localisation compatibles} correspondant à
+chacune des une des crêtes candidates.
 
 \subsubsection{La \emph{fusion} des \emph{indices de localisation}}
 
