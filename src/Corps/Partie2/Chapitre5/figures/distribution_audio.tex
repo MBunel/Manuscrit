@@ -1,6 +1,12 @@
  \begin{tikzpicture}
-   \begin{semilogxaxis}[height=5cm, width=12cm]
-     \addplot [boxplot] table [y index=0] {./Corps/Partie2/Chapitre5/figures/duration.dat};
+   \begin{semilogxaxis}[
+     height=4.5cm,
+     width=12cm,
+     separate axis lines,
+     axis x line*=bottom,
+     hide y axis
+     ]
+     \addplot [boxplot={box extend=1}] table [y index=0] {./Corps/Partie2/Chapitre5/figures/duration.dat};
      
   %\addplot [thick] gnuplot [raw gnuplot] {plot './Corps/Partie2/Chapitre5/figures/duration.dat' smooth kdensity};
 \end{semilogxaxis}
