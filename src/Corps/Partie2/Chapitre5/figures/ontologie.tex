@@ -6,21 +6,16 @@
   first/.style={level distance=6ex},
   second/.style={level distance=12ex},
   third/.style={level distance=18ex},
-  level 1/.style={sibling distance=5em}]
-    % Parents
-    \coordinate
-      child[grow=east] {node[anchor=east]{Jim}}
-      child[grow=down,level distance=0ex]
-    [edge from parent fork down]
-    % Children and grandchildren
-    child{node[man] {Alfred}
-      child[grandchild,first] {node[man]{Joe}}
-      child[grandchild,second] {node[woman]{Heather}}
-      child[grandchild,third] {node[woman] {Barbara}}}
-    child{node[woman] {Berta}
-      child[grandchild,first] {node[man]{Howard}}}
-    child {node[man] {Charles}}
-    child {node[woman]{Doris}
-      child[grandchild,first] {node[man]{Nick}}
-      child[grandchild,second] {node[woman]{Liz}}};
+  level/.style={font=\scriptsize\ttfamily},
+  level 1/.style={sibling distance=14em}]
+  % Parents
+  \node[level]{owl:Thing}
+  child{node {RelationDeLocalisation}
+    child{node {RelationSpatialeFonctionelle}
+      child{node{Proximal}}
+      child{node{SitueSurItineraireOuReseauSupport}}
+    }
+    child{node {RelationSpatialePositionRelative}}
+    child{node {RelationSpatialeProximité}}
+  };
 \end{tikzpicture}
