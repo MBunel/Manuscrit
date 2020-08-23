@@ -2,12 +2,14 @@
   man/.style={rectangle,draw,fill=blue!20},
   woman/.style={rectangle,draw,fill=red!20,rounded corners=.8ex},
   grandchild/.style={grow=down,xshift=1em,anchor=west,
-    edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}},
+    edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.north)}},
   first/.style={level distance=6ex},
   second/.style={level distance=12ex},
   third/.style={level distance=18ex},
-  level/.style={font=\scriptsize\ttfamily},
-  level 1/.style={sibling distance=14em}]
+  level/.style={font=\scriptsize\ttfamily, edge from parent
+    path={(\tikzparentnode.south) --++(0,-3ex) -| (\tikzchildnode.north)}},
+  level 1/.style={sibling distance=13em}]
+  %
   % Parents
   \node[level]{owl:Thing}
   child{node {RelationDeLocalisation}
