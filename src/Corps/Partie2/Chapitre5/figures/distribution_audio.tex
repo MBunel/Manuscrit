@@ -1,0 +1,16 @@
+\begin{tikzpicture}
+  \begin{semilogxaxis}[
+    height=2.5cm,
+    width=12cm,
+    log basis x={6},
+    separate axis lines,
+    axis x line*=bottom,
+    hide y axis,
+    xmin=0,
+    % xticklabels={},
+    % extra x ticks={10,60,900},
+    % extra x tick labels={\SI{10}{\second},\SI{1}{\minute},\SI{15}{\minute}},
+    ]
+    \addplot [mark = *, boxplot={box extend=.20}] table [y index=0] {./Corps/Partie2/Chapitre5/figures/duration.dat};
+  \end{semilogxaxis}
+\end{tikzpicture}
