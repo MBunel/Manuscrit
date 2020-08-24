@@ -1,4 +1,77 @@
-\subsection{Formalisation des \emph{indices de localisation}}
+Pour formaliser les décompositions des \emph{relations de
+  localisations} nous avons opté pour la construction d'une
+\emph{ontologie} des \emph{relations de localisation atomiques}
+contenant l'ensemble des \emph{relations de localisation} identifiées
+comme pertinentes et leur(s) décomposition(s).
+
+\tdi{Ajouter ontologie des objets de référence}
+
+Pour identifier les \emph{relations de localisations} pertinentes pour
+notre contexte applicatif nous avons entrepris de recenser celles qui
+sont les plus utilisées lors des alertes. Pour ce faire nous avons
+retranscrit et analysé différents enregistrements d'alertes passées.
+
+Le travail de retranscription des alertes (et dans une moindre mesure
+celui de leur analyse) a été réalisé collaborativement
+\autocite{Bunel2019}, les résultats pouvant bénéficier à différents
+objectifs du projet Choucas.
+
+\subsection{Le corpus des alertes}
+
+Les retranscriptions que nous avons effectuées pour définir
+\emph{l'ontologie des relations de localisation atomiques} ont été
+réalisées à partir d'un ensemble de 52 enregistrements audio qui nous
+ont été transmis par le \ac{pghm} de Grenoble. Ces fichiers ont été
+produits par les \ac{pghm} de Chamonix (5 alertes) et de Grenoble (47
+alertes) à l'aide d'un enregistreur numérique. Cependant, les
+discussions dont nous disposons sont tronquées, d'une part car
+l'enregistrement est réalisé au niveau de la ligne téléphonique des
+\ac{pghm} et non des \ac{codis}, généralement contactés par les
+requérants (cf. \autoref{chap:02}), les appels ne sont enregistrés que
+lorsque un secouriste du \ac{pghm} intègre la discussion, de plus les
+enregistrements qui nous ont été fournis ont été modifiés, de sorte à
+censurer les informations soumises au secret médical.
+
+Ces dernières nous ont été transmises en deux corpus, un premier de 20
+alertes en 2017 et un second de 32 alertes en 2019.
+
+dont la durée varie de quelques secondes à plusieurs dizaines de
+minutes (\autoref{fig:dist_temps_alertes}).
+
+\begin{figure}
+  \centering
+  \input{../figures/distribution_audio.tex}
+  \caption{Distribution de la durée des alertes}
+  \label{fig:dist_temps_alertes}
+\end{figure}
+
+\subsection{Template de retranscription}
+
+Pour exploiter les informations contenues dans les enregistrements il
+a été nécessaire de les retranscrire afin de les analyser.
+%
+Notre parti-pris n'a pas été de travailler à partir d'une
+retranscription libre de ces alertes, mais à l'aide d'un tableau
+prédéfini, un \emph{template de retranscription}
+(\autoref{tab:struct_temp}) dont la structure reprend celle des
+\emph{indices de localisation} telle que nous l'avons définie
+(cf. \autoref{chap:04}).
+
+La version ici décrite ne 
+
+\begin{table}
+  \centering
+  \input{../tableaux/structure_template.tex}
+  \caption{Structure du template de retranscription}
+  \label{tab:struct_temp}
+\end{table}
+
+Une fois que le template a été défini
+
+\subsection{Analyse des retranscriptions}
+
+La retranscription des 52 alertes nous a permis d'identifier 374
+expressions différentes.
 
 %%% Local Variables:
 %%% mode: latex
