@@ -1,6 +1,6 @@
 \begin{tikzpicture}[
   every node/.style={anchor=west, font={\tiny\ttfamily\textcolor{RdBu-9-7}{orl\#}\sffamily}},
-  atomique/.style={x=10cm,text=RdBu-9-1},
+  atomique/.style={10cm,text=RdBu-9-1},
   grow via three points={one child at (.2,-0.3) and
     two children at (.2,-0.3) and (.2,-.6)},
   edge from parent path={(\tikzparentnode.south) |-
@@ -10,7 +10,7 @@
   % Parents
   \node{RelationDeLocalisation}
     child{node{RelationSpatialeFonctionelle}
-      child[atomique]{node{Proximal}}
+      child[atomique]{node(tt){Proximal}}
       child{node{SitueSurItineraireOuReseauSupport}}
     }
     child[missing]{}
@@ -226,5 +226,7 @@
     child[missing]{}
     child[missing]{}
     child{node {CibleVoitSite}}
-    child{node {SiteVoitCible}};
+    child{node(tt2) {SiteVoitCible}};
+
+ \draw (tt.east) -- (tt2.east);
 \end{tikzpicture}	
