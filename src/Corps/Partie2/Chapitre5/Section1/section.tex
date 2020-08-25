@@ -26,17 +26,13 @@ Grenoble (47 alertes).
 %
 Les fichiers qui nous ont été transmis ne contiennent cependant pas
 l'entièreté des discussions entre requérants et secouristes. D'une
-part car ces enregistrements sont réalisés au niveau de la ligne
-téléphonique des \ac{pghm} et non des \ac{codis}, généralement
+part car, ils ont été montés, de sorte à censurer les informations
+personnelles (\eg identité de la victime, description des
+blessures). De plus ces enregistrements sont réalisés au niveau de la
+ligne téléphonique des \ac{pghm} et non des \ac{codis}, généralement
 contactés par les requérants (cf. \autoref{chap:02}). Ainsi nous ne
-disposons 
-
-
-les appels ne
-sont enregistrés que lorsque un secouriste du \ac{pghm} intègre la
-discussion, de plus les enregistrements qui nous ont été fournis ont
-été modifiés, de sorte à censurer les informations soumises au secret
-médical.
+disposons (généralement) que des discussions traitant de la
+localisation des victimes.
 
 Ces dernières nous ont été transmises en deux corpus, un premier de 20
 alertes en 2017 et un second de 32 alertes en 2019.
@@ -64,6 +60,60 @@ prédéfini, un \emph{template de retranscription}
 (cf. \autoref{chap:04}).
 
 La version ici décrite ne 
+
+Ce modèle de transcription se présente sous la forme d'un fichier
+tabulaire (plus précisément une feuille de calcul) scindé en trois
+onglets :
+%
+\begin{enumerate*}[label=(\alph*)]
+\item \emph{métadonnées},
+\item \emph{interprétation des expressions} et
+\item \emph{objets de référence}
+\end{enumerate*}
+%
+Le premier d'entre-eux est destiné à spécifier les métadonnées de
+l'alerte retranscrite, comme la date et l'heure de l'appel, l'identité
+du requérant (\eg victime, témoin, \emph{etc.}) ou l’activité
+pratiquée lors de l'accident.
+
+C'est dans le second onglet que sont saisies la plupart des
+informations extraites des alertes et l’entièreté de celles utilisées
+pour la construction de l'ontologie des \emph{relations de
+  localisation.} L'onglet \emph{interprétation des expressions} est
+composé de 15 colonnes (\autoref{tab:struct_temp}), que l'on peut
+regrouper en trois catégories :
+%
+\begin{enumerate*}[label=(\alph*)]
+\item \emph{extrait},
+\item \emph{contexte} et
+\item \emph{expression}
+\end{enumerate*}
+%
+La première d'entre-elles regroupe les colonnes décrivant l'extrait
+audio traité.
+
+La seconde regroupe les colonnes permettant de décrire le contexte de
+chaque expression. On y retrouve la colonne \emph{locuteur,}
+renseignant sur la personne ayant prononcé l'extrait étudié (\eg
+secouriste, requérant) et la colonne confiance, permettant au
+transcripteur de préciser son jugement sur la plausibilité de
+l'information donnée par l'extrait. Si nous distinguons ces deux
+colonnes des \emph{métadonnées} de l'extrait (\ie le groupe de
+colonnes précédent) c'est car ces dernières demandent une
+interprétation de l'extrait, contrairement aux \emph{métadonnées.}
+
+Enfin, la troisième catégorie, qui regroupe la majorité des colonnes,
+permet l'interprétation et la saisie de chaque expression. On y
+retrouve les colonnes \emph{verbe,} \emph{sujet,} \emph{relation de
+  localisation} et \emph{objet de référence,} correspondant aux
+éléments du même nom dans la formalisation des \emph{indices de
+  localisation} et les \emph{modifieurs} qui y sont associés.
+%
+Les colonnes \enquote{\emph{objet de référence}} et
+\enquote{\emph{modifieur de l'objet de référence}} ont la
+particularité de pourvoir être doublées (voir plus si nécessaire) dans
+le cas où la \emph{relation de localisation} le nécessiterait.
+
 
 \begin{table}
   \centering
