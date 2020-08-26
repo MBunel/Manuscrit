@@ -49,6 +49,7 @@ minutes (\autoref{fig:dist_temps_alertes}).
 
 \subsection{Template de retranscription}
 
+L'analyse des enregistrements nécessite au préalable leur 
 Pour exploiter les informations contenues dans les enregistrements il
 a été nécessaire de les retranscrire afin de les analyser.
 %
@@ -60,6 +61,8 @@ prédéfini, un \emph{template de retranscription}
 (cf. \autoref{chap:04}).
 
 La version ici décrite ne 
+
+
 
 Ce modèle de transcription se présente sous la forme d'un fichier
 tabulaire (plus précisément une feuille de calcul) scindé en trois
@@ -79,9 +82,11 @@ pratiquée lors de l'accident.
 C'est dans le second onglet que sont saisies la plupart des
 informations extraites des alertes et l’entièreté de celles utilisées
 pour la construction de l'ontologie des \emph{relations de
-  localisation.} L'onglet \emph{interprétation des expressions} est
-composé de 15 colonnes (\autoref{tab:struct_temp}), que l'on peut
-regrouper en trois catégories :
+  localisation.}
+%
+L'onglet \emph{interprétation des expressions} est composé de 15
+colonnes (\autoref{tab:struct_temp}), que l'on peut regrouper en trois
+catégories :
 %
 \begin{enumerate*}[label=(\alph*)]
 \item \emph{extrait},
@@ -130,16 +135,16 @@ saisir le verbatim de l'extrait analysé, et une colonne
 \enquote{\emph{timestamp}} indiquant la position de l'extrait dans le
 fichier audio correspondant.
 
-La seconde regroupe les colonnes permettant de décrire le contexte de
-chaque expression. On y retrouve la colonne \enquote{\emph{locuteur}},
-renseignant sur la personne ayant prononcé l'extrait étudié (\eg
-secouriste, requérant) et la colonne \enquote{\emph{confiance}},
-permettant au transcripteur (dans le cas où il s'agit d'un secouriste)
-de juger de la plausibilité de l'information donnée par l'extrait. Si
-nous distinguons ces deux colonnes des \emph{métadonnées} de l'extrait
-(\ie le groupe de colonnes précédent) c'est car ces dernières
-demandent une interprétation de l'extrait, contrairement aux
-\emph{métadonnées.}
+La seconde catégorie regroupe les colonnes permettant de décrire le
+contexte de chaque expression. On y retrouve la colonne
+\enquote{\emph{locuteur}}, renseignant sur la personne ayant prononcé
+l'extrait étudié (\eg secouriste, requérant) et la colonne
+\enquote{\emph{confiance}}, permettant au transcripteur (dans le cas
+où il s'agit d'un secouriste) de juger de la plausibilité de
+l'information donnée par l'extrait. Si nous distinguons ces deux
+colonnes des \emph{métadonnées} de l'extrait (\ie le groupe de
+colonnes précédent) c'est car ces dernières demandent une
+interprétation de l'extrait, contrairement aux \emph{métadonnées.}
 
 Enfin, la troisième catégorie, qui regroupe la majorité des colonnes,
 permet l'interprétation et la saisie de chaque expression. On y
@@ -195,7 +200,10 @@ locuteur dans l'expression (\eg \enquote{La Bérarde}, \enquote{un
 sont désignés par leur nom (ou tout du moins le nom que le locuteur
 leur donne) et les objets indéfinis par leur type. L'onglet
 \emph{toponymie} permet alors de préciser le type de tous les objets
-géographiques, en vue de leur analyse ultérieure.
+géographiques, en vue de leur analyse ultérieure. Si l'on reprend
+l'exemple précédent (\ie \enquote{Non, je suis bien en dessous}) nous
+ne sommes pas en mesure d'ajouter des informations sur \emph{l'objet
+  de référence} \enquote{sommet}, son nom étant inconnu.
 
 \begin{table}
   \centering
