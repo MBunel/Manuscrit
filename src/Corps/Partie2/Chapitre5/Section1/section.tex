@@ -109,24 +109,37 @@ la conversation (changement de locuteur, nouvelle phrase,
   \end{dialogue}
 \end{quote}
 %
-On identifiera deux \emph{expressions :}
+On identifiera deux \emph{extraits :}
 %
 \begin{enumerate*}[label=(\alph*)]
 \item \enquote{Vous êtes au sommet ?} et
 \item \enquote{Non, je suis bien en dessous},
 \end{enumerate*}
 %
-délimitées par le changement de locuteur.
+délimités par le changement de locuteur. Si le premier ne contient
+qu'une seule \emph{expression,} le second en contient deux, la
+négation de la question, dont la sémantique correspond à
+\emph{l'expression} \enquote{je ne suis pas au sommet} et
+\emph{l'expression} \enquote{je suis bien en dessous}. Ainsi, cet
+exemple est composé de deux \emph{extraits} et de trois
+\emph{expressions.}
+%
+Pour faciliter l'analyse et la vérification des transcriptions, nous
+avons défini une colonne \enquote{\emph{extrait}}, permettant de
+saisir le verbatim de l'extrait analysé, et une colonne
+\enquote{\emph{timestamp}} indiquant la position de l'extrait dans le
+fichier audio correspondant.
 
 La seconde regroupe les colonnes permettant de décrire le contexte de
-chaque expression. On y retrouve la colonne \emph{locuteur,}
+chaque expression. On y retrouve la colonne \enquote{\emph{locuteur}},
 renseignant sur la personne ayant prononcé l'extrait étudié (\eg
-secouriste, requérant) et la colonne confiance, permettant au
-transcripteur de préciser son jugement sur la plausibilité de
-l'information donnée par l'extrait. Si nous distinguons ces deux
-colonnes des \emph{métadonnées} de l'extrait (\ie le groupe de
-colonnes précédent) c'est car ces dernières demandent une
-interprétation de l'extrait, contrairement aux \emph{métadonnées.}
+secouriste, requérant) et la colonne \enquote{\emph{confiance}},
+permettant au transcripteur (dans le cas où il s'agit d'un secouriste)
+de juger de la plausibilité de l'information donnée par l'extrait. Si
+nous distinguons ces deux colonnes des \emph{métadonnées} de l'extrait
+(\ie le groupe de colonnes précédent) c'est car ces dernières
+demandent une interprétation de l'extrait, contrairement aux
+\emph{métadonnées.}
 
 Enfin, la troisième catégorie, qui regroupe la majorité des colonnes,
 permet l'interprétation et la saisie de chaque expression. On y
@@ -135,12 +148,34 @@ retrouve les colonnes \emph{verbe,} \emph{sujet,} \emph{relation de
 éléments du même nom dans la formalisation des \emph{indices de
   localisation} et les \emph{modifieurs} qui y sont associés.
 
+% Exemple
+Si l'on reprend le second extrait de l'exemple précédent (\ie
+\enquote{Non, je suis bien en dessous}), deux extraits sont à
+saisir. Le premier est la négation de la question du secouriste (\ie
+\enquote{Vous êtes au sommet}), que l'on peut interpréter comme
+\emph{l'indice de localisation} \enquote{je ne suis pas au
+  sommet}. Ici le verbe de l'expression est \enquote{être}, le sujet
+est le requérant, la \emph{relation de localisation} est la
+préposition \enquote{à} et l'objet de référence est \enquote{le
+  sommet} (avec \enquote{à le} contracté en \enquote{au} dans
+l'extrait). La forme négative de la phrase est saisie en tant que
+\emph{modifieur du verbe} et les autres modifieurs ne sont pas
+renseignés. Pour la seconde expression (\ie \enquote{je suis bien en
+  dessous}) le \emph{sujet} et sont modifieur et \emph{l'objet de
+  référence} et sont modifieur sont inchangés, il s'agit toujours du
+\emph{requérant} qui se situe par rapport au \emph{sommet.} Le verbe
+est toujours \enquote{être}, mais son modifieur disparait,
+l'expression n'étant pas une négation. Pour finir la \emph{relation de
+  localisation} devient \enquote{\emph{en dessous}} et son modifieur
+est \enquote{\emph{bien}}.
+
 
 Les colonnes \enquote{\emph{objet de référence}} et
 \enquote{\emph{modifieur de l'objet de référence}} ont la
 particularité de pourvoir être doublées (voir plus si nécessaire) dans
 le cas où la \emph{relation de localisation} le nécessiterait.
 
+Enfin, le dernier onglet du template de transcription est composé de 
 
 \begin{table}
   \centering
