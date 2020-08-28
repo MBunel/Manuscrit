@@ -16,21 +16,23 @@ celui de leur analyse) a été réalisé collaborativement
 \autocite{Bunel2019}, les résultats pouvant bénéficier à différents
 objectifs du projet Choucas.
 
-\subsection{Le corpus des alertes}
+\subsection{Les corpus d'alertes}
 
-Les retranscriptions que nous avons effectuées pour définir
-\emph{l'ontologie des relations de localisation atomiques} ont été
-réalisées à partir d'un ensemble de 52 enregistrements audio qui nous
-ont été transmis par le \ac{pghm} de Grenoble. Ces fichiers ont été
-produits par les \ac{pghm} de Chamonix (5 alertes) et de Grenoble (47
-alertes) à l'aide d'un enregistreur numérique. Cependant, les
-discussions dont nous disposons sont tronquées, d'une part car
-l'enregistrement est réalisé au niveau de la ligne téléphonique des
-\ac{pghm} et non des \ac{codis}, généralement contactés par les
-requérants (cf. \autoref{chap:02}), les appels ne sont enregistrés que
-lorsque un secouriste du \ac{pghm} intègre la discussion, de plus les
-enregistrements qui nous ont été fournis ont été modifiés, de sorte à
-censurer les informations soumises au secret médical.
+Les retranscriptions utilisées pour construire \emph{l'ontologie des
+  relations de localisation atomiques} ont été réalisées à partir d'un
+ensemble de 52 enregistrements d'alertes transmis par le \ac{pghm} de
+Grenoble et produits par les \ac{pghm} de Chamonix (5 alertes) et de
+Grenoble (47 alertes).
+%
+Les fichiers qui nous ont été transmis ne contiennent cependant pas
+l'entièreté des discussions entre requérants et secouristes. D'une
+part car, ils ont été montés, de sorte à censurer les informations
+personnelles (\eg identité de la victime, description des
+blessures). De plus ces enregistrements sont réalisés au niveau de la
+ligne téléphonique des \ac{pghm} et non des \ac{codis}, généralement
+contactés par les requérants (cf. \autoref{chap:02}). Ainsi nous ne
+disposons (généralement) que des discussions traitant de la
+localisation des victimes.
 
 Ces dernières nous ont été transmises en deux corpus, un premier de 20
 alertes en 2017 et un second de 32 alertes en 2019.
@@ -47,6 +49,7 @@ minutes (\autoref{fig:dist_temps_alertes}).
 
 \subsection{Template de retranscription}
 
+L'analyse des enregistrements nécessite au préalable leur 
 Pour exploiter les informations contenues dans les enregistrements il
 a été nécessaire de les retranscrire afin de les analyser.
 %
@@ -59,14 +62,160 @@ prédéfini, un \emph{template de retranscription}
 
 La version ici décrite ne 
 
+Dans sa forme finale, ce modèle de transcription se présente sous la
+forme d'un fichier tabulaire (plus précisément une feuille de calcul)
+structuré et documenté. Pour faciliter les saisies et leur répartition
+entre transcripteurs, un fichier est créé pour chaque alerte.
+%
+Les informations à transcrire pour chaque alerte sont réparties en
+trois onglets
+%
+---~\begin{enumerate*}[label=(\alph*)]
+\item \emph{métadonnées},
+\item \emph{interprétation des expressions} et
+\item \emph{toponymie}
+\end{enumerate*}~---,
+%
+permettant de regrouper les saisies par nature et par granularité.
+%
+Le premier d'entre-eux, l'onglet \emph{métadonnées,} permet de
+renseigner toutes les informations d'ordre général sur une alerte,
+comme la date et l'heure de l'appel, l'identité du requérant (\eg
+victime, témoin, \emph{etc.}) ou l’activité pratiquée lors de
+l'accident. Toutes ces informations ne sont saisies qu'une fois par
+alerte, contrairement à celles saisies dans les deux onglets suivants,
+où chaque expression de localisation de l'enregistrement est
+transcrite. C'est dans le second onglet que sont saisies la plupart
+des informations extraites des alertes et l’entièreté de celles
+utilisées pour la construction de l'ontologie des \emph{relations de
+  localisation.} L'onglet \emph{interprétation des expressions} est
+composé de 15 colonnes (\autoref{tab:struct_temp}), que l'on peut
+regrouper en trois catégories :
+%
+\begin{enumerate*}[label=(\alph*)]
+\item \emph{extrait},
+\item \emph{contexte} et
+\item \emph{expression}
+\end{enumerate*}
+%
+La première d'entre-elles regroupe les colonnes décrivant l'extrait
+audio traité, comme les deux colonnes \enquote{\emph{identifiant}}, la
+colonne \enquote{\emph{extrait}} et la colonne
+\enquote{\emph{timestamp}}. Les colonnes \enquote{\emph{identifiant}}
+permettent de donner une référence unique à chaque élément
+transcrit. La présence de deux colonnes permet de faire la distinction
+entre les \emph{extraits,} qui correspondent à découpage rythmique de
+la conversation (changement de locuteur, nouvelle phrase,
+\emph{etc.}), et les \emph{expressions,} contenues dans les
+\emph{extraits,} correspondant au découpage en \emph{indices de
+  localisation.} Par exemple, si la conversation entre le secouriste
+(\bsc{s.}) et le requérant (\bsc{r.}) est :
+%
+\begin{quote}
+  \begin{dialogue}
+    \Sec Vous êtes au sommet ?
+    \Req Non, je suis bien en dessous.
+  \end{dialogue}
+\end{quote}
+%
+On identifiera deux \emph{extraits :}
+%
+\begin{enumerate*}[label=(\alph*)]
+\item \enquote{Vous êtes au sommet ?} et
+\item \enquote{Non, je suis bien en dessous},
+\end{enumerate*}
+%
+délimités par le changement de locuteur. Si le premier ne contient
+qu'une seule \emph{expression,} le second en contient deux, la
+négation de la question, dont la sémantique correspond à
+\emph{l'expression} \enquote{je ne suis pas au sommet} et
+\emph{l'expression} \enquote{je suis bien en dessous}. Ainsi, cet
+exemple est composé de deux \emph{extraits} et de trois
+\emph{expressions.}
+%
+Pour faciliter l'analyse et la vérification des transcriptions, nous
+avons défini une colonne \enquote{\emph{extrait}}, permettant de
+saisir le verbatim de l'extrait analysé, et une colonne
+\enquote{\emph{timestamp}} indiquant la position de l'extrait dans le
+fichier audio correspondant.
+
+La seconde catégorie regroupe les colonnes permettant de décrire le
+contexte de chaque expression. On y retrouve la colonne
+\enquote{\emph{locuteur}}, renseignant sur la personne ayant prononcé
+l'extrait étudié (\eg secouriste, requérant) et la colonne
+\enquote{\emph{confiance}}, permettant au transcripteur (dans le cas
+où il s'agit d'un secouriste) de juger de la plausibilité de
+l'information donnée par l'extrait. Si nous distinguons ces deux
+colonnes des \emph{métadonnées} de l'extrait (\ie le groupe de
+colonnes précédent) c'est car ces dernières demandent une
+interprétation de l'extrait, contrairement aux \emph{métadonnées.}
+
+Enfin, la troisième catégorie, qui regroupe la majorité des colonnes,
+permet l'interprétation et la saisie de chaque expression. On y
+retrouve les colonnes \emph{verbe,} \emph{sujet,} \emph{relation de
+  localisation} et \emph{objet de référence,} correspondant aux
+éléments du même nom dans la formalisation des \emph{indices de
+  localisation} et les \emph{modifieurs} qui y sont associés.
+
+
+Les colonnes \enquote{\emph{objet de référence}} et
+\enquote{\emph{modifieur de l'objet de référence}} ont la
+particularité de pourvoir être doublées (voir plus si nécessaire) dans
+le cas où la \emph{relation de localisation} le nécessiterait.
+
+% Exemple
+Si l'on reprend le second extrait de l'exemple précédent (\ie
+\enquote{Non, je suis bien en dessous}), deux extraits sont à
+saisir. Le premier est la négation de la question du secouriste (\ie
+\enquote{Vous êtes au sommet}), que l'on peut interpréter comme
+\emph{l'indice de localisation} \enquote{je ne suis pas au
+  sommet}. Ici le verbe de l'expression est \enquote{être}, le sujet
+est le requérant, la \emph{relation de localisation} est la
+préposition \enquote{à} et l'objet de référence est
+---~implicitement~--- \enquote{le sommet} \footnote{Le \enquote{à le}
+  est contracté en \enquote{au} dans l'extrait}. La forme négative de
+la phrase est transcrite avec un \emph{modifieur du verbe} et les
+autres modifieurs ne sont pas renseignés. Pour la seconde expression
+(\ie \enquote{je suis bien en dessous}) le \emph{sujet} et sont
+modifieur et \emph{l'objet de référence} et sont modifieur sont
+inchangés, il s'agit toujours du \emph{requérant} qui se situe par
+rapport au \emph{sommet.} Le \emph{verbe} est toujours \enquote{être},
+mais son modifieur disparait, l'expression n'étant pas une
+négation. Pour finir la \emph{relation de localisation} devient
+\enquote{\emph{en dessous}} et son modifieur est
+\enquote{\emph{bien}}.
+
+Enfin, le dernier onglet du template de transcription est destiné à la
+saisie détaillée des \emph{objets de référence utilisés.} Comme pour
+l'onglet des \emph{extraits,} chaque ligne correspond à une
+\emph{expression} issue de l'alerte. Par ailleurs toutes les lignes de
+ce troisième onglet doivent être saisies, il y a donc une bijection
+entre les enregistrements de l'onglet \enquote{expressions} et ceux de
+l'onglet \enquote{objets de référence}. Le but de cet onglet est de
+permettre la saisie d'informations complémentaires sur les
+\emph{objets géographiques} utilisés dans les expressions, comme les
+\emph{objets de référence} ou le \emph{sujet,} notamment dans le cas
+où l'expression décrit la position d'un autre objet qu'une personne
+(\eg \enquote{le chalet à côté de la cascade}). En effet, lorsqu'on
+saisit un \emph{objet géographique} (\eg \emph{l'objet de référence})
+dans l'onglet \emph{expression} on utilise le terme employé par le
+locuteur dans l'expression (\eg \enquote{La Bérarde}, \enquote{un
+  sommet}, \emph{etc.}) sans modification. Ainsi les objets définis
+sont désignés par leur nom (ou tout du moins le nom que le locuteur
+leur donne) et les objets indéfinis par leur type. L'onglet
+\emph{toponymie} permet alors de préciser le type de tous les objets
+géographiques, en vue de leur analyse ultérieure. Si l'on reprend
+l'exemple précédent (\ie \enquote{Non, je suis bien en dessous}) nous
+ne sommes pas en mesure d'ajouter des informations sur \emph{l'objet
+  de référence} \enquote{sommet}, son nom étant inconnu.
+
 \begin{table}
   \centering
   \input{../tableaux/structure_template.tex}
-  \caption{Structure du template de retranscription}
+  \caption{Structure de l'onglet \enquote{\emph{expressions}} du
+    template de retranscription.}
   \label{tab:struct_temp}
 \end{table}
-
-Une fois que le template a été défini
 
 \subsection{Analyse des retranscriptions}
 
