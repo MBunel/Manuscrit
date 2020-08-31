@@ -1,16 +1,20 @@
 \begin{tikzpicture}[
-  every node/.style={anchor=west, font={\tiny\ttfamily\textcolor{RdBu-9-7}{orl\#}\sffamily}},
-  atomique/.style={x=10cm,text=RdBu-9-1},
-  grow via three points={one child at (.2,-0.3) and
-    two children at (.2,-0.3) and (.2,-.6)},
-  edge from parent path={(\tikzparentnode.south) |-
+  every node/.style={anchor=west,
+    font={\tiny\ttfamily\textcolor{RdBu-9-7}{orl\#}\sffamily}},
+  atomique/.style={text=RdBu-9-1},
+  grow via three points={one child at (.5,-.15) and
+    two children at (.5,-.15) and (.5,-.45)},
+  growth parent anchor=south west,
+  edge from parent path={([xshift=.25cm]\tikzparentnode.south west) |-
     (\tikzchildnode.west)}],
   ]
   % 
-  % Parents
-  \node{RelationDeLocalisation}
+
+  \begin{scope}
+    % Parents
+    \node{RelationDeLocalisation}
     child{node{RelationSpatialeFonctionelle}
-      child[atomique]{node(tt){Proximal}}
+      child{node(tt){Proximal}}
       child{node{SitueSurItineraireOuReseauSupport}}
     }
     child[missing]{}
@@ -35,8 +39,10 @@
         child[missing]{}
         child[missing]{}
         child[missing]{}
-	child[atomique]{node{Proximal}}
+	child[atomique]{node{Proximal $\longrightarrow$ {\ttfamily\textcolor{RdBu-9-3}{gum\#}}Test}}
       }
+      child[missing]{}
+      child[missing]{}
       child[missing]{}
       child[missing]{}
       child[missing]{}
@@ -98,7 +104,7 @@
       child[missing]{}
       child[missing]{}
       child{node{RelationSpatialeDisjointe}
-        child{node{AEstDeExterne}}
+        child{node{AEstDeExterne $\iff$ {\ttfamily\textcolor{RdBu-9-7}{gum\#}}EastExternal}}
         child{node{AOuestDeExterne}}
         child{node{AuNordDeExterne}}
         child{node{AuSudDeExterne}}
@@ -227,6 +233,32 @@
     child[missing]{}
     child{node {CibleVoitSite}}
     child{node(tt2) {SiteVoitCible}};
-
- \draw (tt.east) -- (tt2.east);
+  \end{scope}
+  
+  \begin{scope}[xshift=8cm]
+        % Parents
+    \node{RelationDeLocalisation}
+    child{node{RelationSpatialeFonctionelle}
+      child[atomique]{node{Proximal}}
+      child{node{SitueSurItineraireOuReseauSupport}}
+    }
+    child[missing]{}
+    child[missing]{}
+    child{node {RelationSpatialePositionRelative}
+      child{node{RelationSpatialeDeContact}
+	child{node{AExtremiteDe}}
+	child{node{ALaFrontiereDe}}
+	child{node{DansPlanimetrique}
+          child{node{DansLaPartieBasseDe}}
+          child{node{DansLaPartieDeXLaPlusProcheDeY}}
+          child{node{DansLaPartieEstDe}}
+          child{node{DansLaPartieHauteDe}}
+          child{node{DansLaPartieNordDe}}
+          child{node{DansLaPartieOuestDe}}
+          child{node{DansLaPartieSudDe}}
+        }}};
+  \end{scope}
+  
+  
+  \draw (tt.east) -- ([xshift=4cm]tt.east) |- (tt2.east);
 \end{tikzpicture}	

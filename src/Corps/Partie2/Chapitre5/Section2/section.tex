@@ -7,6 +7,36 @@ p.14}
 l'aphorisme de \bsc{Wittgenstein} : \enquote{la signification c'est
   l'usage}
 
+
+Il a été choisi de développer deux ontologies complémentaires pour
+formaliser les \emph{relations de localisation.} La première
+d'entre-elles est \emph{l'ontologie des relations de localisation}
+\acp{orl}. Son objectif est de constituer un thésaurus des
+\emph{relations de localisation} utilisées dans le contexte de la
+description d'une position en montagne. Chacune des notions est
+définie et une grande partie d'entre-elles sont illustrées par des
+extraits des retranscriptions. La seconde ontologie définie est celle
+des \emph{relations de localisation atomiques} \acp{orla}, dont
+l'objectif est de définir les \emph{relations de localisation
+  atomiques,} les décompositions dont elles résultent et le processus
+de \emph{spatialisation} \footnote{Ce point spécifique sera détaillé
+  dans le \autoref{chap:06}.} Ces deux composantes, fortement liées,
+auraient pu être combinées dans une même ontologie. Cependant, alors
+que la décomposition est fortement liée à notre travail, le thésaurus
+des relations de localisation peut être exploité pour d'autres travaux
+au sein du projet Choucas ou à l'extérieur. C'est pourquoi nous avons
+décidé de séparer les deux ontologies et de ne diffuser que
+l'ontologie des relations de localisation.
+
+\begin{table}
+  \centering
+  \input{../tableaux/orl_vs_orla.tex}
+  \caption{Éléments de comparaison des ontologies \ac{orl} et
+    \ac{orla}}
+  \label{tab:orl_vs_orla}
+\end{table}
+
+
 \subsection{L'ontologie des \emph{relations de localisation}}
 
 3 classes principales + visibilité
@@ -18,9 +48,68 @@ faite en deux étapes. Dans un premier temps nous avons définit les
 concepts à partir des \emph{relations de localisation} utilisées dans
 les alertes, puis nous avons hiérarchisé ces concepts.
 
+
+L'ontologie des \emph{relations de localisation} défini 62
+\emph{classes,} représentant des \emph{relations de localisation} ou
+leurs regroupements (\eg Relations spatiales de contact, de direction,
+\emph{etc.}). À ces différentes classes s'ajoutent des
+\emph{relations,} permettant de définir des liens entre les
+différentes classes définies.
+
+% Classes / concepts abstraits
+Les classes définies sont de deux types, elles peuvent représenter des
+\emph{relations de localisation} (\eg \enquote{AvoirASaDroite},
+\enquote{AuxAlentoursDe}) ou des regroupements abstraits de concepts
+(\eg \enquote{RelationSpatialeDeDirection},
+\enquote{RelationSpatialeDeContact}). Les classes regroupant
+différentes \emph{relations de localisation,} qualifiées de classes
+abstraites, sont au nombre de 11, par conséquent 51 classes
+représentent effectivement des \emph{relations de localisation} et
+donc des \emph{concepts spatialisables.}
+
+% Pas de propriétés
+\emph{L'ontologie des relations de localisations} n'emploie qu'un seul
+type de lien, \emph{SubClassOf,} une relation asymétrique et
+transitive indiquant que la classe \enquote{fille} spécifie la classe
+\enquote{mère}. Dans le cas de cette ontologie, 78 relations
+\emph{SubClassOf} ont été définies. La définition d'autres relations
+ne nous a pas semblé importante.
+
+Ces relations permettent de
+construire un arbre des relations de localisation
+(\autoref{fig:onth}).
+
+
+\ac{orl} est fortement liée à l'ontologie GUM-Space, proposée par
+\textcite{Bateman2010}. Les \emph{relations de localisation} définies
+sont, lorsque possible, liées aux concepts équivalent (ou similaires)
+de l'ontologie GUM-Space. Plus spécifiquement deux types de liens sont
+définis, la relation \emph{seeAlso,} utilisée 24 fois et la relation
+\emph{equivalentClass,} utilisée 8 fois. Cette dernière traduit une
+équivalence parfaite entre concepts, alors que la relation
+\emph{seeAlso} est avant tout informative et traduit une certaine
+proximité sémantique entre deux concepts sans qu'ils soient
+équivalents ou même similaires. Ainsi, seules 8 des 62 \emph{relations
+  de localisation} définies dans \ac{orl} sont identiques à celles
+définies par \textcite{Bateman2010}, les autres concepts sont définis
+de manière significativement différente.
+
+
+
+
+
+- Distinction positionement / configuration
+
+- Structure orienté utilisateur (concepts fortement liés à
+l'acceptation des utilisateurs)
+
+- Hiérarchie croisée
+
+- Règle de différentiation
+
 \begin{figure}
   \centering
-  \input{../figures/ontologie.tex}
+  %\input{../figures/ontologie.tex}
   \caption{Onto}
   \label{fig:ontho}
 \end{figure}
@@ -29,8 +118,8 @@ les alertes, puis nous avons hiérarchisé ces concepts.
 
 Contrairement à \emph{l'ontologie des relations de localisation} dont
 elle est une spécialisation, \emph{l'ontologie des relations de
-  localisation atomiques} est spécifique à notre travail de
-recherche.
+  localisation atomiques} est plus proche d'une logique
+computationnelle.
 
 Pour la construire nous nous sommes basés sur
 
