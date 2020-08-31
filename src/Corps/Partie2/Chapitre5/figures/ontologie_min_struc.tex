@@ -1,29 +1,30 @@
+\usetikzlibrary{patterns}
+\usetikzlibrary{fadings}
+\usetikzlibrary{external}
+\usetikzlibrary{calc}
+\usetikzlibrary{positioning}
+\usepgfplotslibrary{colormaps}
+\usetikzlibrary{arrows}
+\usetikzlibrary{matrix}
+
+\usetikzlibrary{trees}
+
+
 \begin{tikzpicture}
-  \path[ffa] (0,0) rectangle ++(2,-12);
-
-  \path[ffa] (3.5,0) rectangle ++(2,-5);
-  \path[ffa] (3.5,-5.5) rectangle ++(2,-5);
-  \node[font=\bfseries] at (4.5, -11.5) {$\vdots$};
-
-  % \path[ffa] (5,-1) rectangle ++(2,-2);
-  % \path[ffa] (5,-4.5) rectangle ++(2,-2);
-  % \path[ffa] (5,-8) rectangle ++(2,-2);
-
-  % %seg
-  % \path[ffa] (7.5,0) rectangle ++(2,-1.25);
-  % \path[ffa] (7.5,-1.75) rectangle ++(2,-1.25);
+  \tikzset{
+    acc/.style={decorate,decoration={brace,raise=0cm,amplitude=.1cm}},
+    accm/.style={acc,decoration={mirror}},
+    acc3/.style={acc,decoration={amplitude=.2cm}},
+    acc3m/.style={acc3,decoration={mirror}}
+  }
   
+%% Matrices
+\node[font=\bfseries, baseline, text width=2.5cm] (I) at (0,0) {Relation de localisation};
 
-  
-  % \path[ffa] (7.5,-3.5) rectangle ++(2,-3);
-  % \path[ffa] (7.5,-7) rectangle ++(2,-3);
+\matrix [matrix of math nodes,row sep=0.1cm,column sep=0.1cm,
+anchor=west, nodes={anchor=base, baseline}] (is) at (I.east)
+{i_1\\i_2\\\vdots{}\\i_n\\};
 
-  % \path[ffa] (10,0) rectangle ++(2,-3);
-  % \path[ffa] (10,-3.5) rectangle ++(2,-3);
-  % \path[ffa] (10,-7) rectangle ++(2,-3);
-  
-
-  \path[ffa] (20,0) rectangle ++(2,-12);
-
+\draw[->, black] (I.east) -- (is.west) node[pos=0,below] {1} node[pos=1,below]{1..*};
 
 \end{tikzpicture}
