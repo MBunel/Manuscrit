@@ -1,30 +1,45 @@
-\usetikzlibrary{patterns}
-\usetikzlibrary{fadings}
-\usetikzlibrary{external}
-\usetikzlibrary{calc}
-\usetikzlibrary{positioning}
-\usepgfplotslibrary{colormaps}
-\usetikzlibrary{arrows}
-\usetikzlibrary{matrix}
-
-\usetikzlibrary{trees}
-
-
 \begin{tikzpicture}
-  \tikzset{
-    acc/.style={decorate,decoration={brace,raise=0cm,amplitude=.1cm}},
-    accm/.style={acc,decoration={mirror}},
-    acc3/.style={acc,decoration={amplitude=.2cm}},
-    acc3m/.style={acc3,decoration={mirror}}
-  }
+  \usetikzlibrary{shapes.geometric,fit}
   
-%% Matrices
-\node[font=\bfseries, baseline, text width=2.5cm] (I) at (0,0) {Relation de localisation};
+    % the texts
 
-\matrix [matrix of math nodes,row sep=0.1cm,column sep=0.1cm,
-anchor=west, nodes={anchor=base, baseline}] (is) at (I.east)
-{i_1\\i_2\\\vdots{}\\i_n\\};
 
-\draw[->, black] (I.east) -- (is.west) node[pos=0,below] {1} node[pos=1,below]{1..*};
+    \node[anchor=east] (x1) at (-2,0.6) {$rl_1$};
+    \node[anchor=east] (x2) at (-2,0) {$rl_2$};
+    \node[anchor=east] (x3) at (-2,-0.6) {$rl_3$};
 
+    
+    \node[anchor=west] (y1) at (2,1.2) {$rla_1$};
+    \node[anchor=west] (y2) at (2,0.6) {$rla_2$};
+    \node[anchor=west] (y3) at (2,0) {$rla_3$};
+    \node[anchor=west] (y4) at (2,-0.6) {$rla_4$};
+    \node[anchor=west] (y5) at (2,-1.2) {$rla_5$};
+    
+
+    \fill[RdBu-9-9] (x1.east) circle (2pt);
+    \fill[RdBu-9-9] (x2.east) circle (2pt);
+    \fill[RdBu-9-9] (x3.east) circle (2pt);
+    
+    \fill[RdBu-9-1] (y1.west) circle (2pt);
+    \fill[RdBu-9-1] (y2.west) circle (2pt);
+    \fill[RdBu-9-1] (y3.west) circle (2pt);
+    \fill[RdBu-9-1] (y4.west) circle (2pt);
+    \fill[RdBu-9-1] (y5.west) circle (2pt);
+
+     \node[fit=(x1.east) (x3.west), ellipse, draw, minimum width=1.5cm,
+    ffc2] (c1) {};
+    \node[fit=(y1.east) (y5.west), ellipse, draw, minimum width=1.5cm,
+    ffc] (c2) {};
+
+    % draw the arrows
+    \draw[->, shorten >=3pt, shorten <=3pt]  (x1.east) -- (y1.west);
+    \draw[->, shorten >=3pt, shorten <=3pt]  (x2.east) -- (y2.west);
+    \draw[->, shorten >=3pt, shorten <=3pt]  (x2.east) -- (y3.west);
+    \draw[->, shorten >=3pt, shorten <=3pt]  (x2.east) -- (y4.west);
+    \draw[->, shorten >=3pt, shorten <=3pt]  (x3.east) -- (y5.west);
+
+    \node at (c2.south) {\tiny$f(x)$};
+    \node at (c1.south) {\tiny$f(x)$};
+
+    
 \end{tikzpicture}
