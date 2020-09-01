@@ -15,21 +15,21 @@ décomposition permet de faciliter la \emph{spatialisation} des
 \emph{indices de localisation} en permettant de manipuler des concepts
 précis et en minimisant les redondances, elle implique également de
 travailler à l'aide de \emph{relations de localisation} (atomiques)
-\emph{ad hoc,} dont la définition n'est pas prévue pour être facile à
-manipuler par l'utilisateur et encore moins proche des \emph{relations
-  de localisations} qu'elle décompose. Pour toutes ces raisons il nous
-semble difficile de demander à l'utilisateur de saisir directement les
+\emph{ad hoc,} qui ne sont pas conçues pour être faciles à manipuler
+par l'utilisateur et encore moins pour être proche des \emph{relations
+  de localisations} qu'elles décomposent. Il est donc difficilement
+envisageable de demander à l'utilisateur de saisir directement les
 \emph{relations de localisation} décomposées (\ie les \emph{relations
   de localisation atomiques}). C'est pourquoi nous proposons
 d'automatiser cette étape.
 
 Pour ce faire il est nécessaire de définir au préalable la manière
 dont les différentes \emph{relations de localisation} spatialisables
-se décomposent, comme nous l'expliquions lors de la présentation du
-\emph{principe de modélisation explicite des connaissances.} Nous
-avons choisi de formaliser ces décomposition au sein d'une ontologie,
-créée pour l'occasion. Pour permettre la décomposition des \emph{relations
-de localisation} cette dernière doit contenir, a minima, trois types
+se décomposent (cf. présentation du \emph{principe de modélisation
+  explicite des connaissances}, \autoref{chap:04}). Nous avons choisi
+de formaliser ces décomposition au sein d'une ontologie, créée pour
+l'occasion. Pour permettre la décomposition des \emph{relations de
+  localisation} cette dernière doit contenir, a minima, trois types
 d'informations :
 %
 \begin{enumerate*}[label=(\alph*)]
@@ -38,8 +38,17 @@ d'informations :
   décomposent et
 \item les \emph{relations de décomposition} formalisant la
   décomposition d'une \emph{relation de localisation} en plusieurs
-  \emph{relations de localisations atomiques.}
+  \emph{relations de localisations atomiques}
+  (\autoref{fig:onto_min_struct}).
 \end{enumerate*}
+%
+L'utilisateur peut saisir les \emph{indices de localisation} à partir
+des \emph{relations de localisation} préalablement définies. Le
+travail de décomposition ne consiste alors qu'a identifier la
+\emph{relation de localisation} utilisée et à identifier les
+\emph{relations de localisation atomiques} qui la décomposent à l'aide
+des \emph{relations de décomposition.}
+
 
 \begin{figure}
   \centering
