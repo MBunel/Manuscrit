@@ -1,15 +1,15 @@
 \begin{tikzpicture}
   \usetikzlibrary{shapes.geometric,fit}
  
-    \node (x1) at (-2,0.6) {$rl_1$};
-    \node (x2) at (-2,0) {$rl_2$};
-    \node (x3) at (-2,-0.6) {$rl_3$};
+    \node (x1) at (-3.5,0.8) {$rl_1$};
+    \node (x2) at (-3.5,0) {$rl_2$};
+    \node (x3) at (-3.5,-0.8) {$rl_3$};
 
-    \node (y1) at (2,1.2) {$rla_1$};
-    \node (y2) at (2,0.6) {$rla_2$};
-    \node (y3) at (2,0) {$rla_3$};
-    \node (y4) at (2,-0.6) {$rla_4$};
-    \node (y5) at (2,-1.2) {$rla_5$};
+    \node (y1) at (3.5,1.6) {$rla_1$};
+    \node (y2) at (3.5,0.8) {$rla_2$};
+    \node (y3) at (3.5,0) {$rla_3$};
+    \node (y4) at (3.5,-0.8) {$rla_4$};
+    \node (y5) at (3.5,-1.6) {$rla_5$};
  
     \fill[RdBu-9-9] (x1.east) circle (2pt);
     \fill[RdBu-9-9] (x2.east) circle (2pt);
@@ -21,18 +21,35 @@
     \fill[RdBu-9-1] (y4.west) circle (2pt);
     \fill[RdBu-9-1] (y5.west) circle (2pt);
 
-     \node[fit=(x1.east) (x3.west), ellipse, draw, minimum width=1.75cm,
+     \node[fit=(x1.east) (x3.west), ellipse, draw, minimum width=2cm,
     ffc2] (c1) {};
-    \node[fit=(y1.east) (y5.west), ellipse, draw, minimum width=1.75cm,
+    \node[fit=(y1.east) (y5.west), ellipse, draw, minimum width=2cm,
     ffc] (c2) {};
 
     % draw the arrows
-    \draw[->, shorten >=5pt, shorten <=5pt]  (x1.east) -- (y1.west);
-    \draw[->, shorten >=5pt, shorten <=5pt]  (x1.east) -- (y3.west);
-    \draw[->, shorten >=5pt, shorten <=5pt]  (x2.east) -- (y2.west);
-    \draw[->, shorten >=5pt, shorten <=5pt]  (x2.east) -- (y3.west);
-    \draw[->, shorten >=5pt, shorten <=5pt]  (x3.east) -- (y4.west);
-    \draw[->, shorten >=5pt, shorten <=5pt]  (x3.east) -- (y5.west);
+    \draw[->, shorten >=5pt, shorten <=5pt] (x1.east) -- (y1.west)
+    node[pos=0.5, sloped, anchor=center, fill=white] {\tiny\emph{se
+        décompose en}};
+    
+    \draw[->, shorten >=5pt, shorten <=5pt] (x1.east) -- (y2.west)
+    node[pos=0.5, sloped, anchor=center, fill=white] {\tiny\emph{se
+        décompose en}};
+    
+    \draw[->, shorten >=5pt, shorten <=5pt] (x2.east) -- (y3.west)
+    node[pos=0.5, sloped, anchor=center, fill=white] {\tiny\emph{se
+        décompose en}};
+
+    \draw[->, shorten >=5pt, shorten <=5pt] (x3.east) -- (y3.west)
+    node[pos=0.5, sloped, anchor=center, fill=white] {\tiny\emph{se
+        décompose en}};
+    
+    \draw[->, shorten >=5pt, shorten <=5pt] (x3.east) -- (y4.west)
+    node[pos=0.5, sloped, anchor=center, fill=white] {\tiny\emph{se
+        décompose en}};
+    
+    \draw[->, shorten >=5pt, shorten <=5pt] (x3.east) -- (y5.west)
+    node[pos=0.5, sloped, anchor=center, fill=white] {\tiny\emph{se
+        décompose en}}; 
 
     \node[text width=3cm, anchor=center,align=justify] at
     ([yshift=-1cm]c1.south) {\small\emph{Relations de localisation}};
