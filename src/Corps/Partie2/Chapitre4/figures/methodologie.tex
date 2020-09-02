@@ -41,7 +41,7 @@ anchor=south west, nodes={minimum height=.75cm, font=\footnotesize}] (is_o_r) at
 {\text{RSA}_1&\cdots{}&\text{RSA}_n\\};
 
 \matrix [matrix of nodes, column sep=.25cm,
-anchor=west, nodes={anchor=center, minimum height=.75cm}] (temp) at
+anchor=west, nodes={anchor=center, minimum height=.75cm}] (zla) at
 ([xshift=1cm]is_o_r.east)
 {
   \draw[ffa,ffc] (0, 0) circle (.2cm);&
@@ -74,7 +74,7 @@ anchor=west, nodes={anchor=base, baseline}] (zlc) at ([xshift=1.5cm]zlb.east  |-
   \draw (zlp.north west) |- ($(zlp.north west)!0.5!(zlp.north east) + (0,.1)$) -| (zlp.north east) node[pos=0, yshift=.2]
   (zlp-p) {};
   
-\foreach \m in {is,is_o,is_o_r,zlb,zlc} {
+\foreach \m in {is,is_o,is_o_r,zla,zlb,zlc} {
   \draw (\m.south west) |- ($(\m.south west)!0.5!(\m.south
   east) + (0,-.1)$) -| (\m.south east)  node[pos=0, yshift=.2]
   (\m-g) {};
@@ -132,9 +132,19 @@ anchor=west, nodes={anchor=base, baseline}] (zlc) at ([xshift=1.5cm]zlb.east  |-
     \emph{Décomposition} 3} -| (is_o_r-g) 
   node[pos=1,below right,cardinalite]{1..*};
 
+  % Spatialisation
+    \draw[->, black,] (is_o_r-p) |- ($(is_o_r-p)!0.5!(zla-p) + (0,.75)$) node[pos=0,above
+  right, cardinalite] {1} node[pos=1, fill=white] {\tiny
+    \emph{Spatialisation}} -| (zla-p) 
+  node[pos=1,above right,cardinalite]{1};
 
 
   % Fusion
+  \draw[->>, black,] (zla-g) |- ($(zla-g)!0.5!(zlb-p)$) node[pos=0,below
+  right, cardinalite] {1..*} node[pos=1, fill=white] {\tiny
+    \emph{Fusion} 1} -| (zlb-p) 
+  node[pos=1,above right,cardinalite]{1};
+  
   \draw[->>, black,] (zlb-g) |- ($(zlb-g)!0.5!(zlc-p)$) node[pos=0,below
   right, cardinalite] {1..*} node[pos=1, fill=white] {\tiny
     \emph{Fusion} 2} -| (zlc-p) 
