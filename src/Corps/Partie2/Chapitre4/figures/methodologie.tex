@@ -66,46 +66,67 @@ anchor=west, nodes={anchor=base, baseline}] (zlc) at ([xshift=1.5cm]zlb.east  |-
 \node [anchor=west] (zlp) at ([xshift=1.5cm]zlc.east |- I)
 {ZLP};
 
-
-%% Accolades 
 \begin{scope}
-  \draw[acc3m] (is.south west) -- (is.south east);
+  \draw (I.north west) |- ($(I.north west)!0.5!(I.north east) + (0,.1)$) -| (I.north east) node[pos=0, yshift=.2]
+  (I-p) {};
 
-  \draw[acc] (is-1-1.north west) -- (is-1-1.north east) node[midway, yshift=.2]
-  (dsq) {};
-  
-  \draw[acc3m] (is_o.south west) -- (is_o.south east) node[midway] (dsqd) {};
-
-
-  \draw[acc] (is_o-1-1.north west) -- (is_o-1-1.north east);
-
-  \draw[acc3m] (is_o_r.south west) -- (is_o_r.south east);  
-  \draw[acc] (is_o_r-1-1.north west) -- (is_o_r-1-1.north east) node[midway, yshift=.2]
-  (temp1) {};;
-  
-  \draw[acc3m] (temp.south west) -- (temp.south east);  
-  \draw[acc] (temp-1-1.north west) -- (temp-1-1.north east) node[midway, yshift=.2]
-  (temp2) {};;
-  
-  
-  \draw[acc] (zlb-1-1.north west) -- (zlb-1-1.north east);
-  \draw[acc3m] (zlb.south west) -- (zlb.south east);
-  
-  \draw[acc] (zlc-1-1.north west) -- (zlc-1-1.north east);
-  \draw[acc3m] (zlc.south west) -- (zlc.south east);
-
+\foreach \m in {is,is_o,is_o_r,zlb,zlc} {
+  \draw (\m.south west) |- ($(\m.south west)!0.5!(\m.south
+  east) + (0,-.1)$) -| (\m.south east)  node[pos=0, yshift=.2]
+  (\m-g) {};
+  \draw (\m-1-1.north west) |- ($(\m-1-1.north west)!0.5!(\m-1-1.north east) + (0,.1)$) -| (\m-1-1.north east) node[pos=0, yshift=.2]
+  (\m-p) {};
+}
 
 \end{scope}
 
-\draw[-<<, black,] (dsq) |- ($(dsq)!0.5!(dsqd)$) node[pos=0,above
-right, cardinalite] {1} node[pos=1, fill=white] {\tiny
-  \emph{Décomposition} 2} -| (dsqd) 
-node[pos=1,below right,cardinalite]{1..*};
+% %% Accolades 
+% \begin{scope}
+%   \draw (is.south west) |- ($(is.south west)!0.5!(is.south
+%   east) + (0,-.1)$) -| (is.south east);
+
+%   \draw[acc] (is-1-1.north west) -- (is-1-1.north east) node[midway, yshift=.2]
+%   (dsq) {};
+  
+%   \draw[acc3m] (is_o.south west) -- (is_o.south east) node[midway] (dsqd) {};
 
 
-\draw[->, black,] (temp1) |- ($(temp1)!0.5!(temp2) +(0,.75)$) node[pos=0,above
-right, cardinalite] {1} node[pos=1,fill=white] {\tiny\emph{Spatialisation}} -| (temp2) 
-node[pos=1,above right,cardinalite]{1};
+%   \draw[acc] (is_o-1-1.north west) -- (is_o-1-1.north east);
+
+%   \draw[acc3m] (is_o_r.south west) -- (is_o_r.south east);  
+%   \draw[acc] (is_o_r-1-1.north west) -- (is_o_r-1-1.north east) node[midway, yshift=.2]
+%   (temp1) {};;
+  
+%   \draw[acc3m] (temp.south west) -- (temp.south east);  
+%   \draw[acc] (temp-1-1.north west) -- (temp-1-1.north east) node[midway, yshift=.2]
+%   (temp2) {};;
+  
+  
+%   \draw[acc] (zlb-1-1.north west) -- (zlb-1-1.north east);
+%   \draw[acc3m] (zlb.south west) -- (zlb.south east);
+  
+%   \draw[acc] (zlc-1-1.north west) -- (zlc-1-1.north east);
+%   \draw[acc3m] (zlc.south west) -- (zlc.south east);
+
+
+% \end{scope}
+
+\begin{scope}
+  \draw[-<<, black,] (I-p) |- ($(I-p)!0.5!(is-g)$) node[pos=0,above
+  right, cardinalite] {1} node[pos=1, fill=white] {\tiny
+    \emph{Décomposition} 1} -| (is-g) 
+  node[pos=1,below right,cardinalite]{1..*};
+
+  \draw[-<<, black,] (is-p) |- ($(is-p)!0.5!(is_o-g)$) node[pos=0,above
+  right, cardinalite] {1} node[pos=1, fill=white] {\tiny
+    \emph{Décomposition} 2} -| (is_o-g) 
+  node[pos=1,below right,cardinalite]{1..*};
+
+  \draw[-<<, black,] (is_o-p) |- ($(is_o-p)!0.5!(is_o_r-g)$) node[pos=0,above
+  right, cardinalite] {1} node[pos=1, fill=white] {\tiny
+    \emph{Décomposition} 3} -| (is_o_r-g) 
+  node[pos=1,below right,cardinalite]{1..*};
+\end{scope}
 
 
 % \begin{scope}
