@@ -66,10 +66,14 @@ anchor=west, nodes={anchor=base, baseline}] (zlc) at ([xshift=1.5cm]zlb.east  |-
 \node [anchor=west] (zlp) at ([xshift=1.5cm]zlc.east |- I)
 {ZLP};
 
+%% Accolades
 \begin{scope}
   \draw (I.north west) |- ($(I.north west)!0.5!(I.north east) + (0,.1)$) -| (I.north east) node[pos=0, yshift=.2]
   (I-p) {};
 
+  \draw (zlp.north west) |- ($(zlp.north west)!0.5!(zlp.north east) + (0,.1)$) -| (zlp.north east) node[pos=0, yshift=.2]
+  (zlp-p) {};
+  
 \foreach \m in {is,is_o,is_o_r,zlb,zlc} {
   \draw (\m.south west) |- ($(\m.south west)!0.5!(\m.south
   east) + (0,-.1)$) -| (\m.south east)  node[pos=0, yshift=.2]
@@ -112,6 +116,7 @@ anchor=west, nodes={anchor=base, baseline}] (zlc) at ([xshift=1.5cm]zlb.east  |-
 % \end{scope}
 
 \begin{scope}
+  % Décomposition
   \draw[-<<, black,] (I-p) |- ($(I-p)!0.5!(is-g)$) node[pos=0,above
   right, cardinalite] {1} node[pos=1, fill=white] {\tiny
     \emph{Décomposition} 1} -| (is-g) 
@@ -126,6 +131,19 @@ anchor=west, nodes={anchor=base, baseline}] (zlc) at ([xshift=1.5cm]zlb.east  |-
   right, cardinalite] {1} node[pos=1, fill=white] {\tiny
     \emph{Décomposition} 3} -| (is_o_r-g) 
   node[pos=1,below right,cardinalite]{1..*};
+
+
+
+  % Fusion
+  \draw[->>, black,] (zlb-g) |- ($(zlb-g)!0.5!(zlc-p)$) node[pos=0,below
+  right, cardinalite] {1..*} node[pos=1, fill=white] {\tiny
+    \emph{Fusion} 2} -| (zlc-p) 
+  node[pos=1,above right,cardinalite]{1};
+
+    \draw[->>, black,] (zlc-g) |- ($(zlc-g)!0.5!(zlp-p)$) node[pos=0,below
+  right, cardinalite] {1..*} node[pos=1, fill=white] {\tiny
+    \emph{Fusion} 3} -| (zlp-p) 
+  node[pos=1,above right,cardinalite]{1};  
 \end{scope}
 
 
@@ -150,16 +168,16 @@ anchor=west, nodes={anchor=base, baseline}] (zlc) at ([xshift=1.5cm]zlb.east  |-
 % \end{scope}
 
 
-% \begin{scope}
-%     \draw[->, black, dotted] ([xshift=.5cm]I.east) -- ([xshift=-.5cm]zlp.west) node[pos=0,below]
-%   {1} node[pos=1,below]{1}; 
+\begin{scope}
+  \draw[->, black, dotted] ([xshift=.5cm]I.east) -- ([xshift=-.5cm]zlp.west) node[pos=0,below,cardinalite]
+  {1} node[pos=1,below,cardinalite]{1}; 
 
-%   \draw[->, black, dotted] ([xshift=.5cm]is.east) -- ([xshift=-.5cm]zlc.west) node[pos=0,below]
-%   {1} node[pos=1,below]{1}; 
+  \draw[->, black, dotted] ([xshift=.5cm]is.east) -- ([xshift=-.5cm]zlc.west) node[pos=0,below,cardinalite]
+  {1} node[pos=1,below,cardinalite]{1}; 
 
-%   \draw[->, black, dotted] ([xshift=.5cm]is_o.east) -- ([xshift=-.5cm]zlb.west) node[pos=0,below]
-%   {1} node[pos=1,below]{1}; 
-% \end{scope}
+  \draw[->, black, dotted] ([xshift=.5cm]is_o.east) -- ([xshift=-.5cm]zlb.west) node[pos=0,below,cardinalite]
+  {1} node[pos=1,below,cardinalite]{1}; 
+\end{scope}
 
 %% XX
 
