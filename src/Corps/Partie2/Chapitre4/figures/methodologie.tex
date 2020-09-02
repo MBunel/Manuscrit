@@ -88,7 +88,7 @@
       \emph{Décomposition}} -| (is-g) 
     node[pos=1,below right,cardinalite]{1..*};
     
-    \node[anchor=west,baseline, fill=white,inner sep=0] at ([xshift=1ex]t_dec_1.south west)
+    \node[anchor=west,baseline] at ([xshift=1ex]t_dec_1.south west)
     {\tiny des \emph{indices de localisation}};
 
     \draw[-<<, black,] (is-p) |- ($(is-p)!0.5!(is_o-g)$) node[pos=0,above
@@ -96,7 +96,7 @@
       \emph{Décomposition}} -| (is_o-g) 
     node[pos=1,below right,cardinalite]{1..*};
     
-    \node[anchor=west,baseline, fill=white,inner sep=0] at ([xshift=1ex]t_dec_2.south west)
+    \node[anchor=west,baseline] at ([xshift=1ex]t_dec_2.south west)
     {\tiny des \emph{objets de référence non nommés}};
 
     \draw[-<<, black,] (is_o-p) |- ($(is_o-p)!0.5!(is_o_r-g)$) node[pos=0,above
@@ -104,7 +104,7 @@
       \emph{Décomposition}} -| (is_o_r-g) 
     node[pos=1,below right,cardinalite]{1..*};
     
-    \node[anchor=west,baseline, fill=white,inner sep=0] at ([xshift=1ex]t_dec_3.south west)
+    \node[anchor=west,baseline] at ([xshift=1ex]t_dec_3.south west)
     {\tiny des \emph{relations de localisation}};
 
     % Spatialisation
@@ -120,7 +120,7 @@
       \emph{Fusion}} -| (zlb-p) 
     node[pos=1,above right,cardinalite]{1};
 
-        \node[anchor=west,baseline, fill=white,inner sep=0] at ([xshift=1ex]t_fus_1.south west)
+        \node[anchor=west,baseline] at ([xshift=1ex]t_fus_1.south west)
     {\tiny des \emph{relations de localisation atomiques}};
     
     \draw[->>, black,] (zlb-g) |- ($(zlb-g)!0.5!(zlc-p)$) node[pos=0,below
@@ -128,7 +128,7 @@
       \emph{Fusion}} -| (zlc-p) 
     node[pos=1,above right,cardinalite]{1};
     
-          \node[anchor=west,baseline, fill=white,inner sep=0] at ([xshift=1ex]t_fus_2.south west)
+          \node[anchor=west,baseline] at ([xshift=1ex]t_fus_2.south west)
     {\tiny des \emph{objets de référence}};
 
     \draw[->>, black] (zlc-g) |- ($(zlc-g)!0.5!(zlp-p)$) node[pos=0,below
@@ -136,7 +136,7 @@
       \emph{Fusion}} -| (zlp-p) 
     node[pos=1,above right,cardinalite]{1};
 
-          \node[anchor=west,baseline, fill=white,inner sep=0] at ([xshift=1ex]t_fus_3.south west)
+          \node[anchor=west,baseline] at ([xshift=1ex]t_fus_3.south west)
     {\tiny des \emph{indices de localisation}};
     
   \end{scope}
