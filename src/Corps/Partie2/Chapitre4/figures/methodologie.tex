@@ -10,192 +10,177 @@
     cardinalite/.style={font=\footnotesize\ttfamily}
   }
 
-
-  \newcommand\irregularcircle[2]{% radius, irregularity
-  let \n1 = {(#1)+rand*(#2)} in
-  +(0:\n1)
-  \foreach \a in {20,40,...,350}{
-    let \n1 = {(#1)+rand*(#2)} in
-    -- +(\a:\n1)
-  } -- cycle
-}
-
   
-  %\draw[step=.5,black,thin] (0,0) grid (22,-14);
+  % \draw[step=.5,black,thin] (0,0) grid (22,-14);
 
-%% Matrices
-\node[font=\bfseries, baseline] (I) at (0,0) {$I$};
+  %% Matrices
+  \node[font=\bfseries, baseline] (I) at (0,0) {$I$};
 
-\matrix [matrix of math nodes,
-anchor=south west, nodes={anchor=base, baseline}] (is) at
-([xshift=1cm,yshift=1.5cm]I.north east)
-{i_1&i_2&\cdots{}&i_n\\};
+  \matrix [matrix of math nodes,
+  anchor=south west, nodes={anchor=base, baseline}] (is) at
+  ([xshift=1cm,yshift=2cm]I.north east)
+  {i_1&i_2&\cdots{}&i_n\\};
 
-\matrix [matrix of math nodes,
-anchor=south west, nodes={baseline}] (is_o) at
-([xshift=1cm,yshift=1.5cm]is-1-1.north east) {o_1&o_2&\cdots{}&o_n\\};
+  \matrix [matrix of math nodes,
+  anchor=south west, nodes={baseline}] (is_o) at
+  ([xshift=1cm,yshift=2cm]is-1-1.north east) {o_1&o_2&\cdots{}&o_n\\};
 
-\matrix [matrix of math nodes,
-anchor=south west, nodes={minimum height=.75cm, font=\footnotesize}] (is_o_r) at
-([xshift=1cm,yshift=1.5cm]is_o-1-1.north east)
-{\text{RSA}_1&\cdots{}&\text{RSA}_n\\};
+  \matrix [matrix of math nodes,
+  anchor=south west, nodes={minimum height=.75cm, font=\footnotesize}] (is_o_r) at
+  ([xshift=1cm,yshift=2cm]is_o-1-1.north east)
+  {\text{RSA}_1&\cdots{}&\text{RSA}_n\\};
 
-\matrix [matrix of nodes, column sep=.25cm,
-anchor=west, nodes={anchor=center, minimum height=.75cm}] (zla) at
-([xshift=1cm]is_o_r.east)
-{
-  \draw[ffa,ffc] (0, 0) circle (.2cm);&
-  \draw[ffa,ffc] (0, 0) circle (.2cm);&
-  \node{$\cdots{}$};&
-  \draw[ffa,ffc] (0, 0) circle (.2cm);\\
-};
+  \matrix [matrix of nodes, column sep=.25cm,
+  anchor=west, nodes={anchor=center, minimum height=.75cm}] (zla) at
+  ([xshift=1cm]is_o_r.east)
+  {
+    \draw[ffa,ffc] (0,0) circle (.2cm);&
+    \draw[ffa,ffc] (0,0) circle (.2cm);&
+    \node{$\cdots{}$};&
+    \draw[ffa,ffc] (0,0) circle (.2cm);\\
+  };
 
-% \text{ZLC}_{rsa1}\\ 
-% \text{ZLC}_{rsa_2}\\
-% ts{}\\              
-% \text{ZLC}_{rsa_n}\\
+  % \text{ZLC}_{rsa1}\\ 
+  % \text{ZLC}_{rsa_2}\\
+  % ts{}\\              
+  % \text{ZLC}_{rsa_n}\\
 
-\matrix [matrix of math nodes,
-anchor=west, nodes={baseline}] (zlb) at ([xshift=1.5cm]is_o_r.east  |- is_o)
-{\text{\textsf{ZLC}}_{o_1}&ZLC_{o_2}&\cdots{}&ZLC_{o_n}\\};
+  \matrix [matrix of nodes, column sep=.25cm, anchor=west,
+  nodes={anchor=center, minimum height=.75cm}] (zlb) at
+  ([xshift=1.5cm]is_o_r.east |- is_o)
+  {
+    \draw[ffa,ffc] (0,0) circle (.2cm);&
+    \draw[ffa,ffc] (0,0) circle (.2cm);&
+    \node{$\cdots{}$};&
+    \draw[ffa,ffc] (0,0) circle (.2cm);\\
+  };
 
-\matrix [matrix of math nodes,
-anchor=west, nodes={anchor=base, baseline}] (zlc) at ([xshift=1.5cm]zlb.east  |- is)
-{ZLC_1&ZLC_2&\cdots{}&ZLC_n\\};
+  \matrix [matrix of math nodes,
+  anchor=west, nodes={anchor=base, baseline}] (zlc) at ([xshift=1.5cm]zlb.east  |- is)
+  {ZLC_1&ZLC_2&\cdots{}&ZLC_n\\};
 
-\node [anchor=west] (zlp) at ([xshift=1.5cm]zlc.east |- I)
-{ZLP};
+  \node [anchor=west] (zlp) at ([xshift=1.5cm]zlc.east |- I)
+  {ZLP};
 
-%% Accolades
-\begin{scope}
-  \draw (I.north west) |- ($(I.north west)!0.5!(I.north east) + (0,.1)$) -| (I.north east) node[pos=0, yshift=.2]
-  (I-p) {};
+  %% Accolades
+  \begin{scope}
+    \draw (I.north west) |- ($(I.north west)!0.5!(I.north east) + (0,.1)$) -| (I.north east) node[pos=0, yshift=.2]
+    (I-p) {};
 
-  \draw (zlp.north west) |- ($(zlp.north west)!0.5!(zlp.north east) + (0,.1)$) -| (zlp.north east) node[pos=0, yshift=.2]
-  (zlp-p) {};
-  
-\foreach \m in {is,is_o,is_o_r,zla,zlb,zlc} {
-  \draw (\m.south west) |- ($(\m.south west)!0.5!(\m.south
-  east) + (0,-.1)$) -| (\m.south east)  node[pos=0, yshift=.2]
-  (\m-g) {};
-  \draw (\m-1-1.north west) |- ($(\m-1-1.north west)!0.5!(\m-1-1.north east) + (0,.1)$) -| (\m-1-1.north east) node[pos=0, yshift=.2]
-  (\m-p) {};
-}
+    \draw (zlp.north west) |- ($(zlp.north west)!0.5!(zlp.north east) + (0,.1)$) -| (zlp.north east) node[pos=0, yshift=.2]
+    (zlp-p) {};
+    
+    \foreach \m in {is,is_o,is_o_r,zla,zlb,zlc} {
+      \draw (\m.south west) |- ($(\m.south west)!0.5!(\m.south
+      east) + (0,-.1)$) -| (\m.south east)  node[pos=0, yshift=.2]
+      (\m-g) {};
+      \draw (\m-1-1.north west) |- ($(\m-1-1.north west)!0.5!(\m-1-1.north east) + (0,.1)$) -| (\m-1-1.north east) node[pos=0, yshift=.2]
+      (\m-p) {};
+    }
 
-\end{scope}
-
-% %% Accolades 
-% \begin{scope}
-%   \draw (is.south west) |- ($(is.south west)!0.5!(is.south
-%   east) + (0,-.1)$) -| (is.south east);
-
-%   \draw[acc] (is-1-1.north west) -- (is-1-1.north east) node[midway, yshift=.2]
-%   (dsq) {};
-  
-%   \draw[acc3m] (is_o.south west) -- (is_o.south east) node[midway] (dsqd) {};
+  \end{scope}
 
 
-%   \draw[acc] (is_o-1-1.north west) -- (is_o-1-1.north east);
-
-%   \draw[acc3m] (is_o_r.south west) -- (is_o_r.south east);  
-%   \draw[acc] (is_o_r-1-1.north west) -- (is_o_r-1-1.north east) node[midway, yshift=.2]
-%   (temp1) {};;
-  
-%   \draw[acc3m] (temp.south west) -- (temp.south east);  
-%   \draw[acc] (temp-1-1.north west) -- (temp-1-1.north east) node[midway, yshift=.2]
-%   (temp2) {};;
-  
-  
-%   \draw[acc] (zlb-1-1.north west) -- (zlb-1-1.north east);
-%   \draw[acc3m] (zlb.south west) -- (zlb.south east);
-  
-%   \draw[acc] (zlc-1-1.north west) -- (zlc-1-1.north east);
-%   \draw[acc3m] (zlc.south west) -- (zlc.south east);
-
-
-% \end{scope}
-
-\begin{scope}
-  % Décomposition
-  \draw[-<<, black,] (I-p) |- ($(I-p)!0.5!(is-g)$) node[pos=0,above
-  right, cardinalite] {1} node[pos=1, fill=white] {\tiny
-    \emph{Décomposition} 1} -| (is-g) 
+  \begin{scope}
+    % Décomposition
+    \draw[-<<, black,] (I-p) |- ($(I-p)!0.5!(is-g)$) node[pos=0,above
+    left, cardinalite] {1} node[pos=1, fill=white] (t_dec_1) {\tiny
+      \emph{Décomposition}} -| (is-g) 
     node[pos=1,below right,cardinalite]{1..*};
+    
+    \node[anchor=west,baseline, fill=white,inner sep=0] at ([xshift=1ex]t_dec_1.south west)
+    {\tiny des \emph{indices de localisation}};
 
-  \draw[-<<, black,] (is-p) |- ($(is-p)!0.5!(is_o-g)$) node[pos=0,above
-  right, cardinalite] {1} node[pos=1, fill=white] {\tiny
-    \emph{Décomposition} 2} -| (is_o-g) 
-  node[pos=1,below right,cardinalite]{1..*};
+    \draw[-<<, black,] (is-p) |- ($(is-p)!0.5!(is_o-g)$) node[pos=0,above
+    left, cardinalite] {1} node[pos=1, fill=white] (t_dec_2) {\tiny
+      \emph{Décomposition}} -| (is_o-g) 
+    node[pos=1,below right,cardinalite]{1..*};
+    
+    \node[anchor=west,baseline, fill=white,inner sep=0] at ([xshift=1ex]t_dec_2.south west)
+    {\tiny des \emph{objets de référence non nommés}};
 
-  \draw[-<<, black,] (is_o-p) |- ($(is_o-p)!0.5!(is_o_r-g)$) node[pos=0,above
-  right, cardinalite] {1} node[pos=1, fill=white] {\tiny
-    \emph{Décomposition} 3} -| (is_o_r-g) 
-  node[pos=1,below right,cardinalite]{1..*};
+    \draw[-<<, black,] (is_o-p) |- ($(is_o-p)!0.5!(is_o_r-g)$) node[pos=0,above
+    left, cardinalite] {1} node[pos=1, fill=white] (t_dec_3) {\tiny
+      \emph{Décomposition}} -| (is_o_r-g) 
+    node[pos=1,below right,cardinalite]{1..*};
+    
+    \node[anchor=west,baseline, fill=white,inner sep=0] at ([xshift=1ex]t_dec_3.south west)
+    {\tiny des \emph{relations de localisation}};
 
-  % Spatialisation
-    \draw[->, black,] (is_o_r-p) |- ($(is_o_r-p)!0.5!(zla-p) + (0,.75)$) node[pos=0,above
-  right, cardinalite] {1} node[pos=1, fill=white] {\tiny
-    \emph{Spatialisation}} -| (zla-p) 
-  node[pos=1,above right,cardinalite]{1};
+    % Spatialisation
+    \draw[->, black,] (is_o_r-p) |- ($(is_o_r-p)!0.5!(zla-p) + (0,1)$) node[pos=0,above
+    left, cardinalite] {1} node[pos=1, fill=white] (t_spa) {\tiny
+      \emph{Spatialisation}} -| (zla-p) 
+    node[pos=1,above right,cardinalite]{1};
 
 
-  % Fusion
-  \draw[->>, black,] (zla-g) |- ($(zla-g)!0.5!(zlb-p)$) node[pos=0,below
-  right, cardinalite] {1..*} node[pos=1, fill=white] {\tiny
-    \emph{Fusion} 1} -| (zlb-p) 
-  node[pos=1,above right,cardinalite]{1};
+    % Fusion
+    \draw[->>, black,] (zla-g) |- ($(zla-g)!0.5!(zlb-p)$) node[pos=0,below
+    right, cardinalite] {1..*} node[pos=1, fill=white] (t_fus_1) {\tiny
+      \emph{Fusion}} -| (zlb-p) 
+    node[pos=1,above right,cardinalite]{1};
+
+        \node[anchor=west,baseline, fill=white,inner sep=0] at ([xshift=1ex]t_fus_1.south west)
+    {\tiny des \emph{relations de localisation atomiques}};
+    
+    \draw[->>, black,] (zlb-g) |- ($(zlb-g)!0.5!(zlc-p)$) node[pos=0,below
+    right, cardinalite] {1..*} node[pos=1, fill=white] (t_fus_2) {\tiny
+      \emph{Fusion}} -| (zlc-p) 
+    node[pos=1,above right,cardinalite]{1};
+    
+          \node[anchor=west,baseline, fill=white,inner sep=0] at ([xshift=1ex]t_fus_2.south west)
+    {\tiny des \emph{objets de référence}};
+
+    \draw[->>, black] (zlc-g) |- ($(zlc-g)!0.5!(zlp-p)$) node[pos=0,below
+    right, cardinalite] {1..*} node[pos=1, fill=white] (t_fus_3) {\tiny
+      \emph{Fusion}} -| (zlp-p) 
+    node[pos=1,above right,cardinalite]{1};
+
+          \node[anchor=west,baseline, fill=white,inner sep=0] at ([xshift=1ex]t_fus_3.south west)
+    {\tiny des \emph{indices de localisation}};
+    
+  \end{scope}
+
+
+  % \begin{scope}
+  %   \draw[->, black] (I.east) -- (is.west) node[pos=0,below] {1} node[pos=1,below]{1..*};
+
+  %   \draw[->, black] (is-1-1.east) -- (is_o.west) node[pos=0,below] {1} node[pos=1,below]{1..*}; 
   
-  \draw[->>, black,] (zlb-g) |- ($(zlb-g)!0.5!(zlc-p)$) node[pos=0,below
-  right, cardinalite] {1..*} node[pos=1, fill=white] {\tiny
-    \emph{Fusion} 2} -| (zlc-p) 
-  node[pos=1,above right,cardinalite]{1};
-
-    \draw[->>, black,] (zlc-g) |- ($(zlc-g)!0.5!(zlp-p)$) node[pos=0,below
-  right, cardinalite] {1..*} node[pos=1, fill=white] {\tiny
-    \emph{Fusion} 3} -| (zlp-p) 
-  node[pos=1,above right,cardinalite]{1};  
-\end{scope}
-
-
-% \begin{scope}
-%   \draw[->, black] (I.east) -- (is.west) node[pos=0,below] {1} node[pos=1,below]{1..*};
-
-%   \draw[->, black] (is-1-1.east) -- (is_o.west) node[pos=0,below] {1} node[pos=1,below]{1..*}; 
+  %   \draw[->, black] (is_o-1-1.east) --
+  %   (is_o_r.west) node[pos=0,below]
+  %   {1} node[pos=1,below]{1..*}; 
   
-%   \draw[->, black] (is_o-1-1.east) --
-%   (is_o_r.west) node[pos=0,below]
-%   {1} node[pos=1,below]{1..*}; 
+  %   \draw[->, black] (is_o_r-1-1.east) -- (is_o_r-1-2.west) node[pos=0,below]
+  %   {1} node[pos=1,below]{1}; 
   
-%   \draw[->, black] (is_o_r-1-1.east) -- (is_o_r-1-2.west) node[pos=0,below]
-%   {1} node[pos=1,below]{1}; 
+  %   \draw[->, black] (is_o_r.east) -- (zlb-1-1.west) node[pos=0,below] {1..*} node[pos=1,below]{1}; 
   
-%   \draw[->, black] (is_o_r.east) -- (zlb-1-1.west) node[pos=0,below] {1..*} node[pos=1,below]{1}; 
+  %   \draw[->, black]
+  %   (zlb.east) -- (zlc-1-1.west) node[pos=0,below] {1..*} node[pos=1,below]{1}; 
   
-%   \draw[->, black]
-%   (zlb.east) -- (zlc-1-1.west) node[pos=0,below] {1..*} node[pos=1,below]{1}; 
-  
-%   \draw[->, black] (zlc.east) -- (zlp.west) node[pos=0,below] {1..*} node[pos=1,below]{1}; 
-% \end{scope}
+  %   \draw[->, black] (zlc.east) -- (zlp.west) node[pos=0,below] {1..*} node[pos=1,below]{1}; 
+  % \end{scope}
 
 
-\begin{scope}
-  \draw[<->, black, dotted] ([xshift=.5cm]I.east) -- ([xshift=-.5cm]zlp.west) node[pos=0,below,cardinalite]
-  {1} node[pos=0.5, fill=white] {\tiny Bijection} node[pos=1,below,cardinalite]{1}; 
+  \begin{scope}
+    \draw[<->, black, dotted] ([xshift=.5cm]I.east) -- ([xshift=-.5cm]zlp.west) node[pos=0,below,cardinalite]
+    {1} node[pos=0.5, fill=white] {\tiny Bijection} node[pos=1,below,cardinalite]{1}; 
 
-  \draw[<->, black, dotted] ([xshift=.5cm]is.east) -- ([xshift=-.5cm]zlc.west) node[pos=0,below,cardinalite]
-  {1} node[pos=0.5, fill=white] {\tiny Bijection} node[pos=1,below,cardinalite]{1}; 
+    \draw[<->, black, dotted] ([xshift=.5cm]is.east) -- ([xshift=-.5cm]zlc.west) node[pos=0,below,cardinalite]
+    {1} node[pos=0.5, fill=white] {\tiny Bijection} node[pos=1,below,cardinalite]{1}; 
 
-  \draw[<->, black, dotted] ([xshift=.5cm]is_o.east) -- ([xshift=-.5cm]zlb.west) node[pos=0,below,cardinalite]
-  {1} node[pos=0.5, fill=white] {\tiny Bijection}  node[pos=1,below,cardinalite]{1}; 
-\end{scope}
+    \draw[<->, black, dotted] ([xshift=.5cm]is_o.east) -- ([xshift=-.5cm]zlb.west) node[pos=0,below,cardinalite]
+    {1} node[pos=0.5, fill=white] {\tiny Bijection}  node[pos=1,below,cardinalite]{1}; 
+  \end{scope}
 
-%% XX
+  %% XX
 
-% \begin{scope}[below of=I]
-%   \draw[acc3m] (0,0) --++ (8,0) node[pos=.5, yshift=-.5cm] {\emph{Décomposition}};
-%   \draw[acc3m] (8,0) --++ (3,0) node[pos=.5, yshift=-.5cm] {\emph{Spatialisation}};
-%   \draw[acc3m] (13.4,0) --++ (2,0) node[pos=.5, yshift=-.5cm] {\emph{Fusion}};
-% \end{scope}
+  % \begin{scope}[below of=I]
+  %   \draw[acc3m] (0,0) --++ (8,0) node[pos=.5, yshift=-.5cm] {\emph{Décomposition}};
+  %   \draw[acc3m] (8,0) --++ (3,0) node[pos=.5, yshift=-.5cm] {\emph{Spatialisation}};
+  %   \draw[acc3m] (13.4,0) --++ (2,0) node[pos=.5, yshift=-.5cm] {\emph{Fusion}};
+  % \end{scope}
 
   % \path[ffa] (0,0) rectangle ++(2,-12);
 
@@ -207,7 +192,7 @@ anchor=west, nodes={anchor=base, baseline}] (zlc) at ([xshift=1.5cm]zlb.east  |-
   % \path[ffa] (5,-4.5) rectangle ++(2,-2);
   % \path[ffa] (5,-8) rectangle ++(2,-2);
 
-  % %seg
+  % % seg
   % \path[ffa] (7.5,0) rectangle ++(2,-1.25);
   % \path[ffa] (7.5,-1.75) rectangle ++(2,-1.25);
   
@@ -221,7 +206,7 @@ anchor=west, nodes={anchor=base, baseline}] (zlc) at ([xshift=1.5cm]zlb.east  |-
   % \path[ffa] (10,-7) rectangle ++(2,-3);
   
 
-  %\path[ffa] (20,0) rectangle ++(2,-12);
+  % \path[ffa] (20,0) rectangle ++(2,-12);
 
 
 \end{tikzpicture}
