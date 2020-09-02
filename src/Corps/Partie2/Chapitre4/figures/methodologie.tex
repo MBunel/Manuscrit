@@ -36,9 +36,9 @@ anchor=south west, nodes={baseline}] (is_o) at
 ([xshift=1cm,yshift=1.5cm]is-1-1.north east) {o_1&o_2&\cdots{}&o_n\\};
 
 \matrix [matrix of math nodes,
-anchor=south west, nodes={minimum height=.75cm}] (is_o_r) at
+anchor=south west, nodes={minimum height=.75cm, font=\footnotesize}] (is_o_r) at
 ([xshift=1cm,yshift=1.5cm]is_o-1-1.north east)
-{\text{RSA}_1&\text{RSA}_2&\cdots{}&\text{RSA}_n\\};
+{\text{RSA}_1&\cdots{}&\text{RSA}_n\\};
 
 \matrix [matrix of nodes, column sep=.25cm,
 anchor=west, nodes={anchor=center, minimum height=.75cm}] (temp) at
@@ -120,7 +120,7 @@ anchor=west, nodes={anchor=base, baseline}] (zlc) at ([xshift=1.5cm]zlb.east  |-
   \draw[-<<, black,] (I-p) |- ($(I-p)!0.5!(is-g)$) node[pos=0,above
   right, cardinalite] {1} node[pos=1, fill=white] {\tiny
     \emph{Décomposition} 1} -| (is-g) 
-  node[pos=1,below right,cardinalite]{1..*};
+    node[pos=1,below right,cardinalite]{1..*};
 
   \draw[-<<, black,] (is-p) |- ($(is-p)!0.5!(is_o-g)$) node[pos=0,above
   right, cardinalite] {1} node[pos=1, fill=white] {\tiny
