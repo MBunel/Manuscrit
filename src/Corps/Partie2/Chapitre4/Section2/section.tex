@@ -200,22 +200,55 @@ est atomique, contrairement à \emph{l'ensemble des indices de
   décomposition,} l'ensemble des \emph{indices de localisation :}
 \enquote{je suis proche du \emph{Pic de Jean Ray}} et \enquote{je suis
   sur une crête} devient :
-%
+
 \begin{quote}
-  \enquote{je suis proche du \emph{Pic de Jean Ray}} et ((\enquote{je
-    suis proche de la \emph{crête de Roche Motte}} et \enquote{je suis
-    à une altitude supérieure à la \emph{crête de Roche Motte}}) ou
-  (\enquote{je suis proche de la \emph{crête de Font Froide}} et
-  \enquote{je suis à une altitude supérieure à la \emph{crête de Font
-      Froide}}) ou (\enquote{je suis proche de la \emph{crête de Serre
-      Chapelle}} et \enquote{je suis à une altitude supérieure à la
-    \emph{crête de Serre Chapelle}}) ou (\enquote{je suis proche de la
-    \emph{crête des Barres}} et \enquote{je suis à une altitude
-    supérieure à la \emph{crête des Barres}}) ou (\enquote{je suis
-    proche de la \emph{crête du Petit Puy}} et \enquote{je suis à une
-    altitude supérieure à la \emph{crête du Petit Puy}})).
+  \begin{tikzpicture}[%
+    grow via three points={one child at (0.5,-0.7) and
+      two children at (0.5,-0.7) and (0.5,-1.4)},
+    edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}
+    ]
+    \node[anchor=south west,text=RdBu-9-1] {$\wedge$}
+    child {node[anchor=south west] {\enquote{je suis proche du \emph{Pic
+            de Jean Ray}}}}
+    child {node[anchor=south west, text=RdBu-9-9] {$\vee$}
+      child{node[anchor=south west, text=RdBu-9-1] {$\wedge$}
+        child{node[anchor=south west]{\enquote{je suis proche de la
+              \emph{crête de Roche Motte}}}} 
+        child{node[anchor=south west]{\enquote{je suis à une altitude
+              supérieure à la \emph{crête de Roche Motte}}}}
+      }
+      child[missing]{}
+      child{node[anchor=south west,text=RdBu-9-1]{$\wedge$}
+        child{node[anchor=south west]{\enquote{je suis proche de la
+              \emph{crête de Font Froide}}}} 
+        child{node[anchor=south west]{\enquote{je suis à une altitude
+              supérieure à la \emph{crête de Font Froide}}}} 
+      }
+      child[missing]{}
+      child{node[anchor=south west,text=RdBu-9-1]{$\wedge$}
+        child{node[anchor=south west]{\enquote{je suis proche de la
+              \emph{crête de Serre Chapelle}}}} 
+        child{node[anchor=south west]{\enquote{je suis à une altitude
+              supérieure à la \emph{crête de Serre Chapelle}}}} 
+      }
+      child[missing]{}
+      child{node[anchor=south west,text=RdBu-9-1]{$\wedge$}
+        child{node[anchor=south west]{\enquote{je suis proche de la
+              \emph{crête des Barres}}}} 
+        child{node[anchor=south west]{\enquote{je suis à une altitude
+              supérieure à la \emph{crête des Barres}}}} 
+      }
+      child[missing]{}
+      child{node[anchor=south west,text=RdBu-9-1]{$\wedge$}
+        child{node[anchor=south west]{\enquote{je suis proche de la
+              \emph{crête du Petit Puy}}}} 
+        child{node[anchor=south west]{\enquote{je suis à une altitude
+              supérieure à la \emph{crête du Petit Puy}}}} 
+      }
+    };
+  \end{tikzpicture}
 \end{quote}
-%
+
 Comme le montre cette longue énumération, \emph{le processus de
   décomposition,} même lorsqu'il est appliqué à un petit
 \emph{ensemble d'indices de localisation} (ici deux), peut générer de
@@ -232,7 +265,7 @@ décomposés il est possible de procéder à leur \emph{spatialisation.}
 Comme nous expliquions précédemment, la phase de spatialisation
 consiste à transformer un \emph{indice de localisation} en une
 \emph{zone de localisation compatible.}
-%
+% 
 Il s'agit de la seule étape de notre méthode qui ne modifie pas le
 nombre d'objets traité (la phase de \emph{décomposition} les augmente
 et celle de \emph{fusion} les réduit) et qui crée un nouveau type de
@@ -268,7 +301,7 @@ Au terme de la phase de \emph{spatialisation} on dispose d'autant de
 notre méthode, mais leur (potentiel) grand nombre rend leur
 exploitation directe, sinon impossible délicate, il est donc
 nécessaire de les fusionner pour obtenir une seule zone, la ZLP.
- 
+
 \subsection{La phase de fusion}
 
 La \emph{phase de fusion} des \emph{zones de localisation} se
