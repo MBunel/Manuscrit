@@ -26,18 +26,26 @@
   ([xshift=1cm,yshift=2cm]is-1-1.north east) {o_1&o_2&\cdots{}&o_n\\};
 
   \matrix [matrix of math nodes,
-  anchor=south west, nodes={minimum height=.75cm, font=\footnotesize}] (is_o_r) at
+  anchor=south west,
+  nodes={minimum size=1cm}] (is_o_r) at
   ([xshift=1cm,yshift=2cm]is_o-1-1.north east)
-  {\text{RSA}_1&\cdots{}&\text{RSA}_n\\};
+  {
+    \text{\textsf{rsa}}_1&
+    \text{\textsf{rsa}}_2&
+    \cdots{}&
+    \text{\textsf{rsa}}_n\\
+  };
 
-  \matrix [matrix of nodes, column sep=.25cm,
-  anchor=west, nodes={anchor=center, minimum height=.75cm}] (zla) at
+  \matrix [matrix of nodes,
+  anchor=west,
+  nodes={minimum size=1cm}
+  ] (zla) at
   ([xshift=1cm]is_o_r.east)
   {
-    \draw[ffa,ffc] (0,0) circle (.2cm);&
-    \draw[ffa,ffc] (0,0) circle (.2cm);&
+    \draw[ffa,ffc] (0,0) circle (.3cm);&
+    \draw[ffa,ffc] (0,0) circle (.3cm);&
     \node{$\cdots{}$};&
-    \draw[ffa,ffc] (0,0) circle (.2cm);\\
+    \draw[ffa,ffc] (0,0) circle (.3cm);\\
   };
 
   % \text{ZLC}_{rsa1}\\ 
