@@ -1,235 +1,90 @@
-Pour formaliser les décompositions des \emph{relations de
-  localisations} nous avons opté pour la construction d'une
-\emph{ontologie} des \emph{relations de localisation atomiques}
-contenant l'ensemble des \emph{relations de localisation} identifiées
-comme pertinentes et leur(s) décomposition(s).
+Comme nous l'avons détaillé dans le \autoref{chap:04}, la phase de
+décomposition est subdivisible en trois étapes (décomposition de
+l'ensemble des indices de localisation, des \emph{objets de référence
+  indéfinis}, et des \emph{relations de localisation}), dont seule la
+dernière nécessite le développement d'une méthode spécifique. En
+effet, les étapes de décomposition de ensemble des \emph{indices de
+  localisation} et des \emph{objets de référence indéfinis} ne
+qu'expliciter un découpage présent dès la saisie. Ces deux opérations
+ne nécessitent donc pas l'apport de connaissances supplémentaires,
+contrairement à la décomposition des \emph{relations de localisation.}
 
-\tdi{Ajouter ontologie des objets de référence}
+En effet, les \emph{principes de décomposition} et de
+\texttt{intégration contexte métier} s'opposent en partie. Si la
+décomposition permet de faciliter la \emph{spatialisation} des
+\emph{indices de localisation} en permettant de manipuler des concepts
+précis et en minimisant les redondances, elle implique également de
+travailler à l'aide de \emph{relations de localisation} (atomiques)
+\emph{ad hoc,} qui ne sont pas conçues pour être faciles à manipuler
+par l'utilisateur et encore moins pour être proche des \emph{relations
+  de localisations} qu'elles décomposent. Il est donc difficilement
+envisageable de demander à l'utilisateur de saisir directement les
+\emph{relations de localisation} décomposées (\ie les \emph{relations
+  de localisation atomiques}). C'est pourquoi nous proposons
+d'automatiser cette étape.
 
-Pour identifier les \emph{relations de localisations} pertinentes pour
-notre contexte applicatif nous avons entrepris de recenser celles qui
-sont les plus utilisées lors des alertes. Pour ce faire nous avons
-retranscrit et analysé différents enregistrements d'alertes passées.
-
-Le travail de retranscription des alertes (et dans une moindre mesure
-celui de leur analyse) a été réalisé collaborativement
-\autocite{Bunel2019}, les résultats pouvant bénéficier à différents
-objectifs du projet Choucas.
-
-\subsection{Les corpus d'alertes}
-
-Les retranscriptions utilisées pour construire \emph{les ontologies
-  des relations de localisation} et des \emph{relations de
-  localisation atomiques} ont été réalisées à partir d'un ensemble de
-52 enregistrements d'appels de demande d'assistance auprès des
-\ac{pghm} de Chamonix (5 alertes) et de Grenoble (47 alertes). Ces
-fichiers, compilés par le \ac{pghm} de Grenoble, forment deux corpus
-d'alertes distincts, dont le premier nous a été transmis en 2017 et le
-second en 2019. Ces deux corpus sont relativement similaires, que ce
-soit par la durée de leurs alertes ---~qui varie de quelques secondes
-à plusieurs dizaines de minutes (\autoref{fig:dist_temps_alertes})~---
-ou par leur contenu. Malheureusement nous n'avons que peu
-d'informations sur le contexte de ces différentes alertes. Si nous
-savons que ces dernières ne sont qu'une sélection parmi l'ensemble des
-enregistrements à la disposition du \ac{pghm} de Grenoble, nous
-n'avons pas connaissance de la manière dont cette sélection a été
-effectuée, bien que ces alertes aient été qualifiées de
-représentatives par le \ac{pghm}.
-
-Une particularité importante de ces enregistrements est qu'ils sont
-réalisés au niveau de la ligne téléphonique des \ac{pghm} et non des
-\ac{codis}, généralement contactés par les requérants
-(cf. \autoref{chap:02}). Par conséquent nous n'avons généralement pas
-connaissance du début ou de la fin de la communication. De plus, les
-fichiers qui nous ont été transmis ne correspondent pas aux
-enregistrements initiaux. Ces derniers ont été montés, initialement de
-sorte à censurer les informations personnelles (\eg identité de la
-victime, description des blessures), mais dans les faits ils ne
-continent généralement que la phase de description de position.
+Pour ce faire il est nécessaire de définir au préalable la manière
+dont les différentes \emph{relations de localisation} spatialisables
+se décomposent (cf. présentation du \emph{principe de modélisation
+  explicite des connaissances}, \autoref{chap:04}). Nous avons choisi
+de formaliser ces décomposition au sein d'une ontologie, créée pour
+l'occasion. Pour permettre la décomposition des \emph{relations de
+  localisation} cette dernière doit contenir, a minima, trois types
+d'informations :
+%
+\begin{enumerate*}[label=(\alph*)]
+\item \emph{les relations de localisation} à décomposer,
+\item les \emph{relations de localisation atomiques} qui les
+  décomposent et
+\item les \emph{relations de décomposition} formalisant la
+  décomposition d'une \emph{relation de localisation} en plusieurs
+  \emph{relations de localisations atomiques}
+  (\autoref{fig:onto_min_struct}).
+\end{enumerate*}
+%
+L'ensemble des \emph{relations de localisation} définies dans
+l'ontologie forme un vocabulaire contrôlé, permettant à l'utilisateur
+de saisir les \emph{indices de localisation}. La décomposition de ces
+relations ne lui est pas connue. Le travail de décomposition ne
+consiste alors qu'a identifier la \emph{relation de localisation}
+utilisée et à identifier les \emph{relations de localisation
+  atomiques} qui la décomposent à l'aide des \emph{relations de
+  décomposition} définies dans l'ontologie.
 
 \begin{figure}
   \centering
-  \input{../figures/distribution_audio.tex}
-  \caption{Distribution de la durée des alertes}
-  \label{fig:dist_temps_alertes}
+  \input{../figures/ontologie_min_struc.tex} 
+  \caption{Éléments nécessaires pour permettre de décomposer une
+    \emph{relation de localisation} ($rl_i$) en un ensemble de
+    \emph{relations de localisation atomiques} ($rla_i$).}
+  \label{fig:onto_min_struct}
 \end{figure}
 
-\subsection{Template de retranscription}
+Comme nous l'expliquions lors de la présentation de la phase de
+décomposition, chacune des étapes de cette phase consiste à créer un
+nouvel \emph{indice de localisation.} Conformément au \emph{principe
+  de modélisation autonome,} chaque \emph{indice de localisation}
+traité peut être décomposé de manière indépendante.
 
-L'analyse des enregistrements nécessite au préalable leur 
-Pour exploiter les informations contenues dans les enregistrements il
-a été nécessaire de les retranscrire afin de les analyser.
-%
-Notre parti-pris n'a pas été de travailler à partir d'une
-retranscription libre de ces alertes, mais à l'aide d'un tableau
-prédéfini, un \emph{template de retranscription}
-(\autoref{tab:struct_temp}) dont la structure reprend celle des
-\emph{indices de localisation} telle que nous l'avons définie
-(cf. \autoref{chap:04}).
+Comme le montre la \autoref{fig:onto_min_struct}, plusieurs
+configurations de décompositions sont envisageables. La première
+d'entre-elles, la plus courante, est la décomposition d'une
+\emph{relation de localisation} en plusieurs \emph{relations de
+  localisation atomiques} (\eg \(rk_1\) et \(rl_3\),
+cf. \autoref{fig:onto_min_struct}). Ces dernières peuvent partager une
+\emph{relation de localisation atomique} (\eg \(rk_2\) et \(rl_3\)
+dont la décomposition contient \(rla_3\)), ce qui est souhaité par le
+\emph{principe de décomposition.} Dans certaines configurations (\eg
+\(rl_2\)), on ne peut pas identifier de décomposition satisfaisante
+pour une \emph{relation de localisation.} La \emph{relation de
+  localisation} n'est alors que l'alias d'une \emph{relation de
+  localisation atomique.} Dans ce cas il n'est pas nécessaire de
+définir (contrairement a ce qui a été fait pour l'exemple de la
+\autoref{fig:onto_min_struct}), une \emph{relation de localisation} et
+une \emph{relation de localisation atomique,} on peut simplement
+définir la seconde et la présenter à l'utilisateur comme une
+\emph{relation de localisation non atomique.}
 
-La version ici décrite ne 
-
-Dans sa forme finale, ce modèle de transcription se présente sous la
-forme d'un fichier tabulaire (plus précisément une feuille de calcul)
-structuré et documenté. Pour faciliter les saisies et leur répartition
-entre transcripteurs, un fichier est créé pour chaque alerte.
-%
-Les informations à transcrire pour chaque alerte sont réparties en
-trois onglets
-%
----~\begin{enumerate*}[label=(\alph*)]
-\item \emph{métadonnées},
-\item \emph{interprétation des expressions} et
-\item \emph{toponymie}
-\end{enumerate*}~---,
-%
-permettant de regrouper les saisies par nature et par granularité.
-%
-Le premier d'entre-eux, l'onglet \emph{métadonnées,} permet de
-renseigner toutes les informations d'ordre général sur une alerte,
-comme la date et l'heure de l'appel, l'identité du requérant (\eg
-victime, témoin, \emph{etc.}) ou l’activité pratiquée lors de
-l'accident. Toutes ces informations ne sont saisies qu'une fois par
-alerte, contrairement à celles saisies dans les deux onglets suivants,
-où chaque expression de localisation de l'enregistrement est
-transcrite. C'est dans le second onglet que sont saisies la plupart
-des informations extraites des alertes et l’entièreté de celles
-utilisées pour la construction de l'ontologie des \emph{relations de
-  localisation.} L'onglet \emph{interprétation des expressions} est
-composé de 15 colonnes (\autoref{tab:struct_temp}), que l'on peut
-regrouper en trois catégories :
-%
-\begin{enumerate*}[label=(\alph*)]
-\item \emph{extrait},
-\item \emph{contexte} et
-\item \emph{expression}
-\end{enumerate*}
-%
-La première d'entre-elles regroupe les colonnes décrivant l'extrait
-audio traité, comme les deux colonnes \enquote{\emph{identifiant}}, la
-colonne \enquote{\emph{extrait}} et la colonne
-\enquote{\emph{timestamp}}. Les colonnes \enquote{\emph{identifiant}}
-permettent de donner une référence unique à chaque élément
-transcrit. La présence de deux colonnes permet de faire la distinction
-entre les \emph{extraits,} qui correspondent à découpage rythmique de
-la conversation (changement de locuteur, nouvelle phrase,
-\emph{etc.}), et les \emph{expressions,} contenues dans les
-\emph{extraits,} correspondant au découpage en \emph{indices de
-  localisation.} Par exemple, si la conversation entre le secouriste
-(\bsc{s.}) et le requérant (\bsc{r.}) est :
-%
-\begin{quote}
-  \begin{dialogue}
-    \Sec Vous êtes au sommet ?
-    \Req Non, je suis bien en dessous.
-  \end{dialogue}
-\end{quote}
-%
-On identifiera deux \emph{extraits :}
-%
-\begin{enumerate*}[label=(\alph*)]
-\item \enquote{Vous êtes au sommet ?} et
-\item \enquote{Non, je suis bien en dessous},
-\end{enumerate*}
-%
-délimités par le changement de locuteur. Si le premier ne contient
-qu'une seule \emph{expression,} le second en contient deux, la
-négation de la question, dont la sémantique correspond à
-\emph{l'expression} \enquote{je ne suis pas au sommet} et
-\emph{l'expression} \enquote{je suis bien en dessous}. Ainsi, cet
-exemple est composé de deux \emph{extraits} et de trois
-\emph{expressions.}
-%
-Pour faciliter l'analyse et la vérification des transcriptions, nous
-avons défini une colonne \enquote{\emph{extrait}}, permettant de
-saisir le verbatim de l'extrait analysé, et une colonne
-\enquote{\emph{timestamp}} indiquant la position de l'extrait dans le
-fichier audio correspondant.
-
-La seconde catégorie regroupe les colonnes permettant de décrire le
-contexte de chaque expression. On y retrouve la colonne
-\enquote{\emph{locuteur}}, renseignant sur la personne ayant prononcé
-l'extrait étudié (\eg secouriste, requérant) et la colonne
-\enquote{\emph{confiance}}, permettant au transcripteur (dans le cas
-où il s'agit d'un secouriste) de juger de la plausibilité de
-l'information donnée par l'extrait. Si nous distinguons ces deux
-colonnes des \emph{métadonnées} de l'extrait (\ie le groupe de
-colonnes précédent) c'est car ces dernières demandent une
-interprétation de l'extrait, contrairement aux \emph{métadonnées.}
-
-Enfin, la troisième catégorie, qui regroupe la majorité des colonnes,
-permet l'interprétation et la saisie de chaque expression. On y
-retrouve les colonnes \emph{verbe,} \emph{sujet,} \emph{relation de
-  localisation} et \emph{objet de référence,} correspondant aux
-éléments du même nom dans la formalisation des \emph{indices de
-  localisation} et les \emph{modifieurs} qui y sont associés.
-
-
-Les colonnes \enquote{\emph{objet de référence}} et
-\enquote{\emph{modifieur de l'objet de référence}} ont la
-particularité de pourvoir être doublées (voir plus si nécessaire) dans
-le cas où la \emph{relation de localisation} le nécessiterait.
-
-% Exemple
-Si l'on reprend le second extrait de l'exemple précédent (\ie
-\enquote{Non, je suis bien en dessous}), deux extraits sont à
-saisir. Le premier est la négation de la question du secouriste (\ie
-\enquote{Vous êtes au sommet}), que l'on peut interpréter comme
-\emph{l'indice de localisation} \enquote{je ne suis pas au
-  sommet}. Ici le verbe de l'expression est \enquote{être}, le sujet
-est le requérant, la \emph{relation de localisation} est la
-préposition \enquote{à} et l'objet de référence est
----~implicitement~--- \enquote{le sommet} \footnote{Le \enquote{à le}
-  est contracté en \enquote{au} dans l'extrait}. La forme négative de
-la phrase est transcrite avec un \emph{modifieur du verbe} et les
-autres modifieurs ne sont pas renseignés. Pour la seconde expression
-(\ie \enquote{je suis bien en dessous}) le \emph{sujet} et sont
-modifieur et \emph{l'objet de référence} et sont modifieur sont
-inchangés, il s'agit toujours du \emph{requérant} qui se situe par
-rapport au \emph{sommet.} Le \emph{verbe} est toujours \enquote{être},
-mais son modifieur disparait, l'expression n'étant pas une
-négation. Pour finir la \emph{relation de localisation} devient
-\enquote{\emph{en dessous}} et son modifieur est
-\enquote{\emph{bien}}.
-
-Enfin, le dernier onglet du template de transcription est destiné à la
-saisie détaillée des \emph{objets de référence utilisés.} Comme pour
-l'onglet des \emph{extraits,} chaque ligne correspond à une
-\emph{expression} issue de l'alerte. Par ailleurs toutes les lignes de
-ce troisième onglet doivent être saisies, il y a donc une bijection
-entre les enregistrements de l'onglet \enquote{expressions} et ceux de
-l'onglet \enquote{objets de référence}. Le but de cet onglet est de
-permettre la saisie d'informations complémentaires sur les
-\emph{objets géographiques} utilisés dans les expressions, comme les
-\emph{objets de référence} ou le \emph{sujet,} notamment dans le cas
-où l'expression décrit la position d'un autre objet qu'une personne
-(\eg \enquote{le chalet à côté de la cascade}). En effet, lorsqu'on
-saisit un \emph{objet géographique} (\eg \emph{l'objet de référence})
-dans l'onglet \emph{expression} on utilise le terme employé par le
-locuteur dans l'expression (\eg \enquote{La Bérarde}, \enquote{un
-  sommet}, \emph{etc.}) sans modification. Ainsi les objets définis
-sont désignés par leur nom (ou tout du moins le nom que le locuteur
-leur donne) et les objets indéfinis par leur type. L'onglet
-\emph{toponymie} permet alors de préciser le type de tous les objets
-géographiques, en vue de leur analyse ultérieure. Si l'on reprend
-l'exemple précédent (\ie \enquote{Non, je suis bien en dessous}) nous
-ne sommes pas en mesure d'ajouter des informations sur \emph{l'objet
-  de référence} \enquote{sommet}, son nom étant inconnu.
-
-\begin{table}
-  \centering
-  \input{../tableaux/structure_template.tex}
-  \caption{Structure de l'onglet \enquote{\emph{expressions}} du
-    template de retranscription.}
-  \label{tab:struct_temp}
-\end{table}
-
-\subsection{Analyse des retranscriptions}
-
-La retranscription des 52 alertes nous a permis d'identifier 374
-expressions différentes.
-
-- configuration vs position
 
 %%% Local Variables:
 %%% mode: latex
