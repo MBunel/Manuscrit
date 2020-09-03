@@ -28,15 +28,15 @@ Les retranscriptions utilisées pour construire \emph{les ontologies
 fichiers, compilés par le \ac{pghm} de Grenoble, forment deux corpus
 d'alertes distincts, dont le premier nous a été transmis en 2017 et le
 second en 2019. Ces deux corpus sont relativement similaires, que ce
-soit par la durée de leurs alertes ---~qui varie de quelques secondes
-à plusieurs dizaines de minutes (\autoref{fig:dist_temps_alertes})~---
-ou par leur contenu. Malheureusement nous n'avons que peu
-d'informations sur le contexte de ces différentes alertes. Si nous
-savons que ces dernières ne sont qu'une sélection parmi l'ensemble des
-enregistrements à la disposition du \ac{pghm} de Grenoble, nous
-n'avons pas connaissance de la manière dont cette sélection a été
-effectuée, bien que ces alertes aient été qualifiées de
-représentatives par le \ac{pghm}.
+soit par le nombre d'alertes, leur durée ---~qui varie de quelques
+secondes à plusieurs dizaines de minutes
+(\autoref{fig:dist_temps_alertes})~--- ou leur
+contenu. Malheureusement nous n'avons que peu d'informations sur le
+contexte de ces différentes alertes. Si nous savons que ces dernières
+ne sont qu'une sélection parmi l'ensemble des enregistrements à la
+disposition du \ac{pghm} de Grenoble, nous n'avons pas connaissance de
+la manière dont cette sélection a été effectuée, bien que ces alertes
+aient été qualifiées de représentatives par le \ac{pghm}.
 
 Une particularité importante de ces enregistrements est qu'ils sont
 réalisés au niveau de la ligne téléphonique des \ac{pghm} et non des
@@ -69,14 +69,13 @@ prédéfini, un \emph{template de retranscription}
 \emph{indices de localisation} telle que nous l'avons définie
 (cf. \autoref{chap:04}).
 
-La version ici décrite ne 
+La version ici décrite ne
 
-Dans sa forme finale, ce modèle de transcription se présente sous la
-forme d'un fichier tabulaire (plus précisément une feuille de calcul)
-structuré et documenté. Pour faciliter les saisies et leur répartition
-entre transcripteurs, un fichier est créé pour chaque alerte.
+Pour faciliter les saisies et leur répartition entre transcripteurs,
+un fichier est créé pour chaque alerte.
 %
-Les informations à transcrire pour chaque alerte sont réparties en
+Dans sa forme finale, ce modèle de transcription se présente sous la
+forme d'un fichier tabulaire structuré et auto-documenté, composé de
 trois onglets
 %
 ---~\begin{enumerate*}[label=(\alph*)]
@@ -86,7 +85,7 @@ trois onglets
 \end{enumerate*}~---,
 %
 permettant de regrouper les saisies par nature et par granularité.
-%
+
 Le premier d'entre-eux, l'onglet \emph{métadonnées,} permet de
 renseigner toutes les informations d'ordre général sur une alerte,
 comme la date et l'heure de l'appel, l'identité du requérant (\eg
@@ -97,14 +96,16 @@ où chaque expression de localisation de l'enregistrement est
 transcrite. C'est dans le second onglet que sont saisies la plupart
 des informations extraites des alertes et l’entièreté de celles
 utilisées pour la construction de l'ontologie des \emph{relations de
-  localisation.} L'onglet \emph{interprétation des expressions} est
-composé de 15 colonnes (\autoref{tab:struct_temp}), que l'on peut
-regrouper en trois catégories :
+  localisation.}
+
+L'onglet \emph{interprétation des expressions} est composé de 15
+colonnes (\autoref{tab:struct_temp}), que l'on peut regrouper en trois
+catégories :
 %
 \begin{enumerate*}[label=(\alph*)]
 \item \emph{extrait},
 \item \emph{contexte} et
-\item \emph{expression}
+\item \emph{expression.}
 \end{enumerate*}
 %
 La première d'entre-elles regroupe les colonnes décrivant l'extrait
@@ -165,7 +166,6 @@ retrouve les colonnes \emph{verbe,} \emph{sujet,} \emph{relation de
   localisation} et \emph{objet de référence,} correspondant aux
 éléments du même nom dans la formalisation des \emph{indices de
   localisation} et les \emph{modifieurs} qui y sont associés.
-
 
 Les colonnes \enquote{\emph{objet de référence}} et
 \enquote{\emph{modifieur de l'objet de référence}} ont la
@@ -270,7 +270,6 @@ l'ontologie des relations de localisation.
   \label{tab:orl_vs_orla}
 \end{table}
 
-
 \subsubsection{L'ontologie des \emph{relations de localisation}}
 
 3 classes principales + visibilité
@@ -341,7 +340,7 @@ l'acceptation des utilisateurs)
 
 \begin{figure}
   \centering
-  \input{../figures/ontologie.tex}
+  %\input{../figures/ontologie.tex}
   \caption{Onto}
   \label{fig:ontho}
 \end{figure}
