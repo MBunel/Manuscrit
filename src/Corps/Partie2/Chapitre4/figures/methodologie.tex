@@ -17,12 +17,13 @@
   \node[font=\bfseries, baseline] (I) at (0,0) {$I$};
 
   \matrix [matrix of math nodes,
-  anchor=south west, nodes={anchor=base, baseline}] (is) at
+  anchor=south west,
+  nodes={anchor=base, baseline,minimum size=1cm}] (is) at
   ([xshift=1cm,yshift=2cm]I.north east)
   {i_1&i_2&\cdots{}&i_n\\};
 
   \matrix [matrix of math nodes,
-  anchor=south west, nodes={baseline}] (is_o) at
+  anchor=south west, nodes={baseline,minimum size=1cm}] (is_o) at
   ([xshift=1cm,yshift=2cm]is-1-1.north east) {o_1&o_2&\cdots{}&o_n\\};
 
   \matrix [matrix of math nodes,
@@ -53,14 +54,16 @@
   % ts{}\\              
   % \text{ZLC}_{rsa_n}\\
 
-  \matrix [matrix of nodes, column sep=.25cm, anchor=west,
-  nodes={anchor=center, minimum height=.75cm}] (zlb) at
-  ([xshift=1.5cm]is_o_r.east |- is_o)
+  \matrix [matrix of nodes,
+  anchor=north west,
+  nodes={minimum size=1cm}
+  ] (zlb) at
+  ([xshift=1cm,yshift=-2cm]zla-1-1.south)
   {
-    \draw[ffa,ffc] (0,0) circle (.2cm);&
-    \draw[ffa,ffc] (0,0) circle (.2cm);&
+    \draw[ffa,ffc] (0,0) circle (.3cm);&
+    \draw[ffa,ffc] (0,0) circle (.3cm);&
     \node{$\cdots{}$};&
-    \draw[ffa,ffc] (0,0) circle (.2cm);\\
+    \draw[ffa,ffc] (0,0) circle (.3cm);\\
   };
 
   \matrix [matrix of nodes, column sep=.25cm, anchor=west,
