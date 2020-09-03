@@ -66,22 +66,44 @@ traité peut être décomposé de manière indépendante.
 
 Comme le montre la \autoref{fig:onto_min_struct}, plusieurs
 configurations de décompositions sont envisageables. La première
-d'entre-elles, la plus courante, est la décomposition d'une
+d'entre-elles ---~la plus courante~--- est la décomposition d'une
 \emph{relation de localisation} en plusieurs \emph{relations de
   localisation atomiques} (\eg \(rk_1\) et \(rl_3\),
-cf. \autoref{fig:onto_min_struct}). Ces dernières peuvent partager une
-\emph{relation de localisation atomique} (\eg \(rk_2\) et \(rl_3\)
-dont la décomposition contient \(rla_3\)), ce qui est souhaité par le
-\emph{principe de décomposition.} Dans certaines configurations (\eg
-\(rl_2\)), on ne peut pas identifier de décomposition satisfaisante
-pour une \emph{relation de localisation.} La \emph{relation de
-  localisation} n'est alors que l'alias d'une \emph{relation de
-  localisation atomique.} Dans ce cas il n'est pas nécessaire de
-définir (contrairement a ce qui a été fait pour l'exemple de la
-\autoref{fig:onto_min_struct}), une \emph{relation de localisation} et
-une \emph{relation de localisation atomique,} on peut simplement
-définir la seconde et la présenter à l'utilisateur comme une
-\emph{relation de localisation non atomique.}
+cf. \autoref{fig:onto_min_struct}).
+%
+Ces dernières peuvent partager une \emph{relation de localisation
+  atomique} (\eg \(rk_2\) et \(rl_3\) dont la décomposition contient
+\(rla_3\)), ce qui est souhaité par le \emph{principe de
+  décomposition.}
+%
+Dans certaines configurations (\eg \(rl_2\)), on ne peut pas
+identifier de décomposition satisfaisante pour une \emph{relation de
+  localisation.} La \emph{relation de localisation} n'est alors que
+l'alias d'une \emph{relation de localisation atomique.} Dans ce cas il
+n'est pas nécessaire de définir (contrairement a ce qui a été fait
+pour l'exemple de la \autoref{fig:onto_min_struct}), une
+\emph{relation de localisation} et une \emph{relation de localisation
+  atomique,} on peut simplement définir la seconde et la présenter à
+l'utilisateur comme une \emph{relation de localisation non atomique.}
+
+Pour construire la base des relations de localisation, des relations
+de localisation atomiques et des relations de décomposition en tre ces
+deux ensembles nous avons adopté, conformément au principe
+d'intégration dans le contexte métier, une démarche centrée sur le
+besoin de l'utilisateur, \ie fondée sur la définition préalable des
+\emph{relations de localisation.} Ainsi les relations de localisation
+atomiques et les relations de décomposition sont définies
+ultérieurement, par rapport aux relations de localisation et non
+l'inverse, ce qui pourrait conduite à la définition de concepts
+inadaptés à notre contexte applicatif.  En procédant de la sorte nous
+garantissions que les concepts mis à disposition des utilisateurs
+correspondent à la réalité du contexte applicatif. Pour mettre en
+place cette démarche, il est nécessaire d'identifier les
+\emph{relations de localisations} utilisées dans notre contexte et les
+spécificités de leur usage.
+
+l'aphorisme de \bsc{Wittgenstein} : \enquote{la signification c'est
+  l'usage}
 
 
 %%% Local Variables:
