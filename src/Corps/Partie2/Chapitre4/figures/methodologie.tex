@@ -16,50 +16,52 @@
   %% Matrices
 
   %%% Lvl 1
-  \matrix [matrix of math nodes, anchor=west,
-  nodes={anchor=base, baseline, minimum height=.75cm}] (I) at (0,0) {I\\};
+  \begin{scope}[local bounding box=lvl1]
+    \matrix [matrix of math nodes, anchor=east,
+    nodes={anchor=base, baseline, minimum height=.75cm}] (I) at (0,0) {I\\};
 
-  \matrix [matrix of nodes, column sep=.25cm, anchor=west,
-  nodes={anchor=center, minimum height=.75cm}] (zlp) at
-  ([xshift=5cm]I.east)
-  {
-    \draw[ffa2,ffc2] (0,0) circle (.3cm);\\
-  };
-  \node[anchor=west] at (zlp-1-1.east) {zlp};
+    \matrix [matrix of nodes, column sep=.25cm, anchor=west,
+    nodes={anchor=center, minimum height=.75cm}] (zlp) at
+    ([xshift=20cm]I.east)
+    {
+      \draw[ffa2,ffc2] (0,0) circle (.3cm);\\
+    };
+  \end{scope}
 
   %%% Lvl 2
-  \matrix [matrix of math nodes,
-  anchor=south west,
-  nodes={anchor=base, baseline,minimum size=1cm}] (is) at
-  ([yshift=2cm]I.north east)
-  {i_1&i_2&\cdots{}&i_n\\};
+  \begin{scope}[shift={($(lvl1.north) +(0,2cm)$)}, local bounding box=lvl2]
+    \matrix [matrix of math nodes,
+    anchor=south east,
+    nodes={anchor=base, baseline,minimum size=1cm}] (is) at (-5cm,0) {i_1&i_2&\cdots{}&i_n\\};
 
-  \matrix [matrix of nodes, anchor=west, nodes={minimum size=1cm}]
-  (zlc) at ([xshift=5cm]is.east) {
-    \draw[ffa,ffc] (0,0) circle (.3cm);&
-    \draw[ffa,ffc] (0,0) circle (.3cm);&
-    \node{$\cdots{}$};&
-    \draw[ffa,ffc] (0,0) circle (.3cm);\\
-  };
-  
+    \matrix [matrix of nodes, anchor=south west, nodes={minimum size=1cm}]
+    (zlc) at (5cm,0) {
+      \draw[ffa,ffc] (0,0) circle (.3cm);&
+      \node{$\cdots{}$};&
+      \draw[ffa,ffc] (0,0) circle (.3cm);&
+      \draw[ffa,ffc] (0,0) circle (.3cm);\\
+    };
+  \end{scope}
 
+  \begin{scope}[shift={($(lvl2.north) +(0,2cm)$)}, local bounding box=lvl3]
   \matrix [matrix of math nodes,
-  anchor=south west, nodes={baseline,minimum size=1cm}] (is_o) at
-  ([yshift=2cm]is-1-1.north east) {o_1&o_2&\cdots{}&o_n\\};
+  anchor=south east, nodes={baseline,minimum size=1cm}] (is_o) at
+  (-4cm,0) {o_1&o_2&\cdots{}&o_n\\};
 
     \matrix [matrix of nodes,
-  anchor=west,
+  anchor=south west,
   nodes={minimum size=1cm}
   ] (zlb) at
-  ([xshift=5cm]is_o.east)
+  (4cm,0)
   {
     \draw[ffa,ffc] (0,0) circle (.3cm);&
-    \draw[ffa,ffc] (0,0) circle (.3cm);&
     \node{$\cdots{}$};&
+    \draw[ffa,ffc] (0,0) circle (.3cm);&
     \draw[ffa,ffc] (0,0) circle (.3cm);\\
   };
+  \end{scope}
 
-
+  
   \matrix [matrix of math nodes,
   anchor=south west,
   nodes={minimum size=1cm}] (is_o_r) at
@@ -78,8 +80,8 @@
   ([xshift=1cm]is_o_r.south east)
   {
     \draw[ffa,ffc] (0,0) circle (.3cm);&
-    \draw[ffa,ffc] (0,0) circle (.3cm);&
     \node{$\cdots{}$};&
+    \draw[ffa,ffc] (0,0) circle (.3cm);&
     \draw[ffa,ffc] (0,0) circle (.3cm);\\
   };
 
@@ -89,7 +91,7 @@
   % \text{ZLC}_{rsa_n}\\
 
 
-
+  
 
   
   %% Accolades
@@ -100,17 +102,31 @@
     \draw (zlp.north west) |- ($(zlp.north west)!0.5!(zlp.north east) + (0,.1)$) -| (zlp.north east) node[pos=0, yshift=.2]
     (zlp-p) {};
     
-    \foreach \m in {is,is_o,is_o_r,zla,zlb,zlc} {
+    \foreach \m in {is,is_o,is_o_r} {
       \draw (\m.south west) |- ($(\m.south west)!0.5!(\m.south
       east) + (0,-.1)$) -| (\m.south east)  node[pos=0, yshift=.2]
       (\m-g) {};
-      \draw (\m-1-1.north west) |- ($(\m-1-1.north west)!0.5!(\m-1-1.north east) + (0,.1)$) -| (\m-1-1.north east) node[pos=0, yshift=.2]
-      (\m-p) {};
+
+      \draw (\m-1-1.north west) |- ($(\m-1-1.north
+      west)!0.5!(\m-1-1.north east) + (0,.1)$) -| (\m-1-1.north east)
+      node[pos=0, yshift=.2] (\m-p) {};
+    }
+
+    \foreach \m in {zla,zlb,zlc} {
+      \draw (\m.south west) |- ($(\m.south west)!0.5!(\m.south
+      east) + (0,-.1)$) -| (\m.south east)  node[pos=0, yshift=.2]
+      (\m-g) {};
+
+      \draw (\m-1-4.north west) |- ($(\m-1-4.north
+      west)!0.5!(\m-1-4.north east) + (0,.1)$) -| (\m-1-4.north east)
+      node[pos=0, yshift=.2] (\m-p) {};
     }
 
   \end{scope}
 
-
+  % Annotations
+  \node[anchor=west] at (zlp-1-1.east) {zlp};
+  
   \begin{scope}
     % Décomposition
     \draw[-<<, black,] (I-p) |- ($(I-p)!0.5!(is-g)$) node[pos=0,above
@@ -171,28 +187,6 @@
     
   \end{scope}
 
-
-  % \begin{scope}
-  %   \draw[->, black] (I.east) -- (is.west) node[pos=0,below] {1} node[pos=1,below]{1..*};
-
-  %   \draw[->, black] (is-1-1.east) -- (is_o.west) node[pos=0,below] {1} node[pos=1,below]{1..*}; 
-  
-  %   \draw[->, black] (is_o-1-1.east) --
-  %   (is_o_r.west) node[pos=0,below]
-  %   {1} node[pos=1,below]{1..*}; 
-  
-  %   \draw[->, black] (is_o_r-1-1.east) -- (is_o_r-1-2.west) node[pos=0,below]
-  %   {1} node[pos=1,below]{1}; 
-  
-  %   \draw[->, black] (is_o_r.east) -- (zlb-1-1.west) node[pos=0,below] {1..*} node[pos=1,below]{1}; 
-  
-  %   \draw[->, black]
-  %   (zlb.east) -- (zlc-1-1.west) node[pos=0,below] {1..*} node[pos=1,below]{1}; 
-  
-  %   \draw[->, black] (zlc.east) -- (zlp.west) node[pos=0,below] {1..*} node[pos=1,below]{1}; 
-  % \end{scope}
-
-
   \begin{scope}
     \draw[<->, black, dotted] ([xshift=.5cm]I.east) -- ([xshift=-.5cm]zlp.west) node[pos=0,below,cardinalite]
     {1} node[pos=0.5, fill=white] {\tiny Bijection} node[pos=1,below,cardinalite]{1}; 
@@ -211,32 +205,4 @@
   %   \draw[acc3m] (8,0) --++ (3,0) node[pos=.5, yshift=-.5cm] {\emph{Spatialisation}};
   %   \draw[acc3m] (13.4,0) --++ (2,0) node[pos=.5, yshift=-.5cm] {\emph{Fusion}};
   % \end{scope}
-
-  % \path[ffa] (0,0) rectangle ++(2,-12);
-
-  % \path[ffa] (3.5,0) rectangle ++(2,-5);
-  % \path[ffa] (3.5,-5.5) rectangle ++(2,-5);
-  % \node[font=\bfseries] at (4.5, -11.5) {$\vdots$};
-
-  % \path[ffa] (5,-1) rectangle ++(2,-2);
-  % \path[ffa] (5,-4.5) rectangle ++(2,-2);
-  % \path[ffa] (5,-8) rectangle ++(2,-2);
-
-  % % seg
-  % \path[ffa] (7.5,0) rectangle ++(2,-1.25);
-  % \path[ffa] (7.5,-1.75) rectangle ++(2,-1.25);
-  
-
-  
-  % \path[ffa] (7.5,-3.5) rectangle ++(2,-3);
-  % \path[ffa] (7.5,-7) rectangle ++(2,-3);
-
-  % \path[ffa] (10,0) rectangle ++(2,-3);
-  % \path[ffa] (10,-3.5) rectangle ++(2,-3);
-  % \path[ffa] (10,-7) rectangle ++(2,-3);
-  
-
-  % \path[ffa] (20,0) rectangle ++(2,-12);
-
-
 \end{tikzpicture}
