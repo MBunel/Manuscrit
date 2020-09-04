@@ -46,13 +46,13 @@
   \begin{scope}[shift={($(lvl2.north) +(0,2cm)$)}, local bounding box=lvl3]
   \matrix [matrix of math nodes,
   anchor=south east, nodes={baseline,minimum size=1cm}] (is_o) at
-  (-4cm,0) {o_1&o_2&\cdots{}&o_n\\};
+  (-2cm,0) {o_1&o_2&\cdots{}&o_n\\};
 
     \matrix [matrix of nodes,
   anchor=south west,
   nodes={minimum size=1cm}
   ] (zlb) at
-  (4cm,0)
+  (2cm,0)
   {
     \draw[ffa,ffc] (0,0) circle (.3cm);&
     \node{$\cdots{}$};&
@@ -61,37 +61,33 @@
   };
   \end{scope}
 
-  
-  \matrix [matrix of math nodes,
-  anchor=south west,
-  nodes={minimum size=1cm}] (is_o_r) at
-  ([yshift=2cm]is_o-1-1.north east)
-  {
-    \text{\textsf{rsa}}_1&
-    \text{\textsf{rsa}}_2&
-    \cdots{}&
-    \text{\textsf{rsa}}_n\\
-  };
+  \begin{scope}[shift={($(lvl3.north) +(0,2cm)$)}, local bounding box=lvl4]
+    \matrix [matrix of math nodes,
+    anchor=south east,
+    nodes={minimum size=1cm}] (is_o_r) at (-.5cm,0)
+    {
+      \text{\textsf{rsa}}_1&
+      \text{\textsf{rsa}}_2&
+      \cdots{}&
+      \text{\textsf{rsa}}_n\\
+    };
 
-  \matrix [matrix of nodes,
-  anchor=south west,
-  nodes={minimum size=1cm}
-  ] (zla) at
-  ([xshift=1cm]is_o_r.south east)
-  {
-    \draw[ffa,ffc] (0,0) circle (.3cm);&
-    \node{$\cdots{}$};&
-    \draw[ffa,ffc] (0,0) circle (.3cm);&
-    \draw[ffa,ffc] (0,0) circle (.3cm);\\
-  };
+    \matrix [matrix of nodes,
+    anchor=south west,
+    nodes={minimum size=1cm}
+    ] (zla) at (.5cm,0)
+    {
+      \draw[ffa,ffc] (0,0) circle (.3cm);&
+      \node{$\cdots{}$};&
+      \draw[ffa,ffc] (0,0) circle (.3cm);&
+      \draw[ffa,ffc] (0,0) circle (.3cm);\\
+    };    
+  \end{scope}
 
   % \text{ZLC}_{rsa1}\\ 
   % \text{ZLC}_{rsa_2}\\
   % ts{}\\              
   % \text{ZLC}_{rsa_n}\\
-
-
-  
 
   
   %% Accolades
@@ -189,13 +185,13 @@
 
   \begin{scope}
     \draw[<->, black, dotted] ([xshift=.5cm]I.east) -- ([xshift=-.5cm]zlp.west) node[pos=0,below,cardinalite]
-    {1} node[pos=0.5, fill=white] {\tiny Bijection} node[pos=1,below,cardinalite]{1}; 
+    {1} node[pos=0.5, fill=white, center] {\tiny Bijection} node[pos=1,below,cardinalite]{1}; 
 
     \draw[<->, black, dotted] ([xshift=.5cm]is.east) -- ([xshift=-.5cm]zlc.west) node[pos=0,below,cardinalite]
-    {1} node[pos=0.5, fill=white] {\tiny Bijection} node[pos=1,below,cardinalite]{1}; 
+    {1} node[pos=0.5, fill=white, center] {\tiny Bijection} node[pos=1,below,cardinalite]{1}; 
 
     \draw[<->, black, dotted] ([xshift=.5cm]is_o.east) -- ([xshift=-.5cm]zlb.west) node[pos=0,below,cardinalite]
-    {1} node[pos=0.5, fill=white] {\tiny Bijection}  node[pos=1,below,cardinalite]{1}; 
+    {1} node[pos=0.5, fill=white, center] {\tiny Bijection}  node[pos=1,below,cardinalite]{1}; 
   \end{scope}
 
   %% XX
