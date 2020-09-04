@@ -14,7 +14,8 @@
   % \draw[step=.5,black,thin] (0,0) grid (22,-14);
 
   %% Matrices
-  \node[font=\bfseries, baseline] (I) at (0,0) {$I$};
+  \matrix [matrix of math nodes, anchor=south west,
+nodes={anchor=base, baseline}] (I) at (0,0) {I\\};
 
   \matrix [matrix of math nodes,
   anchor=south west,
@@ -75,9 +76,15 @@
     \draw[ffa,ffc] (0,0) circle (.2cm);\\
   };
 
-  \node[anchor=west, ffa2, ffc2,circle,label=right:$\text{\textsf{ZLP}}$, minimum width=.5cm] (zlp) at
-  ([xshift=1.5cm]zlc.east |- I) {};
+  \matrix [matrix of nodes, column sep=.25cm, anchor=west,
+  nodes={anchor=center, minimum height=.75cm}] (zlp) at
+  ([xshift=1.5cm]zlc.east |- I)
+  {
+    \draw[ffa2,ffc2] (0,0) circle (.3cm);\\
+  };
 
+  \node[anchor=west] at (zlp-1-1.east) {zlp};
+  
   %% Accolades
   \begin{scope}
     \draw (I.north west) |- ($(I.north west)!0.5!(I.north east) + (0,.1)$) -| (I.north east) node[pos=0, yshift=.2]
