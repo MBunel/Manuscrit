@@ -1,13 +1,11 @@
-Comme nous l'avons détaillé dans le \autoref{chap:04}, la phase de
-décomposition est subdivisible en trois étapes (décomposition de
-l'ensemble des indices de localisation, des \emph{objets de référence
-  indéfinis}, et des \emph{relations de localisation}), dont seule la
-dernière nécessite le développement d'une méthode spécifique. En
-effet, les étapes de décomposition de ensemble des \emph{indices de
-  localisation} et des \emph{objets de référence indéfinis} ne
-qu'expliciter un découpage présent dès la saisie. Ces deux opérations
-ne nécessitent donc pas l'apport de connaissances supplémentaires,
-contrairement à la décomposition des \emph{relations de localisation.}
+Parmi les trois étapes constitutives de la phase de décomposition,
+seule la décomposition des \emph{relations de localisation} nécessite
+le développement d'une méthode spécifique. En effet, les étapes de
+décomposition de ensemble des \emph{indices de localisation} et des
+\emph{objets de référence indéfinis} ne font qu'expliciter un
+découpage présent dès la saisie. Ces deux opérations ne nécessitent
+donc pas l'apport de connaissances supplémentaires, contrairement à la
+décomposition des \emph{relations de localisation.}
 
 En effet, les \emph{principes de décomposition} et de
 \texttt{intégration contexte métier} s'opposent en partie. Si la
@@ -26,9 +24,15 @@ dont les différentes \emph{relations de localisation} spatialisables
 se décomposent (cf. présentation du \emph{principe de modélisation
   explicite des connaissances}, \autoref{chap:04}). Nous avons choisi
 de formaliser ces décomposition au sein d'une ontologie, créée pour
-l'occasion. Pour permettre la décomposition des \emph{relations de
-  localisation} cette dernière doit contenir, a minima, trois types
-d'informations :
+l'occasion.
+
+\subsection{La décomposition en détail}
+
+\subsection{Définition structure}
+
+
+Pour permettre la décomposition des \emph{relations de localisation}
+cette dernière doit contenir, a minima, trois types d'informations :
 %
 \begin{enumerate*}[label=(\alph*)]
 \item \emph{les relations de localisation} à décomposer,
@@ -52,9 +56,10 @@ utilisée et à identifier les \emph{relations de localisation
 \begin{figure}
   \centering
   \input{../figures/ontologie_min_struc.tex} 
-  \caption{Éléments nécessaires pour permettre de décomposer une
-    \emph{relation de localisation} ($rl_i$) en un ensemble de
-    \emph{relations de localisation atomiques} ($rla_i$).}
+  \caption[Structure générale d'une ontologie de
+  décomposition]{Structure générale d'une ontologie permettant de
+    décomposer une \emph{relation de localisation} ($rl_i$) en un
+    ensemble de \emph{relations de localisation atomiques} ($rla_i$).}
   \label{fig:onto_min_struct}
 \end{figure}
 
