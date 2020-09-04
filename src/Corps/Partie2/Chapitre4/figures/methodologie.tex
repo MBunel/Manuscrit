@@ -14,7 +14,6 @@
   % \draw[step=.5,black,thin] (0,0) grid (22,-14);
 
   %% Matrices
-
   %%% Lvl 1
   \begin{scope}[local bounding box=lvl1]
     \matrix [matrix of math nodes, anchor=east,
@@ -27,7 +26,6 @@
       \draw[ffa2,ffc2] (0,0) circle (.3cm);\\
     };
   \end{scope}
-
   %%% Lvl 2
   \begin{scope}[shift={($(lvl1.north) +(0,2cm)$)}, local bounding box=lvl2]
     \matrix [matrix of math nodes, anchor=south east,
@@ -42,12 +40,11 @@
       \draw[ffa,ffc] (0,0) circle (.3cm);\\
     };
   \end{scope}
-
+  %%% lvl 3
   \begin{scope}[shift={($(lvl2.north) +(0,2cm)$)}, local bounding box=lvl3]
   \matrix [matrix of math nodes,
   anchor=south east, nodes={baseline,minimum size=1cm}] (is_o) at
   (-2cm,0) {o_1&o_2&\cdots{}&o_n\\};
-
     \matrix [matrix of nodes,
   anchor=south west,
   nodes={minimum size=1cm}
@@ -60,7 +57,7 @@
     \draw[ffa,ffc] (0,0) circle (.3cm);\\
   };
   \end{scope}
-
+  %%% lvl4
   \begin{scope}[shift={($(lvl3.north) +(0,2cm)$)}, local bounding box=lvl4]
     \matrix [matrix of math nodes,
     anchor=south east,
@@ -88,7 +85,6 @@
   % \text{ZLC}_{rsa_2}\\
   % ts{}\\              
   % \text{ZLC}_{rsa_n}\\
-
   
   %% Accolades
   \begin{scope}
@@ -114,12 +110,10 @@
       \draw (\m.south west) |- ($(\m.south west)!0.5!(\m.south
       east) + (0,-.1)$) -| (\m.south east)  node[pos=0, yshift=.2]
       (\m-g) {};
-
       \draw (\m-1-4.north west) |- ($(\m-1-4.north
       west)!0.5!(\m-1-4.north east) + (0,.1)$) -| (\m-1-4.north east)
       node[pos=0, yshift=.2] (\m-p) {};
     }
-
   \end{scope}
 
   % Annotations
@@ -157,31 +151,33 @@
     (t_spa) {\tiny \textbf{Spatialisation}} -| (zla-p)
     node[pos=1,above right,cardinalite]{1};
 
-
     % Fusion
     \draw[->>, black,] (zla-g) |- ($(zla-g)!0.5!(zlb-p)$)
     node[pos=0,below right, cardinalite] {1..*} node[pos=1,
     fill=white] (t_fus_1) {\tiny \textbf{Fusion}} -| (zlb-p)
     node[pos=1,above right,cardinalite]{1};
 
-    \node[anchor=west,baseline] at ([xshift=1ex]t_fus_1.south west)
-    {\tiny des \emph{relations de localisation atomiques}};
+    \node[anchor=west,baseline, fill=white, inner sep=.9pt] at
+    ([xshift=1ex]t_fus_1.south west) {\tiny des \emph{relations de
+        localisation atomiques}};
     
     \draw[->>, black,] (zlb-g) |- ($(zlb-g)!0.5!(zlc-p)$)
     node[pos=0,below right, cardinalite] {1..*} node[pos=1,
     fill=white] (t_fus_2) {\tiny \textbf{Fusion}} -| (zlc-p)
     node[pos=1,above right,cardinalite]{1};
     
-    \node[anchor=west,baseline] at ([xshift=1ex]t_fus_2.south west)
-    {\tiny des \emph{objets de référence}};
+    \node[anchor=west,baseline, fill=white, inner sep=.9pt] at
+    ([xshift=1ex]t_fus_2.south west) {\tiny des \emph{objets de
+        référence}};
 
     \draw[->>, black] (zlc-g) |- ($(zlc-g)!0.5!(zlp-p)$)
     node[pos=0,below right, cardinalite] {1..*} node[pos=1,
     fill=white] (t_fus_3) {\tiny \textbf{Fusion}} -| (zlp-p)
     node[pos=1,above right,cardinalite]{1};
 
-    \node[anchor=west,baseline] at ([xshift=1ex]t_fus_3.south west)
-    {\tiny des \emph{indices de localisation}};
+    \node[anchor=west,baseline, fill=white, inner sep=.9pt] at
+    ([xshift=1ex]t_fus_3.south west) {\tiny des \emph{indices de
+        localisation}};
     
   \end{scope}
 
