@@ -19,6 +19,8 @@ l'utilisateur de saisir des \emph{relations de localisation
   atomiques,} qui ne sont pas prévues pour. C'est pourquoi nous
 proposons d'automatiser cette étape.
 
+\subsection{La décomposition en détail}
+
 Pour ce faire il est nécessaire de définir au préalable la manière
 dont les différentes \emph{relations de localisation} spatialisables
 se décomposent (cf. présentation du \emph{principe de modélisation
@@ -26,11 +28,14 @@ se décomposent (cf. présentation du \emph{principe de modélisation
 de formaliser ces décomposition au sein d'une ontologie, créée pour
 l'occasion.
 
-\subsection{La décomposition en détail}
-
 La décomposition des relations de localisation nécessite donc deux
 étapes. La première est la lecture des règles de décomposition, la
 seconde est leur application.
+
+
+Pour 
+
+\tdi{Bivalence décomposition-relations de localisation}
 
 La difficulté de la décomposition des relations de localisation dépend
 principalement d'un seul choix, celui de la définition ---~ou non~---
@@ -45,10 +50,32 @@ données permettant de justifier ce choix. Si elles sont éminemment
 plus complexes à mettre en place, de telles décompositions permettent
 d’adapter la spatialisation au contexte.
 
+\tdi{Commutativité de la décomposition (Passer dans le chap 4 ??)}
+
+Une \emph{relation de localisation} se décompose en une conjonction
+d'un ensemble de \emph{relations de localisation atomiques.}
+
+
+\tdi{Possibilité de faire des négations}
+
+Il est également envisageable de permettre l'utilisation de négations
+de relations de localisation atomiques. Ainsi on pourra utiliser
+
+
+\tdi{Pas de limitations nombre de décompositions}
 
 
 L'application des règles de décomposition n'est pas particulièrement
 déclicate, 
+
+
+\begin{figure}
+  \centering
+  %\input{../figures/ontologie_min_struc.tex} 
+  \caption{Illustration du processus de décomposition des relations de
+  localisation}
+  \label{fig:logique_dec}
+\end{figure}
 
 \subsection{Définition structure}
 
@@ -70,10 +97,9 @@ L'ensemble des \emph{relations de localisation} définies dans
 l'ontologie forme un vocabulaire contrôlé, permettant à l'utilisateur
 de saisir les \emph{indices de localisation}. La décomposition de ces
 relations ne lui est pas connue. Le travail de décomposition ne
-consiste alors qu'a identifier la \emph{relation de localisation}
-utilisée et à identifier les \emph{relations de localisation
-  atomiques} qui la décomposent à l'aide des \emph{relations de
-  décomposition} définies dans l'ontologie.
+consiste alors qu'à appliquer la règle de décomposition ---~définie
+dans l'ontologie~--- correspondant à la \emph{relation de
+  localisation} saisie.
 
 \begin{figure}
   \centering
