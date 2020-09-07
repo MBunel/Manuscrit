@@ -84,25 +84,33 @@ continent généralement que la phase de description de position.
 
 \subsubsection{Template de retranscription}
 
-L'analyse des enregistrements nécessite au préalable leur 
-Pour exploiter les informations contenues dans les enregistrements il
-a été nécessaire de les retranscrire afin de les analyser.
-%
+Le recours à un template et non à une retranscription libre des
+alertes se justifie par
+
 Notre parti-pris n'a pas été de travailler à partir d'une
-retranscription libre de ces alertes, mais à l'aide d'un tableau
+retranscription libre des alertes, mais à l'aide d'un tableau
 prédéfini, un \emph{template de retranscription}
 (\autoref{tab:struct_temp}) dont la structure reprend celle des
 \emph{indices de localisation} telle que nous l'avons définie
 (cf. \autoref{chap:04}).
 
-La version ici décrite ne
+Ce choix présente deux avantages. Tout d'abord il permet de faciliter
+l'analyse des alertes en imposant, dès la saisie, la définition de
+certains critères.
+%
+De plus, il permet de fixer les 
+
+
 
 Pour faciliter les saisies et leur répartition entre transcripteurs,
 un fichier est créé pour chaque alerte.
-%
-Dans sa forme finale, ce modèle de transcription se présente sous la
-forme d'un fichier tabulaire structuré et auto-documenté, composé de
-trois onglets
+
+\texttt{XXXXXXXXXXXXXXXXXXx}
+
+
+Dans sa forme finale, ce template de transcription se présente sous la
+forme d'un fichier tabulaire structuré, auto-documenté et exemplifié,
+composé de trois onglets principaux
 %
 ---~\begin{enumerate*}[label=(\alph*)]
 \item \emph{métadonnées},
@@ -110,25 +118,43 @@ trois onglets
 \item \emph{toponymie}
 \end{enumerate*}~---,
 %
-permettant de regrouper les saisies par nature et par granularité.
+permettant de transcrire différents aspects des alertes. L'ensemble du
+fichier est conçu pour faciliter le processus de retranscription et
+limiter au maximum l'influence du transcripteur sur la saisie. Chaque
+onglet et champ à saisir est documenté, des instructions de saisie
+présentent l'ensemble des tâches à effectuer sont données et un
+exemple de saisie complet et complexe est détaillé. De plus, la
+structure même du document est conçue pour faciliter la saisie. Les
+onglets sont placés dans leur ordre de consultation ou de saisie (\eg
+on commence par lire les instructions dans l'onglet
+%
+\begin{enumerate*}[label=(\arabic*)]
+\item \emph{Instructions \& Consignes,} puis on saisit les
+  informations générales sur l'alerte dans l'onglet
+\item \emph{métadonnées,} avant de saisir l'alerte en détail dans les
+  onglets
+\item \emph{interprétation des expressions} et
+\item \emph{toponymie,} \emph{etc.}
+\end{enumerate*}).
 
-Le premier d'entre-eux, l'onglet \emph{métadonnées,} permet de
-renseigner toutes les informations d'ordre général sur une alerte,
-comme la date et l'heure de l'appel, l'identité du requérant (victime,
-témoin, \emph{etc.}) ou l’activité pratiquée lors de
-l'accident. Toutes les informations saisies ici ne le sont qu'une fois
-par alerte, contrairement aux deux autres onglets.
+L'onglet \emph{métadonnées,} permet de renseigner toutes les
+informations d'ordre général sur une alerte, telles que l'identité du
+requérant (victime, témoin, \emph{etc.}) ou l’activité pratiquée lors
+de l'accident. C'est également ici que sont saisies toutes les
+informations exogènes, comme la date et l'heure de l'appel ou la
+position réelle de la victime.
 
-L'onglet \emph{interprétation des expressions} se compose, quant à
-lui, de 15 colonnes (\autoref{tab:struct_temp}), que l'on peut
-regrouper en trois catégories :
-%%%
+L'onglet \emph{interprétation
+  des expressions} se compose, quant à lui, de 15 colonnes
+(\autoref{tab:struct_temp}), que l'on peut regrouper en trois
+catégories :
+%
 \begin{enumerate*}[label=(\alph*)]
 \item \emph{extrait},
 \item \emph{contexte} et
 \item \emph{expression.}
 \end{enumerate*}
-%%%
+
 La première d'entre elles regroupe les colonnes décrivant l'extrait
 audio traité, comme les deux colonnes \enquote{\emph{identifiant}}, la
 colonne \enquote{\emph{extrait}} et la colonne
@@ -162,13 +188,11 @@ négation de la question, dont la sémantique correspond à
 \emph{l'expression} \enquote{je ne suis pas au sommet} et
 \emph{l'expression} \enquote{je suis bien en dessous}. Ainsi, cet
 exemple est composé de deux \emph{extraits} et de trois
-\emph{expressions.}
-%
-Pour faciliter l'analyse et la vérification des transcriptions, nous
-avons défini une colonne \enquote{\emph{extrait}}, permettant de
-saisir le verbatim de l'extrait analysé, et une colonne
-\enquote{\emph{timestamp}} indiquant la position de l'extrait dans le
-fichier audio correspondant.
+\emph{expressions.} Pour faciliter l'analyse et la vérification des
+transcriptions, nous avons défini une colonne
+\enquote{\emph{extrait}}, permettant de saisir le verbatim de
+l'extrait analysé, et une colonne \enquote{\emph{timestamp}} indiquant
+la position de l'extrait dans le fichier audio correspondant.
 
 La seconde catégorie regroupe les colonnes permettant de décrire le
 contexte de chaque expression. On y retrouve la colonne
@@ -186,9 +210,8 @@ permet l'interprétation et la saisie de chaque expression. On y
 retrouve les colonnes \emph{verbe,} \emph{sujet,} \emph{relation de
   localisation} et \emph{objet de référence,} correspondant aux
 éléments du même nom dans la formalisation des \emph{indices de
-  localisation} et les \emph{modifieurs} qui y sont associés.
-%
-Les colonnes \enquote{\emph{objet de référence}} et
+  localisation} et les \emph{modifieurs} qui y sont associés. Les
+colonnes \enquote{\emph{objet de référence}} et
 \enquote{\emph{modifieur de l'objet de référence}} ont la
 particularité de pourvoir être doublées (voir plus si nécessaire) dans
 le cas où la \emph{relation de localisation} le nécessiterait.
@@ -249,10 +272,31 @@ ne sommes pas en mesure d'ajouter des informations sur \emph{l'objet
 
 \subsubsection{Analyse des retranscriptions}
 
+Ces deux corpus ont été transcrits séparément. Le premier d'entre-eux
+a été transcrit au cours de l'année 2018 par un secouriste du
+\ac{pghm} de Grenoble. Ce premier essai a mis en évidence de
+nombreuses lacunes dans le processus de retranscription. La version
+originale du template n'était pas assez documentée et illustrée. Par
+conséquent le processus de saisie était assez délicat et les résultats
+étaient très dépendants du transcripteur. Nous avons donc clarifié le
+template pour faciliter la transcription ---~aboutissant à la version
+présentée ci-dessus~--- et avons corrigé collégialement les
+transcriptions pour aboutir à une version qui fasse l'objet d'un
+consensus.
+
+Pour la saisie du second 
+
+Notre volonté initiale était de profiter de
+l'expérience des secouristes pour disposer de retranscriptions
+complétées de commentaires 
+
 La retranscription des 52 alertes nous a permis d'identifier 374
 expressions différentes.
 
-- configuration vs position
+
+\paragraph{configuration vs position}
+
+
 
 \subsection{Construction des ontologies}
 
