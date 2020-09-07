@@ -300,8 +300,66 @@ expressions différentes.
 
 Pour chaque expression nous avons cherché à définir un concept
 permettant d'exprimer la sémantique de la \emph{relation de
-  localisation} utilisée. Pour ce faire nous nous 
+  localisation} utilisée.
 
+Pour ce faire nous avons cherché à
+identifier, pour chaque expression, le concept de l'ontologie de
+\textcite{Bateman2010} le plus proche de la sémantique de la relation
+de localisation utilisée par le requérant.
+
+À la suite de cette étape toutes les \emph{relations de localisations}
+sont associées à un concept tiré de l'ontologie de
+\textcite{Bateman2010}. Cependant, dans la majorité des cas, le
+concept issu de GUM-Space ne nous a pas donné entière satisfaction,
+soit parce-que le concept retenu ne fonctionnait qu'au pris d'une
+interprétation très \enquote{flexible} de la définition de
+\textcite{Bateman2010}, soit parce-que la description donnée par le
+requérant n'était que grossièrement retranscrite par les concepts de
+GUM-Space.
+
+On peut prendre pour exemple la \emph{préposition spatiale}
+\enquote{entre} utilisée dans l'extrait suivant :
+%
+\begin{quote}
+  \begin{dialogue}
+    \Sec Vous êtes entre Grand Veymont et Pas de la Ville ?  \Req Je
+    suis entre le Grand Veymont, sous le Grand Veymont et Pas de la
+    Ville, tout à fait. Je suis côté… heu… côté sud.
+  \end{dialogue}
+\end{quote}
+%
+L'ontologie GUM-Space ne propose pas de concepts permettant une
+retranscription satisfaisante de la sémantique de cette \emph{relation
+  spatiale.} On peut faire appel aux concepts
+\onto[gum]{Dis\-tri\-bu\-tion} ou \onto[gum]{Surround\-ing} mais le
+premier s'applique qu'au cas où \emph{l'objet de référence} est une
+collection (\eg \enquote{entre les arbres}, \enquote{parmi la foule}),
+là où le second correspond plus à la \emph{relation de localisation}
+\enquote{entouré de}, qui, bien que proche, n'est pas une
+approximation satisfaisante de la \emph{relation de localisation}
+utilisée par le requérant. De la même manière dans l'extrait :
+%
+\begin{quote}
+  \begin{dialogue}
+    \Req On est à 10 minutes du sommet de la Bastille.
+  \end{dialogue}
+\end{quote}
+%
+Le requérant décrit sa position à l'aide d'une durée de marche à
+partir de \emph{l'objet de référence,} \ie à l'aide d'une
+\emph{distance-temps quantitative.} Cependant, l'ontologie GUM-Space
+ne possède qu'un seul concept permettant d'exprimer une distance
+quantitative, \onto[gum]{Quanti\-tative\-Dist\-ance}. Au vu de la
+description qui est faite de ce concept dans \textcite{Bateman2010} on
+peut légitimement penser que ce concept a essentiellement été prévu
+pour conceptualiser des distances métriques, uniquement des distances
+métriques. On pourrait se contenter de cette situation, considérant
+que ces distances sont équivalentes. Cependant, comme nous
+l'expliquions dans l'état de l'art (\autoref{chap:03}) les
+distances-temps sont beacoup plus XXX que les distances métriques et
+leur \emph{spatialisation} implique dès lors des méthodes plus
+avancées. Par conséquent il nous semble nécessaire de développer un
+nouveau concept, \onto{A\-Dist\-ance\-Temps}, plus adapté.
 
 % Défintion des concepts
 
@@ -334,7 +392,7 @@ que la décomposition est fortement liée à notre travail, le thésaurus
 des relations de localisation peut être exploité pour d'autres travaux
 au sein du projet Choucas ou à l'extérieur. C'est pourquoi nous avons
 décidé de séparer les deux ontologies et de ne diffuser que
-l'ontologie des relations de localisation.
+l'ontologie des \emph{relations de localisation.}
 
 \begin{table}
   \centering
@@ -444,6 +502,14 @@ int
 ext
 sous altitude
 sous proche de 
+
+\begin{figure}
+  \centering
+  \missingfigure{}
+  \caption{Processus de construction de l'ontologie}
+  \label{fig:}
+\end{figure}
+
 
 %%% Local Variables:
 %%% mode: latex
