@@ -298,6 +298,7 @@ retranscriptions le plus cohérent possible.
 La retranscription des 52 alertes nous a permis d'identifier 374
 expressions différentes. 
 
+% Défintion des concepts
 Pour chaque expression nous avons cherché à définir un concept
 permettant d'exprimer la sémantique de la \emph{relation de
   localisation} utilisée.
@@ -367,12 +368,33 @@ restants sont soit des précisions de concepts existants (\eg
 \onto{A\-Dist\-ance\-Temps}) soit des concepts totalement nouveaux
 (\eg \onto{En\-tre\-X\-\&\-Y}).
 
-% Défintion des concepts
+% configuration vs position
+L'étude détaillée des \emph{relations de localisation} utilisées dans
+les \emph{indices} nous a permis de constater que tous les indices ne
+permettent pas de construire \emph{directement} une \emph{zone de
+  localisation compatible.} Par exemple, \emph{l'indice de
+  localisation :} \enquote{Je marche vers le nord} ne peut pas être
+\emph{spatialisé,} à moins de la combiner avec d'autres \emph{indices}
+(\eg \enquote{Je marche depuis une heure, vers le nord}) ou de les
+approximer avec d'autres relations de localisation (\eg \enquote{Je
+  suis en direction du nord}). Ces \emph{indices de localisation,} qui
+dénotent une \emph{configuration spatiale,} décrivent généralement une
+trajectoire, suivie par le \emph{sujet} et partant de \emph{l'objet de
+  référence.} Par conséquent cette distinction recoupe celle qui est
+généralement faire en linguistique entre les \emph{relations de
+  localisation statiques,} décrivant une position fixe et les
+\emph{relations de localisation dynamiques,} décrivant un mouvement
+\autocite{Borillo1998}. Comme l'ontologie que nous développons est
+avant destinée à la \emph{spatialisation} des \emph{indices de
+  localisation} nous avons pris la décision de ne pas y intégrer les
+\emph{relations de localisation} décrivant une \emph{configuration
+  spatiale,} la \emph{spatialisation} de trajectoires ne faisant pas
+partie de nos objectifs.
 
 % Hiérarchisation des concepts
 
 
-\paragraph{configuration vs position}
+
 
 
 
