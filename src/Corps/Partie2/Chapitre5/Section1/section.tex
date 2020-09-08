@@ -19,26 +19,28 @@ l'utilisateur de saisir des \emph{relations de localisation
   atomiques,} qui ne sont pas prévues pour. C'est pourquoi nous
 proposons d'automatiser cette étape.
 
-\subsection{La décomposition en détail}
+\subsection{La décomposition des \emph{relations de localisation}}
 
-L'automatisation de la décomposition des \emph{relations de
-  localisation} nécessite la définition à priori d'un ensemble de
-règles, définissant la manière dont les différentes \emph{relations de
-  localisation} se décomposent (cf. présentation du \emph{principe de
-  modélisation explicite des connaissances}, \autoref{chap:04}). 
+Nous avons précédemment abordé la décomposition des \emph{relations de
+  localisation} en la présentant comme le processus permettant de
+passer d'une \emph{relation de localisation} à un ensemble de
+\emph{relations de localisations atomiques} liées par des conjonctions
+et auxquelles est apposée une méthode de \emph{spatialisation,}
+permettant de construire la \emph{zone de localisation compatible}
+correspondant à la \emph{relation de localisation atomique} pour un
+\emph{objet de référence} donné.
 
-Nous avons choisi de formaliser ces décomposition
-au sein d'une ontologie, créée pour l'occasion.
+Cette définition n'offre cependant pas un aperçu complet des
+situations possibles.
 
-La décomposition des relations de localisation nécessite donc deux
-étapes. La première est la lecture des règles de décomposition, la
-seconde est leur application.
+On peut également imaginer un cas où une \emph{relation de
+  localisation} se décompose en plusieurs \emph{relations de
+  localisation,} elles-mêmes décomposables. La décomposition est alors
+récursive.
 
-\tdi{le secouriste à un choix limité}
 
-Pour 
 
-\tdi{Bivalence décomposition-relations de localisation}
+
 
 La difficulté de la décomposition des relations de localisation dépend
 principalement d'un seul choix, celui de la définition ---~ou non~---
@@ -53,8 +55,31 @@ données permettant de justifier ce choix. Si elles sont éminemment
 plus complexes à mettre en place, de telles décompositions permettent
 d’adapter la spatialisation au contexte.
 
-Une \emph{relation de localisation} se décompose en une conjonction
-d'un ensemble de \emph{relations de localisation atomiques.}
+
+
+
+L'automatisation de la décomposition des \emph{relations de
+  localisation} nécessite la définition à priori d'un ensemble de
+règles, définissant la manière dont les différentes \emph{relations de
+  localisation} se décomposent (cf. présentation du \emph{principe de
+  modélisation explicite des connaissances}, \autoref{chap:04}). 
+
+
+
+Nous avons choisi de formaliser ces décomposition
+au sein d'une ontologie, créée pour l'occasion.
+
+La décomposition des relations de localisation nécessite donc deux
+étapes. La première est la lecture des règles de décomposition, la
+seconde est leur application.
+
+\tdi{le secouriste à un choix limité}
+
+Pour 
+
+\tdi{Bivalence décomposition-relations de localisation}
+
+
 
 
 
