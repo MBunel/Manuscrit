@@ -57,7 +57,7 @@ contenu. Malheureusement nous n'avons que peu, voir pas,
 d'informations exogènes sur ces différentes alertes. Pour certaines
 d'entre elles les secouristes nous ont transmis les coordonnées de la
 victime ou la date et l'heure de l'intervention, mais dans la plupart
-des cas ces informations nous sont inconnues, a moins qu'elles soient
+des cas ces informations nous sont inconnues, à moins qu'elles soient
 explicitement données dans l'alerte (\eg énoncé oral de coordonnées
 GPS, précision de l'heure, \emph{etc.}). De plus, nous ne savons pas
 comment les alertes qui nous ont été transmises furent sélectionnées,
@@ -272,31 +272,29 @@ ne sommes pas en mesure d'ajouter des informations sur \emph{l'objet
 
 \subsubsection{Analyse des retranscriptions}
 
-Ces deux corpus ont été transcrits séparément. Le premier d'entre-eux
-a été transcrit au cours de l'année 2018 par un secouriste du
-\ac{pghm} de Grenoble. Ce premier essai a mis en évidence de
+Les deux corpus d'alertes ont été transcrits séparément. Le premier
+d'entre-eux a été transcrit au cours de l'année 2018 par un secouriste
+du \ac{pghm} de Grenoble. Ce premier essai a mis en évidence de
 nombreuses lacunes dans le processus de retranscription. La version
-originale du template n'était pas assez documentée et illustrée. Par
-conséquent le processus de saisie était assez délicat et les résultats
-étaient très dépendants du transcripteur. Nous avons donc clarifié le
-template pour faciliter la transcription ---~aboutissant à la version
-présentée ci-dessus~--- et avons corrigé collégialement les
-transcriptions pour aboutir à une version qui fasse l'objet d'un
-consensus.
+originale du template n'était pas assez documentée et ne contenait pas
+d'exemples. Par conséquent le processus de saisie était assez délicat
+et les résultats étaient très dépendants du transcripteur. Nous avons
+donc clarifié le template pour faciliter la transcription
+---~aboutissant à la version présentée ci-dessus~--- et avons corrigé
+collégialement les transcriptions pour aboutir à une version qui fasse
+l'objet d'un consensus. Compte tenu des problèmes que nous avions
+rencontrés lors de la saisie du premier corpus nous avons adopté une
+démarche de transcription plus avancée. La trentaine d'alertes à
+transcrire a été répartie entre trois \todo{4?} personnes
+\autocite{Bunel2019}. Après une première transcription, les fichiers
+produits ont été amendés et commentés par un second transcripteur, en
+vue d'aboutir, en collaboration avec le transcripteur initial, à une
+seconde version. Une fois l'ensemble du second corpus retranscrit nous
+avons procédé a une harmonisation collégiale des saisies, de manière à
+obtenir un ensemble de retranscriptions le plus cohérent possible.
 
-Compte tenu des problèmes que nous avions rencontrés lors de la saisie
-du premier corpus nous avons adopté une démarche de transcription plus
-avancée. La trentaine d'alertes à transcrire a été répartie entre
-trois \todo{4?} personnes \autocite{Bunel2019}. Après une première
-transcription, les fichiers produits ont été amendés et commentés par
-un second transcripteur, en vue d'aboutir, en collaboration avec le
-transcripteur initial, à une seconde version. Une fois l'ensemble du
-second corpus retranscrit nous avons procédé a une harmonisation
-collégiale des saisies, de manière à obtenir un ensemble de
-retranscriptions le plus cohérent possible.
-
-La retranscription des 52 alertes nous a permis d'identifier 374
-expressions différentes. 
+Au final, la retranscription des 52 alertes nous a permis d'identifier
+374 expressions différentes, que nous avons ensuite analysé.
 
 % Défintion des concepts
 Pour chaque expression nous avons cherché à définir un concept
@@ -392,11 +390,20 @@ avant destinée à la \emph{spatialisation} des \emph{indices de
 partie de nos objectifs.
 
 % Hiérarchisation des concepts
+Une fois que l'ensemble des \emph{relations de localisation}
+nécessaires a la retranscription des alertes a été défini nous avons
+procédé à leur hiérarchisation. Pour ce faire nous avons défini de
+nouvelles classes, permettant de regrouper les relations de
+localisation par similarité sémantique. Ces nouvelles classes sont
+abstraites, \ie qu'elles ne sont pas des \emph{relations de
+  localisation,} elles ne servent qu'à leur regroupement.
+
+Pour définir cette hiérarchie nous nous sommes appuyés sur différentes
+propositions précédentes et principalement de l'ontologie GUM-Space
+\autocite{Bateman2010}.
 
 
-
-
-
+Technique
 
 \subsection{Construction des ontologies}
 
@@ -497,7 +504,7 @@ l'acceptation des utilisateurs)
 
 \begin{figure}
   \centering
-  %\input{../figures/ontologie.tex}
+  \input{../figures/ontologie.tex}
   \caption{Onto}
   \label{fig:ontho}
 \end{figure}

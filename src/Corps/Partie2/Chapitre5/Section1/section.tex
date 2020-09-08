@@ -21,17 +21,20 @@ proposons d'automatiser cette étape.
 
 \subsection{La décomposition en détail}
 
-Pour ce faire il est nécessaire de définir au préalable la manière
-dont les différentes \emph{relations de localisation} spatialisables
-se décomposent (cf. présentation du \emph{principe de modélisation
-  explicite des connaissances}, \autoref{chap:04}). Nous avons choisi
-de formaliser ces décomposition au sein d'une ontologie, créée pour
-l'occasion.
+L'automatisation de la décomposition des \emph{relations de
+  localisation} nécessite la définition à priori d'un ensemble de
+règles, définissant la manière dont les différentes \emph{relations de
+  localisation} se décomposent (cf. présentation du \emph{principe de
+  modélisation explicite des connaissances}, \autoref{chap:04}). 
+
+Nous avons choisi de formaliser ces décomposition
+au sein d'une ontologie, créée pour l'occasion.
 
 La décomposition des relations de localisation nécessite donc deux
 étapes. La première est la lecture des règles de décomposition, la
 seconde est leur application.
 
+\tdi{le secouriste à un choix limité}
 
 Pour 
 
@@ -50,10 +53,9 @@ données permettant de justifier ce choix. Si elles sont éminemment
 plus complexes à mettre en place, de telles décompositions permettent
 d’adapter la spatialisation au contexte.
 
-\tdi{Commutativité de la décomposition (Passer dans le chap 4 ??)}
-
 Une \emph{relation de localisation} se décompose en une conjonction
 d'un ensemble de \emph{relations de localisation atomiques.}
+
 
 
 \tdi{Possibilité de faire des négations}
@@ -80,12 +82,10 @@ déclicate,
 \subsection{Vers la définition d'une ontologie des règles de
   décomposition des \emph{relations de localisation}}
 
-\tdi{parler de l'utilisation de l'ontologie dans d'autres domaines
-  (lots 4 et 2)}
-
-
-Pour permettre la décomposition des \emph{relations de localisation}
-cette dernière doit contenir, a minima, trois types d'informations :
+Nous avons choisi de formaliser les règles de décomposition des
+\emph{relations de localisation} à l'aide d'une ontologie de
+décomposition. Cette dernière doit contenir, a minima, trois types
+d'informations :
 %
 \begin{enumerate*}[label=(\alph*)]
 \item \emph{les relations de localisation} à décomposer,
@@ -98,7 +98,14 @@ cette dernière doit contenir, a minima, trois types d'informations :
 \end{enumerate*}
 %
 L'ensemble des \emph{relations de localisation} définies dans
-l'ontologie forme un vocabulaire contrôlé, permettant à l'utilisateur
+l'ontologie forme un vocabulaire contrôlé, qui peut être utilisé dans
+plusieurs aspects du projet Choucas. 
+
+\tdi{parler de l'utilisation de l'ontologie dans d'autres domaines
+  (lots 4 et 2)}
+
+
+permettant à l'utilisateur
 de saisir les \emph{indices de localisation}. La décomposition de ces
 relations ne lui est pas connue. Le travail de décomposition ne
 consiste alors qu'à appliquer la règle de décomposition ---~définie
