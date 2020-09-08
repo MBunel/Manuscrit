@@ -64,13 +64,14 @@ plus de deux \emph{relations de localisations.} Par exemple,
 limiter le nombre de \emph{relations de localisation atomiques}
 décomposant une \emph{relation de localisation,} même s'il est peu
 probable que se nombre puisse atteindre des très grandes valeurs. À
-l'inverse on peut se questionner sur la possibilité que certaines
+l'inverse, on peut se questionner sur la possibilité que certaines
 \emph{relations de localisation} ne soient pas décomposables. Par
 exemple, la \emph{relation de localisation} \enquote{à} (\eg je suis
 au sommet) ne nous semble pas décomposable, pourtant il s'agit bien
 d'une \emph{relation de localisation,} que l'on est amené à utiliser
 fréquemment. Dans ce cas, \emph{relation de localisation} et
-\emph{relation de localisation atomique} sont confondues.
+\emph{relation de localisation atomique} sont confondues. On peut
+également supposer que les 
 
 Cette définition n'offre cependant pas un aperçu complet des
 situations possibles.
@@ -79,8 +80,6 @@ On peut également imaginer un cas où une \emph{relation de
   localisation} se décompose en plusieurs \emph{relations de
   localisation,} elles-mêmes décomposables. La décomposition est alors
 récursive.
-
-
 
 
 
@@ -106,6 +105,22 @@ règles, définissant la manière dont les différentes \emph{relations de
   localisation} se décomposent (cf. présentation du \emph{principe de
   modélisation explicite des connaissances}, \autoref{chap:04}). 
 
+Ainsi, pour représenter l'ensemble des décompostions possibles il est
+nécessaire que la base de règles définie puisse :
+\begin{enumerate*}[label=(\arabic*)]
+\item permettre que la décomposition d'une \emph{relation de
+    localisation} se fasse en un nombre, possiblement élevé, de
+  \emph{relations de localisation atomiques,}
+\item permettre des décomposition récursives (\ie qu'une
+  \emph{relation de localisation} se décompose en des \emph{relations
+    de localisation} non atomiques),
+\item autoriser que certaines \emph{relations de localisatio}n ne soient pas
+  décomposables,
+\item garantir l'unicité des \emph{relations de localisation,}
+  qu'elles soient atomiques ou non et
+\item interdire les décompositions concurrentes d'une même
+  \emph{relation de localisation.}
+\end{enumerate*}
 
 
 Nous avons choisi de formaliser ces décomposition
