@@ -432,11 +432,58 @@ propositions précédentes et principalement de l'ontologie GUM-Space
 \autocite{Bateman2010}.
 
 \tdi{3 classes principales + visibilité} Ai premier niveau de
-l'ontologie on trouve trois classes abstraites principales, regroupant
-l'ensemble des \emph{relations de localisation} et deux
+l'ontologie on trouve trois classes principales,
+\onto[orl]{Re\-la\-tion\-Spa\-ti\-ale\-De\-Prox\-imi\-té},
+\onto[orl]{Re\-la\-tion\-Spa\-ti\-ale\-Fonc\-tio\-nelle} et
+\onto[orl]{Re\-la\-tion\-Spa\-ti\-ale\-Po\-si\-ti\-on\-Re\-la\-ti\-ve},
+regroupant l'ensemble des \emph{relations de localisation} et deux
 \emph{relations de localisation} isolées et complémentaires,
-\onto[orl]{XVoitY} et \onto[orl]{XEstVuParY}.
+\onto[orl]{Ci\-ble\-Voit\-Si\-te} et \onto[orl]{Si\-te\-Voit\-Ci\-ble}
+qui n'entrent dans aucune des ces classes. Les trois classes
+principales son similaires au trois classes du premier niveau
+hiérarchique de l'ontologie GUM-Space. La classe
+\onto[orl]{Re\-la\-tion\-Spa\-ti\-ale\-De\-Prox\-imi\-té}, qui
+correspond à la classe
+\onto[gum]{Spa\-ti\-al\-Dist\-an\-ce\-Mo\-da\-li\-ty} de GUM-Space,
+regroupe les \emph{relations de localisation}
 
+La classe \onto[orl]{Re\-la\-tion\-Spa\-ti\-ale\-Fonc\-tio\-nelle},
+pendant de la classe
+\onto[gum]{Func\-ti\-on\-al\-Spa\-ti\-al\-Mo\-da\-li\-ty}, regroupe
+les \emph{relations}
+%
+Cette classe ne contient que deux \emph{relations de localisation,}
+\onto[orl]{Prox\-imal} et
+\onto[orl]{Si\-tué\-Sur\Iti\-né\-rai\-re\-Ou\-Ré\-seau\-Sup\-port}.
+
+Enfin, la classe
+\onto[orl]{Re\-la\-tion\-Spa\-ti\-ale\-Po\-si\-ti\-on\-Re\-la\-ti\-ve},
+similaire à la classe
+\onto[gum]{Re\-la\-ti\-ve\-Spa\-ti\-al\-Mo\-da\-li\-ty},
+%
+C'est cette classe qui regroupe le plus de \emph{relations de
+  localisation.} On y retrouve, par exemple, les relations traduisant
+un contact\footnote{Correspondant à la classe
+  \onto[orl]{Re\-la\-tion\-Spa\-ti\-ale\-De\-Con\-tact}.} (\eg
+\onto[orl]{Dans\-Pla\-ni\-mé\-tri\-que},
+\onto[orl]{A\-La\-Fr\-on\-ti\-ère\-De}), les relations de direction
+\footnote{Correspondant à la classe
+  \onto[orl]{Re\-la\-tion\-Spa\-ti\-ale\-De\-Di\-rec\-tion}.} (\eg
+\onto[orl]{Au\-Nord\-De}, \onto[orl]{Dans\-La\-Dir\-ec\-tion\-De}) ou
+les relations verticales \footnote{Correspondant à la classe
+  \onto[orl]{Re\-la\-tion\-Spa\-ti\-ale\-De\-Ver\-ti\-ca\-le}.} (\eg
+\onto[orl]{So\-us\-Pro\-che\-De}, \onto[orl]{Au\-Des\-sus\-De}).
+
+regroupe les relations qui ont à voir avec la notion de proximité
+spatiale (distance)
+
+regroupe les relations qui dénotent que la cible et le site ont un
+lien non seulement spatial, mais aussi fonctionnel. 
+
+regroupe les relations décrivant une position relative de la cible par
+rapport au site en se basant sur autre chose qu’une distance.
+
+        
 \tdi{Hiérarchie croisée}
 Nous n'avons pas cherché à définir une hiérarchie \enquote{plate},
 c'est-à-dire sans héritages multiples
