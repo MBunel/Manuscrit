@@ -31,6 +31,14 @@
 \par\vskip+1em\hrule\par\vskip+3em\par}
 
 
+% Changement de nom
+\renewcommand{\listfigurename}{Liste des figures}
+
+% Epigraphe
+\renewcommand{\dictumrule}{\vskip+1ex\par}
+\renewcommand{\dictumauthorformat}[1]{#1}
+
+
 % Séparateur notes page
 %\renewcommand*\footnoterule{\centerline{\pgfornament[width=3.5cm]{86}}\vskip+1.5ex}
 
@@ -95,6 +103,11 @@
 
 \newcommand\tdi[1]{\todo[inline]{#1}}
 
+\makeatletter
+\def\onto{\@ifnextchar[{\@with}{\@without}}
+\def\@with[#1]#2{\texttt{\textcolor{RdBu-9-3}{#1\#}#2}}
+\def\@without#1{\texttt{#1}}
+\makeatother
 
 % Commandes debug
 

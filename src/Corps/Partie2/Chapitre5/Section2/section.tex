@@ -15,9 +15,12 @@ travaillons sur un contexte particulier, avec un relief et des
 \emph{etc.}). On peut donc augurer que le contexte influence
 l’utilisation des \emph{relations de localisation} et donc impacte
 leur sémantique, comme l'illustre l'aphorisme de \bsc{Wittgenstein} :
-\enquote{la signification c'est l'usage}. Il semble alors essentiel
-d'étudier les descriptions de positions dans le contexte du secours en
-montagne afin de construire une ontologie la plus pertinente possible.
+\enquote{la signification c'est l'usage}. Or nous souhaitons
+développer une ontologie orientée métier et donc prenant en compte les
+spécificités de localisation en milieu montagneux. Il semble alors
+essentiel d'étudier les descriptions de positions dans le contexte du
+secours en montagne afin de construire une ontologie la plus
+pertinente possible.
 
 Pour ce faire nous avons entrepris de recenser et d'étudier les
 \emph{relations de localisation} les plus utilisées lors des
@@ -31,36 +34,39 @@ leur sens général.
 
 \subsection{La retranscription et l'analyse des alertes}
 
-
-
-Le travail de retranscription des alertes (et dans une moindre mesure
-celui de leur analyse) a été réalisé collaborativement
-\autocite{Bunel2019}, les résultats pouvant bénéficier à différents
-objectifs du projet Choucas.
+L'exploitation des enregistrements audio d'alertes nécessite au
+préalable leur retranscription textuelle. Nous avons donc développé
+une méthode et un template (ou canevas) de retranscription a cet
+effet. Le travail de définition du template et de retranscription a
+été effectué collaborativement \autocite{Bunel2019}, les résultats
+pouvant être exploités par différents membres du projet Choucas et
+notamment pour l'étude du processus d'alerte (Lot 4).
 
 \subsubsection{Les corpus d'alertes}
 
-Les retranscriptions utilisées pour construire \emph{les ontologies
-  des relations de localisation} et des \emph{relations de
-  localisation atomiques} ont été réalisées à partir d'un ensemble de
-52 enregistrements d'appels de demande d'assistance auprès des
-\ac{pghm} de Chamonix (5 alertes) et de Grenoble (47 alertes). Ces
-fichiers, compilés par le \ac{pghm} de Grenoble, forment deux corpus
-d'alertes distincts, dont le premier nous a été transmis en 2017 et le
-second en 2019. Ces deux corpus sont relativement similaires, que ce
-soit par le nombre d'alertes, leur durée ---~qui varie de quelques
-secondes à plusieurs dizaines de minutes
+Les retranscriptions ont été réalisées à partir d'un ensemble de 52
+enregistrements d'appels de demande d'assistance auprès des \ac{pghm}
+de Chamonix (5 alertes) et de Grenoble (47 alertes). Ces fichiers,
+sélectionnés et compilés par le \ac{pghm} de Grenoble, forment deux
+corpus d'alertes distincts, dont le premier nous a été transmis en
+2017 et le second en 2019. Ces deux corpus sont relativement
+similaires, que ce soit par le nombre d'alertes, leur durée ---~qui
+varie de quelques secondes à plusieurs dizaines de minutes
 (\autoref{fig:dist_temps_alertes})~--- ou leur
-contenu. Malheureusement nous n'avons que peu d'informations sur le
-contexte de ces différentes alertes. Si nous savons que ces dernières
-ne sont qu'une sélection parmi l'ensemble des enregistrements à la
-disposition du \ac{pghm} de Grenoble, nous n'avons pas connaissance de
-la manière dont cette sélection a été effectuée, bien que ces alertes
-aient été qualifiées de représentatives par le \ac{pghm}.
+contenu. Malheureusement nous n'avons que peu, voir pas,
+d'informations exogènes sur ces différentes alertes. Pour certaines
+d'entre elles les secouristes nous ont transmis les coordonnées de la
+victime ou la date et l'heure de l'intervention, mais dans la plupart
+des cas ces informations nous sont inconnues, à moins qu'elles soient
+explicitement données dans l'alerte (\eg énoncé oral de coordonnées
+GPS, précision de l'heure, \emph{etc.}). De plus, nous ne savons pas
+comment les alertes qui nous ont été transmises furent sélectionnées,
+bien qu'elles nous aient été décrites comme représentatives des phases
+de localisation des victimes.
 
-Une particularité importante de ces enregistrements est qu'ils sont
-réalisés au niveau de la ligne téléphonique des \ac{pghm} et non des
-\ac{codis}, généralement contactés par les requérants
+Une autre particularité importante de ces enregistrements est qu'ils
+sont réalisés au niveau de la ligne téléphonique des \ac{pghm} et non
+des \ac{codis}, généralement contactés par les requérants
 (cf. \autoref{chap:02}). Par conséquent nous n'avons généralement pas
 connaissance du début ou de la fin de la communication. De plus, les
 fichiers qui nous ont été transmis ne correspondent pas aux
@@ -78,25 +84,33 @@ continent généralement que la phase de description de position.
 
 \subsubsection{Template de retranscription}
 
-L'analyse des enregistrements nécessite au préalable leur 
-Pour exploiter les informations contenues dans les enregistrements il
-a été nécessaire de les retranscrire afin de les analyser.
-%
+Le recours à un template et non à une retranscription libre des
+alertes se justifie par
+
 Notre parti-pris n'a pas été de travailler à partir d'une
-retranscription libre de ces alertes, mais à l'aide d'un tableau
+retranscription libre des alertes, mais à l'aide d'un tableau
 prédéfini, un \emph{template de retranscription}
 (\autoref{tab:struct_temp}) dont la structure reprend celle des
 \emph{indices de localisation} telle que nous l'avons définie
 (cf. \autoref{chap:04}).
 
-La version ici décrite ne
+Ce choix présente deux avantages. Tout d'abord il permet de faciliter
+l'analyse des alertes en imposant, dès la saisie, la définition de
+certains critères.
+%
+De plus, il permet de fixer les 
+
+
 
 Pour faciliter les saisies et leur répartition entre transcripteurs,
 un fichier est créé pour chaque alerte.
-%
-Dans sa forme finale, ce modèle de transcription se présente sous la
-forme d'un fichier tabulaire structuré et auto-documenté, composé de
-trois onglets
+
+\texttt{XXXXXXXXXXXXXXXXXXx}
+
+
+Dans sa forme finale, ce template de transcription se présente sous la
+forme d'un fichier tabulaire structuré, auto-documenté et exemplifié,
+composé de trois onglets principaux
 %
 ---~\begin{enumerate*}[label=(\alph*)]
 \item \emph{métadonnées},
@@ -104,25 +118,43 @@ trois onglets
 \item \emph{toponymie}
 \end{enumerate*}~---,
 %
-permettant de regrouper les saisies par nature et par granularité.
+permettant de transcrire différents aspects des alertes. L'ensemble du
+fichier est conçu pour faciliter le processus de retranscription et
+limiter au maximum l'influence du transcripteur sur la saisie. Chaque
+onglet et champ à saisir est documenté, des instructions de saisie
+présentent l'ensemble des tâches à effectuer sont données et un
+exemple de saisie complet et complexe est détaillé. De plus, la
+structure même du document est conçue pour faciliter la saisie. Les
+onglets sont placés dans leur ordre de consultation ou de saisie (\eg
+on commence par lire les instructions dans l'onglet
+%
+\begin{enumerate*}[label=(\arabic*)]
+\item \emph{Instructions \& Consignes,} puis on saisit les
+  informations générales sur l'alerte dans l'onglet
+\item \emph{métadonnées,} avant de saisir l'alerte en détail dans les
+  onglets
+\item \emph{interprétation des expressions} et
+\item \emph{toponymie,} \emph{etc.}
+\end{enumerate*}).
 
-Le premier d'entre-eux, l'onglet \emph{métadonnées,} permet de
-renseigner toutes les informations d'ordre général sur une alerte,
-comme la date et l'heure de l'appel, l'identité du requérant (victime,
-témoin, \emph{etc.}) ou l’activité pratiquée lors de
-l'accident. Toutes les informations saisies ici ne le sont qu'une fois
-par alerte, contrairement aux deux autres onglets.
+L'onglet \emph{métadonnées,} permet de renseigner toutes les
+informations d'ordre général sur une alerte, telles que l'identité du
+requérant (victime, témoin, \emph{etc.}) ou l’activité pratiquée lors
+de l'accident. C'est également ici que sont saisies toutes les
+informations exogènes, comme la date et l'heure de l'appel ou la
+position réelle de la victime.
 
-L'onglet \emph{interprétation des expressions} se compose, quant à
-lui, de 15 colonnes (\autoref{tab:struct_temp}), que l'on peut
-regrouper en trois catégories :
-%%%
+L'onglet \emph{interprétation
+  des expressions} se compose, quant à lui, de 15 colonnes
+(\autoref{tab:struct_temp}), que l'on peut regrouper en trois
+catégories :
+%
 \begin{enumerate*}[label=(\alph*)]
 \item \emph{extrait},
 \item \emph{contexte} et
 \item \emph{expression.}
 \end{enumerate*}
-%%%
+
 La première d'entre elles regroupe les colonnes décrivant l'extrait
 audio traité, comme les deux colonnes \enquote{\emph{identifiant}}, la
 colonne \enquote{\emph{extrait}} et la colonne
@@ -156,13 +188,11 @@ négation de la question, dont la sémantique correspond à
 \emph{l'expression} \enquote{je ne suis pas au sommet} et
 \emph{l'expression} \enquote{je suis bien en dessous}. Ainsi, cet
 exemple est composé de deux \emph{extraits} et de trois
-\emph{expressions.}
-%
-Pour faciliter l'analyse et la vérification des transcriptions, nous
-avons défini une colonne \enquote{\emph{extrait}}, permettant de
-saisir le verbatim de l'extrait analysé, et une colonne
-\enquote{\emph{timestamp}} indiquant la position de l'extrait dans le
-fichier audio correspondant.
+\emph{expressions.} Pour faciliter l'analyse et la vérification des
+transcriptions, nous avons défini une colonne
+\enquote{\emph{extrait}}, permettant de saisir le verbatim de
+l'extrait analysé, et une colonne \enquote{\emph{timestamp}} indiquant
+la position de l'extrait dans le fichier audio correspondant.
 
 La seconde catégorie regroupe les colonnes permettant de décrire le
 contexte de chaque expression. On y retrouve la colonne
@@ -180,9 +210,8 @@ permet l'interprétation et la saisie de chaque expression. On y
 retrouve les colonnes \emph{verbe,} \emph{sujet,} \emph{relation de
   localisation} et \emph{objet de référence,} correspondant aux
 éléments du même nom dans la formalisation des \emph{indices de
-  localisation} et les \emph{modifieurs} qui y sont associés.
-%
-Les colonnes \enquote{\emph{objet de référence}} et
+  localisation} et les \emph{modifieurs} qui y sont associés. Les
+colonnes \enquote{\emph{objet de référence}} et
 \enquote{\emph{modifieur de l'objet de référence}} ont la
 particularité de pourvoir être doublées (voir plus si nécessaire) dans
 le cas où la \emph{relation de localisation} le nécessiterait.
@@ -243,22 +272,150 @@ ne sommes pas en mesure d'ajouter des informations sur \emph{l'objet
 
 \subsubsection{Analyse des retranscriptions}
 
-La retranscription des 52 alertes nous a permis d'identifier 374
-expressions différentes.
+Les deux corpus d'alertes ont été transcrits séparément. Le premier
+d'entre-eux a été transcrit au cours de l'année 2018 par un secouriste
+du \ac{pghm} de Grenoble. Ce premier essai a mis en évidence de
+nombreuses lacunes dans le processus de retranscription. La version
+originale du template n'était pas assez documentée et ne contenait pas
+d'exemples. Par conséquent le processus de saisie était assez délicat
+et les résultats étaient très dépendants du transcripteur. Nous avons
+donc clarifié le template pour faciliter la transcription
+---~aboutissant à la version présentée ci-dessus~--- et avons corrigé
+collégialement les transcriptions pour aboutir à une version qui fasse
+l'objet d'un consensus. Compte tenu des problèmes que nous avions
+rencontrés lors de la saisie du premier corpus nous avons adopté une
+démarche de transcription plus avancée. La trentaine d'alertes à
+transcrire a été répartie entre trois \todo{4?} personnes
+\autocite{Bunel2019}. Après une première transcription, les fichiers
+produits ont été amendés et commentés par un second transcripteur, en
+vue d'aboutir, en collaboration avec le transcripteur initial, à une
+seconde version. Une fois l'ensemble du second corpus retranscrit nous
+avons procédé a une harmonisation collégiale des saisies, de manière à
+obtenir un ensemble de retranscriptions le plus cohérent possible.
 
-- configuration vs position
+Au final, la retranscription des 52 alertes nous a permis d'identifier
+374 expressions différentes, que nous avons ensuite analysé.
+
+% Défintion des concepts
+Pour chaque expression nous avons cherché à définir un concept
+permettant d'exprimer la sémantique de la \emph{relation de
+  localisation} utilisée.
+
+Pour ce faire nous avons cherché à
+identifier, pour chaque expression, le concept de l'ontologie de
+\textcite{Bateman2010} le plus proche de la sémantique de la relation
+de localisation utilisée par le requérant.
+
+À la suite de cette étape toutes les \emph{relations de localisations}
+sont associées à un concept tiré de l'ontologie de
+\textcite{Bateman2010}. Cependant, dans la majorité des cas, le
+concept issu de GUM-Space ne nous a pas donné entière satisfaction,
+soit parce-que le concept retenu ne fonctionnait qu'au pris d'une
+interprétation très \enquote{flexible} de la définition de
+\textcite{Bateman2010}, soit parce-que la description donnée par le
+requérant n'était que grossièrement retranscrite par les concepts de
+GUM-Space.
+
+On peut prendre pour exemple la \emph{préposition spatiale}
+\enquote{entre} utilisée dans l'extrait suivant :
+%
+\begin{quote}
+  \begin{dialogue}
+    \Sec Vous êtes entre Grand Veymont et Pas de la Ville ?  \Req Je
+    suis entre le Grand Veymont, sous le Grand Veymont et Pas de la
+    Ville, tout à fait. Je suis côté… heu… côté sud.
+  \end{dialogue}
+\end{quote}
+%
+L'ontologie GUM-Space ne propose pas de concepts permettant une
+retranscription satisfaisante de la sémantique de cette \emph{relation
+  spatiale.} On peut faire appel aux concepts
+\onto[gum]{Dis\-tri\-bu\-tion} ou \onto[gum]{Surround\-ing} mais le
+premier s'applique qu'au cas où \emph{l'objet de référence} est une
+collection (\eg \enquote{entre les arbres}, \enquote{parmi la foule}),
+là où le second correspond plus à la \emph{relation de localisation}
+\enquote{entouré de}, qui, bien que proche, n'est pas une
+approximation satisfaisante de la \emph{relation de localisation}
+utilisée par le requérant. De la même manière dans l'extrait :
+%
+\begin{quote}
+  \begin{dialogue}
+    \Req On est à 10 minutes du sommet de la Bastille.
+  \end{dialogue}
+\end{quote}
+%
+Le requérant décrit sa position à l'aide d'une durée de marche à
+partir de \emph{l'objet de référence,} \ie à l'aide d'une
+\emph{distance-temps quantitative.} Cependant, l'ontologie GUM-Space
+ne possède qu'un seul concept permettant d'exprimer une distance
+quantitative, \onto[gum]{Quanti\-tative\-Dist\-ance}. Au vu de la
+description qui est faite de ce concept dans \textcite{Bateman2010} on
+peut légitimement penser que ce concept a essentiellement été prévu
+pour conceptualiser des distances métriques, uniquement des distances
+métriques. On pourrait se contenter de cette situation, considérant
+que ces distances sont équivalentes. Cependant, comme nous
+l'expliquions dans l'état de l'art (\autoref{chap:03}) les
+distances-temps sont beacoup plus XXX que les distances métriques et
+leur \emph{spatialisation} implique dès lors des méthodes plus
+avancées. Par conséquent il nous semble nécessaire de développer un
+nouveau concept, \onto{A\-Dist\-ance\-Temps}, plus précis et adapté.
+
+Au final, 51 \emph{relations de localisation} ont été définies dont
+seules 8 sont des concepts originaux de GUM-Space. Les 43 concepts
+restants sont soit des précisions de concepts existants (\eg
+\onto{A\-Dist\-ance\-Temps}) soit des concepts totalement nouveaux
+(\eg \onto{En\-tre\-X\-\&\-Y}).
+
+% configuration vs position
+L'étude détaillée des \emph{relations de localisation} utilisées dans
+les \emph{indices} nous a permis de constater que tous les indices ne
+permettent pas de construire \emph{directement} une \emph{zone de
+  localisation compatible.} Par exemple, \emph{l'indice de
+  localisation :} \enquote{Je marche vers le nord} ne peut pas être
+\emph{spatialisé,} à moins de la combiner avec d'autres \emph{indices}
+(\eg \enquote{Je marche depuis une heure, vers le nord}) ou de les
+approximer avec d'autres relations de localisation (\eg \enquote{Je
+  suis en direction du nord}). Ces \emph{indices de localisation,} qui
+dénotent une \emph{configuration spatiale,} décrivent généralement une
+trajectoire, suivie par le \emph{sujet} et partant de \emph{l'objet de
+  référence.} Par conséquent cette distinction recoupe celle qui est
+généralement faire en linguistique entre les \emph{relations de
+  localisation statiques,} décrivant une position fixe et les
+\emph{relations de localisation dynamiques,} décrivant un mouvement
+\autocite{Borillo1998}. Comme l'ontologie que nous développons est
+avant destinée à la \emph{spatialisation} des \emph{indices de
+  localisation} nous avons pris la décision de ne pas y intégrer les
+\emph{relations de localisation} décrivant une \emph{configuration
+  spatiale,} la \emph{spatialisation} de trajectoires ne faisant pas
+partie de nos objectifs.
+
+% Hiérarchisation des concepts
+Une fois que l'ensemble des \emph{relations de localisation}
+nécessaires a la retranscription des alertes a été défini nous avons
+procédé à leur hiérarchisation. Pour ce faire nous avons défini de
+nouvelles classes, permettant de regrouper les relations de
+localisation par similarité sémantique. Ces nouvelles classes sont
+abstraites, \ie qu'elles ne sont pas des \emph{relations de
+  localisation,} elles ne servent qu'à leur regroupement.
+
+Pour définir cette hiérarchie nous nous sommes appuyés sur différentes
+propositions précédentes et principalement de l'ontologie GUM-Space
+\autocite{Bateman2010}.
+
+
+Technique
 
 \subsection{Construction des ontologies}
 
 \subsubsection{Cadre des ontologies}
 
 Il a été choisi de développer deux ontologies complémentaires pour
-formaliser les \emph{relations de localisation.} La première
-d'entre-elles est \emph{l'ontologie des relations de localisation}
+formaliser les \emph{relations de localisation.} La première d'entre
+elles est \emph{l'ontologie des relations de localisation}
 \acp{orl}. Son objectif est de constituer un thésaurus des
 \emph{relations de localisation} utilisées dans le contexte de la
 description d'une position en montagne. Chacune des notions est
-définie et une grande partie d'entre-elles sont illustrées par des
+définie et une grande partie d'entre elles sont illustrées par des
 extraits des retranscriptions. La seconde ontologie définie est celle
 des \emph{relations de localisation atomiques} \acp{orla}, dont
 l'objectif est de définir les \emph{relations de localisation
@@ -270,13 +427,13 @@ que la décomposition est fortement liée à notre travail, le thésaurus
 des relations de localisation peut être exploité pour d'autres travaux
 au sein du projet Choucas ou à l'extérieur. C'est pourquoi nous avons
 décidé de séparer les deux ontologies et de ne diffuser que
-l'ontologie des relations de localisation.
+l'ontologie des \emph{relations de localisation.}
 
 \begin{table}
   \centering
   \input{../tableaux/orl_vs_orla.tex}
   \caption{Éléments de comparaison des ontologies \ac{orl} et
-    \ac{orla}}
+    \ac{orla}.}
   \label{tab:orl_vs_orla}
 \end{table}
 
@@ -287,7 +444,7 @@ l'ontologie des relations de localisation.
 préciser liens avec bateman
 
 La construction de l'ontologie des relations de localisation s'est
-faite en deux étapes. Dans un premier temps nous avons définit les
+faite en deux étapes. Dans un premier temps nous avons défini les
 concepts à partir des \emph{relations de localisation} utilisées dans
 les alertes, puis nous avons hiérarchisé ces concepts.
 
@@ -338,9 +495,6 @@ définies par \textcite{Bateman2010}, les autres concepts sont définis
 de manière significativement différente.
 
 
-
-- Distinction positionement / configuration
-
 - Structure orienté utilisateur (concepts fortement liés à
 l'acceptation des utilisateurs)
 
@@ -350,7 +504,7 @@ l'acceptation des utilisateurs)
 
 \begin{figure}
   \centering
-  %\input{../figures/ontologie.tex}
+  \input{../figures/ontologie.tex}
   \caption{Onto}
   \label{fig:ontho}
 \end{figure}
@@ -383,6 +537,14 @@ int
 ext
 sous altitude
 sous proche de 
+
+\begin{figure}
+  \centering
+  \missingfigure{}
+  \caption{Processus de construction de l'ontologie}
+  \label{fig:}
+\end{figure}
+
 
 %%% Local Variables:
 %%% mode: latex

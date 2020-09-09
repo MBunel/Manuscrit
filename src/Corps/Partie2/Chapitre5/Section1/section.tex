@@ -19,23 +19,85 @@ l'utilisateur de saisir des \emph{relations de localisation
   atomiques,} qui ne sont pas prévues pour. C'est pourquoi nous
 proposons d'automatiser cette étape.
 
-\subsection{La décomposition en détail}
+\subsection{La décomposition des \emph{relations de localisation}}
 
-Pour ce faire il est nécessaire de définir au préalable la manière
-dont les différentes \emph{relations de localisation} spatialisables
-se décomposent (cf. présentation du \emph{principe de modélisation
-  explicite des connaissances}, \autoref{chap:04}). Nous avons choisi
-de formaliser ces décomposition au sein d'une ontologie, créée pour
-l'occasion.
+Nous avons précédemment abordé la décomposition des \emph{relations de
+  localisation} en la présentant comme le processus permettant de
+passer d'une \emph{relation de localisation} à un ensemble de
+\emph{relations de localisations atomiques} liées par des conjonctions
+et auxquelles est apposée une méthode de \emph{spatialisation,}
+permettant de construire la \emph{zone de localisation compatible}
+correspondant à la \emph{relation de localisation atomique} pour un
+\emph{objet de référence} donné.
 
-La décomposition des relations de localisation nécessite donc deux
-étapes. La première est la lecture des règles de décomposition, la
-seconde est leur application.
+\tdi{le secouriste à un choix limité}
 
 
-Pour 
+La difficulté majeure de la décomposition des \emph{relations de
+  localisations} consiste donc à savoir comment décomposer les
+\emph{relations de localisation} utilisées par le requérant et saisies
+par le secouriste. Cette décomposition ne pouvant se faire sans
+connaissances à priori. Nous proposons donc de créer une base de
+règles, présentant la décomposition de chaque \emph{relation de
+  localisation} en des \emph{relations de localisation atomiques}
+spatialisables. La constitution d'une telle base pose cependant
+plusieurs problèmes. Tout d'abord il faut définir une structure pour
+l'ensemble des règles qui permette de formaliser toutes les variations
+de décompositions souhaitées. De plus, il est nécessaire d'identifier
+toutes les \emph{relations de localisation} pertinentes dans notre
+contexte, en identifier la sémantique et en proposer une décomposition
+en des \emph{relations de localisation atomiques} qu'il est également
+nécessaire de définir.
 
-\tdi{Bivalence décomposition-relations de localisation}
+Dans le cas qui nous a servi à présenter le \emph{principe de
+  décomposition} (cf. \autoref{chap;04}) une \emph{relation de
+  localisation} (\enquote{XX}) était décomposée en deux
+\emph{relations de localisation atomiques} (\enquote{ZZ} et
+\enquote{YY}). Si cette configuration a pour mérite de bien illustrer
+le fonctionnement et l'objectif du \emph{principe de décomposition,}
+elle ne présente qu'une des configurations possibles. Tout d'abord il
+est possible qu'une \emph{relation de localisation} soit décomposable
+en plus de deux \emph{relations de localisations.} Par exemple,
+\textcite{Vanegas2011}, proposent de décomposer la \emph{relation de
+  localisation} \enquote{entouré de} (dans \emph{l'indice de
+  localisation} \enquote{A est entouré de B}), avec des
+\emph{relations de localisation} directionnelles, donnant les
+\emph{indices de localisation:} \enquote{B est au nord de A},
+\enquote{B est à l'est de A}, \enquote{B est au sud de A} et
+\enquote{B est à l'ouest de A}. Ainsi, il n'y a aucune raison à
+limiter le nombre de \emph{relations de localisation atomiques}
+décomposant une \emph{relation de localisation,} même s'il est peu
+probable que se nombre puisse atteindre des très grandes valeurs. À
+l'inverse, on peut se questionner sur la possibilité que certaines
+\emph{relations de localisation} ne soient pas décomposables. Par
+exemple, la \emph{relation de localisation} \enquote{à} (\eg je suis
+au sommet) ne nous semble pas décomposable, pourtant il s'agit bien
+d'une \emph{relation de localisation,} que l'on est amené à utiliser
+fréquemment. Dans ce cas, \emph{relation de localisation} et
+\emph{relation de localisation atomique} sont confondues. Cet exemple
+illustre le fait que les deux types de \emph{relations de
+  localisation} peuvent se confondre. En effet, dans notre acception,
+les \emph{relations de localisation} atomiques sont définies selon un
+critère théorique et computationnel, elles sont toutes les
+\emph{relations de localisation} directement spatialisables. La
+définition des \emph{relations de localisation} est plus proche des
+considérations de l'utilisateur, puisque l'on utilise ce terme pour
+désigner toute relation conçue pour être directement manipulable par
+l'utilisateur, là où la plupart des \emph{relations de localisation
+  atomiques} désignent des concepts plus fins que ceux que nous sommes
+habitués à manipuler en langage naturel. Dans le cas où la
+décomposition n'est pas possible, c'est-à-dire lorsque la
+\emph{relation de localisation} et la \emph{relation de localisation
+  atomique} sont confondues, la relation est à la fois directement
+spatialisable ---~puisque atomique~--- et directement manipulable par
+l'utilisateur. Il est donc envisageable que certaines \emph{relations
+  de localisation} (décomposables en \emph{relations de localisation
+  atomiques}) soient le résultat de la décomposition d'autres
+\emph{relations de localisation.} Cela implique qu'une règle de
+décomposition n’aboutit pas nécessairement à une \emph{relation de
+  localisation atomique,} bien qu'elle parte, systématiquement d'une
+\emph{relation de localisation.} Les décompositions peuvent donc être
+récursives.
 
 La difficulté de la décomposition des relations de localisation dépend
 principalement d'un seul choix, celui de la définition ---~ou non~---
@@ -50,10 +112,37 @@ données permettant de justifier ce choix. Si elles sont éminemment
 plus complexes à mettre en place, de telles décompositions permettent
 d’adapter la spatialisation au contexte.
 
-\tdi{Commutativité de la décomposition (Passer dans le chap 4 ??)}
 
-Une \emph{relation de localisation} se décompose en une conjonction
-d'un ensemble de \emph{relations de localisation atomiques.}
+L'automatisation de la décomposition des \emph{relations de
+  localisation} nécessite la définition à priori d'un ensemble de
+règles, définissant la manière dont les différentes \emph{relations de
+  localisation} se décomposent (cf. présentation du \emph{principe de
+  modélisation explicite des connaissances}, \autoref{chap:04}). 
+
+Ainsi, pour représenter l'ensemble des décompositions possibles il est
+nécessaire que la base de règles définie puisse :
+\begin{enumerate*}[label=(\arabic*)]
+\item permettre que la décomposition d'une \emph{relation de
+    localisation} se fasse en un nombre, possiblement élevé, de
+  \emph{relations de localisation atomiques,}
+\item permettre des décomposition récursives (\ie qu'une
+  \emph{relation de localisation} se décompose en des \emph{relations
+    de localisation} non atomiques),
+\item autoriser que certaines \emph{relations de localisation} ne soient pas
+  décomposables,
+\item garantir l'unicité des \emph{relations de localisation,}
+  qu'elles soient atomiques ou non et
+\item interdire les décompositions concurrentes d'une même
+  \emph{relation de localisation.}
+\end{enumerate*}
+
+
+Nous avons choisi de formaliser ces décomposition
+au sein d'une ontologie, créée pour l'occasion.
+
+La décomposition des relations de localisation nécessite donc deux
+étapes. La première est la lecture des règles de décomposition, la
+seconde est leur application.
 
 
 \tdi{Possibilité de faire des négations}
@@ -61,27 +150,24 @@ d'un ensemble de \emph{relations de localisation atomiques.}
 Il est également envisageable de permettre l'utilisation de négations
 de relations de localisation atomiques. Ainsi on pourra utiliser
 
-
-\tdi{Pas de limitations nombre de décompositions}
-
-
-L'application des règles de décomposition n'est pas particulièrement
-déclicate, 
-
-
 \begin{figure}
   \centering
-  %\input{../figures/ontologie_min_struc.tex} 
+  \missingfigure{}
   \caption{Illustration du processus de décomposition des relations de
   localisation}
   \label{fig:logique_dec}
 \end{figure}
 
-\subsection{Définition structure}
+\subsection{Vers la définition d'une ontologie des règles de
+  décomposition des \emph{relations de localisation}}
 
+Nous avons choisi de formaliser les règles de décomposition des
+\emph{relations de localisation} à l'aide d'une ontologie de
+décomposition.
 
 Pour permettre la décomposition des \emph{relations de localisation}
-cette dernière doit contenir, a minima, trois types d'informations :
+telle que nous l'avons présentée, cette dernière doit contenir, a
+minima, trois types d'objets :
 %
 \begin{enumerate*}[label=(\alph*)]
 \item \emph{les relations de localisation} à décomposer,
@@ -93,8 +179,18 @@ cette dernière doit contenir, a minima, trois types d'informations :
   (\autoref{fig:onto_min_struct}).
 \end{enumerate*}
 %
+Les \emph{relations de localisation} et les \emph{relations de
+  localisation atomiques} doivent être uniques, 
+
 L'ensemble des \emph{relations de localisation} définies dans
-l'ontologie forme un vocabulaire contrôlé, permettant à l'utilisateur
+l'ontologie forme un vocabulaire contrôlé, qui peut être utilisé dans
+plusieurs aspects du projet Choucas. 
+
+\tdi{parler de l'utilisation de l'ontologie dans d'autres domaines
+  (lots 4 et 2)}
+
+
+permettant à l'utilisateur
 de saisir les \emph{indices de localisation}. La décomposition de ces
 relations ne lui est pas connue. Le travail de décomposition ne
 consiste alors qu'à appliquer la règle de décomposition ---~définie
@@ -105,17 +201,13 @@ dans l'ontologie~--- correspondant à la \emph{relation de
   \centering
   \input{../figures/ontologie_min_struc.tex} 
   \caption[Structure générale d'une ontologie de
-  décomposition]{Structure générale d'une ontologie permettant de
-    décomposer une \emph{relation de localisation} ($rl_i$) en un
-    ensemble de \emph{relations de localisation atomiques} ($rla_i$).}
+  décomposition]{Concepts et relations nécessaires à la définition
+    d'une ontologie permettant de décomposer une \emph{relation de
+      localisation} ($rl_i$) en un ensemble de \emph{relations de
+      localisation atomiques} ($rla_i$).}
   \label{fig:onto_min_struct}
 \end{figure}
 
-Comme nous l'expliquions lors de la présentation de la phase de
-décomposition, chacune des étapes de cette phase consiste à créer un
-nouvel \emph{indice de localisation.} Conformément au \emph{principe
-  de modélisation autonome,} chaque \emph{indice de localisation}
-traité peut être décomposé de manière indépendante.
 
 Comme le montre la \autoref{fig:onto_min_struct}, plusieurs
 configurations de décompositions sont envisageables. La première
@@ -131,8 +223,10 @@ Ces dernières peuvent partager une \emph{relation de localisation
 %
 Dans certaines configurations (\eg \(rl_2\)), on ne peut pas
 identifier de décomposition satisfaisante pour une \emph{relation de
-  localisation.} La \emph{relation de localisation} n'est alors que
-l'alias d'une \emph{relation de localisation atomique.} Dans ce cas il
+  localisation.}
+
+
+Dans ce cas il
 n'est pas nécessaire de définir (contrairement a ce qui a été fait
 pour l'exemple de la \autoref{fig:onto_min_struct}), une
 \emph{relation de localisation} et une \emph{relation de localisation
@@ -154,6 +248,8 @@ correspondent à la réalité du contexte applicatif. Pour mettre en
 place cette démarche, il est nécessaire d'identifier les
 \emph{relations de localisations} utilisées dans notre contexte et les
 spécificités de leur usage.
+
+\tdi{liens avec Bateman}
 
 %%% Local Variables:
 %%% mode: latex
