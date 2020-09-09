@@ -272,7 +272,7 @@ collégialement les transcriptions pour aboutir à une version qui fasse
 l'objet d'un consensus. Compte tenu des problèmes que nous avions
 rencontrés lors de la saisie du premier corpus nous avons adopté une
 démarche de transcription plus avancée. La trentaine d'alertes à
-transcrire a été répartie entre trois \todo{4?} personnes
+transcrire a été répartie entre trois personnes
 \autocite{Bunel2019}. Après une première transcription, les fichiers
 produits ont été amendés et commentés par un second transcripteur, en
 vue d'aboutir, en collaboration avec le transcripteur initial, à une
@@ -282,76 +282,6 @@ obtenir un ensemble de retranscriptions le plus cohérent possible.
 
 Au final, la retranscription des 52 alertes nous a permis d'identifier
 374 expressions différentes, que nous avons ensuite analysé.
-
-% Défintion des concepts
-Pour chaque expression nous avons cherché à définir un concept
-permettant d'exprimer la sémantique de la \emph{relation de
-  localisation} utilisée.
-
-Pour ce faire nous avons cherché à
-identifier, pour chaque expression, le concept de l'ontologie de
-\textcite{Bateman2010} le plus proche de la sémantique de la relation
-de localisation utilisée par le requérant.
-
-À la suite de cette étape toutes les \emph{relations de localisations}
-sont associées à un concept tiré de l'ontologie de
-\textcite{Bateman2010}. Cependant, dans la majorité des cas, le
-concept issu de GUM-Space ne nous a pas donné entière satisfaction,
-soit parce-que le concept retenu ne fonctionnait qu'au pris d'une
-interprétation très \enquote{flexible} de la définition de
-\textcite{Bateman2010}, soit parce-que la description donnée par le
-requérant n'était que grossièrement retranscrite par les concepts de
-GUM-Space.
-
-On peut prendre pour exemple la \emph{préposition spatiale}
-\enquote{entre} utilisée dans l'extrait suivant :
-%
-\begin{quote}
-  \begin{dialogue}
-    \Sec Vous êtes entre Grand Veymont et Pas de la Ville ?  \Req Je
-    suis entre le Grand Veymont, sous le Grand Veymont et Pas de la
-    Ville, tout à fait. Je suis côté… heu… côté sud.
-  \end{dialogue}
-\end{quote}
-%
-L'ontologie GUM-Space ne propose pas de concepts permettant une
-retranscription satisfaisante de la sémantique de cette \emph{relation
-  spatiale.} On peut faire appel aux concepts
-\onto[gum]{Dis\-tri\-bu\-tion} ou \onto[gum]{Surround\-ing} mais le
-premier s'applique qu'au cas où \emph{l'objet de référence} est une
-collection (\eg \enquote{entre les arbres}, \enquote{parmi la foule}),
-là où le second correspond plus à la \emph{relation de localisation}
-\enquote{entouré de}, qui, bien que proche, n'est pas une
-approximation satisfaisante de la \emph{relation de localisation}
-utilisée par le requérant. De la même manière dans l'extrait :
-%
-\begin{quote}
-  \begin{dialogue}
-    \Req On est à 10 minutes du sommet de la Bastille.
-  \end{dialogue}
-\end{quote}
-%
-Le requérant décrit sa position à l'aide d'une durée de marche à
-partir de \emph{l'objet de référence,} \ie à l'aide d'une
-\emph{distance-temps quantitative.} Cependant, l'ontologie GUM-Space
-ne possède qu'un seul concept permettant d'exprimer une distance
-quantitative, \onto[gum]{Quanti\-tative\-Dist\-ance}. Au vu de la
-description qui est faite de ce concept dans \textcite{Bateman2010} on
-peut légitimement penser que ce concept a essentiellement été prévu
-pour conceptualiser des distances métriques, uniquement des distances
-métriques. On pourrait se contenter de cette situation, considérant
-que ces distances sont équivalentes. Cependant, comme nous
-l'expliquions dans l'état de l'art (\autoref{chap:03}) les
-distances-temps sont beacoup plus XXX que les distances métriques et
-leur \emph{spatialisation} implique dès lors des méthodes plus
-avancées. Par conséquent il nous semble nécessaire de développer un
-nouveau concept, \onto{A\-Dist\-ance\-Temps}, plus précis et adapté.
-
-Au final, 51 \emph{relations de localisation} ont été définies dont
-seules 8 sont des concepts originaux de GUM-Space. Les 43 concepts
-restants sont soit des précisions de concepts existants (\eg
-\onto{A\-Dist\-ance\-Temps}) soit des concepts totalement nouveaux
-(\eg \onto{En\-tre\-X\-\&\-Y}).
 
 % configuration vs position
 L'étude détaillée des \emph{relations de localisation} utilisées dans
@@ -375,22 +305,6 @@ avant destinée à la \emph{spatialisation} des \emph{indices de
 \emph{relations de localisation} décrivant une \emph{configuration
   spatiale,} la \emph{spatialisation} de trajectoires ne faisant pas
 partie de nos objectifs.
-
-% Hiérarchisation des concepts
-Une fois que l'ensemble des \emph{relations de localisation}
-nécessaires a la retranscription des alertes a été défini nous avons
-procédé à leur hiérarchisation. Pour ce faire nous avons défini de
-nouvelles classes, permettant de regrouper les relations de
-localisation par similarité sémantique. Ces nouvelles classes sont
-abstraites, \ie qu'elles ne sont pas des \emph{relations de
-  localisation,} elles ne servent qu'à leur regroupement.
-
-Pour définir cette hiérarchie nous nous sommes appuyés sur différentes
-propositions précédentes et principalement de l'ontologie GUM-Space
-\autocite{Bateman2010}.
-
-
-Technique
 
 \subsection{Construction des ontologies}
 
@@ -426,22 +340,106 @@ l'ontologie des \emph{relations de localisation.}
 
 \subsubsection{L'ontologie des \emph{relations de localisation}}
 
-3 classes principales + visibilité
-
-préciser liens avec bateman
-
 La construction de l'ontologie des relations de localisation s'est
 faite en deux étapes. Dans un premier temps nous avons défini les
 concepts à partir des \emph{relations de localisation} utilisées dans
 les alertes, puis nous avons hiérarchisé ces concepts.
 
+% Défintion des concepts
+Pour chaque expression nous avons cherché à définir un concept
+permettant d'exprimer la sémantique de la \emph{relation de
+  localisation} utilisée.
+%
+Pour ce faire nous avons cherché à identifier, pour chaque expression,
+le concept de l'ontologie de \textcite{Bateman2010} le plus proche de
+la sémantique de la relation de localisation utilisée par le
+requérant.
+%
+À la suite de cette étape toutes les \emph{relations de localisations}
+sont associées à un concept tiré de l'ontologie de
+\textcite{Bateman2010}. Cependant, dans la majorité des cas, le
+concept issu de GUM-Space ne nous a pas donné entière satisfaction,
+soit parce-que le concept retenu ne fonctionnait qu'au pris d'une
+interprétation très \enquote{flexible} de la définition de
+\textcite{Bateman2010}, soit parce-que la description donnée par le
+requérant n'était que grossièrement retranscrite par les concepts de
+GUM-Space.
 
-L'ontologie des \emph{relations de localisation} défini 62
-\emph{classes,} représentant des \emph{relations de localisation} ou
-leurs regroupements (\eg Relations spatiales de contact, de direction,
-\emph{etc.}). À ces différentes classes s'ajoutent des
-\emph{relations,} permettant de définir des liens entre les
-différentes classes définies.
+On peut prendre pour exemple la \emph{préposition spatiale}
+\enquote{entre} utilisée dans l'extrait suivant :
+%
+\begin{quote}
+  \begin{dialogue}
+    \Sec Vous êtes entre Grand Veymont et Pas de la Ville ?  \Req Je
+    suis entre le Grand Veymont, sous le Grand Veymont et Pas de la
+    Ville, tout à fait. Je suis côté… heu… côté sud.
+  \end{dialogue}
+\end{quote}
+%
+L'ontologie GUM-Space ne propose pas de concepts permettant une
+retranscription satisfaisante de la sémantique de cette \emph{relation
+  spatiale.} On peut faire appel aux concepts
+\onto[gum]{Dis\-tri\-bu\-tion} ou \onto[gum]{Surround\-ing}, mais le
+premier s'applique qu'au cas où \emph{l'objet de référence} est une
+collection (\eg \enquote{entre les arbres}, \enquote{parmi la foule}),
+et le second correspond plus à la \emph{relation de localisation}
+\enquote{entouré de}, qui, bien que proche, n'est pas une
+approximation satisfaisante de la \emph{relation de localisation}
+utilisée par le requérant. De la même manière, dans l'extrait :
+%
+\begin{quote}
+  \begin{dialogue}
+    \Req On est à 10 minutes du sommet de la Bastille.
+  \end{dialogue}
+\end{quote}
+%
+Le requérant décrit sa position à l'aide d'une durée de marche à
+partir de \emph{l'objet de référence,} \ie à l'aide d'une
+\emph{distance-temps quantitative.} Cependant, l'ontologie GUM-Space
+ne possède qu'un seul concept permettant d'exprimer une distance
+quantitative, \onto[gum]{Quanti\-tative\-Dist\-ance}. Au vu de la
+description qui est faite de ce concept dans \textcite{Bateman2010} on
+peut légitimement penser que ce concept a essentiellement été prévu
+pour conceptualiser des distances métriques, uniquement des distances
+métriques. On pourrait se contenter de cette situation, considérant
+que ces distances sont équivalentes. Cependant, comme nous
+l'expliquions dans l'état de l'art (\autoref{chap:03}) les
+distances-temps sont beacoup plus XXX que les distances métriques et
+leur \emph{spatialisation} implique dès lors des méthodes plus
+avancées. Par conséquent il nous semble nécessaire de développer un
+nouveau concept, \onto{A\-Dist\-ance\-Temps}, plus précis et adapté.
+
+Au final, 51 \emph{relations de localisation} ont été définies dont
+seules 8 sont des concepts originaux de GUM-Space. Les 43 concepts
+restants sont soit des précisions de concepts existants (\eg
+\onto{A\-Dist\-ance\-Temps}) soit des concepts totalement nouveaux
+(\eg \onto{En\-tre\-X\-\&\-Y}).
+
+\tdi{- Structure orienté utilisateur (concepts fortement liés à
+  l'acceptation des utilisateurs)}
+
+% Hiérarchisation des concepts
+Une fois que l'ensemble des \emph{relations de localisation}
+nécessaires a la retranscription des alertes a été défini nous avons
+procédé à leur hiérarchisation. Pour ce faire nous avons défini de
+nouvelles classes, permettant de regrouper les relations de
+localisation par similarité sémantique. Ces nouvelles classes sont
+abstraites, \ie qu'elles ne sont pas des \emph{relations de
+  localisation,} elles ne servent qu'à leur regroupement.
+
+Pour définir cette hiérarchie nous nous sommes appuyés sur différentes
+propositions précédentes et principalement de l'ontologie GUM-Space
+\autocite{Bateman2010}.
+
+\tdi{3 classes principales + visibilité} Ai premier niveau de
+l'ontologie on trouve trois classes abstraites principales, regroupant
+l'ensemble des \emph{relations de localisation} et deux
+\emph{relations de localisation} isolées et complémentaires,
+\onto[orl]{XVoitY} et \onto[orl]{XEstVuParY}.
+
+\tdi{Hiérarchie croisée}
+Nous n'avons pas cherché à définir une hiérarchie \enquote{plate},
+c'est-à-dire sans héritages multiples
 
 % Classes / concepts abstraits
 Les classes définies sont de deux types, elles peuvent représenter des
@@ -454,23 +452,24 @@ abstraites, sont au nombre de 11, par conséquent 51 classes
 représentent effectivement des \emph{relations de localisation} et
 donc des \emph{concepts spatialisables.}
 
-% Pas de propriétés
-\emph{L'ontologie des relations de localisations} n'emploie qu'un seul
-type de lien, \emph{SubClassOf,} une relation asymétrique et
-transitive indiquant que la classe \enquote{fille} spécifie la classe
-\enquote{mère}. Dans le cas de cette ontologie, 78 relations
-\emph{SubClassOf} ont été définies. La définition d'autres relations
-ne nous a pas semblé importante.
+L'ontologie des \emph{relations de localisation} défini donc 62
+\emph{classes,} représentant des \emph{relations de localisation} ou
+leurs regroupements (\eg Relations spatiales de contact, de direction,
+\emph{etc.}) et 78 relations \emph{SubClassOf,} indiquant que la
+classe \enquote{fille} spécifie la classe \enquote{mère}. 
+
+\tdi{Pas de propriétés}
 
 Ces relations permettent de
 construire un arbre des relations de localisation
 (\autoref{fig:onth}).
 
-
-\ac{orl} est fortement liée à l'ontologie GUM-Space, proposée par
-\textcite{Bateman2010}. Les \emph{relations de localisation} définies
-sont, lorsque possible, liées aux concepts équivalent (ou similaires)
-de l'ontologie GUM-Space. Plus spécifiquement deux types de liens sont
+Les concepts définis dans \ac{orl} étant fortement inspirés, voir
+repris, de l'ontologie GUM-Space, nous avons complété l'ontologie en
+liant, pour chaque concept le concept équivalent (ou similaire) de
+l'ontologie GUM-Space.
+%
+Plus spécifiquement deux types de liens sont
 définis, la relation \emph{seeAlso,} utilisée 24 fois et la relation
 \emph{equivalentClass,} utilisée 8 fois. Cette dernière traduit une
 équivalence parfaite entre concepts, alors que la relation
@@ -480,14 +479,6 @@ proximité sémantique entre deux concepts sans qu'ils soient
   de localisation} définies dans \ac{orl} sont identiques à celles
 définies par \textcite{Bateman2010}, les autres concepts sont définis
 de manière significativement différente.
-
-
-- Structure orienté utilisateur (concepts fortement liés à
-l'acceptation des utilisateurs)
-
-- Hiérarchie croisée
-
-- Règle de différentiation
 
 \begin{figure}
   \centering
@@ -524,14 +515,6 @@ int
 ext
 sous altitude
 sous proche de 
-
-\begin{figure}
-  \centering
-  \missingfigure{}
-  \caption{Processus de construction de l'ontologie}
-  \label{fig:}
-\end{figure}
-
 
 %%% Local Variables:
 %%% mode: latex
