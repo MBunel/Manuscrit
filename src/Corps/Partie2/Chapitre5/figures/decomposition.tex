@@ -11,13 +11,14 @@
     }
   }
   
-  \node[text width=3cm, align=center] (dec) {Décomposition des relations de localisation};
+  \node[text width=4cm, align=center, draw] (dec) {Décomposition des
+    \emph{relations de localisation}};
 
   \node[anchor=east,above left=of dec] (rl) {$\text{\textsf{rl}}$};
-  \node[anchor=east,below left=of dec] (db) {};
-  \node[database, scale=3] at ([xshift=-6,yshift=-2]db.west) {};
-  \node[align=center] at ([xshift=-3,yshift=-1cm]db.west) {Base de
-    règles de décomposition};
+  \node[anchor=east,below left=of dec] (db) {}; \node[database,
+  scale=3] at ([xshift=-6,yshift=-2]db.west) {}; \node[align=center,
+  text width=3cm] at ([xshift=-3,yshift=-1.25cm]db.west) {Base des règles
+    de décomposition};
 
   \node[anchor=west,right=of dec] (rla) {$\text{\textsf{rla}}$};
 
