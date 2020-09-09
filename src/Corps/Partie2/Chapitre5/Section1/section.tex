@@ -28,7 +28,45 @@ passer d'une \emph{relation de localisation} à un ensemble de
 et auxquelles est apposée une méthode de \emph{spatialisation,}
 permettant de construire la \emph{zone de localisation compatible}
 correspondant à la \emph{relation de localisation atomique} pour un
-\emph{objet de référence} donné.
+\emph{objet de référence} donné. La difficulté majeure de cette
+décomposition consiste donc à identifier la manière dont les
+\emph{relations de localisation} utilisées par le requérant et saisies
+par le secouriste doivent être décomposées. Notre objectif étant de
+proposer une décomposition selon des critères sémantiques, propres à
+chaque \emph{relation de localisation,} il est nécessaire de disposer
+de connaissances à priori sur la sémantique des \emph{relations de
+  localisation.} Nous proposons donc de créer une base de règles,
+présentant la décomposition de chaque \emph{relation de localisation}
+en des \emph{relations de localisation atomiques} spatialisables. Avec
+une telle base de connaissances le processus de décomposition des
+\emph{relations de localisation} nécessiterait trois étapes :
+%
+\begin{enumerate*}[label=(\arabic*)] 
+\item réception de la \emph{relation de localisation}
+  ($\text{\textsf{rl}}$) à décomposer,
+\item lecture de la base de règles et identification des règles
+  définies pour la \emph{relation de localisation}
+  $\text{\textsf{rl}}$ et
+\item application des règles de décomposition à la \emph{relation de
+  localisation} $\text{\textsf{rl}}$
+\end{enumerate*}
+%
+Ce processus de décomposition, illustré par la
+\autoref{fig:logique_dec}, nécessite donc deux entrées : une
+\emph{relation de localisation} à décomposer, qui change à chaque
+décomposition et une base de règles, définissable en amont et qui ne
+sera modifiée que lorsque nécessaire (\eg correction d'erreurs,
+ajustement, ajout de nouvelles règles, \emph{etc.}).
+
+La constitution d'une telle base pose cependant
+plusieurs problèmes. Tout d'abord il faut définir une structure pour
+l'ensemble des règles qui permette de formaliser toutes les variations
+de décompositions souhaitées. De plus, il est nécessaire d'identifier
+toutes les \emph{relations de localisation} pertinentes dans notre
+contexte, en identifier la sémantique et en proposer une décomposition
+en des \emph{relations de localisation atomiques} qu'il est également
+nécessaire de définir.
+
 
 \tdi{le secouriste à un choix limité}
 
@@ -40,21 +78,6 @@ correspondant à la \emph{relation de localisation atomique} pour un
   \label{fig:logique_dec}
 \end{figure}
 
-La difficulté majeure de la décomposition des \emph{relations de
-  localisations} consiste donc à savoir comment décomposer les
-\emph{relations de localisation} utilisées par le requérant et saisies
-par le secouriste. Cette décomposition ne pouvant se faire sans
-connaissances à priori. Nous proposons donc de créer une base de
-règles, présentant la décomposition de chaque \emph{relation de
-  localisation} en des \emph{relations de localisation atomiques}
-spatialisables. La constitution d'une telle base pose cependant
-plusieurs problèmes. Tout d'abord il faut définir une structure pour
-l'ensemble des règles qui permette de formaliser toutes les variations
-de décompositions souhaitées. De plus, il est nécessaire d'identifier
-toutes les \emph{relations de localisation} pertinentes dans notre
-contexte, en identifier la sémantique et en proposer une décomposition
-en des \emph{relations de localisation atomiques} qu'il est également
-nécessaire de définir.
 
 Dans le cas qui nous a servi à présenter le \emph{principe de
   décomposition} (cf. \autoref{chap;04}) une \emph{relation de
