@@ -278,9 +278,8 @@ produits ont été amendés et commentés par un second transcripteur, en
 vue d'aboutir, en collaboration avec le transcripteur initial, à une
 seconde version. Une fois l'ensemble du second corpus retranscrit nous
 avons procédé a une harmonisation collégiale des saisies, de manière à
-obtenir un ensemble de retranscriptions le plus cohérent possible.
-
-Au final, la retranscription des 52 alertes nous a permis d'identifier
+obtenir un ensemble de retranscriptions le plus cohérent possible. Au
+final, la retranscription des 52 alertes nous a permis d'identifier
 374 expressions différentes, que nous avons ensuite analysé.
 
 % configuration vs position
@@ -308,7 +307,7 @@ partie de nos objectifs.
 
 \subsection{Construction des ontologies}
 
-\subsubsection{Cadre des ontologies}
+%\subsubsection{Cadre des ontologies}
 
 Il a été choisi de développer deux ontologies complémentaires pour
 formaliser les \emph{relations de localisation.} La première d'entre
@@ -523,64 +522,148 @@ proximité sémantique entre deux concepts sans qu'ils soient
 définies par \textcite{Bateman2010}, les autres concepts sont définis
 de manière significativement différente.
 
-\begin{figure}
-  \centering
-  \input{../figures/ontologie.tex}
-  \caption{Onto}
-  \label{fig:ontho}
-\end{figure}
+% \begin{figure}
+%   \centering
+%   \input{../figures/ontologie.tex}
+%   \caption{Onto}
+%   \label{fig:ontho}
+% \end{figure}
 
 \subsubsection{L'ontologie des \emph{relations de localisation
     atomiques}}
 
 Le processus de construction de \emph{l'ontologie des relations de
-  localisation atomiques} \acp{orla} est assez différent de celui
-suivit pour construire \emph{l'ontologie des relations de
-  localisation.} Là où \ac{orl} est construite pour être manipulable
-par un humain, \ac{orla} n'est destinée qu'a l'automatisation des
-décompostions.
-
-Ainsi s'il était nécessaire de converger vers une première version
-d'\ac{orl} qui soit utilisable par les différents lot du projet
-Choucas concernés, nous avons la maitrise totale d'\ac{orla}. Par
-conséquent il n'est pas nécessaire de converger rapidement vers une
-organisation stable.
-
-Pour permettre la décomposition, \emph{l'ontologie des relations de
-  localisations atomiques} ne nécessite que deux types d'éléments, un
-ensemble de relations de localisation atomiques et un ensemble de
-relations de décomposition, liant les \emph{relations de localisation}
-définies dans \ac{orl} aux relations atomiques.
-
-La démarche de définition d'\ac{orla} a consisté a définir des
+  localisation atomiques} \acp{orla} est assez différent de celui de
+\emph{l'ontologie des relations de localisation.} Là où \ac{orl} a été
+construite d'un trait, à partir d'un ensemble de cas réels,
+\emph{l'ontologie des relations de localisation atomiques} a été
+développée progressivement, au fil du traitement de nouvelles
+alertes. Dans sa version actuelle, \ac{orla} ne propose pas une
+décomposition pour toutes les \emph{relations de localisation}
+définies précédemment. Seules les relations de localisation les plus
+fréquemment utilisées dans les alertes ont été modélisées.  La
+démarche de définition d'\ac{orla} a consisté a définir des
 \emph{relations de localisation atomiques} et des décompositions au
 fil de l'eau, en fonction des \emph{relations de localisation}
 identifiées dans les alertes traitées.
 
-\tdi{Comment orla a été construite. Décomposition ad hoc de relations
-  de localisation.}
+Pour modéliser les \emph{relations topologiques} nous utilisons
+quatres relations de localisation atomiques :
+\onto[orla]{In\-té\-ri\-eur\-De},
+\onto[orla]{À\-La\-Fron\-ti\-ère\-De},
+\onto[orla]{Ex\-té\-ri\-eur\-De} et \onto[orla]{Con\-tact}. Deux de
+ces \emph{relations atomiques} (\onto[orla]{In\-té\-ri\-eur\-De} et
+\onto[orla]{À\-La\-Fron\-ti\-ère\-De}) peuvent être utilisées
+directement, elles correspondent alors aux \emph{relations de
+  localisation} \onto[orl]{Dans\-Pla\-ni\-mé\-tri\-que} et
+\onto[orl]{À\-La\-Fron\-ti\-ère\-De}. Les deux autres \emph{relations
+  atomiques} ne sont utilisées que dans des compostions. La
+\emph{relation atomique} \onto[orla]{Ex\-té\-ri\-eur\-De} est par
+exemple utilisée pour définir les \emph{relations} de cardinalité
+\onto[orl]{A\-Est\-De\-Ex\-ter\-ne} ou
+\onto[orl]{Au\-Nord\-De\-Ex\-te\-rne}. De part l'importance que
+revêtent les relations topologiques (\autoref{chap:03}) dans le
+référencement spatial indirect, on retrouve ces \emph{relations de
+  localisation atomiques} dans de nombreuses \emph{relations de
+  localisation.}
 
-Pour la construire nous nous sommes basés sur
+Les \emph{relations de localisation atomiques} formalisant une
+distance sont également très utilisées. Seules deux de ces relations
+sont définies dans \ac{orla}
+:\onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que},
+équivalente à son homonyme dans \ac{orl} et
+\onto[orla]{À\-Dis\-tan\-ce\-Temps}, qui elle n'est utilisé dans
+aucune combinaison. La relation
+\onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que},
+est utilisée dans de nombreuses \emph{relations de localisation,}
+comme \onto[orl]{Proximal}, \onto[orl]{Aux\-Alen\-tours\-De} ou
+\onto[orl]{Près\-De}.
 
-- décrire relations atomiques définies
+Pour représenter les \emph{relations de localisation} orientaionelles
+seule une \emph{relation de localisation atomique} a été définie :
+\onto[orla]{Dans\-La\- Direction\-De}. Cette \emph{relation atomique}
+sert de base à toutes les relations de cardinalité (\ie
+\onto[orl]{Au\-Nord\-De}, \onto[orl]{À\-Ouest\-De}, \emph{etc.}) et
+leurs dérivées composés (\eg \onto[orl]{Au\-Sud\-De\-Ex\-ter\-ne}),
+mais est également utilisée directement. Elle correspond alors à la
+\emph{relation} homonyme définie dans \emph{l'ontologie des relations
+  de localisation}.
 
-DansLaDirectionDe
-ADistanceTemps
-Cardinalité (verifier)
-même alt
-Direction DE
-Dans plani
-Distance Quanti
-Not a la frontiere de
-a la frontiere de
-altEq
-AltSup
-Contact
-dedans
-int
-ext
-sous altitude
-sous proche de 
+La notion de verticalité est exprimée à l'aide de trois principales
+\emph{relations de localisation atomiques} complémentaires :
+\onto[orla]{Al\-ti\-tu\-de\-Équi\-va\-len\-te},
+\onto[orla]{Al\-ti\-tu\-de\-Stric\-te\-ment\-Sup\-érieu\-re} et
+\onto[orla]{Al\-ti\-tu\-de\-Stric\-te\-ment\-Inf\-érieu\-re}. Chacune
+d'entre elles exprime une relation strictement verticale entre le
+\emph{sujet} et \emph{l'objet de référence.} Ces trois \emph{relations
+  atomiques} sont a la base de toutes les \emph{relations spatiales}
+où est présente une notion de verticalité. Elles peuvent être
+utilisées telles quelles, pour désigner des positions relatives sur
+l'axe vertical ou être combinées avec d'autres \emph{relations
+  atomiques.} Dans le cas où ces relations sont utilisées seules,
+elles sont équivalentes aux \emph{relations de localisation}
+\onto[orl]{À\-La\-Mê\-me\-Al\-ti\-tu\-de\-Que},
+\onto[orl]{Au\-Des\-sus\-Al\-ti\-tu\-de} et
+\onto[orl]{Sous\-Al\-ti\-tu\-de}, qui n'imposent aucune contrainte sur
+la distance entre \emph{l'objet de référence} et \emph{le sujet} (\eg
+\enquote{le sommet de la tour Eiffel est moins au que celui de
+  l’Everest}). Si on les combine avec la \emph{relation}
+\onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve} on peut construire les
+relations de localisation \onto[orla]{Sous\-Pro\-che\-De} ou
+\onto[orla]{Au\-Des\-sus\-Pro\-che\-De} qui sont très utilisées dans
+les alertes retranscrites. Enfin, ces relations peuvent également être
+combinées avec des \emph{relations atomiques} topologiques, comme
+\onto[orla]{In\-té\-ri\-eur\-De} ce qui permet la définition de
+\emph{relations} comme \onto[orl]{Dans\-La\-Par\-tie\-Bas\-se\-de} ou
+\onto[orl]{Dans\-La\-Par\-tie\-Hau\-te\-de}.
+
+Ces trois \emph{relations atomiques} ont la particularité d'être
+fortement dépendantes de la valeur d'altitude utilisée comme point de
+référence. C'est pourquoi nous avons défini, pour chacune de ces trois
+\emph{relation de localisation atomiques} des variantes, utilisant une
+valeur d'altitude différente (\autoref{tab:atomique_vertical}). Par
+exemple, les \emph{relations de localisation atomiques}
+\onto[orla]{Al\-ti\-tu\-de\-Stric\-te\-ment\-Sup\-érieu\-re} et
+\onto[orla]{Al\-ti\-tu\-de\-Stric\-te\-ment\-Inf\-érieu\-re} se
+basent, respectivement, sur les altitudes maximales et minimales de
+\emph{l'objet de référence.} Ce parti pris n'est cependant pas
+compatible avec certaines \emph{relations de localisation.} Par
+exemple les \emph{relations}
+\onto[orl]{Dans\-La\-Par\-tie\-Bas\-se\-de} ou
+\onto[orl]{Dans\-La\-Par\-tie\-Hau\-te\-de} se référent à l'altitude
+moyenne de l'objet et non à son maximum ou son minimum. Ainsi les
+trois \emph{relations de localisation atomiques} de verticalité
+principales sont complétées par des variantes basées sur l'altitude
+moyenne, sur l'altitude du plus proche voisin et sur les altitudes
+maximales ou minimales (\autoref{tab:atomique_vertical}), ce qui
+permet de disposer d'une expressivité maximale.
+
+\begin{table}
+  \centering
+  \input{../tableaux/atomiques_verticales.tex}
+  \caption{\emph{Relations de localisation atomiques} de verticalité
+    et leurs vairantes.}
+  \label{tab:atomique_vertical}
+\end{table}
+
+La dernière catégorie des \emph{relations de localisation atomiques}
+concerne les \emph{relations} de visibilité. Cette catégorie présente
+la particularité de définir des \emph{relations de localisation
+  atomiques} qui ne sont utilisables que telles quelles (\ie qu'elles
+ne sont composées à aucune autre \emph{relation atomique}). Les deux
+relations de visibilité définies dans \ac{orl} (\ie
+\onto[orl]{Ci\-ble\-Voit\-Si\-te} et
+\onto[orl]{Si\-te\-Voit\-Ci\-ble}) sont donc peu liées aux autres
+\emph{relations,} d'une part car elles ne sont pas décomposables, mais
+également car les \emph{relations atomiques} qui y correspondent ne
+sont utilisées dans aucune autre décomposition.
+
+Chacune des \emph{relations de localisation atomique} définie dans
+\ac{orla} est associée à un ensemble de règles supplémentaires,
+permettant sa \emph{spatialisation.} Ces différentes règles seront
+explicitées lors de la présentation de la phase de spatialisation
+(\autoref{chap:07}).
+
 
 %%% Local Variables:
 %%% mode: latex
