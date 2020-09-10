@@ -1,0 +1,29 @@
+\begin{tikzpicture}
+  \usetikzlibrary{shapes.geometric}
+  
+  \tikzset{
+    database/.style={cylinder,aspect=0.5,draw,rotate=90,path picture={
+        \draw (path picture bounding box.160) to[out=180,in=180] (path picture bounding
+        box.20);
+        \draw (path picture bounding box.200) to[out=180,in=180] (path picture bounding
+        box.340);
+      }
+    }
+  }
+  
+  \node[text width=4cm, align=center, draw] (dec) {Décomposition des
+    \emph{relations de localisation}};
+
+  \node[anchor=east,above left=of dec] (rl) {$\text{\textsf{rl}}$};
+  \node[anchor=east,below left=of dec] (db) {}; \node[database,
+  scale=3] at ([xshift=-6,yshift=-2]db.west) {}; \node[align=center,
+  text width=3cm] at ([xshift=-3,yshift=-1.25cm]db.west) {Base des règles
+    de décomposition};
+
+  \node[anchor=west,right=of dec] (rla) {$\text{\textsf{rla}}$};
+
+  \draw[->] (rl.east) -| (dec.north);
+  \draw[->] (db.east) -| (dec.south);
+  \draw[->] (dec.east) -- (rla.west);
+  
+\end{tikzpicture}
