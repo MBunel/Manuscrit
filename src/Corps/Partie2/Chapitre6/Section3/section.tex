@@ -1,0 +1,104 @@
+\tdi{Préciser les modèles validés par les deux implémentations}
+
+
+\tdi{OK : On veut un modèle qui permet de prendre en compte des relations
+  de localisation traduisant des limites assez nettes (en dessous de)
+  et des relations avec des limites très continues (proches [voir
+  concept similaire dans l'ontologie]).}
+
+\tdi{OK : Possibilité de construire des zones de localisation issues de
+  relations de localisation non linéaire (en dessous de).}
+
+
+\subsection{Modélisation par Alpha-cuts}
+
+\texttt{citer de Runz, zoglami}
+
+\missingfigure{Illustration modélisation concrète par alpha-cuts}
+
+\subsection{Modélisation par rasters}
+
+\texttt{citer Bloch, Vanegass, takemura}
+
+\missingfigure{Illustration modélisation concrète par raster
+  (introduction de la représentation par rasters).}
+
+\subsection{Comparaison des approches et choix approche raster}
+
+\paragraph{Comparaison des approches}
+
+\tdi{Difficulté de mise en place}
+
+Au moment de la sélection d'une méthode de modélisation nous avons
+estimé que le développement d'une méthode utilisant des vecteurs
+serait bien plus coutueuses. Sur ce point nous avons préféré les
+rasters. De plus il a été bc plus difficile d'aboutir à une
+modélisation vectorielle permettant la comparaison (citer RIG).
+
+\tdi{Difficulté d'extension}
+
+Il semble plus difficile de développer des méthodes de spatialisation
+très différentes en vecteur qu'en raster.
+
+Il est également plus compliqué de tester de nouveaux couples
+d'opérateurs flous en vecteur.
+
+\tdi{Tendance à la fragmentation des alpha-cuts}
+
+\tdi{Temps de calcul}
+
+% Critère moyennement pertinent
+Le critère du temps de calcul n'est pas fondamental pour ce
+travail. Toutefois il nous semble pertinent de préciser que les deux
+méthodes différent sur ce point.
+
+Avantage raster si le nombre de cellules n'est pas trop
+important. Mais le temps de calcul augmente rapidement. L'approche
+vecteur est moins rapide mais le code est moins (et plus
+difficilement) optimisé. Le résultat est assez mitigé.
+
+\tdi{Volume des données}
+
+Avantage vecteur. Le raster tend à prendre beaucoup de place, encore
+plus si l'on souhaite stoquer les objets de référence en raster ou
+sauvegarder des résutlats intermédiaires.
+
+\tdi{Qualité de la modélisation}
+
+Comparable, l'article de la RIG n'a pas permis de mettre en évidence
+des différences notables. Par construction l'approche vectorielle est
+plus précise, mais sa précision dépend aussi des données (MNT pour
+l'altitude). À l'échelle du pixel les résultats sont comparables.
+
+\tdi{OK pour les deux: Stabilité du modèle ? (par exemple si l'on fait
+  des intersection avec le modèle egg-yolk on doit choisir ce qu'est
+  le jaune. C'est l'intersection des jaunes ? ou il suffit qu'il y a
+  ait un jaune?  est-ce qu'il faut introduire des valeurs
+  intermédiaires (gris, lorsqu'on intersecte jaune et blanc) -> mais
+  dans ce cas on sort du egg yolk, le modèle n'est pas stable
+  alors). Le résultat doit pouvoir s'exprimer avec la même
+  modélisation sans perte de sémantique et de finesse de
+  modélisation.}
+
+
+\paragraph{Choix du raster}
+
+\tdi{Plus facile à développer}
+
+\tdi{Plus facile à étendre}
+
+\tdi{Plus rapide d'arriver à spatialiser -> possibilité de travailler
+  sur plus d'alertes}
+
+\tdi{Plus facile à utiliser (pas de fragmentation)}
+
+Conséquences :
+
+\tdi{Nécessité de choix des opérateurs flous}
+
+\tdi{Nécessité de définir une résolution}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../../../../main"
+%%% End:
