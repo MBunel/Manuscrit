@@ -28,12 +28,43 @@ non linéaire.
 La méthode développée devra donc arriver à modéliser aussi bien ces
 deux cas.
 
+\missingfigure{Figure explicitant les points 1 \& 2}
+
 \tdi{Possibilité de fusionner (intersection et union). Nécessité que
 l'union et l'intersection soient commutatives.}
+
+La méthodologie de construction des \emph{zones de localisation}
+présentée dans le \autoref{chap:04} et plus précisément la \emph{phase
+  de fusion,} impose d'effectuer de combiner des \emph{zones de
+  localisation} par des unions et des intersections. La modélisation
+retenue doit donc permettre de réaliser ces opérations, mais également
+garantir leur commutativité. En effet, l'utilisation d'un opérateur
+d'union ou d'intersection non commutatif aurait pour conséquence de
+modifier le résultat de la \emph{phase de fusion} en fonction de
+l'ordre de traitement des \ac{zlc}. Par exemple, si l'on souhaite
+construire la \emph{zone de localisation probable}
+($\text{\textsl{zlp}}$) correspondant à l'ensemble d'indices de
+localisation : \enquote{Je suis à côté d'une maison et dans une
+  forêt}. Pour ce faire il est nécessaire d'identifier les positions
+situées dans les \emph{zone de localisation compatibles} correspondant
+au premier ($\text{\textsf{zlc}}_{i1}$) et au second
+($\text{\textsf{zlc}}_{i2}$) indice, à l'aide d'un opérateur
+d'intersection. Si cet opérateur n'est pas commutatif, alors
+l'intersection de $\text{\textsf{zlc}}_{i1}$ avec
+$\text{\textsf{zlc}}_{i2}$ pourra donner un résultat différent de
+l'intersection de $\text{\textsf{zlc}}_{i2}$ avec
+$\text{\textsf{zlc}}_{i1}$.
 
 \tdi{Nécessité que les résultats soient facilement
   interprétables. Sémantique des résultats et pas trop de zones (par
   exemple beaucoup d'alpha cuts).}
+
+Nous avons déjà présenté l'importance que nous accordons à
+l'interprétabilité des résultats (\emph{principe d'intégration dans le
+  contexte métier}).
+%
+Par conséquent nous souhaitons que la méthodologie retenue produise
+des résultats qui soient interprétables.
 
 \tdi{Stabilité du modèle ? (par exemple si l'on fait des intersection
   avec le modèle egg-yolk on doit choisir ce qu'est le jaune. C'est
