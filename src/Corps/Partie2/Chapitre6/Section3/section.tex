@@ -100,6 +100,11 @@ l'altitude). À l'échelle du pixel les résultats sont comparables.
 
 \paragraph{Choix du raster}
 
+
+La comparaison de ces deux implémentations de la \emph{théorie des
+sous-ensembles flous} nous a conduit à adopter une démarche fondée sur
+l'utilisation de rasters.
+
 \tdi{Plus facile à développer}
 
 \tdi{Plus facile à étendre}
@@ -107,13 +112,39 @@ l'altitude). À l'échelle du pixel les résultats sont comparables.
 \tdi{Plus rapide d'arriver à spatialiser -> possibilité de travailler
   sur plus d'alertes}
 
+Le premier avantage de cette implémentation est d'ordre technique. Si
+cette approche a tendance à être moins performante et plus
+consommatrice de ressources informatiques, elle offre en retour
+l'avantage d'être plus facile à mettre en place et à étendre. Ainsi,
+le choix d'une approche raster nous permet de développer plus
+rapidement une méthode fonctionnelle et donc de pouvoir nous
+concentrer sur la spatialisation de plus d'alertes et non sur des
+aspects plus techniques.
+
 \tdi{Plus facile à utiliser (pas de fragmentation)}
 
-Conséquences :
+Mais l'approche raster se distingue également par ces caractéristiques
+XXXX. En réduisant toutes les opérations inter-\emph{zones de
+  localisation} à des opérations arithmétiques composantes à
+composantes, l'approche raster permet de conserver une certaines
+stabilité du résultat, contrairement à l'approche par
+\emph{alpha-cuts.}
+
+
+Le choix d'utiliser une modélisation basée sur la \emph{théorie des
+sous-ensembles flous} et implémentée à l'aide de raster à des
+conséquences théoriques et pratiques.
 
 \tdi{Nécessité de choix des opérateurs flous}
 
+Les différentes opération inter-\emph{zones de localisation} peuvent
+être réalisée avec différents opérateurs flous.
+
 \tdi{Nécessité de définir une résolution}
+
+De plus, l'utilisation de rasters pose un autre questionnement, celui
+de la définition d'une résolution, dont dépendra la finesse, le poids
+et la rapidité de construction des \emph{zones de localisation.}
 
 %%% Local Variables:
 %%% mode: latex
