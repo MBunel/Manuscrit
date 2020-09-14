@@ -1,17 +1,59 @@
+La mise en place de la méthodologie que nous avons définie nécessite
+la sélection d'une modélisation qui permette d'en traiter tous les
+aspects.
+
+Nous avons identifié deux catégories principales de critères de
+sélection, ceux concernant la phase de spatialisation et ceux
+concernant la phase de fusion.
+
+\subsection{dsq}
+
+C'est un point que nous n'avons que survolé dans les précédents
+chapitres, mais les \emph{relations de localisation} spatialisables
+sont nombreuses et diverses. Le résultat de ces spatialisations est
+amené à varier en fonction de la \emph{relation de localisation}
+spatialisée. Il est donc nécessaire que la modélisation retenue puisse
+représenter tous ces différents cas.
 
 \tdi{On veut un modèle qui permet de prendre en compte des relations
   de localisation traduisant des limites assez nettes (en dessous de)
   et des relations avec des limites très continues (proches [voir
   concept similaire dans l'ontologie]).}
 
-S'il est nécessaire de prendre de prendre en compte l'imprécision lors
-de la \emph{spatialisation} des \emph{relations de localisation,} il
-est également 
+Nous avons, par exemple, présenté plusieurs exemples de
+\emph{relations de localisation} et expliqué pourquoi il était
+nécessaire de considérer leur \emph{imprécision.}
 
-Tout d'abord il est nécessaire que la modélisation retenue permette de
-rendre compte des variations de \emph{précision} inhérentes aux
-différentes \emph{relations de localisation.} En effet, là où
-certaines des relations définies dans \ac{orl} 
+Cependant nous n'avons pas mentionné le fait que cette imprécision
+pouvait être fortement variable. Par exemple, la \emph{relation de
+  localisation} \onto[orl]{Prés\-De}, qui décrit une relation de
+proximité géographique entre \emph{le sujet} et \emph{l'objet de
+  référence} est fortement \emph{imprécise.} Par conséquent, les
+limites de la \emph{zone de localisation} y correspondant sont
+continues, sans réelle rupture entre son intérieur et son extérieur. À
+l'inverse, la \emph{zone de localisation} correspondant à la
+\emph{relation de localisation} \onto[orl]{Sous\-Al\-ti\-tu\-de} a des
+limites plus \emph{précises.} En effet, si l'on imagine une situation
+où l'altitude \emph{sujet} augmente peu à peu jusqu'à dépasser celle
+de \emph{l'objet de référence,} on passera rapidement d'une zone que
+l'on aurait qualifié sans hésitation de \enquote{sous} \emph{l'objet
+  de référence} à une zone que l'on qualifiera, tout aussi surement,
+\enquote{d'au dessus}. Ainsi, s'il est abusif de considérer que
+l'appartenance à cette \emph{zone de localisation} est bivalente, on
+peu remarquer que la longue transition entre l'intérieur et
+l'extérieur de la \emph{zone de localisation} construite
+d'après la \emph{relation de localisation} \onto[orl]{Prés\-De} est
+ici fortement réduite.
+
+Entre ces deux cas archétypaux on trouve une multitude d'autres
+situations, où les limites de la \emph{zone de localisation} sont plus
+ou moins marquées.
+
+Il est nécessaire que notre modélisation des \emph{zones de
+  localisation} propose une prise en compte satisfaisante de ces
+différentes situations et soit donc à même de modéliser des
+\emph{zones de localisation} aux limites presque \emph{nettes} ou
+fortement \emph{imprécises.}
 
 \tdi{Possibilité de construire des zones de localisation issues de
   relations de localisation non linéaire (en dessous de).}
@@ -35,7 +77,10 @@ deux cas.
   \caption{dsqdsq}
   \label{fig:temp}
 \end{figure}
-\missingfigure{Figure explicitant les points 1 \& 2}
+
+
+\subsection{Combinaison des zones}
+
 
 \tdi{Possibilité de fusionner (intersection et union). Nécessité que
 l'union et l'intersection soient commutatives.}
