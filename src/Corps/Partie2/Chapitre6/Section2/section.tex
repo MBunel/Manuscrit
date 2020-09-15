@@ -8,18 +8,30 @@ Par exemple, les modèles \enquote{exacts}, comme les modèles
 \emph{egg-yolk} \autocite{Cohn1996} ou \emph{min-max}
 \autocite{Clementini1996}, imposent une modélisation discrète de
 \emph{l'imprécision} spatiale. Or, si ces solutions ont pour avantage
-leur grande simplicité, ils ne permettent pas de représenter
-efficacement les différents cas que nous avons présenté. Si les
-modèles \enquote{exacts} permettent de modéliser toute forme de
-\emph{zone de localisation} \footnote{À l'exception de zones
-  \emph{nettes,} qui ne sont modélisables qu'avec le modèle de
-  \textcite{Bejaoui2009}. Cette caractéristique n'est cependant pas
-  limitante dans notre cas, aucune \emph{relations de localisation} ne
-  pouvant définir une zone précise.} comme nous le souhaitons, il leur
-est impossible de rendre compte de la variation de
-\emph{l'imprécision,} la zone frontière n'étant définie que par ses
-bornes supérieures et inférieures. Nous devons donc rejeter ces
-modèles théoriques.
+leur grande simplicité, ils ne remplissent pas toutes les conditions
+que nous avons identifiées. Tout d'abord, si ces modèles permettent de
+modéliser toute forme de \emph{zone de localisation} \footnote{À
+  l'exception de zones \emph{nettes,} qui ne sont modélisables qu'avec
+  le modèle de \textcite{Bejaoui2009}. Cette caractéristique n'est
+  cependant pas limitante dans notre cas, aucune \emph{relations de
+    localisation} ne pouvant définir une zone précise.} comme nous le
+souhaitons, il leur est impossible de rendre compte de la variation de
+\emph{l'imprécision} de la zone frontière. Cette dernière n'étant
+définie que par ses bornes supérieures et inférieures. De plus, si les
+\emph{zones de localisation} construites par la \emph{spatialisation}
+d'une \emph{relation de localisation} sont relativement simples
+\footnote{Elles ne sont constituées que de deux polygones marquant les
+  limites de la zone frontière (cf. \autoref{chap:03}).} et donc
+faciles à interpréter, elles ne conservent pas cette propriété après
+plusieurs unions ou intersections.
+
+Ainsi, si les \emph{zones de localisation compatibles} modélisées avec
+un modèle \enquote{exact} pourraient être faciles à interpréter, il
+n'en sera pas de même avec la \emph{zone de localisation probable,}
+issue de la fusion de toutes ces zones.
+
+
+Nous devons donc rejeter ces modèles théoriques.
 
 \missingfigure{comparaison décroissance degré d'appartenace en
   fonction de la pente. Voir si possible de le faire avec une arte
