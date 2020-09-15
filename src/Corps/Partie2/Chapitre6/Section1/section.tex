@@ -83,14 +83,33 @@ en soit de même pour les frontières. En effet, contrairement à la
 d'une distance planaire dans un espace que l'on considère généralement
 comme isotrope, la \emph{zone de localisation} issue de la
 \emph{spatialisation} de la \emph{relation} \enquote{en dessous}
-dépend des variations du relief, tout sauf linéaires. Ainsi, en
-fonction de la morphologie de la région étudiée, les \emph{zones de
-  localisation} pourront être fragmentées ou compactes et avoir des
-zones frontières plus ou moins larges (en fonction de la pente) et
-plus ou moins linéaires (en fonction de la forme du relief). Ainsi,
-nous ne pouvons nous contenter d'une modélisation ne permettant que la
-manipulation de \emph{zones de localisations} aux frontières
-linéaires, de nombreuses autres configurations étant possibles.
+dépend des variations du relief, tout sauf linéaires. On pourrait
+augurer que cette considération n'a un intérêt que conceptuel et que
+l'on pourrait se contenter de faire l'hypothèse que la transition
+entre l'intérieur et l'extérieur de la \emph{zone de localisation} est
+toujours linéaire. Toutefois c'est oublier que l'appartenance à la
+\emph{zone de localisation} n'a pas à être strictement décroissante à
+mesure que l'on s'en éloigne. Ainsi, une \emph{zone de localisation}
+construite à partir de la \emph{relation de localisation} \enquote{en
+  dessous} pourrait posséder une \emph{zone de transition} avec des
+variations importantes, émaillée de parties presque situées en dehors
+(ou dans) de la \emph{zone de localisation} (\ie dont l'altitude est
+proche, voir légèrement supérieure, à celle de \emph{l'objet de
+  référence}). Si ces variations sont suffisamment importantes pour
+que cette région soit clairement située à l'extérieur (ou à
+l'intérieur) de la \emph{zone de localisation,} le résultat sera alors
+fragmenté, mais sans que cela ne pose de de problèmes
+particuliers. Par contre si ces variations restent suffisamment
+faibles pour rester dans la \emph{zone de transition,} elles ne sont
+pas prises en compte par une modélisation simplifiant à outrance la
+zone de transition. Ainsi, en fonction de la morphologie de la région
+étudiée, les \emph{zones de localisation} pourront être fragmentées ou
+compactes et avoir des zones frontières plus ou moins larges (en
+fonction de la pente) et plus ou moins linéaires (en fonction de la
+forme du relief). Ainsi, nous ne pouvons nous contenter d'une
+modélisation ne permettant que la manipulation de \emph{zones de
+  localisations} aux frontières linéaires, de nombreuses autres
+configurations étant possibles.
 
 \begin{figure}
   \centering
