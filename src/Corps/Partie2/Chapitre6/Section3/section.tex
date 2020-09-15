@@ -59,25 +59,61 @@ Nécessité d'utiliser CGAL \autocite{CGAL2019}.
 
 \subsection{Modélisation par rasters}
 
-L'implémentation en raster de la \emph{théorie des sous-ensembles flous}
+L'implémentation en raster de la \emph{théorie des sous-ensembles
+  flous} est plus simple que la méthode présentée précédement.
 
+Cette approche consiste à calculer, pour chaque cellule d'un raster
+donné, un degré d'appartenance.
+
+Ainsi contrairement à une approche par \emph{alpha-cuts,} qui
+construit les différentes zones dont le degré d'appartenance est
+supérieur à un seuil donné, chaque pixel a une degré d'appartenance
+qui lui est propre 
+
+
+L'utilisation d'une approche raster consiste donc avant tout à définir
+une méthode permettant de calculer pour chaque pixel un degré
+d'appartenance, décrivant le degré de vérification de la
+\emph{relation de localisation} considérée.
 
 \texttt{citer Bloch, Vanegass, takemura}
 
 L'implémentation par rasters de la \emph{théorie des sous-ensembles
   flous} se fonde sur la modélisation
 
+Le résultat de cette opération est visible sur la
+\autoref{fig:ZLP_SOUS_HT}.
+
+Sur cette carte l'appartenance de chaque pixel à la zone située sous
+une ligne électrique est représentée à l'aide d'un ensemble de cercles
+(un par pixel) dont le diamètre varie en fonction du degré
+d'appartenance. Lorsque ce degré est maximal, le diamètre du cercle
+est égal à la maille du raster (50 mètres dans le cas présent). Le
+diamètre est minimal lorsque le degré d'appartenance est supérieur à
+zéro et les valeurs nulles sont filtrées.
+
+\begin{carte}
+  \centering
+  \input{../figures/Raster_ZLC_DIST_HT.tex}
+  \caption{Mon beau raster}
+  \label{fig:ZLC_DIST_HT}
+\end{carte}
+
+
+\begin{carte}
+  \centering
+  \input{../figures/Raster_ZLC_ALTINF_HT.tex}
+  \caption{Mon beau raster}
+  \label{fig:ZLC_ALTINF_HT}
+\end{carte}
+
 
 \begin{carte}
   \centering
   \input{../figures/Raster_ZLP_SOUS_HT.tex}
   \caption{Mon beau raster}
-  \label{fig:s}
+  \label{fig:ZLP_SOUS_HT}
 \end{carte}
-
-
-\missingfigure{Illustration modélisation concrète par raster
-  (introduction de la représentation par rasters).}
 
 \subsection{Comparaison des approches et choix approche raster}
 
