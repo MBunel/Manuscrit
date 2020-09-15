@@ -1,12 +1,23 @@
-Toutes les implémentations du modèle théorique des sous-ensembles
-flous présentées dans l'état de l'art ne permettent pas nécessairement
-de conserver toutes les qualités du modèle théorique.
+Comme nous l'illustrions dans l'état de l'art de cette thèse de
+nombreuses implémentations des \emph{sous-ensembles flous spatialisés}
+ont été proposées. On y retrouve aussi bien des approches vectorielles
+\autocite{Kanjilal2010,Dilo2007,Zoghlami2016} ou raster
+\autocite{Bloch1996}, que des approches fondées sur la sélection
+d'objets préexistants \autocite{Duraciova2017}.
 
-Nous proposons de confronter les deux implémentations qui nous
-semblent être les plus prometteuses, l'utilisation \emph{d'alpha-cuts}
-vectorielles et l'utilisation de rasters.
+Chacune de ces solutions a des avantages et des inconvénients qu'il
+est nécessaire d'étudier. De plus, toutes ses solutions ne permettent
+pas nécessairement de conserver toutes les qualités du modèle
+théorique. Par exemple, les approches vectorielles proposant une
+discrétisation du sous-ensemble flou, comme celles proposées par
+\textcite{Kanjilal2010,Zoghlami2016}, ont une précision de
+représentation qui dépend du nombre de régions utilisées pour
+discrétiser le \emph{sous-ensemble flou.} Si elles sont au nombre de
+deux, ces implémentations se comportent comme les modèles
+\enquote{exacts} et ne sont pas plus utilisables. L'augmentation du
+nombre de vecteurs permet de régler ce problème et de représenter tout
+type de \emph{zones de localisation.}
 
-\tdi{Préciser les modèles validés par les deux implémentations}
 
 \tdi{OK : On veut un modèle qui permet de prendre en compte des relations
   de localisation traduisant des limites assez nettes (en dessous de)
@@ -27,6 +38,11 @@ De la même manière, ces deux approches permettent de construire des
 \emph{imprécises} ou assez précises.
 
 
+Nous proposons de confronter les deux implémentations qui nous
+semblent être les plus prometteuses, l'utilisation \emph{d'alpha-cuts}
+vectorielles et l'utilisation de rasters.
+
+
 \subsection{Modélisation par \emph{Alpha-cuts}}
 
 L'implémentation par \emph{alpha-cuts} basée sur l'approche utilisée
@@ -42,6 +58,9 @@ Nécessité d'utiliser CGAL \autocite{CGAL2019}.
 \missingfigure{Illustration modélisation concrète par alpha-cuts}
 
 \subsection{Modélisation par rasters}
+
+L'implémentation en raster de la \emph{théorie des sous-ensembles flous}
+
 
 \texttt{citer Bloch, Vanegass, takemura}
 
