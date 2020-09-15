@@ -42,6 +42,34 @@ Nous proposons de confronter les deux implémentations qui nous
 semblent être les plus prometteuses, l'utilisation \emph{d'alpha-cuts}
 vectorielles et l'utilisation de rasters.
 
+\subsection{Exemple comparatif}
+
+Pour comparer ces deux implémentations nous avons modélisé le même
+\emph{indice de localisation} à l'aide des deux méthodes et nous avons
+confronté les résultats de ces modélisations \autocite{Bunel2019a}.
+
+Pour ce faire nous avons sélectionné un des \emph{indices de
+  localisation} à partir du \emph{fil rouge} : \enquote{La victime est
+  située sous une ligne électrique 3 brins}. Cet \emph{indice de
+  localisation} a l'avantage d'être simple à modéliser et donc à
+comparer, tout en offrant une décomposition, permettant de tester les
+opérations d'intersection.
+
+La \emph{relation de localisation} que nous avons identifiée comme la
+plus adaptée pour modéliser cet \emph{indice de localisation} est la
+\emph{relation} \onto[orl]{Sous\-Pro\-che\-De}. Cette \emph{relation}
+se décompose en deux \emph{relations de localisation atomiques} :
+\onto[orla]{Al\-ti\-tu\-de\-Stric\-te\-ment\-Inf\-érieu\-re} et
+\onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que}. Conformément
+au \emph{principe de décomposition} (\autoref{chap:02}) et à notre
+méthodologie (\autoref{chap:04}), la \emph{zone de localisation
+  probable} correspondant à la \emph{relation de localisation}
+\onto[orl]{Sous\-Pro\-che\-De} peut être créée en intersectant les
+\emph{zones de localisation compatibles} correspondant aux
+\emph{relations de localisatio}n
+\onto[orla]{Al\-ti\-tu\-de\-Stric\-te\-ment\-Inf\-érieu\-re} et
+\onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que}.
+
 
 \subsection{Modélisation par \emph{Alpha-cuts}}
 
@@ -70,6 +98,10 @@ construit les différentes zones dont le degré d'appartenance est
 supérieur à un seuil donné, chaque pixel a une degré d'appartenance
 qui lui est propre 
 
+Les intersection et unions peuvent alors être effectuées avec une
+méthode similaire au \emph{map algebra} \autocite{XX}, les sélectionés
+sont appliqués aux pixels représentant la même position.
+
 
 L'utilisation d'une approche raster consiste donc avant tout à définir
 une méthode permettant de calculer pour chaque pixel un degré
@@ -81,8 +113,6 @@ d'appartenance, décrivant le degré de vérification de la
 L'implémentation par rasters de la \emph{théorie des sous-ensembles
   flous} se fonde sur la modélisation
 
-Le résultat de cette opération est visible sur la
-\autoref{fig:ZLP_SOUS_HT}.
 
 Sur cette carte l'appartenance de chaque pixel à la zone située sous
 une ligne électrique est représentée à l'aide d'un ensemble de cercles
@@ -103,15 +133,26 @@ zéro et les valeurs nulles sont filtrées.
 \begin{carte}
   \centering
   \input{../figures/Raster_ZLC_ALTINF_HT.tex}
-  \caption{Mon beau raster}
+  \caption{Mon très beau raster}
   \label{fig:ZLC_ALTINF_HT}
 \end{carte}
 
+La \emph{zone de localisation probable} correspondant à l'ensemble des
+positions situées \emph{à proximité} et à une \emph{altitude
+  inférieure} de la ligne à haute-tension est construite en
+intersectant les deux \emph{zones de localisation compatibles}
+calculées (cartes \ref{fig:ZLC_DIST_HT} et
+\ref{fig:ZLC_ALTINF_HT}). Pour cet exemple nous avons utilisé les
+opérateurs de \textcite{Zadeh1965}.
+%
+La \emph{zone de localisation probable} résultant de cette opération
+(\ref{fig:ZLP_SOUS_HT}) est visuellement très similaire à son
+équivalent résultant de la méthode par \emph{alpha-cuts.}
 
 \begin{carte}
   \centering
   \input{../figures/Raster_ZLP_SOUS_HT.tex}
-  \caption{Mon beau raster}
+  \caption{Mon très très beau raster}
   \label{fig:ZLP_SOUS_HT}
 \end{carte}
 
