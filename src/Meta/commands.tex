@@ -115,3 +115,11 @@
   \texttt{(\directlua{tex.print(io.popen('git describe --tags --match "*_#1_*" | grep -o
       V[0-9] || echo "V0" '):read())})}
 }
+
+\newcommand{\dict}[3]{%
+  \par\vspace{0.25\baselineskip}
+  \bgroup
+  \setlength{\parindent}{0em}            
+  \textbf{#1~:} {\small#2 \textit{#3}}
+  \egroup
+}
