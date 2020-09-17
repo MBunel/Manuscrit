@@ -126,7 +126,7 @@ l'altitude de chaque position (\autoref{fig:ISO_DALT_HT}).
 
 \begin{carte}
   \centering
-  \input{../figures/Raster_ISO_DIST_HT.tex}
+  \input{../figures/Raster_ISO_DALT_HT.tex}
   \caption{Différence entre l'altitude locale et l'altitude de la
     ligne électrique la plus proche.}
   \label{fig:ISO_DALT_HT}
@@ -231,9 +231,17 @@ construit les différentes zones dont le degré d'appartenance est
 supérieur à un seuil donné, chaque pixel a une degré d'appartenance
 qui lui est propre 
 
+Une fois que les métriques et les fonctions d’appartenance ont été
+définies, l'approche raster se résume à calculer, en chaque pixel
+d'une grille échantillonnant l'espace et pour chaque \emph{relation de
+  localisation atomique,} la valeur de la métrique, puis le degré
+d'appartenance à la \emph{zone de localisation compatible.}
+
 Les intersection et unions peuvent alors être effectuées avec une
 méthode similaire au \emph{map algebra} \autocite{XX}, les sélectionés
 sont appliqués aux pixels représentant la même position.
+
+
 
 
 L'utilisation d'une approche raster consiste donc avant tout à définir
