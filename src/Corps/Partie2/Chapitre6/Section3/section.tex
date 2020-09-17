@@ -104,13 +104,14 @@ tout d'abord il faut identifier une \emph{métrique}
 
 et ensuite la \emph{fonction d'appartenance,} transformant les valeurs
 de la \emph{métrique} en un \emph{degré d'appartenance.} Dans notre
-exemple, les \emph{métriques} à utiliser sont assez instinctives. Par
-exemple, la \emph{relation de localisation atomique}
+exemple, les \emph{métriques} à utiliser sont assez instinctives.
+%
+Par exemple, la \emph{relation de localisation atomique}
 \onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que}
 traduit le fait que la distance planimétrique entre le \emph{sujet} et
 \emph{l'objet de référence} est faible. La métrique adaptée est donc
 la distance euclidienne entre le \emph{sujet} et \emph{l'objet de
-  référence.}
+  référence} (\autoref{fig:ISO_DIST_HT}).
 
 \begin{carte}
   \centering
@@ -119,6 +120,15 @@ la distance euclidienne entre le \emph{sujet} et \emph{l'objet de
   \label{fig:ISO_DIST_HT}
 \end{carte}
 
+La \emph{relation de localisation atomique}
+\onto[orla]{Al\-ti\-tu\-de\-Stric\-te\-ment\-Inf\-érieu\-re} traduit,
+quant à elle, un positionnement relatif sur l'axe vertical. La
+\emph{métrique} la plus adaptée est donc la différence entre
+l'altitude de \emph{l'objet de référence} et l'altitude de chaque
+position (\autoref{fig:ISO_DALT_HT}). Comme pour la précédente
+métrique, se pose la question du point de \emph{l'objet de référence à
+  utiliser} pour calculer la métrique.
+
 \begin{carte}
   \centering
   \input{../figures/Raster_ISO_DIST_HT.tex}
@@ -126,6 +136,9 @@ la distance euclidienne entre le \emph{sujet} et \emph{l'objet de
     ligne électrique la plus proche.}
   \label{fig:ISO_DALT_HT}
 \end{carte}
+
+
+\tdi{Calcul appartenance}
 
 \begin{figure}
   \centering
