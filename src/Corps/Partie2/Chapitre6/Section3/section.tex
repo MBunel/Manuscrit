@@ -100,7 +100,8 @@ importante, puisqu'elle définit les règles de construction des
   de localisation atomiques.}
 
 Leur définition se fait en deux étapes,
-tout d'abord il faut identifier une \emph{métrique}
+tout d'abord il faut identifier une \emph{métrique,} c'est-à-dire une
+valeur quantitative ou qualitative et calculable en chaque position 
 
 et ensuite la \emph{fonction d'appartenance,} transformant les valeurs
 de la \emph{métrique} en un \emph{degré d'appartenance.} Dans notre
@@ -185,7 +186,18 @@ d'appartenance doit être à 1 lorsque l'altitude de la position est
 inférieure à celle de \emph{l'objet de référence} (\ie que la métrique
 est négative) et nul dans le cas contraire (\ie que la métrique est
 positive). Il faut alors définir les valeurs de la métrique à partir
-desquelles le degré d'appartenance est de 1 ou de 0.
+desquelles le degré d'appartenance est de 1 ou de 0. Étant donné que
+la différence d'altitude est calculée à partir du sommet de la ligne
+électrique nous avons considéré que toute position dont l'altitude
+était inférieure au point le plus proche de la ligne électrique (\ie
+dès que la valeur de la métrique est négative) avait un degré
+d'appartenance de 1. Nous avons fixé le second seuil à \SI{5}{\meter},
+ce qui permet d'ajouter une petite marge d'erreur. Ainsi, le degré
+d'appartenance est de 1 jusqu’à ce que la différence d'altitude soit
+nulle, puis il décroit rapidement jusqu'a atteindre la valeur de 0
+lorsque la différence est de \SI{5}{\meter} (\ie que la position est
+\SI{5}{\meter} au-dessus du sommet de la ligne électrique), la valeur
+reste nulle au-delà (Figure \ref{fig:fnc_app_AltInf}).
 
 \begin{figure}
   \centering
