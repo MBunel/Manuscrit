@@ -104,19 +104,22 @@ tout d'abord il faut identifier une \emph{métrique}
 
 et ensuite la \emph{fonction d'appartenance,} transformant les valeurs
 de la \emph{métrique} en un \emph{degré d'appartenance.} Dans notre
-exemple, les \emph{métriques} à utiliser sont assez instinctives.
-%
-Par exemple, la \emph{relation de localisation atomique}
+exemple, les \emph{métriques} à utiliser sont assez instinctives et
+simples à calculer. Par exemple, la \emph{relation de localisation
+  atomique}
 \onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que}
 traduit le fait que la distance planimétrique entre le \emph{sujet} et
 \emph{l'objet de référence} est faible. La métrique adaptée est donc
-la distance euclidienne entre le \emph{sujet} et \emph{l'objet de
-  référence} (\autoref{fig:ISO_DIST_HT}).
+la distance euclidienne entre chaque position et le point le plus
+proche de \emph{l'objet de référence} (\autoref{fig:ISO_DIST_HT}).
 
 \begin{carte}
   \centering
   \input{../figures/Raster_ISO_DIST_HT.tex}
-  \caption{Distance à la ligne électrique trois brins.}
+  \caption{\emph{Métrique} pour la \emph{relation de localisation
+      atomique}
+    \protect\onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que}
+    : La distance planaire à la ligne électrique trois brins.}
   \label{fig:ISO_DIST_HT}
 \end{carte}
 
@@ -124,10 +127,8 @@ La \emph{relation de localisation atomique}
 \onto[orla]{Al\-ti\-tu\-de\-Stric\-te\-ment\-Inf\-érieu\-re} traduit,
 quant à elle, un positionnement relatif sur l'axe vertical. La
 \emph{métrique} la plus adaptée est donc la différence entre
-l'altitude de \emph{l'objet de référence} et l'altitude de chaque
-position (\autoref{fig:ISO_DALT_HT}). Comme pour la précédente
-métrique, se pose la question du point de \emph{l'objet de référence à
-  utiliser} pour calculer la métrique.
+l'altitude du point le plus proche de \emph{l'objet de référence} et
+l'altitude de chaque position (\autoref{fig:ISO_DALT_HT}).
 
 \begin{carte}
   \centering
@@ -137,8 +138,32 @@ métrique, se pose la question du point de \emph{l'objet de référence à
   \label{fig:ISO_DALT_HT}
 \end{carte}
 
+La transformation des valeurs de ces deux métriques en degré
+d'appartenance se fait à l'aide d'une fonction d'appartenance qu'il
+convient de définir. Pour ce faire nous procédons généralement en deux
+étapes. La première consiste à identifier la forme de \emph{la
+  fonction d'appartenance} qui nous semble être la plus pertinente
+pour retranscrire la sémantique de la \emph{relation de localisation
+  atomique.} Puis nous identifions les seuils de cette
+fonction. Ainsi, la première étape permet \footnote{Conjointement à la
+  sélection d'une \emph{métrique.}} de fixer la sémantique de la
+\emph{relation,} alors que la seconde étape fait plus office de
+paramétrisation fine.
 
-\tdi{Calcul appartenance}
+La \emph{relation de localisation atomique}
+\onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que}
+est utilisée pour figurer le fait que le \emph{sujet} n'est pas très
+éloigné de \emph{l'objet de référence.} Ainsi, une position proche de
+\emph{l'objet de référence} doit avoir un \emph{degré d'appartenance}
+à la \emph{zone de localisation compatible} correspondant à cette
+\emph{relation de localisation atomique} plus élevé qu'une position
+qui en est éloigné. Le degré d'appartenance doit donc diminuer lorsque
+la distance à \emph{l'objet de référence} (\ie la valeur de la
+métrique) augmente.
+
+De plus, la notion de proximité sous-entendue par
+cette \emph{relation de localisation atomique} 
+
 
 \begin{figure}
   \centering
