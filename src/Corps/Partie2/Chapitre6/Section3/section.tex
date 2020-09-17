@@ -153,28 +153,50 @@ paramétrisation fine.
 La \emph{relation de localisation atomique}
 \onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que}
 est utilisée pour figurer le fait que le \emph{sujet} n'est pas très
-éloigné de \emph{l'objet de référence.} Ainsi, une position proche de
-\emph{l'objet de référence} doit avoir un \emph{degré d'appartenance}
-à la \emph{zone de localisation compatible} correspondant à cette
-\emph{relation de localisation atomique} plus élevé qu'une position
-qui en est éloigné. Le degré d'appartenance doit donc diminuer lorsque
-la distance à \emph{l'objet de référence} (\ie la valeur de la
-métrique) augmente.
+éloigné de \emph{l'objet de référence.} Ainsi, une position
+\enquote{proche} de \emph{l'objet de référence} doit avoir un
+\emph{degré d'appartenance} à la \emph{zone de localisation
+  compatible} correspondant à cette \emph{relation de localisation
+  atomique} plus élevé qu'une position qui en est éloigné. Le degré
+d'appartenance doit donc diminuer lorsque la distance à \emph{l'objet
+  de référence} (\ie la valeur de la métrique) augmente. La forme de
+la fonction d'appartenance étant fixée, nous pouvons à présent en
+définir les seuils. Deux valeurs sont à fixer, la première est la
+distance à partir de laquelle le degré d'appartenance décroit. Si elle
+est nulle le degré d’appartenance décroit dès que la distance
+augmente, sinon il y aura une zone, dont la largeur dépend de la
+valeur choisie, où le degré d'appartenance sera maximal. Définir ce
+premier seuil revient à se demander quelle est la distance à partir de
+laquelle on ne peut plus considérer que l'on est \enquote{proche}
+d'une ligne électrique. Pour cet exemple nous avons fixé empiriquement
+cette valeur à \SI{50}{\meter}. Le second seuil à fixer est la
+distance à partir de laquelle le degré d'appartenance est nul. De
+manière tout aussi empirique, nous avons fixé cette valeur à
+\SI{100}{\meter}. Ainsi, entre 0 et 50 mètres, le degré d'appartenance
+est de 1, puis il décroit jusqu’à être de 0 à 100 mètres et reste nul
+au-delà, comme le montre la figure \ref{fig:fnc_app_Dist}.
 
-De plus, la notion de proximité sous-entendue par
-cette \emph{relation de localisation atomique} 
-
+La définition de la forme de la fonction d'appartenance pour la
+\emph{relation de localisation atomique}
+\onto[orla]{Al\-ti\-tu\-de\-Stric\-te\-ment\-Inf\-érieu\-re} ne pose
+pas non plus de problèmes particuliers. Comme cette \emph{relation}
+traduit une position relative sur l'axe vertical, le degré
+d'appartenance doit être à 1 lorsque l'altitude de la position est
+inférieure à celle de \emph{l'objet de référence} (\ie que la métrique
+est négative) et nul dans le cas contraire (\ie que la métrique est
+positive). Il faut alors définir les valeurs de la métrique à partir
+desquelles le degré d'appartenance est de 1 ou de 0.
 
 \begin{figure}
   \centering
   \subfloat{%
-    \input{../figures/FNC_ALTINF_HT.tex}
-    \label{fig:fnc_app_AltInf}
+    \input{../figures/FNC_DIST_HT.tex}
+    \label{fig:fnc_app_Dist}
   }
   \hfill%
   \subfloat{%
-    \input{../figures/FNC_DIST_HT.tex}
-    \label{fig:fnc_app_Dist}
+    \input{../figures/FNC_ALTINF_HT.tex}
+    \label{fig:fnc_app_AltInf}
   }
   \caption{Fonctions d'appartenance pour les \emph{relations de
       localisation}
@@ -246,7 +268,7 @@ intersectant les deux \emph{zones de localisation compatibles}
 calculées (cartes \ref{fig:ZLC_DIST_HT} et
 \ref{fig:ZLC_ALTINF_HT}). Pour cet exemple nous avons utilisé les
 opérateurs de \textcite{Zadeh1965}.
-%
+% 
 La \emph{zone de localisation probable} résultant de cette opération
 (\ref{fig:ZLP_SOUS_HT}) est visuellement très similaire à son
 équivalent résultant de la méthode par \emph{alpha-cuts.}
@@ -336,7 +358,7 @@ l'altitude). À l'échelle du pixel les résultats sont comparables.
 
 
 La comparaison de ces deux implémentations de la \emph{théorie des
-sous-ensembles flous} nous a conduit à adopter une démarche fondée sur
+  sous-ensembles flous} nous a conduit à adopter une démarche fondée sur
 l'utilisation de rasters.
 
 \tdi{Plus facile à développer}
@@ -366,7 +388,7 @@ stabilité du résultat, contrairement à l'approche par
 
 
 Le choix d'utiliser une modélisation basée sur la \emph{théorie des
-sous-ensembles flous} et implémentée à l'aide de raster à des
+  sous-ensembles flous} et implémentée à l'aide de raster à des
 conséquences théoriques et pratiques.
 
 \tdi{Nécessité de choix des opérateurs flous}
