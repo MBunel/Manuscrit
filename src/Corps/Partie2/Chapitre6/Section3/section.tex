@@ -44,58 +44,88 @@ vectorielles et l'utilisation de rasters.
 
 \subsection{Exemple comparatif}
 
-Pour comparer ces deux implémentations nous avons modélisé le même
-\emph{indice de localisation} à l'aide des deux méthodes et nous avons
-confronté les résultats de ces modélisations \autocite{Bunel2019a}.
-
-\tdi{Sélection de l'exemple}
-Pour ce faire nous avons sélectionné un des \emph{indices de
-  localisation} à partir du \emph{fil rouge} : \enquote{La victime est
-  située sous une ligne électrique 3 brins}. Cet \emph{indice de
-  localisation} a l'avantage d'être simple à modéliser et donc à
-comparer, tout en offrant une décomposition, permettant de tester les
-opérations d'intersection.
+Les implémentations de la \emph{théorie des sous-ensembles flous} à
+l'aide d'une approche par \emph{alpha-cuts} ou par raster nous
+semblent toutes les deux pertinentes pour notre cas
+d'utilisation. Nous proposons donc de les appliquer à une même exemple
+pour trancher en faveur de l'une ou de l'autre
+\autocite{Bunel2019a}. Pour ce faire nous avons sélectionné un des
+\emph{indices de localisation} du \emph{fil rouge} : \enquote{La
+  victime est située sous une ligne électrique 3 brins}, qui présente
+le double avantage d'être simple à modéliser ---~et donc à
+comparer~---, tout en utilisation une \emph{relation de localisation,}
+décomposable. Cet exemple nous permet donc de tester, en plus de la
+modélisation des \emph{zones de localisation,} leur intersection.
 
 % Décomposition de l'indice
-La \emph{relation de localisation} que nous avons identifiée comme la plus
-adaptée pour modéliser cet \emph{indice de localisation} est la
-\emph{relation} \onto[orl]{Sous\-Pro\-che\-De}. Cette \emph{relation} se
-décompose en deux \emph{relations de localisation atomiques} :
+La \emph{relation de localisation} que nous avons identifiée comme la
+plus adaptée à la formalisation de cet \emph{indice de localisation}
+est \onto[orl]{Sous\-Pro\-che\-De}, traduisant une relation sur l'axe
+vertical (l'altitude du \emph{sujet} est plus basse que celle de
+\emph{l'objet de référence}), contrainte par une distance
+planimétrique (\autoref{anx:orl_dic}).
+
+Ce concept nous semble plus pertinent que la \emph{relation}
+englobante (\onto[orl]{Sous\-Altitude}) ou plus précise
+(\onto[orl]{Sous\-Recouvert\-Par}) s'explique par la nécessité
+
+Cette \emph{relation} se décompose en deux \emph{relations de
+  localisation atomiques} :
 \onto[orla]{Al\-ti\-tu\-de\-Stric\-te\-ment\-Inf\-érieu\-re} et
-\onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que}. Conformément
-au \emph{principe de décomposition} (\autoref{chap:02}) et à notre
-méthodologie (\autoref{chap:04}), la \emph{zone de localisation probable}
-correspondant à la \emph{relation de localisation}
-\onto[orl]{Sous\-Pro\-che\-De} peut être créée en intersectant les \emph{zones
-  de localisation compatibles} correspondant aux \emph{relations de
-  localisatio}n \onto[orla]{Al\-ti\-tu\-de\-Stric\-te\-ment\-Inf\-érieu\-re}
-et \onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que}.
+\onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que},
+traduisant respectivement, la notion de position sur l'axe vertical et
+la contrainte posée sur la distance planimétrique. Conformément au
+\emph{principe de décomposition} et à notre méthodologie (Chapitres
+\ref{chap:02} et \ref{chap:04}), la \emph{zone de localisation
+  compatible} correspondant à la \emph{relation de localisation}
+\onto[orl]{Sous\-Pro\-che\-De} peut être créée en intersectant les
+deux \emph{zones de localisation compatibles} résultant de la
+\emph{spatialisation} de ces deux \emph{relations de localisation
+  atomiques.}
 
 % Définition fonctions appartenance
-La construction des \emph{zones de localisation compatibles} correspondant à
-chacune des \emph{relations de localisation atomiques} nécessite de définir
-des \emph{fonctions d'appartenance} ($f_A$), qui, associent à chaque élément
-de l'ensemble traité un degré, compris entre 0 et 1, définissant
-l'appartenance de l'élément au \emph{sous-ensemble flou} (Section
-\ref{subsec:theorie_flou}). Appliquées à notre contexte, ces fonctions
-définissent l'appartenance de chaque position à la \emph{zone de localisation
-  compatible} construite. La définition des \emph{fonctions d'appartenance}
-est donc une étape extrêmement importante, puisqu'elle définit les règles de
-construction des \emph{zones de localisation} et donc la sémantique de la
-\emph{relation de localisation atomique} considérée. Leur définition se fait
-en deux étapes, tout d'abord il faut identifier une \emph{métrique}
+La construction des \emph{zones de localisation compatibles}
+correspondant à chacune des \emph{relations de localisation atomiques}
+nécessite de définir des \emph{fonctions d'appartenance} ($f_A$), qui,
+associent à chaque élément de l'ensemble traité, un degré ---~compris
+entre 0 et 1~--- définissant l'appartenance de l'élément au
+\emph{sous-ensemble flou} (Section \ref{subsec:theorie_flou}). Dans
+notre contexte, où les \emph{sous-ensembles fous} représentent des
+\emph{objets géographiques} et chaque élément une position, ces
+fonctions définissent l'appartenance de chacune d'entre elles à la
+\emph{zone de localisation compatible} construite. La définition des
+\emph{fonctions d'appartenance} est donc une étape extrêmement
+importante, puisqu'elle définit les règles de construction des
+\emph{zones de localisation} et donc la sémantique des \emph{relations
+  de localisation atomiques.}
 
-et ensuite la \emph{fonction d'appartenance} transformant les valeurs de la
-\emph{métrique} en un \emph{degré d'appartenance.}
+Leur définition se fait en deux étapes,
+tout d'abord il faut identifier une \emph{métrique}
 
-Dans notre exemple, les \emph{métriques} à utiliser sont assez
-instinctives.
+et ensuite la \emph{fonction d'appartenance,} transformant les valeurs
+de la \emph{métrique} en un \emph{degré d'appartenance.} Dans notre
+exemple, les \emph{métriques} à utiliser sont assez instinctives. Par
+exemple, la \emph{relation de localisation atomique}
+\onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que}
+traduit le fait que la distance planimétrique entre le \emph{sujet} et
+\emph{l'objet de référence} est faible. La métrique adaptée est donc
+la distance euclidienne entre le \emph{sujet} et \emph{l'objet de
+  référence.}
 
-La \emph{relation de localisation atomique}
-\onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que} traduit
-une \underline{relation} de XXX entre le \emph{sujet} et \emph{l'objet de
-  référence} (\autoref{anx:orl_dic}).
+\begin{carte}
+  \centering
+  \input{../figures/Raster_ISO_DIST_HT.tex}
+  \caption{Distance à la ligne électrique trois brins.}
+  \label{fig:ISO_DIST_HT}
+\end{carte}
 
+\begin{carte}
+  \centering
+  \input{../figures/Raster_ISO_DIST_HT.tex}
+  \caption{Différence entre l'altitude locale et l'altitude de la
+    ligne électrique la plus proche.}
+  \label{fig:ISO_DALT_HT}
+\end{carte}
 
 \begin{figure}
   \centering
