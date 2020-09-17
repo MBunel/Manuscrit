@@ -149,7 +149,11 @@ pour retranscrire la sémantique de la \emph{relation de localisation
 fonction. Ainsi, la première étape permet \footnote{Conjointement à la
   sélection d'une \emph{métrique.}} de fixer la sémantique de la
 \emph{relation,} alors que la seconde étape fait plus office de
-paramétrisation fine.
+paramétrisation fine. La sélection de la forme de la fonction ne pose
+pas de problèmes particulier, contrairement à la définition des seuils
+qui, comme nous allons le voir, est généralement assez
+arbitraire. Cependant, pour cet exemple particulier les seuils définis
+ont été validés par un secouriste du \ac{pghm}.
 
 La \emph{relation de localisation atomique}
 \onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que}
@@ -194,7 +198,7 @@ dès que la valeur de la métrique est négative) avait un degré
 d'appartenance de 1. Nous avons fixé le second seuil à \SI{5}{\meter},
 ce qui permet d'ajouter une petite marge d'erreur. Ainsi, le degré
 d'appartenance est de 1 jusqu’à ce que la différence d'altitude soit
-nulle, puis il décroit rapidement jusqu'a atteindre la valeur de 0
+nulle, puis il décroit rapidement jusqu'à atteindre la valeur de 0
 lorsque la différence est de \SI{5}{\meter} (\ie que la position est
 \SI{5}{\meter} au-dessus du sommet de la ligne électrique), la valeur
 reste nulle au-delà (Figure \ref{fig:fnc_app_AltInf}).
