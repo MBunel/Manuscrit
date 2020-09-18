@@ -222,9 +222,6 @@ reste nulle au-delà (Figure \ref{fig:fnc_app_AltInf}).
 
 \subsection{Implémentation raster}
 
-et pour chaque
-\emph{relation de localisation atomique,}
-
 L'implémentation a l'avantage d'être extrêmement facile a mettre en
 place. Une fois que les \emph{métriques} et les \emph{fonctions
   d’appartenance} ont été définies, elle se résume à calculer, pour
@@ -314,26 +311,57 @@ d'altitude. Pour le dire autrement, il y a peu de positions
 
 \subsection{Modélisation par \emph{Alpha-cuts}}
 
-L'implémentation par \emph{alpha-cuts} basée sur l'approche utilisée
-par \textcite{Runz2008a,Zoghlami2016}.
+L'implémentation par \emph{alpha-cuts} s'est révelée beaucoup plus
+difficile à mettre en place que l'implémentation par rasters.
+
+L'approche par \emph{alpha-cuts} impose donc de calculer une limite
 
 
-Contrairement à l'approche raster, l'approche par \emph{alpha-cuts} ne
-nécessite pas de pré-calculer les différentes métriques.
+
+D'une part pour des soucis techniques. Aucun \ac{sig} ne permettant de
+permettant de réaliser les traitements que nous envisagions, nous
+avons été contrains de nous orienter sur des solutions de plus bas
+niveau, comme la bibliothèque de calcul géométrique CGAL
+\autocite{CGAL2019}.
 
 \tdi{Revenir un peu sur les alpha-cuts et le lac}
 
-Nécessité d'utiliser CGAL \autocite{CGAL2019}.
 
 \tdi{acuts et intersecions}
 
 \missingfigure{Illustration modélisation concrète par alpha-cuts}
 
-\tdi{problème des jointures}
+Pour cette comparaison nous avons choisi de construire trois
+\emph{alpha-cuts,} celle dont le degré est égal à 1, délimitant le
+\emph{noyau} du \emph{sous-ensemble flou,} celle dont le degré
+d'appartenance est supérieur à 0, délimitant le \emph{support} et
+enfin \emph{l'alpha-cut} de degré 0,5.
+
+Pour chaque segment d'une ligne électrique, nous construisons un
+polyèdre, représentant la limite tridimensionnelle de l'aire
+appartenant à \emph{l'alpha-cut} considérée. Ce dernier est composé de
+6 faces.
+
+\missingfigure{Polyhère}
+
+Cette manière de procéder n'impose évite de procéder à une phase de
+fusion des \emph{zones de localisation compatibles.}
 
 \subsection{Comparaison des approches et choix approche raster}
 
 \paragraph{Comparaison des approches}
+
+Les deux implémentations testées
+
+
+Les résultats obtenus sont similaires
+
+\missingfigure{Différence zones}
+
+
+
+\tdi{problème des jointures}
+
 
 \tdi{Difficulté de mise en place}
 
