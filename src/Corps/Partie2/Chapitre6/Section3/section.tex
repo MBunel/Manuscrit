@@ -222,17 +222,29 @@ reste nulle au-delà (Figure \ref{fig:fnc_app_AltInf}).
 
 \subsection{Implémentation raster}
 
+et pour chaque
+\emph{relation de localisation atomique,}
+
 L'implémentation a l'avantage d'être extrêmement facile a mettre en
 place. Une fois que les \emph{métriques} et les \emph{fonctions
-  d’appartenance} ont été définies, elle se résume à calculer, en
-chaque pixel d'une grille échantillonnant l'espace et pour chaque
-\emph{relation de localisation atomique,} la valeur de la
-\emph{métrique,} puis le degré d'appartenance à la \emph{zone de
-  localisation compatible.} Le seul choix imposé par l'utilisation de
-cette implémentation et la résolution du raster qui fixe la taille et
-le nombre de pixels et par conséquent, la précision et la durée du
-calcul. Cette résolution doit être suffisamment grande pour permettre
-le calcul des fonctions d'appartenance
+  d’appartenance} ont été définies, elle se résume à calculer, pour
+chaque pixel d'une grille échantillonnant l'espace, la valeur de la
+\emph{métrique,} puis du degré d'appartenance à la \emph{zone de
+  localisation compatible} \emph{spatialisée.} Cette opération est
+répétée pour chaque \emph{relation de localisation atomique,} puis les
+\emph{zones de localisation compatibles} résultantes sont
+\emph{fusionnées} à l'aide des opérateurs d'intersection et de fusion
+sélectionnés. Le seul choix imposé par l'utilisation de cette
+implémentation et celui de la résolution du raster. Ce critère fixe la
+taille et le nombre de pixels du raster et influe, par conséquent, sur
+la précision et la durée du calcul. Cette résolution doit être
+suffisamment grande pour permettre le calcul des fonctions
+\emph{d'appartenance définies.} Par exemple, la \emph{fonction
+  d'appartenance} définie pour la \emph{relation de localisation
+  atomique}
+\onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que}
+(figure \ref{fig:fnc_app_Dist}) a deux seuils, \num{50} et
+\SI{100}{\meter}.
 
 L’application de la fonction d'appartenance (figure
 \ref{fig:fnc_app_Dist}) à la métrique précédemment calculée (carte
