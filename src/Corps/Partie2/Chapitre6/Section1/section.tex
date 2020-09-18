@@ -1,0 +1,185 @@
+La mise en place de la méthodologie que nous avons définie nécessite
+la sélection d'une modélisation qui permette d'en traiter tous les
+aspects.
+
+Nous avons identifié deux catégories principales de critères de
+sélection, ceux concernant la phase de spatialisation et ceux
+concernant la phase de fusion.
+
+\subsection{Critères portant sur la \emph{spatialisation}}
+
+Comme nous l'avons vu précédemment, de nombreuses et diverses
+\emph{relations de localisation} sont utilisées par les requérants
+pour décrire leur position. Chacune de ces relations à une sémantique
+qui lui est propre et qui conduit à la définition de \emph{zones de
+  localisation} pouvant être très différentes. La modélisation
+utilisée doit donc permettre la représentation de tous les différents
+cas possibles.
+
+\tdi{On veut un modèle qui permet de prendre en compte des relations
+  de localisation traduisant des limites assez nettes (en dessous de)
+  et des relations avec des limites très continues (proches [voir
+  concept similaire dans l'ontologie]).}
+
+Un premier point à considérer est celui de \emph{l'imprécision} des
+\emph{zones de localisations.} Si nous avons détaillé cette notion et
+justifié sa prise en compte lors de la \emph{spatialisation,} nous
+n'avons pas présenté ses possibles variations. Or, de la même manière
+que la forme d'une \emph{zone de localisation} varie d'une
+\emph{relation de localisation} à une autre, leur \emph{imprécision}
+peut être plus ou moins importante. Par exemple, la \emph{relation de
+  localisation} \enquote{proche} \footnote{Formalisée dans l'ontologie
+  des r\emph{elations de localisation} par le concept
+  \onto[orl]{Prés\-De}.}, qui décrit une relation de proximité
+géographique entre \emph{le sujet} et \emph{l'objet de référence,} est
+fortement \emph{imprécise} \footnote{Comme nous l'illustrions avec le
+  \emph{paradoxe sorites} dans le second chapitre (voir la section
+  \ref{subsec:2-1-2}).}. Ainsi, les limites de la \emph{zone de
+  localisation} y correspondant sont continues, sans réelle rupture
+entre son intérieur et son extérieur. À l'inverse, la \emph{zone de
+  localisation} construite à partir de la \emph{relation de
+  localisation} \enquote{en dessous} \footnote{Formalisée avec le
+  concept \onto[orl]{Sous\-Al\-ti\-tu\-de}.} a des limites plus
+\emph{précises.} On peut en effet imaginer une situation où l'altitude
+du \emph{sujet,} alors clairement situé \enquote{en dessous} de
+\emph{l'objet de référence}, augmente peu à peu, jusqu'à dépasser
+celle de \emph{l'objet de référence,} passant alors de la \emph{zone
+  de localisation} à son extérieur. Cependant, contrairement à la
+\emph{zone de localisation} construite à partir de la \emph{relation
+  de localisation} \enquote{proche}, cette transition est, sinon
+immédiate\footnote{Ce qui impliquerait que la \emph{relation de
+    localisation} est \emph{précise,} ce qui, comme nous l'expliquions
+  dans les chapitres \ref{chap:02} et \ref{chap:03}, n'est pas
+  possible.}, rapide. Ainsi, s'il est abusif de considérer que
+l'appartenance à cette \emph{zone de localisation} est bivalente, on
+peut remarquer que la longue transition entre l'intérieur et
+l'extérieur de la \emph{zone de localisation} construite d'après la
+\emph{relation de localisation} \onto[orl]{Prés\-De} est ici fortement
+réduite. Entre ces deux cas archétypaux on trouve une multitude
+d'autres situations, où les limites de la \emph{zone de localisation}
+sont plus ou moins marquées. Il est nécessaire que notre modélisation
+des \emph{zones de localisation} propose une prise en compte
+satisfaisante de ces différentes situations et soit donc à même de
+modéliser des \emph{zones de localisation} aux limites presque
+\emph{nettes} ou fortement \emph{imprécises.}
+
+\tdi{Possibilité de construire des zones de localisation issues de
+  relations de localisation non linéaire (en dessous de).}
+
+Un problème similaire se pose lorsque l'on traite, non plus de la
+vitesse de transition ente l'intérieur d'une \emph{zone de
+  localisation} et son extérieur, mais de sa forme. Une \emph{relation
+  de localisation} comme \enquote{proche} voit, toutes choses égales
+par ailleurs, son \textbf{degré de validité} diminuer linéairement
+avec l'éloignement à \emph{l'objet de référence.} On ne s'éloigne pas
+plus (ou moins) vite à 5 mètres qu'a 50 mètres. Cette observation est
+également vraie pour la \emph{relation de localisation} \enquote{en
+  dessous}. La zone \emph{d'imprécision} est certes plus réduite, mais
+la relation entre la différence d'altitude est l'appartenance à la
+\emph{zone de localisation} est linéaire, il n'y a ni cassures, ni
+variations. Cependant, la linéarité de cette relation n'implique qu'il
+en soit de même pour les frontières. En effet, contrairement à la
+\emph{relation de localisation} \enquote{proche}, qui ne dépend que
+d'une distance planaire dans un espace que l'on considère généralement
+comme isotrope, la \emph{zone de localisation} issue de la
+\emph{spatialisation} de la \emph{relation} \enquote{en dessous}
+dépend des variations du relief, tout sauf linéaires. On pourrait
+augurer que cette considération n'a un intérêt que conceptuel et que
+l'on pourrait se contenter de faire l'hypothèse que la transition
+entre l'intérieur et l'extérieur de la \emph{zone de localisation} est
+toujours linéaire. Toutefois c'est oublier que l'appartenance à la
+\emph{zone de localisation} n'a pas à être strictement décroissante à
+mesure que l'on s'en éloigne. Ainsi, une \emph{zone de localisation}
+construite à partir de la \emph{relation de localisation} \enquote{en
+  dessous} pourrait posséder une \emph{zone de transition} avec des
+variations importantes, émaillée de parties presque situées en dehors
+(ou dans) de la \emph{zone de localisation} (\ie dont l'altitude est
+proche, voir légèrement supérieure, à celle de \emph{l'objet de
+  référence}). Si ces variations sont suffisamment importantes pour
+que cette région soit clairement située à l'extérieur (ou à
+l'intérieur) de la \emph{zone de localisation,} le résultat sera alors
+fragmenté, mais sans que cela ne pose de de problèmes
+particuliers. Par contre si ces variations restent suffisamment
+faibles pour rester dans la \emph{zone de transition,} elles ne sont
+pas prises en compte par une modélisation simplifiant à outrance la
+zone de transition. Ainsi, en fonction de la morphologie de la région
+étudiée, les \emph{zones de localisation} pourront être fragmentées ou
+compactes et avoir des zones frontières plus ou moins larges (en
+fonction de la pente) et plus ou moins linéaires (en fonction de la
+forme du relief). Ainsi, nous ne pouvons nous contenter d'une
+modélisation ne permettant que la manipulation de \emph{zones de
+  localisations} aux frontières linéaires, de nombreuses autres
+configurations étant possibles.
+
+\begin{figure}
+  \centering
+  \input{../figures/temp.tex}
+  \caption{dsqdsq}
+  \label{fig:temp}
+\end{figure}
+
+
+\subsection{Critères portant sur la \emph{fusion}}
+
+
+\tdi{Possibilité de fusionner (intersection et union). Nécessité que
+l'union et l'intersection soient commutatives.}
+
+La méthodologie de construction des \emph{zones de localisation}
+présentée dans le \autoref{chap:04} et plus précisément la \emph{phase
+  de fusion,} impose d'effectuer de combiner des \emph{zones de
+  localisation} par des unions et des intersections. La modélisation
+retenue doit donc permettre de réaliser ces opérations, mais également
+garantir leur commutativité. En effet, l'utilisation d'un opérateur
+d'union ou d'intersection non commutatif aurait pour conséquence de
+modifier le résultat de la \emph{phase de fusion} en fonction de
+l'ordre de traitement des \emph{zones de localisation
+  compatibles}. Par exemple, si l'on souhaite construire la \emph{zone
+  de localisation probable} ($\text{\textsl{zlp}}$) correspondant à
+l'ensemble d'indices de localisation : \enquote{Je suis à côté d'une
+  maison et dans une forêt}. Pour ce faire il est nécessaire
+d'identifier les positions situées dans les \emph{zone de localisation
+  compatibles} correspondant au premier ($\text{\textsf{zlc}}_{i1}$)
+et au second ($\text{\textsf{zlc}}_{i2}$) indice, à l'aide d'un
+opérateur d'intersection. Si cet opérateur n'est pas commutatif, alors
+l'intersection de $\text{\textsf{zlc}}_{i1}$ avec
+$\text{\textsf{zlc}}_{i2}$ pourra donner un résultat différent de
+l'intersection de $\text{\textsf{zlc}}_{i2}$ avec
+$\text{\textsf{zlc}}_{i1}$. Un tel comportement est incompatible avec
+plusieurs des principes que nous avons définis, notamment l'autonomie
+de la spatialisation ou le \emph{principe de décomposition,} qui se
+fondent sur l'hypothèse ---~implicite~--- d'une commutativité des
+opérateurs utilisés durant la phase de fusion.
+
+\tdi{Nécessité que les résultats soient facilement
+  interprétables. Sémantique des résultats et pas trop de zones (par
+  exemple beaucoup d'alpha cuts).}
+
+Nous avons déjà présenté l'importance que nous accordons à
+l'interprétabilité des résultats (\emph{principe d'intégration dans le
+  contexte métier}).
+%
+Par conséquent nous souhaitons que la méthodologie retenue produise
+des résultats qui soient interprétables.
+
+\tdi{Stabilité du modèle ? (par exemple si l'on fait des intersection
+  avec le modèle egg-yolk on doit choisir ce qu'est le jaune. C'est
+  l'intersection des jaunes ? ou il suffit qu'il y a ait un jaune?
+  est-ce qu'il faut introduire des valeurs intermédiaires (gris,
+  lorsqu'on intersecte jaune et blanc) -> mais dans ce cas on sort du
+  egg yolk, le modèle n'est pas stable alors). Le résultat doit
+  pouvoir s'exprimer avec la même modélisation sans perte de
+  sémantique et de finesse de modélisation.}
+
+Ce point est corroboré par le fait que la construction des \emph{zones
+  de localisation} passe par une phase de fusion.
+%
+Il faut que le résultat des ces fusions soit interprétable est puisse
+être exprimé avec la modélisation choisie.
+
+\missingfigure{Figure explicitant le point 5}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../../../../main"
+%%% End:
