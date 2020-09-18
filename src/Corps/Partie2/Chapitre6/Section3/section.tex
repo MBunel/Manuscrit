@@ -44,6 +44,8 @@ vectorielles et l'utilisation de rasters.
 
 \subsection{Exemple comparatif}
 
+\tdi{ajouter sélection opérateurs intersection}
+
 Les implémentations de la \emph{théorie des sous-ensembles flous} à
 l'aide d'une approche par \emph{alpha-cuts} ou par raster nous
 semblent toutes les deux pertinentes pour notre cas
@@ -218,14 +220,19 @@ reste nulle au-delà (Figure \ref{fig:fnc_app_AltInf}).
   \label{fig:fnc_app_sousProche}
 \end{figure}
 
-\subsection{Modélisation par rasters}
-
+\subsection{Implémentation raster}
 
 Une fois que les métriques et les fonctions d’appartenance ont été
 définies, l'approche raster se résume à calculer, en chaque pixel
 d'une grille échantillonnant l'espace et pour chaque \emph{relation de
-  localisation atomique,} la valeur de la métrique, puis le degré
-d'appartenance à la \emph{zone de localisation compatible.}
+  localisation atomique,} la valeur de la \emph{métrique,} puis le
+degré d'appartenance à la \emph{zone de localisation compatible.}
+%
+Le seul choix imposé par l'utilisation de cette implémentation et la
+résolution du raster qui fixe la taille et le nombre de pixels et par
+conséquent, la précision et la durée du calcul. Cette résolution doit
+être suffisamment grande pour permettre le calcul des fonctions
+d'appartenance
 
 Les intersection et unions peuvent alors être effectuées avec une
 méthode similaire au \emph{map algebra} \autocite{XX}, les sélectionés
@@ -241,17 +248,20 @@ d'appartenance, décrivant le degré de vérification de la
 
 \texttt{citer Bloch, Vanegass, takemura}
 
-L'implémentation par rasters de la \emph{théorie des sous-ensembles
-  flous} se fonde sur la modélisation
 
-
-Sur cette carte l'appartenance de chaque pixel à la zone située sous
-une ligne électrique est représentée à l'aide d'un ensemble de cercles
-(un par pixel) dont le diamètre varie en fonction du degré
-d'appartenance. Lorsque ce degré est maximal, le diamètre du cercle
-est égal à la maille du raster (50 mètres dans le cas présent). Le
-diamètre est minimal lorsque le degré d'appartenance est supérieur à
-zéro et les valeurs nulles sont filtrées.
+L’application de la fonction d'appartenance (figure
+\ref{fig:fnc_app_Dist}) à la métrique précédemment calculée (carte
+\ref{fig:ISO_DIST_HT}) permet d'obtenir la carte
+\ref{fig:ZLC_DIST_HT}, représentant la \emph{zone de localisation
+  compatible} de la \emph{relation de localisation atomique}
+\onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que}.
+Le degré d'appartenance de chaque pixel à la \emph{zone de
+  localisation compatible} est représenté par un cercle, centré sur le
+pixel et dont le diamètre augmente avec celui-ci. Lorsque ce degré est
+maximal, le diamètre du cercle est égal à la maille du raster (50
+mètres dans le cas présent). Le diamètre est minimal lorsque le degré
+d'appartenance est supérieur à zéro et les valeurs nulles sont
+filtrées pour faciliter la lisibilité.
 
 \begin{carte}
   \centering
@@ -260,6 +270,17 @@ zéro et les valeurs nulles sont filtrées.
   \label{fig:ZLC_DIST_HT}
 \end{carte}
 
+Une méthode identique est utilisée pour construire la \emph{zone de
+  localisation compatible} issue de la \emph{spatialisation} de la
+\emph{relation de localisation atomique}
+\onto[orla]{Al\-ti\-tu\-de\-Stric\-te\-ment\-Inf\-érieu\-re}. La
+\emph{métrique} identifiée (carte \ref{fig:ISO_DALT_HT}) est calculé
+pour chaque pixel, puis ces valeurs sont transformées en \emph{degrés
+  d'appartenance} à l'aide de fonction d'appartenance définie
+précédemment (Figure \ref{fig:fnc_app_AltInf}). La carte
+\ref{fig:ZLC_ALTINF_HT}, qui résulte de ce processus, représente alors
+le degré d'appartenance de chaque pixel à la \emph{zone de
+  localisation compatible.}
 
 \begin{carte}
   \centering
@@ -268,17 +289,23 @@ zéro et les valeurs nulles sont filtrées.
   \label{fig:ZLC_ALTINF_HT}
 \end{carte}
 
-La \emph{zone de localisation probable} correspondant à l'ensemble des
-positions situées \emph{à proximité} et à une \emph{altitude
-  inférieure} de la ligne à haute-tension est construite en
-intersectant les deux \emph{zones de localisation compatibles}
-calculées (cartes \ref{fig:ZLC_DIST_HT} et
-\ref{fig:ZLC_ALTINF_HT}). Pour cet exemple nous avons utilisé les
-opérateurs de \textcite{Zadeh1965}.
-% 
-La \emph{zone de localisation probable} résultant de cette opération
-(\ref{fig:ZLP_SOUS_HT}) est visuellement très similaire à son
-équivalent résultant de la méthode par \emph{alpha-cuts.}
+Les rasters représentant les deux \emph{zones de localisation
+  compatibles} à intersecter possédant les mêmes résolutions et
+étendues, il y a bijection entre deux ensembles de pixels. On peut
+alors, sans effectuer de ré-échantillonnage, appliquer un opérateur
+d'intersection à chaque paire de pixels représentant la même
+position. Après l'intersection des \emph{zones de localisation
+  compatibles} figurées sur les cartes \ref{fig:ZLC_DIST_HT} et
+\ref{fig:ZLC_ALTINF_HT} on obtient la \emph{zone de localisation
+  probable} (carte \ref{fig:ZLP_SOUS_HT}) correspondant à l'ensemble
+des positions situées \emph{à proximité} et à une \emph{altitude
+  inférieure} de la ligne à haute-tension. Comme on peut le voir, le
+résultat obtenu est semblable à la carte \ref{fig:ZLC_DIST_HT} et
+assez différent de la carte \ref{fig:ZLC_ALTINF_HT}. L'étendue de la
+\emph{zone de localisation probable} est donc plus contraint par
+l'éloignement à la ligne électrique que par la différence
+d'altitude. Pour le dire autrement, il y a peu de positions
+\enquote{proches} et \enquote{au-dessus} d'une ligne électrique.
 
 \begin{carte}
   \centering
@@ -293,6 +320,9 @@ La \emph{zone de localisation probable} résultant de cette opération
 L'implémentation par \emph{alpha-cuts} basée sur l'approche utilisée
 par \textcite{Runz2008a,Zoghlami2016}.
 
+
+Contrairement à l'approche raster, l'approche par \emph{alpha-cuts} ne
+nécessite pas de pré-calculer les différentes métriques.
 
 \tdi{Revenir un peu sur les alpha-cuts et le lac}
 
