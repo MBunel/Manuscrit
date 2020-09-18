@@ -49,13 +49,13 @@ l'aide d'une approche par \emph{alpha-cuts} ou par raster nous
 semblent toutes les deux pertinentes pour notre cas
 d'utilisation. Nous proposons donc de les appliquer à une même exemple
 pour trancher en faveur de l'une ou de l'autre
-\autocite{Bunel2019a}. Pour ce faire nous avons sélectionné un des
+\autocite{Bunel2019a}. Pour ce faire nous avons sélectionné l'un des
 \emph{indices de localisation} du \emph{fil rouge} : \enquote{La
-  victime est située sous une ligne électrique 3 brins}, qui présente
-le double avantage d'être simple à modéliser ---~et donc à
-comparer~---, tout en utilisation une \emph{relation de localisation,}
-décomposable. Cet exemple nous permet donc de tester, en plus de la
-modélisation des \emph{zones de localisation,} leur intersection.
+  victime est située sous une ligne électrique 3 brins}. Cet
+\emph{indice} présente le double avantage d'être simple à modéliser
+---~et donc à comparer~---, tout en utilisant une \emph{relation de
+  localisation,} décomposable, ce qui permet de tester également les
+opérations entre \emph{zones de localisation.}
 
 % Décomposition de l'indice
 La \emph{relation de localisation} que nous avons identifiée comme la
@@ -220,16 +220,6 @@ reste nulle au-delà (Figure \ref{fig:fnc_app_AltInf}).
 
 \subsection{Modélisation par rasters}
 
-L'implémentation en raster de la \emph{théorie des sous-ensembles
-  flous} est plus simple que la méthode présentée précédement.
-
-Cette approche consiste à calculer, pour chaque cellule d'un raster
-donné, un degré d'appartenance.
-
-Ainsi contrairement à une approche par \emph{alpha-cuts,} qui
-construit les différentes zones dont le degré d'appartenance est
-supérieur à un seuil donné, chaque pixel a une degré d'appartenance
-qui lui est propre 
 
 Une fois que les métriques et les fonctions d’appartenance ont été
 définies, l'approche raster se résume à calculer, en chaque pixel
