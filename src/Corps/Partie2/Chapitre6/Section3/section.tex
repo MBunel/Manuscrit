@@ -222,32 +222,17 @@ reste nulle au-delà (Figure \ref{fig:fnc_app_AltInf}).
 
 \subsection{Implémentation raster}
 
-Une fois que les métriques et les fonctions d’appartenance ont été
-définies, l'approche raster se résume à calculer, en chaque pixel
-d'une grille échantillonnant l'espace et pour chaque \emph{relation de
-  localisation atomique,} la valeur de la \emph{métrique,} puis le
-degré d'appartenance à la \emph{zone de localisation compatible.}
-%
-Le seul choix imposé par l'utilisation de cette implémentation et la
-résolution du raster qui fixe la taille et le nombre de pixels et par
-conséquent, la précision et la durée du calcul. Cette résolution doit
-être suffisamment grande pour permettre le calcul des fonctions
-d'appartenance
-
-Les intersection et unions peuvent alors être effectuées avec une
-méthode similaire au \emph{map algebra} \autocite{XX}, les sélectionés
-sont appliqués aux pixels représentant la même position.
-
-
-
-
-L'utilisation d'une approche raster consiste donc avant tout à définir
-une méthode permettant de calculer pour chaque pixel un degré
-d'appartenance, décrivant le degré de vérification de la
-\emph{relation de localisation} considérée.
-
-\texttt{citer Bloch, Vanegass, takemura}
-
+L'implémentation a l'avantage d'être extrêmement facile a mettre en
+place. Une fois que les \emph{métriques} et les \emph{fonctions
+  d’appartenance} ont été définies, elle se résume à calculer, en
+chaque pixel d'une grille échantillonnant l'espace et pour chaque
+\emph{relation de localisation atomique,} la valeur de la
+\emph{métrique,} puis le degré d'appartenance à la \emph{zone de
+  localisation compatible.} Le seul choix imposé par l'utilisation de
+cette implémentation et la résolution du raster qui fixe la taille et
+le nombre de pixels et par conséquent, la précision et la durée du
+calcul. Cette résolution doit être suffisamment grande pour permettre
+le calcul des fonctions d'appartenance
 
 L’application de la fonction d'appartenance (figure
 \ref{fig:fnc_app_Dist}) à la métrique précédemment calculée (carte
