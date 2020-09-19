@@ -44,8 +44,6 @@ vectorielles et l'utilisation de rasters.
 
 \subsection{Définition d'un exemple comparatif}
 
-\tdi{ajouter sélection opérateurs intersection}
-
 Les implémentations de la \emph{théorie des sous-ensembles flous} à
 l'aide d'une approche par \emph{alpha-cuts} ou par raster nous
 semblent toutes les deux pertinentes pour notre cas
@@ -58,6 +56,43 @@ pour trancher en faveur de l'une ou de l'autre
 ---~et donc à comparer~---, tout en utilisant une \emph{relation de
   localisation,} décomposable, ce qui permet de tester également les
 opérations entre \emph{zones de localisation.}
+
+% Définition de l'aire
+Pour faciliter la comparaison de ces deux implémentations nous nous
+sommes focalisés sur une petite partie de la zone du \emph{fil rouge,}
+ce qui nous permet de ne travailler qu'avec un seul \emph{objet de
+  référence} candidat (\autoref{fig:ZIR_HT}). Ainsi, pour cet exemple
+nous ne nous focalisons que sur une partie de la méthodologie
+présentée dans le \autoref{chap:04}. Conne il n'y a qu'un \emph{indice
+  de localisation} à \emph{spatialiser,} il n'est pas nécessaire de
+\emph{décomposer} \emph{l'ensemble des indices de localisation} et de
+fusionner les zlc\todo{ac} correspondantes \footnote{Ce qui
+  correspond, respectivement à la première étape de la \emph{phase de
+    décomposition} et à la dernière étape de la \emph{phase de fusion}
+  (\autoref{fig:methodo_1}).}. De même, comme nous ne travaillons que
+sur un \emph{objet de référence} il n'est pas nécessaire de procéder à
+la \emph{décomposition} d'un \emph{objet de référence} non nommé et à
+la \emph{fusion} des zlc\todo{ac} issues de leur spatialisation
+\footnote{Ce qui correspond, respectivement aux secondes étapes des
+  \emph{phases de décomposition} et de \emph{fusion}
+  (\autoref{fig:methodo_1}).}. L'absence de ces quatre étapes ne pose
+pas de problèmes pour la comparaison des implémentations. D'une part
+car le choix de la \emph{modélisation} des \emph{zones de
+  localisation} n'a pas impact sur la \emph{phase de décomposition,}
+aucun \emph{objet géographique} n'étant encore construit. De l'autre,
+car les étapes de la \emph{phase de fusion} emploient les mêmes outils
+théoriques \footnote{C'est-à-dire des unions et intersections
+  ensemblistes, faisant appel aux \emph{t-normes} et \emph{t-conormes}
+  de la \emph{théorie des sous-ensembles flous.}}, ce qui rend leur
+comportement similaire. Il n'est donc pas nécessaire de tester chaque
+étape de la \emph{phase de fusion} pour estimer l'adéquation d'une
+implémentation.
+
+\begin{carte}
+  \centering \input{../figures/Raster_ZIR_HT.tex}
+  \caption{Zone utilisée pour la comparaison des implémentations.}
+  \label{fig:ZIR_HT}
+\end{carte}
 
 % Décomposition de l'indice
 La \emph{relation de localisation} que nous avons identifiée comme la
@@ -113,8 +148,7 @@ proche de \emph{l'objet de référence} (\autoref{fig:ISO_DIST_HT}).
   \centering
   \input{../figures/Raster_ISO_DIST_HT.tex}
   \caption{\emph{Métrique} pour la \emph{relation de localisation
-      atomique}
-    \protect\onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que}
+      atomique}    \protect\onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que}
     : La distance planaire à la ligne électrique trois brins.}
   \label{fig:ISO_DIST_HT}
 \end{carte}
@@ -219,6 +253,8 @@ reste nulle au-delà (Figure \ref{fig:fnc_app_AltInf}).
       électrique trois brins}.}
   \label{fig:fnc_app_sousProche}
 \end{figure}
+
+\tdi{opérateurs de fusions}
 
 \subsection{Implémentation raster}
 
