@@ -360,6 +360,14 @@ d'altitude. Pour le dire autrement, il y a peu de positions
 
 \subsection{Implémentation par \emph{Alpha-cuts}}
 
+L'implémentation par \emph{alpha-cuts} consiste à construire
+
+Par conséquent il serait possible de construire des \emph{alpha-cuts}
+à partir d'une implémentation raster, en sélectionnant les pixels dont
+le degré d'appartenance est supérieur à un seuil donné. 
+
+
+
 L'implémentation par \emph{alpha-cuts} s'est révelée beaucoup plus
 difficile à mettre en place que l'implémentation par rasters.
 
@@ -386,10 +394,36 @@ Pour cette comparaison nous avons choisi de construire trois
 d'appartenance est supérieur à 0, délimitant le \emph{support} et
 enfin \emph{l'alpha-cut} de degré 0,5.
 
-Pour chaque segment d'une ligne électrique, nous construisons un
-polyèdre, représentant la limite tridimensionnelle de l'aire
-appartenant à \emph{l'alpha-cut} considérée. Ce dernier est composé de
-6 faces.
+
+% Détail de la méthode
+Pour chaque segment de la ligne électrique traitée, nous construisons
+un polyèdre, correspondant à une \emph{alpha-cut}
+tridimensionnelle. Ce polyèdre se compose de 6 faces, définies par
+autant de demis-plans, positionnés relativement à la ligne
+électrique. Certains d'entre eux ont une position invariante par
+changement \emph{l'alpha-cut,} alors que d'autres non. Les demi-plans
+dont la position varie en fonction de \emph{l'alpha-cut} considérée
+sont ceux dont la position délimite une zone de même degré
+d'appartenance. Par exemple, les demis-plans latéraux (\ie situés à
+gauche et à droite dans le sens de la ligne électrique) permettent de
+délimiter une distance planimétrique à \emph{l'objet de référence} et
+donc de représenter la \emph{relation de localisation atomique}
+\onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que}. Si
+l'on cherche à construire \emph{l'alpha-cut} délimitant le support, il
+faudra placer ces demi-plans latéraux de manière a ce qu'aucune
+position située au-delà (par rapport à la ligne électrique) ne puisse
+avoir un degré d'appartenance non nul. Dans le cas de \emph{l'indice
+  de localisation} considéré, seule la \emph{relation}
+\onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que}
+impacte la position de ces deux demi-plans, on peut alors se fonder
+sur la fonction d'appartenance correspondante (Figure
+\ref{fig:fnc_app_Dist}) et identifier la distance correspondant au
+degré d'éloignement considéré, soit \SI{100}{\meter} pour un degré
+d'appartenance non nul.
+
+correspondent à l'éloignement maximal pour une
+\emph{alpha-cut} donnée.
+
 
 \missingfigure{Polyhère}
 
