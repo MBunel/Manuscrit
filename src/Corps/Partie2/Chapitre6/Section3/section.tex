@@ -394,7 +394,6 @@ Pour cette comparaison nous avons choisi de construire trois
 d'appartenance est supérieur à 0, délimitant le \emph{support} et
 enfin \emph{l'alpha-cut} de degré 0,5.
 
-
 % Détail de la méthode
 Pour chaque segment de la ligne électrique traitée, nous construisons
 un polyèdre, correspondant à une \emph{alpha-cut}
@@ -415,15 +414,31 @@ faudra placer ces demi-plans latéraux de manière a ce qu'aucune
 position située au-delà (par rapport à la ligne électrique) ne puisse
 avoir un degré d'appartenance non nul. Dans le cas de \emph{l'indice
   de localisation} considéré, seule la \emph{relation}
-\onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que}
+\onto[orla]{Dis\-tan\-ce\-Quan\-ti\-dta\-ti\-ve\-Pla\-ni\-mé\-tri\-que}
 impacte la position de ces deux demi-plans, on peut alors se fonder
 sur la fonction d'appartenance correspondante (Figure
 \ref{fig:fnc_app_Dist}) et identifier la distance correspondant au
 degré d'éloignement considéré, soit \SI{100}{\meter} pour un degré
-d'appartenance non nul.
-
-correspondent à l'éloignement maximal pour une
-\emph{alpha-cut} donnée.
+d'appartenance non nul. Les demi-plans avant et arrière délimitent
+également la distance planimétrique à la ligne électrique. Cependant
+nous avons choisi de ne pas les faire varier. D'une part, car nous
+travaillons sur un seul \emph{objet de référence,} traversant l'aire
+étudiée de part en part et sans changement de direction marqués. Par
+conséquent, les polyèdres modélisant les \emph{alpha-cuts} de chaque
+segment sont toutes en contact par leurs faces avant et arrières, la
+prise en compte de leur décalage par rapport à la ligne électrique
+n'est donc pas nécessaire. De plus, les
+%
+De manière similaire, le demi-plan supérieur voit sa position varier
+uniquement en fonction de la \emph{relation de localisation atomique}
+\onto[orla]{Al\-ti\-tu\-de\-Stric\-te\-ment\-Inf\-érieu\-re}.
+%
+Enfin, le demi-plan inférieur ne sert qu'a fermer le polyèdre, aucune
+des \emph{relations de localisation} n'imposant une limite d'altitude
+minimale. Pour éviter de réduire artificiellement l'étendue des
+\emph{alpha-cuts} nous avons placé ce demi-plan a une altitude
+nettement plus faible que l'altitude minimale de la zir\todo{ac},
+simulant ainsi un demi-plan virtuellement à l'infini.
 
 
 \missingfigure{Polyhère}
@@ -436,7 +451,6 @@ fusion des \emph{zones de localisation compatibles.}
 \paragraph{Comparaison des approches}
 
 Les deux implémentations testées
-
 
 Les résultats obtenus sont similaires
 
