@@ -370,8 +370,6 @@ Comme pour l'implémentation raster on pourrait
 L'implémentation par \emph{alpha-cuts} s'est révelée beaucoup plus
 difficile à mettre en place que l'implémentation par rasters.
 
-L'approche par \emph{alpha-cuts} impose donc de calculer une limite
-
 \tdi{acuts et intersecions}
 
 D'une part pour des soucis techniques. Aucun \ac{sig} ne permettant de
@@ -404,13 +402,14 @@ fusion des \emph{zones de localisation compatibles.}
 
 \missingfigure{Illustration modélisation concrète par alpha-cuts}
 
-\subsection{Comparaison des approches et choix approche raster}
+\subsection{Comparaison et choix de l'implémentation}
 
-\paragraph{Comparaison des approches}
+Bien que \emph{l'indice de localisation} utilisé pour la comparaison soit relativement simple, il a permis de mettre en évidence des différences assez conséquentes entre les approches raster et par \emph{alpha-cuts.}  
 
-Les deux implémentations testées
 
-Les résultats obtenus sont similaires
+\tdi{Qualité de la modélisation}
+
+La qualité de la \emph{zone de localisation probable} créée est proche avec les deux implémentations, nous n'avons repéré aucune différence notable entre les deux \emph{zones de localisation probables} \autocite{Bunel2019a}. Cependant, de part sa construction, l'implémentation par \emph{alpha-cuts} devrait être, dans le cas général, plus précise que l'approche raster, puisque ne nécessitant pas un échantillonnage préalable. Toutefois, la précision de toutes les implémentations dépend également de la précision des données. Par exemple, la \emph{spatialisation} de la \emph{relation de localisation} \onto[orl]{Sous\-Pro\-che\-De} a nécessité l'emploi de données altimétriques, diffusées sous la forme d'un \ac{mnt} de résolution donnée. La spatialisation de la \emph{relation de localisation atomique} \onto[orla]{Al\-ti\-tu\-de\-Stric\-te\-ment\-Inf\-érieu\-re} ne peut donc pas, quelle que soit l'implémentation choisie, être plus précise que la donnée en entrée. Or, comme l'implémentation raster a été calculée à partir d'un raster dont la résolution est calquée sur celle du \ac{mnt}, sa précision est identique à celle des données, dans cette configuration l'implémentation par \emph{alpha-cuts} ne peut donc pas être plus précise. Ainsi, la précision de l'ensemble de la modélisation est avant tout limité par l'élément le moins précis, qui dans le cas des deux implémentations est la précision du \ac{mnt}.
 
 \missingfigure{Différence zones}
 
@@ -451,16 +450,13 @@ difficilement) optimisé. Le résultat est assez mitigé.
 
 \tdi{Volume des données}
 
+Un autres critère de différentiation technique et la question du volume de données produites (et donc stockées) pour chaque implémentation.
+
 Avantage vecteur. Le raster tend à prendre beaucoup de place, encore
 plus si l'on souhaite stoquer les objets de référence en raster ou
 sauvegarder des résutlats intermédiaires.
 
-\tdi{Qualité de la modélisation}
 
-Comparable, l'article de la RIG n'a pas permis de mettre en évidence
-des différences notables. Par construction l'approche vectorielle est
-plus précise, mais sa précision dépend aussi des données (MNT pour
-l'altitude). À l'échelle du pixel les résultats sont comparables.
 
 \tdi{OK pour les deux: Stabilité du modèle ? (par exemple si l'on fait
   des intersection avec le modèle egg-yolk on doit choisir ce qu'est
