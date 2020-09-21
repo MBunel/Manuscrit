@@ -1,0 +1,28 @@
+\begin{tabular}{L{.3\textheight}L{.3\textheight}L{.3\textheight}} \toprule
+\multicolumn{1}{c}{\bfseries Critère comparatif} &
+\multicolumn{1}{c}{\bfseries \emph{Alpha-cuts}} & \multicolumn{1}{c}{\bfseries
+Raster} \\ \midrule
+% Sémantique des relations spatiales
+  Précision de la modélisation & Identique à la moins précise des
+                                 données. & Dépend de la résolution et
+                                           de la moins précise des données.\\
+  Difficulté de mise en place & Importante. Nécessite de nombreux
+                                développements \emph{ad hoc} de bas
+                                niveau & Peu importante. Il est assez
+                                         rapide d'aboutir aux premières
+                                         \emph{spatialisation.}\\
+  %
+  Difficulté d'extension & & \\
+  %
+  Temps de calcul & Assez faible pour l'exemple traité, risque
+                    de varier fortement en fonction de la \emph{relation de
+                    localisation} traitée. & Conséquent. Augmente quadratiquement avec la
+                      résolution.\\
+  %
+  Volume des données & Assez faible. & Assez faible pour la comparaison, mais augmente rapidement avec le
+                        nombre \emph{d'objets de référence} candidats.\\
+  %
+  Contraintes spécifiques &Nécessité de choisir le nombre et le degré
+                            d'appartenance des \emph{alpha-cuts.} & Nécessité de définir une résolution de modélisation.\\
+  \bottomrule
+\end{tabular}
