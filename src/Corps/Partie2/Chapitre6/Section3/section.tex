@@ -360,8 +360,11 @@ d'altitude. Pour le dire autrement, il y a peu de positions
 
 \subsection{Implémentation par \emph{Alpha-cuts}}
 
-Bien que fondée sur les mêmes aspects théoriques que l'implémentation raster, l'implémentation par \emph{alpha-cuts} propose une approche très différente. On pourrait construire des \emph{alpha-cuts} de plusieurs manières. Une première solution serait de partir des résultats de l'implémentation raster (\autoref{fig:ZLP_SOUS_HT}) et d'en extraire les pixels dont le degré d'appartenance est supérieur à un seuil fixé. Cette construction par sélection \footnote{Fortement semblable à la \emph{construction en extension d'ordre supérieur} présentée dans le \autoref{chap:03}.}, est cependant bien différente des démarches de \textcite{Runz2008a, Zoghlami2016}, qui construisent directement les \emph{alpha-cuts,} selon une \emph{construction en intension} (\autoref{:chap:03}).
+Bien que fondée sur les mêmes aspects théoriques que l'implémentation raster, l'implémentation par \emph{alpha-cuts} propose une approche très différente. On pourrait construire des \emph{alpha-cuts} de plusieurs manières. Une première solution serait de partir des résultats de l'implémentation raster (\autoref{fig:ZLP_SOUS_HT}) et d'en extraire les pixels dont le degré d'appartenance est supérieur à un seuil fixé. Cette construction par sélection \footnote{Fortement semblable à la \emph{construction en extension d'ordre supérieur} présentée dans le \autoref{chap:03}.}, n'est cependant rien de plus qu'un post-traitement des résultats de l'implémentation raster et elle ne possède pas d'avantages (ou inconvénients) qui lui soient propres. Une approche différente est cependant envisageable. \textcite{Runz2008a, Zoghlami2016}, par exemple, des \emph{alpha-cuts} directement, sans passer par une étape préalable de calcul des degrés d'appartenance, soit une \emph{construction en intension} (\autoref{:chap:03}). La construction \emph{d'alpha-cuts} en intension demande d'identifier les critères jouant sur la forme de la \emph{zone de localisation,} soit, dans notre exemple, la distance et différence d'altitude par rapport à la ligne électrique. Conformément au \emph{principe de décomposition} on peut alors définir une méthode géométrique permettant de construire, pour chaque \emph{relation de localisation atomique} et chaque \emph{alpha-cut} construite, une région, correspondant à une \emph{alpha-cut} de la \emph{zone de localisation compatible} traitée. Ces différentes \emph{alpha-cuts} seraient alors intersectées deux à deux, par même degré d'appartenance en vue d'obtenir les \emph{alpha-cuts} de la \emph{zone de localisation probable.}
 
+Il serait alors possible de construire un \emph{buffer} à partir de la ligne électrique, correspondant à une \emph{alpha-cut} de la \emph{zone de localisation compatible}
+
+Comme pour l'implémentation raster on pourrait 
 
 
 L'implémentation par \emph{alpha-cuts} s'est révelée beaucoup plus
@@ -369,20 +372,13 @@ difficile à mettre en place que l'implémentation par rasters.
 
 L'approche par \emph{alpha-cuts} impose donc de calculer une limite
 
-
+\tdi{acuts et intersecions}
 
 D'une part pour des soucis techniques. Aucun \ac{sig} ne permettant de
 permettant de réaliser les traitements que nous envisagions, nous
 avons été contrains de nous orienter sur des solutions de plus bas
 niveau, comme la bibliothèque de calcul géométrique CGAL
 \autocite{CGAL2019}.
-
-\tdi{Revenir un peu sur les alpha-cuts et le lac}
-
-
-\tdi{acuts et intersecions}
-
-\missingfigure{Illustration modélisation concrète par alpha-cuts}
 
 Pour cette comparaison nous avons choisi de construire trois \emph{alpha-cuts,} celle dont le degré est égal à 1, délimitant le \emph{noyau} du \emph{sous-ensemble flou,} celle dont le degré d'appartenance est supérieur à 0, délimitant le \emph{support} et enfin \emph{l'alpha-cut} de degré 0,5.
 
@@ -405,6 +401,8 @@ Enfin, le demi-plan inférieur ne sert qu'a fermer le polyèdre, aucune des \emp
 
 Cette manière de procéder n'impose évite de procéder à une phase de
 fusion des \emph{zones de localisation compatibles.}
+
+\missingfigure{Illustration modélisation concrète par alpha-cuts}
 
 \subsection{Comparaison des approches et choix approche raster}
 
