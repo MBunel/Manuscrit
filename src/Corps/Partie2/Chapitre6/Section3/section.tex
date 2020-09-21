@@ -409,44 +409,18 @@ Bien que \emph{l'indice de localisation} utilisé pour la comparaison soit relat
 
 \tdi{Qualité de la modélisation}
 
-La qualité de la \emph{zone de localisation probable} créée est proche avec les deux implémentations, nous n'avons repéré aucune différence notable entre les deux \emph{zones de localisation probables} \autocite{Bunel2019a}. Cependant, de part sa construction, l'implémentation par \emph{alpha-cuts} devrait être, dans le cas général, plus précise que l'approche raster, puisque ne nécessitant pas un échantillonnage préalable. Toutefois, la précision de toutes les implémentations dépend également de la précision des données. Par exemple, la \emph{spatialisation} de la \emph{relation de localisation} \onto[orl]{Sous\-Pro\-che\-De} a nécessité l'emploi de données altimétriques, diffusées sous la forme d'un \ac{mnt} de résolution donnée. La spatialisation de la \emph{relation de localisation atomique} \onto[orla]{Al\-ti\-tu\-de\-Stric\-te\-ment\-Inf\-érieu\-re} ne peut donc pas, quelle que soit l'implémentation choisie, être plus précise que la donnée en entrée. Or, comme l'implémentation raster a été calculée à partir d'un raster dont la résolution est calquée sur celle du \ac{mnt}, sa précision est identique à celle des données, dans cette configuration l'implémentation par \emph{alpha-cuts} ne peut donc pas être plus précise. Ainsi, la précision de l'ensemble de la modélisation est avant tout limité par l'élément le moins précis, qui dans le cas des deux implémentations est la précision du \ac{mnt}.
+La qualité de la \emph{zone de localisation probable} créée est proche avec les deux implémentations et nous n'avons repéré aucune différence notable entre les deux \emph{zones de localisation probables} \autocite{Bunel2019a}. Cependant, de part sa construction, l'implémentation par \emph{alpha-cuts} devrait être, dans le cas général, plus précise que l'approche raster, puisque ne nécessitant pas un échantillonnage préalable. Toutefois, la précision de toutes les implémentations dépend également de la précision des données. Par exemple, la \emph{spatialisation} de la \emph{relation de localisation} \onto[orl]{Sous\-Pro\-che\-De} a nécessité l'emploi de données altimétriques, diffusées sous la forme d'un \ac{mnt} de résolution donnée. La spatialisation de la \emph{relation de localisation atomique} \onto[orla]{Al\-ti\-tu\-de\-Stric\-te\-ment\-Inf\-érieu\-re} ne peut donc pas, quelle que soit l'implémentation choisie, être plus précise que la donnée en entrée. Or, comme l'implémentation raster a été calculée à partir d'un raster dont la résolution est calquée sur celle du \ac{mnt}, sa précision est identique à celle des données, dans cette configuration l'implémentation par \emph{alpha-cuts} ne peut donc pas être plus précise. Ainsi, la précision de l'ensemble de la modélisation est avant tout limité par l'élément le moins précis, qui dans le cas des deux implémentations est la précision du \ac{mnt}.
 
 \missingfigure{Différence zones}
 
 
-
-\tdi{problème des jointures}
-
-
 \tdi{Difficulté de mise en place}
 
-Au moment de la sélection d'une méthode de modélisation nous avons
-estimé que le développement d'une méthode utilisant des vecteurs
-serait bien plus coutueuses. Sur ce point nous avons préféré les
-rasters. De plus il a été bc plus difficile d'aboutir à une
-modélisation vectorielle permettant la comparaison (citer RIG).
-
-\tdi{Difficulté d'extension}
-
-Il semble plus difficile de développer des méthodes de spatialisation
-très différentes en vecteur qu'en raster.
-
-Il est également plus compliqué de tester de nouveaux couples
-d'opérateurs flous en vecteur.
-
-\tdi{Tendance à la fragmentation des alpha-cuts}
+Si les implémentations par \emph{alpha-cut} et raster proposent une modélisation de qualité comparable, leur difficulté de mise en place et de manipulation sont très différentes. Si la mise en place de ces deux implémentations a nécessité des développements \emph{ad hoc,} nous n'avons pas éprouvé de difficulté particulière à mettre en place l'implémentation raster, contrairement à l'approche par \emph{alpha-cuts} qui a nécessité des développements conséquents et de bas niveau. Si les problématiques techniques (\eg difficulté d'implémentation, temps de calcul, \emph{etc.}) ne sont pas un critère de décision suffisant, elles impliquent un investissement plus important sur des tâches de développement, ce qui limite le temps disponible pour l'implémentation de nouvelles méthodes de \emph{spatialisation.} De plus, cela complique également l'extension de la modélisation. L'ajout de nouvelles méthodes de \emph{spatialisation} ou l'utilisation de nouveaux opérateurs flous nécessiterait d'importants développements pour être utilisés avec l'approche par \emph{alpha-cuts,} la méthode de construction du polyèdre utilisée ne pouvant fonctionner qu'avec les \emph{relations de localisation atomiques} \onto{Al\-ti\-tu\-de\-Stric\-te\-ment\-Inf\-érieu\-re} et \onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que} et les opérateurs de \textcite{Zadeh1965}. De plus, la généralisation de l'utilisation de l'implémentation par \emph{alpha-cuts} nécessite de compléter notre proposition pour offir une meilleure prise en compte des jointures entre \emph{objets de référence,} toutes les configurations ne permettant pas l'approximation fait ici.
 
 \tdi{Temps de calcul}
 
-% Critère moyennement pertinent
-Le critère du temps de calcul n'est pas fondamental pour ce
-travail. Toutefois il nous semble pertinent de préciser que les deux
-méthodes différent sur ce point.
-
-Avantage raster si le nombre de cellules n'est pas trop
-important. Mais le temps de calcul augmente rapidement. L'approche
-vecteur est moins rapide mais le code est moins (et plus
-difficilement) optimisé. Le résultat est assez mitigé.
+D'autres critères techniques peuvent également être pris en compte pour cette comparaison, comme le temps de calcul nécessaire au fonctionnement des deux implémentions ou le volume des données qu'elles imposent de manipuler. Si l'on compare le temps nécessaire à la constructions des \emph{zones de localisations probables} correspondant à \emph{l'indice de localisation} modélisé (Cartes \ref{fig:ZLP_SOUS_HT} et \ref{XX}), l'implémentation raster est plus rapide. Mais cette performance est plus liée à des facteurs exogènes, comme la qualité du développement et l'optimisation des bibliothèques logicielles utilisées qu'a la complexité des algorithme utilisés. Par exemple, l'implémentation par \emph{alpha-cuts} ayant été plus longue et difficile à mettre en place, peu de temps a été consacré à l'optimisation, même basique, de son code, ses performances sont donc très certainement améliorables. De plus, le temps de calcul de l'implémentation raster a tendance à augmenter plus rapidement avec le nombre \emph{d'objets de référence} à traiter (ou avec la résolution utilisée), cette méthode est donc potentiellement moins performante que l'approche par \emph{alpha-cuts,} même si la spatialisation de l'indice de localisation : \enquote{Je suis sous une ligne électrique trois brins} semble indiquer le contraire.
 
 \tdi{Volume des données}
 
@@ -457,6 +431,7 @@ plus si l'on souhaite stoquer les objets de référence en raster ou
 sauvegarder des résutlats intermédiaires.
 
 
+\tdi{Tendance à la fragmentation des alpha-cuts}
 
 \tdi{OK pour les deux: Stabilité du modèle ? (par exemple si l'on fait
   des intersection avec le modèle egg-yolk on doit choisir ce qu'est
@@ -516,6 +491,17 @@ Les différentes opérations inter-\emph{zones de localisation} peuvent
 De plus, l'utilisation de rasters pose un autre questionnement, celui
 de la définition d'une résolution, dont dépendra la finesse, le poids
 et la rapidité de construction des \emph{zones de localisation.}
+
+\begin{landscape}
+  \begin{table}[H]
+    \centering
+    \input{../tableaux/Comparaison_implem.tex}
+    \caption{Synthèse de la comparaison des implémentations par \emph{alpha-cuts} et raster.}
+    \label{tab:comp_implems}
+  \end{table}
+\end{landscape}
+
+
 
 %%% Local Variables:
 %%% mode: latex
