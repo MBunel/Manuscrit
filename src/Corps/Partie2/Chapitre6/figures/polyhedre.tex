@@ -1,0 +1,23 @@
+\begin{tikzpicture}[x={(1cm,0cm)}, y={(0cm,1cm)}, z={(3.85mm, 3.85mm)}]
+  \coordinate (Ld) at (2,5,6);
+  \coordinate (Lf) at (5,4,6); 	
+
+  \coordinate (A) at ($(Ld) - (0,5,-2)$); 
+  \coordinate (B) at ($(Lf) - (0,4,-2)$); 
+  \coordinate (C) at (5,0,4); 
+  \coordinate (D) at (2,0,4); 
+
+  \path[draw] (Ld) -- (Lf);
+
+  \begin{scope}[canvas is xz plane at y=0]
+    \draw (0,0) grid (10,10);
+  \end{scope}
+
+  \begin{scope}
+    \draw[fill=red] (A) -- (B) -- (C) -- (D) -- cycle;
+    % \draw[fill=red] (2,0,6) --++(3,0,0) --++(0,3,0) --++(-3,-1,0) -- cycle;
+    
+
+    % \draw[fill=red] (2,0,4) --++(3,0,0) --++(0,3,0) --++(-3,-1,0) -- cycle;
+  \end{scope}
+\end{tikzpicture}

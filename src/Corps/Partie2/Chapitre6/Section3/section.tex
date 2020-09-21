@@ -42,7 +42,7 @@ Nous proposons de confronter les deux implémentations qui nous
 semblent être les plus prometteuses, l'utilisation \emph{d'alpha-cuts}
 vectorielles et l'utilisation de rasters.
 
-\subsection{Exemple comparatif}
+\subsection{Définition d'un exemple comparatif}
 
 Les implémentations de la \emph{théorie des sous-ensembles flous} à
 l'aide d'une approche par \emph{alpha-cuts} ou par raster nous
@@ -56,6 +56,43 @@ pour trancher en faveur de l'une ou de l'autre
 ---~et donc à comparer~---, tout en utilisant une \emph{relation de
   localisation,} décomposable, ce qui permet de tester également les
 opérations entre \emph{zones de localisation.}
+
+% Définition de l'aire
+Pour faciliter la comparaison de ces deux implémentations nous nous
+sommes focalisés sur une petite partie de la zone du \emph{fil rouge,}
+ce qui nous permet de ne travailler qu'avec un seul \emph{objet de
+  référence} candidat (\autoref{fig:ZIR_HT}). Ainsi, pour cet exemple
+nous ne nous focalisons que sur une partie de la méthodologie
+présentée dans le \autoref{chap:04}. Comme il n'y a qu'un \emph{indice
+  de localisation} à \emph{spatialiser,} il n'est pas nécessaire de
+\emph{décomposer} \emph{l'ensemble des indices de localisation} et de
+fusionner les zlc\todo{ac} correspondantes \footnote{Ce qui
+  correspond, respectivement à la première étape de la \emph{phase de
+    décomposition} et à la dernière étape de la \emph{phase de fusion}
+  (\autoref{fig:methodo_1}).}. De même, comme nous ne travaillons que
+sur un \emph{objet de référence} il n'est pas nécessaire de procéder à
+la \emph{décomposition} d'un \emph{objet de référence} non nommé et à
+la \emph{fusion} des zlc\todo{ac} issues de leur spatialisation
+\footnote{Ce qui correspond, respectivement aux secondes étapes des
+  \emph{phases de décomposition} et de \emph{fusion}
+  (\autoref{fig:methodo_1}).}. L'absence de ces quatre étapes ne pose
+pas de problèmes pour la comparaison des implémentations. D'une part
+car le choix de la \emph{modélisation} des \emph{zones de
+  localisation} n'a pas impact sur la \emph{phase de décomposition,}
+aucun \emph{objet géographique} n'étant encore construit. De l'autre,
+car les étapes de la \emph{phase de fusion} emploient les mêmes outils
+théoriques \footnote{C'est-à-dire des unions et intersections
+  ensemblistes, faisant appel aux \emph{t-normes} et \emph{t-conormes}
+  de la \emph{théorie des sous-ensembles flous.}}, ce qui rend leur
+comportement similaire. Il n'est donc pas nécessaire de tester chaque
+étape de la \emph{phase de fusion} pour estimer l'adéquation d'une
+implémentation.
+
+\begin{carte}
+  \centering \input{../figures/Raster_ZIR_HT.tex}
+  \caption{Zone utilisée pour la comparaison des implémentations.}
+  \label{fig:ZIR_HT}
+\end{carte}
 
 % Décomposition de l'indice
 La \emph{relation de localisation} que nous avons identifiée comme la
@@ -111,8 +148,7 @@ proche de \emph{l'objet de référence} (\autoref{fig:ISO_DIST_HT}).
   \centering
   \input{../figures/Raster_ISO_DIST_HT.tex}
   \caption{\emph{Métrique} pour la \emph{relation de localisation
-      atomique}
-    \protect\onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que}
+      atomique}    \protect\onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que}
     : La distance planaire à la ligne électrique trois brins.}
   \label{fig:ISO_DIST_HT}
 \end{carte}
@@ -218,40 +254,57 @@ reste nulle au-delà (Figure \ref{fig:fnc_app_AltInf}).
   \label{fig:fnc_app_sousProche}
 \end{figure}
 
-\subsection{Modélisation par rasters}
+La construction de la \emph{zone de localisation probable} nécessite
+de \emph{fusionner} ---~à l'aide d'une intersection~--- les deux
+\emph{zones de localisations compatibles} correspondant aux
+\emph{relations de localisation atomiques}
+\onto[orla]{Al\-ti\-tu\-de\-Stric\-te\-ment\-Inf\-érieu\-re} et
+\onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que}. Si
+son appliquation est dépendante de l'implémentation, la méthode
+utilisée est fixée par le modèle théorique. La \emph{théorie des
+  sous-ensembles flous} nécessite d'employer une \emph{t-norme.} Étant
+donné que cette comparaison ne porte que sur les implémenations et non
+sur les opérateurs d'unions et d'intersection, nous avons choisi
+d'utiliser les opérateurs les plus courants, ceux proposés par
+\textcite{Zadeh1965}, où la fonction \emph{minimum} fait office de
+\emph{t-norme.}
 
+\subsection{Implémentation raster}
 
-Une fois que les métriques et les fonctions d’appartenance ont été
-définies, l'approche raster se résume à calculer, en chaque pixel
-d'une grille échantillonnant l'espace et pour chaque \emph{relation de
-  localisation atomique,} la valeur de la métrique, puis le degré
-d'appartenance à la \emph{zone de localisation compatible.}
+L'implémentation a l'avantage d'être extrêmement facile a mettre en
+place. Une fois que les \emph{métriques} et les \emph{fonctions
+  d’appartenance} ont été définies, elle se résume à calculer, pour
+chaque pixel d'une grille échantillonnant l'espace, la valeur de la
+\emph{métrique,} puis du degré d'appartenance à la \emph{zone de
+  localisation compatible} \emph{spatialisée.} Cette opération est
+répétée pour chaque \emph{relation de localisation atomique,} puis les
+\emph{zones de localisation compatibles} résultantes sont
+\emph{fusionnées} à l'aide des opérateurs d'intersection et de fusion
+sélectionnés. Le seul choix imposé par l'utilisation de cette
+implémentation et celui de la résolution du raster. Ce critère fixe la
+taille et le nombre de pixels du raster et influe, par conséquent, sur
+la précision et la durée du calcul. Cette résolution doit être
+suffisamment grande pour permettre le calcul des fonctions
+\emph{d'appartenance définies.} Par exemple, la \emph{fonction
+  d'appartenance} définie pour la \emph{relation de localisation
+  atomique}
+\onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que}
+(figure \ref{fig:fnc_app_Dist}) a deux seuils, \num{50} et
+\SI{100}{\meter}.
 
-Les intersection et unions peuvent alors être effectuées avec une
-méthode similaire au \emph{map algebra} \autocite{XX}, les sélectionés
-sont appliqués aux pixels représentant la même position.
-
-
-
-
-L'utilisation d'une approche raster consiste donc avant tout à définir
-une méthode permettant de calculer pour chaque pixel un degré
-d'appartenance, décrivant le degré de vérification de la
-\emph{relation de localisation} considérée.
-
-\texttt{citer Bloch, Vanegass, takemura}
-
-L'implémentation par rasters de la \emph{théorie des sous-ensembles
-  flous} se fonde sur la modélisation
-
-
-Sur cette carte l'appartenance de chaque pixel à la zone située sous
-une ligne électrique est représentée à l'aide d'un ensemble de cercles
-(un par pixel) dont le diamètre varie en fonction du degré
-d'appartenance. Lorsque ce degré est maximal, le diamètre du cercle
-est égal à la maille du raster (50 mètres dans le cas présent). Le
-diamètre est minimal lorsque le degré d'appartenance est supérieur à
-zéro et les valeurs nulles sont filtrées.
+L’application de la fonction d'appartenance (figure
+\ref{fig:fnc_app_Dist}) à la métrique précédemment calculée (carte
+\ref{fig:ISO_DIST_HT}) permet d'obtenir la carte
+\ref{fig:ZLC_DIST_HT}, représentant la \emph{zone de localisation
+  compatible} de la \emph{relation de localisation atomique}
+\onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que}.
+Le degré d'appartenance de chaque pixel à la \emph{zone de
+  localisation compatible} est représenté par un cercle, centré sur le
+pixel et dont le diamètre augmente avec celui-ci. Lorsque ce degré est
+maximal, le diamètre du cercle est égal à la maille du raster (50
+mètres dans le cas présent). Le diamètre est minimal lorsque le degré
+d'appartenance est supérieur à zéro et les valeurs nulles sont
+filtrées pour faciliter la lisibilité.
 
 \begin{carte}
   \centering
@@ -260,6 +313,17 @@ zéro et les valeurs nulles sont filtrées.
   \label{fig:ZLC_DIST_HT}
 \end{carte}
 
+Une méthode identique est utilisée pour construire la \emph{zone de
+  localisation compatible} issue de la \emph{spatialisation} de la
+\emph{relation de localisation atomique}
+\onto[orla]{Al\-ti\-tu\-de\-Stric\-te\-ment\-Inf\-érieu\-re}. La
+\emph{métrique} identifiée (carte \ref{fig:ISO_DALT_HT}) est calculé
+pour chaque pixel, puis ces valeurs sont transformées en \emph{degrés
+  d'appartenance} à l'aide de fonction d'appartenance définie
+précédemment (Figure \ref{fig:fnc_app_AltInf}). La carte
+\ref{fig:ZLC_ALTINF_HT}, qui résulte de ce processus, représente alors
+le degré d'appartenance de chaque pixel à la \emph{zone de
+  localisation compatible.}
 
 \begin{carte}
   \centering
@@ -268,17 +332,23 @@ zéro et les valeurs nulles sont filtrées.
   \label{fig:ZLC_ALTINF_HT}
 \end{carte}
 
-La \emph{zone de localisation probable} correspondant à l'ensemble des
-positions situées \emph{à proximité} et à une \emph{altitude
-  inférieure} de la ligne à haute-tension est construite en
-intersectant les deux \emph{zones de localisation compatibles}
-calculées (cartes \ref{fig:ZLC_DIST_HT} et
-\ref{fig:ZLC_ALTINF_HT}). Pour cet exemple nous avons utilisé les
-opérateurs de \textcite{Zadeh1965}.
-% 
-La \emph{zone de localisation probable} résultant de cette opération
-(\ref{fig:ZLP_SOUS_HT}) est visuellement très similaire à son
-équivalent résultant de la méthode par \emph{alpha-cuts.}
+Les rasters représentant les deux \emph{zones de localisation
+  compatibles} à intersecter possédant les mêmes résolutions et
+étendues, il y a bijection entre deux ensembles de pixels. On peut
+alors, sans effectuer de ré-échantillonnage, appliquer un opérateur
+d'intersection à chaque paire de pixels représentant la même
+position. Après l'intersection des \emph{zones de localisation
+  compatibles} figurées sur les cartes \ref{fig:ZLC_DIST_HT} et
+\ref{fig:ZLC_ALTINF_HT} on obtient la \emph{zone de localisation
+  probable} (carte \ref{fig:ZLP_SOUS_HT}) correspondant à l'ensemble
+des positions situées \emph{à proximité} et à une \emph{altitude
+  inférieure} de la ligne à haute-tension. Comme on peut le voir, le
+résultat obtenu est semblable à la carte \ref{fig:ZLC_DIST_HT} et
+assez différent de la carte \ref{fig:ZLC_ALTINF_HT}. L'étendue de la
+\emph{zone de localisation probable} est donc plus contraint par
+l'éloignement à la ligne électrique que par la différence
+d'altitude. Pour le dire autrement, il y a peu de positions
+\enquote{proches} et \enquote{au-dessus} d'une ligne électrique.
 
 \begin{carte}
   \centering
@@ -288,68 +358,62 @@ La \emph{zone de localisation probable} résultant de cette opération
 \end{carte}
 
 
-\subsection{Modélisation par \emph{Alpha-cuts}}
+\subsection{Implémentation par \emph{Alpha-cuts}}
 
-L'implémentation par \emph{alpha-cuts} basée sur l'approche utilisée
-par \textcite{Runz2008a,Zoghlami2016}.
+Bien que fondée sur les mêmes aspects théoriques que l'implémentation raster, l'implémentation par \emph{alpha-cuts} propose une approche très différente. On pourrait construire des \emph{alpha-cuts} de plusieurs manières. Une première solution serait de partir des résultats de l'implémentation raster (\autoref{fig:ZLP_SOUS_HT}) et d'en extraire les pixels dont le degré d'appartenance est supérieur à un seuil fixé. Cette construction par sélection \footnote{Fortement semblable à la \emph{construction en extension d'ordre supérieur} présentée dans le \autoref{chap:03}.}, n'est cependant rien de plus qu'un post-traitement des résultats de l'implémentation raster et elle ne possède pas d'avantages (ou inconvénients) qui lui soient propres. Une approche différente est cependant envisageable. \textcite{Runz2008a, Zoghlami2016}, par exemple, des \emph{alpha-cuts} directement, sans passer par une étape préalable de calcul des degrés d'appartenance, soit une \emph{construction en intension} (\autoref{:chap:03}). La construction \emph{d'alpha-cuts} en intension demande d'identifier les critères jouant sur la forme de la \emph{zone de localisation,} soit, dans notre exemple, la distance et différence d'altitude par rapport à la ligne électrique. Conformément au \emph{principe de décomposition} on peut alors définir une méthode géométrique permettant de construire, pour chaque \emph{relation de localisation atomique} et chaque \emph{alpha-cut} construite, une région, correspondant à une \emph{alpha-cut} de la \emph{zone de localisation compatible} traitée. Ces différentes \emph{alpha-cuts} seraient alors intersectées deux à deux, par même degré d'appartenance en vue d'obtenir les \emph{alpha-cuts} de la \emph{zone de localisation probable} et ce de manière fortement similaire à l'implémentation raster. Cependant, cette 
+
+Il serait alors possible de construire un \emph{buffer} à partir de la ligne électrique, correspondant à une \emph{alpha-cut} de la \emph{zone de localisation compatible}
+
+Comme pour l'implémentation raster on pourrait 
 
 
-\tdi{Revenir un peu sur les alpha-cuts et le lac}
-
-Nécessité d'utiliser CGAL \autocite{CGAL2019}.
+L'implémentation par \emph{alpha-cuts} s'est révelée beaucoup plus
+difficile à mettre en place que l'implémentation par rasters.
 
 \tdi{acuts et intersecions}
 
+D'une part pour des soucis techniques. Aucun \ac{sig} ne permettant de
+permettant de réaliser les traitements que nous envisagions, nous
+avons été contrains de nous orienter sur des solutions de plus bas
+niveau, comme la bibliothèque de calcul géométrique CGAL
+\autocite{CGAL2019}.
+
+Pour cette comparaison nous avons choisi de construire trois \emph{alpha-cuts,} celle dont le degré est égal à 1, délimitant le \emph{noyau} du \emph{sous-ensemble flou,} celle dont le degré d'appartenance est supérieur à 0, délimitant le \emph{support} et enfin \emph{l'alpha-cut} de degré 0,5.
+
+% Détail de la méthode
+Pour chaque segment de la ligne électrique traitée, nous construisons un polyèdre, correspondant à une \emph{alpha-cut} tridimensionnelle. Ce polyèdre se compose de 6 faces, définies par autant de demis-plans. Comme les \emph{alpha-cuts} délimitent une \emph{zone de localisation} dépendante, toutes choses égales par ailleurs, de la position de \emph{l'objet de référence,} la position de tous ces demi-plans est exprimable en fonction de la position de la ligne électrique traitée. Toutefois, certains d'entre eux ont une position variante par translation, en fonction de \emph{l'alpha-cut} considérée.
+
+Les demi-plans dont la position varie en fonction de \emph{l'alpha-cut} considérée sont ceux dont la position délimite une zone de même degré d'appartenance. Par exemple, les demis-plans latéraux (\ie situés à gauche et à droite par rapport au sens de la ligne électrique et parallèlement à celle-ci) permettent de délimiter une distance planimétrique à \emph{l'objet de référence} et donc de représenter la \emph{relation de localisation atomique} \onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que}. Si l'on cherche à construire \emph{l'alpha-cut} délimitant le support, il faudra placer ces demi-plans latéraux de manière a ce qu'aucune position située au-delà (par rapport à la ligne électrique) ne puisse avoir un degré d'appartenance non nul. Dans le cas de \emph{l'indice de localisation} considéré, seule la \emph{relation} \onto[orla]{Dis\-tan\-ce\-Quan\-ti\-dta\-ti\-ve\-Pla\-ni\-mé\-tri\-que} impacte la position de ces deux demi-plans, on peut alors se fonder sur la fonction d'appartenance correspondante (Figure \ref{fig:fnc_app_Dist}) et identifier la distance correspondant au degré d'éloignement considéré, soit \SI{100}{\meter} pour un degré d'appartenance non nul. Les demi-plans avant et arrière délimitent également la distance planimétrique à la ligne électrique. Cependant nous avons choisi de ne pas les faire varier. D'une part, car nous travaillons sur un seul \emph{objet de référence,} traversant l'aire étudiée de part en part et sans changement de direction marqués. Par conséquent, les polyèdres modélisant les \emph{alpha-cuts} de chaque segment sont toutes en contact par leurs faces avant et arrières, la prise en compte de leur décalage par rapport à la ligne électrique n'est donc pas nécessaire. De plus, contrairement aux faces latérales, les limites avant et arrières des \emph{alpha-cuts} ne peuvent être délimitées de manière satisfaisante par des demi-plans.
+% 
+Comme les demi-plans latéraux, la position du demi-plan supérieur dépend de la ligne électrique considérée et de \emph{l'alpha-cut} traitée.
+
+ne voit sa position varier qu'en fonction de la \emph{relation de localisation atomique} \onto[orla]{Al\-ti\-tu\-de\-Stric\-te\-ment\-Inf\-érieu\-re}. Ainsi, si \emph{l'alpha-cut} modélisée est la limite du \emph{support,} le demi-plan supérieur doit être placé de manière à ce que toutes les positions situées au-delà aient un degré d'appartenance nul, il est donc placé \SI{5}{\meter} au-dessus de la ligne électrique. 
+Enfin, le demi-plan inférieur ne sert qu'a fermer le polyèdre, aucune des \emph{relations de localisation} n'imposant une limite d'altitude minimale. Pour éviter de réduire artificiellement l'étendue des \emph{alpha-cuts} nous avons placé ce demi-plan a une altitude nettement plus faible que l'altitude minimale de la zir\todo{ac}, simulant ainsi un demi-plan virtuellement à l'infini.
+
+\begin{figure}
+  \centering
+  \input{../figures/polyhedre.tex}
+  \caption{ds}
+  \label{fig:ds}
+\end{figure}
+
+Cette manière de procéder n'impose évite de procéder à une phase de
+fusion des \emph{zones de localisation compatibles.}
+
 \missingfigure{Illustration modélisation concrète par alpha-cuts}
 
-\tdi{problème des jointures}
+\subsection{Comparaison et choix de l'implémentation}
 
-\subsection{Comparaison des approches et choix approche raster}
+Bien que \emph{l'indice de localisation} utilisé pour la comparaison soit relativement simple, il a permis de mettre en évidence des différences assez conséquentes entre les approches raster et par \emph{alpha-cuts.}  
 
-\paragraph{Comparaison des approches}
-
-\tdi{Difficulté de mise en place}
-
-Au moment de la sélection d'une méthode de modélisation nous avons
-estimé que le développement d'une méthode utilisant des vecteurs
-serait bien plus coutueuses. Sur ce point nous avons préféré les
-rasters. De plus il a été bc plus difficile d'aboutir à une
-modélisation vectorielle permettant la comparaison (citer RIG).
-
-\tdi{Difficulté d'extension}
-
-Il semble plus difficile de développer des méthodes de spatialisation
-très différentes en vecteur qu'en raster.
-
-Il est également plus compliqué de tester de nouveaux couples
-d'opérateurs flous en vecteur.
-
-\tdi{Tendance à la fragmentation des alpha-cuts}
-
-\tdi{Temps de calcul}
-
-% Critère moyennement pertinent
-Le critère du temps de calcul n'est pas fondamental pour ce
-travail. Toutefois il nous semble pertinent de préciser que les deux
-méthodes différent sur ce point.
-
-Avantage raster si le nombre de cellules n'est pas trop
-important. Mais le temps de calcul augmente rapidement. L'approche
-vecteur est moins rapide mais le code est moins (et plus
-difficilement) optimisé. Le résultat est assez mitigé.
-
-\tdi{Volume des données}
-
-Avantage vecteur. Le raster tend à prendre beaucoup de place, encore
-plus si l'on souhaite stoquer les objets de référence en raster ou
-sauvegarder des résutlats intermédiaires.
 
 \tdi{Qualité de la modélisation}
+La qualité de la \emph{zone de localisation probable} créée est proche avec les deux implémentations et nous n'avons repéré aucune différence notable entre les deux \emph{zones de localisation probables} \autocite{Bunel2019a}. Cependant, de part sa construction, l'implémentation par \emph{alpha-cuts} devrait être, dans le cas général, plus précise que l'approche raster, puisque ne nécessitant pas un échantillonnage préalable. Toutefois, la précision de toutes les implémentations dépend également de la précision des données. Par exemple, la \emph{spatialisation} de la \emph{relation de localisation} \onto[orl]{Sous\-Pro\-che\-De} a nécessité l'emploi de données altimétriques, diffusées sous la forme d'un \ac{mnt} de résolution donnée. La spatialisation de la \emph{relation de localisation atomique} \onto[orla]{Al\-ti\-tu\-de\-Stric\-te\-ment\-Inf\-érieu\-re} ne peut donc pas, quelle que soit l'implémentation choisie, être plus précise que la donnée en entrée. Or, comme l'implémentation raster a été calculée à partir d'un raster dont la résolution est calquée sur celle du \ac{mnt}, sa précision est identique à celle des données, dans cette configuration l'implémentation par \emph{alpha-cuts} ne peut donc pas être plus précise. Ainsi, la précision de l'ensemble de la modélisation est avant tout limité par l'élément le moins précis, qui dans le cas des deux implémentations est la précision du \ac{mnt}.
 
-Comparable, l'article de la RIG n'a pas permis de mettre en évidence
-des différences notables. Par construction l'approche vectorielle est
-plus précise, mais sa précision dépend aussi des données (MNT pour
-l'altitude). À l'échelle du pixel les résultats sont comparables.
+\missingfigure{Différence zones}
+
+
+\tdi{Tendance à la fragmentation des alpha-cuts}
 
 \tdi{OK pour les deux: Stabilité du modèle ? (par exemple si l'on fait
   des intersection avec le modèle egg-yolk on doit choisir ce qu'est
@@ -360,6 +424,15 @@ l'altitude). À l'échelle du pixel les résultats sont comparables.
   alors). Le résultat doit pouvoir s'exprimer avec la même
   modélisation sans perte de sémantique et de finesse de
   modélisation.}
+
+\tdi{Difficulté de mise en place}
+Si les implémentations par \emph{alpha-cut} et raster proposent une modélisation de qualité comparable, leur difficulté de mise en place et de manipulation sont très différentes. Si la mise en place de ces deux implémentations a nécessité des développements \emph{ad hoc,} nous n'avons pas éprouvé de difficulté particulière à mettre en place l'implémentation raster, contrairement à l'approche par \emph{alpha-cuts} qui a nécessité des développements conséquents et de bas niveau. Si les problématiques techniques (\eg difficulté d'implémentation, temps de calcul, \emph{etc.}) ne sont pas un critère de décision suffisant, elles impliquent un investissement plus important sur des tâches de développement, ce qui limite le temps disponible pour l'implémentation de nouvelles méthodes de \emph{spatialisation.} De plus, cela complique également l'extension de la modélisation. L'ajout de nouvelles méthodes de \emph{spatialisation} ou l'utilisation de nouveaux opérateurs flous nécessiterait d'importants développements pour être utilisés avec l'approche par \emph{alpha-cuts,} la méthode de construction du polyèdre utilisée ne pouvant fonctionner qu'avec les \emph{relations de localisation atomiques} \onto{Al\-ti\-tu\-de\-Stric\-te\-ment\-Inf\-érieu\-re} et \onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que} et les opérateurs de \textcite{Zadeh1965}. De plus, la généralisation de l'utilisation de l'implémentation par \emph{alpha-cuts} nécessite de compléter notre proposition pour offir une meilleure prise en compte des jointures entre \emph{objets de référence,} toutes les configurations ne permettant pas l'approximation fait ici.
+
+\tdi{Temps de calcul}
+D'autres critères techniques peuvent également être pris en compte pour cette comparaison, comme le temps de calcul nécessaire au fonctionnement des deux implémentions ou le volume des données qu'elles imposent de manipuler. Si l'on compare le temps nécessaire à la constructions des \emph{zones de localisations probables} correspondant à \emph{l'indice de localisation} modélisé (Cartes \ref{fig:ZLP_SOUS_HT} et \ref{XX}), l'implémentation raster est plus rapide. Mais cette performance est plus liée à des facteurs exogènes, comme la qualité du développement et l'optimisation des bibliothèques logicielles utilisées qu'a la complexité des algorithme utilisés. Par exemple, l'implémentation par \emph{alpha-cuts} ayant été plus longue et difficile à mettre en place, peu de temps a été consacré à l'optimisation, même basique, de son code, ses performances sont donc très certainement améliorables. De plus, le temps de calcul de l'implémentation raster a tendance à augmenter plus rapidement avec le nombre \emph{d'objets de référence} à traiter (ou avec la résolution utilisée), cette méthode est donc potentiellement moins performante que l'approche par \emph{alpha-cuts,} même si la spatialisation de l'indice de localisation : \enquote{Je suis sous une ligne électrique trois brins} semble indiquer le contraire.
+
+\tdi{Volume des données}
+L'implémentation par \emph{alpha-cut} a également l'avantage ---~cette fois encore plus net~--- si l'on se penche sur la question du volume des données produites et manipulées. Là où les \emph{alpha-cut} sont construites directement, l'implémentation raster nécessite de pré-calculer un raster par \emph{métriques} et par \emph{objet de référence} avant de pouvoir construire les \emph{zones de localisation compatibles.} Le nombre de raster peut augmenter fortement avec le nombre \emph{d'objets de référence} ou \emph{d'indices de localisation,} conformément au \emph{principe de décomposition}, et leur taille quadratiquement avec la résolution. L'utilisation d'une implémentation raster respectant les \emph{principes de modélisation} définis est donc assez contraignante du point de vue des données à manipuler.
 
 
 \paragraph{Choix du raster}
@@ -409,6 +482,17 @@ Les différentes opérations inter-\emph{zones de localisation} peuvent
 De plus, l'utilisation de rasters pose un autre questionnement, celui
 de la définition d'une résolution, dont dépendra la finesse, le poids
 et la rapidité de construction des \emph{zones de localisation.}
+
+\begin{landscape}
+  \begin{table}[H]
+    \centering
+    \input{../tableaux/Comparaison_implem.tex}
+    \caption{Synthèse de la comparaison des implémentations par \emph{alpha-cuts} et raster.}
+    \label{tab:comp_implems}
+  \end{table}
+\end{landscape}
+
+
 
 %%% Local Variables:
 %%% mode: latex
