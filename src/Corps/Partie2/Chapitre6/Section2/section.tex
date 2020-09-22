@@ -2,7 +2,7 @@ Tous les modèles théoriques que nous avons présenté dans l'état de
 l'art de cette thèse ne sont pas nécessairement adaptés aux exigences
 de modélisation que nous avons formulé.
 
-\tdi{Les modèles discrets (exacts, ensembles épais, autres ?)}%
+% Les modèles discrets (exacts, ensembles épais, autres ?)
 Par exemple, les modèles \enquote{exacts} \footnote{Comme les modèles
   \emph{egg-yolk} \autocite{Cohn1996}, \emph{min-max}
   \autocite{Clementini1996}, \emph{etc.}} ou basés sur la théorie des
@@ -52,27 +52,21 @@ caractéristiques attendues et ne permettent donc pas de modéliser les
 \emph{zones de localisation compatibles} et \emph{probables} comme
 nous le souhaitons.
 
-
-\tdi{Modèles non linéaires et non flous}
-
-
-Les modèles basés sur la \emph{théorie des sous-ensembles flous}
-
-Tout d'abord, la \emph{théorie des sous-ensembles flous} permet de
-donner à chaque position un \emph{degré d'appartenance} allant de 1
-(appartenance totale à la \emph{zone de localisation}) à 0
-(non-appartenance). Cette approche permet donc de modéliser tout type
-de zone \emph{imprécise,} que sa frontière soit très étendue ou non et
-que l'appartenance à la \emph{zone de localisation} soit strictement
-décroissante ou non.
-
-De plus, les opérations d'union et d'intersection des \emph{zones de
-  localisation compatibles} nécessaires à la mise en place de notre
-méthodologie peuvent êtres facilement effectuées à l'aide des
-opérateurs \emph{t-normes} et \emph{t-conormes} qui renvoient un
-\emph{degré d'appartenance.} Ainsi, la sémantique des sous-ensembles
-flous est invariante suivant les unions et les intersections. Ce
-modèle théorique garanti donc que les résultats seront toujours
+% Modèles non linéaires et non flous
+En permettant de définir, pour chaque position, un \emph{degré
+  d'appartenance} compris entre 1 (appartenance totale à la \emph{zone
+  de localisation}) et 0 (non-appartenance), la \emph{théorie des
+  sous-ensembles flous} permet de contourner le premier problème des
+\emph{modèles exacts.} Cette approche permet donc de distinguer des
+zones \emph{imprécise} qui auraient été considérées comme équivalentes
+dans un \emph{modèle exact} (\autoref{fig:Comp_mod}). De plus, les
+opérations d'union et d'intersection des \emph{zones de localisation
+  compatibles} nécessaires à la mise en place de notre méthodologie
+peuvent êtres facilement effectuées à l'aide des opérateurs
+\emph{t-normes} et \emph{t-conormes} qui renvoient un \emph{degré
+  d'appartenance.} Ainsi, la sémantique des sous-ensembles flous est
+invariante suivant les unions et les intersections. Ce modèle
+théorique garanti donc que les résultats seront toujours
 interprétables et exprimables dans le même modèle.
 
 Les \emph{sous-ensembles flous} offrent donc un cadre théorique
@@ -87,14 +81,14 @@ solution la plus pertinente pour modéliser des \emph{zones de
 pencher sur ces différentes solutions afin d'identifier celle qui est
 la plus pertinente pour notre cas d'utilisation.
 
-\begin{landscape}
-  \begin{table}[H]
-    \centering
-    %\input{../tableaux/Comparaison_implems.tex}
-    \caption{Synthèse de la comparaison des modèles théoriques.}
-    \label{tab:comp_mod_theo}
-  \end{table}
-\end{landscape}
+% \begin{landscape}
+%   \begin{table}[H]
+%     \centering
+%     %\input{../tableaux/Comparaison_implems.tex}
+%     \caption{Synthèse de la comparaison des modèles théoriques.}
+%     \label{tab:comp_mod_theo}
+%   \end{table}
+% \end{landscape}
 
 %%% Local Variables:
 %%% mode: latex
