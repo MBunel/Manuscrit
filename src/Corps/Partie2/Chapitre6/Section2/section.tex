@@ -17,38 +17,41 @@ modèles permettent de modéliser toute forme de \emph{zone de
   \emph{relations de localisation} ne pouvant définir une zone
   précise.}, il leur est impossible de rendre compte de la variation
 de \emph{l'imprécision} au sein de la zone frontière, cette dernière
-n'étant définie que par ses bornes supérieures et inférieures.
-
+n'étant définie que par ses bornes supérieures et inférieures. On peut
+illustrer ce problème par la \autoref{fig:Comp_mod}, où deux
+frontières imprécises, très différentes, sont représentées. Dans les
+deux situations, la zone \emph{imprécise} débute et se termine au même
+endroit. Dans une telle situation, ces deux frontières seraient
+\enquote{lissées} par l'utilisation d'un modèle \enquote{exact}. Il
+serait pourtant intéressant de pouvoir prendre en compte ces
+différences, d'autant plus que la zone \emph{imprécise} est étendue.
 
 \begin{figure}
   \centering
   \tdi{compléter}
   \input{../figures/Comparaison_mod.tex}
   \caption{GN2}
-  % \label{fig:fnc_app_sousProche}
+  \label{fig:Comp_mod}
 \end{figure}
-
 
 De plus, si les \emph{zones de localisation} construites par la
 \emph{spatialisation} d'une \emph{relation de localisation} sont
 relativement simples \footnote{Elles ne sont constituées que de deux
   polygones marquant les limites de la zone frontière
-  (cf. \autoref{chap:03}).} et donc faciles à interpréter, elles
-perdent cette propriété après plusieurs unions ou intersections.
-%
-Ces deux observations s'appliquent également au modèle des ensembles
-épais \autocite{Pawlak1982}.
+  (cf. \autoref{chap:03}).} et donc faciles à interpréter, elles se
+complexifient raidement au fil des unions et des intersections. En
+effet, contrairement aux intersection et unions d'objets
+\enquote{classiques}, il est ici nécessaire de manipuler deux objets,
+les deux frontières. Ainsi, si les \emph{zones de localisation
+  compatibles} modélisées avec un modèle \enquote{exact} pourraient
+être faciles à interpréter, il n'en sera pas de même avec la
+\emph{zone de localisation probable,} issue de la fusion de toutes ces
+zones. Par conséquent, les modèles \enquote{exacts} ou basés sur la
+\emph{théorie des ensembles approximatifs} n'ont pas toutes les
+caractéristiques attendues et ne permettent donc pas de modéliser les
+\emph{zones de localisation compatibles} et \emph{probables} comme
+nous le souhaitons.
 
-%
-Ainsi, si les \emph{zones de localisation compatibles} modélisées avec
-un modèle \enquote{exact} pourraient être faciles à interpréter, il
-n'en sera pas de même avec la \emph{zone de localisation probable,}
-issue de la fusion de toutes ces zones.
-
-Les modèles \enquote{exacts} n'offrent pas la possibilité de modéliser
-toutes les caractéristiques que nous avons identifiées, par conséquent
-nous ne pouvons utiliser ces différents modèles pour représenter les
-\emph{zones de localisation} que nous construisons.
 
 \tdi{Modèles non linéaires et non flous}
 
