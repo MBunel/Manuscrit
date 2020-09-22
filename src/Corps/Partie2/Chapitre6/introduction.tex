@@ -1,26 +1,36 @@
-Dans ce chapitre nous allons présenter la méthode de modélisation des
-\emph{zones de localisation compatibles} et \emph{probable} qui sera
-utilisée pour \emph{spatialiser} les \emph{indices de localisation.}
+Dans ce chapitre nous allons présenter l'approche retenue pour
+modéliser les \emph{zones de localisation compatibles} et
+\emph{probables.} Cette question est centrale dans notre travail de
+recherche, car nous souhaitons prendre en compte \emph{l'imprécision}
+des \emph{relations de localisation} et des \emph{zones de
+  localisation} en résultant, ce qu'aucune modélisation
+\enquote{standard} des objets géographiques ne permet de faire.
 
+% Modélisation = Modèle théorique + implémentation
+Nous avons cependant présenté \footnote{Voir l'état de l'art
+  (\autoref{chap:03}).} de nombreux modèles alternatifs, fondés sur
+diverses théories et implémentées de différentes manières. Le choix
+d'une \emph{modélisation} des objets spatiaux \emph{imprécis}
+nécessite donc d'identifier un modèle théorique et une de ses
+implémentations. Pour ce faire nous allons identifier différentes
+caractéristiques que nous voulons voir validées par notre
+\emph{modélisation} et permettant d'appliquer tous les principes
+méthodologiques précédemment définis. Nous sélectionnerons ensuite un
+\emph{modèle théorique} et confronterons ses implémentations afin d'en
+identifier la plus adaptée.
 
-\tdi{Modélisation = Modèle théorique + implémentation}
+La \emph{modélisation} ici identifiée ne se destine qu'à représenter
+les \emph{zones de localisation compatibles} et \emph{probables.}
+Notre objectif n'est pas de représenter \emph{l'imprécision} des
+\emph{objets de référence} utilisés en entrée de notre processus de
+\emph{spatialisation.} Cette approche, notamment utilisée par
+\textcite{Bloch1996} n'a pas été retenue pour notre travail, bien
+qu'elle en soit une extension possible.
 
-Comme nous l'avons montré dans l'état de l'art (\autoref{chap:03}),
-modéliser des \emph{objets spatiaux imprécis} nécessite de
-sélectionner un \emph{modèle théorique} et une \emph{implémentation}
-de ce modèle. L'ensemble de ces deux éléments forme ce que nous
-appelons une \emph{modélisation.} Dans ce chapitre nous allons
-présenter notre démarche de sélection d'une modélisation des \emph{objets
-spatiaux imprécis.}
-
-\tdi{Cette partie ne concerne que les zlp et les zlc. Les objets de
-  référence sont modélisés de façon nette. Mais bloch l'a fait. Le
-  flou aux objets est une extension possible.}
-
-Nous ne parlerons ici que de la question de la modalisation des
-\emph{zones de localisation} et non de celle des \emph{objets de
-  référence} dont nous ne modélisons pas \emph{l'imprécision.}
-
+Nous commencerons donc par lister les différents critères de sélection
+que nous avons retenus, puis nous sélectionnerons un modèle
+théorique. Enfin, nous confronterons les implémentations du modèle
+théoriques et sélectionnerons l'une d'entre-elle.
 
 %%% Local Variables:
 %%% mode: latex
