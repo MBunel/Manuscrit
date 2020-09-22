@@ -2,28 +2,43 @@ Tous les modèles théoriques que nous avons présenté dans l'état de
 l'art de cette thèse ne sont pas nécessairement adaptés aux exigences
 de modélisation que nous avons formulé.
 
-\tdi{Les modèles discrets (exacts, ensembles épais, autres ?)}
+\tdi{Les modèles discrets (exacts, ensembles épais, autres ?)}%
+Par exemple, les modèles \enquote{exacts} \footnote{Comme les modèles
+  \emph{egg-yolk} \autocite{Cohn1996}, \emph{min-max}
+  \autocite{Clementini1996}, \emph{etc.}} ou basés sur la théorie des
+ensembles épais \autocite{Pawlak1982}, imposent une modélisation
+discrète de \emph{l'imprécision} spatiale. Si cette approche a pour
+avantage sa grande simplicité, elle ne remplit pas toutes les
+conditions que nous jugeons nécessaires. Tout d'abord, bien que ces
+modèles permettent de modéliser toute forme de \emph{zone de
+  localisation} \footnote{À l'exception de zones \emph{nettes,} qui ne
+  sont modélisables qu'avec le modèle de \textcite{Bejaoui2009}. Cette
+  caractéristique n'est cependant pas limitante dans notre cas, aucune
+  \emph{relations de localisation} ne pouvant définir une zone
+  précise.}, il leur est impossible de rendre compte de la variation
+de \emph{l'imprécision} au sein de la zone frontière, cette dernière
+n'étant définie que par ses bornes supérieures et inférieures.
 
-Par exemple, les modèles \enquote{exacts}, comme les modèles
-\emph{egg-yolk} \autocite{Cohn1996} ou \emph{min-max}
-\autocite{Clementini1996}, imposent une modélisation discrète de
-\emph{l'imprécision} spatiale. Or, si ces solutions ont pour avantage
-leur grande simplicité, ils ne remplissent pas toutes les conditions
-que nous avons identifiées. Tout d'abord, si ces modèles permettent de
-modéliser toute forme de \emph{zone de localisation} \footnote{À
-  l'exception de zones \emph{nettes,} qui ne sont modélisables qu'avec
-  le modèle de \textcite{Bejaoui2009}. Cette caractéristique n'est
-  cependant pas limitante dans notre cas, aucune \emph{relations de
-    localisation} ne pouvant définir une zone précise.} comme nous le
-souhaitons, il leur est impossible de rendre compte de la variation de
-\emph{l'imprécision} de la zone frontière. Cette dernière n'étant
-définie que par ses bornes supérieures et inférieures. De plus, si les
-\emph{zones de localisation} construites par la \emph{spatialisation}
-d'une \emph{relation de localisation} sont relativement simples
-\footnote{Elles ne sont constituées que de deux polygones marquant les
-  limites de la zone frontière (cf. \autoref{chap:03}).} et donc
-faciles à interpréter, elles perdent cette propriété après plusieurs
-unions ou intersections.
+
+\begin{figure}
+  \centering
+  \tdi{compléter}
+  \input{../figures/Comparaison_mod.tex}
+  \caption{GN2}
+  % \label{fig:fnc_app_sousProche}
+\end{figure}
+
+
+De plus, si les \emph{zones de localisation} construites par la
+\emph{spatialisation} d'une \emph{relation de localisation} sont
+relativement simples \footnote{Elles ne sont constituées que de deux
+  polygones marquant les limites de la zone frontière
+  (cf. \autoref{chap:03}).} et donc faciles à interpréter, elles
+perdent cette propriété après plusieurs unions ou intersections.
+%
+Ces deux observations s'appliquent également au modèle des ensembles
+épais \autocite{Pawlak1982}.
+
 %
 Ainsi, si les \emph{zones de localisation compatibles} modélisées avec
 un modèle \enquote{exact} pourraient être faciles à interpréter, il
@@ -34,11 +49,6 @@ Les modèles \enquote{exacts} n'offrent pas la possibilité de modéliser
 toutes les caractéristiques que nous avons identifiées, par conséquent
 nous ne pouvons utiliser ces différents modèles pour représenter les
 \emph{zones de localisation} que nous construisons.
-
-\missingfigure{comparaison décroissance degré d'appartenace en
-  fonction de la pente. Voir si possible de le faire avec une arte
-  topo et un vrai relief. Illustrer l'hypothèse implicite d'évolution
-  linéaire entre les frontières dans les modèles exacts.}
 
 \tdi{Modèles non linéaires et non flous}
 
