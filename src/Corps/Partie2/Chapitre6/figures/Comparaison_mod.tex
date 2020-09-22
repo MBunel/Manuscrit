@@ -32,13 +32,13 @@
         % Axe
         \draw[-] (\decalageY ,0) --++ (0, 2) coordinate (y axis);
         % Graduations
-        \foreach \n/\t in {0/{0},2/{1}}
+        \foreach \n/\t in {0/{$-$},2/{$+$}}
         {x3
           \draw[-] (\decalageY -.05, \n) --++ (.1, 0);
           \node[left, font=\footnotesize] at (\decalageY -.05, \n) {\t};
         }
         % Label
-        \node[above] at (y axis) {$\mu$};
+        \node[above, anchor=south west] at (y axis) {précision};
       \end{scope}
     \end{scope}
   \end{scope}
@@ -73,7 +73,7 @@
         % Axe
         \draw[-] (\decalageY ,0) --++ (0, 2) coordinate (y axis);
         % Graduations
-        \foreach \n/\t in {0/{0},2/{1}}
+        \foreach \n/\t in {0/{$-$},2/{$+$}}
         {
           \draw[-] (\decalageY -.05, \n) --++ (.1, 0);
           \node[left, font=\footnotesize] at (\decalageY -.05, \n) {\t};
@@ -88,12 +88,14 @@
     \begin{scope}[transparency group]
       % fond
       \begin{scope}
-        \path[ffa] (0,2) -- (2.5,2) -- (5, 0)  -- (0,0) -- cycle;
+        \path[ffa] (0,2) -- (2.5,2) -- (2.5, 0)  -- (0,0) -- cycle;
+        \path[ffa2] (2.5,0) -- (2.5,1) -- (5, 1)  -- (5,0) -- cycle;
       \end{scope}
       % bords
       \begin{scope}
-        \path[ffc] (0,2) -- (2.5,2) -- (5, 0) -++ (3,0) ;
-        \path[ffc_fade] (8,0) -- (9,0) ;
+        %\path[ffc] (0,2) -- (2.5,2) -- (5, 0) -++ (3,0) ;
+        %\path[ffc] (0,2) -- (2.5,2) -- (5, 0) -++ (3,0) ;
+        %\path[ffc_fade] (8,0) -- (9,0) ;
       \end{scope}
     \end{scope}
     % Axes X, Y
@@ -114,7 +116,7 @@
         % Axe
         \draw[-] (\decalageY ,0) --++ (0, 2) coordinate (y axis);
         % Graduations
-        \foreach \n/\t in {0/{0},2/{1}}
+        \foreach \n/\t in {0/{},1/{},2/{}}
         {
           \draw[-] (\decalageY -.05, \n) --++ (.1, 0);
           \node[left, font=\footnotesize] at (\decalageY -.05, \n) {\t};
