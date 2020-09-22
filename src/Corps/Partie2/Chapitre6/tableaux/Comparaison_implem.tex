@@ -3,15 +3,28 @@
 \multicolumn{1}{c}{\bfseries \emph{Alpha-cuts}} & \multicolumn{1}{c}{\bfseries
 Raster} \\ \midrule
 % Sémantique des relations spatiales
-  Précision de la modélisation & Dépend de la précision des données & Dépend de la résolution et
+  Précision de la modélisation & Dépend avant tout de la précision des
+                                 données. & Dépend avant tout de la
+                                            résolution, puis de la précision
                                            des données.\\
-  Difficulté de mise en place & Importante. Nécessite de nombreux
+  Difficulté de mise en place & Assez importante. La mise en place de
+                                cette implémentation nécessite de nombreux
                                 développements \emph{ad hoc} de bas
                                 niveau & Peu importante. Il est assez
                                          rapide d'aboutir aux premières
                                          \emph{spatialisation.}\\
   %
-  Difficulté d'extension & & \\
+  Difficulté d'extension & Assez importante. Il est difficile de
+                           généraliser l'implémentation pour y
+                           adjoindre de nouvelles méthodes de
+                           \emph{spatialisation.}  &  Peu
+                                                     importante. Une
+                                                     fois les
+                                                     premières
+                                                     \emph{spatialisations}
+                                                     effectuées, peu
+                                                     de modifications
+                                                     sont à prévoir. \\
   %
   Temps de calcul & Assez faible pour l'exemple traité, risque
                     de varier fortement en fonction de la \emph{relation de
