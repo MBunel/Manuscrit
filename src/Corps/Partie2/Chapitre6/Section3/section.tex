@@ -345,47 +345,91 @@ d'altitude. Pour le dire autrement, il y a peu de positions
 
 \subsection{Implémentation par \emph{Alpha-cuts}}
 
-Bien que fondée sur les mêmes aspects théoriques que l'implémentation raster, l'implémentation par \emph{alpha-cuts} propose une approche très différente. On pourrait construire des \emph{alpha-cuts} de plusieurs manières. Une première solution serait de partir des résultats de l'implémentation raster (\autoref{fig:ZLP_SOUS_HT}) et d'en extraire les pixels dont le degré d'appartenance est supérieur à un seuil fixé. Cette construction par sélection \footnote{Fortement semblable à la \emph{construction en extension d'ordre supérieur} présentée dans le \autoref{chap:03}.}, n'est cependant rien de plus qu'un post-traitement des résultats de l'implémentation raster et elle ne possède pas d'avantages (ou inconvénients) qui lui soient propres. Une approche différente est cependant envisageable. \textcite{Runz2008a, Zoghlami2016}, par exemple, des \emph{alpha-cuts} directement, sans passer par une étape préalable de calcul des degrés d'appartenance, soit une \emph{construction en intension} (\autoref{:chap:03}). La construction \emph{d'alpha-cuts} en intension demande d'identifier les critères jouant sur la forme de la \emph{zone de localisation,} soit, dans notre exemple, la distance et différence d'altitude par rapport à la ligne électrique. Conformément au \emph{principe de décomposition} on peut alors définir une méthode géométrique permettant de construire, pour chaque \emph{relation de localisation atomique} et chaque \emph{alpha-cut} construite, une région, correspondant à une \emph{alpha-cut} de la \emph{zone de localisation compatible} traitée. Ces différentes \emph{alpha-cuts} seraient alors intersectées deux à deux, par même degré d'appartenance en vue d'obtenir les \emph{alpha-cuts} de la \emph{zone de localisation probable} et ce de manière fortement similaire à l'implémentation raster. Cependant, cette 
-
-Il serait alors possible de construire un \emph{buffer} à partir de la ligne électrique, correspondant à une \emph{alpha-cut} de la \emph{zone de localisation compatible}
-
-Comme pour l'implémentation raster on pourrait 
-
-
-L'implémentation par \emph{alpha-cuts} s'est révelée beaucoup plus
-difficile à mettre en place que l'implémentation par rasters.
-
-\tdi{acuts et intersecions}
-
-D'une part pour des soucis techniques. Aucun \ac{sig} ne permettant de
-permettant de réaliser les traitements que nous envisagions, nous
-avons été contrains de nous orienter sur des solutions de plus bas
-niveau, comme la bibliothèque de calcul géométrique CGAL
-\autocite{CGAL2019}.
-
-Pour cette comparaison nous avons choisi de construire trois \emph{alpha-cuts,} celle dont le degré est égal à 1, délimitant le \emph{noyau} du \emph{sous-ensemble flou,} celle dont le degré d'appartenance est supérieur à 0, délimitant le \emph{support} et enfin \emph{l'alpha-cut} de degré 0,5.
+Bien que fondée sur les mêmes aspects théoriques que l'implémentation raster, l'implémentation par \emph{alpha-cuts} propose une approche très différente. On pourrait construire des \emph{alpha-cuts} de plusieurs manières. Une première solution serait de partir des résultats de l'implémentation raster (\autoref{fig:ZLP_SOUS_HT}) et d'en extraire les pixels dont le degré d'appartenance est supérieur à un seuil fixé. Cette construction par sélection \footnote{Fortement semblable à la \emph{construction en extension d'ordre supérieur} présentée dans le \autoref{chap:03}.}, n'est cependant rien de plus qu'un post-traitement des résultats de l'implémentation raster et elle ne possède pas d'avantages (ou inconvénients) qui lui soient propres. Une approche différente est cependant envisageable. \textcite{Runz2008a, Zoghlami2016}, par exemple, des \emph{alpha-cuts} directement, sans passer par une étape préalable de calcul des degrés d'appartenance, soit une \emph{construction en intension} (\autoref{:chap:03}). La construction \emph{d'alpha-cuts} en intension demande d'identifier les critères jouant sur la forme de la \emph{zone de localisation,} soit, dans notre exemple, la distance et différence d'altitude par rapport à la ligne électrique. Conformément au \emph{principe de décomposition} on peut alors définir une méthode géométrique permettant de construire, pour chaque \emph{relation de localisation atomique} et chaque \emph{alpha-cut} construite, une région, correspondant à une \emph{alpha-cut} de la \emph{zone de localisation compatible} traitée. Ces différentes \emph{alpha-cuts} seraient alors intersectées deux à deux, par même degré d'appartenance en vue d'obtenir les \emph{alpha-cuts} de la \emph{zone de localisation probable} et ce de manière fortement similaire à l'implémentation raster. Pour cette comparaison nous avons choisi de construire trois \emph{alpha-cuts,} celle dont le degré est égal à 1, délimitant le \emph{noyau} du \emph{sous-ensemble flou,} celle dont le degré d'appartenance est supérieur à 0, délimitant le \emph{support} et enfin \emph{l'alpha-cut} de degré 0,5.
 
 % Détail de la méthode
-Pour chaque segment de la ligne électrique traitée, nous construisons un polyèdre, correspondant à une \emph{alpha-cut} tridimensionnelle. Ce polyèdre se compose de 6 faces, définies par autant de demis-plans. Comme les \emph{alpha-cuts} délimitent une \emph{zone de localisation} dépendante, toutes choses égales par ailleurs, de la position de \emph{l'objet de référence,} la position de tous ces demi-plans est exprimable en fonction de la position de la ligne électrique traitée. Toutefois, certains d'entre eux ont une position variante par translation, en fonction de \emph{l'alpha-cut} considérée.
+Pour chaque segment de la ligne électrique traitée, nous construisons
+un polyèdre, correspondant à une \emph{alpha-cut}
+tridimensionnelle. Aucun \ac{sig} ne permettant de construire ce type
+d'objets, nous avons été contrains de nous orienter vers une solution
+de plus bas niveau, la bibliothèque de calcul géométrique CGAL
+\autocite{CGAL2019}, ce qui a considérablement complexifié la
+tâche. Le polyèdre construit se compose de 6 faces, définies par
+autant de demis-plans (\autoref{schema_polyhedre}). Comme les
+\emph{alpha-cuts} délimitent une \emph{zone de localisation}
+dépendante, toutes choses égales par ailleurs, de la position de
+\emph{l'objet de référence,} la position de tous ces demi-plans est
+exprimable en fonction de la position de la ligne électrique
+traitée. Toutefois, certains d'entre eux ont une position variante par
+translation, en fonction de \emph{l'alpha-cut} considérée.
 
-Les demi-plans dont la position varie en fonction de \emph{l'alpha-cut} considérée sont ceux dont la position délimite une zone de même degré d'appartenance. Par exemple, les demis-plans latéraux (\ie situés à gauche et à droite par rapport au sens de la ligne électrique et parallèlement à celle-ci) permettent de délimiter une distance planimétrique à \emph{l'objet de référence} et donc de représenter la \emph{relation de localisation atomique} \onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que}. Si l'on cherche à construire \emph{l'alpha-cut} délimitant le support, il faudra placer ces demi-plans latéraux de manière a ce qu'aucune position située au-delà (par rapport à la ligne électrique) ne puisse avoir un degré d'appartenance non nul. Dans le cas de \emph{l'indice de localisation} considéré, seule la \emph{relation} \onto[orla]{Dis\-tan\-ce\-Quan\-ti\-dta\-ti\-ve\-Pla\-ni\-mé\-tri\-que} impacte la position de ces deux demi-plans, on peut alors se fonder sur la fonction d'appartenance correspondante (Figure \ref{fig:fnc_app_Dist}) et identifier la distance correspondant au degré d'éloignement considéré, soit \SI{100}{\meter} pour un degré d'appartenance non nul. Les demi-plans avant et arrière délimitent également la distance planimétrique à la ligne électrique. Cependant nous avons choisi de ne pas les faire varier. D'une part, car nous travaillons sur un seul \emph{objet de référence,} traversant l'aire étudiée de part en part et sans changement de direction marqués. Par conséquent, les polyèdres modélisant les \emph{alpha-cuts} de chaque segment sont toutes en contact par leurs faces avant et arrières, la prise en compte de leur décalage par rapport à la ligne électrique n'est donc pas nécessaire. De plus, contrairement aux faces latérales, les limites avant et arrières des \emph{alpha-cuts} ne peuvent être délimitées de manière satisfaisante par des demi-plans.
+Les demi-plans dont la position varie en fonction de
+\emph{l'alpha-cut} considérée sont ceux dont la position délimite une
+zone de même degré d'appartenance. Par exemple, les demis-plans
+latéraux (\ie situés à gauche et à droite par rapport au sens de la
+ligne électrique et parallèlement à celle-ci) permettent de délimiter
+une distance planimétrique à \emph{l'objet de référence} et donc de
+représenter la \emph{relation de localisation atomique}
+\onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que}. Si
+l'on cherche à construire \emph{l'alpha-cut} délimitant le support, il
+faudra placer ces demi-plans latéraux de manière a ce qu'aucune
+position située au-delà (par rapport à la ligne électrique) ne puisse
+avoir un degré d'appartenance non nul. Dans le cas de \emph{l'indice
+  de localisation} considéré, seule la \emph{relation}
+\onto[orla]{Dis\-tan\-ce\-Quan\-ti\-dta\-ti\-ve\-Pla\-ni\-mé\-tri\-que}
+impacte la position de ces deux demi-plans, on peut alors se fonder
+sur la fonction d'appartenance correspondante (Figure
+\ref{fig:fnc_app_Dist}) et identifier la distance correspondant au
+degré d'éloignement considéré, soit \SI{100}{\meter} pour un degré
+d'appartenance non nul. Les demi-plans avant et arrière délimitent
+également la distance planimétrique à la ligne électrique. Cependant
+nous avons choisi de ne pas les faire varier. D'une part, car nous
+travaillons sur un seul \emph{objet de référence,} traversant l'aire
+étudiée de part en part et sans changement de direction marqués. Par
+conséquent, les polyèdres modélisant les \emph{alpha-cuts} de chaque
+segment sont toutes en contact par leurs faces avant et arrières, la
+prise en compte de leur décalage par rapport à la ligne électrique
+n'est donc pas nécessaire. De plus, contrairement aux faces latérales,
+les limites avant et arrières des \emph{alpha-cuts} ne peuvent être
+délimitées de manière satisfaisante par des demi-plans.
 % 
-Comme les demi-plans latéraux, la position du demi-plan supérieur dépend de la ligne électrique considérée et de \emph{l'alpha-cut} traitée.
-
-ne voit sa position varier qu'en fonction de la \emph{relation de localisation atomique} \onto[orla]{Al\-ti\-tu\-de\-Stric\-te\-ment\-Inf\-érieu\-re}. Ainsi, si \emph{l'alpha-cut} modélisée est la limite du \emph{support,} le demi-plan supérieur doit être placé de manière à ce que toutes les positions situées au-delà aient un degré d'appartenance nul, il est donc placé \SI{5}{\meter} au-dessus de la ligne électrique. 
-Enfin, le demi-plan inférieur ne sert qu'a fermer le polyèdre, aucune des \emph{relations de localisation} n'imposant une limite d'altitude minimale. Pour éviter de réduire artificiellement l'étendue des \emph{alpha-cuts} nous avons placé ce demi-plan a une altitude nettement plus faible que l'altitude minimale de la zir\todo{ac}, simulant ainsi un demi-plan virtuellement à l'infini.
+Comme les demi-plans latéraux, la position du demi-plan supérieur
+dépend de la ligne électrique considérée et de \emph{l'alpha-cut}
+traitée. Sa position varie en fonction de la \emph{relation de
+  localisation atomique}
+\onto[orla]{Al\-ti\-tu\-de\-Stric\-te\-ment\-Inf\-érieu\-re}. Ainsi,
+si \emph{l'alpha-cut} modélisée est la limite du \emph{support,} le
+demi-plan supérieur doit être placé de manière à ce que toutes les
+positions situées au-delà aient un degré d'appartenance nul, il est
+donc placé \SI{5}{\meter} au-dessus de la ligne électrique.  Enfin, le
+demi-plan inférieur ne sert qu'a fermer le polyèdre, aucune des
+\emph{relations de localisation} n'imposant une limite d'altitude
+minimale. Pour éviter de réduire artificiellement l'étendue des
+\emph{alpha-cuts} nous avons placé ce demi-plan a une altitude
+nettement plus faible que l'altitude minimale de la zir\todo{ac},
+simulant ainsi un demi-plan virtuellement à l'infini. Le résultat de l'implémentation par \emph{alpha-cuts} est visible sur
+les cartes \ref{fig:AlphaCuts_coupe} et \ref{fig:AlphaCuts_zenith}.
 
 \begin{figure}
   \centering
   \input{../figures/polyhedre.tex}
-  \caption{ds}
-  \label{fig:ds}
+  \caption{Plans utilisés pour définir une \emph{alpha-cut.}}
+  \label{fig:schema_polyhedre}
 \end{figure}
 
-Cette manière de procéder n'impose évite de procéder à une phase de
-fusion des \emph{zones de localisation compatibles.}
+\begin{carte}
+  \centering
+  \includegraphics[width=\textwidth]{../figures/AlphaCut_coupe.png}
+  \caption{Modélisation par \emph{alpha-cuts,} vue oblique.}
+  \label{fig:AlphaCuts_coupe}
+\end{carte}
 
-\missingfigure{Illustration modélisation concrète par alpha-cuts}
+\begin{carte}
+  \centering
+  \includegraphics[width=\textwidth]{../figures/AlphaCut_zenith.png}
+  \caption{Modélisation par \emph{alpha-cuts,} vue zénithale.}
+  \label{fig:AlphaCuts_zenith}
+\end{carte}
 
 \subsection{Comparaison et choix de l'implémentation}
 
@@ -418,7 +462,7 @@ donc pas être plus précise. Ainsi, la précision de l'ensemble de la
 modélisation est avant tout limité par l'élément le moins précis, qui
 dans le cas des deux implémentations est la précision du \ac{mnt}.
 
-\missingfigure{Différence zones}
+% \missingfigure{Différence zones}
 
 % Difficulté de mise en place
 Si les implémentations par \emph{alpha-cut} et raster proposent une
