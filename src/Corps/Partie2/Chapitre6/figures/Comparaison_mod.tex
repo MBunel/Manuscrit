@@ -21,7 +21,7 @@
         % Axe
         \draw[->] (0, \decalageX) --++ (9, 0) coordinate (x axis);
         % Graduations
-        \foreach \n/\t in {0/{0},1/{20},2/{40},3/{60},4/{80},5/{100},6/{120},7/{140},8/{160}}
+        \foreach \n/\t in {0/{},1/{},2/{},3/{},4/{},5/{},6/{},7/{},8/{}}
         {
           \draw[-] (\n, \decalageX - .05) --++ (0, .1);
           \node[below, font=\footnotesize] at (\n, \decalageX - .05) {\t};
@@ -47,11 +47,11 @@
     \begin{scope}[transparency group]
       % fond
       \begin{scope}
-        \path[ffa] (0,2) -- (2.5,2) ..controls(0,0).. (5, 0)  -- (0,0) -- cycle;
+        \path[ffa] (0,2) -- (2.5,2) ..controls(4,1.5).. (5, 0)  -- (0,0) -- cycle;
       \end{scope}
       % bords
       \begin{scope}
-        \path[ffc] (0,2) -- (2.5,2) ..controls(0,0).. (5, 0) -++ (3,0) ;
+        \path[ffc] (0,2) -- (2.5,2) ..controls(4,1.5).. (5, 0) -++ (3,0) ;
         \path[ffc_fade] (8,0) -- (9,0) ;
       \end{scope}
     \end{scope}
@@ -62,7 +62,7 @@
         % Axe
         \draw[->] (0, \decalageX) --++ (9, 0) coordinate (x axis);
         % Graduations
-        \foreach \n/\t in {0/{0},1/{20},2/{40},3/{60},4/{80},5/{100},6/{120},7/{140},8/{160}}
+        \foreach \n/\t in {0/{},1/{},2/{},3/{},4/{},5/{},6/{},7/{},8/{}}
         {
           \draw[-] (\n, \decalageX - .05) --++ (0, .1);
           \node[below, font=\footnotesize] at (\n, \decalageX - .05) {\t};
@@ -105,7 +105,7 @@
         % Axe
         \draw[->] (0, \decalageX) --++ (9, 0) coordinate (x axis);
         % Graduations
-        \foreach \n/\t in {0/{0},1/{20},2/{40},3/{60},4/{80},5/{100},6/{120},7/{140},8/{160}}
+        \foreach \n/\t in {0/{},1/{},2/{},3/{},4/{},5/{},6/{},7/{},8/{}}
         {
           \draw[-] (\n, \decalageX - .05) --++ (0, .1);
           \node[below, font=\footnotesize] at (\n, \decalageX - .05) {\t};
