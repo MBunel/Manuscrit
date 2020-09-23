@@ -51,13 +51,13 @@ nous ne nous focalisons que sur une partie de la méthodologie
 présentée dans le \autoref{chap:04}. Comme il n'y a qu'un \emph{indice
   de localisation} à \emph{spatialiser,} il n'est pas nécessaire de
 \emph{décomposer} \emph{l'ensemble des indices de localisation} et de
-fusionner les zlc\todo{ac} correspondantes \footnote{Ce qui
-  correspond, respectivement à la première étape de la \emph{phase de
+fusionner les \ac{zlc} correspondantes \footnote{Ce qui correspond,
+  respectivement à la première étape de la \emph{phase de
     décomposition} et à la dernière étape de la \emph{phase de fusion}
   (\autoref{fig:methodo_1}).}. De même, comme nous ne travaillons que
 sur un \emph{objet de référence} il n'est pas nécessaire de procéder à
 la \emph{décomposition} d'un \emph{objet de référence} non nommé et à
-la \emph{fusion} des zlc\todo{ac} issues de leur spatialisation
+la \emph{fusion} des \ac{zlc} issues de leur spatialisation
 \footnote{Ce qui correspond, respectivement aux secondes étapes des
   \emph{phases de décomposition} et de \emph{fusion}
   (\autoref{fig:methodo_1}).}. L'absence de ces quatre étapes ne pose
@@ -412,9 +412,10 @@ demi-plan inférieur ne sert qu'a fermer le polyèdre, aucune des
 \emph{relations de localisation} n'imposant une limite d'altitude
 minimale. Pour éviter de réduire artificiellement l'étendue des
 \emph{alpha-cuts} nous avons placé ce demi-plan a une altitude
-nettement plus faible que l'altitude minimale de la zir\todo{ac},
-simulant ainsi un demi-plan virtuellement à l'infini. Le résultat de l'implémentation par \emph{alpha-cuts} est visible sur
-les cartes \ref{fig:AlphaCuts_coupe} et \ref{fig:AlphaCuts_zenith}.
+nettement plus faible que l'altitude minimale de la \ac{zir}, simulant
+ainsi un demi-plan virtuellement à l'infini. Le résultat de
+l'implémentation par \emph{alpha-cuts} est visible sur les cartes
+\ref{fig:AlphaCuts_coupe} et \ref{fig:AlphaCuts_zenith}.
 
 \begin{figure}
   \centering
@@ -575,13 +576,13 @@ Le choix de l'implémentation raster nécessite la définition préalable
 d'une résolution de traitement, de laquelle dépendra, toutes choses
 égales par ailleurs, la précision de la \emph{spatialisation,} mais
 également le temps de calcul et le volume des résultats. Si cette
-résolution peut être importante pour de petites zir\todo{ac}
+résolution peut être importante pour de petites \ac{zir}
 \footnote{Comme la \emph{zone initiale de recherche} de \emph{l'indice
     de localisation} ici traité. Cette dernière étant suffisamment
   réduite pour que nous puissions travailler avec la résolution
   maximale, celle de la moins précise des données (en l’occurrence le
   \ac{mnt}).}, elle doit nécessairement être réduite lorsque la
-zir\todo{ac} grandi \footnote{Plus de pixels sont alors a traiter.} ou
+\ac{zir} grandi \footnote{Plus de pixels sont alors a traiter.} ou
 lorsque les \emph{indices de localisation} se multiplient ou se
 complexifient \footnote{Plus de \emph{zones de localisation
     compatibles,} doivent être construites.}.
