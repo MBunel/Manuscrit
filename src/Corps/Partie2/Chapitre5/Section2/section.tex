@@ -1,0 +1,669 @@
+Une fois que la structure globale de l'ontologie des règles de
+décomposition a été fixée, il est nécessaire de définir son contenu en
+détail (\ie les \emph{relations de localisation,} les \emph{relations
+  de décomposition} et les \emph{relations de localisation
+  atomiques}). Pour ce faire, on peut se fonder sur les différents
+travaux formalisant des \emph{relations de localisation}
+\autocite{Vandeloise1986,Aurnague1997,Borillo1998}, pour identifier
+des \emph{relations de localisation} et en proposer une
+décomposition. Cependant, bien que cette approche soit pertinente,
+elle ne nous semble pas être pleinement adaptée à notre cas
+d’application. En effet ces travaux traitent des \emph{relations de
+  localisation} dans leur acception générale, alors que nous
+travaillons sur un contexte particulier, avec un relief et des
+\emph{objets de référence spécifiques} (\eg montagne, col,
+\emph{etc.}). On peut donc augurer que le contexte influence
+l’utilisation des \emph{relations de localisation} et donc impacte
+leur sémantique, comme l'illustre l'aphorisme de \bsc{Wittgenstein} :
+\enquote{la signification c'est l'usage}. Or nous souhaitons
+développer une ontologie orientée métier et donc prenant en compte les
+spécificités de localisation en milieu montagneux. Il semble alors
+essentiel d'étudier les descriptions de positions dans le contexte du
+secours en montagne afin de construire une ontologie la plus
+pertinente possible.
+
+Pour ce faire nous avons entrepris de recenser et d'étudier les
+\emph{relations de localisation} les plus utilisées lors des
+alertes. Les \ac{pghm} disposant d'un enregistreur d'appels, nous
+pouvons obtenir des enregistrements de discussions où les requérants
+décrivent leur position. En analysant le contenu de ces
+enregistrements il est alors possible d'identifier les \emph{relations
+  de localisation} les plus utilisées, de savoir si elles le sont dans
+un contexte particulier ou avec une signification plus spécifique que
+leur sens général.
+
+\subsection{La retranscription et l'analyse des alertes}
+
+L'exploitation des enregistrements audio d'alertes nécessite au
+préalable leur retranscription textuelle. Nous avons donc développé
+une méthode et un template (ou canevas) de retranscription a cet
+effet. Le travail de définition du template et de retranscription a
+été effectué collaborativement \autocite{Bunel2019}, les résultats
+pouvant être exploités par différents membres du projet Choucas et
+notamment pour l'étude du processus d'alerte (Lot 4).
+
+\subsubsection{Les corpus d'alertes}
+
+Les retranscriptions ont été réalisées à partir d'un ensemble de 52
+enregistrements d'appels de demande d'assistance auprès des \ac{pghm}
+de Chamonix (5 alertes) et de Grenoble (47 alertes). Ces fichiers,
+sélectionnés et compilés par le \ac{pghm} de Grenoble, forment deux
+corpus d'alertes distincts, dont le premier nous a été transmis en
+2017 et le second en 2019. Ces deux corpus sont relativement
+similaires, que ce soit par le nombre d'alertes, leur durée ---~qui
+varie de quelques secondes à plusieurs dizaines de minutes
+(\autoref{fig:dist_temps_alertes})~--- ou leur
+contenu. Malheureusement nous n'avons que peu, voir pas,
+d'informations exogènes sur ces différentes alertes. Pour certaines
+d'entre elles les secouristes nous ont transmis les coordonnées de la
+victime ou la date et l'heure de l'intervention, mais dans la plupart
+des cas ces informations nous sont inconnues, à moins qu'elles soient
+explicitement données dans l'alerte (\eg énoncé oral de coordonnées
+GPS, précision de l'heure, \emph{etc.}). De plus, nous ne savons pas
+comment les alertes qui nous ont été transmises furent sélectionnées,
+bien qu'elles nous aient été décrites comme représentatives des phases
+de localisation des victimes.
+
+Une autre particularité importante de ces enregistrements est qu'ils
+sont réalisés au niveau de la ligne téléphonique des \ac{pghm} et non
+des \ac{codis}, généralement contactés par les requérants
+(cf. \autoref{chap:02}). Par conséquent nous n'avons généralement pas
+connaissance du début ou de la fin de la communication. De plus, les
+fichiers qui nous ont été transmis ne correspondent pas aux
+enregistrements initiaux. Ces derniers ont été montés, initialement de
+sorte à censurer les informations personnelles (\eg identité de la
+victime, description des blessures), mais dans les faits ils ne
+continent généralement que la phase de description de position.
+
+\begin{figure}
+  \centering
+  \input{../figures/distribution_audio.tex}
+  \caption{Distribution de la durée des alertes}
+  \label{fig:dist_temps_alertes}
+\end{figure}
+
+\subsubsection{Template de retranscription}
+
+Notre parti-pris n'a pas été de travailler à partir d'une
+retranscription libre des alertes, mais à l'aide d'un tableau
+prédéfini, un \emph{template de retranscription}
+(\autoref{tab:struct_temp}) dont la structure reprend celle des
+\emph{indices de localisation} telle que nous l'avons définie
+(cf. \autoref{chap:04}). Ce choix présente deux avantages. Tout
+d'abord il permet de faciliter l'analyse des alertes en imposant, dès
+la saisie, la définition de certains critères. Pour faciliter les
+saisies et leur répartition entre transcripteurs, un fichier est créé
+pour chaque alerte.
+
+Dans sa forme finale, ce template de transcription se présente sous la
+forme d'un fichier tabulaire structuré, auto-documenté et exemplifié,
+composé de trois onglets principaux
+%
+---~\begin{enumerate*}[label=(\alph*)]
+\item \emph{métadonnées},
+\item \emph{interprétation des expressions} et
+\item \emph{toponymie}
+\end{enumerate*}~---,
+%
+permettant de transcrire différents aspects des alertes. L'ensemble du
+fichier est conçu pour faciliter le processus de retranscription et
+limiter au maximum l'influence du transcripteur sur la saisie. Chaque
+onglet et champ à saisir est documenté, des instructions de saisie
+présentent l'ensemble des tâches à effectuer sont données et un
+exemple de saisie complet et complexe est détaillé. De plus, la
+structure même du document est conçue pour faciliter la saisie. Les
+onglets sont placés dans leur ordre de consultation ou de saisie (\eg
+on commence par lire les instructions dans l'onglet
+%
+\begin{enumerate*}[label=(\arabic*)]
+\item \emph{Instructions \& Consignes,} puis on saisit les
+  informations générales sur l'alerte dans l'onglet
+\item \emph{métadonnées,} avant de saisir l'alerte en détail dans les
+  onglets
+\item \emph{interprétation des expressions} et
+\item \emph{toponymie,} \emph{etc.}
+\end{enumerate*}).
+
+L'onglet \emph{métadonnées,} permet de renseigner toutes les
+informations d'ordre général sur une alerte, telles que l'identité du
+requérant (victime, témoin, \emph{etc.}) ou l’activité pratiquée lors
+de l'accident. C'est également ici que sont saisies toutes les
+informations exogènes, comme la date et l'heure de l'appel ou la
+position réelle de la victime.
+
+L'onglet \emph{interprétation
+  des expressions} se compose, quant à lui, de 15 colonnes
+(\autoref{tab:struct_temp}), que l'on peut regrouper en trois
+catégories :
+%
+\begin{enumerate*}[label=(\alph*)]
+\item \emph{extrait},
+\item \emph{contexte} et
+\item \emph{expression.}
+\end{enumerate*}
+
+La première d'entre elles regroupe les colonnes décrivant l'extrait
+audio traité, comme les deux colonnes \enquote{\emph{identifiant}}, la
+colonne \enquote{\emph{extrait}} et la colonne
+\enquote{\emph{timestamp}}. Les colonnes \enquote{\emph{identifiant}}
+permettent de donner une référence unique à chaque élément
+transcrit. La présence de deux colonnes permet de faire la distinction
+entre les \emph{extraits,} qui correspondent à découpage rythmique de
+la conversation (changement de locuteur, nouvelle phrase,
+\emph{etc.}), et les \emph{expressions,} contenues dans les
+\emph{extraits,} correspondant au découpage en \emph{indices de
+  localisation.} Par exemple, si la conversation entre le secouriste
+(\bsc{s.}) et le requérant (\bsc{r.}) est :
+%
+\begin{quote}
+  \begin{dialogue}
+    \Sec Vous êtes au sommet ?
+    \Req Non, je suis bien en dessous.
+  \end{dialogue}
+\end{quote}
+%
+On identifiera deux \emph{extraits :}
+%
+\begin{enumerate*}[label=(\alph*)]
+\item \enquote{Vous êtes au sommet ?} et
+\item \enquote{Non, je suis bien en dessous},
+\end{enumerate*}
+%
+délimités par le changement de locuteur. Si le premier ne contient
+qu'une seule \emph{expression,} le second en contient deux, la
+négation de la question, dont la sémantique correspond à
+\emph{l'expression} \enquote{je ne suis pas au sommet} et
+\emph{l'expression} \enquote{je suis bien en dessous}. Ainsi, cet
+exemple est composé de deux \emph{extraits} et de trois
+\emph{expressions.} Pour faciliter l'analyse et la vérification des
+transcriptions, nous avons défini une colonne
+\enquote{\emph{extrait}}, permettant de saisir le verbatim de
+l'extrait analysé, et une colonne \enquote{\emph{timestamp}} indiquant
+la position de l'extrait dans le fichier audio correspondant.
+
+La seconde catégorie regroupe les colonnes permettant de décrire le
+contexte de chaque expression. On y retrouve la colonne
+\enquote{\emph{locuteur}}, renseignant sur la personne ayant prononcé
+l'extrait étudié (\eg secouriste, requérant) et la colonne
+\enquote{\emph{confiance}}, permettant au transcripteur (dans le cas
+où il s'agit d'un secouriste) de juger de la plausibilité de
+l'information donnée par l'extrait. Si nous distinguons ces deux
+colonnes des \emph{métadonnées} de l'extrait (\ie le groupe de
+colonnes précédent) c'est car ces dernières demandent une
+interprétation de l'extrait, contrairement aux \emph{métadonnées.}
+
+Enfin, la troisième catégorie, qui regroupe la majorité des colonnes,
+permet l'interprétation et la saisie de chaque expression. On y
+retrouve les colonnes \emph{verbe,} \emph{sujet,} \emph{relation de
+  localisation} et \emph{objet de référence,} correspondant aux
+éléments du même nom dans la formalisation des \emph{indices de
+  localisation} et les \emph{modifieurs} qui y sont associés. Les
+colonnes \enquote{\emph{objet de référence}} et
+\enquote{\emph{modifieur de l'objet de référence}} ont la
+particularité de pourvoir être doublées (voir plus si nécessaire) dans
+le cas où la \emph{relation de localisation} le nécessiterait.
+
+% Exemple
+Si l'on reprend le second extrait de l'exemple précédent (\ie
+\enquote{Non, je suis bien en dessous}), deux extraits sont à
+saisir. Le premier est la négation de la question du secouriste (\ie
+\enquote{Vous êtes au sommet}), que l'on peut interpréter comme
+\emph{l'indice de localisation} \enquote{je ne suis pas au
+  sommet}. Ici le verbe de l'expression est \enquote{être}, le sujet
+est le requérant, la \emph{relation de localisation} est la
+préposition \enquote{à} et l'objet de référence est
+---~implicitement~--- \enquote{le sommet} \footnote{Le \enquote{à le}
+  est contracté en \enquote{au} dans l'extrait}. La forme négative de
+la phrase est transcrite avec un \emph{modifieur du verbe} et les
+autres modifieurs ne sont pas renseignés. Pour la seconde expression
+(\ie \enquote{je suis bien en dessous}) le \emph{sujet} et sont
+modifieur et \emph{l'objet de référence} et sont modifieur sont
+inchangés, il s'agit toujours du \emph{requérant} qui se situe par
+rapport au \emph{sommet.} Le \emph{verbe} est toujours \enquote{être},
+mais son modifieur disparait, l'expression n'étant pas une
+négation. Pour finir la \emph{relation de localisation} devient
+\enquote{\emph{en dessous}} et son modifieur est
+\enquote{\emph{bien}}.
+
+Enfin, le dernier onglet du template de transcription est destiné à la
+saisie détaillée des \emph{objets de référence utilisés.} Comme pour
+l'onglet des \emph{extraits,} chaque ligne correspond à une
+\emph{expression} issue de l'alerte. Par ailleurs toutes les lignes de
+ce troisième onglet doivent être saisies, il y a donc une bijection
+entre les enregistrements de l'onglet \enquote{expressions} et ceux de
+l'onglet \enquote{objets de référence}. Le but de cet onglet est de
+permettre la saisie d'informations complémentaires sur les
+\emph{objets géographiques} utilisés dans les expressions, comme les
+\emph{objets de référence} ou le \emph{sujet,} notamment dans le cas
+où l'expression décrit la position d'un autre objet qu'une personne
+(\eg \enquote{le chalet à côté de la cascade}). En effet, lorsqu'on
+saisit un \emph{objet géographique} (\eg \emph{l'objet de référence})
+dans l'onglet \emph{expression} on utilise le terme employé par le
+locuteur dans l'expression (\eg \enquote{La Bérarde}, \enquote{un
+  sommet}, \emph{etc.}) sans modification. Ainsi les objets définis
+sont désignés par leur nom (ou tout du moins le nom que le locuteur
+leur donne) et les objets indéfinis par leur type. L'onglet
+\emph{toponymie} permet alors de préciser le type de tous les objets
+géographiques, en vue de leur analyse ultérieure. Si l'on reprend
+l'exemple précédent (\ie \enquote{Non, je suis bien en dessous}) nous
+ne sommes pas en mesure d'ajouter des informations sur \emph{l'objet
+  de référence} \enquote{sommet}, son nom étant inconnu.
+
+\begin{table}
+  \centering
+  \input{../tableaux/structure_template.tex}
+  \caption{Structure de l'onglet \enquote{\emph{expressions}} du
+    template de retranscription.}
+  \label{tab:struct_temp}
+\end{table}
+
+\subsubsection{Analyse des retranscriptions}
+
+Les deux corpus d'alertes ont été transcrits séparément. Le premier
+d'entre-eux a été transcrit au cours de l'année 2018 par un secouriste
+du \ac{pghm} de Grenoble. Ce premier essai a mis en évidence de
+nombreuses lacunes dans le processus de retranscription. La version
+originale du template n'était pas assez documentée et ne contenait pas
+d'exemples. Par conséquent le processus de saisie était assez délicat
+et les résultats étaient très dépendants du transcripteur. Nous avons
+donc clarifié le template pour faciliter la transcription
+---~aboutissant à la version présentée ci-dessus~--- et avons corrigé
+collégialement les transcriptions pour aboutir à une version qui fasse
+l'objet d'un consensus. Compte tenu des problèmes que nous avions
+rencontrés lors de la saisie du premier corpus nous avons adopté une
+démarche de transcription plus avancée. La trentaine d'alertes à
+transcrire a été répartie entre trois personnes
+\autocite{Bunel2019}. Après une première transcription, les fichiers
+produits ont été amendés et commentés par un second transcripteur, en
+vue d'aboutir, en collaboration avec le transcripteur initial, à une
+seconde version. Une fois l'ensemble du second corpus retranscrit nous
+avons procédé a une harmonisation collégiale des saisies, de manière à
+obtenir un ensemble de retranscriptions le plus cohérent possible. Au
+final, la retranscription des 52 alertes nous a permis d'identifier
+374 expressions différentes, que nous avons ensuite analysé.
+
+% configuration vs position
+L'étude détaillée des \emph{relations de localisation} utilisées dans
+les \emph{indices} nous a permis de constater que tous les indices ne
+permettent pas de construire \emph{directement} une \emph{zone de
+  localisation compatible.} Par exemple, \emph{l'indice de
+  localisation :} \enquote{Je marche vers le nord} ne peut pas être
+\emph{spatialisé,} à moins de la combiner avec d'autres \emph{indices}
+(\eg \enquote{Je marche depuis une heure, vers le nord}) ou de les
+approximer avec d'autres relations de localisation (\eg \enquote{Je
+  suis en direction du nord}). Ces \emph{indices de localisation,} qui
+dénotent une \emph{configuration spatiale,} décrivent généralement une
+trajectoire, suivie par le \emph{sujet} et partant de \emph{l'objet de
+  référence.} Par conséquent cette distinction recoupe celle qui est
+généralement faire en linguistique entre les \emph{relations de
+  localisation statiques,} décrivant une position fixe et les
+\emph{relations de localisation dynamiques,} décrivant un mouvement
+\autocite{Borillo1998}. Comme l'ontologie que nous développons est
+avant destinée à la \emph{spatialisation} des \emph{indices de
+  localisation} nous avons pris la décision de ne pas y intégrer les
+\emph{relations de localisation} décrivant une \emph{configuration
+  spatiale,} la \emph{spatialisation} de trajectoires ne faisant pas
+partie de nos objectifs.
+
+\subsection{Construction des ontologies}
+
+%\subsubsection{Cadre des ontologies}
+
+Nous avons choisi de scinder l'ontologie des règles de décomposition
+en deux ontologies complémentaires, pour faciliter leur manipulation
+et leur diffusion. La première d'entre elles est \emph{l'ontologie des
+  relations de localisation} \acp{orl}. Son objectif est de constituer
+un thésaurus des \emph{relations de localisation} utilisées dans le
+contexte de la description d'une position en montagne. Chacune des
+notions est définie et une grande partie d'entre elles sont illustrées
+par des extraits des retranscriptions. La seconde ontologie définie
+est celle des \emph{relations de localisation atomiques} \acp{orla},
+dont l'objectif est de définir les \emph{relations de localisation
+  atomiques,} les décompositions dont elles résultent et le processus
+de \emph{spatialisation} \footnote{Ce point spécifique sera détaillé
+  dans le \autoref{chap:06}.} Ces deux composantes, fortement liées,
+auraient pu être combinées dans une même ontologie. Cependant, alors
+que la décomposition est fortement liée à notre travail, le thésaurus
+des relations de localisation peut être exploité pour d'autres travaux
+au sein du projet Choucas ou à l'extérieur. C'est pourquoi nous avons
+décidé de séparer les deux ontologies et de ne diffuser que
+l'ontologie des \emph{relations de localisation.}
+
+\begin{table}
+  \centering
+  \input{../tableaux/orl_vs_orla.tex}
+  \caption{Éléments de comparaison des ontologies \ac{orl} et
+    \ac{orla}.}
+  \label{tab:orl_vs_orla}
+\end{table}
+
+\subsubsection{L'ontologie des \emph{relations de localisation}}
+
+La construction de l'ontologie des relations de localisation s'est
+faite en deux étapes. Dans un premier temps nous avons défini les
+concepts à partir des \emph{relations de localisation} utilisées dans
+les alertes, puis nous avons hiérarchisé ces concepts.
+
+% Défintion des concepts
+Pour chaque expression nous avons cherché à définir un concept
+permettant d'exprimer la sémantique de la \emph{relation de
+  localisation} utilisée.
+%
+Pour ce faire nous avons cherché à identifier, pour chaque expression,
+le concept de l'ontologie de \textcite{Bateman2010} le plus proche de
+la sémantique de la relation de localisation utilisée par le
+requérant.
+%
+À la suite de cette étape toutes les \emph{relations de localisations}
+sont associées à un concept tiré de l'ontologie de
+\textcite{Bateman2010}. Cependant, dans la majorité des cas, le
+concept issu de GUM-Space ne nous a pas donné entière satisfaction,
+soit parce-que le concept retenu ne fonctionnait qu'au pris d'une
+interprétation très \enquote{flexible} de la définition de
+\textcite{Bateman2010}, soit parce-que la description donnée par le
+requérant n'était que grossièrement retranscrite par les concepts de
+GUM-Space.
+
+On peut prendre pour exemple la \emph{préposition spatiale}
+\enquote{entre} utilisée dans l'extrait suivant :
+%
+\begin{quote}
+  \begin{dialogue}
+    \Sec Vous êtes entre Grand Veymont et Pas de la Ville ?  \Req Je
+    suis entre le Grand Veymont, sous le Grand Veymont et Pas de la
+    Ville, tout à fait. Je suis côté… heu… côté sud.
+  \end{dialogue}
+\end{quote}
+%
+L'ontologie GUM-Space ne propose pas de concepts permettant une
+retranscription satisfaisante de la sémantique de cette \emph{relation
+  spatiale.} On peut faire appel aux concepts
+\onto[gum]{Dis\-tri\-bu\-tion} ou \onto[gum]{Surround\-ing}, mais le
+premier s'applique qu'au cas où \emph{l'objet de référence} est une
+collection (\eg \enquote{entre les arbres}, \enquote{parmi la foule}),
+et le second correspond plus à la \emph{relation de localisation}
+\enquote{entouré de}, qui, bien que proche, n'est pas une
+approximation satisfaisante de la \emph{relation de localisation}
+utilisée par le requérant. De la même manière, dans l'extrait :
+%
+\begin{quote}
+  \begin{dialogue}
+    \Req On est à 10 minutes du sommet de la Bastille.
+  \end{dialogue}
+\end{quote}
+%
+Le requérant décrit sa position à l'aide d'une durée de marche à
+partir de \emph{l'objet de référence,} \ie à l'aide d'une
+\emph{distance-temps quantitative.} Cependant, l'ontologie GUM-Space
+ne possède qu'un seul concept permettant d'exprimer une distance
+quantitative, \onto[gum]{Quanti\-tative\-Dist\-ance}. Au vu de la
+description qui est faite de ce concept dans \textcite{Bateman2010} on
+peut légitimement penser que ce concept a essentiellement été prévu
+pour conceptualiser des distances métriques, uniquement des distances
+métriques. On pourrait se contenter de cette situation, considérant
+que ces distances sont équivalentes. Cependant, comme nous
+l'expliquions dans l'état de l'art (\autoref{chap:03}) le
+distances-temps sont beacoup plus imprécises que les distances
+métriques et leur \emph{spatialisation} implique dès lors des méthodes
+plus avancées. Par conséquent il nous semble nécessaire de développer
+un nouveau concept, \onto{A\-Dist\-ance\-Temps}, plus précis et
+adapté.
+
+Au final, 51 \emph{relations de localisation} ont été définies dont
+seules 8 sont des concepts originaux de GUM-Space. Les 43 concepts
+restants sont soit des précisions de concepts existants (\eg
+\onto{A\-Dist\-ance\-Temps}) soit des concepts totalement nouveaux
+(\eg \onto{En\-tre\-X\-\&\-Y}).
+
+% Hiérarchisation des concepts
+Une fois que l'ensemble des \emph{relations de localisation}
+nécessaires a la retranscription des alertes a été défini nous avons
+procédé à leur hiérarchisation. Pour ce faire nous avons défini de
+nouvelles classes, permettant de regrouper les relations de
+localisation par similarité sémantique. Ces nouvelles classes sont
+abstraites, \ie qu'elles ne sont pas des \emph{relations de
+  localisation,} elles ne servent qu'à leur regroupement.
+
+Pour définir cette hiérarchie nous nous sommes appuyés sur différentes
+propositions précédentes et principalement de l'ontologie GUM-Space
+\autocite{Bateman2010}.
+
+Au premier niveau de l'ontologie on trouve trois classes principales,
+\onto[orl]{Re\-la\-tion\-Spa\-ti\-ale\-De\-Prox\-imi\-té},
+\onto[orl]{Re\-la\-tion\-Spa\-ti\-ale\-Fonc\-tio\-nelle} et
+\onto[orl]{Re\-la\-tion\-Spa\-ti\-ale\-Po\-si\-ti\-on\-Re\-la\-ti\-ve},
+regroupant l'ensemble des \emph{relations de localisation} et deux
+\emph{relations de localisation} isolées et complémentaires,
+\onto[orl]{Ci\-ble\-Voit\-Si\-te} et \onto[orl]{Si\-te\-Voit\-Ci\-ble}
+qui n'entrent dans aucune des ces classes. Les trois classes
+principales sont similaires aux trois classes du premier niveau
+hiérarchique de l'ontologie GUM-Space. La classe
+\onto[orl]{Re\-la\-tion\-Spa\-ti\-ale\-De\-Prox\-imi\-té}, qui
+correspond à la classe
+\onto[gum]{Spa\-ti\-al\-Dist\-an\-ce\-Mo\-da\-li\-ty} de GUM-Space,
+regroupe les \emph{relations de localisation} dont la sémantique
+traduit une proximité spatiale. On y retrouve, par exemple, la
+relation \onto[orl]{Près\-De} ou la relation
+\onto[orl]{A\-Dist\-ance\-Temps}, qui modélise une distance exprimée
+en temps de déplacement. La seconde classe,
+\onto[orl]{Re\-la\-tion\-Spa\-ti\-ale\-Fonc\-tio\-nelle} est le
+pendant de la classe
+\onto[gum]{Func\-ti\-on\-al\-Spa\-ti\-al\-Mo\-da\-li\-ty} de
+l'ontologie GUM-Space. Elle regroupe les \emph{relations spatiales}
+qui décrivent une situation où le sujet et \emph{l'objet de référence}
+ont un lien, non seulement spatial, mais aussi fonctionnel. C'est, par
+exemple, le cas de la \emph{relation de localisation}
+\onto[orl]{Prox\-imal} qui implique une proximité entre le
+\emph{sujet} et \emph{l'objet de référence}, mais qui, contrairement à
+la relation \onto[orl]{Près\-De}, peut être fonctionnelle et pas
+seulement spatiale. C'est également le cas de la \emph{relation de
+  localisation}
+\onto[orl]{Si\-tué\-Sur\-Iti\-né\-rai\-re\-Ou\-Ré\-seau\-Sup\-port},
+la seule autre \emph{relation fonctionnelle} que nous avons défini.
+Enfin, la classe
+\onto[orl]{Re\-la\-tion\-Spa\-ti\-ale\-Po\-si\-ti\-on\-Re\-la\-ti\-ve},
+similaire à la classe
+\onto[gum]{Re\-la\-ti\-ve\-Spa\-ti\-al\-Mo\-da\-li\-ty}, regroupe
+toutes les \emph{relations} qui décrivent la position du \emph{sujet}
+en fonction de celle du \emph{site} mais sans notion de
+distance. C'est cette classe qui regroupe le plus de \emph{relations
+  de localisation.} On y retrouve, par exemple, les relations
+traduisant un contact\footnote{Correspondant à la classe
+  \onto[orl]{Re\-la\-tion\-Spa\-ti\-ale\-De\-Con\-tact}.} (\eg
+\onto[orl]{Dans\-Pla\-ni\-mé\-tri\-que},
+\onto[orl]{A\-La\-Fr\-on\-ti\-ère\-De}), les relations de direction
+\footnote{Correspondant à la classe
+  \onto[orl]{Re\-la\-tion\-Spa\-ti\-ale\-De\-Di\-rec\-tion}.} (\eg
+\onto[orl]{Au\-Nord\-De}, \onto[orl]{Dans\-La\-Dir\-ec\-tion\-De}) ou
+les relations verticales \footnote{Correspondant à la classe
+  \onto[orl]{Re\-la\-tion\-Spa\-ti\-ale\-De\-Ver\-ti\-ca\-le}.} (\eg
+\onto[orl]{So\-us\-Pro\-che\-De}, \onto[orl]{Au\-Des\-sus\-De}). Au
+total, l'ontologie des \emph{relations de localisation} contient 11
+classes servant à définition de la hiérarchie. Ces classes, qui ne
+correspondant à aucune \emph{relation de localisation,} ne sont ni
+décomposables, ni spatialisables. C'est pourquoi nous les qualifions
+de \emph{classes abstraites} et nous les signalons comme telles dans
+l'ontologie, pour éviter qu'elles soient manipulées comme des
+\emph{relations de localisation} 
+
+On peut remarquer que certaines des \emph{relations de localisation}
+que nous avons présentées pourraient appartenir à plusieurs
+\emph{classes abstraites}. C'est par exemple le cas de la
+\emph{relation} \onto[orl]{Prox\-imal}, que nous avons décrit comme
+appartenant à la \emph{classe abstraite}
+\onto[orl]{Re\-la\-tion\-Spa\-ti\-ale\-Fonc\-tio\-nelle}, mais qui
+traduit également une notion de proximité spatiale. La \emph{relation}
+\onto[orl]{Prox\-imal} pourrait donc également appartenir à la
+\emph{classe abstraite}
+\onto[orl]{Re\-la\-tion\-Spa\-ti\-ale\-De\-Prox\-imi\-té}. De fait les
+regroupements que nous avons définis n'ont pas été conçus pour être
+mutuellement disjoints \footnote{C'est également le cas de la
+  hiérarchie proposée dans GUM-Space \autocite{Bateman2010}.}, ainsi
+une même \emph{relation} peut, comme \onto[orl]{Prox\-imal},
+appartenir à plusieurs classes. Ce découpage ne pose cependant pas de
+problèmes particuliers, quelle que soit le cas d'utilisation de
+l'ontologie. Nous pensons même qu'il peut être utile pour certaines
+applications, comme la recherche de \emph{relations de localisation}
+par les secouristes utilisant l'interface.
+
+Les concepts définis dans \ac{orl} étant fortement inspirés, voir
+repris, de l'ontologie GUM-Space, nous avons complété l'ontologie en
+liant, pour chaque concept le concept équivalent (ou similaire) de
+l'ontologie GUM-Space. Plus spécifiquement deux types de liens sont
+définis, la relation \emph{seeAlso,} utilisée 24 fois et la relation
+\emph{equivalentClass,} utilisée 8 fois. Cette dernière traduit une
+équivalence parfaite entre concepts, alors que la relation
+\emph{seeAlso} est avant tout informative et traduit une certaine
+proximité sémantique entre deux concepts sans qu'ils soient
+équivalents ou même similaires. Ainsi, seules 8 des 62 \emph{relations
+  de localisation} définies dans \ac{orl} sont identiques à celles
+définies par \textcite{Bateman2010}, les autres concepts sont définis
+de manière significativement différente.
+
+% \begin{figure}
+%   \centering
+%   \input{../figures/ontologie.tex}
+%   \caption{Onto}
+%   \label{fig:ontho}
+% \end{figure}
+
+\subsubsection{L'ontologie des \emph{relations de localisation
+    atomiques}}
+
+Le processus de construction de \emph{l'ontologie des relations de
+  localisation atomiques} \acp{orla} est assez différent de celui de
+\emph{l'ontologie des relations de localisation.} Là où \ac{orl} a été
+construite d'un trait, à partir d'un ensemble de cas réels,
+\emph{l'ontologie des relations de localisation atomiques} a été
+développée progressivement, au fil du traitement de nouvelles
+alertes. Dans sa version actuelle, \ac{orla} ne propose pas une
+décomposition pour toutes les \emph{relations de localisation}
+définies précédemment. Seules les relations de localisation les plus
+fréquemment utilisées dans les alertes ont été modélisées.  La
+démarche de définition d'\ac{orla} a consisté a définir des
+\emph{relations de localisation atomiques} et des décompositions au
+fil de l'eau, en fonction des \emph{relations de localisation}
+identifiées dans les alertes traitées.
+
+Pour modéliser les \emph{relations topologiques} nous utilisons
+quatres relations de localisation atomiques :
+\onto[orla]{In\-té\-ri\-eur\-De},
+\onto[orla]{À\-La\-Fron\-ti\-ère\-De},
+\onto[orla]{Ex\-té\-ri\-eur\-De} et \onto[orla]{Con\-tact}. Deux de
+ces \emph{relations atomiques} (\onto[orla]{In\-té\-ri\-eur\-De} et
+\onto[orla]{À\-La\-Fron\-ti\-ère\-De}) peuvent être utilisées
+directement, elles correspondent alors aux \emph{relations de
+  localisation} \onto[orl]{Dans\-Pla\-ni\-mé\-tri\-que} et
+\onto[orl]{À\-La\-Fron\-ti\-ère\-De}. Les deux autres \emph{relations
+  atomiques} ne sont utilisées que dans des compostions. La
+\emph{relation atomique} \onto[orla]{Ex\-té\-ri\-eur\-De} est par
+exemple utilisée pour définir les \emph{relations} de cardinalité
+\onto[orl]{A\-Est\-De\-Ex\-ter\-ne} ou
+\onto[orl]{Au\-Nord\-De\-Ex\-te\-rne}. De part l'importance que
+revêtent les relations topologiques (\autoref{chap:03}) dans le
+référencement spatial indirect, on retrouve ces \emph{relations de
+  localisation atomiques} dans de nombreuses \emph{relations de
+  localisation.}
+
+Les \emph{relations de localisation atomiques} formalisant une
+distance sont également très utilisées. Seules deux de ces relations
+sont définies dans \ac{orla}
+:\onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que},
+équivalente à son homonyme dans \ac{orl} et
+\onto[orla]{À\-Dis\-tan\-ce\-Temps}, qui elle n'est utilisé dans
+aucune combinaison. La relation
+\onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que},
+est utilisée dans de nombreuses \emph{relations de localisation,}
+comme \onto[orl]{Proximal}, \onto[orl]{Aux\-Alen\-tours\-De} ou
+\onto[orl]{Près\-De}.
+
+Pour représenter les \emph{relations de localisation} orientaionelles
+seule une \emph{relation de localisation atomique} a été définie :
+\onto[orla]{Dans\-La\- Direction\-De}. Cette \emph{relation atomique}
+sert de base à toutes les relations de cardinalité (\ie
+\onto[orl]{Au\-Nord\-De}, \onto[orl]{À\-Ouest\-De}, \emph{etc.}) et
+leurs dérivées composés (\eg \onto[orl]{Au\-Sud\-De\-Ex\-ter\-ne}),
+mais est également utilisée directement. Elle correspond alors à la
+\emph{relation} homonyme définie dans \emph{l'ontologie des relations
+  de localisation}.
+
+La notion de verticalité est exprimée à l'aide de trois principales
+\emph{relations de localisation atomiques} complémentaires :
+\onto[orla]{Al\-ti\-tu\-de\-Équi\-va\-len\-te},
+\onto[orla]{Al\-ti\-tu\-de\-Stric\-te\-ment\-Sup\-érieu\-re} et
+\onto[orla]{Al\-ti\-tu\-de\-Stric\-te\-ment\-Inf\-érieu\-re}. Chacune
+d'entre elles exprime une relation strictement verticale entre le
+\emph{sujet} et \emph{l'objet de référence.} Ces trois \emph{relations
+  atomiques} sont a la base de toutes les \emph{relations spatiales}
+où est présente une notion de verticalité. Elles peuvent être
+utilisées telles quelles, pour désigner des positions relatives sur
+l'axe vertical ou être combinées avec d'autres \emph{relations
+  atomiques.} Dans le cas où ces relations sont utilisées seules,
+elles sont équivalentes aux \emph{relations de localisation}
+\onto[orl]{À\-La\-Mê\-me\-Al\-ti\-tu\-de\-Que},
+\onto[orl]{Au\-Des\-sus\-Al\-ti\-tu\-de} et
+\onto[orl]{Sous\-Al\-ti\-tu\-de}, qui n'imposent aucune contrainte sur
+la distance entre \emph{l'objet de référence} et \emph{le sujet} (\eg
+\enquote{le sommet de la tour Eiffel est moins au que celui de
+  l’Everest}). Si on les combine avec la \emph{relation}
+\onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve} on peut construire les
+relations de localisation \onto[orla]{Sous\-Pro\-che\-De} ou
+\onto[orla]{Au\-Des\-sus\-Pro\-che\-De} qui sont très utilisées dans
+les alertes retranscrites. Enfin, ces relations peuvent également être
+combinées avec des \emph{relations atomiques} topologiques, comme
+\onto[orla]{In\-té\-ri\-eur\-De} ce qui permet la définition de
+\emph{relations} comme \onto[orl]{Dans\-La\-Par\-tie\-Bas\-se\-de} ou
+\onto[orl]{Dans\-La\-Par\-tie\-Hau\-te\-de}.
+
+Ces trois \emph{relations atomiques} ont la particularité d'être
+fortement dépendantes de la valeur d'altitude utilisée comme point de
+référence. C'est pourquoi nous avons défini, pour chacune de ces trois
+\emph{relation de localisation atomiques} des variantes, utilisant une
+valeur d'altitude différente (\autoref{tab:atomique_vertical}). Par
+exemple, les \emph{relations de localisation atomiques}
+\onto[orla]{Al\-ti\-tu\-de\-Stric\-te\-ment\-Sup\-érieu\-re} et
+\onto[orla]{Al\-ti\-tu\-de\-Stric\-te\-ment\-Inf\-érieu\-re} se
+basent, respectivement, sur les altitudes maximales et minimales de
+\emph{l'objet de référence.} Ce parti pris n'est cependant pas
+compatible avec certaines \emph{relations de localisation.} Par
+exemple les \emph{relations}
+\onto[orl]{Dans\-La\-Par\-tie\-Bas\-se\-de} ou
+\onto[orl]{Dans\-La\-Par\-tie\-Hau\-te\-de} se référent à l'altitude
+moyenne de l'objet et non à son maximum ou son minimum. Ainsi les
+trois \emph{relations de localisation atomiques} de verticalité
+principales sont complétées par des variantes basées sur l'altitude
+moyenne, sur l'altitude du plus proche voisin et sur les altitudes
+maximales ou minimales (\autoref{tab:atomique_vertical}), ce qui
+permet de disposer d'une expressivité maximale.
+
+\begin{table}
+  \centering
+  \input{../tableaux/atomiques_verticales.tex}
+  \caption{\emph{Relations de localisation atomiques} de verticalité
+    et leurs vairantes.}
+  \label{tab:atomique_vertical}
+\end{table}
+
+La dernière catégorie des \emph{relations de localisation atomiques}
+concerne les \emph{relations} de visibilité. Cette catégorie présente
+la particularité de définir des \emph{relations de localisation
+  atomiques} qui ne sont utilisables que telles quelles (\ie qu'elles
+ne sont composées à aucune autre \emph{relation atomique}). Les deux
+relations de visibilité définies dans \ac{orl} (\ie
+\onto[orl]{Ci\-ble\-Voit\-Si\-te} et
+\onto[orl]{Si\-te\-Voit\-Ci\-ble}) sont donc peu liées aux autres
+\emph{relations,} d'une part car elles ne sont pas décomposables, mais
+également car les \emph{relations atomiques} qui y correspondent ne
+sont utilisées dans aucune autre décomposition.
+
+Chacune des \emph{relations de localisation atomique} définie dans
+\ac{orla} est associée à un ensemble de règles supplémentaires,
+permettant sa \emph{spatialisation.} Ces différentes règles seront
+explicitées lors de la présentation de la phase de spatialisation
+(\autoref{chap:07}).
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../../../../main"
+%%% End:

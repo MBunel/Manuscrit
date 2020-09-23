@@ -12,8 +12,12 @@
 %\addtokomafont{pagenumber}{\dispfont}
 
 % Changement des styles pour les epigraphes
+\renewcommand*\dictumwidth{0.33\linewidth}
+\renewcommand*\raggeddictumtext{}
 \setkomafont{dictumauthor}{\small\normalfont}
 \setkomafont{dictum}{\small\normalfont}
+\renewcommand{\dictumrule}{\vskip+1.5ex\par}
+\renewcommand{\dictumauthorformat}[1]{#1}
 
 % Profondeur numérotation plan
 \setcounter{secnumdepth}{3}
@@ -47,3 +51,6 @@
 \RedeclareSectionCommands[
   indent=0pt
 ]{subparagraph}
+
+% Changement de nom
+\renewcommand{\listfigurename}{Liste des figures}
