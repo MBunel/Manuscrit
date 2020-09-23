@@ -60,13 +60,13 @@ Un problème similaire se pose lorsque l'on traite, non plus de la
 vitesse de transition ente l'intérieur d'une \emph{zone de
   localisation} et son extérieur, mais de sa forme. Une \emph{relation
   de localisation} comme \enquote{proche} voit, toutes choses égales
-par ailleurs, son \textbf{degré de validité} diminuer linéairement
-avec l'éloignement à \emph{l'objet de référence.} On ne s'éloigne pas
-plus (ou moins) vite à 5 mètres qu'a 50 mètres. Cette observation est
-également vraie pour la \emph{relation de localisation} \enquote{en
-  dessous}. La zone \emph{d'imprécision} est certes plus réduite, mais
-la relation entre la différence d'altitude est l'appartenance à la
-\emph{zone de localisation} est linéaire, il n'y a ni cassures, ni
+par ailleurs, sa validité diminuer linéairement avec l'éloignement à
+\emph{l'objet de référence.} On ne s'éloigne pas plus (ou moins) vite
+à 5 mètres qu'a 50 mètres. Cette observation est également vraie pour
+la \emph{relation de localisation} \enquote{en dessous}. La zone
+\emph{d'imprécision} est certes plus réduite, mais la relation entre
+la différence d'altitude est l'appartenance à la \emph{zone de
+  localisation} est linéaire, il n'y a ni cassures, ni
 variations. Cependant, la linéarité de cette relation n'implique qu'il
 en soit de même pour les frontières. En effet, contrairement à la
 \emph{relation de localisation} \enquote{proche}, qui ne dépend que
@@ -121,8 +121,8 @@ modifier le résultat de la \emph{phase de fusion} en fonction de
 l'ordre de traitement des \emph{zones de localisation
   compatibles}. Par exemple, si l'on souhaite construire la \emph{zone
   de localisation probable} ($\text{\textsl{zlp}}$) correspondant à
-l'ensemble d'indices de localisation : \enquote{Je suis à côté d'une
-  maison et dans une forêt}. Pour ce faire il est nécessaire
+l'ensemble \emph{d'indices de localisation} : \enquote{Je suis à côté
+  d'une maison et dans une forêt}. Pour ce faire il est nécessaire
 d'identifier les positions situées dans les \emph{zone de localisation
   compatibles} correspondant au premier ($\text{\textsf{zlc}}_{i1}$)
 et au second ($\text{\textsf{zlc}}_{i2}$) indice, à l'aide d'un
@@ -134,18 +134,16 @@ $\text{\textsf{zlc}}_{i1}$. Un tel comportement est incompatible avec
 plusieurs des principes que nous avons définis, notamment l'autonomie
 de la spatialisation ou le \emph{principe de décomposition,} qui se
 fondent sur l'hypothèse ---~implicite~--- d'une commutativité des
-opérateurs utilisés durant la phase de fusion.
+opérateurs utilisés durant la phase de fusion. De plus, il est
+nécessaire que les \emph{zones de localisation} produites au cours de
+la \emph{phase de fusion} restent facilement interprétables. On
+pourrait en effet imaginer une approche tendant à fragmenter à
+outrance les résultats, ce qui conduirait à une zone difficilement
+interprétable visuellement et contrevenant donc au \emph{principe
+  d'intégration} précédemment fixé.
 
-\tdi{Nécessité que les résultats soient facilement
-  interprétables. Sémantique des résultats et pas trop de zones (par
-  exemple beaucoup d'alpha cuts).}
-
-De plus, il est nécessaire que les \emph{zones de localisation}
-produites durant la \emph{phase de fusion} restent interprétables.
-
-
-Il faut que le résultat des ces fusions soit interprétable est puisse
-être exprimé avec la modélisation choisie.
+% Il faut que le résultat des ces fusions soit interprétable est
+% puisse être exprimé avec la modélisation choisie.
 
 %%% Local Variables:
 %%% mode: latex
