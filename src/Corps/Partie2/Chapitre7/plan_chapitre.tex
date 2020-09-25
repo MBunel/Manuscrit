@@ -8,10 +8,14 @@
 
 \section{Les étapes de la \emph{spatialisation}}
 
+\subsection{XXX}
+
 \tdi{Importance de la zir}
+\tdi{Importance du raster de base et de la maille}
 
-\tdi{Importance du raster de base}
+\subsection{xxxx}
 
+\tdi{Présenter les 3 grandes étapes de la démarche, leur rôle et leur justification}
 
 \tdi{méthode de spatialisation = rasterisation + calcul métrique +
   sélection floue}
@@ -24,14 +28,16 @@
 \end{figure}
 
 
-
 \section{La rasterisation}
+
+\subsection{Les méthode de rasterisation}
 
 \tdi{Détailler les différentes méthodes de rasterisation définies
   figure \ref{fig:methode_rasterisation} + exemple}
 
+\tdi{Parler rapidement des méthodes définies mais non utilisées (bbox,
+  conxhull)}
 
-\subsection{Les méthode de rasterisation}
 
 \begin{figure}
   \centering
@@ -40,12 +46,23 @@
   \label{fig:methode_rasterisation}
 \end{figure}
 
+\subsection{Rasterisation et sémantique ??}
+
+\tdi{Expliquer comment on les sélectionne et leur importance sur la sémantique}
+
+
+
+
 \section{Le calcul des métriques}
 
 \tdi{Détailler les métriques définies
   figure \ref{fig:methode_rasterisation} + exemple}
 
-\subsection{Métriques globale}
+
+
+
+
+\subsection{Métriques intrinsèques}
 
 \tdi{Présentation des métriques qui ne dépendent pas de l'objet de
   référence -> elles sont calculables une fois. Ex : Pente, altitude
@@ -53,7 +70,7 @@
 
 \tdi{Est-ce qu'on peut vraiment faire cette distinction ??}
 
-\subsection{Métriques locales}
+\subsection{Métriques extrinsèques}
 
 \tdi{Présentation des métriques locales, qui changent pour chaque
   \emph{objet de référence}, distance, orientation, visibilité}
@@ -70,9 +87,10 @@
 \end{table}
 
 
-\section{La sélection floue}
+\section{La Fuzzyfication}
 
-\tdi{Présentation des différents sélecteurs}
+
+\subsection{XXX}
 
 \begin{figure}
   \centering
@@ -81,24 +99,36 @@
   \label{fig:methode_selecteur}
 \end{figure}
 
-\subsection{La définition des fonctions d'appartenance}
+\tdi{Présentation des différents sélecteurs}
 
-\subsection{Le problème de la définition des seuils}
+\tdi{Sélecteur = forme}
 
-\tdi{Expliquer en quoi la définition des seuils est un problème}
+\tdi{La sémantique est dans la forme}
 
+\tdi{Expliquer en quoi la définition des seuils est un problème
+  d'implémentation
+}
 
+\subsection{Les modifieurs}
 
-\section{Vers la prise en compte de modifieurs}
+\tdi{Modifeur not}
 
-
-\tdi{Parler du fait que le modifieur utilisé dépend de ce qui est
-  considéré. Not s'applique à tout}
-
-\tdi{Différence paramètre/modifieur}
+\tdi{resampling}
 
 \begin{figure}
   \centering
+  \includegraphics[width=\textwidth]{../../../../tmp/modifieur.jpeg}
+  \caption{Modifieur}
+  \label{fig:methode_modifieur}
+\end{figure}
+
+
+\section{Représenter des connaissances \emph{relatives à la spatialisation}}
+
+
+\begin{figure}
+  \centering
+  \tdi{Ajout liens modifieurs}
   \includegraphics[width=\textwidth]{../../../../tmp/dec.jpeg}
   \caption{Exemple de la XXX de la \emph{relation de localisation
       atomique} \protect\onto[orla]{Sous\-Al\-ti\-tu\-de}.}
