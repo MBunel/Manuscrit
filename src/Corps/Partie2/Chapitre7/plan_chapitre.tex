@@ -2,19 +2,107 @@
 
 \addsec{Introduction}
 
-Introduction chapitre 7
+\tdi{Rappeler la définition de la spatialisation}
 
-\section{Les étapes de la spatilisation}
-\section{La rasterisation}
-\section{Le calcul des métriques}
-\section{La sélection floue}
+\tdi{La spatialisation en plusieurs étapes}
 
+\section{Les étapes de la \emph{spatialisation}}
+
+\tdi{Importance de la zir}
+
+\tdi{Importance du raster de base}
+
+
+\tdi{méthode de spatialisation = rasterisation + calcul métrique +
+  sélection floue}
 
 \begin{figure}
   \centering
   \includegraphics[width=\textwidth]{../../../../tmp/methodo_spatialisation.jpeg}
-  \caption{Démarche de }
+  \caption{Méthode de \emph{spatialisation}}
   \label{fig:methodo_spatialisation}
+\end{figure}
+
+
+
+\section{La rasterisation}
+
+\tdi{Détailler les différentes méthodes de rasterisation définies
+  figure \ref{fig:methode_rasterisation} + exemple}
+
+
+\subsection{Les méthode de rasterisation}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{../../../../tmp/rasterisation.jpeg}
+  \caption{Méthodes de rasterisation}
+  \label{fig:methode_rasterisation}
+\end{figure}
+
+\section{Le calcul des métriques}
+
+\tdi{Détailler les métriques définies
+  figure \ref{fig:methode_rasterisation} + exemple}
+
+\subsection{Métriques globale}
+
+\tdi{Présentation des métriques qui ne dépendent pas de l'objet de
+  référence -> elles sont calculables une fois. Ex : Pente, altitude
+  absolue (mais déjà calculée vu que MNT).}
+
+\tdi{Est-ce qu'on peut vraiment faire cette distinction ??}
+
+\subsection{Métriques locales}
+
+\tdi{Présentation des métriques locales, qui changent pour chaque
+  \emph{objet de référence}, distance, orientation, visibilité}
+
+\subsection{Métriques Paramétriques}
+
+\subsection{Métriques non paramétriques}
+
+\begin{table}
+  \centering
+  \includegraphics[width=\textwidth]{../../../../tmp/metriques.jpeg}
+  \caption{Types de métriques}
+  \label{fig:type_metriques}
+\end{table}
+
+
+\section{La sélection floue}
+
+\tdi{Présentation des différents sélecteurs}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{../../../../tmp/selecteur.jpeg}
+  \caption{Méthodes de sélection}
+  \label{fig:methode_selecteur}
+\end{figure}
+
+\subsection{La définition des fonctions d'appartenance}
+
+\subsection{Le problème de la définition des seuils}
+
+\tdi{Expliquer en quoi la définition des seuils est un problème}
+
+
+
+\section{Vers la prise en compte de modifieurs}
+
+
+\tdi{Parler du fait que le modifieur utilisé dépend de ce qui est
+  considéré. Not s'applique à tout}
+
+\tdi{Différence paramètre/modifieur}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{../../../../tmp/dec.jpeg}
+  \caption{Exemple de la XXX de la \emph{relation de localisation
+      atomique} \protect\onto[orla]{Sous\-Al\-ti\-tu\-de}.}
+  \label{fig:methode_selecteur}
 \end{figure}
 
 
