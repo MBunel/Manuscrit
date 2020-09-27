@@ -1,0 +1,54 @@
+\begin{tikzpicture}
+  \usetikzlibrary{shapes.geometric,fit}
+
+  \begin{scope}[xshift=-3.5cm]
+    \node (x1) at (0,0.8) {$rla_1$};
+    \node (x2) at (0,0) {$rla_2$};
+    \node (x3) at (0,-0.8) {$rla_3$};
+  \end{scope}
+  
+    \begin{scope}
+      \node (y1) at (3.5,.8) {$rla_1$};
+      \node (y2) at (3.5,0) {$rla_2$};
+      \node (y3) at (3.5,-0.8) {$rla_3$};
+    \end{scope}
+  
+    \fill[RdBu-9-9] (x1.east) circle (2pt);
+    \fill[RdBu-9-9] (x2.east) circle (2pt);
+    \fill[RdBu-9-9] (x3.east) circle (2pt);
+    
+    \fill[RdBu-9-1] (y1.west) circle (2pt);
+    \fill[RdBu-9-1] (y2.west) circle (2pt);
+    \fill[RdBu-9-1] (y3.west) circle (2pt);
+
+     \node[fit=(x1.east) (x3.west), ellipse, draw, minimum width=2cm,
+    ffc2] (c1) {};
+    \node[fit=(y1.east) (y3.west), ellipse, draw, minimum width=2cm,
+    ffc] (c2) {};
+
+    % draw the arrows
+    \draw[->, shorten >=5pt, shorten <=5pt] (x1.east) -- (y1.west)
+    node[pos=0.75, sloped, anchor=center, fill=white] {\tiny\emph{se
+        décompose en}};
+    
+    \draw[->, shorten >=5pt, shorten <=5pt] (x1.east) -- (y2.west)
+    node[pos=0.5, sloped, anchor=center, fill=white] {\tiny\emph{se
+        décompose en}};
+    
+    \draw[->, shorten >=5pt, shorten <=5pt] (x2.east) -- (y3.west)
+    node[pos=0.5, sloped, anchor=center, fill=white] {\tiny\emph{se
+        décompose en}};
+
+    \draw[->, shorten >=5pt, shorten <=5pt] (x3.east) -- (y3.west)
+    node[pos=0.5, sloped, anchor=center, fill=white] {\tiny\emph{se
+        décompose en}};
+
+    \draw[->, shorten >=5pt, shorten <=5pt] (x2.east) to[out=30, in=-30, looseness=1.5] (x1.east);
+    
+
+    \node[text width=3.5cm, anchor=center,align=center] at
+    ([yshift=-.5cm]c1.south) {\small Ensemble des \emph{relations de
+        localisation}}; \node[text width=4cm,
+    anchor=center,align=center] at ([yshift=-.5cm]c2.south) {\small
+      Ensemble des \emph{Relations de localisation atomiques}};
+\end{tikzpicture}
