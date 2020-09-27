@@ -5,11 +5,13 @@
   \begin{scope}[transparency group]
     % fond
     \begin{scope}
-      \path[ffa]  (2.5,0) -- (5, 2)  -- (9,2) -- (9,0) -- cycle;
+      \path[ffa]  (3,0) -- (6, 2)  -- (8,2) -- (8,0) -- cycle;
+      \path[ffa_fade]  (8,2) -- (9, 2)  -- (9,0) -- (8,0) -- cycle;
     \end{scope}
     % bords
     \begin{scope}
-      \path[ffc] (0,0) -- (2.5,0) -- (5, 2) -++ (3,0) ;
+      \path[ffc_fade_m] (0,0) -- (2,0) ;
+      \path[ffc] (2,0) -- (3,0) -- (6, 2) -++ (3,0) ;
       \path[ffc_fade] (8,2) -- (9,2) ;
     \end{scope}
   \end{scope}
@@ -41,5 +43,11 @@
       % Label
       \node[above] at (y axis) {$\mu$};
     \end{scope}
+  \end{scope}
+  \begin{scope}
+    \draw (4.5,\decalageY) -- (4.5,2);
+    \draw[fill] (4.5,\decalageY) circle (1pt);
+    \draw[fill] (4.5,2) circle (1pt);
+    \node[above] at (4.5,2) {P};
   \end{scope}
 \end{tikzpicture}

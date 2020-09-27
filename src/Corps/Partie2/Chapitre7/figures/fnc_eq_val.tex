@@ -10,7 +10,7 @@
     % bords
     \begin{scope}
       \path[ffc] (1,0) -- (3,0) -- (4.5, 2) -- (6,0) -- (8,0) ;
-      \path[ffc_fade] (0,0) -- (1,0) ;
+      \path[ffc_fade_m] (0,0) -- (1,0) ;
       \path[ffc_fade] (8,0) -- (9,0) ;
     \end{scope}
   \end{scope}
@@ -42,5 +42,11 @@
       % Label
       \node[above] at (y axis) {$\mu$};
     \end{scope}
+  \end{scope}
+  \begin{scope}
+    \draw (4.5,\decalageY) -- (4.5,2);
+    \draw[fill] (4.5,\decalageY) circle (1pt);
+    \draw[fill] (4.5,2) circle (1pt);
+    \node[above] at (4.5,2) {P};
   \end{scope}
 \end{tikzpicture}
