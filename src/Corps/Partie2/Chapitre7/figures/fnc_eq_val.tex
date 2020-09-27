@@ -1,0 +1,46 @@
+﻿\begin{tikzpicture}[scale=.7]
+  \def\decalageX{-.2}
+  \def\decalageY{-.2}
+  % Courbe
+  \begin{scope}[transparency group]
+    % fond
+    \begin{scope}
+      \path[ffa]  (3,0) -- (4.5, 2) -- (6,0) -- cycle;
+    \end{scope}
+    % bords
+    \begin{scope}
+      \path[ffc] (1,0) -- (3,0) -- (4.5, 2) -- (6,0) -- (8,0) ;
+      \path[ffc_fade] (0,0) -- (1,0) ;
+      \path[ffc_fade] (8,0) -- (9,0) ;
+    \end{scope}
+  \end{scope}
+  % Axes X, Y
+  \begin{scope}
+    % Axe X
+    \begin{scope}
+      % Axe
+      \draw[<->] (0, \decalageX) --++ (9, 0) coordinate (x axis);
+      % Graduations
+      \foreach \n/\t in {1/{},2/{},3/{},4/{},5/{},6/{},7/{},8/{}}
+      {
+        \draw[-] (\n, \decalageX - .05) --++ (0, .1);
+        \node[below, font=\footnotesize] at (\n, \decalageX - .05) {\t};
+      }
+      % label
+      \node[below left, yshift=-.1cm, font=\small] at (x axis) {\itshape Métrique};
+    \end{scope}
+    % Axe Y
+    \begin{scope}
+      % Axe
+      \draw[-] (\decalageY ,0) --++ (0, 2) coordinate (y axis);
+      % Graduations
+      \foreach \n/\t in {0/{0},2/{1}}
+      {
+        \draw[-] (\decalageY -.05, \n) --++ (.1, 0);
+        \node[left, font=\footnotesize] at (\decalageY -.05, \n) {\t};
+      }
+      % Label
+      \node[above] at (y axis) {$\mu$};
+    \end{scope}
+  \end{scope}
+\end{tikzpicture}
