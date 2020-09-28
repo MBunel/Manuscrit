@@ -8,7 +8,7 @@
   %
   Vecteur
   & \tikz{\fill[RdBu-9-1] (.65,.65) circle [radius=1pt];\path[ffc] (0,0) rectangle (2,2);}&
-  \tikz{\path[ffc] (.25,.25) ..controls(.25,1.75) and (1.375,.25) .. (1.75,1.75); \path[ffc] (0,0) rectangle (2,2);} &
+  \tikz{\path[ffc] (.3,.3) ..controls(.25,1.75) and (1.375,.25) .. (1.7,1.7); \path[ffc] (0,0) rectangle (2,2);} &
                                              \tikz{\fill[ffa] (1.125,.65) circle [radius=10pt];\path[ffc] (1.125,.65) circle [radius=10pt];\path[ffc](0,0) rectangle (2,2);}\\
   %
   \addlinespace
@@ -30,9 +30,9 @@
                                                  \foreach \y in {0,.25,...,1.75}
                                                  \path[draw, line width=.01mm] (\x,\y) rectangle (\x +.25, \y + .25);
                                                }
-                                               \foreach \i/\j in {0/.25,.25/.25,.25/.5,.25/.75,.5/.75,.5/1,.75/.75,.75/1,1/.75,1/1,1.25/1,1.5/1,1.5/1.25,1.5/1.5,1.75/1.5}{
+                                               \foreach \i/\j in {.25/.25,.25/.5,.25/.75,.5/.75,.5/1,.75/.75,.75/1,1/.75,1/1,1.25/1,1.5/1,1.5/1.25,1.5/1.5}{
                                                  \path[ffa] (\i,\j) rectangle (\i + .25, \j +.25);
-                                                 }
+                                               }
                                                \path[ffc] (0,0) rectangle (2,2);
                                              \end{scope}
                                              } &\tikz{
@@ -103,6 +103,8 @@
                                                  \foreach \y in {0,.25,...,1.75}
                                                  \path[draw, line width=.01mm] (\x,\y) rectangle (\x +.25, \y + .25);
                                                }
+                                               \path[ffa] (.25,.25) rectangle (.5, .5);
+                                               \path[ffa] (1.5,1.5) rectangle (1.75, 1.75);
                                                \path[ffc] (0,0) rectangle (2,2);
                                              \end{scope}
                                              } &\tikz{
