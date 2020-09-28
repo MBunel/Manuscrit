@@ -1,11 +1,24 @@
+La première partie de la méthode de spatialisation est la
+\emph{rasterisation des objets de référence.}
+
+\subsection{Rasterisation et sémantique ??}
+
+\tdi{Expliquer comment on les sélectionne et leur importance sur la
+  sémantique}
+
 \subsection{Les méthode de rasterisation}
 
 \tdi{Détailler les différentes méthodes de rasterisation définies
   figure \ref{fig:methode_rasterisation} + exemple}
 
-\tdi{Parler rapidement des méthodes définies mais non utilisées (bbox,
-  conxhull)}
 
+La plus évidente des solutions consiste à rasteriser l'ensemble de
+\emph{l'objet de référence.}
+
+
+Mais il également possible de ne rasteriser qu'une partie de
+\emph{l'objet de référence,} comme sa frontière ou son centroide
+(\autoref{tab:methode_rasterisation}).
 
 \begin{table}
   \centering
@@ -14,13 +27,11 @@
   \label{tab:methode_rasterisation}
 \end{table}
 
+\tdi{Parler rapidement des méthodes définies mais non utilisées (bbox,
+  conxhull)}
 
+D'autres méthodes plus spécifiques sont également envisageables.
 
-
-\subsection{Rasterisation et sémantique ??}
-
-\tdi{Expliquer comment on les sélectionne et leur importance sur la
-  sémantique}
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../../../../main"
