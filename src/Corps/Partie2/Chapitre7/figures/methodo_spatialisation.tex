@@ -1,67 +1,87 @@
 ﻿\begin{tikzpicture}
+  % Représentation zir
   \begin{scope}
     \path[ffa] (0,0) rectangle (2,2);
     \path[ffc] (0,0) rectangle (2,2);
-    \node[text width=3cm, align=center, anchor=center] at (1,-.75)
+    \node[text width=3cm, align=center, anchor=north] at (1,-.25)
     {\footnotesize \itshape Zone initiale de recherche};
   \end{scope}
-
-  \begin{scope}[yshift=2.5cm]
-    \fill[ffa] (1.25,.7) circle [radius=7pt];
-    \path[ffc] (1.25,.7) circle [radius=7pt];
-    \node[text width=3cm, align=center, anchor=center] at (1,.15)
+  % Représentation objet de référence
+  \begin{scope}[yshift=3.5cm]
+    \fill[ffa] (1.125,.375) circle [radius=3pt];
+    \path[ffc] (1.125,.375) circle [radius=3pt];
+    \path[ffc] (0,0) rectangle (2,2);
+    \node[text width=3cm, align=center, anchor=north] at (1,-.25)
     {\footnotesize \itshape Objet de référence};
   \end{scope}
 
   
   \path[draw, ->] (2.5,1) --++ (1,0)  node[pos=.5, above]
   {\footnotesize \itshape rasterisation};
-  
+
+  % Représentation objet de référence rasterisé
   \begin{scope}[xshift=4.25cm]
     \begin{scope}
       \foreach \x in {0,.25,...,1.75}{
         \foreach \y in {0,.25,...,1.75}
         \path[draw, line width=.01mm] (\x,\y) rectangle (\x +.25, \y + .25);
       }
-      % Pixels
+      % Pixels rasterisation
       \path[ffa] (1,.25) rectangle (1.25, .5);
-      \path[ffa] (1.25,.25) rectangle (1.5, .5);
-      \path[ffa] (.75,.5) rectangle (1, .75);
-      \path[ffa] (1,.5) rectangle (1.25, .75);
-      \path[ffa] (1.25,.5) rectangle (1.5, .75);
-      \path[ffa] (1.5,.5) rectangle (1.75, .75);
-      \path[ffa] (.75,.75) rectangle (1, 1);
-      \path[ffa] (1,.75) rectangle (1.25, 1);
-      \path[ffa] (1.25,.75) rectangle (1.5,1);
-      \path[ffa] (1.5,.75) rectangle (1.75,1);
+      % Limite zir
       \path[ffc] (0,0) rectangle (2,2);
     \end{scope}
-     \node[text width=3cm, align=center, anchor=center] at (1,-.75)
-     {\footnotesize \itshape Zone de localisation compatible};
+    \node[text width=3cm, align=center, anchor=north] at (1,-.25)
+    {\footnotesize \itshape Zone de localisation compatible};
   \end{scope}
   
   % \path[draw, ->] (8.5,1) --++ (1,0)  node[pos=.5, above]
   % {\footnotesize \itshape spatialisation};
-  
+
+  % Représentation métrique
   \begin{scope}[xshift=8.5cm]
+    % \path[ffa] (1,.25) rectangle (1.25, .5);
     \begin{scope}
       \foreach \x in {0,.25,...,1.75}{
         \foreach \y in {0,.25,...,1.75}
-        \path[draw, line width=.01mm] (\x,\y) rectangle (\x +.25, \y +
-        .25);
-        \node[circle, inner sep=0pt,minimum size=4pt, fill] (c) at (\x+.125,\y+.125) {};
+        {
+          % Traçage pixels 
+          \path[draw, line width=.01mm] (\x,\y) rectangle (\x +.25, \y +
+          .25);
+          % Calcul et représentation distance euclidienne
+          \pgfmathsetmacro\radius{sqrt((\x-1.125)^2+(\y-.375)^2)*1.25}
+          \fill[black] (\x+.125,.125+\y) circle (\radius pt);
+        }
       }
       \path[ffc] (0,0) rectangle (2,2);
     \end{scope}
+    \node[text width=3cm, align=center, anchor=north] at (1,-.25)
+    {\footnotesize \itshape Métrique};
   \end{scope}
-  
+
+  % Représentation floue
   \begin{scope}[xshift=12.75cm]
     \begin{scope}
       \foreach \x in {0,.25,...,1.75}{
         \foreach \y in {0,.25,...,1.75}
-        \path[draw, line width=.01mm] (\x,\y) rectangle (\x +.25, \y + .25);
+        {
+          % Traçage pixels 
+          \path[draw, line width=.01mm] (\x,\y) rectangle (\x +.25, \y +
+          .25);
+          % Calcul et représentation floue distance euclidienne
+          \pgfmathsetmacro\dist{sqrt((\x-1.125)^2+(\y-.375)^2)}
+          \pgfmathsetmacro\fuzzy{%
+            ifthenelse(\dist < .25,1,%
+            ifthenelse(\dist < 2,-0.57*\dist+1.14,0)%
+            )
+          }
+          \pgfmathsetmacro\radius{\fuzzy*2.5}
+          \fill[black] (\x+.125,.125+\y) circle (\radius pt);
+        }
       }
       \path[ffc] (0,0) rectangle (2,2);
     \end{scope}
+    \node[text width=3cm, align=center, anchor=north] at (1,-.25)
+    {\footnotesize \itshape Zone de localisation compatible};
   \end{scope}
 \end{tikzpicture}
