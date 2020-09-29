@@ -16,8 +16,8 @@
         \foreach \y in {0,.25,...,1.75}
         {
           % Traçage pixels 
-          \path[draw, line width=.01mm] (\x,\y) rectangle (\x +.25, \y +
-          .25);
+          %\path[draw, line width=.01mm] (\x,\y) rectangle (\x +.25, \y +
+          %.25);
           % Calcul et représentation distance euclidienne
           \pgfmathsetmacro\radius{sqrt((\x-1.125)^2+(\y-.375)^2)*1.25}
           \fill[black] (\x+.125,.125+\y) circle (\radius pt);
@@ -35,8 +35,8 @@
         \foreach \y in {0,.25,...,1.75}
         {
           % Traçage pixels 
-          \path[draw, line width=.01mm] (\x,\y) rectangle (\x +.25, \y +
-          .25);
+          %\path[draw, line width=.01mm] (\x,\y) rectangle (\x +.25, \y +
+          %.25);
           % Calcul et représentation floue distance euclidienne
           \pgfmathsetmacro\dist{sqrt((\x-1.125)^2+(\y-.375)^2)}
           % Fuzzyfication de la distance
@@ -62,8 +62,8 @@
         \foreach \y in {0,.25,...,1.75}
         {
           % Traçage pixels 
-          \path[draw, line width=.01mm] (\x,\y) rectangle (\x +.25, \y +
-          .25);
+          %\path[draw, line width=.01mm] (\x,\y) rectangle (\x +.25, \y +
+          %.25);
           % Calcul et représentation floue distance euclidienne
           \pgfmathsetmacro\dist{sqrt((\x-1.125)^2+(\y-.375)^2)}
           % Fuzzyfication de la distance
