@@ -26,11 +26,7 @@ La méthode de spatialisation que nous proposons est donc une composition de tro
 \end{figure}
 
 \tdi{rasterisation, pourquoi + justifications}%
-Dans un premier temps il est nécessaire de
-transformer \emph{l'objet de référence} en raster, de manière ce qu'il
-puisse être traité. Cette partie est nommée \emph{rasterisation} est,
-comme nous le verrons dans la partie qui lui est dédiée
-(\autoref{chap:07-sec2}), réalisable de plusieurs façons.
+Dans un premier temps il est nécessaire de transformer \emph{l'objet de référence} en raster, de manière ce qu'il puisse être traité. Cette partie est nommée \emph{rasterisation} est, comme nous le verrons dans la partie qui lui est dédiée (\autoref{chap:07-sec2}), réalisable de plusieurs façons.
 
 \tdi{métrique}%
 La seconde partie de la \emph{spatialisation} est le calcul de la métrique.
@@ -39,14 +35,11 @@ La métrique est une grandeur, généralement quantitative, recoupant la sémant
 
 Par conséquent des \emph{relations de localisation atomiques} décrivant des situations très différentes peuvent faire appel à la même métrique.
 %
-Par exemple, \onto[orla]{Distance\-Quantitative} et \onto[orla]{A\-La\-Frontiere\-De} sont des concepts sémantiquement assez éloignés, décrivant respectivement une relation métrique et une relation topologique. Pourtant, et à fortiori si l'on prend en compte \emph{l’imprécision,} on peut remarquer que ces deux concepts traduisent un éloignement par rapport à \emph{l'objet de référence,} si ce n'est qu'il est proche d'une valeur donnée (\ie la distance) pour \onto[orla]{Distance\-Quantitative} et (quasi) nul, par rapport à la frontière de \emph{l'objet de référence,} pour \onto[orla]{A\-La\-Frontiere\-De}.
-%
-Ainsi, si ces deux \emph{relations de localisation atomiques} différent, ce n'est pas tant à cause de la métrique sur laquelle elles se fondent, mais sur la manière dont elle est calculée et, surtout, dont ses valeurs sont transformées en degré d'appartenance.
+Par exemple, \onto[orla]{Distance\-Quantitative} et \onto[orla]{Exterieur} sont des concepts sémantiquement assez éloignés, décrivant respectivement une relation métrique et une relation topologique. Pourtant, ces deux concepts traduisent une forme d'éloignement par rapport à \emph{l'objet de référence,} si ce n'est qu'il est d'une valeur donnée (\ie la distance) pour \onto[orla]{Distance\-Quantitative} alors qu'il est qualitatif pour \onto[orla]{Exterieur}. Les \ac{zlc} de ces deux \emph{relations de localisation atomiques} sont modélisables à partir d'une même \emph{métrique,} la distance, mais différent par la manière dont cette métrique est interprétée et donc transformée en un degré d'appartenance.
 
-les \ac{zlc} de ces deux \emph{relations de localisation atomiques} sont modélisables à partir d'une même \emph{métrique,} la distance, bien qu'elle ne soit pas calculée à partir du même point, ni interprétée de la même manière.
+% Fuzzyficaiton
+Cette transformation est effectuée lors de la \emph{fuzzyfication,} dernière partie de la \emph{spatialisation.} 
 
-\tdi{Fuzzyficaiton}%
-Enfin, l'étape dite de \emph{fuzzyfication,} transforme les valeurs de la métrique en un degré d'appartenance.
 
 %%% Local Variables:
 %%% mode: latex
