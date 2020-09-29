@@ -25,26 +25,92 @@ Ainsi, la sémantique est dans la forme de la fonction d'appartenance.
 }%
 La question de la définition des seuils de la fonction d'appartenance utilisée est également importante. Toutefois, il s'agit 
 
+\tdi{Liste des fuzzyficateurs}
+
+Nous proposons la définition de trois fonctions de \emph{fuzzyfication} principales, déclinées en plusieurs variantes, portant le total des \emph{fuzzyficateurs} à sept.
+
+Le premier d'entre-eux est le \emph{fuzzyficateur} \onto{Eq\-Val}, défini par une fonction d'appartenance triangulaire (Figure \ref{fig:select_eqval_b}).
+
+\begin{equation}
+  \label{eq:eq_val}
+  x = \left\{
+    \begin{array}{ll}
+      XX & \text{si}\ θ > -5° \\
+      xx & \text{si}\ -12° ≤ θ ≤ -5° \\
+      0 & \text{si}\ θ < -12°\ \text{ou}\ θ < -12°\\
+    \end{array}
+  \right.
+\end{equation}
+
 
 \begin{figure}
   \centering
-  \input{../figures/fnc_eq_val.tex}
+  \subfloat[eqval]{
+    \input{../figures/fnc_eq_val.tex}
+    \label{fig:select_eqval_b}
+  }
+  
+  \subfloat[eqval0]{
+    \input{../figures/fnc_eq_val.tex}
+    \label{fig:select_eqval_0}
+  }\hfill  
+  \subfloat[eqvalangle]{
+    \input{../figures/fnc_eq_val.tex}
+    \label{fig:select_eqval_ang}
+  }  
   \caption{eqval}
   \label{fig:select_eqval}
 \end{figure}
 
+Le second \emph{fuzzyfieur,} \onto{Sup\-Val}, est défini par une fonction d'appartenance linéaire (Figure \ref{fig:select_supval_b}).
+
+\begin{equation}
+  \label{eq:sup_val}
+  x = \left\{
+    \begin{array}{ll}
+      1 & \text{si}\ θ > -5° \\
+      xx & \text{si}\ -12° ≤ θ ≤ -5° \\
+      0 & \text{si}\ θ < -12°\\
+    \end{array}
+  \right.
+\end{equation}
 
 \begin{figure}
   \centering
-  \input{../figures/fnc_sup_val.tex}
+  \subfloat[supval]{
+    \input{../figures/fnc_sup_val.tex}
+    \label{fig:select_supval_b}
+  }\hfill
+  \subfloat[supval0]{
+    \input{../figures/fnc_sup_val.tex}
+    \label{fig:select_supval_0}
+  }
   \caption{supval}
   \label{fig:select_supval}
 \end{figure}
 
+Enfin, le dernier fuzzyfieur
+
+\begin{equation}
+  \label{eq:inf_val}
+  x = \left\{
+    \begin{array}{ll}
+      1 & \text{si}\ θ > -5° \\
+      xx & \text{si}\ -12° ≤ θ ≤ -5° \\
+      0 & \text{si}\ θ < -12°\\
+    \end{array}
+  \right.
+\end{equation}
 
 \begin{figure}
   \centering
-  \input{../figures/fnc_inf_val.tex}
+  \subfloat[infval]{
+    \input{../figures/fnc_inf_val.tex}
+  }\hfill
+  \subfloat[infval0]{
+    \input{../figures/fnc_inf_val.tex}
+  }
+
   \caption{infval}
   \label{fig:select_infval}
 \end{figure}
