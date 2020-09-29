@@ -13,6 +13,8 @@ Ensuite il est néssaire de définir la \ac{zir}
 
 \tdi{Présenter les 3 grandes étapes de la démarche, leur rôle et leur justification}
 
+La méthode de spatialisation que nous proposons est donc une composition de trois grandes étapes.
+
 \tdi{méthode de spatialisation = rasterisation + calcul métrique +
   sélection floue}
 
@@ -32,6 +34,16 @@ comme nous le verrons dans la partie qui lui est dédiée
 
 \tdi{métrique}%
 La seconde partie de la \emph{spatialisation} est le calcul de la métrique.
+
+La métrique est une grandeur, généralement quantitative, recoupant la sémantique de la relation de \emph{localisation atomique modélisée.}
+
+Par conséquent des \emph{relations de localisation atomiques} décrivant des situations très différentes peuvent faire appel à la même métrique.
+%
+Par exemple, \onto[orla]{Distance\-Quantitative} et \onto[orla]{A\-La\-Frontiere\-De} sont des concepts sémantiquement assez éloignés, décrivant respectivement une relation métrique et une relation topologique. Pourtant, et à fortiori si l'on prend en compte \emph{l’imprécision,} on peut remarquer que ces deux concepts traduisent un éloignement par rapport à \emph{l'objet de référence,} si ce n'est qu'il est proche d'une valeur donnée (\ie la distance) pour \onto[orla]{Distance\-Quantitative} et (quasi) nul, par rapport à la frontière de \emph{l'objet de référence,} pour \onto[orla]{A\-La\-Frontiere\-De}.
+%
+Ainsi, si ces deux \emph{relations de localisation atomiques} différent, ce n'est pas tant à cause de la métrique sur laquelle elles se fondent, mais sur la manière dont elle est calculée et, surtout, dont ses valeurs sont transformées en degré d'appartenance.
+
+les \ac{zlc} de ces deux \emph{relations de localisation atomiques} sont modélisables à partir d'une même \emph{métrique,} la distance, bien qu'elle ne soit pas calculée à partir du même point, ni interprétée de la même manière.
 
 \tdi{Fuzzyficaiton}%
 Enfin, l'étape dite de \emph{fuzzyfication,} transforme les valeurs de la métrique en un degré d'appartenance.
