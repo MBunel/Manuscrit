@@ -23,7 +23,7 @@
           \fill[black] (\x+.125,.125+\y) circle (\radius pt);
         }
       }
-      \path[ffc] (0,0) rectangle (2,2);
+      \path[ffc, black] (0,0) rectangle (2,2);
     \end{scope}
     \node[text width=3cm, align=center, anchor=north, font=\footnotesize,fill=white] at (1,-.25)
     {\itshape Métrique};
@@ -47,13 +47,13 @@
           }
           % Calcul du rayon à partir de la fuzzyfication
           \pgfmathsetmacro\radius{\fuzzy*2.5}
-          \fill[black] (\x+.125,.125+\y) circle (\radius pt);
+          \fill[RdBu-9-1] (\x+.125,.125+\y) circle (\radius pt);
         }
       }
       \path[ffc] (0,0) rectangle (2,2);
     \end{scope}
     \node[text width=3cm, align=center, anchor=north, font=\footnotesize] at (1,-.25)
-    {\itshape Zone de localisation compatible \normalfont A};
+    {\itshape Zone de localisation compatible \normalfont \textcolor{RdBu-9-1}{A}};
   \end{scope} 
   % Fuzzyfication 2
   \begin{scope}[xshift=10cm, yshift=-2cm,local bounding box=fuzz2]
@@ -74,13 +74,13 @@
           }
           % Calcul du rayon à partir de la fuzzyfication
           \pgfmathsetmacro\radius{\fuzzy*2.5}
-          \fill[black] (\x+.125,.125+\y) circle (\radius pt);
+          \fill[RdBu-9-9] (\x+.125,.125+\y) circle (\radius pt);
         }
       }
-      \path[ffc] (0,0) rectangle (2,2);
+      \path[ffc2] (0,0) rectangle (2,2);
     \end{scope}
     \node[text width=3cm, align=center, anchor=north, font=\footnotesize] at (1,-.25)
-    {\itshape Zone de localisation compatible \normalfont B};
+    {\itshape Zone de localisation compatible \normalfont \textcolor{RdBu-9-9}{B}};
   \end{scope}
   \begin{scope}[xshift=3.75cm,yshift=2.5cm, scale=.5]
     % Courbe
@@ -131,13 +131,13 @@
     \begin{scope}[transparency group]
       % fond
       \begin{scope}
-        \path[ffa]  (3,0) -- (6, 2)  -- (8,2) -- (8,0) -- cycle;
-        \path[ffa_fade]  (8,2) -- (9, 2)  -- (9,0) -- (8,0) -- cycle;
+        \path[ffa2]  (3,0) -- (6, 2)  -- (8,2) -- (8,0) -- cycle;
+        \path[ffa2_fade]  (8,2) -- (9, 2)  -- (9,0) -- (8,0) -- cycle;
       \end{scope}
       % bords
       \begin{scope}
-        \path[ffc] (0,0) -- (3,0) -- (6, 2) -++ (3,0) ;
-        \path[ffc_fade] (8,2) -- (9,2) ;
+        \path[ffc2] (0,0) -- (3,0) -- (6, 2) -++ (3,0) ;
+        \path[ffc2_fade] (8,2) -- (9,2) ;
       \end{scope}
     \end{scope}
     % Axes X, Y
