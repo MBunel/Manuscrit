@@ -62,12 +62,15 @@ Le premier d'entre-eux est le \emph{fuzzyficateur} \onto{Eq\-Val}, défini par u
 
 Le second \emph{fuzzyfieur,} \onto{Sup\-Val}, est défini par une fonction d'appartenance linéaire (Figure \ref{fig:select_supval_b}).
 
+% \dfrac{\Delta y}{\Delta x}x + \dfrac{x_2y_1 - x_1y_2}{\Delta x}
+
 \begin{equation}
   \label{eq:sup_val}
+  \def\arraystretch{1.25}
   x = \left\{
     \begin{array}{ll}
       1 & \text{si}\ θ > -5° \\
-      xx & \text{si}\ -12° ≤ θ ≤ -5° \\
+      \dfrac{x - x_1}{\Delta x} & \text{si}\ -12° ≤ θ ≤ -5° \\
       0 & \text{si}\ θ < -12°\\
     \end{array}
   \right.
@@ -94,7 +97,7 @@ Enfin, le dernier fuzzyfieur
   x = \left\{
     \begin{array}{ll}
       1 & \text{si}\ θ > -5° \\
-      xx & \text{si}\ -12° ≤ θ ≤ -5° \\
+      \dfrac{x_2-x}{\Delta x} & \text{si}\ -12° ≤ θ ≤ -5° \\
       0 & \text{si}\ θ < -12°\\
     \end{array}
   \right.
