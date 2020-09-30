@@ -31,10 +31,11 @@ Le premier d'entre-eux est le \emph{fuzzyficateur} \onto{Eq\-Val}, défini par u
 
 \begin{equation}
   \label{eq:eq_val}
+  \def\arraystretch{1.35}
   x = \left\{
-    \begin{array}{ll}
-      XX & \text{si}\ θ > -5° \\
-      xx & \text{si}\ -12° ≤ θ ≤ -5° \\
+    \begin{array}{cl}
+      \dfrac{x - x_1}{\Delta x} & \text{si}\ θ > -5° \\
+      \dfrac{x_2 - x}{\Delta x} & \text{si}\ -12° ≤ θ ≤ -5° \\
       0 & \text{si}\ θ < -12°\ \text{ou}\ θ > -12°\\
     \end{array}
   \right.
@@ -68,7 +69,7 @@ Le second \emph{fuzzyfieur,} \onto{Sup\-Val}, est défini par une fonction d'app
   \label{eq:sup_val}
   \def\arraystretch{1.25}
   x = \left\{
-    \begin{array}{ll}
+    \begin{array}{cl}
       1 & \text{si}\ θ > -5° \\
       \dfrac{x - x_1}{\Delta x} & \text{si}\ -12° ≤ θ ≤ -5° \\
       0 & \text{si}\ θ < -12°\\
@@ -94,8 +95,9 @@ Enfin, le dernier fuzzyfieur
 
 \begin{equation}
   \label{eq:inf_val}
+  \def\arraystretch{1.25}
   x = \left\{
-    \begin{array}{ll}
+    \begin{array}{cl}
       1 & \text{si}\ θ > -5° \\
       \dfrac{x_2-x}{\Delta x} & \text{si}\ -12° ≤ θ ≤ -5° \\
       0 & \text{si}\ θ < -12°\\
