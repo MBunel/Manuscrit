@@ -4,18 +4,22 @@ La \emph{spatialisation} est la phase de notre méthodologie (\autoref{chap:04})
 
 Le recours à une implémentation raster (\autoref{chap:06}) a deux conséquences importantes. 
 
-\tdi{Importance du raster de base et de la maille}
-Tout d'abord il est nécessaire de définir une résolution de travail, qui influencera sur la précision et la durée du calcul.
-
 \tdi{Importance de la zir}
 Ensuite il est nécessaire de définir la \ac{zir}
 
+\tdi{Importance du raster de base et de la maille}
+Tout d'abord il est nécessaire de définir une résolution de travail, qui influencera sur la précision et la durée du calcul.
+
+Tous les rasters partageant les mêmes \emph{zones initiales de recherche} et résolutions sont parfaitement superposables.
+
+\tdi{Pas de reseampling}%
+Il serait possible de travailler à partir de rasters d'étendue ou de résolution variable
 
 \subsection{Les parties du processus de \emph{spatialisation}}
 
 \tdi{Présenter les 3 grandes étapes de la démarche, leur rôle et leur justification}
 
-La méthode de spatialisation que nous proposons est donc une composition de trois grandes étapes.
+La méthode de spatialisation que nous proposons est donc une composition de trois grandes étapes (\autoref{fig:methodo_spatialisation}).
 
 \tdi{méthode de spatialisation = rasterisation + calcul métrique +
   sélection floue}
