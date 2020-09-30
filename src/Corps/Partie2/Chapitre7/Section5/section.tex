@@ -1,5 +1,8 @@
 Ces nouvelles connaissances peuvent être représentées dans l'ontologie
 
+Pour représenter ces connaissances dans \emph{l'ontologie des relations de localisation atomiques} nous avons défini quatre nouvelles relations ---~\onto[orla]{has\-Rasteriser}, \onto[orla]{has\-Metrique}, \onto[orla]{has\-Fuzzyfier} et \onto[orla]{has\-Modifieur}~---, qui s'ajoutent à la relation \onto[orla]{has\-Re\-la\-tion\-Spatiale\-Atomique} précédemment présentée (\autoref{chap:05}). Chacune de ces nouvelles relations lie une \emph{relation de localisation atomique} à une classe représentant, respectivement, une méthode de \emph{rastérisation,} une méthode de calcul d'une \emph{métrique,} une méthode de \emph{fuzzyfication} et une méthode appliquant un \emph{modifieur} (\autoref{fig:structure_spatialisation_ontologie}). La spatialisation d'une \emph{relation de localisation atomique} peut alors être effectuée en calculant, successivement, la \emph{rastérisation,} la \emph{métrique,} sa \emph{fuzzyfication} et, le cas échant, le \emph{modifieur,} définis dans \ac{orla} pour cette \emph{relation.}
+
+Ainsi, les \emph{relations de localisation atomiques} ne sont pas seulement définissables comme des \emph{relations de localisation} desquelles ne proviennent aucune relation \onto[orla]{has\-Relation\-Spatiale\-Atomique} \footnote{Comme nous l'indiquions dans le \autoref{chap:05}.}, mais également comme des \emph{relations de localisation} auxquelles sont associés un \emph{rastériser,} une \emph{métrique} et un \emph{fuzzyfier} (\ie à l'origine d'une relation \onto[orla]{has\-Rasteriser}, \onto[orla]{has\-Metrique} et \onto[orla]{has\-Fuzzyfier}).
 
 \begin{figure}
   \centering
