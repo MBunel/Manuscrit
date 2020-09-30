@@ -1,0 +1,174 @@
+﻿\begin{tikzpicture}
+  \def\decalageX{-.2}
+  \def\decalageY{-.2}
+  % Arrow
+  \begin{scope}
+    \path[draw, -, shorten >=12pt, shorten <=5pt] (1,2) |- (3.65,3);
+    \path[draw, ->,shorten >=5pt, shorten <=5pt] (8.25,3) -- (10,3);
+    \path[draw, -,shorten >=12pt, shorten <=5pt] (1,0) |- (3.65,-1);
+    \path[draw, ->,shorten >=5pt, shorten <=5pt] (8.25,-1) -- (10,-1);
+  \end{scope}
+  % Représentation métrique
+  \begin{scope}[local bounding box=met]
+    % \path[ffa] (1,.25) rectangle (1.25, .5);
+    \begin{scope}
+      \foreach \x in {0,.25,...,1.75}{
+        \foreach \y in {0,.25,...,1.75}
+        {
+          % Traçage pixels 
+          %\path[draw, line width=.01mm] (\x,\y) rectangle (\x +.25, \y +
+          %.25);
+          % Calcul et représentation distance euclidienne
+          \pgfmathsetmacro\radius{sqrt((\x-1.125)^2+(\y-.375)^2)*1.25}
+          \fill[black] (\x+.125,.125+\y) circle (\radius pt);
+        }
+      }
+      \path[ffc, black] (0,0) rectangle (2,2);
+    \end{scope}
+    \node[text width=3cm, align=center, anchor=north, font=\footnotesize,fill=white] at (1,-.25)
+    {\itshape Métrique};
+  \end{scope}
+  % Fuzzyfication 1
+  \begin{scope}[xshift=10cm, yshift=2cm,local bounding box=fuzz]
+    \begin{scope}
+      \foreach \x in {0,.25,...,1.75}{
+        \foreach \y in {0,.25,...,1.75}
+        {
+          % Traçage pixels 
+          %\path[draw, line width=.01mm] (\x,\y) rectangle (\x +.25, \y +
+          %.25);
+          % Calcul et représentation floue distance euclidienne
+          \pgfmathsetmacro\dist{sqrt((\x-1.125)^2+(\y-.375)^2)}
+          % Fuzzyfication de la distance
+          \pgfmathsetmacro\fuzzy{%
+            ifthenelse(\dist < .25,1,%
+            ifthenelse(\dist < 2,-0.57*\dist+1.14,0)%
+            )
+          }
+          % Calcul du rayon à partir de la fuzzyfication
+          \pgfmathsetmacro\radius{\fuzzy*2.5}
+          \fill[RdBu-9-1] (\x+.125,.125+\y) circle (\radius pt);
+        }
+      }
+      \path[ffc] (0,0) rectangle (2,2);
+    \end{scope}
+    \node[text width=3cm, align=center, anchor=north, font=\footnotesize] at (1,-.25)
+    {\itshape Zone de localisation compatible \normalfont \textcolor{RdBu-9-1}{A}};
+  \end{scope} 
+  % Fuzzyfication 2
+  \begin{scope}[xshift=10cm, yshift=-2cm,local bounding box=fuzz2]
+    \begin{scope}
+      \foreach \x in {0,.25,...,1.75}{
+        \foreach \y in {0,.25,...,1.75}
+        {
+          % Traçage pixels 
+          %\path[draw, line width=.01mm] (\x,\y) rectangle (\x +.25, \y +
+          %.25);
+          % Calcul et représentation floue distance euclidienne
+          \pgfmathsetmacro\dist{sqrt((\x-1.125)^2+(\y-.375)^2)}
+          % Fuzzyfication de la distance
+          \pgfmathsetmacro\fuzzy{%
+            ifthenelse(\dist < .75,0,%
+            ifthenelse(\dist < 1.75,\dist-.75,1)%
+            )
+          }
+          % Calcul du rayon à partir de la fuzzyfication
+          \pgfmathsetmacro\radius{\fuzzy*2.5}
+          \fill[RdBu-9-9] (\x+.125,.125+\y) circle (\radius pt);
+        }
+      }
+      \path[ffc2] (0,0) rectangle (2,2);
+    \end{scope}
+    \node[text width=3cm, align=center, anchor=north, font=\footnotesize] at (1,-.25)
+    {\itshape Zone de localisation compatible \normalfont \textcolor{RdBu-9-9}{B}};
+  \end{scope}
+  \begin{scope}[xshift=3.75cm,yshift=2.5cm, scale=.5]
+    % Courbe
+    \begin{scope}[transparency group]
+      % fond
+      \begin{scope}
+        \path[ffa]  (0,2) -- (1, 2)  -- (8,0) -- (0,0) -- cycle;
+      \end{scope}
+      % bords
+      \begin{scope}
+        \path[ffc] (0,2) -- (1,2) -- (8,0);
+        \path[ffc_fade] (8,0) -- (9,0) ;
+      \end{scope}
+    \end{scope}
+    % Axes X, Y
+    \begin{scope}
+      % Axe X
+      \begin{scope}
+        % Axe
+        \draw[->] (0, \decalageX) --++ (9, 0) coordinate (x axis);
+        % Graduations
+        \foreach \n/\t in {0/,{0},1/{0,25},2/{},3/{},4/{},5/{},6/{},7/{},8/{}}
+        {
+          \draw[-] (\n, \decalageX - .05) --++ (0, .1);
+          \node[below, font=\tiny] at (\n, \decalageX - .05) {\t};
+        }
+        % label
+        \node[below left, font=\tiny] at (x axis) {\itshape Distance
+          \normalfont (cm)};
+      \end{scope}
+      % Axe Y
+      \begin{scope}
+        % Axe
+        \draw[-] (\decalageY ,0) --++ (0, 2) coordinate (y axis);
+        % Graduations
+        \foreach \n/\t in {0/{0},2/{1}}
+        {
+          \draw[-] (\decalageY -.05, \n) --++ (.1, 0);
+          \node[left, font=\tiny] at (\decalageY -.05, \n) {\t};
+        }
+        % Label
+        \node[above, font=\tiny] at (y axis) {$\mu$};
+      \end{scope}
+    \end{scope}
+  \end{scope}
+  \begin{scope}[xshift=3.75cm,yshift=-1.5cm, scale=.5]
+    % Courbe
+    \begin{scope}[transparency group]
+      % fond
+      \begin{scope}
+        \path[ffa2]  (3,0) -- (6, 2)  -- (8,2) -- (8,0) -- cycle;
+        \path[ffa2_fade]  (8,2) -- (9, 2)  -- (9,0) -- (8,0) -- cycle;
+      \end{scope}
+      % bords
+      \begin{scope}
+        \path[ffc2] (0,0) -- (3,0) -- (6, 2) -++ (3,0) ;
+        \path[ffc2_fade] (8,2) -- (9,2) ;
+      \end{scope}
+    \end{scope}
+    % Axes X, Y
+    \begin{scope}
+      % Axe X
+      \begin{scope}
+        % Axe
+        \draw[->] (0, \decalageX) --++ (9, 0) coordinate (x axis);
+        % Graduations
+        \foreach \n/\t in {0/,{0},1/{0.25},2/{},3/{},4/{},5/{},6/{},7/{},8/{}}
+        {
+          \draw[-] (\n, \decalageX - .05) --++ (0, .1);
+          \node[below, font=\tiny] at (\n, \decalageX - .05) {\t};
+        }
+        % label
+        \node[below left, font=\tiny] at (x axis) {\itshape Distance
+          \normalfont (cm)};
+      \end{scope}
+      % Axe Y
+      \begin{scope}
+        % Axe
+        \draw[-] (\decalageY ,0) --++ (0, 2) coordinate (y axis);
+        % Graduations
+        \foreach \n/\t in {0/{0},2/{1}}
+        {
+          \draw[-] (\decalageY -.05, \n) --++ (.1, 0);
+          \node[left, font=\tiny] at (\decalageY -.05, \n) {\t};
+        }
+        % Label
+        \node[above, font=\tiny] at (y axis) {$\mu$};
+      \end{scope}
+    \end{scope}
+  \end{scope}
+\end{tikzpicture}

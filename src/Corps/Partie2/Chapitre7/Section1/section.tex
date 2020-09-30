@@ -1,14 +1,55 @@
+La \emph{spatialisation} est la phase de notre méthodologie (\autoref{chap:04}) où les \emph{indices de localisation,} décomposés de manière à ne contenir qu'une \emph{relation de localisation atomique} et qu'un \emph{objet de référence nommé} (\autoref{chap:05}), sont interprétés pour construire une \emph{zone de localisation compatible} ---~délimitant la région où \emph{l'indice de localisation} est vrai~---, représentée par un raster flou (\autoref{chap:06}).
+
 \subsection{Considérations générales}
 
-\tdi{Importance de la zir}
-\tdi{Importance du raster de base et de la maille}
 
-\subsection{Les parties du processus de \emph{spatialisation}}
+\tdi{Organisation}
+Conformément au \emph{principe de modélisation autonome,} la \emph{spatialisation} est effectuée parallèlement pour tous les \emph{indices de localisation} résultant de la \emph{phase de décomposition.} 
+
+Le recours à une implémentation raster (\autoref{chap:06}) a deux conséquences importantes. 
+
+\tdi{Importance de la zir}
+Ensuite il est nécessaire de définir la \ac{zir}
+
+\tdi{Importance du raster de base et de la maille}
+Tout d'abord il est nécessaire de définir une résolution de travail, qui influencera sur la précision et la durée du calcul.
+
+Tous les rasters partageant les mêmes \emph{zones initiales de recherche} et résolutions sont parfaitement superposables.
+
+\tdi{Pas de reseampling}%
+Il serait possible de travailler à partir de rasters d'étendue ou de résolution variable
+
+
+\tdi{contraintes techniques (raster) ?? }
+\tdi{rasterisation obj ref}
+
+
+\subsection{Définition de la méthode de \emph{spatialisation}}
+
+% Ainsi, cette \emph{méthodologie} revient à considérer que la \ac{zlc}, \emph{spatialisant} un \emph{indice de localisation} donné, équivaut au \emph{sous-ensemble flou} des positions (échantillonnées par des pixels) validant un critère donné, exprimé par une \emph{métrique} \emph{ad hoc}.  
+
+La définition de la \emph{méthode de spatialisation} est le point central de cette thèse, les phases précédentes (\ie la \emph{décomposition}) et suivantes (\ie la \emph{fusion}) n'étant en réalité que des pré et des post-traitements. Aussi, cette section est probablement la plus importante de ce manuscrit.
+
+Pour définir une \emph{méthode de spatialisation} le mieux est encore de réfléchir à la nature du résultat que nous souhaitons obtenir, les \emph{zones de localisations compatibles.} Ces dernières doivent délimiter la région où \emph{l'indice de localisation} traité est vrai, c'est-à-dire qu'en toute position de la \ac{zlc}, l'assertion : \enquote{\emph{l'indice de localisation} est vrai} est correcte. L'utilisation de la \emph{théorie des sous-ensembles flous} (\autoref{chap:06}) nous permet de mettre en place une modélisation plus fine, considérant des nuances de vérité. On peut ainsi construire une \emph{zone de localisation compatible} distinguant les positions ou l'assertion : \enquote{\emph{l'indice de localisation} est vrai} est parfaitement correcte (\ie où le \emph{degré d'appartenance} est de 1), de celles où elle l'est partiellement (\ie où le \emph{degré d'appartenance} est strictement supérieur à 0 mais inférieur à 1). L'implémentation raster (\autoref{chap:06}) facilite quant à elle la définition de zone de la \ac{zlc}, en résumant sa construction au calcul d'un \emph{degré d'appartenance} pour chaque pixel d'un raster échantillonnant la \ac{zir}. Ces éléments ne définissent cependant que la manière que représenter la \emph{zone de localisation compatible} et non la façon de la construire, cette tâche incombant à la \emph{méthode de spatialisation.}
+%
+
+
+Par exemple on peut considérer que ce qui distingue deux configurations spatiales opposées (\eg correspondant à \onto[orla]{Intérieur} et \onto[orla]{Extérieur}), n'est pas un phénomène différent, mais une interprétation différente d'un même phénomène. Pour le dire autrement, \onto[orla]{Intérieur} et \onto[orla]{Extérieur} sont des noms différents, donnés à un même critère.
+
+À l'inverse deux \emph{relations} comme \onto[orla]{Altitude\-Superieure} et \onto[orla]{Exterieur} décrivent un phénomène différent (\ie la différence d'altidue et la distance à \emph{l'objet de référence}), mais l’interprètent de manière similaire (ce sont les valeurs au-dela d'un seuil qui sont retenues).
+
+%
+Si l'on peut distinguer le calcul du critère de son interprétation on peut
+
+Les \emph{relations de localisation atomiques} se distinguent donc les unes des autres par leur \emph{métrique,} mais également par la manière dont celle-ci est interprétée. Cependant ces deux critères ne permettent pas de distinguer toutes les situations. Prenons pour exemple les descriptions de position : \enquote{Je suis à 300 mètres de ma maison} et \enquote{Je suis à la frontière du bois de Vincennes}. Ces deux phrases décrivent des situations en apparence très éloignées, elles sont d'ailleurs modélisables avec des \emph{relations de localisation atomiques} très différentes, \onto[orla]{Distance\-Quantitive} et \onto[orla]{A\-La\-Frontiere\-De}. Pourtant si l'on se penche sur leur signification on peut s’apercevoir qu'elles interprètent la même métrique, de la même manière. En effet, toutes les deux décrivent un éloignement entre le \emph{sujet} et \emph{l'objet de référence,} si ce n'est qu'il est explicite et quantifié dans un cas, alors qu'il est sous-entendu dans l'autre. Ces deux \emph{relations de localisation atomiques} peuvent donc être modélisée avec la même métrique, la distance à \emph{l'objet de référence.} On pourrait penser que ces \emph{relations} se distinguent par leur interprétation de cette même métrique, comme c'est le cas pour les \emph{relations de localisation atomiques} \onto[orla]{Exterieur} et \onto[orla]{Intérieur}, ce n'est pourtant pas le cas. La \emph{relation} \onto[orla]{Distance\-Quantitive} indique explicitement que la distance entre le \emph{sujet} et \emph{l'objet de référence} est proche \footnote{} d'une valeur donnée (ici \SI{300}{\meter}), mais c'est également le cas de la \emph{relation} \onto[orla]{A\-La\-Frontiere\-De}, si ce n'est que cette distance est implicite et nulle. Bien entendu la notion de \enquote{proximité}, correspondant à \emph{l'imprécision} de la zone modélisée peut être différente entre ces deux \emph{relations,} mais cela ne change pas notre propos, \onto[orla]{Distance\-Quantitive} et \onto[orla]{A\-La\-Frontiere\-De} décrivent toutes deux une situation où la distance à \emph{l'objet de référence} (\ie la métrique) est proche d'une valeur donnée. Ces deux \emph{relations} ne sont différentiables qu'en ajoutant un nouveau paramètre de \emph{spatialisation,} le point d'origine de la \emph{métrique.} En effet, si ces deux \emph{relations} décrivent un éloignement par rapport à \emph{l'objet de référence} elles ne se basent pas sur la même partie de \emph{l'objet de référence,} là où \onto[orla]{Distance\-Quantitive} décrit un éloignement par rapport à l'objet dans son ensemble, \onto[orla]{A\-La\-Frontiere\-De} décrit, explicitement, un éloignement par rapport à sa frontière, ce qui est une distinction sémantique forte. Ce troisième critère permet alors toutes les distinctions nécessaires.
+
+
+
+\subsubsection{Les étapes de la \emph{méthode de spatialisation}}
 
 \tdi{Présenter les 3 grandes étapes de la démarche, leur rôle et leur justification}
 
-\tdi{méthode de spatialisation = rasterisation + calcul métrique +
-  sélection floue}
+La méthode de spatialisation que nous proposons est donc une composition de trois étapes (\autoref{fig:methodo_spatialisation}), réalisées séquentiellement.
 
 \begin{figure}
   \centering
@@ -16,6 +57,32 @@
   \caption{Méthode de \emph{spatialisation}}
   \label{fig:methodo_spatialisation}
 \end{figure}
+
+\tdi{rasterisation, pourquoi + justifications}%
+La première partie de la \emph{spatialisation} est la transformation de 
+Dans un premier temps il est nécessaire de transformer \emph{l'objet de référence} en raster, de manière ce qu'il puisse être traité. Cette partie est nommée \emph{rasterisation} est, comme nous le verrons dans la partie qui lui est dédiée (\autoref{chap:07-sec2}), réalisable de plusieurs façons.
+\tdi{Sélection d'une partie de l'objet}
+\tdi{rasterisation à proprement parler}
+
+\tdi{métrique}%
+La seconde partie de la \emph{spatialisation} est le calcul de la métrique.
+
+La métrique est une grandeur, généralement quantitative, recoupant la sémantique de la relation de \emph{localisation atomique modélisée.}
+
+Par conséquent des \emph{relations de localisation atomiques} décrivant des situations très différentes peuvent faire appel à la même métrique.
+%
+Par exemple, \onto[orla]{Distance\-Quantitative} et \onto[orla]{Exterieur} sont des concepts sémantiquement assez éloignés, décrivant respectivement une relation métrique et une relation topologique. Pourtant, ces deux concepts traduisent une forme d'éloignement par rapport à \emph{l'objet de référence,} si ce n'est qu'il est d'une valeur donnée (\ie la distance) pour \onto[orla]{Distance\-Quantitative} alors qu'il est qualitatif pour \onto[orla]{Exterieur}. Les \ac{zlc} de ces deux \emph{relations de localisation atomiques} sont modélisables à partir d'une même \emph{métrique,} la distance, mais différent par la manière dont cette métrique est interprétée et donc transformée en un degré d'appartenance.
+
+% Fuzzyficaiton
+Cette transformation est effectuée lors de la \emph{fuzzyfication,} dernière partie de la \emph{spatialisation.}
+%
+La \emph{fuzzyfication} a pour particularité de devoir transformer des valeurs provenant d'un domaine variable, puisque dépendant d'une \emph{métrique} donnée en un \emph{degré d'appartenance,} toujours compris entre 0 et 1.
+
+Contrairement à ce que son nom peut laisser penser, le rôle de la phase de \emph{fuzzyfication} n'est pas seulement de transformer la \emph{métrique} en un \emph{degré d'appartenance,} mais de sélectionner les pixels pour lesquels la valeur de la \emph{métrique} est
+
+
+
+
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../../../../main"

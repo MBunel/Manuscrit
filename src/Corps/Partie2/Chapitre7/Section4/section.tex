@@ -2,18 +2,7 @@ La dernière partie de la \emph{phase de spatialisation} est la
 \emph{fuzzyfication de la métrique.} C'est à ce moment qu'est créée la
 \emph{zone de localisation compatible.}
 
-\subsection{XXX}
-
-\begin{figure}
-  \centering
-  \includegraphics[width=\textwidth]{../../../../tmp/selecteur.jpeg}
-  \caption{Méthodes de sélection}
-  \label{fig:methode_selecteur}
-\end{figure}
-
-\tdi{Présentation des différents sélecteurs}
-
-\tdi{Sélecteur = forme}
+\subsection{la méthode de \emph{fuzzyfication}}
 
 \tdi{La sémantique est dans la forme}%
 Comme nous le mentions précédemment (\autoref{chap:05}), le choix de la forme de la fonction d'appartenance est essentiel à la \emph{spatialisation,} puisqu'il
@@ -25,26 +14,104 @@ Ainsi, la sémantique est dans la forme de la fonction d'appartenance.
 }%
 La question de la définition des seuils de la fonction d'appartenance utilisée est également importante. Toutefois, il s'agit 
 
+\begin{figure}
+  \centering
+  \input{../figures/importance_fuzzyfication.tex}
+  \caption{Méthodes de sélection}
+  \label{fig:importance_fuzzyfication}
+\end{figure}
+
+\subsection{Les différents \emph{fuzzyficateurs}}
+
+\tdi{Liste des fuzzyficateurs}
+
+Nous proposons la définition de trois fonctions de \emph{fuzzyfication} principales, déclinées en plusieurs variantes, portant le total des \emph{fuzzyficateurs} à sept.
+
+Le premier d'entre-eux est le \emph{fuzzyficateur} \onto{Eq\-Val}, défini par une fonction d'appartenance triangulaire (Figure \ref{fig:select_eqval_b}).
+
+\begin{equation}
+  \label{eq:eq_val}
+  x = \left\{
+    \begin{array}{ll}
+      XX & \text{si}\ θ > -5° \\
+      xx & \text{si}\ -12° ≤ θ ≤ -5° \\
+      0 & \text{si}\ θ < -12°\ \text{ou}\ θ > -12°\\
+    \end{array}
+  \right.
+\end{equation}
+
 
 \begin{figure}
   \centering
-  \input{../figures/fnc_eq_val.tex}
+  \subfloat[eqval]{
+    \input{../figures/fnc_eq_val.tex}
+    \label{fig:select_eqval_b}
+  }
+  
+  \subfloat[eqval0]{
+    \input{../figures/fnc_eq_val.tex}
+    \label{fig:select_eqval_0}
+  }\hfill  
+  \subfloat[eqvalangle]{
+    \input{../figures/fnc_eq_val.tex}
+    \label{fig:select_eqval_ang}
+  }  
   \caption{eqval}
   \label{fig:select_eqval}
 \end{figure}
 
+Le second \emph{fuzzyfieur,} \onto{Sup\-Val}, est défini par une fonction d'appartenance linéaire (Figure \ref{fig:select_supval_b}).
+
+% \dfrac{\Delta y}{\Delta x}x + \dfrac{x_2y_1 - x_1y_2}{\Delta x}
+
+\begin{equation}
+  \label{eq:sup_val}
+  \def\arraystretch{1.25}
+  x = \left\{
+    \begin{array}{ll}
+      1 & \text{si}\ θ > -5° \\
+      \dfrac{x - x_1}{\Delta x} & \text{si}\ -12° ≤ θ ≤ -5° \\
+      0 & \text{si}\ θ < -12°\\
+    \end{array}
+  \right.
+\end{equation}
 
 \begin{figure}
   \centering
-  \input{../figures/fnc_sup_val.tex}
+  \subfloat[supval]{
+    \input{../figures/fnc_sup_val.tex}
+    \label{fig:select_supval_b}
+  }\hfill
+  \subfloat[supval0]{
+    \input{../figures/fnc_sup_val.tex}
+    \label{fig:select_supval_0}
+  }
   \caption{supval}
   \label{fig:select_supval}
 \end{figure}
 
+Enfin, le dernier fuzzyfieur
+
+\begin{equation}
+  \label{eq:inf_val}
+  x = \left\{
+    \begin{array}{ll}
+      1 & \text{si}\ θ > -5° \\
+      \dfrac{x_2-x}{\Delta x} & \text{si}\ -12° ≤ θ ≤ -5° \\
+      0 & \text{si}\ θ < -12°\\
+    \end{array}
+  \right.
+\end{equation}
 
 \begin{figure}
   \centering
-  \input{../figures/fnc_inf_val.tex}
+  \subfloat[infval]{
+    \input{../figures/fnc_inf_val.tex}
+  }\hfill
+  \subfloat[infval0]{
+    \input{../figures/fnc_inf_val.tex}
+  }
+
   \caption{infval}
   \label{fig:select_infval}
 \end{figure}

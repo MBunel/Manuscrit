@@ -1,3 +1,8 @@
+Ces nouvelles connaissances peuvent être représentées dans l'ontologie
+
+Pour représenter ces connaissances dans \emph{l'ontologie des relations de localisation atomiques} nous avons défini quatre nouvelles relations ---~\onto[orla]{has\-Rasteriser}, \onto[orla]{has\-Metrique}, \onto[orla]{has\-Fuzzyfier} et \onto[orla]{has\-Modifieur}~---, qui s'ajoutent à la relation \onto[orla]{has\-Re\-la\-tion\-Spatiale\-Atomique} précédemment présentée (\autoref{chap:05}). Chacune de ces nouvelles relations lie une \emph{relation de localisation atomique} à une classe représentant, respectivement, une méthode de \emph{rastérisation,} une méthode de calcul d'une \emph{métrique,} une méthode de \emph{fuzzyfication} et une méthode appliquant un \emph{modifieur} (\autoref{fig:structure_spatialisation_ontologie}). La spatialisation d'une \emph{relation de localisation atomique} peut alors être effectuée en calculant, successivement, la \emph{rastérisation,} la \emph{métrique,} sa \emph{fuzzyfication} et, le cas échant, le \emph{modifieur,} définis dans \ac{orla} pour cette \emph{relation.}
+
+Ainsi, les \emph{relations de localisation atomiques} ne sont pas seulement définissables comme des \emph{relations de localisation} desquelles ne proviennent aucune relation \onto[orla]{has\-Relation\-Spatiale\-Atomique} \footnote{Comme nous l'indiquions dans le \autoref{chap:05}.}, mais également comme des \emph{relations de localisation} auxquelles sont associés un \emph{rastériser,} une \emph{métrique} et un \emph{fuzzyfier} (\ie à l'origine d'une relation \onto[orla]{has\-Rasteriser}, \onto[orla]{has\-Metrique} et \onto[orla]{has\-Fuzzyfier}).
 
 \begin{figure}
   \centering
@@ -7,16 +12,17 @@
   \label{fig:structure_spatialisation_ontologie}
 \end{figure}
 
+Par exemple, la \emph{relation de localisation atomique} \onto[orla]{Sous\-Al\-ti\-tu\-de} ---~notamment utilisée pour définir la \emph{relation} \onto[orla]{Sous\-Pro\-che\-De} (\autoref{chap:05}) \todo{Changer par une référence à la figure de décomposition lorsque définie}~--- est spatialisée à l'aide du \emph{rasteriser} \onto[orla]{Geometrie}, de la \emph{métrique} \onto[orla]{Delta\-Nearest\-Val} et du \emph{fuzzyficateur} \onto[orla]{Inf\-Zero} (\autoref{fig:ex_parties_statialisation_sousalt}).
 
 \begin{figure}
   \centering
-  %\includegraphics[width=\textwidth]{../../../../tmp/dec.jpeg}
   \input{../figures/parties_spatialisation_ontologie.tex}
   \caption{Exemple de la XXX de la \emph{relation de localisation
       atomique} \protect\onto[orla]{Sous\-Al\-ti\-tu\-de}.}
   \label{fig:ex_parties_statialisation_sousalt}
 \end{figure}
 
+La \emph{relation de localisation atomique} \onto[orla]{Dans\-Pla\-ni\-mé\-tri\-que} est quant à elle \emph{spatialisée} avec le même \emph{rasteziser} (\onto[orla]{Geometrie}), la \emph{métrique} \onto[orla]{XX} et le \emph{fuzzyficateur} \onto[orla]{XX} (\autoref{fig:ex_parties_statialisation_dansplani}).
 
 \begin{figure}
   \centering
@@ -25,6 +31,8 @@
       atomique} \protect\onto[orla]{Dans\-Pla\-ni\-mé\-tri\-que}.}
   \label{fig:ex_parties_statialisation_dansplani}
 \end{figure}
+
+La \emph{relation de localisation atomique} \onto[orla]{Not\-A\-La\-Fron\-ti\-ere\-De} est quant à elle définie avec un \emph{modifieur,} \onto[orla]{Not}, qui permet de la distinguer de son opposée, \onto[orla]{A\-La\-Fron\-ti\-ere\-De}, utilisant le même \emph{rasteriser}, \onto[orla]{Geometrie}, la même \emph{métrique,} \onto[orla]{XX} et le même \emph{fuzzyficateur,} \onto[orla]{XX} (\autoref{fig:ex_parties_statialisation_notalafrontierede}).
 
 \begin{figure}
   \centering

@@ -34,6 +34,14 @@
     ffa, 
     path fading=west
   },
+  ffa2_fade/.style={%
+    ffa2, 
+    path fading=east
+  },
+  ffa2_fade_m/.style={%
+    ffa2, 
+    path fading=west
+  },
   ffc/.style={%
     draw=RdBu-9-1, 
     line width=1
@@ -56,6 +64,22 @@
     draw=white, 
     postaction={%
       draw=RdBu-9-1, 
+      path fading=west
+    }
+  },
+  ffc2_fade/.style={%
+    ffc2, 
+    draw=white, 
+    postaction={%
+      draw=RdBu-9-9, 
+      path fading=east
+    }
+  },
+  ffc2_fade_m/.style={%
+    ffc2, 
+    draw=white, 
+    postaction={%
+      draw=RdBu-9-9, 
       path fading=west
     }
   }
