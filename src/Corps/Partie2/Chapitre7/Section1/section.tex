@@ -15,14 +15,32 @@ Tous les rasters partageant les mêmes \emph{zones initiales de recherche} et r�
 \tdi{Pas de reseampling}%
 Il serait possible de travailler à partir de rasters d'étendue ou de résolution variable
 
-\subsection{Les parties du processus de \emph{spatialisation}}
+\tdi{Organisation}
+Conformément au \emph{principe de modélisation autonome,} la \emph{spatialisation} est effectuée parallèlement pour tous les \emph{indices de localisation} résultant de la \emph{phase de décomposition.} 
+
+
+
+
+
+\subsection{Définition de la méthode de \emph{spatialisation}}
+
+% Ainsi, cette \emph{méthodologie} revient à considérer que la \ac{zlc}, \emph{spatialisant} un \emph{indice de localisation} donné, équivaut au \emph{sous-ensemble flou} des positions (échantillonnées par des pixels) validant un critère donné, exprimé par une \emph{métrique} \emph{ad hoc}.  
+
+La définition de la \emph{méthode de spatialisation} est le point central de cette thèse, les phases précédentes (\ie la \emph{décomposition}) et suivantes (\ie la \emph{fusion}) n'étant en réalité que des pré et des post-traitements. Aussi, cette section est probablement la plus importante de ce manuscrit.
+
+Pour définir une \emph{méthode de spatialisation} le mieux est encore de réfléchir à la nature du résultat que nous souhaitons obtenir, les \emph{zones de localisations compatibles.} Ces dernières doivent délimiter la région où \emph{l'indice de localisation} traité est vrai, c'est-à-dire qu'en toute position de la \ac{zlc}, l'assertion : \enquote{\emph{l'indice de localisation} est vrai} est correcte. L'utilisation de la \emph{théorie des sous-ensembles flous} (\autoref{chap:06}) nous permet de mettre en place une modélisation plus fine, considérant des nuances de vérité. On peut ainsi construire une \emph{zone de localisation compatible} distinguant les positions ou l'assertion : \enquote{\emph{l'indice de localisation} est vrai} est parfaitement correcte (\ie où le \emph{degré d'appartenance} est de 1), de celles où elle l'est partiellement (\ie où le \emph{degré d'appartenance} est strictement supérieur à 0 mais inférieur à 1). L'implémentation raster (\autoref{chap:06}) facilite quant à elle la définition de zone de la \ac{zlc}, en résumant sa construction au calcul d'un \emph{degré d'appartenance} pour chaque pixel d'un raster échantillonnant la \ac{zir}. Ces éléments ne définissent cependant que la manière que représenter la \emph{zone de localisation compatible} et non la façon de la construire, cette tâche incombant à la \emph{méthode de spatialisation.}
+%
+
+\tdi{Parler du fait qu'il peut être intéressant de calculer la métrique à partir d'endroits différents de obj ref}%
+Une autre dimension peut être ajoutée 
+
+\tdi{contraintes techniques (raster) ?? }
+
+\subsubsection{Les étapes de la \emph{méthode de spatialisation}}
 
 \tdi{Présenter les 3 grandes étapes de la démarche, leur rôle et leur justification}
 
-La méthode de spatialisation que nous proposons est donc une composition de trois grandes étapes (\autoref{fig:methodo_spatialisation}).
-
-\tdi{méthode de spatialisation = rasterisation + calcul métrique +
-  sélection floue}
+La méthode de spatialisation que nous proposons est donc une composition de trois étapes (\autoref{fig:methodo_spatialisation}), réalisées séquentiellement.
 
 \begin{figure}
   \centering
@@ -32,7 +50,10 @@ La méthode de spatialisation que nous proposons est donc une composition de tro
 \end{figure}
 
 \tdi{rasterisation, pourquoi + justifications}%
+La première partie de la \emph{spatialisation} est la transformation de 
 Dans un premier temps il est nécessaire de transformer \emph{l'objet de référence} en raster, de manière ce qu'il puisse être traité. Cette partie est nommée \emph{rasterisation} est, comme nous le verrons dans la partie qui lui est dédiée (\autoref{chap:07-sec2}), réalisable de plusieurs façons.
+\tdi{Sélection d'une partie de l'objet}
+\tdi{rasterisation à proprement parler}
 
 \tdi{métrique}%
 La seconde partie de la \emph{spatialisation} est le calcul de la métrique.
@@ -44,7 +65,13 @@ Par conséquent des \emph{relations de localisation atomiques} décrivant des si
 Par exemple, \onto[orla]{Distance\-Quantitative} et \onto[orla]{Exterieur} sont des concepts sémantiquement assez éloignés, décrivant respectivement une relation métrique et une relation topologique. Pourtant, ces deux concepts traduisent une forme d'éloignement par rapport à \emph{l'objet de référence,} si ce n'est qu'il est d'une valeur donnée (\ie la distance) pour \onto[orla]{Distance\-Quantitative} alors qu'il est qualitatif pour \onto[orla]{Exterieur}. Les \ac{zlc} de ces deux \emph{relations de localisation atomiques} sont modélisables à partir d'une même \emph{métrique,} la distance, mais différent par la manière dont cette métrique est interprétée et donc transformée en un degré d'appartenance.
 
 % Fuzzyficaiton
-Cette transformation est effectuée lors de la \emph{fuzzyfication,} dernière partie de la \emph{spatialisation.} 
+Cette transformation est effectuée lors de la \emph{fuzzyfication,} dernière partie de la \emph{spatialisation.}
+%
+La \emph{fuzzyfication} a pour particularité de devoir transformer des valeurs provenant d'un domaine variable, puisque dépendant d'une \emph{métrique} donnée en un \emph{degré d'appartenance,} toujours compris entre 0 et 1.
+
+Contrairement à ce que son nom peut laisser penser, le rôle de la phase de \emph{fuzzyfication} n'est pas seulement de transformer la \emph{métrique} en un \emph{degré d'appartenance,} mais de sélectionner les pixels pour lesquels la valeur de la \emph{métrique} est
+
+
 
 
 %%% Local Variables:
