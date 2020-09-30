@@ -2,6 +2,10 @@ La \emph{spatialisation} est la phase de notre méthodologie (\autoref{chap:04})
 
 \subsection{Considérations générales}
 
+
+\tdi{Organisation}
+Conformément au \emph{principe de modélisation autonome,} la \emph{spatialisation} est effectuée parallèlement pour tous les \emph{indices de localisation} résultant de la \emph{phase de décomposition.} 
+
 Le recours à une implémentation raster (\autoref{chap:06}) a deux conséquences importantes. 
 
 \tdi{Importance de la zir}
@@ -15,11 +19,9 @@ Tous les rasters partageant les mêmes \emph{zones initiales de recherche} et r�
 \tdi{Pas de reseampling}%
 Il serait possible de travailler à partir de rasters d'étendue ou de résolution variable
 
-\tdi{Organisation}
-Conformément au \emph{principe de modélisation autonome,} la \emph{spatialisation} est effectuée parallèlement pour tous les \emph{indices de localisation} résultant de la \emph{phase de décomposition.} 
 
-
-
+\tdi{contraintes techniques (raster) ?? }
+\tdi{rasterisation obj ref}
 
 
 \subsection{Définition de la méthode de \emph{spatialisation}}
@@ -33,12 +35,15 @@ Pour définir une \emph{méthode de spatialisation} le mieux est encore de réfl
 
 
 Par exemple on peut considérer que ce qui distingue deux configurations spatiales opposées (\eg correspondant à \onto[orla]{Intérieur} et \onto[orla]{Extérieur}), n'est pas un phénomène différent, mais une interprétation différente d'un même phénomène. Pour le dire autrement, \onto[orla]{Intérieur} et \onto[orla]{Extérieur} sont des noms différents, donnés à un même critère.
+
+À l'inverse deux \emph{relations} comme \onto[orla]{Altitude\-Superieure} et \onto[orla]{Exterieur} décrivent un phénomène différent (\ie la différence d'altidue et la distance à \emph{l'objet de référence}), mais l’interprètent de manière similaire (ce sont les valeurs au-dela d'un seuil qui sont retenues).
+
 %
 Si l'on peut distinguer le calcul du critère de son interprétation on peut
 
-Les \emph{relations de localisation atomiques} se distinguent donc les unes des autres par leur \emph{métrique,} mais également par la manière dont celle-ci est interprétée. Cependant ces deux critères ne permettent pas de distinguer toutes les situations. Prenons par exemple les descriptions de position : \enquote{Je suis à 300 mètres de ma maison} et \enquote{Je suis à la frontière du bois de Vincennes}. Ces deux phrases sont en apparence très éloignées, elles sont d'ailleurs modélisables avec des \emph{relations de localisation atomiques} très différentes, \onto[orla]{Distance\-Quantitive} et \onto[orla]{A\-La\-Frontiere\-De}. Pourtant si l'on se penche sur leur signification on peut s’apercevoir qu'elles interprètent la même métrique, de la même manière. En effet, toutes les deux décrivent un éloignement entre le \emph{sujet} et \emph{l'objet de référence,} si ce n'est qu'il est explicite et quantifié dans un cas, alors qu'il est sous-entendu dans l'autre. Ces deux \emph{relations de localisation atomiques} peuvent donc être modélisée avec la même métrique, la distance à \emph{l'objet de référence.} On pourrait penser que ces \emph{relations} se distinguent par leur interprétation de cette même métrique, comme c'est le cas pour les \emph{relations de localisation atomiques} \onto[orla]{Exterieur} et \onto[orla]{Intérieur}, ce n'est pourtant pas le cas. La \emph{relation} \onto[orla]{Distance\-Quantitive} indique explicitement que la distance entre le \emph{sujet} et \emph{l'objet de référence} est proche \footnote{} d'une valeur donnée (ici \SI{300}{\meter}), mais c'est également le cas de la \emph{relation} \onto[orla]{A\-La\-Frontiere\-De}, si ce n'est que cette distance est implicite et nulle. Bien entendu la notion de \enquote{proximité}, correspondant à \emph{l'imprécision} de la zone modélisée peut être différente entre ces deux \emph{relations,} mais cela ne change pas notre propos, \onto[orla]{Distance\-Quantitive} et \onto[orla]{A\-La\-Frontiere\-De} décrivent toutes deux une situation où la distance à \emph{l'objet de référence} (\ie la métrique) est proche d'une valeur donnée. Ces deux \emph{relations} ne sont différentiables qu'en ajoutant un nouveau paramètre de \emph{spatialisation,} le point d'origine de la \emph{métrique.} En effet, si ces deux \emph{relations} décrivent un éloignement par rapport à \emph{l'objet de référence} elles ne se basent pas sur la même partie de \emph{l'objet de référence,} là où \onto[orla]{Distance\-Quantitive} décrit un éloignement par rapport à l'objet dans son ensemble, \onto[orla]{A\-La\-Frontiere\-De} décrit, explicitement, un éloignement par rapport à sa frontière, ce qui est une distinction sémantique forte. Ce troisième critère permet alors toutes les distinctions nécessaires.
+Les \emph{relations de localisation atomiques} se distinguent donc les unes des autres par leur \emph{métrique,} mais également par la manière dont celle-ci est interprétée. Cependant ces deux critères ne permettent pas de distinguer toutes les situations. Prenons pour exemple les descriptions de position : \enquote{Je suis à 300 mètres de ma maison} et \enquote{Je suis à la frontière du bois de Vincennes}. Ces deux phrases décrivent des situations en apparence très éloignées, elles sont d'ailleurs modélisables avec des \emph{relations de localisation atomiques} très différentes, \onto[orla]{Distance\-Quantitive} et \onto[orla]{A\-La\-Frontiere\-De}. Pourtant si l'on se penche sur leur signification on peut s’apercevoir qu'elles interprètent la même métrique, de la même manière. En effet, toutes les deux décrivent un éloignement entre le \emph{sujet} et \emph{l'objet de référence,} si ce n'est qu'il est explicite et quantifié dans un cas, alors qu'il est sous-entendu dans l'autre. Ces deux \emph{relations de localisation atomiques} peuvent donc être modélisée avec la même métrique, la distance à \emph{l'objet de référence.} On pourrait penser que ces \emph{relations} se distinguent par leur interprétation de cette même métrique, comme c'est le cas pour les \emph{relations de localisation atomiques} \onto[orla]{Exterieur} et \onto[orla]{Intérieur}, ce n'est pourtant pas le cas. La \emph{relation} \onto[orla]{Distance\-Quantitive} indique explicitement que la distance entre le \emph{sujet} et \emph{l'objet de référence} est proche \footnote{} d'une valeur donnée (ici \SI{300}{\meter}), mais c'est également le cas de la \emph{relation} \onto[orla]{A\-La\-Frontiere\-De}, si ce n'est que cette distance est implicite et nulle. Bien entendu la notion de \enquote{proximité}, correspondant à \emph{l'imprécision} de la zone modélisée peut être différente entre ces deux \emph{relations,} mais cela ne change pas notre propos, \onto[orla]{Distance\-Quantitive} et \onto[orla]{A\-La\-Frontiere\-De} décrivent toutes deux une situation où la distance à \emph{l'objet de référence} (\ie la métrique) est proche d'une valeur donnée. Ces deux \emph{relations} ne sont différentiables qu'en ajoutant un nouveau paramètre de \emph{spatialisation,} le point d'origine de la \emph{métrique.} En effet, si ces deux \emph{relations} décrivent un éloignement par rapport à \emph{l'objet de référence} elles ne se basent pas sur la même partie de \emph{l'objet de référence,} là où \onto[orla]{Distance\-Quantitive} décrit un éloignement par rapport à l'objet dans son ensemble, \onto[orla]{A\-La\-Frontiere\-De} décrit, explicitement, un éloignement par rapport à sa frontière, ce qui est une distinction sémantique forte. Ce troisième critère permet alors toutes les distinctions nécessaires.
 
-\tdi{contraintes techniques (raster) ?? }
+
 
 \subsubsection{Les étapes de la \emph{méthode de spatialisation}}
 
