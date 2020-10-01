@@ -35,12 +35,16 @@ Pour définir une \emph{méthode de spatialisation,} le mieux est encore de s’
 Définir une \emph{méthode de spatialisation} revient donc à identifier une procédure permettant de vérifier, pour chaque pixel d'un raster donné et à l'aide de la \emph{théorie des sous-ensembles flous,} la validité de l'assertion \enquote{\emph{l'indice de localisation} est vrai}. Or, le \emph{principe de décomposition} nous a amené à définir des \emph{relations de localisation atomiques} les plus éloignées possibles et nécessitant, par conséquent, des \emph{méthodes de spatialisation ad hoc.} Aussi il semble nécessaire de développer une \emph{méthode de spatialisation} pour chaque \emph{relation de localisation atomique} définie dans \ac{orla}. C'est par exemple ce que proposent \textcite{Vanegas2011} ou \textcite{Takemura2012} en développant une \emph{méthode de spatialisation} dédiée à une \emph{relation de localisation donnée.} Pourtant, il nous semble que ce problème est ---~une nouvelle fois~--- décomposable, mais d'une manière inédite. Prenons pour exemple les deux \emph{relations de localisation atomiques} opposées, \onto[orla]{Interieur} et \onto[orla]{Exterieur} \footnote{Ces deux \emph{relations de localisation atomiques} sont utilisées pour décomposer des \emph{relations} comme \protect\onto[orl]{Dans\-La\-Partie\-Sud\-De} ou \protect\onto[orl]{Au\-Nord\-De\-Externe}, mais également directement dans les \emph{relations} \protect\onto[orl]{Dans\-Planimétrique} et \protect\onto[orl]{Hors\-De\-Planimétrique}.}. Ces deux concepts décrivent une \emph{relation} de même nature (\ie topologique) entre le \emph{sujet} et \emph{l'objet de référence,} tout en ayant une sémantique opposée.
 %
 Aussi on peut considérer que ce qui distingue ces deux \emph{relations de localisation atomiques} n'est pas la nature de la configuration spatiale qu'elles décrivent, mais la manière dont elles évaluent la validité de l'assertion : \enquote{\emph{l'indice de localisation} est vrai}.
+%
+On peut illustrer cette
+%
+Prenons le cas de la situation illustrée par \autoref{fig:Exemple_Metrique_vs_Selecteur}. 
 
 \begin{figure}
   \centering
   \input{../figures/Exemple_Metrique_vs_Selecteur.tex}
   \caption{nfd}
-  \label{fig:ds}
+  \label{fig:Exemple_Metrique_vs_Selecteur}
 \end{figure}
 
 % les sélecteur identifie les pixels qui correspondent à la sémantique de la relation de localisation
