@@ -102,11 +102,10 @@
   \end{scope}  
   % Arrow
   \begin{scope}
-    \path[draw, ->] (2.5,1) --++ (1.25,0)  node[pos=.5, above, font=\footnotesize]
+    \path[draw, ->] (4,2) --++ (1.5,0);
+    \path[draw, ->] (7.5,4) |- (11,5)  node[pos=.75, above, font=\footnotesize]
     {\itshape rasterisation};
-    \path[draw, ->] (6.75,1) --++ (1.25,0)  node[pos=.5, above, font=\footnotesize]
+    \path[draw, ->] (7.5,0) |- (11,-1)  node[pos=.75, above, font=\footnotesize]
     {\itshape rasterisation};
-    \path[draw, ->] (11,1) --++ (1.25,0)  node[pos=.5, above, font=\footnotesize]
-    {\itshape fuzzyfication};
   \end{scope}
 \end{tikzpicture}
