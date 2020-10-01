@@ -1,13 +1,14 @@
 ﻿\begin{tikzpicture}
   % Arrow
   \begin{scope}
-    \path[draw, ->, shorten >=5pt, shorten <=5pt] (2,1) --++ (3,0);
+    \path[draw, ->, shorten >=5pt, shorten <=5pt] (2,1) --++ (3,0) node[pos=.5, font=\footnotesize, fill=white]
+    {\itshape rasterisation};
     \path[draw, ->, shorten >=5pt, shorten <=5pt] (6,2) |- (10,3)
     node[pos=.75, font=\footnotesize, fill=white]
-    {\itshape rasterisation};
+    {\itshape sélection};
     \path[draw, ->, shorten >=5pt, shorten <=5pt] (6,0) |- (10,-1)
     node[pos=.75, font=\footnotesize, fill=white]
-    {\itshape rasterisation};
+    {\itshape sélection};
   \end{scope}
   % Représentation objet de référence rasterisé
   \begin{scope}
