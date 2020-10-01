@@ -27,40 +27,40 @@
       \path[ffc] (1,1) rectangle (3,3);
       %
       \node[font=\small, align=center,anchor=center] at (.5, .5)
-      {\(\left[\begin{smallmatrix}V&V\\V&V\\\end{smallmatrix}\right]\)};
+      {\(\left[\begin{smallmatrix}F&F\\F&V\\\end{smallmatrix}\right]\)};
       \node[font=\small, align=center,anchor=center] at (.5, 1.5)
-      {\(\left[\begin{smallmatrix}V&V\\V&V\\\end{smallmatrix}\right]\)};
+      {\(\left[\begin{smallmatrix}F&F\\F&V\\\end{smallmatrix}\right]\)};
       \node[font=\small, align=center,anchor=center] at (.5, 2.5)
-      {\(\left[\begin{smallmatrix}V&V\\V&V\\\end{smallmatrix}\right]\)};
+      {\(\left[\begin{smallmatrix}F&F\\F&V\\\end{smallmatrix}\right]\)};
       \node[font=\small, align=center,anchor=center] at (.5, 3.5)
-      {\(\left[\begin{smallmatrix}V&V\\V&V\\\end{smallmatrix}\right]\)};
+      {\(\left[\begin{smallmatrix}F&F\\F&V\\\end{smallmatrix}\right]\)};
       %
       \node[font=\small, align=center,anchor=center] at (1.5, .5)
-      {\(\left[\begin{smallmatrix}V&V\\V&V\\\end{smallmatrix}\right]\)};
+      {\(\left[\begin{smallmatrix}F&F\\F&V\\\end{smallmatrix}\right]\)};
       \node[font=\small, align=center,anchor=center] at (1.5, 1.5)
-      {\(\left[\begin{smallmatrix}V&V\\V&V\\\end{smallmatrix}\right]\)};
+      {\(\left[\begin{smallmatrix}V&F\\F&F\\\end{smallmatrix}\right]\)};
       \node[font=\small, align=center,anchor=center] at (1.5, 2.5)
-      {\(\left[\begin{smallmatrix}V&V\\V&V\\\end{smallmatrix}\right]\)};
+      {\(\left[\begin{smallmatrix}V&F\\F&F\\\end{smallmatrix}\right]\)};
       \node[font=\small, align=center,anchor=center] at (1.5, 3.5)
-      {\(\left[\begin{smallmatrix}V&V\\V&V\\\end{smallmatrix}\right]\)};
+      {\(\left[\begin{smallmatrix}F&F\\F&V\\\end{smallmatrix}\right]\)};
       %
       \node[font=\small, align=center,anchor=center] at (2.5, .5)
-      {\(\left[\begin{smallmatrix}V&V\\V&V\\\end{smallmatrix}\right]\)};
+      {\(\left[\begin{smallmatrix}F&F\\F&V\\\end{smallmatrix}\right]\)};
       \node[font=\small, align=center,anchor=center] at (2.5, 1.5)
-      {\(\left[\begin{smallmatrix}V&V\\V&V\\\end{smallmatrix}\right]\)};
+      {\(\left[\begin{smallmatrix}V&F\\F&F\\\end{smallmatrix}\right]\)};
       \node[font=\small, align=center,anchor=center] at (2.5, 2.5)
-      {\(\left[\begin{smallmatrix}V&V\\V&V\\\end{smallmatrix}\right]\)};
+      {\(\left[\begin{smallmatrix}V&F\\F&F\\\end{smallmatrix}\right]\)};
       \node[font=\small, align=center,anchor=center] at (2.5, 3.5)
-      {\(\left[\begin{smallmatrix}V&V\\V&V\\\end{smallmatrix}\right]\)};
+      {\(\left[\begin{smallmatrix}F&F\\F&V\\\end{smallmatrix}\right]\)};
       %
       \node[font=\small, align=center,anchor=center] at (3.5, .5)
-      {\(\left[\begin{smallmatrix}V&V\\V&V\\\end{smallmatrix}\right]\)};
+      {\(\left[\begin{smallmatrix}F&F\\F&V\\\end{smallmatrix}\right]\)};
       \node[font=\small, align=center,anchor=center] at (3.5, 1.5)
-      {\(\left[\begin{smallmatrix}V&V\\V&V\\\end{smallmatrix}\right]\)};
+      {\(\left[\begin{smallmatrix}F&F\\F&V\\\end{smallmatrix}\right]\)};
       \node[font=\small, align=center,anchor=center] at (3.5, 2.5)
-      {\(\left[\begin{smallmatrix}V&V\\V&V\\\end{smallmatrix}\right]\)};
+      {\(\left[\begin{smallmatrix}F&F\\F&V\\\end{smallmatrix}\right]\)};
       \node[font=\small, align=center,anchor=center] at (3.5, 3.5)
-      {\(\left[\begin{smallmatrix}V&V\\V&V\\\end{smallmatrix}\right]\)}; 
+      {\(\left[\begin{smallmatrix}F&F\\F&V\\\end{smallmatrix}\right]\)}; 
     \end{scope}
     \node[text width=4.5cm, align=center, anchor=north, font=\footnotesize] at (2,-.25)
     {\itshape Métrique};
@@ -99,15 +99,14 @@
     \end{scope}
     \node[text width=4.5cm, align=center, anchor=north, font=\footnotesize] at (2,-.25)
     {\itshape Objet de référence rastérisé};
+  \end{scope}  
+  % Arrow
+  \begin{scope}
+    \path[draw, ->] (2.5,1) --++ (1.25,0)  node[pos=.5, above, font=\footnotesize]
+    {\itshape rasterisation};
+    \path[draw, ->] (6.75,1) --++ (1.25,0)  node[pos=.5, above, font=\footnotesize]
+    {\itshape rasterisation};
+    \path[draw, ->] (11,1) --++ (1.25,0)  node[pos=.5, above, font=\footnotesize]
+    {\itshape fuzzyfication};
   \end{scope}
-  
-  % % Arrow
-  % \begin{scope}
-  %   \path[draw, ->] (2.5,1) --++ (1.25,0)  node[pos=.5, above, font=\footnotesize]
-  %   {\itshape rasterisation};
-  %   \path[draw, ->] (6.75,1) --++ (1.25,0)  node[pos=.5, above, font=\footnotesize]
-  %   {\itshape rasterisation};
-  %   \path[draw, ->] (11,1) --++ (1.25,0)  node[pos=.5, above, font=\footnotesize]
-  %   {\itshape fuzzyfication};
-  % \end{scope}
 \end{tikzpicture}
