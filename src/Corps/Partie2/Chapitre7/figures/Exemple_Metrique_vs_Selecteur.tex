@@ -1,4 +1,14 @@
 ﻿\begin{tikzpicture}
+  % Arrow
+  \begin{scope}
+    \path[draw, ->, shorten >=5pt, shorten <=5pt] (4,2) --++ (1.5,0);
+    \path[draw, ->, shorten >=5pt, shorten <=5pt] (7.5,4) |- (11,5)
+    node[pos=.75, font=\footnotesize, fill=white]
+    {\itshape rasterisation};
+    \path[draw, ->, shorten >=5pt, shorten <=5pt] (7.5,0) |- (11,-1)
+    node[pos=.75, font=\footnotesize, fill=white]
+    {\itshape rasterisation};
+  \end{scope}
   % Représentation objet de référence rasterisé
   \begin{scope}
     \begin{scope}
@@ -12,7 +22,8 @@
       \path[ffa] (1,1) rectangle (3,3);
       \path[ffc] (1,1) rectangle (3,3);
     \end{scope}
-    \node[text width=4.5cm, align=center, anchor=north, font=\footnotesize] at (2,-.25)
+    \node[text width=4.5cm, align=center, anchor=north,
+    font=\footnotesize, fill=white] at (2,-.25)
     {\itshape Objet de référence rastérisé};
   \end{scope}
   % Représentation métrique
@@ -25,7 +36,7 @@
       }
       \path[ffc, black] (0,0) rectangle (4,4);
       \path[ffc] (1,1) rectangle (3,3);
-      %
+      % 
       \node[font=\small, align=center,anchor=center] at (.5, .5)
       {\(\left[\begin{smallmatrix}F&F\\F&V\\\end{smallmatrix}\right]\)};
       \node[font=\small, align=center,anchor=center] at (.5, 1.5)
@@ -34,7 +45,7 @@
       {\(\left[\begin{smallmatrix}F&F\\F&V\\\end{smallmatrix}\right]\)};
       \node[font=\small, align=center,anchor=center] at (.5, 3.5)
       {\(\left[\begin{smallmatrix}F&F\\F&V\\\end{smallmatrix}\right]\)};
-      %
+      % 
       \node[font=\small, align=center,anchor=center] at (1.5, .5)
       {\(\left[\begin{smallmatrix}F&F\\F&V\\\end{smallmatrix}\right]\)};
       \node[font=\small, align=center,anchor=center] at (1.5, 1.5)
@@ -43,7 +54,7 @@
       {\(\left[\begin{smallmatrix}V&F\\F&F\\\end{smallmatrix}\right]\)};
       \node[font=\small, align=center,anchor=center] at (1.5, 3.5)
       {\(\left[\begin{smallmatrix}F&F\\F&V\\\end{smallmatrix}\right]\)};
-      %
+      % 
       \node[font=\small, align=center,anchor=center] at (2.5, .5)
       {\(\left[\begin{smallmatrix}F&F\\F&V\\\end{smallmatrix}\right]\)};
       \node[font=\small, align=center,anchor=center] at (2.5, 1.5)
@@ -52,7 +63,7 @@
       {\(\left[\begin{smallmatrix}V&F\\F&F\\\end{smallmatrix}\right]\)};
       \node[font=\small, align=center,anchor=center] at (2.5, 3.5)
       {\(\left[\begin{smallmatrix}F&F\\F&V\\\end{smallmatrix}\right]\)};
-      %
+      % 
       \node[font=\small, align=center,anchor=center] at (3.5, .5)
       {\(\left[\begin{smallmatrix}F&F\\F&V\\\end{smallmatrix}\right]\)};
       \node[font=\small, align=center,anchor=center] at (3.5, 1.5)
@@ -62,7 +73,8 @@
       \node[font=\small, align=center,anchor=center] at (3.5, 3.5)
       {\(\left[\begin{smallmatrix}F&F\\F&V\\\end{smallmatrix}\right]\)}; 
     \end{scope}
-    \node[text width=4.5cm, align=center, anchor=north, font=\footnotesize] at (2,-.25)
+    \node[text width=4.5cm, align=center, anchor=north,
+    font=\footnotesize, fill=white] at (2,-.25)
     {\itshape Métrique};
   \end{scope}
   
@@ -99,13 +111,5 @@
     \end{scope}
     \node[text width=4.5cm, align=center, anchor=north, font=\footnotesize] at (2,-.25)
     {\itshape Objet de référence rastérisé};
-  \end{scope}  
-  % Arrow
-  \begin{scope}
-    \path[draw, ->] (4,2) --++ (1.5,0);
-    \path[draw, ->] (7.5,4) |- (11,5)  node[pos=.75, above, font=\footnotesize]
-    {\itshape rasterisation};
-    \path[draw, ->] (7.5,0) |- (11,-1)  node[pos=.75, above, font=\footnotesize]
-    {\itshape rasterisation};
   \end{scope}
 \end{tikzpicture}
