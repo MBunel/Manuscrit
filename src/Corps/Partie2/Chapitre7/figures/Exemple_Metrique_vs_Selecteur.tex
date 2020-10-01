@@ -1,0 +1,88 @@
+﻿\begin{tikzpicture}
+  % Arrow
+  \begin{scope}
+    \path[draw, ->, shorten >=5pt, shorten <=5pt] (2,1) --++ (3,0) node[pos=.5, font=\footnotesize, fill=white]
+    {\itshape rasterisation};
+    \path[draw, ->, shorten >=5pt, shorten <=5pt] (6,2) |- (10,3)
+    node[pos=.75, font=\footnotesize, fill=white]
+    {\itshape sélection};
+    \path[draw, ->, shorten >=5pt, shorten <=5pt] (6,0) |- (10,-1)
+    node[pos=.75, font=\footnotesize, fill=white]
+    {\itshape sélection};
+  \end{scope}
+  % Représentation objet de référence rasterisé
+  \begin{scope}
+    \begin{scope}
+      \foreach \x in {0,1}{
+        \foreach \y in {0,1}
+        \path[draw, line width=.01mm] (\x,\y) rectangle (\x +1, \y + 1);
+      }
+      % Limite zir
+      \path[ffc, black] (0,0) rectangle (2,2);
+      % Pixels rasterisation
+      \path[ffa] (1,1) rectangle (2,2);
+      \path[ffc] (1,1) rectangle (2,2);
+    \end{scope}
+    \node[text width=2.5cm, align=center, anchor=north,
+    font=\footnotesize, fill=white] at (1,-.25)
+    {\itshape Objet de référence rastérisé};
+  \end{scope}
+  
+  % Représentation métrique
+  \begin{scope}[xshift=5cm]
+    % \path[ffa] (1,.25) rectangle (1.25, .5);
+    \begin{scope}
+      \foreach \x in {0,1}{
+        \foreach \y in {0,1}
+        \path[draw, line width=.01mm] (\x,\y) rectangle (\x +1, \y + 1);
+      }
+      \path[ffc, black] (0,0) rectangle (2,2);
+      \path[ffc] (1,1) rectangle (2,2);
+      % 
+      \node[font=\small, align=center,anchor=center] at (.5, .5)
+      {\(\left[\begin{smallmatrix}F&F\\F&V\\\end{smallmatrix}\right]\)};
+      \node[font=\small, align=center,anchor=center] at (.5, 1.5)
+      {\(\left[\begin{smallmatrix}F&F\\F&V\\\end{smallmatrix}\right]\)};
+      \node[font=\small, align=center,anchor=center] at (1.5, .5)
+      {\(\left[\begin{smallmatrix}F&F\\F&V\\\end{smallmatrix}\right]\)};
+      \node[font=\small, align=center,anchor=center] at (1.5, 1.5)
+      {\(\left[\begin{smallmatrix}V&V\\V&F\\\end{smallmatrix}\right]\)};
+    \end{scope}
+    \node[text width=4.5cm, align=center, anchor=north,
+    font=\footnotesize, fill=white] at (1,-.25)
+    {\itshape Métrique};
+  \end{scope}
+
+    \begin{scope}[xshift=10cm, yshift=2cm]
+    \begin{scope}
+      \foreach \x in {0,1}{
+        \foreach \y in {0,1}
+        \path[draw, line width=.01mm] (\x,\y) rectangle (\x +1, \y + 1);
+      }
+      \path[ffc, black] (0,0) rectangle (2,2);
+      \path[ffa] (1,1) rectangle (2,2);
+      \path[ffc] (1,1) rectangle (2,2);
+    \end{scope}
+    \node[text width=2.5cm, align=center, anchor=north, font=\footnotesize] at (1,-.25)
+    {\itshape Zone de localisation compatible \normalfont \textcolor{RdBu-9-1}{A}};
+  \end{scope}
+  
+  \begin{scope}[xshift=10cm, yshift=-2cm]
+    \begin{scope}
+      \foreach \x in {0,1}{
+        \foreach \y in {0,1}
+        \path[draw, line width=.01mm] (\x,\y) rectangle (\x +1, \y + 1);
+      }
+
+      \begin{scope}
+        \fill[ffa2] (0,0) rectangle (2,1);
+        \fill[ffa2] (0,1) rectangle (1,2);
+      \end{scope}
+      
+      \path[ffc2] (0,0) --++(0,2) --++(1,0) --++(0,-1) --++ (1,0)
+      --++(0,-1) --cycle;
+    \end{scope}
+    \node[text width=2.5cm, align=center, anchor=north, font=\footnotesize] at (1,-.25)
+    {\itshape Zone de localisation compatible \normalfont \textcolor{RdBu-9-9}{B}};
+  \end{scope}
+\end{tikzpicture}
