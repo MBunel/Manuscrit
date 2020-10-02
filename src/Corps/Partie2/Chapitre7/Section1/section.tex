@@ -43,7 +43,7 @@ Ainsi, ce qui distingue ces deux \emph{relations de localisation atomiques} n'es
 \begin{figure}
   \centering
   \input{../figures/Exemple_Metrique_vs_Selecteur.tex}
-  \caption{nfd}
+  \caption{Légende cooool}
   \label{fig:Exemple_Metrique_vs_Selecteur}
 \end{figure}
 
@@ -66,34 +66,20 @@ Pour réaliser ces XXX nous proposons de définir une \emph{méthode de spatiali
   \label{fig:methodo_spatialisation}
 \end{figure}
 
-\tdi{rasterisation, pourquoi + justifications}%
+La \emph{rasterisation} est la première partie de la \emph{spatialisation.} Elle consiste à transformer les \emph{objets de référence} vectoriels en des rasters à partir desquels nous pourrons calculer la \emph{métrique} nécessaire à la \emph{spatialisation.} La rasterisation de \emph{l'objet de référence} nécessite de définir une résolution et une taille de raster, qui dans notre cas correspond à la \ac{zir}. Ainsi la zone de rasterisation correspond à la \emph{zone initiale de recherche} et cette étape fait donc également office de délimitation de la zone de calcul. De plus il est nécessaire de ne sélectionner que la partie de \emph{l'objet de référence} qui est utile pour la \emph{relation de localisation atomique} à spatialiser (\eg frontière, centroide, \emph{etc.}). Il est plus simple de réaliser cette opération dans un premier temps et de ne rasteriser ensuite que la partie sélectionnée. Ainsi l'étape de \emph{rasterisation} rempli trois rôles :
 %
-La \emph{rasterisation} est la première partie de la \emph{spatialisation.} Elle consiste à transformer les \emph{objets de référence} vectoriels en des rasters nécessaires à notre méthode.
+\begin{enumerate*}[label=(\alph*)]
+\item la sélection de la partie de \emph{l'objet de référence} à rasteriser,
+\item la prise en compte de la \ac{zir}, et
+\item la rasterisation de \emph{l'objet de référence.}  
+\end{enumerate*}
 %
-L'étape de \emph{rasterisation} ne répond cependant pas uniquement à des contraintes techniques puisqu'elle 
+Comme nous le verrons dans la partie qui lui est dédiée (\autoref{chap:07-sec2}), l'opération de rasterisation peut donner des résultats très différents en fonction des paramètres sélectionnée.
 
-
-La première partie de la \emph{spatialisation} est la transformation de 
-Dans un premier temps il est nécessaire de transformer \emph{l'objet de référence} en raster, de manière ce qu'il puisse être traité. Cette partie est nommée \emph{rasterisation} est, comme nous le verrons dans la partie qui lui est dédiée (\autoref{chap:07-sec2}), réalisable de plusieurs façons.
-
-
-\tdi{métrique}%
-La seconde partie de la \emph{spatialisation} est le calcul de la métrique.
-
-La métrique est une grandeur, généralement quantitative, recoupant la sémantique de la relation de \emph{localisation atomique modélisée.}
-
-Par conséquent des \emph{relations de localisation atomiques} décrivant des situations très différentes peuvent faire appel à la même métrique.
-%
-Par exemple, \onto[orla]{Distance\-Quantitative} et \onto[orla]{Exterieur} sont des concepts sémantiquement assez éloignés, décrivant respectivement une relation métrique et une relation topologique. Pourtant, ces deux concepts traduisent une forme d'éloignement par rapport à \emph{l'objet de référence,} si ce n'est qu'il est d'une valeur donnée (\ie la distance) pour \onto[orla]{Distance\-Quantitative} alors qu'il est qualitatif pour \onto[orla]{Exterieur}. Les \ac{zlc} de ces deux \emph{relations de localisation atomiques} sont modélisables à partir d'une même \emph{métrique,} la distance, mais différent par la manière dont cette métrique est interprétée et donc transformée en un degré d'appartenance.
+La seconde partie de la \emph{spatialisation} est le calcul de la \emph{métrique.} Ce calcul est effectué sur l'aire et à la résolution fixée lors de l'opération de \emph{rasterisation.} Les \emph{métriques} utilisables sont nombreuses et fortement liées à la sémantique de la \emph{relation de localisation atomique} spatialisée, comme nous le verrons dans la partie dédiée à cette question (\autoref{chap:07-sec3}).
 
 % Fuzzyficaiton
-Cette transformation est effectuée lors de la \emph{fuzzyfication,} dernière partie de la \emph{spatialisation.}
-%
-La \emph{fuzzyfication} a pour particularité de devoir transformer des valeurs provenant d'un domaine variable, puisque dépendant d'une \emph{métrique} donnée en un \emph{degré d'appartenance,} toujours compris entre 0 et 1.
-
-Contrairement à ce que son nom peut laisser penser, le rôle de la phase de \emph{fuzzyfication} n'est pas seulement de transformer la \emph{métrique} en un \emph{degré d'appartenance,} mais de sélectionner les pixels pour lesquels la valeur de la \emph{métrique} est
-
-
+La dernière partie de la \emph{méthodologie de spatialisation} est la \emph{fuzzyfication.} C'est durant cette étape que les pixels sont filtrés en fonction de la valeur de la métrique, à délimiter la \emph{zone de localisation compatible} correspondant à la \emph{relation de localisation atomique} spatialisée. Contrairement à l'exemple présenté (\autoref{fig:Exemple_Metrique_vs_Selecteur}), cette opération doit aboutir à une \ac{zlc} floue, ce que nous détaillerons dans la \autoref{chap:07-sec4}.
 
 
 %%% Local Variables:
