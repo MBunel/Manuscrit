@@ -53,13 +53,11 @@ Cependant ces deux parties ne sont pas suffisantes pour distinguer toutes les \e
 \subsubsection{Les étapes de la \emph{méthode de spatialisation}}
 
 % Présenter les 3 grandes étapes de la démarche, leur rôle et leur justification
-Trois composantes sont alors a prendre en compte pour \emph{spatialiser} une \emph{relation de localisation atomique,} une \emph{métrique,} la partie de \emph{l'objet de référence} servant d'origine et une \emph{méthode de sélection} permettant d'identifier les valeurs satisfaisantes.
+Trois composantes sont alors à prendre en compte pour \emph{spatialiser} une \emph{relation de localisation atomique,} une \emph{métrique,} la partie de \emph{l'objet de référence} servant d'origine et une \emph{méthode de sélection} permettant d'identifier les valeurs satisfaisantes.
 %
-À ces trois composantes s'ajoutent la nécessité de prendre en compte la \ac{zir}, de rasteriser les \emph{objets de référence} et de construire une \ac{zlc} floue (contrairement aux résultats de la \autoref{fig:Exemple_Metrique_vs_Selecteur}).
-
-
-
-La méthode de spatialisation que nous proposons est donc une composition de trois étapes (\autoref{fig:methodo_spatialisation}), réalisées séquentiellement.
+À ces trois composantes s'ajoutent trois contraintes, la nécessité de limiter la \emph{spatialisation} à la \ac{zir}, de rasteriser les \emph{objets de référence} et de construire une \ac{zlc} floue (contrairement aux résultats de la \autoref{fig:Exemple_Metrique_vs_Selecteur}).
+%
+Pour réaliser ces XXX nous proposons de définir une \emph{méthode de spatialisation} en trois parties ---~la \emph{rasterisation,} le calcul de la \emph{métrique} et la \emph{fuzzyfication}~--- réalisées séquentiellement (\autoref{fig:methodo_spatialisation}).
 
 \begin{figure}
   \centering
@@ -69,10 +67,15 @@ La méthode de spatialisation que nous proposons est donc une composition de tro
 \end{figure}
 
 \tdi{rasterisation, pourquoi + justifications}%
+%
+La \emph{rasterisation} est la première partie de la \emph{spatialisation.} Elle consiste à transformer les \emph{objets de référence} vectoriels en des rasters nécessaires à notre méthode.
+%
+L'étape de \emph{rasterisation} ne répond cependant pas uniquement à des contraintes techniques puisqu'elle 
+
+
 La première partie de la \emph{spatialisation} est la transformation de 
 Dans un premier temps il est nécessaire de transformer \emph{l'objet de référence} en raster, de manière ce qu'il puisse être traité. Cette partie est nommée \emph{rasterisation} est, comme nous le verrons dans la partie qui lui est dédiée (\autoref{chap:07-sec2}), réalisable de plusieurs façons.
-\tdi{Sélection d'une partie de l'objet}
-\tdi{rasterisation à proprement parler}
+
 
 \tdi{métrique}%
 La seconde partie de la \emph{spatialisation} est le calcul de la métrique.
