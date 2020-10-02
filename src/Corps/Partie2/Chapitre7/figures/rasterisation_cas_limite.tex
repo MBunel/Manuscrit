@@ -1,0 +1,17 @@
+﻿\begin{tikzpicture}
+  \begin{scope}
+    \foreach \x in {0,.5,...,1.5}{
+      \foreach \y in {0,.5,...,1.5}{
+        \pgfmathsetmacro\xc{\x +.25}
+        \pgfmathsetmacro\yc{\y +.25}
+        % 
+        \path[draw, line width=.01mm] (\x,\y) rectangle (\x +.5, \y +
+        .5);
+        \fill[black] (\xc,\yc) circle [radius=0.5 pt];
+      }
+    }
+    \path[ffc, black] (0,0) rectangle (2,2);
+    \fill[ffa, pattern color=black,rotate around={30:(1,1)}] (.8,.9) --++ (.4,0) --++ (0,.2) --++ (-.4,0) --cycle;
+    \path[ffc, black,rotate around={30:(1,1)}] (.8,.9) --++ (.4,0) --++ (0,.2) --++ (-.4,0) --cycle;
+  \end{scope}
+\end{tikzpicture}

@@ -16,8 +16,7 @@ La première partie de la méthode de spatialisation est la
 \tdi{parler des consiérations autour de la rasterisation importance de
   la zir, de la résolution, méthode de sélection des pixels, etc}
 
-Pour notre application nous avons pris la décision de toujours travailler à l'aide d'une rasterisation sélectionnant tous les pixels intersectant \emph{l'objet de référence} (\eg la \emph{rasterisation} \textcolor{RdBu-9-9}{\textsf{B}}, \autoref{fig:rasterisation_sel_pixels}).
-
+La \autoref{fig:rasterisation_sel_pixels} illustre ces deux approches. Un même \emph{objet de référence} est \emph{rastérisé,} d'une part en sélectionnant uniquement les pixels dont le centroïde est à l'intérieur de \emph{l'objet de référence} (aboutissant au raster \textcolor{RdBu-9-1}{\textsf{A}}), d'autre part en sélectionnant tous les pixels touchant \emph{l'objet de référence} (ce qui donne le raster \textcolor{RdBu-9-9}{\textsf{B}}).
 
 \begin{figure}
   \centering
@@ -25,7 +24,16 @@ Pour notre application nous avons pris la décision de toujours travailler à l'
   \caption{d}
   \label{fig:rasterisation_sel_pixels}
 \end{figure}
+    
+Pour notre application nous avons pris la décision de toujours travailler à l'aide d'une rasterisation sélectionnant tous les pixels touchant \emph{l'objet de référence} (\eg la \emph{rasterisation} \textcolor{RdBu-9-9}{\textsf{B}}, \autoref{fig:rasterisation_sel_pixels}). Cette solution à l’avantage de toujours renvoyer une rasterization non vide 
 
+\begin{figure}
+  \centering
+  \input{../figures/rasterisation_cas_limite.tex}
+  \caption{d}
+  \label{fig:rasterisation_cas_limite}
+\end{figure}
+    
 
 \subsection{Les méthodes de rasterisation}
 
