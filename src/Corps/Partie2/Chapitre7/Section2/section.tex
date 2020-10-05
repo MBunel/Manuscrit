@@ -56,16 +56,17 @@ Ce \emph{rasteriser} est notamment employé pour \emph{spatialiser} la \emph{rel
 
 Enfin, un \emph{rasteriser} ne traitant que le centroïde de \emph{l'objet de  référence} a été défini. Contrairement aux autres \emph{rasterisers} présentés jusqu'ici, celui-ci conduit tout type d'objet (\ie point, ligne, polygone) a être représentés par un seul point. Ainsi, tous les objets traités sont représentés pas un point, lui-même \emph{rasterisé} en un unique pixel.
 
-\begin{table}
+\begin{figure}
   \centering
   \input{../tableaux/rasteriser.tex}
   \caption{Méthodes de rasterisation}
-  \label{tab:methode_rasterisation}
-\end{table}
+  \label{fig:methode_rasterisation}
+\end{figure}
 
 % Parler rapidement des méthodes définies mais non utilisées (bbox,conxhull)
 Nous avons également envisagé d'autres \emph{méthodes de rasterisation,} sans parvenir à en identifier un usage pertinent. On pourrait, par exemple, ignorer les frontières intérieures des régions ayant une structure annulaire (\eg une forêt avec des clairières). Mais il est également possible d'employer des méthodes sensiblement différentes de celles présentées jusqu'ici, comme la \emph{rasterisation} de l'enveloppe convexe ou de la boite englobante de \emph{l'objet de référence.} De telles méthodes ne traitent plus de \emph{l'objet de référence} ou l'une de ces composantes, c'est-à-dire un sous-ensemble de sa géométrie, mais d'une version modifiée de celui-ci.
 
+% Conclusion
 Ainsi, dans son état actuel nous disposons d'un ensemble de trois \emph{rasterisers.}
 
 %%% Local Variables:
