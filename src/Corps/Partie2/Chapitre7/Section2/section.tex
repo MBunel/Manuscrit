@@ -35,8 +35,9 @@ Compte-tenu de ces limites, nous avons décidé d'opter pour la seconde approche
 
 \subsection{Les méthodes de rasterisation}
 
-La méthode de sélection des pixels ayant été fixée, le seul critère permettant de distinguer les différentes \emph{méthodes de rasterisation} est la sélection de la partie de \emph{l'objet de référence} à \emph{rasteriser.} Comme nous l'expliquions précédemment ce choix est essentiel, car il contribue à définir la sémantique de la \emph{relation de localisation atomique,} une même métrique calculée à partir de points différents d'un même \emph{objet de référence} pouvant avoir des interprétations très diverses, comme nous l'avons montré avec l'exemple des \emph{relations de localisation atomiques} \onto[orla]{Distance\-Quantitive} et \onto[orla]{A\-La\-Frontiere\-De}.
+La méthode de sélection des pixels ayant été fixée, le seul critère permettant de distinguer les différentes \emph{méthodes de rasterisation} est la sélection de la partie de \emph{l'objet de référence} à \emph{rasteriser.} Comme nous l'expliquions précédemment ce choix est essentiel, car il contribue à définir la sémantique de la \emph{relation de localisation atomique,} une même métrique calculée à partir de points différents d'un même \emph{objet de référence} pouvant avoir des interprétations très diverses, comme nous l'avons montré avec l'exemple des \emph{relations de localisation atomiques} \onto[orla]{Distance\-Quantitive} et \onto[orla]{A\-La\-Frontiere\-De} (\autoref{chap:07-sec1}).
 
+On peut imagier de nombreuses \emph{méthodes de rasterisation} différentes, en fonction de la partie de \emph{l'objet de référence} sélectionnée, cependant toutes ne sont pas intéressantes pour nous.
 
 \tdi{Détailler les différentes méthodes de rasterisation définies
   figure \ref{fig:methode_rasterisation} + exemple}
@@ -64,6 +65,8 @@ Enfin, un \emph{rasteriser} ne traitant que le centroïde de \emph{l'objet de  r
 
 % Parler rapidement des méthodes définies mais non utilisées (bbox,conxhull)
 D'autres \emph{méthodes de rasterisation} sont envisageables, comme la \emph{rasterisation} de l'enveloppe convexe de \emph{l'objet de référence} ou de sa boite englobante. Cependant nous n'avons pas identifié de situations où le recours à de tels \emph{rasterisers.}
+
+On pourra 
 
 Ainsi, dans son état actuel nous disposons d'un ensemble de trois \emph{rasterisers.}
 
