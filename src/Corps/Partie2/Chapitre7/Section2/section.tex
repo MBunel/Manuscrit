@@ -64,9 +64,7 @@ Enfin, un \emph{rasteriser} ne traitant que le centroïde de \emph{l'objet de  r
 \end{table}
 
 % Parler rapidement des méthodes définies mais non utilisées (bbox,conxhull)
-D'autres \emph{méthodes de rasterisation} sont envisageables, comme la \emph{rasterisation} de l'enveloppe convexe de \emph{l'objet de référence} ou de sa boite englobante. Cependant nous n'avons pas identifié de situations où le recours à de tels \emph{rasterisers.}
-
-On pourra 
+Nous avons également envisagé d'autres \emph{méthodes de rasterisation,} sans parvenir à en identifier un usage pertinent. On pourrait, par exemple, ignorer les frontières intérieures des régions ayant une structure annulaire (\eg une forêt avec des clairières). Mais il est également possible d'employer des méthodes sensiblement différentes de celles présentées jusqu'ici, comme la \emph{rasterisation} de l'enveloppe convexe ou de la boite englobante de \emph{l'objet de référence.} De telles méthodes ne traitent plus de \emph{l'objet de référence} ou l'une de ces composantes, c'est-à-dire un sous-ensemble de sa géométrie, mais d'une version modifiée de celui-ci.
 
 Ainsi, dans son état actuel nous disposons d'un ensemble de trois \emph{rasterisers.}
 
