@@ -35,6 +35,8 @@ Compte-tenu de ces limites, nous avons décidé d'opter pour la seconde approche
 
 \subsection{Les méthodes de rasterisation}
 
+La méthode de sélection des pixels ayant été fixée, le seul critère permettant de distinguer les différentes \emph{méthodes de rasterisation} est la sélection de la partie de \emph{l'objet de référence} à \emph{rasteriser.} Comme nous l'expliquions précédemment ce choix est essentiel, car il contribue à définir la sémantique de la \emph{relation de localisation atomique,} une même métrique calculée à partir de points différents d'un même \emph{objet de référence} pouvant avoir des interprétations très diverses, comme nous l'avons montré avec l'exemple des \emph{relations de localisation atomiques} \onto[orla]{Distance\-Quantitive} et \onto[orla]{A\-La\-Frontiere\-De}.
+
 
 \tdi{Détailler les différentes méthodes de rasterisation définies
   figure \ref{fig:methode_rasterisation} + exemple}
@@ -45,12 +47,13 @@ Cette \emph{rasterisation} est donc employée lorsque la \emph{relation de local
 %
 On pourra remarquer que cette méthode de \emph{rasterisation} s'applique à la majorité des \emph{relations de localisation atomiques} définies jusqu'ici. En effet, cette méthode de \emph{rasterisation} est fortement majoritaire et seules quelques \emph{relations de localisation atomiques} spécifiques nécessitent une méthode plus spécifique.
 
+Mais il également possible de ne rasteriser qu'une partie de \emph{l'objet de référence,} comme sa frontière ou son centroïde (\autoref{tab:methode_rasterisation}).
 
+Le second \emph{rasteriser} défini ne considère que la frontière de \emph{l'objet de référence} traité.
+%
+Ce \emph{rasteriser} est notamment employé pour \emph{spatialiser} la \emph{relation de localisation} \onto[orla]{A\-La\-Frontiere\-De}.
 
-
-Mais il également possible de ne rasteriser qu'une partie de
-\emph{l'objet de référence,} comme sa frontière ou son centroide
-(\autoref{tab:methode_rasterisation}).
+Enfin, un \emph{rasteriser} ne traitant que le centroïde de \emph{l'objet de  référence} a été défini. Contrairement aux autres \emph{rasterisers} présentés jusqu'ici, celui-ci conduit tout type d'objet (\ie point, ligne, polygone) a être représentés par un seul point. Ainsi, tous les objets traités sont représentés pas un point, lui-même \emph{rasterisé} en un unique pixel.
 
 \begin{table}
   \centering
@@ -61,6 +64,8 @@ Mais il également possible de ne rasteriser qu'une partie de
 
 % Parler rapidement des méthodes définies mais non utilisées (bbox,conxhull)
 D'autres \emph{méthodes de rasterisation} sont envisageables, comme la \emph{rasterisation} de l'enveloppe convexe de \emph{l'objet de référence} ou de sa boite englobante. Cependant nous n'avons pas identifié de situations où le recours à de tels \emph{rasterisers.}
+
+Ainsi, dans son état actuel nous disposons d'un ensemble de trois \emph{rasterisers.}
 
 %%% Local Variables:
 %%% mode: latex
