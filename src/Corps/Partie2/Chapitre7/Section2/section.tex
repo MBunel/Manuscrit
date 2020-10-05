@@ -13,6 +13,8 @@ La première partie de la méthode de spatialisation est la
 \tdi{parler des consiérations autour de la rasterisation importance de
   la zir, de la résolution, méthode de sélection des pixels, etc}
 
+Méthode de sélection des pixels
+%
 La \autoref{fig:rasterisation_sel_pixels} illustre ces deux approches. Un même \emph{objet de référence} est \emph{rastérisé,} d'une part en sélectionnant uniquement les pixels dont le centroïde est à l'intérieur de \emph{l'objet de référence} (aboutissant au raster \textcolor{RdBu-9-1}{\textsf{A}}), d'autre part en sélectionnant tous les pixels touchant \emph{l'objet de référence} (ce qui donne le raster \textcolor{RdBu-9-9}{\textsf{B}}). Comme on peut le voir la seconde solution abouti à une zone plus large, la zone résultant de la \emph{rasterisation} est alors plus importante que l'emprise réelle de l'objet. Cependant cette seconde approche à l'avantage de toujours aboutir à un raster non nul. En effet dans certaines configurations, il est possible qu'un \emph{objet de référence,} de surface non nulle, ne contienne aucun centroïde de pixel, aboutissant à la construction d'un raster vide. Or, cette situation n'est pas acceptable, car, dans notre méthodologie, cela aboutirait à ignorer \emph{l'objet de référence,} et donc à ne pas considérer l'ensemble des informations transmises par le requérant. Ce phénomène se produit lorsque la maille utilisée pour la \emph{rasterisation} est trop grande comparativement aux objets que l'on souhaite \emph{rasteriser,} donc à une mauvaise paramétrisation de la rasterisation. Ce problème est donc corrigible par l'augmentation de la résolution du raster cible. Toutefois cette solution n'est pas toujours possible lors d'une utilisation concrète d'une \emph{rasterisation.} Prenons pour exemple la \autoref{fig:rasterisation_cas_limite}, illustrant une situation où l'on cherche à \emph{rasteriser} un bâtiment quelconque en vue de la \emph{spatialisation} d'une \emph{relation de localisation atomique.} Le bâtiment, de taille moyenne (\ie \SI{200}{\metre\squared}) est situé à cheval sur 4 pixels \footnote{Dont chacun a une superficie de \SI{625}{\metre\squared}.} sans contenir de centroïde d'aucun d'entre eux. Ainsi, si l'on emploie les deux méthodes de \emph{rasterisation} présentées (\autoref{fig:rasterisation_sel_pixels}) on obtiendra soit une zone vide (variante \textcolor{RdBu-9-1}{\textsf{A}}), soit une zone composée de 4 pixels (variante \textcolor{RdBu-9-9}{\textsf{B}}). Pour que le raster produit par la première rasterisation soit non vide, il faudrait diviser la taille des pixels par (environ) 2, ce qui multiplierait le nombre de pixels par 4. Or, si cela ne pose pas de problème pour une petite zone, comme celle utilisée pour l'exemple, cela devient difficile, voir très difficile si l'on souhaite travailler sur une zone assez étendue (au-delà de la centaine de \si{\kilo\meter\squared}).
 
 \begin{figure}
@@ -33,12 +35,17 @@ Compte-tenu de ces limites, nous avons décidé d'opter pour la seconde approche
 
 \subsection{Les méthodes de rasterisation}
 
+
 \tdi{Détailler les différentes méthodes de rasterisation définies
   figure \ref{fig:methode_rasterisation} + exemple}
 
+La plus évidente des solutions consiste à rasteriser l'ensemble de \emph{l'objet de référence} (\autoref{tab:methode_rasterisation}, première ligne). Cette solution, qui a été utilisée pour les exemples précédents (\ie figures \ref{fig:methodo_spatialisation}, \ref{fig:rasterisation_sel_pixels} et \ref{fig:rasterisation_cas_limite}), ne procède pas à une sélection, l'objet de référence est considéré dans son ensemble.
+%
+Cette \emph{rasterisation} est donc employée lorsque la \emph{relation de localisation atomique} se réfère  à l'ensemble de \emph{l'objet de référence} et non à l'une de ces parties. C'est par exemple le cas de la \emph{relation} \onto[orla]{XXXX} qui
+%
+On pourra remarquer que cette méthode de \emph{rasterisation} s'applique à la majorité des \emph{relations de localisation atomiques} définies jusqu'ici. En effet, cette méthode de \emph{rasterisation} est fortement majoritaire et seules quelques \emph{relations de localisation atomiques} spécifiques nécessitent une méthode plus spécifique.
 
-La plus évidente des solutions consiste à rasteriser l'ensemble de
-\emph{l'objet de référence.}
+
 
 
 Mais il également possible de ne rasteriser qu'une partie de
