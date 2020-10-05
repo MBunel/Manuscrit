@@ -16,7 +16,9 @@ La première partie de la méthode de spatialisation est la
 \tdi{parler des consiérations autour de la rasterisation importance de
   la zir, de la résolution, méthode de sélection des pixels, etc}
 
-La \autoref{fig:rasterisation_sel_pixels} illustre ces deux approches. Un même \emph{objet de référence} est \emph{rastérisé,} d'une part en sélectionnant uniquement les pixels dont le centroïde est à l'intérieur de \emph{l'objet de référence} (aboutissant au raster \textcolor{RdBu-9-1}{\textsf{A}}), d'autre part en sélectionnant tous les pixels touchant \emph{l'objet de référence} (ce qui donne le raster \textcolor{RdBu-9-9}{\textsf{B}}). Comme on peut le voir la seconde solution abouti à une zone plus large, la zone résultant de la \emph{rasterisation} est alors plus importante que l'emprise réelle de l'objet. Cependant cette seconde approche à l'avantage de toujours aboutir à un raster non nul. En effet dans certaines configurations, il est possible qu'aucun centroide ne soit à l'intérieur de \emph{l'objet de référence.} Ce cas ce produit lorsque la maille sélectionnée est trop grande comparativement aux objets que l'on souhaite \emph{rasteriser.} Concrètement cela peut se produire lors de la rastérisation de bâtiments, comme l'illustre la \autoref{fig:rasterisation_cas_limite}. En effet si l'on souhaite travailler sur une zone assez étendue (de l'ordre du XX) il sera nécessaire d'adopter une maille de taille intermédiaire (XX), ce qui est supérieur à la taille de nombreux batiments. Ainsi, une rasterisation avec de tels paramètres conduira à oublier de nombreux objets.
+La \autoref{fig:rasterisation_sel_pixels} illustre ces deux approches. Un même \emph{objet de référence} est \emph{rastérisé,} d'une part en sélectionnant uniquement les pixels dont le centroïde est à l'intérieur de \emph{l'objet de référence} (aboutissant au raster \textcolor{RdBu-9-1}{\textsf{A}}), d'autre part en sélectionnant tous les pixels touchant \emph{l'objet de référence} (ce qui donne le raster \textcolor{RdBu-9-9}{\textsf{B}}). Comme on peut le voir la seconde solution abouti à une zone plus large, la zone résultant de la \emph{rasterisation} est alors plus importante que l'emprise réelle de l'objet. Cependant cette seconde approche à l'avantage de toujours aboutir à un raster non nul. En effet dans certaines configurations, il est possible qu'un \emph{objet de référence,} de surface non nulle, ne contienne aucun centroïde de pixel. Ce qui conduit à produire un raster vide. Ce phénomène se produit lorsque la maille utilisée pour la \emph{rasterisation} est trop large, comparativement aux objets que l'on souhaite \emph{rasteriser.} Ce problème n'est donc lié qu'à une mauvaise paramétrisation de la rasterisation et il peut être corrigé par une augmentation de la résolution du raster cible.
+
+Concrètement cela peut se produire lors de la rastérisation de bâtiments, comme l'illustre la \autoref{fig:rasterisation_cas_limite}. En effet si l'on souhaite travailler sur une zone assez étendue (de l'ordre du XX) il sera nécessaire d'adopter une maille de taille intermédiaire (XX), ce qui est supérieur à la taille de nombreux batiments. Ainsi, une rasterisation avec de tels paramètres conduira à oublier de nombreux objets.
 
 \begin{figure}
   \centering
@@ -33,7 +35,6 @@ Pour notre application nous avons pris la décision de toujours travailler à l'
   \caption{d}
   \label{fig:rasterisation_cas_limite}
 \end{figure}
-    
 
 \subsection{Les méthodes de rasterisation}
 
