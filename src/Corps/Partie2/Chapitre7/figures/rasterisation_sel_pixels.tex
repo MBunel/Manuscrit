@@ -1,12 +1,22 @@
 ﻿\begin{tikzpicture}
   % Arrow
   \begin{scope}
-    \path[draw, ->, shorten >=5pt, shorten <=5pt] (1,2) |- (5,3)
-    node[pos=.75, font=\footnotesize, fill=white]
+    \path[draw, ->, shorten >=5pt, shorten <=5pt] (1,2) |- (8,3)
+    node[pos=.75, font=\footnotesize, fill=white] (labRastA)
     {\itshape rasterisation};
-    \path[draw, ->, shorten >=5pt, shorten <=5pt] (1,0) |- (5,-1)
-    node[pos=.75, font=\footnotesize, fill=white]
+    %
+    \node[anchor=north west,baseline, text width=3.5cm, font=\tiny] at
+    ([xshift=1.5ex, yshift=1ex]labRastA.south west) {avec sélection
+      des pixels dont le centroïde est à l'intérieur de \emph{l'objet
+        de référence}};
+    
+    \path[draw, ->, shorten >=5pt, shorten <=5pt] (1,0) |- (8,-1)
+    node[pos=.75, font=\footnotesize, fill=white] (labRastB)
     {\itshape rasterisation};
+    %
+    \node[anchor=north west,baseline, text width=3.5cm, font=\tiny] at
+    ([xshift=1.5ex, yshift=1ex]labRastB.south west) {avec sélection de
+    tous les pixels intersectant \emph{l'objet de référence}};
   \end{scope}
   % Représentation objet de référence
   \begin{scope}[local bounding box=obr]
@@ -19,20 +29,21 @@
   \end{scope}
   
   % Représentation objet de référence rasterisé
-  \begin{scope}[xshift=5cm, yshift=2cm]
+  \begin{scope}[xshift=8cm, yshift=2cm]
     \begin{scope}
       \foreach \x in {0,.25,...,1.75}{
         \foreach \y in {0,.25,...,1.75}
         \path[draw, line width=.01mm] (\x,\y) rectangle (\x +.25, \y + .25);
       }
       \path[ffa] (.5,.5) rectangle (1.5, 1.5);
+      \path[ffc, black, dashed] (1,1) circle [radius=15pt];
       \path[ffc] (0,0) rectangle (2,2);
     \end{scope}
     \node[text width=3cm, align=center, anchor=north, font=\footnotesize] at (1,-.25)
     {\itshape Objet de référence rastérisé \normalfont \textcolor{RdBu-9-1}{\textsf{A}}};
   \end{scope}
   
-  \begin{scope}[xshift=5cm, yshift=-2cm]
+  \begin{scope}[xshift=8cm, yshift=-2cm]
     \begin{scope}
       \foreach \x in {0,.25,...,1.75}{
         \foreach \y in {0,.25,...,1.75}
@@ -45,6 +56,7 @@
       \path[ffa2] (1.5,.75) rectangle (1.75, 1.25);
       \path[ffa2] (.75,1.5) rectangle (1.25, 1.75);
       \path[ffa2] (.75,.25) rectangle (1.25,.5);
+      \path[ffc2, black, dashed] (1,1) circle [radius=15pt];
       \path[ffc2] (0,0) rectangle (2,2);
     \end{scope}
     \node[text width=3cm, align=center, anchor=north, font=\footnotesize] at (1,-.25)
