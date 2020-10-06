@@ -3,10 +3,10 @@
   \def\decalageY{-.2}
   % Arrow
   \begin{scope}
-    \path[ffc, -, shorten >=12pt, shorten <=5pt] (1,2) |- (3.65,3);
-    \path[ffc, ->,shorten >=5pt, shorten <=5pt] (8.25,3) -- (10,3);
-    \path[ffc2, -,shorten >=12pt, shorten <=5pt] (1,0) |- (3.65,-1);
-    \path[ffc2, ->,shorten >=5pt, shorten <=5pt] (8.25,-1) -- (10,-1);
+    \path[draw, -, shorten >=12pt, shorten <=5pt] (1,2) |- (3.65,3);
+    \path[draw, ->,shorten >=5pt, shorten <=5pt] (8.25,3) -- (10,3);
+    \path[draw, -,shorten >=12pt, shorten <=5pt] (1,0) |- (3.65,-1);
+    \path[draw, ->,shorten >=5pt, shorten <=5pt] (8.25,-1) -- (10,-1);
   \end{scope}
   % Représentation métrique
   \begin{scope}[local bounding box=met]
@@ -102,7 +102,7 @@
         % Axe
         \draw[->] (0, \decalageX) --++ (9, 0) coordinate (x axis);
         % Graduations
-        \foreach \n/\t in {0/,{0},1/{0,25},2/{},3/{},4/{},5/{},6/{},7/{},8/{}}
+        \foreach \n/\t in {0/,{0},1/{},2/{},3/{},4/{},5/{},6/{},7/{},8/{}}
         {
           \draw[-] (\n, \decalageX - .05) --++ (0, .1);
           \node[below, font=\tiny] at (\n, \decalageX - .05) {\t};
@@ -123,6 +123,18 @@
         }
         % Label
         \node[above, font=\tiny] at (y axis) {$\mu$};
+      \end{scope}
+            \begin{scope}
+        % Seuil 1
+        \draw[ffc,line width=.5] (1,\decalageY) -- (1,2);
+        \draw[fill, RdBu-9-1] (1,\decalageY) circle (2pt);
+        \draw[fill, RdBu-9-1] (1,2) circle (2pt);
+        \node[below, font=\tiny, RdBu-9-1] at (1, \decalageX - .05) {0,25};
+        % Seuil 2
+        \draw[ffc,line width=.5] (8,\decalageY) -- (8,0);
+        \draw[fill, RdBu-9-1] (8,\decalageY) circle (2pt);
+        \draw[fill, RdBu-9-1] (8,0) circle (2pt);
+        \node[below, font=\tiny, RdBu-9-1] at (8, \decalageX - .05) {2};
       \end{scope}
     \end{scope}
   \end{scope}
@@ -147,7 +159,7 @@
         % Axe
         \draw[->] (0, \decalageX) --++ (9, 0) coordinate (x axis);
         % Graduations
-        \foreach \n/\t in {0/,{0},1/{0.25},2/{},3/{},4/{},5/{},6/{},7/{},8/{}}
+        \foreach \n/\t in {0/,{0},1/{0,25},2/{},3/{},4/{},5/{},6/{},7/{},8/{}}
         {
           \draw[-] (\n, \decalageX - .05) --++ (0, .1);
           \node[below, font=\tiny] at (\n, \decalageX - .05) {\t};
@@ -172,15 +184,15 @@
       % Analyse
       \begin{scope}
         % Seuil 1
-        \draw[ffc2] (3,\decalageY) -- (3,0);
+        \draw[ffc2,line width=.5] (3,\decalageY) -- (3,0);
         \draw[fill, RdBu-9-9] (3,\decalageY) circle (2pt);
         \draw[fill, RdBu-9-9] (3,0) circle (2pt);
         \node[below, font=\tiny, RdBu-9-9] at (3, \decalageX - .05) {0,75};
         % Seuil 2
-        \draw[ffc2] (6,\decalageY) -- (6,2);
+        \draw[ffc2,line width=.5] (6,\decalageY) -- (6,2);
         \draw[fill, RdBu-9-9] (6,\decalageY) circle (2pt);
         \draw[fill, RdBu-9-9] (6,2) circle (2pt);
-        \node[below, font=\tiny, RdBu-9-9] at (6, \decalageX - .05) {2};
+        \node[below, font=\tiny, RdBu-9-9] at (6, \decalageX - .05) {1,5};
       \end{scope}
     \end{scope}
   \end{scope}
