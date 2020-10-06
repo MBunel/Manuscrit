@@ -28,12 +28,13 @@ La \autoref{fig:rasterisation_sel_pixels} illustre ces deux approches. Un même 
 
 Compte-tenu de ces limites, nous avons décidé d'opter pour la seconde approche, c'est-à-dire une \emph{rasterisation} sélectionnant tous les pixels touchant \emph{l'objet de référence.} Ce choix nous dispense de définir la résolution de la \ac{zir} en fonction des \emph{objets de référence} utilisés, mais conduit à une fréquente exagération de la taille des \emph{objets de référence.}
 
-\begin{figure}
+\begin{wrapfigure}{r}{4cm}
   \centering
   \input{../figures/rasterisation_cas_limite.tex}
-  \caption{d}
+  \caption{Illustration d'une situation où la \emph{rasterisation}
+    aboutit à un raster vide}
   \label{fig:rasterisation_cas_limite}
-\end{figure}
+\end{wrapfigure}
 
 \subsection{Les méthodes de rasterisation}
 

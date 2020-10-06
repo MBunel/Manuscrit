@@ -1,17 +1,24 @@
-La dernière partie de la \emph{phase de spatialisation} est la
-\emph{fuzzyfication de la métrique.} C'est à ce moment qu'est créée la
-\emph{zone de localisation compatible.}
+Une fois que la \emph{métrique} identifiée pour la \emph{spatialisation} de la \emph{relation de localisation atomique} a été calculée, il est nécessaire de la \emph{fuzzyfier} pour construire la \emph{zone de localisation compatible.} Comme nous l'expliquions lors de la définition de la \emph{méthode de spatialisation} (\autoref{chap:07-sec1}), la \emph{fuzzyfication} a deux rôles, le premier ---~illustré par la \autoref{fig:Exemple_Metrique_vs_Selecteur}~--- consiste à sélectionner les pixels pour lesquels la valeur de la \emph{métrique} correspond à ce qui est attendu au sein de la \ac{zlc}, le second est produire une \emph{zone de localisation compatible} floue, transcrivant \emph{l'imprécision} de la \emph{relation de localisation atomique.}
 
 \subsection{la méthode de \emph{fuzzyfication}}
 
-\tdi{La sémantique est dans la forme}%
+Un simple filtre binaire, comme celui utilisé pour l'exemple de la \autoref{fig:Exemple_Metrique_vs_Selecteur}, ne permet pas de remplir ces deux fonctions, nous devons donc étendre cette méthode pour lui permettre de générer des \ac{zlc} floues. Pour ce faire on peut se tourner vers la sélection floue
+
+La \autoref{fig:importance_fuzzyfication} présente une version améliorée de l'exemple de la \autoref{fig:Exemple_Metrique_vs_Selecteur}. La \emph{métrique} a été remplacée par la distance euclidienne
+%
+Les valeurs de la \emph{métrique} sont alors filtrées à l'aide de deux fonctions d'appartenance, transformant les valeurs de la \emph{métrique} \footnote{Dont le domaine est \(\mathbb{R}^+\).} en un \emph{degré d'appartenance.} La première \emph{fonction d'appartenance} (définissant la \ac{zlc} \textcolor{RdBu-9-1}{\textsf{A}}) attribue un degré d'appartenance maximal lorsque la distance \footnote{Exprimée en centimètres à l'échelle de la feuille.} est inférieure ou égale à \SI{0,25}{\centi\meter} (soit le côté d'un pixel), puis le degré d'appartenance décroit jusqu'à atteindre 0 lorsque la distance est de \SI{2}{\centi\meter} ou plus. La seconde \emph{fonction d'appartenance} (cf. \ac{zlc} \textcolor{RdBu-9-9}{\textsf{B}}) attribue un degré nul jusqu'à un éloignement de \SI{0,75}{\centi\meter}, puis croit jusqu'à atteindre la valeur de 1 pour les éloignements supérieurs ou égaux à \SI{1,50}{\centi\meter}. Comme on peut le constater, les \emph{zones de localisation compatibles}, \textcolor{RdBu-9-1}{\textsf{A}} et \textcolor{RdBu-9-9}{\textsf{B}}, résultant de ces deux \emph{fuzzyfications} ont une structure spatiale différente, pouvant approcher la sémantique de certaines \emph{relations de localisation atomiques.} La \emph{zone de localisation compatible} \textcolor{RdBu-9-1}{\textsf{A}} peut, par exemple, être rapprochée de la sémantique de la \emph{relation de localisation atomique} \onto[orla]{Pres\-De}, alors que la \ac{zlc} \textcolor{RdBu-9-9}{\textsf{B}} renvoie plutôt à une modélisation floue d'une \emph{relation} telle que \onto[orla]{Exterieur\-De}.
+%
+Ainsi, comme le montre cet exemple, on peut étendre la logique de \emph{spatialisation} en trois étapes utilisée pour construire la \autoref{fig:Exemple_Metrique_vs_Selecteur} à un cadre flou.
+
+% forme = sémantique, seuils = implémentation
+Une autre conclusion que l'on peut tirer de la \autoref{fig:importance_fuzzyfication} est la faible importance de la valeur des seuils, comparativement à la forme globale de la \emph{fonction d'appartenance.}
+
+
+
 Comme nous le mentions précédemment (\autoref{chap:05}), le choix de la forme de la fonction d'appartenance est essentiel à la \emph{spatialisation,} puisqu'il
 %
 Ainsi, la sémantique est dans la forme de la fonction d'appartenance.
-
-\tdi{Expliquer en quoi la définition des seuils est un problème
-  d'implémentation
-}%
+%
 La question de la définition des seuils de la fonction d'appartenance utilisée est également importante. Toutefois, il s'agit 
 
 \begin{figure}
@@ -23,24 +30,27 @@ La question de la définition des seuils de la fonction d'appartenance utilisée
 
 \subsection{Les différents \emph{fuzzyficateurs}}
 
-\tdi{Liste des fuzzyficateurs}
-
 Nous proposons la définition de trois fonctions de \emph{fuzzyfication} principales, déclinées en plusieurs variantes, portant le total des \emph{fuzzyficateurs} à sept.
 
-Le premier d'entre-eux est le \emph{fuzzyficateur} \onto{Eq\-Val}, défini par une fonction d'appartenance triangulaire (Figure \ref{fig:select_eqval_b}).
+Le premier d'entre-eux est le \emph{fuzzyficateur} \onto{Eq\-Val}, qui défini une fonction d'appartenance triangulaire (Figure \ref{fig:select_eqval_b}). L'objectif de ce \emph{fuzzyfieur} est de décrire des situations où la \emph{zone de localisation compatible} est définie par un ensemble de pixels dont la valeur de la métrique est égale à une valeur donnée. C'est par exemple le cas pour une \emph{relation de localisation atomique} comme \onto[orla]{Distance\-Quantitative\-Planimétrique}, définissant une \ac{zlc} située à un éloignement donné de \emph{l'objet de référence} (\eg \enquote{à \SI{50}{\meter}}), ou pour la \emph{relation} \onto[orla]{Alt\-Eq}, définissant une \ac{zlc} située à une altitude donnée. La forme triangulaire de cette \emph{fonction d'appartenance,} permet d'attribuer un degré d'appartenance non nul aux pixels ayant une valeur de la \emph{métrique} proche de celle attendue. Ainsi, si l'on souhaite construire la \ac{zlc} à 100 mètres de \emph{l'objet de référence,} on pourra, en fonction des seuils fixés, inclure des positions situées à 75 ou 110 mètres de \emph{l'objet de référence.} De la même manière ce \emph{fuzzyfieur} permet de prendre en considération des pixels situés au dessus, ou en dessous, d'une altitude donnée. La \enquote{largeur} de la fonction est définie par un paramètre \(delta\), indiquant l'écart entre XX et XX. Ce paramètre définit les seuils
+
+La fonction d'appartenance du \emph{fuzzyfieur} \onto{Eq\-Val} est donc définie de la manière suivante :
 
 \begin{equation}
   \label{eq:eq_val}
   \def\arraystretch{1.35}
-  x = \left\{
+  f(x,v,\delta) = \left\{
     \begin{array}{cl}
-      \dfrac{x - x_1}{\Delta x} & \text{si}\ θ > -5° \\
-      \dfrac{x_2 - x}{\Delta x} & \text{si}\ -12° ≤ θ ≤ -5° \\
-      0 & \text{si}\ θ < -12°\ \text{ou}\ θ > -12°\\
+      \dfrac{x - x_1}{\Delta x} & \text{si}\ v - \frac{\delta}{2} ≤ x ≤ v\\
+      \dfrac{x_2 - x}{\Delta x} & \text{si}\ v ≤ x ≤ v + \frac{\delta}{2}\\
+      0 & \text{si}\ x < v-\frac{\delta}{2}\ \text{ou}\ x > v+\frac{\delta}{2}\\
     \end{array}
   \right.
 \end{equation}
 
+Avec \(x\) la valeur de la \emph{métrique,} \(v\) la valeur de référence et \(\delta\) l'écart xxx.
+
+Au fil de la \emph{spatialisation} de nouvelles \emph{relations de localisation atomiques} il s'est avéré que nous recourions fréquemment à des métriques relatives, comme la différence d'altitude par rapport à \emph{l'objet de référence,} c'est pourquoi nous avons construit un second \emph{fuzzyfieur,} \onto{EqVal0}, spécialisant le premier \autoref{fig:select_eqval_0}. Il s'agit également d'une \emph{fonction de fuzzyfication} triangulaire et symétrique, dont la \enquote{largeur} est définie par un paramètre \(\delta\). Cependant son paramètre \(v\), indiquant la valeur de la \emph{métrique} sur laquelle la courbe est centrée est fixé à 0. Nous avons également défini une seconde variante de ce \emph{fuzzyfieur,} \onto{Eq\-Angle}, fortement similaire à \onto{Eq\-Val}, mais destinée aux cas spécifiques où la \emph{métrique} est un angle. Ce \emph{fuzzyfieur} permet donc de traiter ces valeurs en prenant en compte leur périodicité. \todo{Ce sélecteur ne devrait pas exister, c'est à la fonction python d'identifier si ce qu'on lui donne est angulaire ou non, pas à l'ontologie. Voir si je l'enlève}.
 
 \begin{figure}
   \centering
@@ -61,21 +71,25 @@ Le premier d'entre-eux est le \emph{fuzzyficateur} \onto{Eq\-Val}, défini par u
   \label{fig:select_eqval}
 \end{figure}
 
-Le second \emph{fuzzyfieur,} \onto{Sup\-Val}, est défini par une fonction d'appartenance linéaire (Figure \ref{fig:select_supval_b}).
+Le second \emph{fuzzyfieur,} \onto{Sup\-Val}, est destiné à représenter des situations où les valeurs de la \emph{métrique} doivent être supérieures à un seuil \(v\). On considère que toutes les valeurs supérieures ou égale à ce seuil ont un degré d'appartenance maximal. À l'inverse on tolère des valeurs inférieures à ce seuil, dans la mesure d'un paramètre \(\delta\). Ce fuzzyfieur prend la forme d'une fonction d'appartenance linéaire (Figure \ref{fig:select_supval_b}), dont l'équation est :
 
 % \dfrac{\Delta y}{\Delta x}x + \dfrac{x_2y_1 - x_1y_2}{\Delta x}
 
 \begin{equation}
   \label{eq:sup_val}
   \def\arraystretch{1.25}
-  x = \left\{
+  f(x,v,\delta) = \left\{
     \begin{array}{cl}
-      1 & \text{si}\ θ > -5° \\
-      \dfrac{x - x_1}{\Delta x} & \text{si}\ -12° ≤ θ ≤ -5° \\
-      0 & \text{si}\ θ < -12°\\
+      1 & \text{si}\ x > v \\
+      \dfrac{x - x_1}{\Delta x} & \text{si}\  v - \delta ≤ x ≤ v \\
+      0 & \text{si}\ x < v - \delta\\
     \end{array}
   \right.
 \end{equation}
+
+Avec \(x\) la valeur de la \emph{métrique,} \(v\) la valeur référence et \(\delta\) xxxxx.
+
+Comme pour le \emph{fuzzyfieur} \onto{Eq\-Val} une variante dont la valeur de référence est fixée à 0 a été définie, \onto{Sup\-Val\-0}.
 
 \begin{figure}
   \centering
@@ -91,19 +105,23 @@ Le second \emph{fuzzyfieur,} \onto{Sup\-Val}, est défini par une fonction d'app
   \label{fig:select_supval}
 \end{figure}
 
-Enfin, le dernier fuzzyfieur
+Le dernier \emph{fuzzyfieur,} \onto{Inf\-Val}, est l'exact opposé de \onto{Sup\-Val}. Son objectif est de représenter des situations où l'on souhaite sélectionner les pixels dont la \emph{métrique} est inférieure à un seuil \(v\), donné. Toutes les valeurs inférieures à ce seuil ont un degré d'appartenance maximal, qui diminue linéairement lorsque la valeur de la  métrique dépasse le seuil \(v\), jusqu’à devenir nul à \(v+\delta\). Ce \emph{fuzzyfieur} est défini à l'aide de la fonction d'appartenance suivante :
 
 \begin{equation}
   \label{eq:inf_val}
   \def\arraystretch{1.25}
-  x = \left\{
+   f(x,v,\delta) = \left\{
     \begin{array}{cl}
-      1 & \text{si}\ θ > -5° \\
-      \dfrac{x_2-x}{\Delta x} & \text{si}\ -12° ≤ θ ≤ -5° \\
-      0 & \text{si}\ θ < -12°\\
+      1 & \text{si}\ x < v  \\
+      \dfrac{x_2-x}{\Delta x} & \text{si}\ v ≤ x ≤ v + \delta \\
+      0 & \text{si}\ x < v + \delta\\
     \end{array}
   \right.
 \end{equation}
+
+Où \(x\) est la valeur de la \emph{métrique,} \(v\) la valeur référence et \(\delta\) l'écart xxx.
+
+De la même manière que les autres \textrm{fuzzyfieurs,} \onto{Inf\-Val} dispose d'une variante, \onto{Inf\-Val\-0}, centrée sur 0.
 
 \begin{figure}
   \centering
@@ -118,7 +136,25 @@ Enfin, le dernier fuzzyfieur
   \label{fig:select_infval}
 \end{figure}
 
+
+% \begin{wrapfigure}[10]{o}{7.5cm}
+%   \centering
+%   \input{../figures/fnc_inf_val.tex}
+%   \caption{Fonction d'appartenance utilisée pour définir le
+%     \emph{fuzzyfieur} \protect\onto{Inf\-Val}}.
+% \end{wrapfigure}
+
+% \begin{wrapfigure}[10]{o}{7.5cm}
+%   \centering
+%   \input{../figures/fnc_inf_val.tex}
+%   \caption{Fonction d'appartenance utilisée pour définir le
+%     \emph{fuzzyfieur} \protect\onto{Inf\-Val\-0}.}
+% \end{wrapfigure}
+
+
 \subsection{Les modifieurs}
+
+Je sais que c'est assez ou tout ça, mais on a toujours pas fini avec les trucs cooooooooooooools.
 
 \tdi{Modifeur not}
 
