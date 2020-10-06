@@ -32,7 +32,9 @@ La question de la définition des seuils de la fonction d'appartenance utilisée
 
 Nous proposons la définition de trois fonctions de \emph{fuzzyfication} principales, déclinées en plusieurs variantes, portant le total des \emph{fuzzyficateurs} à sept.
 
-Le premier d'entre-eux est le \emph{fuzzyficateur} \onto{Eq\-Val}, qui défini une fonction d'appartenance triangulaire (Figure \ref{fig:select_eqval_b}). L'objectif de ce \emph{fuzzyfieur} est de décrire des situations où la \emph{zone de localisation compatible} est définie par un ensemble de pixels dont la valeur de la métrique est égale à une valeur donnée. C'est par exemple le cas pour une \emph{relation de localisation atomique} comme \onto[orla]{Distance\-Quantitative\-Planimétrique}, définissant une \ac{zlc} située à un éloignement donné de \emph{l'objet de référence} (\eg \enquote{à \SI{50}{\meter}}), ou pour la \emph{relation} \onto[orla]{Alt\-Eq}, définissant une \ac{zlc} située à une altitude donnée. La forme triangulaire de cette \emph{fonction d'appartenance,} permet d'attribuer un degré d'appartenance non nul aux pixels ayant une valeur de la \emph{métrique} proche de celle attendue. Ainsi, si l'on souhaite construire la \ac{zlc} à 100 mètres de \emph{l'objet de référence,} on pourra, en fonction des seuils fixés, inclure des positions situées à 75 ou 110 mètres de \emph{l'objet de référence.} De la même manière ce \emph{fuzzyfieur} permet de prendre en considération des pixels situés au dessus, ou en dessous, d'une altitude donnée.
+Le premier d'entre-eux est le \emph{fuzzyficateur} \onto{Eq\-Val}, qui défini une fonction d'appartenance triangulaire (Figure \ref{fig:select_eqval_b}). L'objectif de ce \emph{fuzzyfieur} est de décrire des situations où la \emph{zone de localisation compatible} est définie par un ensemble de pixels dont la valeur de la métrique est égale à une valeur donnée. C'est par exemple le cas pour une \emph{relation de localisation atomique} comme \onto[orla]{Distance\-Quantitative\-Planimétrique}, définissant une \ac{zlc} située à un éloignement donné de \emph{l'objet de référence} (\eg \enquote{à \SI{50}{\meter}}), ou pour la \emph{relation} \onto[orla]{Alt\-Eq}, définissant une \ac{zlc} située à une altitude donnée. La forme triangulaire de cette \emph{fonction d'appartenance,} permet d'attribuer un degré d'appartenance non nul aux pixels ayant une valeur de la \emph{métrique} proche de celle attendue. Ainsi, si l'on souhaite construire la \ac{zlc} à 100 mètres de \emph{l'objet de référence,} on pourra, en fonction des seuils fixés, inclure des positions situées à 75 ou 110 mètres de \emph{l'objet de référence.} De la même manière ce \emph{fuzzyfieur} permet de prendre en considération des pixels situés au dessus, ou en dessous, d'une altitude donnée. La \enquote{largeur} de la fonction est définie par un paramètre \(delta\), indiquant l'écart entre XX et XX. Ce paramètre définit les seuils
+
+La fonction d'appartenance du \emph{fuzzyfieur} \onto{Eq\-Val} est donc définie de la manière suivante :
 
 \begin{equation}
   \label{eq:eq_val}
@@ -46,6 +48,9 @@ Le premier d'entre-eux est le \emph{fuzzyficateur} \onto{Eq\-Val}, qui défini u
   \right.
 \end{equation}
 
+Avec \(x\) la valeur de la \emph{métrique,} \(v\) la valeur de référence et \(\delta\) l'écart xxx.
+
+Au fil de la \emph{spatialisation} de nouvelles \emph{relations de localisation atomiques} il s'est avéré que nous recourions fréquemment à des métriques relatives, comme la différence d'altitude par rapport à \emph{l'objet de référence,} c'est pourquoi nous avons construit un second \emph{fuzzyfieur,} \onto{EqVal0}, spécialisant le premier \autoref{fig:select_eqval_0}. Il s'agit également d'une \emph{fonction de fuzzyfication} triangulaire et symétrique, dont la \enquote{largeur} est définie par un paramètre \(\delta\). Cependant son paramètre \(v\), indiquant la valeur de la \emph{métrique} sur laquelle la courbe est centrée est fixé à 0.
 
 \begin{figure}
   \centering
