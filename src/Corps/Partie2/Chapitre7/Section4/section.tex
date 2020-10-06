@@ -6,7 +6,10 @@ Un simple filtre binaire, comme celui utilisé pour l'exemple de la \autoref{fig
 
 La \autoref{fig:importance_fuzzyfication} présente une version améliorée de l'exemple de la \autoref{fig:Exemple_Metrique_vs_Selecteur}. La \emph{métrique} a été remplacée par la distance euclidienne
 %
-Les valeurs de la \emph{métrique} sont alors filtrées à l'aide de deux fonctions d'appartenance, transformant les valeurs de la \emph{métrique} \footnote{Dont le domaine est \(\mathbb{R}^+\).} en un \emph{degré d'appartenance.} Comme on peut le constater une nouvelle fois, des \emph{zones de localisation compatibles} très différentes peuvent êtres construites à partir de la même \emph{métrique.}
+Les valeurs de la \emph{métrique} sont alors filtrées à l'aide de deux fonctions d'appartenance, transformant les valeurs de la \emph{métrique} \footnote{Dont le domaine est \(\mathbb{R}^+\).} en un \emph{degré d'appartenance.} La première \emph{fonction d'appartenance} (définissant la \ac{zlc} \textcolor{RdBu-9-1}{\textsf{A}}) attribue un degré d'appartenance maximal lorsque la distance \footnote{Exprimée en centimètres à l'échelle de la feuille.} est inférieure ou égale à \SI{0,25}{\centi\meter} (soit le côté d'un pixel), puis le degré d'appartenance décroit jusqu'à atteindre 0 lorsque la distance est de \SI{2}{\centi\meter} ou plus. La seconde \emph{fonction d'appartenance} (cf. \ac{zlc} \textcolor{RdBu-9-9}{\textsf{B}}) attribue un degré nul jusqu'à un éloignement de \SI{0,75}{\centi\meter}, puis croit jusqu'à atteindre la valeur de 1 pour les éloignements supérieurs ou égaux à \SI{1,50}{\centi\meter}.
+
+
+Comme on peut à nouveau le constater, des \emph{zones de localisation compatibles} très différentes peuvent être construites à partir de la même \emph{métrique.}
 
 
 
@@ -123,6 +126,22 @@ Enfin, le dernier fuzzyfieur
   \caption{infval}
   \label{fig:select_infval}
 \end{figure}
+
+
+% \begin{wrapfigure}{r}{7.5cm}
+%   \centering
+%   \subfloat[infval]{
+%     \input{../figures/fnc_inf_val.tex}
+%   }
+  
+%   \subfloat[infval0]{
+%     \input{../figures/fnc_inf_val.tex}
+%   }
+%   \caption{Fonctions d'appartenance utilisées pour définir les
+%     \emph{fuzzyfieurs} \protect\onto{Inf\-Val} et
+%     \protect\onto{Inf\-Val\-0}.}
+%   \label{fig:select_infval}
+% \end{wrapfigure}
 
 \subsection{Les modifieurs}
 
