@@ -6,21 +6,20 @@ Un simple filtre binaire, comme celui utilisé pour l'exemple de la \autoref{fig
 
 La \autoref{fig:importance_fuzzyfication} présente une version améliorée de l'exemple de la \autoref{fig:Exemple_Metrique_vs_Selecteur}. La \emph{métrique} a été remplacée par la distance euclidienne
 %
-Les valeurs de la \emph{métrique} sont alors filtrées à l'aide de deux fonctions d'appartenance, transformant les valeurs de la \emph{métrique} \footnote{Dont le domaine est \(\mathbb{R}^+\).} en un \emph{degré d'appartenance.} La première \emph{fonction d'appartenance} (définissant la \ac{zlc} \textcolor{RdBu-9-1}{\textsf{A}}) attribue un degré d'appartenance maximal lorsque la distance \footnote{Exprimée en centimètres à l'échelle de la feuille.} est inférieure ou égale à \SI{0,25}{\centi\meter} (soit le côté d'un pixel), puis le degré d'appartenance décroit jusqu'à atteindre 0 lorsque la distance est de \SI{2}{\centi\meter} ou plus. La seconde \emph{fonction d'appartenance} (cf. \ac{zlc} \textcolor{RdBu-9-9}{\textsf{B}}) attribue un degré nul jusqu'à un éloignement de \SI{0,75}{\centi\meter}, puis croit jusqu'à atteindre la valeur de 1 pour les éloignements supérieurs ou égaux à \SI{1,50}{\centi\meter}.
-
-
-Comme on peut à nouveau le constater, des \emph{zones de localisation compatibles} très différentes peuvent être construites à partir de la même \emph{métrique.}
-
-
+Les valeurs de la \emph{métrique} sont alors filtrées à l'aide de deux fonctions d'appartenance, transformant les valeurs de la \emph{métrique} \footnote{Dont le domaine est \(\mathbb{R}^+\).} en un \emph{degré d'appartenance.} La première \emph{fonction d'appartenance} (définissant la \ac{zlc} \textcolor{RdBu-9-1}{\textsf{A}}) attribue un degré d'appartenance maximal lorsque la distance \footnote{Exprimée en centimètres à l'échelle de la feuille.} est inférieure ou égale à \SI{0,25}{\centi\meter} (soit le côté d'un pixel), puis le degré d'appartenance décroit jusqu'à atteindre 0 lorsque la distance est de \SI{2}{\centi\meter} ou plus. La seconde \emph{fonction d'appartenance} (cf. \ac{zlc} \textcolor{RdBu-9-9}{\textsf{B}}) attribue un degré nul jusqu'à un éloignement de \SI{0,75}{\centi\meter}, puis croit jusqu'à atteindre la valeur de 1 pour les éloignements supérieurs ou égaux à \SI{1,50}{\centi\meter}. Comme on peut le constater, les \emph{zones de localisation compatibles}, \textcolor{RdBu-9-1}{\textsf{A}} et \textcolor{RdBu-9-9}{\textsf{B}}, résultant de ces deux \emph{fuzzyfications} ont une structure spatiale différente, pouvant approcher la sémantique de certaines \emph{relations de localisation atomiques.} La \emph{zone de localisation compatible} \textcolor{RdBu-9-1}{\textsf{A}} peut, par exemple, être rapprochée de la sémantique de la \emph{relation de localisation atomique} \onto[orla]{Pres\-De}, alors que la \ac{zlc} \textcolor{RdBu-9-9}{\textsf{B}} renvoie plutôt à une modélisation floue d'une \emph{relation} telle que \onto[orla]{Exterieur\-De}.
+%
+Ainsi, comme le montre cet exemple, on peut étendre la logique de \emph{spatialisation} en trois étapes utilisée pour construire la \autoref{fig:Exemple_Metrique_vs_Selecteur} à un cadre flou.
 
 \tdi{La sémantique est dans la forme}%
+Un autre point mis en évidence par la \autoref{fig:importance_fuzzyfication} est 
+
+
+
 Comme nous le mentions précédemment (\autoref{chap:05}), le choix de la forme de la fonction d'appartenance est essentiel à la \emph{spatialisation,} puisqu'il
 %
 Ainsi, la sémantique est dans la forme de la fonction d'appartenance.
 
-\tdi{Expliquer en quoi la définition des seuils est un problème
-  d'implémentation
-}%
+% seuils = implémentation
 La question de la définition des seuils de la fonction d'appartenance utilisée est également importante. Toutefois, il s'agit 
 
 \begin{figure}
