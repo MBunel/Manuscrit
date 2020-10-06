@@ -50,7 +50,7 @@ La fonction d'appartenance du \emph{fuzzyfieur} \onto{Eq\-Val} est donc définie
 
 Avec \(x\) la valeur de la \emph{métrique,} \(v\) la valeur de référence et \(\delta\) l'écart xxx.
 
-Au fil de la \emph{spatialisation} de nouvelles \emph{relations de localisation atomiques} il s'est avéré que nous recourions fréquemment à des métriques relatives, comme la différence d'altitude par rapport à \emph{l'objet de référence,} c'est pourquoi nous avons construit un second \emph{fuzzyfieur,} \onto{EqVal0}, spécialisant le premier \autoref{fig:select_eqval_0}. Il s'agit également d'une \emph{fonction de fuzzyfication} triangulaire et symétrique, dont la \enquote{largeur} est définie par un paramètre \(\delta\). Cependant son paramètre \(v\), indiquant la valeur de la \emph{métrique} sur laquelle la courbe est centrée est fixé à 0.
+Au fil de la \emph{spatialisation} de nouvelles \emph{relations de localisation atomiques} il s'est avéré que nous recourions fréquemment à des métriques relatives, comme la différence d'altitude par rapport à \emph{l'objet de référence,} c'est pourquoi nous avons construit un second \emph{fuzzyfieur,} \onto{EqVal0}, spécialisant le premier \autoref{fig:select_eqval_0}. Il s'agit également d'une \emph{fonction de fuzzyfication} triangulaire et symétrique, dont la \enquote{largeur} est définie par un paramètre \(\delta\). Cependant son paramètre \(v\), indiquant la valeur de la \emph{métrique} sur laquelle la courbe est centrée est fixé à 0. Nous avons également défini une seconde variante de ce \emph{fuzzyfieur,} \onto{Eq\-Angle}, fortement similaire à \onto{Eq\-Val}, mais destinée aux cas spécifiques où la \emph{métrique} est un angle. Ce \emph{fuzzyfieur} permet donc de traiter ces valeurs en prenant en compte la périodicité des valeurs.
 
 \begin{figure}
   \centering
@@ -137,22 +137,24 @@ De la même manière que les autres \textrm{fuzzyfieurs,} \onto{Inf\-Val} dispos
 \end{figure}
 
 
-% \begin{wrapfigure}{r}{7.5cm}
+% \begin{wrapfigure}[10]{o}{7.5cm}
 %   \centering
-%   \subfloat[infval]{
-%     \input{../figures/fnc_inf_val.tex}
-%   }
-  
-%   \subfloat[infval0]{
-%     \input{../figures/fnc_inf_val.tex}
-%   }
-%   \caption{Fonctions d'appartenance utilisées pour définir les
-%     \emph{fuzzyfieurs} \protect\onto{Inf\-Val} et
-%     \protect\onto{Inf\-Val\-0}.}
-%   \label{fig:select_infval}
+%   \input{../figures/fnc_inf_val.tex}
+%   \caption{Fonction d'appartenance utilisée pour définir le
+%     \emph{fuzzyfieur} \protect\onto{Inf\-Val}}.
 % \end{wrapfigure}
 
+% \begin{wrapfigure}[10]{o}{7.5cm}
+%   \centering
+%   \input{../figures/fnc_inf_val.tex}
+%   \caption{Fonction d'appartenance utilisée pour définir le
+%     \emph{fuzzyfieur} \protect\onto{Inf\-Val\-0}.}
+% \end{wrapfigure}
+
+
 \subsection{Les modifieurs}
+
+Je sais que c'est assez ou tout ça, mais on a toujours pas fini avec les trucs cooooooooooooools.
 
 \tdi{Modifeur not}
 
