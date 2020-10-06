@@ -2,6 +2,14 @@ Une fois que la \emph{métrique} identifiée pour la \emph{spatialisation} de la
 
 \subsection{la méthode de \emph{fuzzyfication}}
 
+Un simple filtre binaire, comme celui utilisé pour l'exemple de la \autoref{fig:Exemple_Metrique_vs_Selecteur}, ne permet pas de remplir ces deux fonctions, nous devons donc étendre cette méthode pour lui permettre de générer des \ac{zlc} floues. Pour ce faire on peut se tourner vers la sélection floue
+
+La \autoref{fig:importance_fuzzyfication} présente une version améliorée de l'exemple de la \autoref{fig:Exemple_Metrique_vs_Selecteur}. La \emph{métrique} a été remplacée par la distance euclidienne
+%
+Les valeurs de la \emph{métrique} sont alors filtrées à l'aide de deux fonctions d'appartenance, transformant les valeurs de la \emph{métrique} \footnote{Dont le domaine est \(\mathbb{R}^+\).} en un \emph{degré d'appartenance.} Comme on peut le constater une nouvelle fois, des \emph{zones de localisation compatibles} très différentes peuvent êtres construites à partir de la même \emph{métrique.}
+
+
+
 \tdi{La sémantique est dans la forme}%
 Comme nous le mentions précédemment (\autoref{chap:05}), le choix de la forme de la fonction d'appartenance est essentiel à la \emph{spatialisation,} puisqu'il
 %
