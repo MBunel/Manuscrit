@@ -10,16 +10,15 @@ Les valeurs de la \emph{métrique} sont alors filtrées à l'aide de deux foncti
 %
 Ainsi, comme le montre cet exemple, on peut étendre la logique de \emph{spatialisation} en trois étapes utilisée pour construire la \autoref{fig:Exemple_Metrique_vs_Selecteur} à un cadre flou.
 
-\tdi{La sémantique est dans la forme}%
-Un autre point mis en évidence par la \autoref{fig:importance_fuzzyfication} est 
+% forme = sémantique, seuils = implémentation
+Une autre conclusion que l'on peut tirer de la \autoref{fig:importance_fuzzyfication} est la faible importance de la valeur des seuils, comparativement à la forme globale de la \emph{fonction d'appartenance.}
 
 
 
 Comme nous le mentions précédemment (\autoref{chap:05}), le choix de la forme de la fonction d'appartenance est essentiel à la \emph{spatialisation,} puisqu'il
 %
 Ainsi, la sémantique est dans la forme de la fonction d'appartenance.
-
-% seuils = implémentation
+%
 La question de la définition des seuils de la fonction d'appartenance utilisée est également importante. Toutefois, il s'agit 
 
 \begin{figure}
@@ -31,11 +30,9 @@ La question de la définition des seuils de la fonction d'appartenance utilisée
 
 \subsection{Les différents \emph{fuzzyficateurs}}
 
-\tdi{Liste des fuzzyficateurs}
-
 Nous proposons la définition de trois fonctions de \emph{fuzzyfication} principales, déclinées en plusieurs variantes, portant le total des \emph{fuzzyficateurs} à sept.
 
-Le premier d'entre-eux est le \emph{fuzzyficateur} \onto{Eq\-Val}, défini par une fonction d'appartenance triangulaire (Figure \ref{fig:select_eqval_b}).
+Le premier d'entre-eux est le \emph{fuzzyficateur} \onto{Eq\-Val}, qui défini une fonction d'appartenance triangulaire (Figure \ref{fig:select_eqval_b}). L'objectif de ce \emph{fuzzyfieur} est de décrire des situations où la \emph{zone de localisation compatible} est définie par un ensemble de pixels dont la valeur de la métrique est égale à une valeur donnée. C'est par exemple le cas pour une \emph{relation de localisation atomique} comme \onto[orla]{Distance\-Quantitative\-Planimétrique} définissant une \ac{zlc} située à un éloignement donné de \emph{l'objet de référence.} Ainsi, si l'on cherche a \emph{spatialiser} 
 
 \begin{equation}
   \label{eq:eq_val}
