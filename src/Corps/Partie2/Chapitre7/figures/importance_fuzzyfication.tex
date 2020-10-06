@@ -3,10 +3,10 @@
   \def\decalageY{-.2}
   % Arrow
   \begin{scope}
-    \path[draw, -, shorten >=12pt, shorten <=5pt] (1,2) |- (3.65,3);
-    \path[draw, ->,shorten >=5pt, shorten <=5pt] (8.25,3) -- (10,3);
-    \path[draw, -,shorten >=12pt, shorten <=5pt] (1,0) |- (3.65,-1);
-    \path[draw, ->,shorten >=5pt, shorten <=5pt] (8.25,-1) -- (10,-1);
+    \path[ffc, -, shorten >=12pt, shorten <=5pt] (1,2) |- (3.65,3);
+    \path[ffc, ->,shorten >=5pt, shorten <=5pt] (8.25,3) -- (10,3);
+    \path[ffc2, -,shorten >=12pt, shorten <=5pt] (1,0) |- (3.65,-1);
+    \path[ffc2, ->,shorten >=5pt, shorten <=5pt] (8.25,-1) -- (10,-1);
   \end{scope}
   % Représentation métrique
   \begin{scope}[local bounding box=met]
@@ -16,8 +16,8 @@
         \foreach \y in {0,.25,...,1.75}
         {
           % Traçage pixels 
-          %\path[draw, line width=.01mm] (\x,\y) rectangle (\x +.25, \y +
-          %.25);
+          % \path[draw, line width=.01mm] (\x,\y) rectangle (\x +.25, \y +
+          % .25);
           % Calcul et représentation distance euclidienne
           \pgfmathsetmacro\radius{sqrt((\x-1.125)^2+(\y-.375)^2)*1.25}
           \fill[black] (\x+.125,.125+\y) circle (\radius pt);
@@ -35,8 +35,8 @@
         \foreach \y in {0,.25,...,1.75}
         {
           % Traçage pixels 
-          %\path[draw, line width=.01mm] (\x,\y) rectangle (\x +.25, \y +
-          %.25);
+          % \path[draw, line width=.01mm] (\x,\y) rectangle (\x +.25, \y +
+          % .25);
           % Calcul et représentation floue distance euclidienne
           \pgfmathsetmacro\dist{sqrt((\x-1.125)^2+(\y-.375)^2)}
           % Fuzzyfication de la distance
@@ -62,8 +62,8 @@
         \foreach \y in {0,.25,...,1.75}
         {
           % Traçage pixels 
-          %\path[draw, line width=.01mm] (\x,\y) rectangle (\x +.25, \y +
-          %.25);
+          % \path[draw, line width=.01mm] (\x,\y) rectangle (\x +.25, \y +
+          % .25);
           % Calcul et représentation floue distance euclidienne
           \pgfmathsetmacro\dist{sqrt((\x-1.125)^2+(\y-.375)^2)}
           % Fuzzyfication de la distance
@@ -108,7 +108,7 @@
           \node[below, font=\tiny] at (\n, \decalageX - .05) {\t};
         }
         % label
-        \node[below left, font=\tiny] at (x axis) {\itshape Distance
+        \node[below left, font=\tiny, yshift=-.25cm] at (x axis) {\itshape Distance
           \normalfont (cm)};
       \end{scope}
       % Axe Y
@@ -153,7 +153,7 @@
           \node[below, font=\tiny] at (\n, \decalageX - .05) {\t};
         }
         % label
-        \node[below left, font=\tiny] at (x axis) {\itshape Distance
+        \node[below left, font=\tiny,yshift=-.25cm] at (x axis) {\itshape Distance
           \normalfont (cm)};
       \end{scope}
       % Axe Y
@@ -168,6 +168,19 @@
         }
         % Label
         \node[above, font=\tiny] at (y axis) {$\mu$};
+      \end{scope}
+      % Analyse
+      \begin{scope}
+        % Seuil 1
+        \draw[ffc2] (3,\decalageY) -- (3,0);
+        \draw[fill, RdBu-9-9] (3,\decalageY) circle (2pt);
+        \draw[fill, RdBu-9-9] (3,0) circle (2pt);
+        \node[below, font=\tiny, RdBu-9-9] at (3, \decalageX - .05) {0,75};
+        % Seuil 2
+        \draw[ffc2] (6,\decalageY) -- (6,2);
+        \draw[fill, RdBu-9-9] (6,\decalageY) circle (2pt);
+        \draw[fill, RdBu-9-9] (6,2) circle (2pt);
+        \node[below, font=\tiny, RdBu-9-9] at (6, \decalageX - .05) {2};
       \end{scope}
     \end{scope}
   \end{scope}
