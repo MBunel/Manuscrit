@@ -61,12 +61,26 @@ Par exemple, la \emph{relation de localisation atomique}
 la \emph{relation} \onto[orla]{Sous\-Pro\-che\-De} (\autoref{chap:05})
 \todo{Changer par une référence à la figure de décomposition lorsque
   définie}~--- défini une \emph{zone de localisation compatible} dont
-toutes les positions ont une altitude inférieure à celle de \emph{l'objet de référence.}
+toutes les positions ont une altitude inférieure à celle de
+\emph{l'objet de référence.} Pour \emph{spatialiser} cette
+\emph{relation de localisation atomique} il faut tout d'abord définir
+un \emph{rasteriser.} Ici il n'y a pas de raisons de se focaliser sur
+une partie spécifique de \emph{l'objet de référence,} la position est
+sous l'objet dans son ensemble et non une de ces parties. Le
+\emph{rasteriser} le plus adapté est donc \onto[orla]{Geometrie}. Le
+choix de la \emph{métrique} est un peu plus difficile. On peut, en
+effet, se questionner sur l'altitude à considérer pour \emph{l'objet
+  de référence,} doit-on considérer le point le plus haut, le plus
+bas, le plus proche ? Ou bien doit-on utiliser un indicateur de
+centralité, comme la moyenne ? Tous ces critères paraissent
+pertinents, mais l'altitude de la position la plus proche nous semble
+être la solution la plus générique, car la moins sensible aux fortes
+variations d'altitudes que l'on pourrait retrouver sur des objets très
+étendus (\eg vallées, forêts, \emph{etc.}). Ainsi nous avons opté pour
+la \emph{métrique} \onto[orla]{Delta\-Nearest\-Val}.
 
 
-est \emph{spatialisée} à l'aide du \emph{rasteriser}
-\onto[orla]{Geometrie}, de la \emph{métrique}
-\onto[orla]{Delta\-Nearest\-Val} et du \emph{fuzzyficateur}
+et du \emph{fuzzyficateur}
 \onto[orla]{Inf\-Zero}
 (\autoref{fig:ex_parties_statialisation_sousalt}).
 
