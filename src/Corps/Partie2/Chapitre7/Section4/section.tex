@@ -71,7 +71,7 @@ Au fil de la \emph{spatialisation} de nouvelles \emph{relations de localisation 
   \label{fig:select_eqval}
 \end{figure}
 
-Le second \emph{fuzzyfieur,} \onto{Sup\-Val}, est défini par une fonction d'appartenance linéaire (Figure \ref{fig:select_supval_b}).
+Le second \emph{fuzzyfieur,} \onto{Sup\-Val}, est destiné à représenter des situations où les valeurs de la \emph{métrique} doivent être supérieures à un seuil \(v\). On considère que toutes les valeurs supérieures ou égale à ce seuil ont un degré d'appartenance maximal. À l'inverse on tolère des valeurs inférieures à ce seuil, dans la mesure d'un paramètre \(\delta\). Ce fuzzyfieur prend la forme d'une fonction d'appartenance linéaire (Figure \ref{fig:select_supval_b}), dont l'équation est :
 
 % \dfrac{\Delta y}{\Delta x}x + \dfrac{x_2y_1 - x_1y_2}{\Delta x}
 
@@ -87,6 +87,10 @@ Le second \emph{fuzzyfieur,} \onto{Sup\-Val}, est défini par une fonction d'app
   \right.
 \end{equation}
 
+Avec \(x\) la valeur de la \emph{métrique,} \(v\) la valeur référence et \(\delta\) xxxxx.
+
+Comme pour le \emph{fuzzyfieur} \onto{Eq\-Val} une variante dont la valeur de référence est fixée à 0 a été définie, \onto{Sup\-Val\-0}.
+
 \begin{figure}
   \centering
   \subfloat[supval]{
@@ -101,7 +105,7 @@ Le second \emph{fuzzyfieur,} \onto{Sup\-Val}, est défini par une fonction d'app
   \label{fig:select_supval}
 \end{figure}
 
-Enfin, le dernier fuzzyfieur
+Le dernier \emph{fuzzyfieur,} \onto{Inf\-Val}, est l'exact opposé de \onto{Sup\-Val}. Son objectif est de représenter des situations où l'on souhaite sélectionner les pixels dont la \emph{métrique} est inférieure à un seuil \(v\), donné. Toutes les valeurs inférieures à ce seuil ont un degré d'appartenance maximal, qui diminue linéairement lorsque la valeur de la  métrique dépasse le seuil \(v\), jusqu’à devenir nul à \(v+\delta\). Ce \emph{fuzzyfieur} est défini à l'aide de la fonction d'appartenance suivante :
 
 \begin{equation}
   \label{eq:inf_val}
@@ -114,6 +118,10 @@ Enfin, le dernier fuzzyfieur
     \end{array}
   \right.
 \end{equation}
+
+Où \(x\) est la valeur de la \emph{métrique,} \(v\) la valeur référence et \(\delta\) l'écart xxx.
+
+De la même manière que les autres \textrm{fuzzyfieurs,} \onto{Inf\-Val} dispose d'une variante, \onto{Inf\-Val\-0}, centrée sur 0.
 
 \begin{figure}
   \centering
