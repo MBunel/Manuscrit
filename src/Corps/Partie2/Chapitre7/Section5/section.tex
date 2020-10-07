@@ -104,10 +104,29 @@ cette configuration.
 On peut définir la \emph{relation de localisation atomique}
 \onto[orla]{Dans\-Pla\-ni\-mé\-tri\-que} en reprenant presque tous les
 éléments utilisés pour la \emph{spatialisation} de
-\onto[orla]{Sous\-Al\-ti\-tu\-de}. Tout d'abord
-
-
-est quant à elle \emph{spatialisée} avec le même \emph{rasteziser} (\onto[orla]{Geometrie}), la \emph{métrique} \onto[orla]{XX} et le \emph{fuzzyficateur} \onto[orla]{XX} (\autoref{fig:ex_parties_statialisation_dansplani}).
+\onto[orla]{Sous\-Al\-ti\-tu\-de} (\autoref{fig:ex_parties_statialisation_dansplani}). Tout d'abord, cette \emph{relation}
+porte sur \emph{l'objet de référence} dans son ensemble, il est donc
+nécessaire d'employer à nouveau le \emph{rasteziser}
+\onto[orla]{Geometrie}. Le choix de la \emph{métrique} nécessite plus
+de questionnements.
+%
+Dans l'exemple de la \autoref{fig:Exemple_Metrique_vs_Selecteur}, nous
+avions utilisé les matrices 4IM pour modéliser une relation
+topologique. Mais cet exemple ignorait la question de
+\emph{l'imprécision}. Pour ajouter la prise en compte de
+\emph{l'imprécision} il est nécessaire d'utiliser une \emph{métrique}
+XXXXX.
+%
+Nous avons donc choisi d'utiliser la \emph{métrique} \onto[orla]{XX},
+qui calcule la distance entre le pixel traité et le point le plus
+proche de \emph{l'objet de référence.} Si cette distance est nulle,
+alors cela signifie que le pixel est en contact avec \emph{l'objet de
+  référence.} On peut alors attribuer un \emph{degré d'appartenance}
+non nul aux pixels situés à faible distance de \emph{l'objet de
+  référence.} Ainsi des pixels qui seraient considérés comme en dehors
+de \emph{l'objet de référence} avec une modélisation topologique sont
+ici pris en compte, mais avec une pénalisation de leur degré
+d'appartenance. En
 
 \begin{figure}
   \centering  \input{../figures/exemple_parties_spatialisation_dansPlanimetrique.tex}
