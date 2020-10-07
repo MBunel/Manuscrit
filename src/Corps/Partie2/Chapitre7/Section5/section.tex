@@ -40,7 +40,12 @@ proviennent aucune relation
 \emph{relations de localisation} auxquelles sont associés un
 \emph{rastériser,} une \emph{métrique} et un \emph{fuzzyfier} (\ie à
 l'origine d'une relation \onto[orla]{has\-Rasteriser},
-\onto[orla]{has\-Metrique} et \onto[orla]{has\-Fuzzyfier}).
+\onto[orla]{has\-Metrique} et \onto[orla]{has\-Fuzzyfier}). La
+\emph{spatialisation} d'une \emph{relation de localisation atomique}
+peut alors être simplement effectuée en calculant, successivement, la
+\emph{rastérisation,} la \emph{métrique,} sa \emph{fuzzyfication} et,
+le cas échant, le \emph{modifieur,} définis dans \ac{orla} pour cette
+\emph{relation.}
 
 \begin{figure}
   \centering
@@ -49,12 +54,6 @@ l'origine d'une relation \onto[orla]{has\-Rasteriser},
   \caption{xxx}
   \label{fig:structure_spatialisation_ontologie}
 \end{figure}
-
-La \emph{spatialisation} d'une \emph{relation de localisation
-  atomique} peut alors être simplement effectuée en calculant,
-successivement, la \emph{rastérisation,} la \emph{métrique,} sa
-\emph{fuzzyfication} et, le cas échant, le \emph{modifieur,} définis
-dans \ac{orla} pour cette \emph{relation.}
 
 Par exemple, la \emph{relation de localisation atomique}
 \onto[orla]{Sous\-Al\-ti\-tu\-de} ---~notamment utilisée pour définir
@@ -170,7 +169,9 @@ d'employer le \emph{rasteriser} \onto[orla]{Frontiere}, déjà
 présenté. La \emph{métrique} ne correspond donc plus à la distance à
 \emph{l'objet de référence,} mais à la distance à sa frontière. Les
 positions situées à l'intérieur de l'objet se voient donc attribuer
-une distance non nulle. Enfin, cette \emph{métrique} peut être
+une distance non nulle. 
+
+Enfin, cette \emph{métrique} peut être
 \emph{fuzzyfiée} avec 
 
 \begin{figure}
