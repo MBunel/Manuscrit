@@ -126,7 +126,20 @@ non nul aux pixels situés à faible distance de \emph{l'objet de
   référence.} Ainsi des pixels qui seraient considérés comme en dehors
 de \emph{l'objet de référence} avec une modélisation topologique sont
 ici pris en compte, mais avec une pénalisation de leur degré
-d'appartenance. En
+d'appartenance. Étant donné que la \emph{métrique} \onto[orla]{XX} ne
+peut prendre de valeur négative, deux \emph{fuzzyficateurs,}
+\onto[orla]{Eq\-Val\-0} et \onto[orla]{Inf\-Val\-0}, sont ici
+utilisables. Ces \emph{fuzzyficateurs} ont cependant une sémantique
+différente, le premier signifiant que la \emph{métrique} doit être
+proche d'une valeur seuil, là où le second impose que la métrique ait
+une valeur inférieure ou égale à ce seuil. Or, dans le cadre,
+hypothétique, où la \emph{métrique} \onto[orla]{XX} prendrait des
+valeurs négatives (\ie traduisant une distance à l'intérieur de
+\emph{l'objet de référence}) on voudrait leur attribuer un degré
+d'appartenance maximal. Ainsi, bien que cela ne change rien dans les
+faits, il nous semble plus correct d'utiliser le \emph{fuzzyficateur}
+\onto[orla]{Inf\-0} pour traduire la sémantique de la \emph{relation
+  de localisation atomique} \onto[orla]{Dans\-Pla\-ni\-mé\-tri\-que}.
 
 \begin{figure}
   \centering  \input{../figures/exemple_parties_spatialisation_dansPlanimetrique.tex}
