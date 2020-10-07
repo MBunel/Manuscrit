@@ -169,7 +169,16 @@ d'employer le \emph{rasteriser} \onto[orla]{Frontiere}, déjà
 présenté. La \emph{métrique} ne correspond donc plus à la distance à
 \emph{l'objet de référence,} mais à la distance à sa frontière. Les
 positions situées à l'intérieur de l'objet se voient donc attribuer
-une distance non nulle. 
+une distance non nulle. Ces deux \emph{relations} se distinguent donc
+par leur \emph{métrique.} Pour la \emph{relation}
+\onto[orla]{A\-La\-Fron\-ti\-ere\-De} on souhaite que le degré
+d'appartenance soit maximal à la frontière ---~lorsque la distance
+est nulle~--- et qu'il diminue avec l'éloignement, ce qui correspond
+au \emph{fuzzyficateur} \onto[orla]{Eq\-Val\-0}. Pour la
+\emph{relation} \onto[orla]{Not\-A\-La\-Fron\-ti\-ere\-De}, c'est le
+comportement opposé qui est attendu. On peut donc utiliser le même
+\emph{fuzzyficateur} mais en y adjoignant le \emph{modifieur}
+\onto[orla]{Not}. 
 
 Enfin, cette \emph{métrique} peut être
 \emph{fuzzyfiée} avec 
