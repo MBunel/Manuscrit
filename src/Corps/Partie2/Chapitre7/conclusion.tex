@@ -1,1 +1,41 @@
-Conclusion chapitre 7
+La phase de \emph{spatialisation,} au cœur de notre méthodologie,
+n'est pas subdivisée en plusieurs étapes, contrairement aux phases de
+\emph{décomposition} (\autoref{chap:05}) et de \emph{fusion}
+(\autoref{chap:08}). Cependant, la \emph{méthodologie} développée pour
+la \emph{spatialisation} est composée de plusieurs parties,
+correspondant à des traitements computationnels effectués
+séquentiellement, et toutes porteuses d'une partie de la sémantique de
+la \emph{relation de localisation atomique} modélisée.
+
+Une \emph{relation spatiale atomique} est donc définie par trois
+concepts, un \emph{rasteriser,} qui décrit la partie de \emph{l'objet
+  de référence} à laquelle se rapporte la \emph{relation de
+  localisation atomique} et défini la manière de \emph{rasteriser}
+\emph{l'objet de référence.} La \emph{métrique,} qui est grandeur
+décrivant XXXXX et le \emph{fuzzyfieur,} qui est une méthode
+permettant de sélectionner les pixels de la \ac{zir}, en fonction de
+la valeur de \emph{la métrique,} correspondant aux valeurs attendues
+au sein de la \ac{zlc}. À ces trois concepts, peut s'ajouter un (ou
+des) \emph{modifieur,} qui permet de transformer la sémantique obtenue
+par l'association d'un \emph{rasteriser,} d'une \emph{métrique} et
+d'un \emph{fuzzyficateur,} par exemple en l'inversant.
+
+La définition de ces différents concepts et de leurs liens avec les
+\emph{relations de localisation atomiques} est fait au sein de
+\emph{l'ontologie} \ac{orla}, également utilisée pour représenter la
+\emph{décomposition} des \emph{relations de localisation} en des
+\emph{relations de localisation atomiques} (\autoref{chap:05}).
+
+La \emph{spatialisation} d'une \emph{relation de localisation
+  atomique} est donc réalisée en appliquant successivement, dans
+l'aire délimitée par la \ac{zir}, le \emph{rasteriser} à \emph{l'objet
+  de référence} traité, en calculant la \emph{métrique,} puis en la
+\emph{fuzzyfiant.} On obtient alors une représentation raster de la
+\emph{zone de localisation compatible,} où chaque pixel se voit
+attribuer un \emph{degré,} quantifiant son appartenance à la \ac{zlc}.
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../../../main"
+%%% End:
