@@ -40,7 +40,12 @@ proviennent aucune relation
 \emph{relations de localisation} auxquelles sont associés un
 \emph{rastériser,} une \emph{métrique} et un \emph{fuzzyfier} (\ie à
 l'origine d'une relation \onto[orla]{has\-Rasteriser},
-\onto[orla]{has\-Metrique} et \onto[orla]{has\-Fuzzyfier}).
+\onto[orla]{has\-Metrique} et \onto[orla]{has\-Fuzzyfier}). La
+\emph{spatialisation} d'une \emph{relation de localisation atomique}
+peut alors être simplement effectuée en calculant, successivement, la
+\emph{rastérisation,} la \emph{métrique,} sa \emph{fuzzyfication} et,
+le cas échant, le \emph{modifieur,} définis dans \ac{orla} pour cette
+\emph{relation.}
 
 \begin{figure}
   \centering
@@ -49,12 +54,6 @@ l'origine d'une relation \onto[orla]{has\-Rasteriser},
   \caption{xxx}
   \label{fig:structure_spatialisation_ontologie}
 \end{figure}
-
-La \emph{spatialisation} d'une \emph{relation de localisation
-  atomique} peut alors être simplement effectuée en calculant,
-successivement, la \emph{rastérisation,} la \emph{métrique,} sa
-\emph{fuzzyfication} et, le cas échant, le \emph{modifieur,} définis
-dans \ac{orla} pour cette \emph{relation.}
 
 Par exemple, la \emph{relation de localisation atomique}
 \onto[orla]{Sous\-Al\-ti\-tu\-de} ---~notamment utilisée pour définir
@@ -149,15 +148,44 @@ faits, il nous semble plus correct d'utiliser le \emph{fuzzyficateur}
 \end{figure}
 
 La \emph{relation de localisation atomique}
-\onto[orla]{Not\-A\-La\-Fron\-ti\-ere\-De} différe des exemples
-précédents par sa forme négative.
-%
-est quant à elle définie avec un \emph{modifieur,} \onto[orla]{Not}, qui permet de la distinguer de son opposée, \onto[orla]{A\-La\-Fron\-ti\-ere\-De}, utilisant le même \emph{rasteriser}, \onto[orla]{Geometrie}, la même \emph{métrique,} \onto[orla]{XX} et le même \emph{fuzzyficateur,} \onto[orla]{XX} (\autoref{fig:ex_parties_statialisation_notalafrontierede}).
+\onto[orla]{Not\-A\-La\-Fron\-ti\-ere\-De} différè des exemples
+précédents par sa formulation négative, qui l'oppose à la
+\emph{relation} \onto[orla]{A\-La\-Fron\-ti\-ere\-De}. Ces deux
+\emph{relations de localisation atomiques} partagent leur
+\emph{rasteriser,} leur métrique et leur \emph{fuzzyficateur,} mais
+elles se distinguent par l'utilisation du \emph{modifieur}
+\onto[orla]{Not}
+(\autoref{fig:ex_parties_statialisation_notalafrontierede}). En effet,
+ces deux \emph{relations} traduisent une proximité à la frontière de
+l'objet de référence, on peut donc utiliser la même \emph{métrique}
+que pour la \emph{relation} XXX de la \emph{relation de localisation
+  atomique} \protect\onto[orla]{Dans\-Pla\-ni\-mé\-tri\-que}, la
+distance planaire, représentée par la classe
+\onto[orla]{XXXX}. Cependant cette distance ne peut être calculée à
+partir de \emph{l'objet de référence} dans son ensemble puisque ces
+\emph{relations} décrivent une position exprimée par rapport à la
+frontière de \emph{l'objet de référence,} il est donc nécessaire
+d'employer le \emph{rasteriser} \onto[orla]{Frontiere}, déjà
+présenté. La \emph{métrique} ne correspond donc plus à la distance à
+\emph{l'objet de référence,} mais à la distance à sa frontière. Les
+positions situées à l'intérieur de l'objet se voient donc attribuer
+une distance non nulle. Ces deux \emph{relations} se distinguent donc
+par leur \emph{métrique.} Pour la \emph{relation}
+\onto[orla]{A\-La\-Fron\-ti\-ere\-De} on souhaite que le degré
+d'appartenance soit maximal à la frontière ---~lorsque la distance
+est nulle~--- et qu'il diminue avec l'éloignement, ce qui correspond
+au \emph{fuzzyficateur} \onto[orla]{Eq\-Val\-0}. Pour la
+\emph{relation} \onto[orla]{Not\-A\-La\-Fron\-ti\-ere\-De}, c'est le
+comportement opposé qui est attendu. On peut donc utiliser le même
+\emph{fuzzyficateur} mais en y adjoignant le \emph{modifieur}
+\onto[orla]{Not}, qui a pour effet de transformer la \emph{fonction
+d'appartenance} en son opposée (Figure \ref{fig:fnc_not_eq_val}). 
 
 \begin{figure}
   \centering  \input{../figures/exemple_parties_spatialisation_notalafrontierede.tex}
-  \caption{Exemple de la XXX de la \emph{relation de localisation
-      atomique} \protect\onto[orla]{Not\-A\-La\-Fron\-ti\-ere\-De}.}
+  \caption{Exemple de la XXX des \emph{relations de localisation
+      atomiques} \protect\onto[orla]{A\-La\-Fron\-ti\-ere\-De} et
+    \protect\onto[orla]{Not\-A\-La\-Fron\-ti\-ere\-De}.}
   \label{fig:ex_parties_statialisation_notalafrontierede}
 \end{figure}
 

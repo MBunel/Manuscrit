@@ -5,10 +5,24 @@ La première partie de la méthode de spatialisation est la
 
 % Méthode de rasterisation = sélection partie objet ref + rasterisation
 % Méthode de rasterisation fixe, seule la sélection varie
-Le terme de \enquote{\emph{méthode de rasterisation}} englobe plusieurs questions. Tout d'abord, la sélection de la partie de \emph{l'objet de référence} qui va être \emph{rasterisée,} mais également la manière dont on transforme cette sélection en un raster, c'est-à-dire comment définit si un pixel appartient ou non à \emph{l'objet de référence.} Toutefois lorsque nous parlons de définition d'une \emph{méthode de rasterisation} nous ne traiterons que de ce second point, il n'y a, en effet, pas d’intérêt à changer la manière dont la sélection des pixels est effectuée. 
+Le terme de \enquote{\emph{méthode de rasterisation}} englobe
+plusieurs questions. Tout d'abord, la sélection de la partie de
+\emph{l'objet de référence} qui va être \emph{rasterisée,} mais
+également la manière dont on transforme cette sélection en un raster,
+c'est-à-dire comment définit si un pixel appartient ou non à
+\emph{l'objet de référence.} Toutefois lorsque nous parlons de
+définition d'une \emph{méthode de rasterisation} nous ne traiterons
+que de ce second point, il n'y a, en effet, pas d’intérêt à changer la
+manière dont la sélection des pixels est effectuée.
 
 % Parler des types d'objets de référence
-Une autre contrainte est que les \emph{méthodes de rasterisation} doivent être à même de traiter différents types \emph{d'objets de référence,} comme des \emph{points} utilisés pour représenter des points d’intérêt ou des lieux nommés, des \emph{polylignes,} utilisées pour représenter tout type de réseau (\eg voirie, transport d'eau ou d'énergie) et des \emph{polygones,} utilisés pour représenter tout objet à l’implantation zonale.
+Une autre contrainte est que les \emph{méthodes de rasterisation}
+doivent être à même de traiter différents types \emph{d'objets de
+  référence,} comme des \emph{points} utilisés pour représenter des
+points d’intérêt ou des lieux nommés, des \emph{polylignes,} utilisées
+pour représenter tout type de réseau (\eg voirie, transport d'eau ou
+d'énergie) et des \emph{polygones,} utilisés pour représenter tout
+objet à l’implantation zonale.
 
 \subsection{Rasterisation et sémantique ??}
 
@@ -17,16 +31,63 @@ Une autre contrainte est que les \emph{méthodes de rasterisation} doivent être
 
 Méthode de sélection des pixels
 %
-La \autoref{fig:rasterisation_sel_pixels} illustre ces deux approches. Un même \emph{objet de référence} est \emph{rastérisé,} d'une part en sélectionnant uniquement les pixels dont le centroïde est à l'intérieur de \emph{l'objet de référence} (aboutissant au raster \textcolor{RdBu-9-1}{\textsf{A}}), d'autre part en sélectionnant tous les pixels touchant \emph{l'objet de référence} (ce qui donne le raster \textcolor{RdBu-9-9}{\textsf{B}}). Comme on peut le voir la seconde solution abouti à une zone plus large, la zone résultant de la \emph{rasterisation} est alors plus importante que l'emprise réelle de l'objet. Cependant cette seconde approche à l'avantage de toujours aboutir à un raster non nul. En effet dans certaines configurations, il est possible qu'un \emph{objet de référence,} de surface non nulle, ne contienne aucun centroïde de pixel, aboutissant à la construction d'un raster vide. Or, cette situation n'est pas acceptable, car, dans notre méthodologie, cela aboutirait à ignorer \emph{l'objet de référence,} et donc à ne pas considérer l'ensemble des informations transmises par le requérant. Ce phénomène se produit lorsque la maille utilisée pour la \emph{rasterisation} est trop grande comparativement aux objets que l'on souhaite \emph{rasteriser,} donc à une mauvaise paramétrisation de la rasterisation. Ce problème est donc corrigible par l'augmentation de la résolution du raster cible. Toutefois cette solution n'est pas toujours possible lors d'une utilisation concrète d'une \emph{rasterisation.} Prenons pour exemple la \autoref{fig:rasterisation_cas_limite}, illustrant une situation où l'on cherche à \emph{rasteriser} un bâtiment quelconque en vue de la \emph{spatialisation} d'une \emph{relation de localisation atomique.} Le bâtiment, de taille moyenne (\ie \SI{200}{\metre\squared}) est situé à cheval sur 4 pixels \footnote{Dont chacun a une superficie de \SI{625}{\metre\squared}.} sans contenir de centroïde d'aucun d'entre eux. Ainsi, si l'on emploie les deux méthodes de \emph{rasterisation} présentées (\autoref{fig:rasterisation_sel_pixels}) on obtiendra soit une zone vide (variante \textcolor{RdBu-9-1}{\textsf{A}}), soit une zone composée de 4 pixels (variante \textcolor{RdBu-9-9}{\textsf{B}}). Pour que le raster produit par la première rasterisation soit non vide, il faudrait diviser la taille des pixels par (environ) 2, ce qui multiplierait le nombre de pixels par 4. Or, si cela ne pose pas de problème pour une petite zone, comme celle utilisée pour l'exemple, cela devient difficile, voir très difficile si l'on souhaite travailler sur une zone assez étendue (au-delà de la centaine de \si{\kilo\meter\squared}).
+La \autoref{fig:rasterisation_sel_pixels} illustre ces deux
+approches. Un même \emph{objet de référence} est \emph{rastérisé,}
+d'une part en sélectionnant uniquement les pixels dont le centroïde
+est à l'intérieur de \emph{l'objet de référence} (aboutissant au
+raster \textcolor{RdBu-9-1}{\textsf{A}}), d'autre part en
+sélectionnant tous les pixels touchant \emph{l'objet de référence} (ce
+qui donne le raster \textcolor{RdBu-9-9}{\textsf{B}}). Comme on peut
+le voir la seconde solution abouti à une zone plus large, la zone
+résultant de la \emph{rasterisation} est alors plus importante que
+l'emprise réelle de l'objet. Cependant cette seconde approche à
+l'avantage de toujours aboutir à un raster non nul. En effet dans
+certaines configurations, il est possible qu'un \emph{objet de
+  référence,} de surface non nulle, ne contienne aucun centroïde de
+pixel, aboutissant à la construction d'un raster vide. Or, cette
+situation n'est pas acceptable, car, dans notre méthodologie, cela
+aboutirait à ignorer \emph{l'objet de référence,} et donc à ne pas
+considérer l'ensemble des informations transmises par le requérant. Ce
+phénomène se produit lorsque la maille utilisée pour la
+\emph{rasterisation} est trop grande comparativement aux objets que
+l'on souhaite \emph{rasteriser,} donc à une mauvaise paramétrisation
+de la rasterisation. Ce problème est donc corrigible par
+l'augmentation de la résolution du raster cible. Toutefois cette
+solution n'est pas toujours possible lors d'une utilisation concrète
+d'une \emph{rasterisation.} Prenons pour exemple la
+\autoref{fig:rasterisation_cas_limite}, illustrant une situation où
+l'on cherche à \emph{rasteriser} un bâtiment quelconque en vue de la
+\emph{spatialisation} d'une \emph{relation de localisation atomique.}
+Le bâtiment, de taille moyenne (\ie \SI{200}{\metre\squared}) est
+situé à cheval sur 4 pixels \footnote{Dont chacun a une superficie de
+  \SI{625}{\metre\squared}.} sans contenir de centroïde d'aucun
+d'entre eux. Ainsi, si l'on emploie les deux méthodes de
+\emph{rasterisation} présentées
+(\autoref{fig:rasterisation_sel_pixels}) on obtiendra soit une zone
+vide (variante \textcolor{RdBu-9-1}{\textsf{A}}), soit une zone
+composée de 4 pixels (variante \textcolor{RdBu-9-9}{\textsf{B}}). Pour
+que le raster produit par la première rasterisation soit non vide, il
+faudrait diviser la taille des pixels par (environ) 2, ce qui
+multiplierait le nombre de pixels par 4. Or, si cela ne pose pas de
+problème pour une petite zone, comme celle utilisée pour l'exemple,
+cela devient difficile, voir très difficile si l'on souhaite
+travailler sur une zone assez étendue (au-delà de la centaine de
+\si{\kilo\meter\squared}).
 
 \begin{figure}
   \centering
   \input{../figures/rasterisation_sel_pixels.tex}
-  \caption{d}
+  \caption{Illustration de l'impact de la méthode de sélection des
+    pixels sur le résultat d'une opération de \emph{rasterisation.}}
   \label{fig:rasterisation_sel_pixels}
 \end{figure}
 
-Compte-tenu de ces limites, nous avons décidé d'opter pour la seconde approche, c'est-à-dire une \emph{rasterisation} sélectionnant tous les pixels touchant \emph{l'objet de référence.} Ce choix nous dispense de définir la résolution de la \ac{zir} en fonction des \emph{objets de référence} utilisés, mais conduit à une fréquente exagération de la taille des \emph{objets de référence.}
+Compte-tenu de ces limites, nous avons décidé d'opter pour la seconde
+approche, c'est-à-dire une \emph{rasterisation} sélectionnant tous les
+pixels touchant \emph{l'objet de référence.} Ce choix nous dispense de
+définir la résolution de la \ac{zir} en fonction des \emph{objets de
+  référence} utilisés, mais conduit à une fréquente exagération de la
+taille des \emph{objets de référence.}
 
 \begin{wrapfigure}{r}{4cm}
   \centering
@@ -38,39 +99,90 @@ Compte-tenu de ces limites, nous avons décidé d'opter pour la seconde approche
 
 \subsection{Les méthodes de rasterisation}
 
-La méthode de sélection des pixels ayant été fixée, le seul critère permettant de distinguer les différentes \emph{méthodes de rasterisation} est la sélection de la partie de \emph{l'objet de référence} à \emph{rasteriser.} Comme nous l'expliquions précédemment ce choix est essentiel, car il contribue à définir la sémantique de la \emph{relation de localisation atomique,} une même métrique calculée à partir de points différents d'un même \emph{objet de référence} pouvant avoir des interprétations très diverses, comme nous l'avons montré avec l'exemple des \emph{relations de localisation atomiques} \onto[orla]{Distance\-Quantitive} et \onto[orla]{A\-La\-Frontiere\-De} (\autoref{chap:07-sec1}).
+La méthode de sélection des pixels ayant été fixée, le seul critère
+permettant de distinguer les différentes \emph{méthodes de
+  rasterisation} est la sélection de la partie de \emph{l'objet de
+  référence} à \emph{rasteriser.} Comme nous l'expliquions
+précédemment ce choix est essentiel, car il contribue à définir la
+sémantique de la \emph{relation de localisation atomique,} une même
+métrique calculée à partir de points différents d'un même \emph{objet
+  de référence} pouvant avoir des interprétations très diverses, comme
+nous l'avons montré avec l'exemple des \emph{relations de localisation
+  atomiques} \onto[orla]{Distance\-Quantitive} et
+\onto[orla]{A\-La\-Frontiere\-De} (\autoref{chap:07-sec1}).
 
-On peut imagier de nombreuses \emph{méthodes de rasterisation} différentes, en fonction de la partie de \emph{l'objet de référence} sélectionnée, cependant toutes ne sont pas pertinentes ici. Nous avons identifié trois \emph{méthodes de rasterisation} différentes, présentées dans la \ref{fig:methode_rasterisation}. Le résultat de la \emph{rasterisation} est présenté pour chaque type \emph{d'objet de référence.}
+On peut imagier de nombreuses \emph{méthodes de rasterisation}
+différentes, en fonction de la partie de \emph{l'objet de référence}
+sélectionnée, cependant toutes ne sont pas pertinentes ici. Nous avons
+identifié trois \emph{méthodes de rasterisation} différentes,
+présentées dans la \ref{fig:methode_rasterisation}. Le résultat de la
+\emph{rasterisation} est présenté pour chaque type \emph{d'objet de
+  référence.}
 
 \tdi{Détailler les différentes méthodes de rasterisation définies
   figure \ref{fig:methode_rasterisation} + exemple}
 
-La plus évidente des solutions consiste à rasteriser l'ensemble de \emph{l'objet de référence} (\autoref{tab:methode_rasterisation}, première ligne). Cette solution, qui a été utilisée pour les exemples précédents (\ie figures \ref{fig:methodo_spatialisation}, \ref{fig:rasterisation_sel_pixels} et \ref{fig:rasterisation_cas_limite}), ne procède pas à une sélection, l'objet de référence est considéré dans son ensemble.
+La plus évidente des solutions consiste à rasteriser l'ensemble de
+\emph{l'objet de référence} (\autoref{tab:methode_rasterisation},
+première ligne). Cette solution, qui a été utilisée pour les exemples
+précédents (\ie figures \ref{fig:methodo_spatialisation},
+\ref{fig:rasterisation_sel_pixels} et
+\ref{fig:rasterisation_cas_limite}), ne procède pas à une sélection,
+l'objet de référence est considéré dans son ensemble.
 %
-Cette \emph{rasterisation} est donc employée lorsque la \emph{relation de localisation atomique} se réfère  à l'ensemble de \emph{l'objet de référence} et non à l'une de ces parties. C'est par exemple le cas de la \emph{relation} \onto[orla]{XXXX} qui
+Cette \emph{rasterisation} est donc employée lorsque la \emph{relation
+  de localisation atomique} se réfère à l'ensemble de \emph{l'objet de
+  référence} et non à l'une de ces parties. C'est par exemple le cas
+de la \emph{relation} \onto[orla]{XXXX} qui
 %
-On pourra remarquer que cette méthode de \emph{rasterisation} s'applique à la majorité des \emph{relations de localisation atomiques} définies jusqu'ici. En effet, cette méthode de \emph{rasterisation} est fortement majoritaire et seules quelques \emph{relations de localisation atomiques} spécifiques nécessitent une méthode plus spécifique.
+On pourra remarquer que cette méthode de \emph{rasterisation}
+s'applique à la majorité des \emph{relations de localisation
+  atomiques} définies jusqu'ici. En effet, cette méthode de
+\emph{rasterisation} est fortement majoritaire et seules quelques
+\emph{relations de localisation atomiques} spécifiques nécessitent une
+méthode plus spécifique.
 
-Mais il également possible de ne rasteriser qu'une partie de \emph{l'objet de référence,} comme sa frontière ou son centroïde (\autoref{tab:methode_rasterisation}).
+Mais il également possible de ne rasteriser qu'une partie de
+\emph{l'objet de référence,} comme sa frontière ou son centroïde
+(\autoref{tab:methode_rasterisation}).
 
-Le second \emph{rasteriser} défini ne considère que la frontière de \emph{l'objet de référence} traité.
+Le second \emph{rasteriser} défini ne considère que la frontière de
+\emph{l'objet de référence} traité.
 %
-Ce \emph{rasteriser} est notamment employé pour \emph{spatialiser} la \emph{relation de localisation} \onto[orla]{A\-La\-Frontiere\-De}.
+Ce \emph{rasteriser} est notamment employé pour \emph{spatialiser} la
+\emph{relation de localisation} \onto[orla]{A\-La\-Frontiere\-De}.
 
-Enfin, un \emph{rasteriser} ne traitant que le centroïde de \emph{l'objet de  référence} a été défini. Contrairement aux autres \emph{rasterisers} présentés jusqu'ici, celui-ci conduit tout type d'objet (\ie point, ligne, polygone) a être représentés par un seul point. Ainsi, tous les objets traités sont représentés pas un point, lui-même \emph{rasterisé} en un unique pixel.
+Enfin, un \emph{rasteriser} ne traitant que le centroïde de
+\emph{l'objet de référence} a été défini. Contrairement aux autres
+\emph{rasterisers} présentés jusqu'ici, celui-ci conduit tout type
+d'objet (\ie point, ligne, polygone) a être représentés par un seul
+point. Ainsi, tous les objets traités sont représentés pas un point,
+lui-même \emph{rasterisé} en un unique pixel.
 
 \begin{figure}
   \centering
   \input{../tableaux/rasteriser.tex}
-  \caption{Méthodes de rasterisation}
+  \caption{illustration du raster résultant des différentes méthodes
+    de \emph{rasterisation} définies.}
   \label{fig:methode_rasterisation}
 \end{figure}
 
 % Parler rapidement des méthodes définies mais non utilisées (bbox,conxhull)
-Nous avons également envisagé d'autres \emph{méthodes de rasterisation,} sans parvenir à en identifier un usage pertinent. On pourrait, par exemple, ignorer les frontières intérieures des régions ayant une structure annulaire (\eg une forêt avec des clairières). Mais il est également possible d'employer des méthodes sensiblement différentes de celles présentées jusqu'ici, comme la \emph{rasterisation} de l'enveloppe convexe ou de la boite englobante de \emph{l'objet de référence.} De telles méthodes ne traitent plus de \emph{l'objet de référence} ou l'une de ces composantes, c'est-à-dire un sous-ensemble de sa géométrie, mais d'une version modifiée de celui-ci.
+Nous avons également envisagé d'autres \emph{méthodes de
+  rasterisation,} sans parvenir à en identifier un usage pertinent. On
+pourrait, par exemple, ignorer les frontières intérieures des régions
+ayant une structure annulaire (\eg une forêt avec des
+clairières). Mais il est également possible d'employer des méthodes
+sensiblement différentes de celles présentées jusqu'ici, comme la
+\emph{rasterisation} de l'enveloppe convexe ou de la boite englobante
+de \emph{l'objet de référence.} De telles méthodes ne traitent plus de
+\emph{l'objet de référence} ou l'une de ces composantes, c'est-à-dire
+un sous-ensemble de sa géométrie, mais d'une version modifiée de
+celui-ci.
 
 % Conclusion
-Ainsi, dans son état actuel nous disposons d'un ensemble de trois \emph{rasterisers.}
+Ainsi, dans son état actuel nous disposons d'un ensemble de trois
+\emph{rasterisers.}
 
 %%% Local Variables:
 %%% mode: latex
