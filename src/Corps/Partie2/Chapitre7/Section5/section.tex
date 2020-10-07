@@ -101,7 +101,45 @@ cette configuration.
   \label{fig:ex_parties_statialisation_sousalt}
 \end{figure}
 
-La \emph{relation de localisation atomique} \onto[orla]{Dans\-Pla\-ni\-mé\-tri\-que} est quant à elle \emph{spatialisée} avec le même \emph{rasteziser} (\onto[orla]{Geometrie}), la \emph{métrique} \onto[orla]{XX} et le \emph{fuzzyficateur} \onto[orla]{XX} (\autoref{fig:ex_parties_statialisation_dansplani}).
+On peut définir la \emph{relation de localisation atomique}
+\onto[orla]{Dans\-Pla\-ni\-mé\-tri\-que} en reprenant presque tous les
+éléments utilisés pour la \emph{spatialisation} de
+\onto[orla]{Sous\-Al\-ti\-tu\-de} (\autoref{fig:ex_parties_statialisation_dansplani}). Tout d'abord, cette \emph{relation}
+porte sur \emph{l'objet de référence} dans son ensemble, il est donc
+nécessaire d'employer à nouveau le \emph{rasteziser}
+\onto[orla]{Geometrie}. Le choix de la \emph{métrique} nécessite plus
+de questionnements.
+%
+Dans l'exemple de la \autoref{fig:Exemple_Metrique_vs_Selecteur}, nous
+avions utilisé les matrices 4IM pour modéliser une relation
+topologique. Mais cet exemple ignorait la question de
+\emph{l'imprécision}. Pour ajouter la prise en compte de
+\emph{l'imprécision} il est nécessaire d'utiliser une \emph{métrique}
+XXXXX.
+%
+Nous avons donc choisi d'utiliser la \emph{métrique} \onto[orla]{XX},
+qui calcule la distance entre le pixel traité et le point le plus
+proche de \emph{l'objet de référence.} Si cette distance est nulle,
+alors cela signifie que le pixel est en contact avec \emph{l'objet de
+  référence.} On peut alors attribuer un \emph{degré d'appartenance}
+non nul aux pixels situés à faible distance de \emph{l'objet de
+  référence.} Ainsi des pixels qui seraient considérés comme en dehors
+de \emph{l'objet de référence} avec une modélisation topologique sont
+ici pris en compte, mais avec une pénalisation de leur degré
+d'appartenance. Étant donné que la \emph{métrique} \onto[orla]{XX} ne
+peut prendre de valeur négative, deux \emph{fuzzyficateurs,}
+\onto[orla]{Eq\-Val\-0} et \onto[orla]{Inf\-Val\-0}, sont ici
+utilisables. Ces \emph{fuzzyficateurs} ont cependant une sémantique
+différente, le premier signifiant que la \emph{métrique} doit être
+proche d'une valeur seuil, là où le second impose que la métrique ait
+une valeur inférieure ou égale à ce seuil. Or, dans le cadre,
+hypothétique, où la \emph{métrique} \onto[orla]{XX} prendrait des
+valeurs négatives (\ie traduisant une distance à l'intérieur de
+\emph{l'objet de référence}) on voudrait leur attribuer un degré
+d'appartenance maximal. Ainsi, bien que cela ne change rien dans les
+faits, il nous semble plus correct d'utiliser le \emph{fuzzyficateur}
+\onto[orla]{Inf\-0} pour traduire la sémantique de la \emph{relation
+  de localisation atomique} \onto[orla]{Dans\-Pla\-ni\-mé\-tri\-que}.
 
 \begin{figure}
   \centering  \input{../figures/exemple_parties_spatialisation_dansPlanimetrique.tex}
