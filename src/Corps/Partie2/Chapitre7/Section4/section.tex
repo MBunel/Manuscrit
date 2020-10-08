@@ -284,15 +284,17 @@ que les \emph{rasterisers,} les \emph{métriques} et les
 \emph{fuzzyficateurs}~--- des concepts formalisant la sémantique d'une
 \emph{relation spatiale atomique} et correspondant à un algorithme
 appliqué lors de la \emph{phase de spatialisation.} Cependant, ils
-possèdent la particularité d'être facultatifs et la plupart des
-\emph{relations de localisation atomiques} en sont dépourvues. Les
-\emph{modifieurs} sont appliqués à la fin de la \emph{spatialisation}
-(\autoref{fig:methodo_spatialisation}), après la \emph{fuzzyfication.}
-Dans cette configuration la \emph{zone de localisation compatible}
-n'est donc pas le résultat de la \emph{fuzzyfication} \footnote{Comme
-  l'indique la \autoref{fig:methodo_spatialisation}, qui présente la
-  \emph{méthode de spatialisation} sans modifieurs.}, mais de
-l’application des \emph{modifieurs} au résultat de la \emph{fuzzyfication.}
+possèdent la particularité d'être facultatifs, la plupart des
+\emph{relations de localisation atomiques} en sont dépourvues, et
+cumulatifs, une même \emph{relation} pouvant en utiliser
+plusieurs. Les \emph{modifieurs} sont appliqués à la fin de la
+\emph{spatialisation} (\autoref{fig:methodo_spatialisation}), après la
+\emph{fuzzyfication.}  Dans cette configuration la \emph{zone de
+  localisation compatible} n'est donc pas le résultat de la
+\emph{fuzzyfication} \footnote{Comme l'indique la
+  \autoref{fig:methodo_spatialisation}, qui présente la \emph{méthode
+    de spatialisation} sans modifieurs.}, mais de l’application des
+\emph{modifieurs} au résultat de la \emph{fuzzyfication.}
 
 \tdi{Modifeur not}
 Il est, par exemple, impossible de traiter une situation où la
