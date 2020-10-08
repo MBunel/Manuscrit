@@ -2,10 +2,30 @@
 \tdi{Détailler les métriques définies
   figure \ref{fig:methode_rasterisation} + exemple}
 
-\tdi{Critère classif}
-Deux critères principaux nous permettent de distinguer les différentes
-métriques utilisées et utilisables
+\subsection{Classification}
 
+Les \emph{métriques} que nous sommes amenés à construire peuvent être
+de nature et porter sur ds phénomènes assez différents. Toutefois on
+peut identifier une certaine récurrence dans leurs
+caractéristiques.
+
+Tout d'abord certaines \emph{métriques} quantifient des phénomènes
+exprimés par rapport à \emph{l'objet de référence.}  C'est par exemple
+le cas des matrices 4IM, utilisées précédemment pour introduire la
+méthodologie de \emph{spatialisation.} En effet, la valeur de la
+matrice calculée en un pixel dépend de la position et de la forme de
+\emph{l'objet de référence,} si ce dernier change, la \emph{métrique}
+sera caduque. Cependant des \emph{métriques} comme la pente ou
+l'altitude, utilisées pour \emph{spatialiser} des \emph{indices de
+  localisation} tels que : \enquote{Je suis à \SI{2500}{\meter}} ou
+\enquote{Nous sommes dans une zone de forte pente}, ne dépendent pas
+d'un \emph{objet de référence.} On parle dans ce cas de
+\emph{métriques intrinsèques,} que l'on oppose aux \emph{métriques
+  extrinsèques,} telles que la distance à \emph{l'objet de référence}
+ou une relation topologique.
+
+Un second critère peut être utilisé pour distinguer les
+\emph{métriques.}
 
 
 \subsection{Métriques intrinsèques}
