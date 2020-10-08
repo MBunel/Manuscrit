@@ -270,20 +270,29 @@ De la même manière que les autres \textrm{fuzzyfieurs,} \onto{Inf\-Val} dispos
 
 \subsection{Les modifieurs}
 
-Je sais que c'est assez ou tout ça, mais on a toujours pas fini avec
-les trucs cooooooooooooools.
+Les trois types de \emph{fuzzyfieurs} définis ne permettent pas de
+représenter toutes les configurations possibles.
+
+Les \emph{modifieurs} sont des fonctions appliqués après la
+\emph{fuzzyfication} et qui en modifient le résultat.
 
 \tdi{Modifeur not}
+Il est, par exemple, impossible de traiter une situation où la
+sémantique de la \emph{relation de localisation atomique} impose de
+construire une \ac{zlc} à partir de la 
 
-\tdi{resampling}
+Le \emph{modifieur} \onto{Not} rempli justement ce rôle.
 
-\begin{figure}
-  \centering
-  \includegraphics[width=\textwidth]{../../../../tmp/modifieur.jpeg}
-  \caption{Modifieur}
-  \label{fig:methode_modifieur}
-\end{figure}
+Conformément à l'opérateur de négation défini dans le cadre de
+\emph{logique floue} (\autoref{eq:comp}, \autoref{chap:03}).
 
+Le \emph{modifieur} \onto{Not} retourne donc le complémentaire de
+la \emph{zone de localisation compatible} qui lui est transmisse.
+
+S'il ne modifie pas directement les \emph{fonctions d'appartenance,}
+son application aux \emph{fuzzyfieurs} précédemment définis revient à
+définir trois nouvelles \emph{fonctions d'appartenance}
+(\autoref{fig:fnc_not}), complémentaires de celles déjà définies
 
 \begin{figure}
   \centering
@@ -308,6 +317,18 @@ les trucs cooooooooooooools.
     \protect\onto{Inf\-Val} après application du \emph{modifieur}
     \protect\onto{Not}.}
   \label{fig:fnc_not}
+\end{figure}
+
+\tdi{resampling}
+Le second \emph{modifieur} que nous ayons défini est XXXX
+
+Sa fonction est de 
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{../../../../tmp/modifieur.jpeg}
+  \caption{Modifieur}
+  \label{fig:methode_modifieur}
 \end{figure}
 
 %%% Local Variables:
