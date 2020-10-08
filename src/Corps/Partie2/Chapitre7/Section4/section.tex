@@ -293,12 +293,18 @@ plusieurs. Les \emph{modifieurs} sont appliqués à la fin de la
     de spatialisation} sans modifieurs.}, mais de l’application des
 \emph{modifieurs} au résultat de la \emph{fuzzyfication.}
 
-\tdi{Modifeur not}
-Il est, par exemple, impossible de traiter une situation où la
-sémantique de la \emph{relation de localisation atomique} impose de
-construire une \ac{zlc} à partir de la 
-
-Le \emph{modifieur} \onto{Not} rempli justement ce rôle.
+Le premier (et le plus utilisé) des \emph{modifieurs} développés et le
+\emph{modifieur} \onto{Not}. Sa fonction est de permettre la
+définition de l'opposée d'une \emph{relation de localisation
+  atomique.} Par exemple, si l'on applique ce \emph{modifieur} à la
+\emph{relation de localisaiton atomique}
+\onto[orla]{A\-La\-Frontiere\-De}, on obtiendra son opposée,
+c'est-à-dire une \emph{relation de localisation atomique,} que l'on
+pourrait appeler \onto[orla]{Not\-A\-La\-Frontiere\-De}, qui serait
+\emph{spatialisable} en vérifiant si, pour chaque pixel de la
+\ac{zir}, l'assertion \enquote{Est-ce que la \emph{relation de
+    localisation} \onto[orla]{A\-La\-Frontiere\-De} est vraie} est
+fausse. Il n'est toutefois pas nécessaire de procéder de la sorte
 
 Conformément à l'opérateur de négation défini dans le cadre de
 \emph{logique floue} (\autoref{eq:comp}, \autoref{chap:03}).
