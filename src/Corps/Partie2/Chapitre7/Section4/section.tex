@@ -138,14 +138,15 @@ premier \autoref{fig:select_eqval_0}. Il s'agit également d'une
 \emph{fonction de fuzzyfication} triangulaire et symétrique, dont la
 \enquote{largeur} est définie par un paramètre \(\delta\). Cependant
 son paramètre \(v\), indiquant la valeur de la \emph{métrique} sur
-laquelle la courbe est centrée est fixé à 0. Nous avons également
-défini une seconde variante de ce \emph{fuzzyfieur,} \onto{Eq\-Angle},
-fortement similaire à \onto{Eq\-Val}, mais destinée aux cas
-spécifiques où la \emph{métrique} est un angle. Ce \emph{fuzzyfieur}
-permet donc de traiter ces valeurs en prenant en compte leur
-périodicité. \todo{Ce sélecteur ne devrait pas exister, c'est à la
-  fonction python d'identifier si ce qu'on lui donne est angulaire ou
-  non, pas à l'ontologie. Voir si je l'enlève}.
+laquelle la courbe est centrée est fixé à 0, sa fonction
+d'appartenance est donc : \(f(x,\delta) = f(x,0,\delta)\).. Nous avons
+également défini une seconde variante de ce \emph{fuzzyfieur,}
+\onto{Eq\-Angle}, fortement similaire à \onto{Eq\-Val}, mais destinée
+aux cas spécifiques où la \emph{métrique} est un angle. Ce
+\emph{fuzzyfieur} permet donc de traiter ces valeurs en prenant en
+compte leur périodicité. \todo{Ce sélecteur ne devrait pas exister,
+  c'est à la fonction python d'identifier si ce qu'on lui donne est
+  angulaire ou non, pas à l'ontologie. Voir si je l'enlève}.
 
 \begin{figure}
   \centering
@@ -195,7 +196,7 @@ Avec \(x\) la valeur de la \emph{métrique,} \(v\) la valeur référence
 et \(\delta\) xxxxx.
 
 Comme pour le \emph{fuzzyfieur} \onto{Eq\-Val} une variante dont la
-valeur de référence est fixée à 0 a été définie, \onto{Sup\-Val\-0}.
+valeur de référence est fixée à 0 a été définie, \onto{Sup\-Val\-0} et dont la fonction d'appartenance est donc : \(f(x,\delta) = f(x,0,\delta)\).
 
 \begin{figure}
   \centering
@@ -236,7 +237,9 @@ de la fonction d'appartenance suivante :
 
 Où \(x\) est la valeur de la \emph{métrique,} \(v\) la valeur référence et \(\delta\) l'écart xxx.
 
-De la même manière que les autres \textrm{fuzzyfieurs,} \onto{Inf\-Val} dispose d'une variante, \onto{Inf\-Val\-0}, centrée sur 0.
+De la même manière que les autres \textrm{fuzzyfieurs,}
+\onto{Inf\-Val} dispose d'une variante, \onto{Inf\-Val\-0}, centrée
+sur 0 est dont la fonction d'appartenance est donc : \(f(x,\delta) = f(x,0,\delta)\).
 
 \begin{figure}
   \centering
@@ -253,37 +256,70 @@ De la même manière que les autres \textrm{fuzzyfieurs,} \onto{Inf\-Val} dispos
 \end{figure}
 
 
-% \begin{wrapfigure}[10]{o}{7.5cm}
-%   \centering
-%   \input{../figures/fnc_inf_val.tex}
-%   \caption{Fonction d'appartenance utilisée pour définir le
-%     \emph{fuzzyfieur} \protect\onto{Inf\-Val}}.
-% \end{wrapfigure}
+\subsection{Les \emph{modifieurs}}
 
-% \begin{wrapfigure}[10]{o}{7.5cm}
-%   \centering
-%   \input{../figures/fnc_inf_val.tex}
-%   \caption{Fonction d'appartenance utilisée pour définir le
-%     \emph{fuzzyfieur} \protect\onto{Inf\-Val\-0}.}
-% \end{wrapfigure}
+La seule utilisation des \emph{fuzzyfieurs} définis jusqu'à présent ne
+permet cependant pas de traiter toutes les situations possibles. En
+effet, il n'est pas vraiment possible de formaliser des \emph{indices
+  de localisation} ayant une tournure négative (\eg \enquote{Je ne
+  suis pas au niveau du plateau}) ou utilisant des approximations (\eg
+\enquote{Elle est presque à côté de moi}). Certes, certaines
+\emph{relations de localisation atomiques} ont des opposés (\eg
+\onto[orala]{Iterieur} et \onto[orala]{Exterieur}), mais il s'agit de
+cas particuliers et il est, par exemple, impossible de définir une
+\emph{zone de localisation compatible} à partir de ce qui n'est pas
+vu, ou qui n'est pas à la même altitude \footnote{Il n'existe pas de
+  \emph{relations} \onto[orla]{Site\-Ne\-Voit\-Pas\-Cible} ou
+  \onto[orla]{Pas\-A\-La\-Meme\-Altitude\-Que}.}. Pourtant, ces cas
+seraient modélisables avec les \emph{rasterisers} et les
+\emph{métriques} déjà définies, seuls de nouveau \emph{fuzzyficateurs}
+seraient à définir.
 
+C'est pour traiter ces situations que nous avons développé la notion
+de \emph{modifieurs.} Les \emph{modifieurs} sont ---~de la même que
+les \emph{rasterisers,} les \emph{métriques} et les
+\emph{fuzzyficateurs}~--- des concepts formalisant la sémantique d'une
+\emph{relation spatiale atomique} et correspondant à un algorithme
+appliqué lors de la \emph{phase de spatialisation.} Cependant, ils
+possèdent la particularité d'être facultatifs, la plupart des
+\emph{relations de localisation atomiques} en sont dépourvues, et
+cumulatifs, une même \emph{relation} pouvant en utiliser
+plusieurs. Les \emph{modifieurs} sont appliqués à la fin de la
+\emph{spatialisation} (\autoref{fig:methodo_spatialisation}), après la
+\emph{fuzzyfication.}  Dans cette configuration la \emph{zone de
+  localisation compatible} n'est donc pas le résultat de la
+\emph{fuzzyfication} \footnote{Comme l'indique la
+  \autoref{fig:methodo_spatialisation}, qui présente la \emph{méthode
+    de spatialisation} sans modifieurs.}, mais de l’application des
+\emph{modifieurs} au résultat de la \emph{fuzzyfication.}
 
-\subsection{Les modifieurs}
-
-Je sais que c'est assez ou tout ça, mais on a toujours pas fini avec
-les trucs cooooooooooooools.
-
-\tdi{Modifeur not}
-
-\tdi{resampling}
-
-\begin{figure}
-  \centering
-  \includegraphics[width=\textwidth]{../../../../tmp/modifieur.jpeg}
-  \caption{Modifieur}
-  \label{fig:methode_modifieur}
-\end{figure}
-
+Le premier (et le plus utilisé) des \emph{modifieurs} développés et le
+\emph{modifieur} \onto{Not}. Sa fonction est de permettre la
+définition de l'opposée d'une \emph{relation de localisation
+  atomique.} Par exemple, si l'on applique ce \emph{modifieur} à la
+\emph{relation de localisaiton atomique}
+\onto[orla]{A\-La\-Frontiere\-De}, on obtiendra son opposée,
+c'est-à-dire une \emph{relation de localisation atomique,} que l'on
+pourrait appeler \onto[orla]{Not\-A\-La\-Frontiere\-De}, qui serait
+\emph{spatialisable} en vérifiant si, pour chaque pixel de la
+\ac{zir}, l'assertion \enquote{Est-ce que la \emph{relation de
+    localisation} \onto[orla]{A\-La\-Frontiere\-De} est vraie} est
+fausse. Or, puisque l'on sait comment construire la \ac{zlc}
+correspondant à la \emph{relation de localisation}
+\onto[orla]{A\-La\-Frontiere\-De}, on peut, en prenant le
+complémentaire de la \emph{zone de localisation,} construire la
+\ac{zlc} correspondant à la \emph{relation de localisation atomique}
+\onto[orla]{Not\-A\-La\-Frontiere\-De}. Comme nous l'expliquions dans
+le \autoref{eq:comp} (\autoref{chap:03}), le complémentaire d'un
+\emph{sous-ensemble flou} peut-être construit en soustrayant le degré
+d'appartenance de chaque élément de l'ensemble (ici les pixels) à
+1. Cette démarche est parfaitement équivalente à la définition de
+nouveaux \emph{fuzzyficateurs,} opposés à ceux précédemment définis
+(\autoref{fig:fnc_not}). Ainsi, appliquer le \emph{modifieur}
+\onto{Not} au résultat d'une \emph{spatialisation} employant le
+\emph{fuzzyficateur} \onto{Eq\-Val} équivaut à utiliser directement un
+hypothétique \emph{fuzzyficateur} \onto{Not\-Eq\-Val} (Figure
+\ref{fig:fnc_not_eq_val}).
 
 \begin{figure}
   \centering
@@ -309,6 +345,30 @@ les trucs cooooooooooooools.
     \protect\onto{Not}.}
   \label{fig:fnc_not}
 \end{figure}
+
+Le second \emph{modifieur} que nous ayons défini, \onto{Resampling}, a
+un rôle plus vague que \onto{Not}. Sa fonction est de modifier les
+\emph{degrés d'appartenance} issus de la phase de
+\emph{fuzzyfication,} de manière à modifier la \emph{zone de
+  localisation compatible.} Comme pour le \emph{modifieur} \onto{Not},
+\onto{Resampling} n'agit pas directement sur la \emph{fonction
+  d'appartenance} définie par le \emph{fuzzyficateur} mais sur les
+\emph{degrés d'appartenance} résultant de son application. Toutefois
+cette opération est équivalente à un changement de \emph{fonction
+  d'appartenance.} Ainsi, se \emph{modifieur} peut-être utilisé pour
+simuler un changement de forme de la \emph{fonction d'appartenance.}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{../../../../tmp/modifieur.jpeg}
+  \caption{Modifieur}
+  \label{fig:methode_modifieur}
+\end{figure}
+
+% Ordre modifieurs
+La possibilité de cumuler plusieurs \emph{modifieurs} pose un problème
+jusqu'ici inédit, celui de l'influence de l'ordre du traitement sur le
+résultat final.
 
 %%% Local Variables:
 %%% mode: latex

@@ -1,29 +1,46 @@
+La seconde étape dans le processus de \emph{spatialisation} est le
+\emph{calcul de la métrique.} C'est durant cette phase qu'est calculée
+la mesure utilisée pour quantifier une grandeur que l'on veut
+représentative de la sémantique de la \emph{relation de localisation
+  atomique} \emph{spatialisée.} Contrairement aux \emph{rasterisers,}
+les \emph{métriques} sont assez nombreuses et diverses, tout en étant
+réutilisées.
 
-\tdi{Détailler les métriques définies
-  figure \ref{fig:methode_rasterisation} + exemple}
+\subsection{Classification}
 
-\tdi{Critère classif}
-Deux critères principaux nous permettent de distinguer les différentes
-métriques utilisées et utilisables
+Le concept de \enquote{\emph{métrique}} est assez vaste et de
+nombreuses XXX 
 
+Les \emph{métriques} que nous sommes amenés à construire peuvent être
+de nature et porter sur ds phénomènes assez différents. Toutefois on
+peut identifier une certaine récurrence dans leurs
+caractéristiques.
 
+Tout d'abord certaines \emph{métriques} quantifient des phénomènes
+exprimés par rapport à \emph{l'objet de référence.}  C'est par exemple
+le cas des matrices 4IM, utilisées précédemment pour introduire la
+méthodologie de \emph{spatialisation.} En effet, la valeur de la
+matrice calculée en un pixel dépend de la position et de la forme de
+\emph{l'objet de référence,} si ce dernier change, la \emph{métrique}
+sera caduque. Cependant des \emph{métriques} comme la pente ou
+l'altitude, utilisées pour \emph{spatialiser} des \emph{indices de
+  localisation} tels que : \enquote{Je suis à \SI{2500}{\meter}} ou
+\enquote{Nous sommes dans une zone de forte pente}, ne dépendent pas
+d'un \emph{objet de référence.} On parle dans ce cas de
+\emph{métriques intrinsèques,} que l'on oppose aux \emph{métriques
+  extrinsèques,} telles que la distance à \emph{l'objet de référence}
+ou une relation topologique.
 
-\subsection{Métriques intrinsèques}
+Un second critère peut être utilisé pour distinguer les
+\emph{métriques.} En effet, certaines d'entre elles nécessitent un
+paramétrage pour être calculées. C'est par exemple le cas d'une
+\emph{métrique} comme le temps de marche, qu'il est nécessaire de
+paramétrer en fonction de la vitesse de déplacement. Cependant une
+grande partie des \emph{métriques} ne nécessitent pas de paramétrage,
+c'est notamment le cas de la distance à \emph{l'objet de référence} ou
+de l'altitude, déjà citées.
 
-\tdi{Présentation des métriques qui ne dépendent pas de l'objet de
-  référence -> elles sont calculables une fois. Ex : Pente, altitude
-  absolue (mais déjà calculée vu que MNT).}
-
-\tdi{Est-ce qu'on peut vraiment faire cette distinction ??}
-
-\subsection{Métriques extrinsèques}
-
-\tdi{Présentation des métriques locales, qui changent pour chaque
-  \emph{objet de référence}, distance, orientation, visibilité}
-
-\subsection{Métriques Paramétriques}
-
-\subsection{Métriques non paramétriques}
+Ces deux critères se combinent et (\autoref{fig:type_metriques})
 
 \begin{table}
   \centering
@@ -31,6 +48,8 @@ métriques utilisées et utilisables
   \caption{Types de métriques}
   \label{fig:type_metriques}
 \end{table}
+
+\subsection{Les différentes \emph{métriques}}
 
 
 \begin{figure}
