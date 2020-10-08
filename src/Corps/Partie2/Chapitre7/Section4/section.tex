@@ -275,12 +275,22 @@ sur 0 est dont la fonction d'appartenance est donc : \(f(x,\delta) = f(x,0,\delt
 
 La seule utilisation des \emph{fuzzyfieurs} définis jusqu'à présent ne
 permet cependant pas de traiter toutes les situations possibles. En
-effet, il n'est pas vraiment possible de formaliser des situations où
-l'on modélise 
+effet, il n'est pas vraiment possible de formaliser des \emph{indices
+  de localisation} ayant une tournure négative (\eg \enquote{Je ne
+  suis pas au niveau du plateau}) ou utilisant des approximations (\eg
+\enquote{Elle est presque à côté de moi}). Certes, certaines
+\emph{relations de localisation atomiques} ont des opposés (\eg
+\onto[orala]{} et \onto[orala]{} ou \onto[orala]{} et \onto[orala]{}),
+mais il s'agit de cas particuliers et il est, par exemple, impossible
+de définir une \emph{zone de localisation compatible} à partir de ce
+qui n'est pas vu, ou qui n'est pas à la même altitude \footnote{Il
+  n'existe pas de \emph{relations}
+  \onto[orla]{Site\-Ne\-Voit\-Pas\-Cible} ou
+  \onto[orla]{Pas\-A\-La\-Meme\-Altitude\-Que}.}. Pourtant
 
-C'est pour traiter ce genre de situations que nous avons développé la
-notion de \emph{modifieurs.} Les \emph{modifieurs} sont ---~de la même
-que les \emph{rasterisers,} les \emph{métriques} et les
+C'est pour traiter ces situations que nous avons développé la notion
+de \emph{modifieurs.} Les \emph{modifieurs} sont ---~de la même que
+les \emph{rasterisers,} les \emph{métriques} et les
 \emph{fuzzyficateurs}~--- des concepts formalisant la sémantique d'une
 \emph{relation spatiale atomique} et correspondant à un algorithme
 appliqué lors de la \emph{phase de spatialisation.} Cependant, ils
@@ -351,7 +361,7 @@ Sa fonction est de
   \label{fig:methode_modifieur}
 \end{figure}
 
-% Ordre modifieur
+% Ordre modifieurs
 La possibilité de cumuler les \emph{modifieurs} pose le problème de
 leur ordre d’application.
 
