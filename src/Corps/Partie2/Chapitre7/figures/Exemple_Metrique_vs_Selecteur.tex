@@ -1,8 +1,12 @@
 ﻿\begin{tikzpicture}
   % Arrow
   \begin{scope}
-    \path[draw, ->, shorten >=5pt, shorten <=5pt] (2,1) --++ (4,0) node[pos=.5, font=\footnotesize, fill=white]
-    {\itshape rasterisation};
+    \path[draw, ->, shorten >=5pt, shorten <=5pt] (2,1) --++ (4,0)
+    node[pos=.5, font=\footnotesize, fill=white] (labmet)
+    {calcul};
+        % 
+    \node[anchor=north west,baseline, text width=2.5cm, font=\tiny] at
+    ([xshift=1.5ex, yshift=1ex]labmet.south west) {de la \itshape métrique};
     
     \path[draw, ->, shorten >=5pt, shorten <=5pt] (7,2) |- (12,3)
     node[pos=.75, font=\footnotesize, fill=white] (labsel1)
