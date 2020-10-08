@@ -138,14 +138,15 @@ premier \autoref{fig:select_eqval_0}. Il s'agit également d'une
 \emph{fonction de fuzzyfication} triangulaire et symétrique, dont la
 \enquote{largeur} est définie par un paramètre \(\delta\). Cependant
 son paramètre \(v\), indiquant la valeur de la \emph{métrique} sur
-laquelle la courbe est centrée est fixé à 0. Nous avons également
-défini une seconde variante de ce \emph{fuzzyfieur,} \onto{Eq\-Angle},
-fortement similaire à \onto{Eq\-Val}, mais destinée aux cas
-spécifiques où la \emph{métrique} est un angle. Ce \emph{fuzzyfieur}
-permet donc de traiter ces valeurs en prenant en compte leur
-périodicité. \todo{Ce sélecteur ne devrait pas exister, c'est à la
-  fonction python d'identifier si ce qu'on lui donne est angulaire ou
-  non, pas à l'ontologie. Voir si je l'enlève}.
+laquelle la courbe est centrée est fixé à 0, sa fonction
+d'appartenance est donc : \(f(x,\delta) = f(x,0,\delta)\).. Nous avons
+également défini une seconde variante de ce \emph{fuzzyfieur,}
+\onto{Eq\-Angle}, fortement similaire à \onto{Eq\-Val}, mais destinée
+aux cas spécifiques où la \emph{métrique} est un angle. Ce
+\emph{fuzzyfieur} permet donc de traiter ces valeurs en prenant en
+compte leur périodicité. \todo{Ce sélecteur ne devrait pas exister,
+  c'est à la fonction python d'identifier si ce qu'on lui donne est
+  angulaire ou non, pas à l'ontologie. Voir si je l'enlève}.
 
 \begin{figure}
   \centering
@@ -195,7 +196,7 @@ Avec \(x\) la valeur de la \emph{métrique,} \(v\) la valeur référence
 et \(\delta\) xxxxx.
 
 Comme pour le \emph{fuzzyfieur} \onto{Eq\-Val} une variante dont la
-valeur de référence est fixée à 0 a été définie, \onto{Sup\-Val\-0}.
+valeur de référence est fixée à 0 a été définie, \onto{Sup\-Val\-0} et dont la fonction d'appartenance est donc : \(f(x,\delta) = f(x,0,\delta)\).
 
 \begin{figure}
   \centering
@@ -236,7 +237,9 @@ de la fonction d'appartenance suivante :
 
 Où \(x\) est la valeur de la \emph{métrique,} \(v\) la valeur référence et \(\delta\) l'écart xxx.
 
-De la même manière que les autres \textrm{fuzzyfieurs,} \onto{Inf\-Val} dispose d'une variante, \onto{Inf\-Val\-0}, centrée sur 0.
+De la même manière que les autres \textrm{fuzzyfieurs,}
+\onto{Inf\-Val} dispose d'une variante, \onto{Inf\-Val\-0}, centrée
+sur 0 est dont la fonction d'appartenance est donc : \(f(x,\delta) = f(x,0,\delta)\).
 
 \begin{figure}
   \centering
