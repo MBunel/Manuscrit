@@ -304,13 +304,22 @@ pourrait appeler \onto[orla]{Not\-A\-La\-Frontiere\-De}, qui serait
 \emph{spatialisable} en vérifiant si, pour chaque pixel de la
 \ac{zir}, l'assertion \enquote{Est-ce que la \emph{relation de
     localisation} \onto[orla]{A\-La\-Frontiere\-De} est vraie} est
-fausse. Il n'est toutefois pas nécessaire de procéder de la sorte
-
-Conformément à l'opérateur de négation défini dans le cadre de
-\emph{logique floue} (\autoref{eq:comp}, \autoref{chap:03}).
-
-Le \emph{modifieur} \onto{Not} retourne donc le complémentaire de
-la \emph{zone de localisation compatible} qui lui est transmisse.
+fausse. Or, puisque l'on sait comment construire la \ac{zlc}
+correspondant à la \emph{relation de localisation}
+\onto[orla]{A\-La\-Frontiere\-De}, on peut, en prenant le
+complémentaire de la \emph{zone de localisation,} construire la
+\ac{zlc} correspondant à la \emph{relation de localisation atomique}
+\onto[orla]{Not\-A\-La\-Frontiere\-De}. Comme nous l'expliquions dans
+le \autoref{eq:comp} (\autoref{chap:03}), le complémentaire d'un
+\emph{sous-ensemble flou} peut-être construit en soustrayant le degré
+d'appartenance de chaque élément de l'ensemble (ici les pixels) à
+1. Cette démarche est parfaitement équivalente à la définition de
+nouveaux \emph{fuzzyficateurs,} opposés à ceux précédemment définis
+(\autoref{fig:fnc_not}). Ainsi, appliquer le \emph{modifieur}
+\onto{Not} au résultat d'une \emph{spatialisation} employant le
+\emph{fuzzyficateur} \onto{Eq\-Val} équivaut à utiliser directement un
+hypothétique \emph{fuzzyficateur} \onto{Not\-Eq\-Val} (Figure
+\ref{fig:fnc_not_eq_val}).
 
 S'il ne modifie pas directement les \emph{fonctions d'appartenance,}
 son application aux \emph{fuzzyfieurs} précédemment définis revient à
