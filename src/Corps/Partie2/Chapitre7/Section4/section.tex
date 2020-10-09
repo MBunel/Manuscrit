@@ -174,8 +174,8 @@ représenter des situations où les valeurs de la \emph{métrique}
 doivent être supérieures à un seuil \(v\). On considère que toutes les
 valeurs supérieures ou égale à ce seuil ont un degré d'appartenance
 maximal. À l'inverse on tolère des valeurs inférieures à ce seuil,
-dans la mesure d'un paramètre \(\delta\). Ce fuzzyfieur prend la forme
-d'une fonction d'appartenance linéaire (Figure
+dans la mesure d'un paramètre \(\delta\). Ce \emph{fuzzyfieur} prend
+la forme d'une fonction d'appartenance linéaire (Figure
 \ref{fig:select_supval_b}), dont l'équation est :
 
 % \dfrac{\Delta y}{\Delta x}x + \dfrac{x_2y_1 - x_1y_2}{\Delta x}
@@ -193,10 +193,11 @@ d'une fonction d'appartenance linéaire (Figure
 \end{equation}
 
 Avec \(x\) la valeur de la \emph{métrique,} \(v\) la valeur référence
-et \(\delta\) xxxxx.
-
-Comme pour le \emph{fuzzyfieur} \onto{Eq\-Val} une variante dont la
-valeur de référence est fixée à 0 a été définie, \onto{Sup\-Val\-0} et dont la fonction d'appartenance est donc : \(f(x,\delta) = f(x,0,\delta)\).
+et \(\delta\) xxxxx. Comme pour le \emph{fuzzyfieur} \onto{Eq\-Val}
+une variante de ce \emph{fuzzyficateur,} dont la \emph{valeur de
+  référence} (\(v\)) est fixée à 0 a été définie,
+\onto{Sup\-Val\-0}. Sa \emph{fonction d'appartenance} est :
+\(f(x,\delta) = f(x,0,\delta)\).
 
 \begin{figure}
   \centering
@@ -235,11 +236,11 @@ de la fonction d'appartenance suivante :
   \right.
 \end{equation}
 
-Où \(x\) est la valeur de la \emph{métrique,} \(v\) la valeur référence et \(\delta\) l'écart xxx.
-
-De la même manière que les autres \textrm{fuzzyfieurs,}
-\onto{Inf\-Val} dispose d'une variante, \onto{Inf\-Val\-0}, centrée
-sur 0 est dont la fonction d'appartenance est donc : \(f(x,\delta) = f(x,0,\delta)\).
+Où \(x\) est la valeur de la \emph{métrique,} \(v\) la valeur
+référence et \(\delta\) l'écart xxx. De la même manière que les autres
+\textrm{fuzzyfieurs,} \onto{Inf\-Val} dispose d'une variante,
+\onto{Inf\-Val\-0} dont la \emph{valeur de référence} (\(v\)) est
+fixée à 0. Son équation est donc : \(f(x,\delta) = f(x,0,\delta)\).
 
 \begin{figure}
   \centering
