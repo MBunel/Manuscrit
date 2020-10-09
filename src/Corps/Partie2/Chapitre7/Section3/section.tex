@@ -35,12 +35,33 @@ Un second critère peut être utilisé pour distinguer les
 \emph{métriques.} En effet, certaines d'entre elles nécessitent un
 paramétrage pour être calculées. C'est par exemple le cas d'une
 \emph{métrique} comme le temps de marche, qu'il est nécessaire de
-paramétrer en fonction de la vitesse de déplacement. Cependant une
+paramétrer en fonction de la vitesse de déplacement.
+%
+Il peut cependant être délicat de différentier ce qui est rattaché à
+la paramétrisation et ce qui se rattache à la métrique
+%
+Cependant une
 grande partie des \emph{métriques} ne nécessitent pas de paramétrage,
 c'est notamment le cas de la distance à \emph{l'objet de référence} ou
 de l'altitude, déjà citées.
 
 Ces deux critères se combinent et (\autoref{fig:type_metriques})
+
+\subsection{Les différentes \emph{métriques}}
+
+Parmi tous les exemples que nous avons présentés, une \emph{métrique}
+est régulièrement mentionnée, la \emph{distance planimétrique} à
+\emph{l'objet de référence} (\autoref{fig:ISO_DIST_HT}). Cette
+\emph{métrique} est un exemple caractéristique des \emph{métriques
+  extrinsèques} et \emph{non paramétriques.} Il est, en effet, de la
+calculer pour chaque \emph{objet de référence,} mais elle n'accepte
+pas de \emph{paramètres.} On pourrait cependant complexifier cette
+\emph{métrique,} par exemple en permettant le calcul de distances
+alternatives, comme la distance de Manhattan, de Minkowski ou de
+Tchebychev et définir un paramètre qui permette de définir la distance
+à calculer. Mais ces distances alternatives, trop éloignées de la
+perception humaine des distances, ne présentent pas d’intérêt pour
+notre cas d'application.
 
 \begin{table}
   \centering
@@ -49,7 +70,18 @@ Ces deux critères se combinent et (\autoref{fig:type_metriques})
   \label{fig:type_metriques}
 \end{table}
 
-\subsection{Les différentes \emph{métriques}}
+Une autre \emph{métrique,} également utilisée lors de la comparaison
+des implémentations (\autoref{chap:06}), est la différence d'altitude
+entre une position et \emph{l'objet de référence.} Il s'agit une
+nouvelle fois d'une \emph{métrique extrinsèque} et \emph{non
+  paramétrique.} 
+
+\begin{figure}
+  \centering
+  \input{../figures/Metrique_delta_alt.tex}
+  \caption{Métrique 2 À  changer ??}
+\end{figure}
+
 
 
 \begin{figure}
@@ -62,11 +94,6 @@ Ces deux critères se combinent et (\autoref{fig:type_metriques})
 \end{figure}
 
 
-\begin{figure}
-  \centering
-  \input{../figures/Metrique_delta_alt.tex}
-  \caption{Métrique 2 À  changer ??}
-\end{figure}
 
 %%% Local Variables:
 %%% mode: latex
