@@ -48,11 +48,11 @@ Ces deux critères se combinent et (\autoref{fig:type_metriques})
 
 Parmi tous les exemples que nous avons présentés, une \emph{métrique}
 est régulièrement mentionnée, la \emph{distance planimétrique} à
-\emph{l'objet de référence.} Cette métrique est un exemple
-caractéristique des \emph{métriques extrinsèques} et \emph{non
-  paramétriques.} Il est, en effet, de la calculer pour chaque
-\emph{objet de référence,} mais elle n'accepte pas de
-\emph{paramètres.} On pourrait cependant complexifier cette
+\emph{l'objet de référence} (\autoref{fig:ISO_DIST_HT}). Cette
+\emph{métrique} est un exemple caractéristique des \emph{métriques
+  extrinsèques} et \emph{non paramétriques.} Il est, en effet, de la
+calculer pour chaque \emph{objet de référence,} mais elle n'accepte
+pas de \emph{paramètres.} On pourrait cependant complexifier cette
 \emph{métrique,} par exemple en permettant le calcul de distances
 alternatives, comme la distance de Manhattan, de Minkowski ou de
 Tchebychev et définir un paramètre qui permette de définir la distance
@@ -67,6 +67,20 @@ notre cas d'application.
   \label{fig:type_metriques}
 \end{table}
 
+Une autre \emph{métrique,} également utilisée lors de la comparaison
+des implémentations (\autoref{chap:06}), est la différence d'altitude
+entre une position et \emph{l'objet de référence.} Il s'agit une
+nouvelle fois d'une \emph{métrique extrinsèque} et \emph{non
+  paramétrique.}
+
+\begin{figure}
+  \centering
+  \input{../figures/Metrique_delta_alt.tex}
+  \caption{Métrique 2 À  changer ??}
+\end{figure}
+
+
+
 \begin{figure}
   \centering
   \input{../figures/Metrique_part_lac_visible.tex}
@@ -77,11 +91,6 @@ notre cas d'application.
 \end{figure}
 
 
-\begin{figure}
-  \centering
-  \input{../figures/Metrique_delta_alt.tex}
-  \caption{Métrique 2 À  changer ??}
-\end{figure}
 
 %%% Local Variables:
 %%% mode: latex
