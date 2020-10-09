@@ -129,28 +129,25 @@ présentées dans la \ref{fig:methode_rasterisation}. Le résultat de la
 \emph{rasterisation} est présenté pour chaque type \emph{d'objet de
   référence.}
 
-\tdi{Détailler les différentes méthodes de rasterisation définies
-  figure \ref{fig:methode_rasterisation} + exemple}
-
-La plus évidente des solutions consiste à rasteriser l'ensemble de
-\emph{l'objet de référence} (\autoref{tab:methode_rasterisation},
-première ligne). Cette solution, qui a été utilisée pour les exemples
-précédents (\ie figures \ref{fig:methodo_spatialisation},
+Une première possibilité est de n'effectuer aucune sélection préalable
+et donc de \emph{rasteriser} \emph{l'objet de référence} dans son
+ensemble (\autoref{tab:methode_rasterisation}, première ligne). C'est
+cette solution, utilisée pour tous les exemples précédents (\ie
+figures \ref{fig:methodo_spatialisation},
 \ref{fig:rasterisation_sel_pixels} et
-\ref{fig:rasterisation_cas_limite}), ne procède pas à une sélection,
-l'objet de référence est considéré dans son ensemble.
-%
-Cette \emph{rasterisation} est donc employée lorsque la \emph{relation
-  de localisation atomique} se réfère à l'ensemble de \emph{l'objet de
-  référence} et non à l'une de ces parties. C'est par exemple le cas
-de la \emph{relation} \onto[orla]{XXXX} qui
-%
-On pourra remarquer que cette méthode de \emph{rasterisation}
-s'applique à la majorité des \emph{relations de localisation
-  atomiques} définies jusqu'ici. En effet, cette méthode de
-\emph{rasterisation} est fortement majoritaire et seules quelques
-\emph{relations de localisation atomiques} spécifiques nécessitent une
-méthode plus spécifique.
+\ref{fig:rasterisation_cas_limite}) est utilisée lorsque la
+\emph{relation de localisation atomique} ne se référè pas à une partie
+spécifique de \emph{l'objet de référence.} C'est par exemple le cas
+des \emph{relations} \onto[orla]{Interieur} ou \onto[orla]{Exterieur}
+qui s'appliquent à l'objet de référence dans son ensemble. On pourra
+remarquer que cette méthode de \emph{rasterisation} s'applique à la
+majorité des \emph{relations de localisation atomiques} définies
+jusqu'ici. En effet, cette méthode de \emph{rasterisation} est
+fortement majoritaire et seules quelques \emph{relations de
+  localisation atomiques} spécifiques nécessitent une méthode plus
+spécifique.
+
+Les deux autres rasterisers 
 
 Mais il également possible de ne rasteriser qu'une partie de
 \emph{l'objet de référence,} comme sa frontière ou son centroïde
