@@ -1,19 +1,34 @@
-La \emph{rasterisation} des \emph{objets de référence}
-
 La première partie de la méthode de \emph{spatialisation} est la
-\emph{rasterisation} des \emph{objets de référence.}
+\emph{rasterisation} des \emph{objets de référence.} Cependant, le
+processus que nous venons de définir ne peut se résumer à un simple
+changement de représentation de la donnée géographique. Le terme de
+\enquote{\emph{méthode de rasterisation}}, tel que nous l'avons
+introduit, englobe plusieurs questions. Tout d'abord, la sélection de
+la partie de \emph{l'objet de référence} qui va être
+\emph{rasterisée,} mais également la manière dont on transforme cette
+sélection en un raster, c'est-à-dire comment définit si un pixel
+appartient ou non à \emph{l'objet de référence.} Toutefois lorsque
+nous parlons de définition d'une \emph{méthode de rasterisation} nous
+ne traiterons que de ce second point, il n'y a, en effet, pas
+d’intérêt à changer la manière dont la sélection des pixels est
+effectuée.
 
-% Méthode de rasterisation = sélection partie objet ref + rasterisation
-% Méthode de rasterisation fixe, seule la sélection varie
-Le terme de \enquote{\emph{méthode de rasterisation}} englobe
-plusieurs questions. Tout d'abord, la sélection de la partie de
-\emph{l'objet de référence} qui va être \emph{rasterisée,} mais
-également la manière dont on transforme cette sélection en un raster,
-c'est-à-dire comment définit si un pixel appartient ou non à
-\emph{l'objet de référence.} Toutefois lorsque nous parlons de
-définition d'une \emph{méthode de rasterisation} nous ne traiterons
-que de ce second point, il n'y a, en effet, pas d’intérêt à changer la
-manière dont la sélection des pixels est effectuée.
+\subsection{Considérations générales sur la \emph{rasterisation}}
+
+Un point essentiel de la représentation raster \emph{d'objets
+  géographiques} et qu'elle impose, contrairement à une représentation
+vectorielle, de définir explicitement une résolution et une zone de
+modélisation. L'opération de \emph{rasterisation} nécessite ne peut
+donc être effectuée qu'a partir d'un \emph{objet de référence}
+vectoriel.
+
+Cependant la zone de rasterisation est, implicitement, définie par le
+secouriste, il s'agit de la \ac{zir}.
+
+Seule la résolution reste à fixer.
+
+\tdi{parler des consiérations autour de la rasterisation importance de
+  la zir, de la résolution, méthode de sélection des pixels, etc}
 
 % Parler des types d'objets de référence
 Une autre contrainte est que les \emph{méthodes de rasterisation}
@@ -23,16 +38,6 @@ points d’intérêt ou des lieux nommés, des \emph{polylignes,} utilisées
 pour représenter tout type de réseau (\eg voirie, transport d'eau ou
 d'énergie) et des \emph{polygones,} utilisés pour représenter tout
 objet à l’implantation zonale.
-
-\subsection{Considérations générales sur la \emph{rasterisation}}
-
-Un point essentiel de la représentation raster \emph{d'objets
-  géographiques} et qu'elle impose, contrairement à une représentation
-vectorielle, de définir explicitement une résolution et une zone de
-modélisation.
-
-\tdi{parler des consiérations autour de la rasterisation importance de
-  la zir, de la résolution, méthode de sélection des pixels, etc}
 
 Méthode de sélection des pixels
 %
