@@ -147,7 +147,7 @@ fortement majoritaire et seules quelques \emph{relations de
   localisation atomiques} spécifiques nécessitent une méthode plus
 spécifique.
 
-Les deux autres rasterisers 
+Les deux autres \emph{rasterisers} que nous avons définis, 
 
 Mais il également possible de ne rasteriser qu'une partie de
 \emph{l'objet de référence,} comme sa frontière ou son centroïde
@@ -175,17 +175,21 @@ lui-même \emph{rasterisé} en un unique pixel.
 \end{figure}
 
 % Parler rapidement des méthodes définies mais non utilisées (bbox,conxhull)
-Nous avons également envisagé d'autres \emph{méthodes de
-  rasterisation,} sans parvenir à en identifier un usage pertinent. On
-pourrait, par exemple, ignorer les frontières intérieures des régions
-ayant une structure annulaire (\eg une forêt avec des
-clairières). Mais il est également possible d'employer des méthodes
-sensiblement différentes de celles présentées jusqu'ici, comme la
-\emph{rasterisation} de l'enveloppe convexe ou de la boite englobante
-de \emph{l'objet de référence.} De telles méthodes ne traitent plus de
-\emph{l'objet de référence} ou l'une de ces composantes, c'est-à-dire
-un sous-ensemble de sa géométrie, mais d'une version modifiée de
-celui-ci.
+De nombreux autres \emph{rasterisers} sont envisageables. On pourrait,
+par exemple, ne \emph{rasteriser} que l'intérieur d'un objet et
+ignorer ses frontières, ce qui équivaudrait à soustraite le résultat
+du \emph{rasteriser} \onto{Frontiere} à celui du \emph{rasteriser}
+\onto{Geometrie}. On pourrait également ignorer les frontières
+intérieures des régions ayant une structure annulaire (\eg une forêt
+avec des clairières). Mais il est également possible d'employer des
+méthodes sensiblement différentes de celles présentées jusqu'ici,
+comme la \emph{rasterisation} de l'enveloppe convexe ou de la boite
+englobante de \emph{l'objet de référence.} De telles méthodes ne
+traitent plus de \emph{l'objet de référence} ou l'une de ces
+composantes, c'est-à-dire un sous-ensemble de sa géométrie, mais d'une
+version modifiée de celui-ci. Cependant, aucune de ces solutions ne
+nous a semblé pertinente pour la \emph{spatialiser} des
+\emph{relations de localisation atomiques.}
 
 % Conclusion
 Ainsi, dans son état actuel nous disposons d'un ensemble de trois
