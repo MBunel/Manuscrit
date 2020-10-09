@@ -356,7 +356,7 @@ un rôle plus vague que \onto{Not}. Sa fonction est de modifier les
   d'appartenance} définie par le \emph{fuzzyficateur} mais sur les
 \emph{degrés d'appartenance} résultant de son application. Toutefois
 cette opération est équivalente à un changement de \emph{fonction
-  d'appartenance.} Ainsi, se \emph{modifieur} peut-être utilisé pour
+  d'appartenance.} Ainsi, ce \emph{modifieur} peut être utilisé pour
 simuler un changement de forme de la \emph{fonction d'appartenance.}
 
 \begin{figure}
@@ -369,7 +369,10 @@ simuler un changement de forme de la \emph{fonction d'appartenance.}
 % Ordre modifieurs
 La possibilité de cumuler plusieurs \emph{modifieurs} pose un problème
 jusqu'ici inédit, celui de l'influence de l'ordre du traitement sur le
-résultat final.
+résultat final. En effet si une \emph{relation de localisation
+  atomique} fait appel aux \emph{modifieurs} \onto{Not} et
+\onto{Reseampling} il est nécessaire d'évaluer lequel s'applique en
+premier, puisque la 
 
 %%% Local Variables:
 %%% mode: latex
