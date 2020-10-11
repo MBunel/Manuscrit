@@ -201,30 +201,29 @@ interprétées. En effet, si dans la première situation les positions
 situées au sein de \emph{l'objet de référence} ont une distance à
 \emph{l'objet de référence} nulle, dans le second cas cette distance
 est strictement positive, car calculée à partir de la frontière de
-\emph{l'objet de référence.} Ainsi, un troisième élément est à prendre
-en compte, le point ou la partie de \emph{l'objet de référence,}
-faisant office de référence et donc de point de calcul de la
-\emph{métrique.}
+\emph{l'objet de référence.} Ainsi, il également nécessaire de prendre
+en compte le point ou la partie de \emph{l'objet de référence,}
+faisant réellement office de référence et donc de point de calcul de
+la \emph{métrique.}
 
-\subsubsection{Les étapes de la \emph{méthode de spatialisation}}
+%\subsubsection{Les étapes de la \emph{méthode de spatialisation}}
 
-% Présenter les 3 grandes étapes de la démarche, leur rôle et leur justification
-Trois composantes sont alors à prendre en compte pour
+Trois composantes sont donc à prendre en compte pour
 \emph{spatialiser} une \emph{relation de localisation atomique,} une
 \emph{métrique,} la partie de \emph{l'objet de référence} servant
-d'origine et une \emph{méthode de sélection} permettant d'identifier
-les valeurs satisfaisantes.
-%
-À ces trois composantes s'ajoutent trois contraintes, la nécessité de
-limiter la \emph{spatialisation} à la \ac{zir}, de rasteriser les
-\emph{objets de référence} et de construire une \ac{zlc} floue
-(contrairement aux résultats de la
+d'origine à son calcul et une \emph{méthode de sélection} permettant
+d'identifier les valeurs de la \emph{métrique} correspondant à la
+sémantique de la relation de \emph{localisation atomique spatialisée.}
+À ces trois composantes s'ajoutent trois contraintes à respecter, la
+nécessité de limiter la \emph{spatialisation} à la \ac{zir}, de
+rasteriser les \emph{objets de référence} et de construire une
+\ac{zlc} floue (contrairement aux résultats de la
 \autoref{fig:Exemple_Metrique_vs_Selecteur}).
-%
-Pour réaliser ces XXX nous proposons de définir une \emph{méthode de
-  spatialisation} en trois parties ---~la \emph{rasterisation,} le
-calcul de la \emph{métrique} et la \emph{fuzzyfication}~--- réalisées
-séquentiellement (\autoref{fig:methodo_spatialisation}).
+
+Nous proposons de définir une \emph{méthode de spatialisation} en
+trois parties, la \emph{rasterisation,} le calcul de la
+\emph{métrique} et la \emph{fuzzyfication}
+(\autoref{fig:methodo_spatialisation}).
 
 \begin{figure}
   \centering
@@ -240,14 +239,14 @@ La \emph{rasterisation} est la première partie de la
 calculer la \emph{métrique} nécessaire à la \emph{spatialisation.} La
 rasterisation de \emph{l'objet de référence} nécessite de définir une
 résolution et une taille de raster, qui dans notre cas correspond à la
-\ac{zir}. Ainsi la zone de rasterisation correspond à la \emph{zone
-  initiale de recherche} et cette étape fait donc également office de
-délimitation de la zone de calcul. De plus il est nécessaire de ne
-sélectionner que la partie de \emph{l'objet de référence} qui est
-utile pour la \emph{relation de localisation atomique} à spatialiser
-(\eg frontière, centroide, \emph{etc.}). Il est plus simple de
-réaliser cette opération dans un premier temps et de ne rasteriser
-ensuite que la partie sélectionnée. Ainsi l'étape de
+\ac{zir}. Ainsi, la zone de \emph{rasterisation} correspond à la
+\emph{zone initiale de recherche} et cette étape fait donc également
+office de délimitation de la zone de calcul. De plus il est nécessaire
+de ne sélectionner que la partie de \emph{l'objet de référence} qui
+est utile pour la \emph{relation de localisation atomique} à
+spatialiser (\eg frontière, centroide, \emph{etc.}). Il est plus
+simple de réaliser cette opération dans un premier temps et de ne
+rasteriser ensuite que la partie sélectionnée. Ainsi l'étape de
 \emph{rasterisation} rempli trois rôles :
 %
 \begin{enumerate*}[label=(\alph*)]
