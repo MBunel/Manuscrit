@@ -218,12 +218,10 @@ sémantique de la relation de \emph{localisation atomique spatialisée.}
 nécessité de limiter la \emph{spatialisation} à la \ac{zir}, de
 rasteriser les \emph{objets de référence} et de construire une
 \ac{zlc} floue (contrairement aux résultats de la
-\autoref{fig:Exemple_Metrique_vs_Selecteur}).
-
-Nous proposons de définir une \emph{méthode de spatialisation} en
-trois parties, la \emph{rasterisation,} le calcul de la
-\emph{métrique} et la \emph{fuzzyfication}
-(\autoref{fig:methodo_spatialisation}).
+\autoref{fig:Exemple_Metrique_vs_Selecteur}). Nous proposons de
+définir une \emph{méthode de spatialisation} en trois parties, la
+\emph{rasterisation,} le calcul de la \emph{métrique} et la
+\emph{fuzzyfication} (\autoref{fig:methodo_spatialisation}).
 
 \begin{figure}
   \centering
@@ -257,25 +255,22 @@ rasteriser ensuite que la partie sélectionnée. Ainsi l'étape de
 %
 Comme nous le verrons dans la partie qui lui est dédiée
 (\autoref{chap:07-sec2}), l'opération de rasterisation peut donner des
-résultats très différents en fonction des paramètres sélectionnée.
-
-La seconde partie de la \emph{spatialisation} est le calcul de la
+résultats très différents en fonction des paramètres sélectionnée. La
+seconde partie de la \emph{spatialisation} est le calcul de la
 \emph{métrique.} Ce calcul est effectué sur l'aire et à la résolution
 fixée lors de l'opération de \emph{rasterisation.} Les
 \emph{métriques} utilisables sont nombreuses et fortement liées à la
 sémantique de la \emph{relation de localisation atomique} spatialisée,
 comme nous le verrons dans la partie dédiée à cette question
-(\autoref{chap:07-sec3}).
-
-% Fuzzyficaiton
-La dernière partie de la \emph{méthodologie de spatialisation} est la
-\emph{fuzzyfication.} C'est durant cette étape que les pixels sont
-filtrés en fonction de la valeur de la métrique, à délimiter la
-\emph{zone de localisation compatible} correspondant à la
-\emph{relation de localisation atomique} spatialisée. Contrairement à
-l'exemple présenté (\autoref{fig:Exemple_Metrique_vs_Selecteur}),
-cette opération doit aboutir à une \ac{zlc} floue, ce que nous
-détaillerons dans la \autoref{chap:07-sec4}.
+(\autoref{chap:07-sec3}). La dernière partie de la \emph{méthodologie
+  de spatialisation} est la \emph{fuzzyfication.} C'est durant cette
+étape que les pixels sont filtrés en fonction de la valeur de la
+métrique, à délimiter la \emph{zone de localisation compatible}
+correspondant à la \emph{relation de localisation atomique}
+spatialisée. Contrairement à l'exemple présenté
+(\autoref{fig:Exemple_Metrique_vs_Selecteur}), cette opération doit
+aboutir à une \ac{zlc} floue, ce que nous détaillerons dans la
+\autoref{chap:07-sec4}.
 
 
 %%% Local Variables:
