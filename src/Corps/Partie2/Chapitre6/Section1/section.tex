@@ -1,60 +1,63 @@
-Les \emph{zones de localisations} apparaissent dans la phase de
-\emph{spatialisation} de notre méthode et sont traitées jusqu'à la fin
-de la phase de \emph{fusion.} Ces deux phases, de la méthode ont des
-contraintes spécifiques, nécessitant des caractéristiques
-particulières de la part de la part de la \emph{modélisation} des
-\emph{zones de localisation.} Nous allons ici présenter ces différents
-critères, en les regroupant par phases de la méthode.
+Les \emph{zones de localisations} sont des objets qui sont construit
+lors de la phase de \emph{spatialisation} et qui sont traitées jusqu'à
+la fin de la phase de \emph{fusion.} Chacune de ces deux phases a des
+contraintes spécifiques, nécessitant des caractéristiques de
+\emph{modélisation} des \emph{zones de localisation} spécifiques.
+Nous allons, à présent, présenter ces différentes caractéristiques, en
+les regroupant par phase.
 
-\subsection{Critères portant sur la \emph{spatialisation}}
+\subsection{Critères portant sur la phase de \emph{spatialisation}}
 
 Chacune des nombreuses \emph{relations de localisation} utilisées par
-les requérants pour décrire leur position ont une sémantique qui leur
-est propre et qui conduit à la définition de \emph{zones de
-  localisation} très différentes. La modélisation utilisée doit donc
-permettre la représentation de tous les différents cas possibles.
+les requérants pour décrire leur position a une sémantique qui lui est
+propre et qui conduit donc à des \emph{zones de localisation} très
+différentes. La \emph{modélisation} utilisée doit donc permettre une
+représentation optimale de situations potentiellement très
+différentes.
 
 Un premier point à considérer est celui de \emph{l'imprécision} des
 \emph{zones de localisations.} Si nous avons détaillé cette notion et
-justifié sa prise en compte lors de la \emph{spatialisation,} nous
-n'avons pas présenté ses possibles variations. Or, de la même manière
-que la forme d'une \emph{zone de localisation} varie d'une
-\emph{relation de localisation} à une autre, leur \emph{imprécision}
+justifié sa prise en compte lors de la \emph{phase de spatialisation,}
+nous n'avons pas présenté ses possibles variations. Or, de la même
+manière que la forme d'une \emph{zone de localisation} varie d'une
+\emph{relation de localisation} à l'autre, leur \emph{imprécision}
 peut être plus ou moins importante. Par exemple, la \emph{relation de
   localisation} \enquote{proche} \footnote{Formalisée dans l'ontologie
   des r\emph{elations de localisation} par le concept
   \onto[orl]{Prés\-De}.}, qui décrit une relation de proximité
 géographique entre \emph{le sujet} et \emph{l'objet de référence,} est
-fortement \emph{imprécise} \footnote{Comme nous l'illustrions avec le
-  \emph{paradoxe sorites} dans le second chapitre (voir la section
-  \ref{subsec:2-1-2}).}. Ainsi, les limites de la \emph{zone de
-  localisation} y correspondant sont continues, sans réelle rupture
-entre son intérieur et son extérieur. À l'inverse, la \emph{zone de
-  localisation} construite à partir de la \emph{relation de
-  localisation} \enquote{en dessous} \footnote{Formalisée avec le
-  concept \onto[orl]{Sous\-Al\-ti\-tu\-de}.} a des limites plus
-\emph{précises.} On peut en effet imaginer une situation où l'altitude
-du \emph{sujet,} alors clairement situé \enquote{en dessous} de
-\emph{l'objet de référence}, augmente peu à peu, jusqu'à dépasser
-celle de \emph{l'objet de référence,} passant alors de la \emph{zone
-  de localisation} à son extérieur. Cependant, contrairement à la
+fortement \emph{imprécise} \footnote{Comme nous l'illustrions avec
+  l'exemple du \emph{paradoxe sorites} dans le second chapitre (voir
+  la section \ref{subsec:2-1-2}).}. Ainsi, les limites de la
+\emph{zone de localisation} y correspondant sont continues, sans
+réelle rupture entre son intérieur et son extérieur. À l'inverse, la
 \emph{zone de localisation} construite à partir de la \emph{relation
-  de localisation} \enquote{proche}, cette transition est, sinon
-immédiate\footnote{Ce qui impliquerait que la \emph{relation de
-    localisation} est \emph{précise,} ce qui, comme nous l'expliquions
-  dans les chapitres \ref{chap:02} et \ref{chap:03}, n'est pas
-  possible.}, rapide. Ainsi, s'il est abusif de considérer que
-l'appartenance à cette \emph{zone de localisation} est bivalente, on
-peut remarquer que la longue transition entre l'intérieur et
-l'extérieur de la \emph{zone de localisation} construite d'après la
-\emph{relation de localisation} \onto[orl]{Prés\-De} est ici fortement
-réduite. Entre ces deux cas archétypaux on trouve une multitude
-d'autres situations, où les limites de la \emph{zone de localisation}
-sont plus ou moins marquées. Il est nécessaire que notre modélisation
-des \emph{zones de localisation} propose une prise en compte
-satisfaisante de ces différentes situations et soit donc à même de
-modéliser des \emph{zones de localisation} aux limites presque
-\emph{nettes} ou fortement \emph{imprécises.}
+  de localisation} \enquote{en dessous} \footnote{Formalisée avec le
+  concept \onto[orl]{Sous\-Al\-ti\-tu\-de}.} a des limites plus
+\emph{précises.} Pour l'illustrer, on peut imaginer une situation où
+l'altitude du \emph{sujet,} alors clairement situé \enquote{en
+  dessous} de \emph{l'objet de référence}, augmente peu à peu, jusqu'à
+dépasser celle de \emph{l'objet de référence,} passant alors de la
+\emph{zone de localisation} à son extérieur. Cependant, contrairement
+à la \emph{zone de localisation} construite à partir de la
+\emph{relation de localisation} \enquote{proche}, cette transition
+est, sinon immédiate\footnote{Ce qui impliquerait que la
+  \emph{relation de localisation} est \emph{précise,} ce qui, comme
+  nous l'expliquions dans les chapitres \ref{chap:02} et
+  \ref{chap:03}, n'est pas possible.}, tout de moins assez
+brusque. Ainsi, s'il est abusif de considérer que l'appartenance à
+cette \emph{zone de localisation} est bivalente, on peut remarquer que
+la longue transition entre l'intérieur et l'extérieur de la \emph{zone
+  de localisation} construite d'après la \emph{relation de
+  localisation} \onto[orl]{Prés\-De} est ici fortement réduite. Entre
+ces deux cas archétypaux on trouve une multitude d'autres situations,
+où les limites de la \emph{zone de localisation} sont plus ou moins
+marquées, c'est-à-dire plus ou moins \emph{imprécises.} Il est donc
+nécessaire que la \emph{modélisation} des \emph{zones de localisation}
+retenue propose une prise en compte satisfaisante de ces différentes
+situations et soit à même de modéliser des \emph{zones de
+  localisation} aux limites presque \emph{nettes} ou fortement
+\emph{imprécises.}
 
 Un problème similaire se pose lorsque l'on traite, non plus de la
 vitesse de transition ente l'intérieur d'une \emph{zone de
