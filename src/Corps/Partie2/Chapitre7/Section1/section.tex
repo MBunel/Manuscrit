@@ -7,17 +7,19 @@ de manière à ne contenir qu'une \emph{relation de localisation
 \emph{l'indice de localisation} est vrai~---, représentée par un
 raster flou (\autoref{chap:06}).
 
+Comme nous l'expliquions dans le \autoref{chap:04} et conformément au
+\emph{principe de modélisation autonome,} la \emph{spatialisation} est
+une étape effectuée indépendamment et parallèlement pour tous les
+\emph{indices de localisation} résultant de la \emph{phase de
+  décomposition.} Le processus que nous détaillons ici est donc conçu
+pour traiter des \emph{indices de localisation} décomposés,
+c'est-à-dire qui ne sont composés que d'une \emph{relation de
+  localisation atomique} et d'un \emph{objet de référence nommé.}
+
 \subsection{Contraintes à la définition d'une \emph{méthode de spatialisation}}
 
-
-\tdi{Organisation}%
-Conformément au \emph{principe de modélisation autonome,} la
-\emph{spatialisation} est effectuée parallèlement pour tous les
-\emph{indices de localisation} résultant de la \emph{phase de
-  décomposition.}
-
-Le recours à une implémentation raster (\autoref{chap:06}) a deux
-conséquences importantes.
+Le recours à une implémentation raster (\autoref{chap:06}) impacte
+fortement le processus de construction de la \ac{zlc}
 
 \tdi{Importance de la zir}%
 Ensuite il est nécessaire de définir la \ac{zir}
@@ -52,11 +54,11 @@ plus fine, considérant des nuances de vérité et permettant de
 distinguer les positions où l'assertion précédente est parfaitement
 correcte (\ie où le \emph{degré d'appartenance} est de 1), de celles
 où elle l'est partiellement (\ie où le \emph{degré d'appartenance} est
-strictement supérieur à 0 mais inférieur à 1). L'implémentation raster
-(\autoref{chap:06}) facilite quant à elle la définition de zone de la
+entre 0 et 1). Le choix d'une implémentation raster
+(\autoref{chap:06}) facilite, quant à lui, la définition de zone de la
 \ac{zlc}, en résumant sa construction au calcul d'un \emph{degré
   d'appartenance} pour chaque pixel d'un raster échantillonnant la
-\ac{zir}. Ces éléments ne définissent cependant que la manière que
+\ac{zir}. Ces deux éléments ne définissent cependant que la manière de
 représenter la \emph{zone de localisation compatible} et non la façon
 de la construire, cette tâche incombant à la \emph{méthode de
   spatialisation.}
@@ -66,21 +68,23 @@ une procédure permettant de vérifier, pour chaque pixel d'un raster
 donné et à l'aide de la \emph{théorie des sous-ensembles flous,} la
 validité de l'assertion \enquote{\emph{l'indice de localisation} est
   vrai}. Or, le \emph{principe de décomposition} nous a amené à
-définir des \emph{relations de localisation atomiques} les plus
-différentes possibles et nécessitant, par conséquent, des
+définir des \emph{relations de localisation atomiques,} les plus
+différentes possibles et nécessitant par conséquent, des
 \emph{méthodes de spatialisation} qui le sont tout autant. Il semble
 donc nécessaire de développer une \emph{méthode de spatialisation}
 pour chaque \emph{relation de localisation atomique} définie dans
 \ac{orla}. C'est par exemple ce que proposent \textcite{Vanegas2011}
 ou \textcite{Takemura2012} en proposant des \emph{méthodes de
   spatialisation} dédiées à une \emph{relation de localisation
-  donnée.} Pourtant ce problème est ---~une nouvelle fois~---
-décomposable. Prenons pour exemple les deux \emph{relations de
-  localisation atomiques} \onto[orla]{Interieur} et
-\onto[orla]{Exterieur} \footnote{Ces deux \emph{relations de
-    localisation atomiques} sont utilisées pour décomposer des
-  \emph{relations} comme \protect\onto[orl]{Dans\-La\-Partie\-Sud\-De}
-  ou \protect\onto[orl]{Au\-Nord\-De\-Externe}, mais également
+  donnée.} Nous proposons cependant d'utiliser, à nouveau, une
+démarche de décomposition.
+
+Prenons, par exemple deux \emph{relations de localisation atomiques,}
+\onto[orla]{In\-te\-ri\-eur} et \onto[orla]{Ex\-te\-ri\-eur}
+\footnote{Ces deux \emph{relations de localisation atomiques} sont
+  utilisées pour décomposer des \emph{relations} comme
+  \protect\onto[orl]{Dans\-La\-Partie\-Sud\-De} ou
+  \protect\onto[orl]{Au\-Nord\-De\-Externe}, mais également
   directement dans les \emph{relations}
   \protect\onto[orl]{Dans\-Planimétrique} et
   \protect\onto[orl]{Hors\-De\-Planimétrique}.}. Ces deux concepts
@@ -96,22 +100,21 @@ validité de l'assertion : \enquote{\emph{l'indice de localisation} est
 représentant une \ac{zir} simplifiée. Imaginons que l'on cherche à
 construire, sans prendre en compte \emph{l'imprécision,} les \ac{zlc}
 correspondant aux \emph{relations} \onto[orla]{Interieur} et
-\onto[orla]{Exterieur}, pour cet \emph{objet de référence.} Comme nous
-employons une approche raster, nous pouvons construire ces \ac{zlc} en
-sélectionnant les pixels situés, respectivement, à l'intérieur et à
-l'extérieur de \emph{l'objet de référence.}
-%
-Pour ce faire il est tout d'abord nécessaire d'identifier la relation
-topologique entre chaque pixel et \emph{l'objet de référence.} Étant
-donné que \emph{l'imprécision} n'est pas considérée ici, nous pouvons
-décrire ces relations topologiques à l'aide d'une matrice 4IM
-\footnote{Nous aurions pu utiliser n'importe quelle autre
-  formalisation des relations topologiques présentée dans le
-  \autoref{chap:03} (RCC-8, 9IM, DE-9IM, \emph{etc.}). Le modèle 4IM
-  nous a simplement semblé le plus clair pour illustrer cet exemple.}
-calculée en chaque pixel de la \ac{zir} \footnote{Le pixel traité fait
-  alors office d'objet \(a\) et \emph{l'objet de référence} d'objet
-  \(b\) (\autoref{eq:matrice_4IM}, \autoref{chap:03}).}
+\onto[orla]{Exterieur}, pour cet \emph{objet de référence.} L'approche
+raster, nous permet de construire ces deux \ac{zlc} en sélectionnant
+les pixels situés, respectivement, à l'intérieur et à l'extérieur de
+\emph{l'objet de référence.} Pour cela, il est tout d'abord nécessaire
+d'identifier la relation topologique entre chaque pixel et
+\emph{l'objet de référence.} Étant donné que \emph{l'imprécision}
+n'est pas considérée ici, nous pouvons décrire ces relations
+topologiques à l'aide d'une matrice 4IM \footnote{Nous aurions pu
+  utiliser n'importe quelle autre formalisation des relations
+  topologiques présentée dans le \autoref{chap:03} (RCC-8, 9IM,
+  DE-9IM, \emph{etc.}). Le modèle 4IM nous a simplement semblé le plus
+  clair pour illustrer cet exemple.}  calculée en chaque pixel de la
+\ac{zir} \footnote{Le pixel traité fait alors office d'objet \(a\) et
+  \emph{l'objet de référence} d'objet \(b\) (\autoref{eq:matrice_4IM},
+  \autoref{chap:03}).}
 (\autoref{fig:Exemple_Metrique_vs_Selecteur}). On obtient alors un
 raster contenant (explicitement) une information permettant de
 distinguer les pixels situés à l'intérieur et à l'extérieur de
@@ -142,7 +145,7 @@ critère de modélisation de la \emph{relation de localisation atomique}
 ---~on parlera dorénavant de \emph{métrique}~--- et la
 \emph{sélection} des pixels dont la valeur de la \emph{métrique}
 correspond à la sémantique de la \emph{relation de localisation
-  atomique.}
+  atomique} spatialisée.
 
 \begin{figure}
   \centering
@@ -154,13 +157,12 @@ correspond à la sémantique de la \emph{relation de localisation
 
 % Importance de la rasterisation
 Cependant ces deux parties ne sont pas suffisantes pour distinguer
-toutes les \emph{relations de localisation atomiques.} Prenons pour
-exemple les descriptions de position : \enquote{Je suis à 300 mètres
-  de ma maison} et \enquote{Je suis à la frontière du bois de
-  Vincennes}. Ces deux phrases décrivent des situations en apparence
-très différentes, elles sont d'ailleurs modélisables avec des
-\emph{relations de localisation atomiques} distinctes,
-\onto[orla]{Distance\-Quantitive} et
+toutes les \emph{relations de localisation atomiques.} Par exemple,
+les descriptions de position : \enquote{Je suis à 300 mètres de ma
+  maison} et \enquote{Je suis à la frontière du bois de Vincennes},
+décrivent des situations en apparence très différentes, elles sont
+d'ailleurs modélisables avec des \emph{relations de localisation
+  atomiques} distinctes, \onto[orla]{Distance\-Quantitive} et
 \onto[orla]{A\-La\-Frontiere\-De}. Pourtant si l'on se penche sur leur
 signification on peut s’apercevoir qu'elles partagent leur
 \emph{métrique,} mais également son interprétation. En effet, ces deux
@@ -193,27 +195,33 @@ même partie de \emph{l'objet de référence,} là où
 \onto[orla]{Distance\-Quantitive} décrit un éloignement par rapport à
 l'objet dans son ensemble, \onto[orla]{A\-La\-Frontiere\-De} décrit,
 explicitement, un éloignement par rapport à sa frontière, ce qui est
-une distinction sémantique forte.
+une distinction sémantique forte et qui modifie la manière dont les
+positions situées au sein de \emph{l'objet de référence} sont
+interprétées. En effet, si dans la première situation les positions
+situées au sein de \emph{l'objet de référence} ont une distance à
+\emph{l'objet de référence} nulle, dans le second cas cette distance
+est strictement positive, car calculée à partir de la frontière de
+\emph{l'objet de référence.} Ainsi, il également nécessaire de prendre
+en compte le point ou la partie de \emph{l'objet de référence,}
+faisant réellement office de référence et donc de point de calcul de
+la \emph{métrique.}
 
-\subsubsection{Les étapes de la \emph{méthode de spatialisation}}
+%\subsubsection{Les étapes de la \emph{méthode de spatialisation}}
 
-% Présenter les 3 grandes étapes de la démarche, leur rôle et leur justification
-Trois composantes sont alors à prendre en compte pour
+Trois composantes sont donc à prendre en compte pour
 \emph{spatialiser} une \emph{relation de localisation atomique,} une
 \emph{métrique,} la partie de \emph{l'objet de référence} servant
-d'origine et une \emph{méthode de sélection} permettant d'identifier
-les valeurs satisfaisantes.
-%
-À ces trois composantes s'ajoutent trois contraintes, la nécessité de
-limiter la \emph{spatialisation} à la \ac{zir}, de rasteriser les
-\emph{objets de référence} et de construire une \ac{zlc} floue
-(contrairement aux résultats de la
-\autoref{fig:Exemple_Metrique_vs_Selecteur}).
-%
-Pour réaliser ces XXX nous proposons de définir une \emph{méthode de
-  spatialisation} en trois parties ---~la \emph{rasterisation,} le
-calcul de la \emph{métrique} et la \emph{fuzzyfication}~--- réalisées
-séquentiellement (\autoref{fig:methodo_spatialisation}).
+d'origine à son calcul et une \emph{méthode de sélection} permettant
+d'identifier les valeurs de la \emph{métrique} correspondant à la
+sémantique de la relation de \emph{localisation atomique spatialisée.}
+À ces trois composantes s'ajoutent trois contraintes à respecter, la
+nécessité de limiter la \emph{spatialisation} à la \ac{zir}, de
+rasteriser les \emph{objets de référence} et de construire une
+\ac{zlc} floue (contrairement aux résultats de la
+\autoref{fig:Exemple_Metrique_vs_Selecteur}). Nous proposons de
+définir une \emph{méthode de spatialisation} en trois parties, la
+\emph{rasterisation,} le calcul de la \emph{métrique} et la
+\emph{fuzzyfication} (\autoref{fig:methodo_spatialisation}).
 
 \begin{figure}
   \centering
@@ -229,14 +237,14 @@ La \emph{rasterisation} est la première partie de la
 calculer la \emph{métrique} nécessaire à la \emph{spatialisation.} La
 rasterisation de \emph{l'objet de référence} nécessite de définir une
 résolution et une taille de raster, qui dans notre cas correspond à la
-\ac{zir}. Ainsi la zone de rasterisation correspond à la \emph{zone
-  initiale de recherche} et cette étape fait donc également office de
-délimitation de la zone de calcul. De plus il est nécessaire de ne
-sélectionner que la partie de \emph{l'objet de référence} qui est
-utile pour la \emph{relation de localisation atomique} à spatialiser
-(\eg frontière, centroide, \emph{etc.}). Il est plus simple de
-réaliser cette opération dans un premier temps et de ne rasteriser
-ensuite que la partie sélectionnée. Ainsi l'étape de
+\ac{zir}. Ainsi, la zone de \emph{rasterisation} correspond à la
+\emph{zone initiale de recherche} et cette étape fait donc également
+office de délimitation de la zone de calcul. De plus il est nécessaire
+de ne sélectionner que la partie de \emph{l'objet de référence} qui
+est utile pour la \emph{relation de localisation atomique} à
+spatialiser (\eg frontière, centroide, \emph{etc.}). Il est plus
+simple de réaliser cette opération dans un premier temps et de ne
+rasteriser ensuite que la partie sélectionnée. Ainsi l'étape de
 \emph{rasterisation} rempli trois rôles :
 %
 \begin{enumerate*}[label=(\alph*)]
@@ -247,25 +255,22 @@ ensuite que la partie sélectionnée. Ainsi l'étape de
 %
 Comme nous le verrons dans la partie qui lui est dédiée
 (\autoref{chap:07-sec2}), l'opération de rasterisation peut donner des
-résultats très différents en fonction des paramètres sélectionnée.
-
-La seconde partie de la \emph{spatialisation} est le calcul de la
+résultats très différents en fonction des paramètres sélectionnée. La
+seconde partie de la \emph{spatialisation} est le calcul de la
 \emph{métrique.} Ce calcul est effectué sur l'aire et à la résolution
 fixée lors de l'opération de \emph{rasterisation.} Les
 \emph{métriques} utilisables sont nombreuses et fortement liées à la
 sémantique de la \emph{relation de localisation atomique} spatialisée,
 comme nous le verrons dans la partie dédiée à cette question
-(\autoref{chap:07-sec3}).
-
-% Fuzzyficaiton
-La dernière partie de la \emph{méthodologie de spatialisation} est la
-\emph{fuzzyfication.} C'est durant cette étape que les pixels sont
-filtrés en fonction de la valeur de la métrique, à délimiter la
-\emph{zone de localisation compatible} correspondant à la
-\emph{relation de localisation atomique} spatialisée. Contrairement à
-l'exemple présenté (\autoref{fig:Exemple_Metrique_vs_Selecteur}),
-cette opération doit aboutir à une \ac{zlc} floue, ce que nous
-détaillerons dans la \autoref{chap:07-sec4}.
+(\autoref{chap:07-sec3}). La dernière partie de la \emph{méthodologie
+  de spatialisation} est la \emph{fuzzyfication.} C'est durant cette
+étape que les pixels sont filtrés en fonction de la valeur de la
+métrique, à délimiter la \emph{zone de localisation compatible}
+correspondant à la \emph{relation de localisation atomique}
+spatialisée. Contrairement à l'exemple présenté
+(\autoref{fig:Exemple_Metrique_vs_Selecteur}), cette opération doit
+aboutir à une \ac{zlc} floue, ce que nous détaillerons dans la
+\autoref{chap:07-sec4}.
 
 
 %%% Local Variables:
