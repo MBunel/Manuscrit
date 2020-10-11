@@ -157,13 +157,12 @@ correspond à la sémantique de la \emph{relation de localisation
 
 % Importance de la rasterisation
 Cependant ces deux parties ne sont pas suffisantes pour distinguer
-toutes les \emph{relations de localisation atomiques.} Prenons pour
-exemple les descriptions de position : \enquote{Je suis à 300 mètres
-  de ma maison} et \enquote{Je suis à la frontière du bois de
-  Vincennes}. Ces deux phrases décrivent des situations en apparence
-très différentes, elles sont d'ailleurs modélisables avec des
-\emph{relations de localisation atomiques} distinctes,
-\onto[orla]{Distance\-Quantitive} et
+toutes les \emph{relations de localisation atomiques.} Par exemple,
+les descriptions de position : \enquote{Je suis à 300 mètres de ma
+  maison} et \enquote{Je suis à la frontière du bois de Vincennes},
+décrivent des situations en apparence très différentes, elles sont
+d'ailleurs modélisables avec des \emph{relations de localisation
+  atomiques} distinctes, \onto[orla]{Distance\-Quantitive} et
 \onto[orla]{A\-La\-Frontiere\-De}. Pourtant si l'on se penche sur leur
 signification on peut s’apercevoir qu'elles partagent leur
 \emph{métrique,} mais également son interprétation. En effet, ces deux
@@ -196,7 +195,16 @@ même partie de \emph{l'objet de référence,} là où
 \onto[orla]{Distance\-Quantitive} décrit un éloignement par rapport à
 l'objet dans son ensemble, \onto[orla]{A\-La\-Frontiere\-De} décrit,
 explicitement, un éloignement par rapport à sa frontière, ce qui est
-une distinction sémantique forte.
+une distinction sémantique forte et qui modifie la manière dont les
+positions situées au sein de \emph{l'objet de référence} sont
+interprétées. En effet, si dans la première situation les positions
+situées au sein de \emph{l'objet de référence} ont une distance à
+\emph{l'objet de référence} nulle, dans le second cas cette distance
+est strictement positive, car calculée à partir de la frontière de
+\emph{l'objet de référence.} Ainsi, un troisième élément est à prendre
+en compte, le point ou la partie de \emph{l'objet de référence,}
+faisant office de référence et donc de point de calcul de la
+\emph{métrique.}
 
 \subsubsection{Les étapes de la \emph{méthode de spatialisation}}
 
