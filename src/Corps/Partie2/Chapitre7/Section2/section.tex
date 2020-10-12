@@ -147,24 +147,33 @@ fortement majoritaire et seules quelques \emph{relations de
   localisation atomiques} spécifiques nécessitent une méthode plus
 spécifique.
 
-Les deux autres \emph{rasterisers} que nous avons définis, 
-
 Mais il également possible de ne rasteriser qu'une partie de
 \emph{l'objet de référence,} comme sa frontière ou son centroïde
-(\autoref{tab:methode_rasterisation}).
+(\autoref{tab:methode_rasterisation}). Par exemple, le second
+\emph{rasteriser} que nous avons défini, \onto{Frontiere}, ne traite
+que la frontière de \emph{l'objet de référence.} Comme on peut le voir
+sur la \autoref{fig:methode_rasterisation}, ce \emph{rasteriser}
+n'impacte que la \emph{rasterisation} des régions et des linéaires,
+les points, qui ne possèdent ni frontière, ni intérieur, sont toujours
+\emph{rasterisés} des la même manière. Ce \emph{rasteriser} a été
+développé pour \emph{spatialiser} des \emph{relations de localisation
+  atomiques} se référant à la frontière et non à \emph{l'objet de
+  référence} dans son ensemble. C'est par exemple le cas d'une
+\emph{relation de localisation atomique} comme
+\onto[orla]{A\-La\-Frontiere\-De}, décrivant une situation où le
+\emph{sujet} est proche de la frontière de \emph{l'objet de référence}
+et non de \emph{l'objet de référence} (ce qui correspond à la relation
+\onto[orla]{Près\-De}.
 
-Le second \emph{rasteriser} défini ne considère que la frontière de
-\emph{l'objet de référence} traité.
-%
-Ce \emph{rasteriser} est notamment employé pour \emph{spatialiser} la
-\emph{relation de localisation} \onto[orla]{A\-La\-Frontiere\-De}.
-
-Enfin, un \emph{rasteriser} ne traitant que le centroïde de
+Enfin, un troisième \emph{rasteriser,} ne traitant que le centroïde de
 \emph{l'objet de référence} a été défini. Contrairement aux autres
 \emph{rasterisers} présentés jusqu'ici, celui-ci conduit tout type
 d'objet (\ie point, ligne, polygone) a être représentés par un seul
 point. Ainsi, tous les objets traités sont représentés pas un point,
-lui-même \emph{rasterisé} en un unique pixel.
+lui-même \emph{rasterisé} en un unique pixel. Les utilisations de ce
+\emph{rasteriser} sont un peu plus limitées. Nous l'employons pour
+spatialiser des \emph{relations} exprimant un angle, comme
+\onto[orla]{Dans\-La\-Direction\-De}.
 
 \begin{figure}
   \centering
