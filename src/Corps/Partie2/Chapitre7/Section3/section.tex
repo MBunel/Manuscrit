@@ -88,9 +88,18 @@ XXX aux angles, deux \emph{métriques} ont été développées,
 \onto{Ecart\-Angulaire} et \onto{Direction\-De}. Toutes deux sont des
 \emph{métriques} extrinsèques et paramétriques. La \emph{métrique}
 \onto{Ecart\-Angulaire} est destinée à mesurer l'écart à une
-orientation donnée.
-%
-(\autoref{fig:metrique_ecart_angulaire})
+orientation donnée, fixée par un paramètre \enquote{angle} et exprimée
+à partir de \emph{l'objet de référence.} La
+\autoref{fig:metrique_ecart_angulaire}, donne un exemple de cet
+\emph{métrique.} À partir d'un point (au centre de la figure) et d'une
+direction (l'angle supérieur droit), on construit une demi-droite
+faisant office de direction de référence. Puis, pour chaque pixel, on
+calcul l'écart angulaire entre la direction de référence et la
+demi-droite reliant \emph{l'objet de référence} a ce point. Sur la
+\autoref{fig:metrique_ecart_angulaire} l'importance de cet angle est
+figurée avec une variation de taille, et son orientation par une
+variation de couleur. Cette \emph{métrique} peut-être utilisée pour
+\emph{spatialiser} différentes \emph{relations de localisation atomiques,}
 
 \begin{figure}
   \centering
@@ -102,7 +111,10 @@ orientation donnée.
 \end{figure}
 
 La \emph{métrique} \onto{Direction\-De} sert quand à elle à mesurer
-l'écart à une direction donnée.
+l'écart à une direction donnée. Elle est par exemple utilisée pour
+\emph{spatialiser} XXX.
+Le calcul de cette \emph{métrique} est plus complexe que celui de \onto{Ecart\-Angulaire}
+
 %
 (\autoref{fig:metrique_direction_de})
 
