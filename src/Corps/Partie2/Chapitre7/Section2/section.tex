@@ -39,7 +39,17 @@ pour représenter tout type de réseau (\eg voirie, transport d'eau ou
 d'énergie) et des \emph{polygones,} utilisés pour représenter tout
 objet à l’implantation zonale.
 
-Méthode de sélection des pixels
+Un autre point à prendre en considération lors de la définition d'une
+méthode de \emph{rasterisation} est le processus de sélection des
+pixels appartenant à l'objet rasterisé. En effet, à moins d’être dans
+une configuration particulière (et rare), l'objet rasterisé intersecte
+les pixels de différente manières. Certains d'entre-eux peuvent être
+intégralement situés à l'intérieur de l'objet, d'autres partiellement,
+d'autre encore peuvent juste toucher la frontière de l'objet,
+\emph{etc.} Pour mettre en place une méthode de rasterisation il est
+donc nécessaire de définir dans quelles configurations les pixels
+seront considérés comme appartenant à l'objet rasterisé et dans
+quelles conditions ils ne sont pas.
 %
 La \autoref{fig:rasterisation_sel_pixels} illustre ces deux
 approches. Un même \emph{objet de référence} est \emph{rastérisé,}
