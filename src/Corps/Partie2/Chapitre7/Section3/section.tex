@@ -1,10 +1,9 @@
-La seconde étape dans le processus de \emph{spatialisation} est le
+La seconde partie du processus de \emph{spatialisation} est le
 \emph{calcul de la métrique.} C'est durant cette phase qu'est calculée
 la mesure utilisée pour quantifier une grandeur que l'on veut
 représentative de la sémantique de la \emph{relation de localisation
-  atomique} \emph{spatialisée.} Contrairement aux \emph{rasterisers,}
-les \emph{métriques} sont assez nombreuses et diverses, tout en étant
-réutilisées.
+  atomique} \emph{spatialisée.} Les \emph{métriques} sont plus
+nombreuses et diverses que les \emph{rasterisers.}
 
 \subsection{Classification}
 
@@ -50,18 +49,20 @@ Ces deux critères se combinent et (\autoref{fig:type_metriques})
 \subsection{Les différentes \emph{métriques}}
 
 Parmi tous les exemples que nous avons présentés, une \emph{métrique}
-est régulièrement mentionnée, la \emph{distance planimétrique} à
+apparait régulièrement, la \emph{distance planimétrique} à
 \emph{l'objet de référence} (\autoref{fig:ISO_DIST_HT}). Cette
 \emph{métrique} est un exemple caractéristique des \emph{métriques
-  extrinsèques} et \emph{non paramétriques.} Il est, en effet, de la
-calculer pour chaque \emph{objet de référence,} mais elle n'accepte
-pas de \emph{paramètres.} On pourrait cependant complexifier cette
-\emph{métrique,} par exemple en permettant le calcul de distances
-alternatives, comme la distance de Manhattan, de Minkowski ou de
-Tchebychev et définir un paramètre qui permette de définir la distance
-à calculer. Mais ces distances alternatives, trop éloignées de la
-perception humaine des distances, ne présentent pas d’intérêt pour
-notre cas d'application.
+  extrinsèques} et \emph{non paramétriques.} Il est, en effet,
+nécessaire de la calculer pour chaque \emph{objet de référence,} mais
+elle n'accepte pas de \emph{paramètres.}  On pourrait cependant en
+ajouter, par exemple en ajoutant un paramètre permettant d'employer
+des distances alternatives, comme la distance de Manhattan, de
+Minkowski ou de Tchebychev. Mais ces distances alternatives, trop
+éloignées de la perception humaine des distances, ne présentent pas
+d’intérêt pour notre cas d'application. Cette \emph{métrique} est
+employée lors de la \emph{spatialisation} de toutes les
+\emph{relations de localisation atomiques} traduisant un éloignement
+ou une relation topologique.
 
 \begin{table}
   \centering
@@ -82,7 +83,79 @@ nouvelle fois d'une \emph{métrique extrinsèque} et \emph{non
   \caption{Métrique 2 À  changer ??}
 \end{figure}
 
+Pour \emph{spatialiser} les \emph{relations de localisation atomiques}
+XXX aux angles, deux \emph{métriques} ont été développées,
+\onto{Ecart\-Angulaire} et \onto{Direction\-De}. Toutes deux sont des
+\emph{métriques} extrinsèques et paramétriques. La \emph{métrique}
+\onto{Ecart\-Angulaire} est destinée à mesurer l'écart à une
+orientation donnée, fixée par un paramètre \enquote{angle} et exprimée
+à partir de \emph{l'objet de référence.} La
+\autoref{fig:metrique_ecart_angulaire}, donne un exemple de cet
+\emph{métrique.} À partir d'un point (au centre de la figure) et d'une
+direction (l'angle supérieur droit), on construit une demi-droite
+faisant office de direction de référence. Puis, pour chaque pixel, on
+calcul l'écart angulaire entre la direction de référence et la
+demi-droite reliant \emph{l'objet de référence} a ce point. Sur la
+\autoref{fig:metrique_ecart_angulaire} l'importance de cet angle est
+figurée avec une variation de taille, et son orientation par une
+variation de couleur. Cette \emph{métrique} peut-être utilisée pour
+\emph{spatialiser} différentes \emph{relations de localisation atomiques,}
 
+\begin{figure}
+  \centering
+  \input{../figures/Metrique_ecart_angulaire.tex}
+  \caption{Exemple du calcul de la \emph{métrique}
+    \protect\onto{Ecart\-Angulaire} pour un point et une direction
+    donnée.}
+  \label{fig:metrique_ecart_angulaire}
+\end{figure}
+
+La \emph{métrique} \onto{Direction\-De} sert quand à elle à mesurer
+l'écart à une direction donnée. Elle est par exemple utilisée pour
+\emph{spatialiser} XXX.
+%
+Le calcul de cette \emph{métrique} est plus complexe que celui de
+\onto{Ecart\-Angulaire}
+
+%
+(\autoref{fig:metrique_direction_de})
+
+\begin{figure}
+  \centering
+  \input{../figures/Metrique_direction_de.tex}
+  \caption{Exemple du calcul de la \emph{métrique}
+    \protect\onto{Direction\-De}}
+  \label{fig:metrique_direction_de}
+\end{figure}
+
+D'autres \emph{métriques,} plus spécifiques (\ie employées par un
+petit nombre de \emph{relations de localisation atomiques}) ont
+également été développées. C'est par exemple le cas de
+\onto{Temps\-De\-Marche} ou \onto{Part\-Visible}, respectivement
+utilisées pour la \emph{spatialisation} des \emph{relations de
+  localisation} \onto[orla]{Cible\-Voit\-Site} (et son opposée
+\onto[orla]{Site\-Voit\-Cible}) et \onto[orla]{A\-Distance\-Temps}
+\footnote{Ces trois \emph{relations de localisation atomiques} peuvent
+  être utilisées directement. Elles sont par conséquent également
+  présentes dans \ac{orl} (\autoref{anx:orl_dic}).}. La
+\emph{métrique} \onto{Temps\-De\-Marche} est une \emph{métrique}
+extrinsèque, sans paramètre. Sa fonction est de calculer la durée
+minimale de déplacement nécessaire pour atteindre chaque pixel de la
+\ac{zir} à partir de l'objet de référence. Pour calculer cette
+\emph{métrique} nous avons employé le modèle de \textcite{Tobler1993}
+(voir \autoref{eq:marche_tobler} et \autoref{fig:modeles_marche}), ce
+dernier présentant l'avantage d'être robuste et facilement
+paramétrable en fonction de la nature du terrain.
+
+La \emph{métrique} \onto{Part\-Visible} est également une
+\emph{métrique} extrinsèque et non paramétrique. Elle est utilisée
+pour spatialiser les relations de visibilité. Le cas de cette
+\emph{métrique} est un peu particulier car elle ne 
+%
+On peut voir une illustration de cette \emph{métrique} sur la
+\autoref{fig:metrique_part_lac}. Dans cet exemple la taille du figuré
+représente la part de \emph{l'objet de référence} (le lac au centre de
+l'image) qui est visible depuis chaque pixel.
 
 \begin{figure}
   \centering
@@ -92,8 +165,6 @@ nouvelle fois d'une \emph{métrique extrinsèque} et \emph{non
     visible d'un lac donné.}
   \label{fig:metrique_part_lac}
 \end{figure}
-
-
 
 %%% Local Variables:
 %%% mode: latex

@@ -18,17 +18,39 @@ effectuée.
 Un point essentiel de la représentation raster \emph{d'objets
   géographiques} et qu'elle impose, contrairement à une représentation
 vectorielle, de définir explicitement une résolution et une zone de
-modélisation. L'opération de \emph{rasterisation} nécessite ne peut
+modélisation, fixant les limites du raster. Un même objet peut donc
+être représenté par des rasters de taille très différentes, à des
+résolutions qui le sont tout autant. La définition d'une résolution et
+d'une limite à la \emph{rasterisation} est une phase importante dans
+notre méthodologie. En effet les rasters construits lors de cette
+étape sont à la base de notre méthode de \emph{spatialisation.} Par
+conséquent, tous les traitements ultérieurs, que ce soit au sein de la
+phase de \emph{spatialisation} ---~calcul de la \emph{métrique} et
+\emph{fuzzyfication}~--- ou durant la phase de \emph{fusion}
+(Chapitres \ref{chap:04} et \ref{chap:08}), sont impactés par le choix
+d'une résolution et des limites de la zone de traitement, puisqu'ils
+en héritent et qu'il n'y aucune pertinence a envisager des opérations
+de changement de résolution ou de région de traitement au cours des
+phase de \emph{spatialisation} et de \emph{fusion.} Dans notre cas, la
+définition d'une zone de modélisation ne pose pas de problèmes
+particuliers, le secouriste définissant une \emph{zone initiale de
+  recherche,} fixant l'aire de recherche maximale et donc les limites
+de la zone ou sera calculée la \emph{spatialisation,} quel que soit
+\emph{l'indice de localisation} considéré. Nous avons donc choisi de
+\emph{rasteriser} tous les objets de référence d'une même alerte à
+l'aide d'un raster de même dimension et correspondant aux
+délimitations de la \ac{zir}. Le choix de la résolution influençant la
+qualité (et la durée) de la \emph{spatialisation,} nous avons choisi
+de le laisser à l'appréciation du secouriste. Pour ce faire nous avons
+défini quatre valeurs \SIlist{10;25;50;100}{\meter}), associées à
+autant de qualificatifs (haute, moyenne, basse et très basse
+résolution), décrivant la précision de la \emph{spatialisation.} Le
+secouriste peut donc définir une précision de modélisation sans avoir
+à sélectionner directement une valeur.
+
+L'opération de \emph{rasterisation} nécessite ne peut
 donc être effectuée qu'a partir d'un \emph{objet de référence}
 vectoriel.
-
-Cependant la zone de rasterisation est, implicitement, définie par le
-secouriste, il s'agit de la \ac{zir}.
-
-Seule la résolution reste à fixer.
-
-\tdi{parler des consiérations autour de la rasterisation importance de
-  la zir, de la résolution, méthode de sélection des pixels, etc}
 
 % Parler des types d'objets de référence
 Une autre contrainte est que les \emph{méthodes de rasterisation}
@@ -39,30 +61,50 @@ pour représenter tout type de réseau (\eg voirie, transport d'eau ou
 d'énergie) et des \emph{polygones,} utilisés pour représenter tout
 objet à l’implantation zonale.
 
-Méthode de sélection des pixels
-%
-La \autoref{fig:rasterisation_sel_pixels} illustre ces deux
-approches. Un même \emph{objet de référence} est \emph{rastérisé,}
-d'une part en sélectionnant uniquement les pixels dont le centroïde
-est à l'intérieur de \emph{l'objet de référence} (aboutissant au
-raster \textcolor{RdBu-9-1}{\textsf{A}}), d'autre part en
-sélectionnant tous les pixels touchant \emph{l'objet de référence} (ce
-qui donne le raster \textcolor{RdBu-9-9}{\textsf{B}}). Comme on peut
-le voir la seconde solution abouti à une zone plus large, la zone
-résultant de la \emph{rasterisation} est alors plus importante que
-l'emprise réelle de l'objet. Cependant cette seconde approche à
-l'avantage de toujours aboutir à un raster non nul. En effet dans
-certaines configurations, il est possible qu'un \emph{objet de
-  référence,} de surface non nulle, ne contienne aucun centroïde de
-pixel, aboutissant à la construction d'un raster vide. Or, cette
-situation n'est pas acceptable, car, dans notre méthodologie, cela
-aboutirait à ignorer \emph{l'objet de référence,} et donc à ne pas
-considérer l'ensemble des informations transmises par le requérant. Ce
-phénomène se produit lorsque la maille utilisée pour la
-\emph{rasterisation} est trop grande comparativement aux objets que
-l'on souhaite \emph{rasteriser,} donc à une mauvaise paramétrisation
-de la rasterisation. Ce problème est donc corrigible par
-l'augmentation de la résolution du raster cible. Toutefois cette
+Un autre point à prendre en considération lors de la définition d'une
+méthode de \emph{rasterisation} est le processus de sélection des
+pixels appartenant à l'objet rasterisé. En effet, à moins d’être dans
+une configuration particulière (et rare), l'objet rasterisé intersecte
+les pixels de différente manières. Certains d'entre-eux peuvent être
+intégralement situés à l'intérieur de l'objet, d'autres partiellement,
+d'autre encore peuvent juste toucher la frontière de l'objet,
+\emph{etc.} Pour mettre en place une méthode de rasterisation il est
+donc nécessaire de définir dans quelles configurations les pixels
+seront considérés comme appartenant à l'objet rasterisé et dans
+quelles conditions ils ne sont pas. Plusieurs solutions sont
+envisageables. Par exemple, la bibliothèque GDAL \autocite{GDAL2020},
+référence de facto dans le traitement des données géographiques,
+propose deux configurations possibles,
+\foreigntextquote{english}{\emph{standard}} et
+\foreigntextquote{english}{\emph{all touched}}. Avec la première
+configuration, les régions sont rasterisées en sélectionant les seuls
+pixels dont le centroïde est situé au sein de l'objet et les
+polylignes sont rasterisées avec l'algorithme de XX, qui sélectionne
+les pixels situés sur le trajet de la polyligne. La seconde
+configuration sélectionne tous les pixels qui sont en contact avec
+l'objet, même s'ils ne partagent qu'un seul point, ce qui abouti à la
+création d'une zone généralement plus large que l'objet. La
+\autoref{fig:rasterisation_sel_pixels} illustre ces deux approches. Un
+même \emph{objet de référence} est \emph{rastérisé,} d'une part en
+sélectionnant uniquement les pixels dont le centroïde est à
+l'intérieur de \emph{l'objet de référence} (aboutissant au raster
+\textcolor{RdBu-9-1}{\textsf{A}}), d'autre part en sélectionnant tous
+les pixels touchant \emph{l'objet de référence} (ce qui donne le
+raster \textcolor{RdBu-9-9}{\textsf{B}}). Comme on peut le voir la
+seconde solution abouti à une zone plus large, la zone résultant de la
+\emph{rasterisation} est alors plus importante que l'emprise réelle de
+l'objet. Cependant cette seconde approche à l'avantage de toujours
+aboutir à un raster non nul. En effet dans certaines configurations,
+il est possible qu'un \emph{objet de référence,} de surface non nulle,
+ne contienne aucun centroïde de pixel, aboutissant à la construction
+d'un raster vide. Or, cette situation n'est pas acceptable, car, dans
+notre méthodologie, cela aboutirait à ignorer \emph{l'objet de
+  référence,} et donc à ne pas considérer l'ensemble des informations
+transmises par le requérant. Ce phénomène se produit lorsque la maille
+utilisée pour la \emph{rasterisation} est trop grande comparativement
+aux objets que l'on souhaite \emph{rasteriser,} donc à une mauvaise
+paramétrisation de la rasterisation. Ce problème est donc corrigible
+par l'augmentation de la résolution du raster cible. Toutefois cette
 solution n'est pas toujours possible lors d'une utilisation concrète
 d'une \emph{rasterisation.} Prenons pour exemple la
 \autoref{fig:rasterisation_cas_limite}, illustrant une situation où
@@ -147,24 +189,33 @@ fortement majoritaire et seules quelques \emph{relations de
   localisation atomiques} spécifiques nécessitent une méthode plus
 spécifique.
 
-Les deux autres \emph{rasterisers} que nous avons définis, 
-
 Mais il également possible de ne rasteriser qu'une partie de
 \emph{l'objet de référence,} comme sa frontière ou son centroïde
-(\autoref{tab:methode_rasterisation}).
+(\autoref{tab:methode_rasterisation}). Par exemple, le second
+\emph{rasteriser} que nous avons défini, \onto{Frontiere}, ne traite
+que la frontière de \emph{l'objet de référence.} Comme on peut le voir
+sur la \autoref{fig:methode_rasterisation}, ce \emph{rasteriser}
+n'impacte que la \emph{rasterisation} des régions et des linéaires,
+les points, qui ne possèdent ni frontière, ni intérieur, sont toujours
+\emph{rasterisés} des la même manière. Ce \emph{rasteriser} a été
+développé pour \emph{spatialiser} des \emph{relations de localisation
+  atomiques} se référant à la frontière et non à \emph{l'objet de
+  référence} dans son ensemble. C'est par exemple le cas d'une
+\emph{relation de localisation atomique} comme
+\onto[orla]{A\-La\-Frontiere\-De}, décrivant une situation où le
+\emph{sujet} est proche de la frontière de \emph{l'objet de référence}
+et non de \emph{l'objet de référence} (ce qui correspond à la relation
+\onto[orla]{Près\-De}.
 
-Le second \emph{rasteriser} défini ne considère que la frontière de
-\emph{l'objet de référence} traité.
-%
-Ce \emph{rasteriser} est notamment employé pour \emph{spatialiser} la
-\emph{relation de localisation} \onto[orla]{A\-La\-Frontiere\-De}.
-
-Enfin, un \emph{rasteriser} ne traitant que le centroïde de
+Enfin, un troisième \emph{rasteriser,} ne traitant que le centroïde de
 \emph{l'objet de référence} a été défini. Contrairement aux autres
 \emph{rasterisers} présentés jusqu'ici, celui-ci conduit tout type
 d'objet (\ie point, ligne, polygone) a être représentés par un seul
 point. Ainsi, tous les objets traités sont représentés pas un point,
-lui-même \emph{rasterisé} en un unique pixel.
+lui-même \emph{rasterisé} en un unique pixel. Les utilisations de ce
+\emph{rasteriser} sont un peu plus limitées. Nous l'employons pour
+spatialiser des \emph{relations} exprimant un angle, comme
+\onto[orla]{Dans\-La\-Direction\-De}.
 
 \begin{figure}
   \centering
@@ -190,10 +241,6 @@ composantes, c'est-à-dire un sous-ensemble de sa géométrie, mais d'une
 version modifiée de celui-ci. Cependant, aucune de ces solutions ne
 nous a semblé pertinente pour la \emph{spatialiser} des
 \emph{relations de localisation atomiques.}
-
-% Conclusion
-Ainsi, dans son état actuel nous disposons d'un ensemble de trois
-\emph{rasterisers.}
 
 %%% Local Variables:
 %%% mode: latex
