@@ -393,8 +393,19 @@ but est de servir de support à la définition de nouveaux
 \end{figure}
 
 Comme on peut le constater avec ces deux exemples, le mécanisme des
-\emph{modifieurs} ne peut pas vraiment influer sur la forme globale
-des \emph{fonctions d'appartenance} définies par le \emph{fuzzyficateur.}
+\emph{modifieurs} peut influer sur la forme globale des
+\emph{fonctions d'appartenance} définies par le \emph{fuzzyficateur,}
+mais sur leurs seuils. L'écartement (\(\delta\)), définissant,
+notamment, la valeur de la \emph{métrique} à partir de laquelle le
+degré d'appartenance est nul, ne peut, par exemple, pas être
+modifié. Ainsi, si l'on peut modifier la pente d'une \emph{fonction
+  d'appartenance} avec le \emph{modifieur} \onto{Resampling} ou
+l'inverser avec le \emph{modifieur} \onto{Not}, il sera impossible de
+modifier la valeur des seuils. Les \emph{modifieurs} ne sont donc
+qu'un mécanisme supplémentaire, permettant de raffiner la
+\emph{spatialisation} mais leur utilisation ne peut dispenser d'une
+bonne sélection du \emph{rasterizer,} de la \emph{métrique} et du
+\emph{fuzzyficateur.}
 
 % Ordre modifieurs
 La possibilité de cumuler plusieurs \emph{modifieurs} pose un problème
