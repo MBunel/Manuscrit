@@ -139,7 +139,7 @@ premier \autoref{fig:select_eqval_0}. Il s'agit également d'une
 \enquote{largeur} est définie par un paramètre \(\delta\). Cependant
 son paramètre \(v\), indiquant la valeur de la \emph{métrique} sur
 laquelle la courbe est centrée est fixé à 0, sa fonction
-d'appartenance est donc : \(f(x,\delta) = f(x,0,\delta)\).. Nous avons
+d'appartenance est donc : \(f(x,\delta) = f(x,0,\delta)\). Nous avons
 également défini une seconde variante de ce \emph{fuzzyfieur,}
 \onto{Eq\-Angle}, fortement similaire à \onto{Eq\-Val}, mais destinée
 aux cas spécifiques où la \emph{métrique} est un angle. Ce
@@ -256,7 +256,6 @@ fixée à 0. Son équation est donc : \(f(x,\delta) = f(x,0,\delta)\).
   \label{fig:select_infval}
 \end{figure}
 
-
 \subsection{Les \emph{modifieurs}}
 
 La seule utilisation des \emph{fuzzyfieurs} définis jusqu'à présent ne
@@ -292,7 +291,16 @@ plusieurs. Les \emph{modifieurs} sont appliqués à la fin de la
 \emph{fuzzyfication} \footnote{Comme l'indique la
   \autoref{fig:methodo_spatialisation}, qui présente la \emph{méthode
     de spatialisation} sans modifieurs.}, mais de l’application des
-\emph{modifieurs} au résultat de la \emph{fuzzyfication.}
+\emph{modifieurs} au résultat de la \emph{fuzzyfication.} Les
+\emph{modifieurs} modifient les \emph{degrés d'appartenance} issus de
+la phase de \emph{fuzzyfication,} de manière à modifier la \emph{zone
+  de localisation compatible.} Ils n'agissent donc pas directement sur
+la forme de la \emph{fonction d'appartenance} définie par le
+\emph{fuzzyficateur,} mais sur les \emph{degrés d'appartenance}
+résultant de son application. Toutefois cette opération est
+équivalente à un changement de \emph{fonction d'appartenance.} Ainsi,
+ce \emph{modifieur} peut être utilisé pour simuler un changement de
+forme de la \emph{fonction d'appartenance.}
 
 Le premier (et le plus utilisé) des \emph{modifieurs} développés et le
 \emph{modifieur} \onto{Not}. Sa fonction est de permettre la
@@ -348,16 +356,11 @@ hypothétique \emph{fuzzyficateur} \onto{Not\-Eq\-Val} (Figure
 \end{figure}
 
 Le second \emph{modifieur} que nous ayons défini, \onto{Resampling}, a
-un rôle plus vague que \onto{Not}. Sa fonction est de modifier les
-\emph{degrés d'appartenance} issus de la phase de
-\emph{fuzzyfication,} de manière à modifier la \emph{zone de
-  localisation compatible.} Comme pour le \emph{modifieur} \onto{Not},
-\onto{Resampling} n'agit pas directement sur la \emph{fonction
-  d'appartenance} définie par le \emph{fuzzyficateur} mais sur les
-\emph{degrés d'appartenance} résultant de son application. Toutefois
-cette opération est équivalente à un changement de \emph{fonction
-  d'appartenance.} Ainsi, ce \emph{modifieur} peut être utilisé pour
-simuler un changement de forme de la \emph{fonction d'appartenance.}
+un rôle plus générique que \onto{Not}
+%
+Il permet la définition d'une Les nouvelles valeurs du \emph{degré
+  d'appartenance} sont alors calculées à l'aide d'une interpolation
+linéaire entre ces couples de points.
 
 \begin{figure}
   \centering
