@@ -411,9 +411,20 @@ bonne sélection du \emph{rasterizer,} de la \emph{métrique} et du
 La possibilité de cumuler plusieurs \emph{modifieurs} pose un problème
 jusqu'ici inédit, celui de l'influence de l'ordre du traitement sur le
 résultat final. En effet si une \emph{relation de localisation
-  atomique} fait appel aux \emph{modifieurs} \onto{Not} et
-\onto{Reseampling} il est nécessaire d'évaluer lequel s'applique en
-premier, puisque la 
+  atomique} fait appel au \emph{modifieur} \onto{Not} et à un
+\emph{modifieur} dérivé de \onto{Reseampling} (par exemple pour
+modéliser \emph{l'indice de localisation} : \enquote{Je ne suis pas
+  très proche du sommet}), il est nécessaire d'évaluer l'ordre de leur
+application, l’application du \emph{modifieur} \onto{Not} au résultat
+de l'application du \emph{modifieur} \onto{Très} à la \emph{zone de
+  localisation} spatialisée n'étant pas identique à l'application du
+\emph{modifieur} \onto{Très} au résultat de l’application du
+\emph{modifieur} \onto{Not} à la \emph{zone de localisation}
+spatialisée \footnote{Dit autrement, Si \(N\) est la fonction
+  appliquant le \emph{modifieur} \onto{Not}, \(T\) est la fonction
+  appliquant le \emph{modifieur} \onto{Tres} et \(S\) est le résultat
+  de la \emph{spatialisation} avant l'application des modifieurs,
+  alors \(N(T(S)) \neq T(N(S))\).}.
 
 %%% Local Variables:
 %%% mode: latex
