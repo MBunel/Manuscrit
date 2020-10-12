@@ -49,7 +49,12 @@ d'autre encore peuvent juste toucher la frontière de l'objet,
 \emph{etc.} Pour mettre en place une méthode de rasterisation il est
 donc nécessaire de définir dans quelles configurations les pixels
 seront considérés comme appartenant à l'objet rasterisé et dans
-quelles conditions ils ne sont pas.
+quelles conditions ils ne sont pas. Plusieurs solutions sont
+envisageables. Par exemple, la bibliothèque GDAL \autocite{GDAL2020},
+référence de facto dans le traitement des données géographiques,
+propose deux configurations possibles,
+\foreigntextquote{english}{\emph{standard}} et
+\foreigntextquote{english}{\emph{all touched}}.
 %
 La \autoref{fig:rasterisation_sel_pixels} illustre ces deux
 approches. Un même \emph{objet de référence} est \emph{rastérisé,}
