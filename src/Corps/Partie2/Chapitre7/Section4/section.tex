@@ -420,11 +420,27 @@ de l'application du \emph{modifieur} \onto{Très} à la \emph{zone de
   localisation} spatialisée n'étant pas identique à l'application du
 \emph{modifieur} \onto{Très} au résultat de l’application du
 \emph{modifieur} \onto{Not} à la \emph{zone de localisation}
-spatialisée \footnote{Dit autrement, Si \(N\) est la fonction
+spatialisée \footnote{Dit autrement, si \(N\) est la fonction
   appliquant le \emph{modifieur} \onto{Not}, \(T\) est la fonction
   appliquant le \emph{modifieur} \onto{Tres} et \(S\) est le résultat
   de la \emph{spatialisation} avant l'application des modifieurs,
-  alors \(N(T(S)) \neq T(N(S))\).}.
+  alors \(N(T(S)) \neq T(N(S))\).}. Nous avons contourné ce problème
+en définissant un ordre de priorité des \emph{modifieurs} en fonction
+de leur type. Nous sommes partis du principe que la négation
+s'appliquait toujours à l'ensemble de \emph{l'indice de localisation}
+et donc qu'elle devait être appliquée en dernier. Ainsi, le
+\emph{modifieur} \onto{Not} a une priorité minimale. À l'inverse,
+comme nous n'avons identifié aucune situation ou un \emph{modifieur}
+dérivé de \onto{Resampling} devait être appliqué après le
+\emph{modifieur} \onto{Not}, nous avons attribué une priorité plus
+forte au \onto{Resampling} et ces dérivés. Cette solution ne permet
+cependant pas de gérer les situations où plusieurs \emph{modifieurs}
+dérivés de \onto{Resampling} sont appliqués. Cependant ce cas, que
+nous n'avons par ailleurs jamais rencontré dans des alertes, nous
+semble hautement improbable, si ce n'est dans des formulations
+hyperboliques, utilisant la répétition, telles que : \enquote{Je suis
+  très très proche}, mais où ce problème ne se pose pas, le même
+\emph{modifieur} étant employé.
 
 %%% Local Variables:
 %%% mode: latex
