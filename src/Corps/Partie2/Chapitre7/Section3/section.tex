@@ -144,11 +144,13 @@ minimale de déplacement nécessaire pour atteindre chaque pixel de la
 \ac{zir} à partir de l'objet de référence. Pour calculer cette
 \emph{métrique} nous avons employé le modèle de \textcite{Tobler1993}
 (voir \autoref{eq:marche_tobler} et \autoref{fig:modeles_marche}), ce
-dernier présentant l'avantage d'être facilement paramétrable en
-fonction de la nature du terrain.
+dernier présentant l'avantage d'être robuste et facilement
+paramétrable en fonction de la nature du terrain.
 
-La \emph{métrique} \onto{Part\-Visible} est une \emph{métrique}
-extrinsèque, non paramétrique.
+La \emph{métrique} \onto{Part\-Visible} est également une
+\emph{métrique} extrinsèque et non paramétrique. Elle est utilisée
+pour spatialiser les relations de visibilité. Le cas de cette
+\emph{métrique} est un peu particulier car elle ne 
 %
 On peut voir une illustration de cette \emph{métrique} sur la
 \autoref{fig:metrique_part_lac}. Dans cet exemple la taille du figuré
