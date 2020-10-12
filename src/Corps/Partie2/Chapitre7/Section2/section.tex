@@ -18,17 +18,39 @@ effectuée.
 Un point essentiel de la représentation raster \emph{d'objets
   géographiques} et qu'elle impose, contrairement à une représentation
 vectorielle, de définir explicitement une résolution et une zone de
-modélisation. L'opération de \emph{rasterisation} nécessite ne peut
+modélisation, fixant les limites du raster. Un même objet peut donc
+être représenté par des rasters de taille très différentes, à des
+résolutions qui le sont tout autant. La définition d'une résolution et
+d'une limite à la \emph{rasterisation} est une phase importante dans
+notre méthodologie. En effet les rasters construits lors de cette
+étape sont à la base de notre méthode de \emph{spatialisation.} Par
+conséquent, tous les traitements ultérieurs, que ce soit au sein de la
+phase de \emph{spatialisation} ---~calcul de la \emph{métrique} et
+\emph{fuzzyfication}~--- ou durant la phase de \emph{fusion}
+(Chapitres \ref{chap:04} et \ref{chap:08}), sont impactés par le choix
+d'une résolution et des limites de la zone de traitement, puisqu'ils
+en héritent et qu'il n'y aucune pertinence a envisager des opérations
+de changement de résolution ou de région de traitement au cours des
+phase de \emph{spatialisation} et de \emph{fusion.} Dans notre cas, la
+définition d'une zone de modélisation ne pose pas de problèmes
+particuliers, le secouriste définissant une \emph{zone initiale de
+  recherche,} fixant l'aire de recherche maximale et donc les limites
+de la zone ou sera calculée la \emph{spatialisation,} quel que soit
+\emph{l'indice de localisation} considéré. Nous avons donc choisi de
+\emph{rasteriser} tous les objets de référence d'une même alerte à
+l'aide d'un raster de même dimension et correspondant aux
+délimitations de la \ac{zir}. Le choix de la résolution influençant la
+qualité (et la durée) de la \emph{spatialisation,} nous avons choisi
+de le laisser à l'appréciation du secouriste. Pour ce faire nous avons
+défini quatre valeurs \SIlist{10;25;50;100}{\meter}), associées à
+autant de qualificatifs (haute, moyenne, basse et très basse
+résolution), décrivant la précision de la \emph{spatialisation.} Le
+secouriste peut donc définir une précision de modélisation sans avoir
+à sélectionner directement une valeur.
+
+L'opération de \emph{rasterisation} nécessite ne peut
 donc être effectuée qu'a partir d'un \emph{objet de référence}
 vectoriel.
-
-Cependant la zone de rasterisation est, implicitement, définie par le
-secouriste, il s'agit de la \ac{zir}.
-
-Seule la résolution reste à fixer.
-
-\tdi{parler des consiérations autour de la rasterisation importance de
-  la zir, de la résolution, méthode de sélection des pixels, etc}
 
 % Parler des types d'objets de référence
 Une autre contrainte est que les \emph{méthodes de rasterisation}
