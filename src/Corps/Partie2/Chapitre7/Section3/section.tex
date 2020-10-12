@@ -113,7 +113,9 @@ variation de couleur. Cette \emph{métrique} peut-être utilisée pour
 La \emph{métrique} \onto{Direction\-De} sert quand à elle à mesurer
 l'écart à une direction donnée. Elle est par exemple utilisée pour
 \emph{spatialiser} XXX.
-Le calcul de cette \emph{métrique} est plus complexe que celui de \onto{Ecart\-Angulaire}
+%
+Le calcul de cette \emph{métrique} est plus complexe que celui de
+\onto{Ecart\-Angulaire}
 
 %
 (\autoref{fig:metrique_direction_de})
@@ -135,10 +137,15 @@ utilisées pour la \emph{spatialisation} des \emph{relations de
 \onto[orla]{Site\-Voit\-Cible}) et \onto[orla]{A\-Distance\-Temps}
 \footnote{Ces trois \emph{relations de localisation atomiques} peuvent
   être utilisées directement. Elles sont par conséquent également
-  présentes dans \ac{orl} (\autoref{anx:orl_dic}).}.
-
-La \emph{métrique} \onto{Temps\-De\-Marche} est une \emph{métrique}
-extrinsèque, prenant comme paramètre la vitesse moyenne de marche.
+  présentes dans \ac{orl} (\autoref{anx:orl_dic}).}. La
+\emph{métrique} \onto{Temps\-De\-Marche} est une \emph{métrique}
+extrinsèque, sans paramètre. Sa fonction est de calculer la durée
+minimale de déplacement nécessaire pour atteindre chaque pixel de la
+\ac{zir} à partir de l'objet de référence. Pour calculer cette
+\emph{métrique} nous avons employé le modèle de \textcite{Tobler1993}
+(voir \autoref{eq:marche_tobler} et \autoref{fig:modeles_marche}), ce
+dernier présentant l'avantage d'être facilement paramétrable en
+fonction de la nature du terrain.
 
 La \emph{métrique} \onto{Part\-Visible} est une \emph{métrique}
 extrinsèque, non paramétrique.
