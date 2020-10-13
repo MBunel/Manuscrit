@@ -49,15 +49,14 @@ permet de tester également les opérations de fusion inter \emph{zones
 Pour faciliter la comparaison de ces deux implémentations, nous nous
 sommes focalisés sur une petite partie de la zone du \emph{fil rouge}
 (\autoref{fig:fil_rouge}), ce qui nous permet de ne travailler qu'avec
-un seul \emph{objet de référence} candidat
-(\autoref{fig:ZIR_HT}). Ainsi, pour cet exemple nous ne nous
-focalisons que sur une partie de la méthodologie présentée dans le
-\autoref{chap:04}. Comme il n'y a qu'un \emph{indice de localisation}
-à \emph{spatialiser,} il n'est pas nécessaire de \emph{décomposer}
-\emph{l'ensemble des indices de localisation} et de fusionner les
-\ac{zlc} correspondantes \footnote{Ce qui correspond, respectivement à
-  la première étape de la \emph{phase de décomposition} et à la
-  dernière étape de la \emph{phase de fusion}
+un seul \emph{objet de référence} candidat (\autoref{fig:ZIR_HT}).
+Ainsi, pour cet exemple nous ne nous focalisons que sur une partie de
+la méthodologie présentée dans le \autoref{chap:04}. La présence d'un
+seul \emph{indice de localisation} à \emph{spatialiser} ne nécessite
+pas de \emph{décomposer} \emph{l'ensemble des indices de localisation}
+et de fusionner les \ac{zlc} correspondantes \footnote{Ce qui
+  correspond, respectivement à la première étape de la \emph{phase de
+    décomposition} et à la dernière étape de la \emph{phase de fusion}
   (\autoref{fig:methodo_1}).}. De même, comme nous ne travaillons que
 sur un \emph{objet de référence} il n'est pas nécessaire de procéder à
 la \emph{décomposition} d'un \emph{objet de référence} non nommé et à
@@ -67,15 +66,15 @@ la \emph{fusion} des \ac{zlc} issues de leur spatialisation
   (\autoref{fig:methodo_1}).}. L'absence de ces quatre étapes ne pose
 pas de problèmes pour la comparaison des implémentations. D'une part
 car le choix de la \emph{modélisation} des \emph{zones de
-  localisation} n'a pas impact sur la \emph{phase de décomposition,}
-aucun \emph{objet géographique} n'étant encore construit. De l'autre,
-car les étapes de la \emph{phase de fusion} emploient les mêmes outils
-théoriques \footnote{C'est-à-dire des unions et intersections
-  ensemblistes, faisant appel aux \emph{t-normes} et \emph{t-conormes}
-  de la \emph{théorie des sous-ensembles flous.}}, ce qui rend leur
-comportement similaire. Il n'est donc pas nécessaire de tester chaque
-étape de la \emph{phase de fusion} pour estimer l'adéquation d'une
-implémentation.
+  localisation} n'a pas impact sur la \emph{phase de décomposition}
+(aucun \emph{objet géographique} n'étant encore construit), de
+l'autre, car toutes les étapes de la \emph{phase de fusion} emploient
+les mêmes outils théoriques \footnote{C'est-à-dire des unions et
+  intersections ensemblistes, faisant appel aux \emph{t-normes} et
+  \emph{t-conormes} de la \emph{théorie des sous-ensembles flous.}},
+ce qui rend leur comportement similaire. Il n'est donc pas nécessaire
+de tester chaque étape de la \emph{phase de fusion} pour estimer
+l'adéquation d'une implémentation.
 
 \begin{carte}
   \centering \input{../figures/Raster_ZIR_HT.tex}
