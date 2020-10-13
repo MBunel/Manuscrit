@@ -150,14 +150,16 @@ peut-être utilisée pour \emph{spatialiser} différentes \emph{relations
 
 Bien qu'elle puisse être utilisée à cet effet, la \emph{métrique}
 \onto{Ecart\-Angulaire}, n'est pas très adaptée à la
-\emph{spatialisation} de \emph{relations de localisations}
+\emph{spatialisation} de \emph{relations de localisations} qualifiant
+un déplacement vers un \emph{objet de référence,} comme
+\onto[orl]{Dans\-La\-Direction\-De}. Un déplacement dans une direction
+globale pouvant conduire à s'éloigner ponctuellement de cette
+direction sans que l'on puisse considérer que la \emph{relation de
+  localisation spatialisée} soit fausse. Pour prendre en considération
+ces cas nous avons développé une \emph{métrique} \emph{ad hoc,}
+\onto{Direction\-De}, destinée à quantifier l'éloignement à un
+déplacement dans une direction donnée.
 
-La \emph{métrique} \onto{Direction\-De} sert quand à elle à mesurer
-l'écart à une direction donnée. Elle est par exemple utilisée pour
-\emph{spatialiser} XXX.
-%
-Le calcul de cette \emph{métrique} est plus complexe que celui de
-\onto{Ecart\-Angulaire}
 
 %
 (\autoref{fig:metrique_direction_de})
