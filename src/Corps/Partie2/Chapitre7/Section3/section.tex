@@ -110,7 +110,10 @@ une plus grande finesse de \emph{spatialisation,} en permettant des
 configurations plus fines. Cependant la solution retenue par défaut à
 l'avantage d'être suffisamment robuste pour fonctionner dans toutes
 les situations que nous avons rencontrés et ce sans ajustements
-\emph{ad hoc.}
+\emph{ad hoc.} La métrique \onto{Delta\-Alt} peut également être
+utilisée pour calculer une différence par rapport à une altitude
+donnée explicitement, comme dans \emph{l'indice de localisation,}
+\enquote{Il est à \Si{300}{\meter} d'altitude.}
 
 \begin{figure}
   \centering
@@ -123,9 +126,9 @@ les situations que nous avons rencontrés et ce sans ajustements
 \end{figure}
 
 Pour \emph{spatialiser} les \emph{relations de localisation atomiques}
-XXX aux angles, deux \emph{métriques} ont été développées,
-\onto{Ecart\-Angulaire} et \onto{Direction\-De}. Toutes deux sont des
-\emph{métriques} extrinsèques et paramétriques. La \emph{métrique}
+directionnelles, deux nouvelles \emph{métriques} ont été développées,
+\onto{Ecart\-Angulaire} et \onto{Direction\-De}. Toutes deux sont
+extrinsèques et paramétriques. La \emph{métrique}
 \onto{Ecart\-Angulaire} est destinée à mesurer l'écart à une
 orientation donnée, fixée par un paramètre \enquote{angle} et exprimée
 à partir de \emph{l'objet de référence.} La
@@ -138,7 +141,8 @@ demi-droite reliant \emph{l'objet de référence} a ce point. Sur la
 \autoref{fig:metrique_ecart_angulaire} l'importance de cet angle est
 figurée avec une variation de taille, et son orientation par une
 variation de couleur. Cette \emph{métrique} peut-être utilisée pour
-\emph{spatialiser} différentes \emph{relations de localisation atomiques,}
+\emph{spatialiser} différentes \emph{relations de localisation
+  atomiques,}
 
 \begin{figure}
   \centering
