@@ -127,7 +127,7 @@ donc définie de la manière suivante :
 \end{equation}
 
 Avec \(x\) la valeur de la \emph{métrique,} \(v\) la valeur de
-référence et \(\delta\) l'écart xxx.
+référence et \(\delta\) l'écart à la valeur de référence.
 
 Au fil de la \emph{spatialisation} de nouvelles \emph{relations de
   localisation atomiques} il s'est avéré que nous recourions
@@ -153,16 +153,16 @@ compte leur périodicité. \todo{Ce sélecteur ne devrait pas exister,
   \subfloat[\emph{Fonction d'appartenance} pour \texttt{Eq\-Val}]{
     \input{../figures/fnc_eq_val.tex}
     \label{fig:select_eqval_b}
-  }
-  
-  \subfloat[\emph{Fonction d'appartenance} pour \texttt{Eq\-Val\-0}]{
-    \input{../figures/fnc_eq_val.tex}
-    \label{fig:select_eqval_0}
   }\hfill  
   \subfloat[\emph{Fonction d'appartenance} pour \texttt{Eq\-Angle}]{
-    \input{../figures/fnc_eq_val.tex}
+    \input{../figures/fnc_eq_val_angle.tex}
     \label{fig:select_eqval_ang}
   }  
+  
+  \subfloat[\emph{Fonction d'appartenance} pour \texttt{Eq\-Val\-0}]{
+    \input{../figures/fnc_eq_val_0.tex}
+    \label{fig:select_eqval_0}
+  }
   \caption{\emph{Fonctions d'appartenance} du \emph{fuzzyficateur}
     \protect\onto{Eq\-Val} et de ses dérivés \protect\onto{Eq\-Val\-0}
     et \protect\onto{Eq\-Angle}.}
@@ -193,9 +193,9 @@ la forme d'une fonction d'appartenance linéaire (Figure
 \end{equation}
 
 Avec \(x\) la valeur de la \emph{métrique,} \(v\) la valeur référence
-et \(\delta\) xxxxx. Comme pour le \emph{fuzzyfieur} \onto{Eq\-Val}
-une variante de ce \emph{fuzzyficateur,} dont la \emph{valeur de
-  référence} (\(v\)) est fixée à 0 a été définie,
+et \(\delta\) l'écart à cette valeur. Comme pour le \emph{fuzzyfieur}
+\onto{Eq\-Val} une variante de ce \emph{fuzzyficateur,} dont la
+\emph{valeur de référence} (\(v\)) est fixée à 0 a été définie,
 \onto{Sup\-Val\-0}. Sa \emph{fonction d'appartenance} est :
 \(f(x,\delta) = f(x,0,\delta)\).
 
@@ -206,7 +206,7 @@ une variante de ce \emph{fuzzyficateur,} dont la \emph{valeur de
     \label{fig:select_supval_b}
   }\hfill
   \subfloat[\emph{Fonction d'appartenance} pour \texttt{Sup\-Val\-0}]{
-    \input{../figures/fnc_sup_val.tex}
+    \input{../figures/fnc_sup_val_0.tex}
     \label{fig:select_supval_0}
   }
   \caption{\emph{Fonctions d'appartenance} du \emph{fuzzyficateur}
@@ -237,10 +237,11 @@ de la fonction d'appartenance suivante :
 \end{equation}
 
 Où \(x\) est la valeur de la \emph{métrique,} \(v\) la valeur
-référence et \(\delta\) l'écart xxx. De la même manière que les autres
-\textrm{fuzzyfieurs,} \onto{Inf\-Val} dispose d'une variante,
-\onto{Inf\-Val\-0} dont la \emph{valeur de référence} (\(v\)) est
-fixée à 0. Son équation est donc : \(f(x,\delta) = f(x,0,\delta)\).
+référence et \(\delta\) l'écart à la valeur de référence. De la même
+manière que les autres \textrm{fuzzyfieurs,} \onto{Inf\-Val} dispose
+d'une variante, \onto{Inf\-Val\-0} dont la \emph{valeur de référence}
+(\(v\)) est fixée à 0. Son équation est donc :
+\(f(x,\delta) = f(x,0,\delta)\).
 
 \begin{figure}
   \centering
@@ -248,7 +249,7 @@ fixée à 0. Son équation est donc : \(f(x,\delta) = f(x,0,\delta)\).
     \input{../figures/fnc_inf_val.tex}
   }\hfill
   \subfloat[\emph{Fonction d'appartenance} pour \texttt{Inf\-Val\-0}]{
-    \input{../figures/fnc_inf_val.tex}
+    \input{../figures/fnc_inf_val_0.tex}
   }
   \caption{\emph{Fonctions d'appartenance} du \emph{fuzzyficateur}
     \protect\onto{Inf\-Val} et de son dérivé
@@ -357,18 +358,19 @@ hypothétique \emph{fuzzyficateur} \onto{Not\-Eq\-Val} (Figure
 
 De nombreux autres \emph{modifieurs} sont envisageables, notamment
 pour permettre une meilleure modélisation des \emph{indices de
-  localisation} contenant des XXXX tels que \enquote{Je suis presque
-  en face du barrage}, \enquote{Nous sommes juste en dessous de la
-  route}, \emph{etc.} L'utilisation de XXX, tels que \enquote{juste}
-ou \enquote{presque} a pour but de nuancer le propos et donc d'affiner
-la description d'une position. Par conséquent, les \ac{zlc} issues de
-la \emph{spatialisation} de tels \emph{indices de localisation}
-doivent se voir légèrement modifiées, de manière à retranscrire la
-sémantique des XX. Pour ce faire on peut définir des \emph{modifieurs}
+  localisation} contenant des nuances, comme dans les \emph{indices de
+  localisation} \enquote{Je suis presque en face du barrage},
+\enquote{Nous sommes juste en dessous de la route}, \emph{etc.}
+L'utilisation d'adverbes, tels que \enquote{juste} ou
+\enquote{presque} a pour but de nuancer le propos et donc d'affiner la
+description d'une position. Par conséquent, les \ac{zlc} issues de la
+\emph{spatialisation} de tels \emph{indices de localisation} doivent
+se voir légèrement modifiées, de manière à retranscrire la sémantique
+des adverbes. Pour ce faire on peut définir des \emph{modifieurs}
 modifiant la valeur des degrés d'appartenance de chaque pixel. Par
 exemple, \emph{l'indice de localisation} : \enquote{Je suis presque à
   la frontière de cette forêt}, pourra être modélisé en ajoutant le
-\emph{modifieur} \onto[Presque] à la \emph{relation de localisation
+\emph{modifieur} \onto{Presque} à la \emph{relation de localisation
   atomique} \onto[orla]{A\-La\-Frontiere\-De}, déjà présentée. Pour
 modéliser le fait que cette description soit rendue moins
 \emph{précise} par l'utilisation du terme \enquote{presque,} les
@@ -385,12 +387,12 @@ but est de servir de support à la définition de nouveaux
 \emph{modifieurs} plus spécifiques, à l'image de \onto{Presque} ou
 \onto{Juste}.
 
-\begin{figure}
-  \centering
-  \includegraphics[width=\textwidth]{../../../../tmp/modifieur.jpeg}
-  \caption{Modifieur}
-  \label{fig:methode_modifieur}
-\end{figure}
+% \begin{figure}
+%   \centering
+%   \includegraphics[width=\textwidth]{../../../../tmp/modifieur.jpeg}
+%   \caption{Modifieur}
+%   \label{fig:methode_modifieur}
+% \end{figure}
 
 Comme on peut le constater avec ces deux exemples, le mécanisme des
 \emph{modifieurs} peut influer sur la forme globale des

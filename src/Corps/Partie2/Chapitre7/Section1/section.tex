@@ -7,6 +7,8 @@ de manière à ne contenir qu'une \emph{relation de localisation
 \emph{l'indice de localisation} est vrai~---, représentée par un
 raster flou (\autoref{chap:06}).
 
+\subsection{Contraintes à la définition d'une \emph{méthode de spatialisation}}
+
 Comme nous l'expliquions dans le \autoref{chap:04} et conformément au
 \emph{principe de modélisation autonome,} la \emph{spatialisation} est
 une étape effectuée indépendamment et parallèlement pour tous les
@@ -14,31 +16,51 @@ une étape effectuée indépendamment et parallèlement pour tous les
   décomposition.} Le processus que nous détaillons ici est donc conçu
 pour traiter des \emph{indices de localisation} décomposés,
 c'est-à-dire qui ne sont composés que d'une \emph{relation de
-  localisation atomique} et d'un \emph{objet de référence nommé.}
+  localisation atomique} et d'un \emph{objet de référence
+  nommé}\footnote{Sauf dans le cas particulier des \emph{relations de
+    localisation} binaires.}.
 
-\subsection{Contraintes à la définition d'une \emph{méthode de spatialisation}}
+La définition d'une méthode de \emph{spatialisation} est cependant
+fortement contrainte par le choix de l'implémentation raster,
+précédemment annoncé (\autoref{chap:06}). La méthode développée doit
+donc être a même de produire des \ac{zlc} sous la forme de rasters de
+degrés d'appartenance et ce à partir \emph{d'objets de référence}
+généralement représentés sous forme vectorielle. Il est pour ce faire
+nécessaire de définir une méthode de rasterisation, permettant de
+transformer ces \emph{objets de référence} vectoriels en des rasters a
+mêmes d'être utilisés pour générer des \ac{zlc} raster.
 
-Le recours à une implémentation raster (\autoref{chap:06}) impacte
-fortement le processus de construction de la \ac{zlc}
-
-\tdi{Importance de la zir}%
-Ensuite il est nécessaire de définir la \ac{zir}
-
-\tdi{Importance du raster de base et de la maille}%
-Tout d'abord il est nécessaire de définir une résolution de travail,
-qui influencera sur la précision et la durée du calcul.
-
-Tous les rasters partageant les mêmes \emph{zones initiales de
-  recherche} et résolutions sont parfaitement superposables.
-
-\tdi{Pas de reseampling}%
-Il serait possible de travailler à partir de rasters d'étendue ou de
-résolution variable
-
-
-\tdi{contraintes techniques (raster) ?? }
-\tdi{rasterisation obj ref}
-
+Un point essentiel de la représentation raster \emph{d'objets
+  géographiques} et qu'elle impose, contrairement à une représentation
+vectorielle, de définir explicitement une résolution et une zone de
+modélisation, fixant les limites du raster. Un même objet peut donc
+être représenté par des rasters de taille très différentes, à des
+résolutions qui le sont tout autant. La définition d'une résolution et
+d'une limite à la \emph{rasterisation} est une phase importante dans
+notre méthodologie. En effet les rasters construits lors de cette
+étape sont à la base de notre méthode de \emph{spatialisation.} Par
+conséquent, tous les traitements ultérieurs, que ce soit au sein de la
+phase de \emph{spatialisation} ou durant la phase de \emph{fusion}
+(Chapitres \ref{chap:04} et \ref{chap:08}), sont impactés par le choix
+d'une résolution et des limites de la zone de traitement, puisqu'ils
+en héritent et qu'il n'y aucune pertinence à envisager des opérations
+de changement de résolution ou de région de traitement au cours des
+phase de \emph{spatialisation} et de \emph{fusion.} Dans notre cas, la
+définition d'une zone de modélisation ne pose pas de problèmes
+particuliers, le secouriste définissant une \emph{zone initiale de
+  recherche,} fixant l'aire de recherche maximale et donc les limites
+de la zone ou sera calculée la \emph{spatialisation,} quel que soit
+\emph{l'indice de localisation} considéré. Nous avons donc choisi de
+\emph{rasteriser} tous les objets de référence d'une même alerte à
+l'aide d'un raster de même dimension et correspondant aux
+délimitations de la \ac{zir}. Le choix de la résolution influençant la
+qualité (et la durée) de la \emph{spatialisation,} nous avons choisi
+de le laisser à l'appréciation du secouriste. Pour ce faire nous avons
+défini quatre valeurs \SIlist{10;25;50;100}{\meter}), associées à
+autant de qualificatifs (haute, moyenne, basse et très basse
+résolution), décrivant la précision de la \emph{spatialisation.} Le
+secouriste peut donc définir une précision de modélisation sans avoir
+à sélectionner directement une valeur.
 
 \subsection{Définition de la méthode de \emph{spatialisation}}
 
