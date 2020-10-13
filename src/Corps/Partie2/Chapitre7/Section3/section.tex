@@ -174,10 +174,18 @@ déplacement dans une direction donnée. Le calcul de cette
 entre le centre du \emph{l'objet de référence,} le point de départ, et
 le centre du second \emph{objet de référence,} la destination. Ce
 segment défini la direction de référence, à partir de laquelle la
-\emph{métrique} calcule un écart. 
-%
-Une de illustration ce calcul est présenté sur la
-\autoref{fig:metrique_direction_de}.
+\emph{métrique} calcule un écart. On ne peut cependant pas calculer
+cet écart de la même manière que pour la \emph{métrique}
+\onto{Ecart\-Angulaire}, cette mesure ne permettant pas de représenter
+des contournements ou des détours qui sont fréquents lors du suivi
+d'un itinéraire, d'autant plus dans un milieu montagneux. Nous avons
+donc opté pour la définition d'une ellipse
+(\autoref{fig:calc_direction_de}), dont les deux axes sont est
+proportionnel au segment reliant les deux \emph{objets de référence.}
+Cette forme permet de définir une direction globale. L'écart a cette
+direction globale peut ensuite être calculé à l'aide d'une simple
+distance à l'ellipse. Une illustration de cette \emph{métrique} est
+présentée sur la \autoref{fig:metrique_direction_de}.
 
 \begin{wrapfigure}{o}{4cm}
   \centering
