@@ -158,11 +158,25 @@ direction sans que l'on puisse considérer que la \emph{relation de
   localisation spatialisée} soit fausse. Pour prendre en considération
 ces cas nous avons développé une \emph{métrique} \emph{ad hoc,}
 \onto{Direction\-De}, destinée à quantifier l'éloignement à un
-déplacement dans une direction donnée.
+déplacement dans une direction donnée. Le calcul de cette
+\emph{métrique} est illustré par la
+\autoref{fig:calc_direction_de}. On commence ---~comme pour la
+\emph{métrique} \onto{Ecart\-Angulaire}~--- par définir un segment
+entre le centre du \emph{l'objet de référence,} le point de départ, et
+le centre du second \emph{objet de référence,} la destination. Ce
+segment défini la direction de référence, a partir de laquelle on va
+calculer un écart.
 
+Une de illustration ce calcul est présenté sur la
+\autoref{fig:metrique_direction_de}.
 
-%
-(\autoref{fig:metrique_direction_de})
+\begin{wrapfigure}{r}{4cm}
+  \centering
+  \input{../figures/calcul_direction_de.tex}
+  \caption{Illustration du calcul de la \emph{métrique}
+    \protect\onto{Direction\-De}.}
+  \label{fig:calc_direction_de}
+\end{wrapfigure}
 
 \begin{figure}
   \centering
