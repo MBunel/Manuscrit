@@ -164,13 +164,13 @@ déplacement dans une direction donnée. Le calcul de cette
 \emph{métrique} \onto{Ecart\-Angulaire}~--- par définir un segment
 entre le centre du \emph{l'objet de référence,} le point de départ, et
 le centre du second \emph{objet de référence,} la destination. Ce
-segment défini la direction de référence, a partir de laquelle on va
-calculer un écart.
-
+segment défini la direction de référence, à partir de laquelle la
+\emph{métrique} calcule un écart. 
+%
 Une de illustration ce calcul est présenté sur la
 \autoref{fig:metrique_direction_de}.
 
-\begin{wrapfigure}{r}{4cm}
+\begin{wrapfigure}{o}{4cm}
   \centering
   \input{../figures/calcul_direction_de.tex}
   \caption{Illustration du calcul de la \emph{métrique}
@@ -195,15 +195,38 @@ utilisées pour la \emph{spatialisation} des \emph{relations de
 \onto[orla]{Site\-Voit\-Cible}) et \onto[orla]{A\-Distance\-Temps}
 \footnote{Ces trois \emph{relations de localisation atomiques} peuvent
   être utilisées directement. Elles sont par conséquent également
-  présentes dans \ac{orl} (\autoref{anx:orl_dic}).}. La
-\emph{métrique} \onto{Temps\-De\-Marche} est une \emph{métrique}
+  présentes dans \ac{orl} (\autoref{anx:orl_dic}).}.
+
+La \emph{métrique} \onto{Temps\-De\-Marche} est une \emph{métrique}
 extrinsèque, sans paramètre. Sa fonction est de calculer la durée
 minimale de déplacement nécessaire pour atteindre chaque pixel de la
-\ac{zir} à partir de l'objet de référence. Pour calculer cette
+\ac{zir} à partir de \emph{l'objet de référence.} Le calcul de cette
+\emph{métrique} peut s'effectuer avec un modèle de temps de marche
+tels que ceux présentés dans le \autoref{chap:03} (voir
+\autoref{fig:modeles_marche}). Ces modèles peuvent calculer, à partir
+d'un raster de pente, la durée de traversée d'un pixel. Cette
+information est intrinsèque, elle peut donc être pré-calculée et
+réutilisée à chaque calcul de la \emph{métrique.} À partir de cette
+information et de \emph{l'objet de référence} rasterisé il est ensuite
+possible de calculer le temps de parcours minimal de \emph{l'objet de
+  référence} à chaque pixel de la \ac{zir}, comme l'illustre la
+\autoref{fig:metrique_temps_marche}.
+
+Pour calculer cette
 \emph{métrique} nous avons employé le modèle de \textcite{Tobler1993}
-(voir \autoref{eq:marche_tobler} et \autoref{fig:modeles_marche}), ce
+(voir \autoref{eq:marche_tobler} et , ce
 dernier présentant l'avantage d'être robuste et facilement
 paramétrable en fonction de la nature du terrain.
+
+
+\begin{figure}
+  \centering
+  \input{../figures/Metrique_temps_marche.tex}
+  \caption{Exemple du calcul de la \emph{métrique}
+    \protect\onto{Temps\-De\-Marche}.}
+  \label{fig:metrique_temps_marche}
+\end{figure}
+
 
 La \emph{métrique} \onto{Part\-Visible} est également une
 \emph{métrique} extrinsèque et non paramétrique. Elle est utilisée
