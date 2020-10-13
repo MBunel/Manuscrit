@@ -92,6 +92,14 @@ travailler sur une zone assez étendue (au-delà de la centaine de
 
 \begin{figure}
   \centering
+  \input{../figures/rasterisation_cas_limite.tex}
+  \caption{Illustration d'une situation où la \emph{rasterisation}
+    aboutit à un raster vide}
+  \label{fig:rasterisation_cas_limite}
+\end{figure}
+
+\begin{figure}
+  \centering
   \input{../figures/rasterisation_sel_pixels.tex}
   \caption{Illustration de l'impact de la méthode de sélection des
     pixels sur le résultat d'une opération de \emph{rasterisation.}}
@@ -105,15 +113,7 @@ définir la résolution de la \ac{zir} en fonction des \emph{objets de
   référence} utilisés, mais conduit à une fréquente exagération de la
 taille des \emph{objets de référence.}
 
-\begin{wrapfigure}{r}{4cm}
-  \centering
-  \input{../figures/rasterisation_cas_limite.tex}
-  \caption{Illustration d'une situation où la \emph{rasterisation}
-    aboutit à un raster vide}
-  \label{fig:rasterisation_cas_limite}
-\end{wrapfigure}
-
-\subsection{Les méthodes de rasterisation}
+\subsection{Les différentes méthodes de \emph{rasterisation}}
 
 La méthode de sélection des pixels ayant été fixée, le seul critère
 permettant de distinguer les différentes \emph{méthodes de
