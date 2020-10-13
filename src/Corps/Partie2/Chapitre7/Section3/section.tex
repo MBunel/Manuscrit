@@ -50,24 +50,26 @@ Ces deux critères se combinent et (\autoref{fig:type_metriques})
 
 Parmi tous les exemples que nous avons présentés, une \emph{métrique}
 apparait régulièrement, la \emph{distance planimétrique} à
-\emph{l'objet de référence.} Cette métrique a été utilisée lors de la
-\emph{spatialisation} de \emph{l'indice de localisation} \enquote{Je
-  suis sous une ligne électrique} (\autoref{fig:ISO_DIST_HT}), mais
-elle est également utilisable pour spatialiser des relations
-topologiques, tout en prenant en compte \emph{l'imprécision} (\eg deux
-objets très proches, mais qui ne partagent pas de positions, peuvent,
-du point vue du requérant, être considérés comme en contact). Cette
-\emph{métrique} est un exemple caractéristique des \emph{métriques
-  extrinsèques} et \emph{non paramétriques.} Il est, en effet,
-nécessaire de la calculer pour chaque \emph{objet de référence,} mais
-elle n'accepte pas de \emph{paramètres.}  On pourrait cependant en
-ajouter, par exemple en ajoutant un paramètre permettant d'employer
-d'autres distances, comme la distance de Manhattan, de Minkowski ou de
-Tchebychev. Mais ces distances alternatives, trop éloignées de la
-perception humaine des distances, ne présentent pas d’intérêt pour
-notre cas d'application. Cette \emph{métrique} est employée lors de la
-\emph{spatialisation} de toutes les \emph{relations de localisation
-  atomiques} traduisant un éloignement ou une relation topologique.
+\emph{l'objet de référence.} Le processus de calcul de la
+\emph{métrique} consiste à calculer, pour chaque pixel de la \ac{zir},
+la distance minimale à \emph{l'objet de référence,} c'est-à-dire la
+distance au pixel, appartenant à \emph{l'objet de référence} (défini
+lors de la \emph{rasterisation}), le plus proche. Cette métrique a été
+utilisée lors de la \emph{spatialisation} de \emph{l'indice de
+  localisation} \enquote{Je suis sous une ligne électrique}
+(\autoref{fig:ISO_DIST_HT}), mais elle est également utilisable pour
+spatialiser des relations topologiques, tout en prenant en compte
+\emph{l'imprécision} (\eg deux objets très proches, mais qui ne
+partagent pas de positions, peuvent, du point vue du requérant, être
+considérés comme en contact). Cette \emph{métrique} est un exemple
+caractéristique des \emph{métriques extrinsèques} et \emph{non
+  paramétriques.} Il est, en effet, nécessaire de la calculer pour
+chaque \emph{objet de référence,} mais elle n'accepte pas de
+\emph{paramètres.}  On pourrait cependant en ajouter, par exemple en
+ajoutant un paramètre permettant d'employer d'autres distances, comme
+la distance de Manhattan, de Minkowski ou de Tchebychev. Mais ces
+distances alternatives, trop éloignées de la perception humaine des
+distances, ne présentent pas d’intérêt pour notre cas d'application.
 
 \begin{table}
   \centering
@@ -76,11 +78,13 @@ notre cas d'application. Cette \emph{métrique} est employée lors de la
   \label{fig:type_metriques}
 \end{table}
 
-Une autre \emph{métrique,} également utilisée lors de la comparaison
+Une autre \emph{métrique,} également employée lors de la comparaison
 des implémentations (\autoref{chap:06}), est la différence d'altitude
-entre une position et \emph{l'objet de référence.} Il s'agit une
-nouvelle fois d'une \emph{métrique extrinsèque} et \emph{non
-  paramétrique.} 
+entre une position et \emph{l'objet de référence.} Il s'agit d'une
+\emph{métrique extrinsèque,} prenant en paramètre la méthode de calcul
+du l'altitude de référence, utilisée pour la comparaison. Comme nous
+l'expliquions précédemment (\autoref{}), plusieurs méthodes peuvent
+être employées pour sélectionner l'altitude à comparer.
 
 \begin{figure}
   \centering
