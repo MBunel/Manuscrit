@@ -50,19 +50,24 @@ Ces deux critères se combinent et (\autoref{fig:type_metriques})
 
 Parmi tous les exemples que nous avons présentés, une \emph{métrique}
 apparait régulièrement, la \emph{distance planimétrique} à
-\emph{l'objet de référence} (\autoref{fig:ISO_DIST_HT}). Cette
+\emph{l'objet de référence.} Cette métrique a été utilisée lors de la
+\emph{spatialisation} de \emph{l'indice de localisation} \enquote{Je
+  suis sous une ligne électrique} (\autoref{fig:ISO_DIST_HT}), mais
+elle est également utilisable pour spatialiser des relations
+topologiques, tout en prenant en compte \emph{l'imprécision} (\eg deux
+objets très proches, mais qui ne partagent pas de positions, peuvent,
+du point vue du requérant, être considérés comme en contact). Cette
 \emph{métrique} est un exemple caractéristique des \emph{métriques
   extrinsèques} et \emph{non paramétriques.} Il est, en effet,
 nécessaire de la calculer pour chaque \emph{objet de référence,} mais
 elle n'accepte pas de \emph{paramètres.}  On pourrait cependant en
 ajouter, par exemple en ajoutant un paramètre permettant d'employer
-des distances alternatives, comme la distance de Manhattan, de
-Minkowski ou de Tchebychev. Mais ces distances alternatives, trop
-éloignées de la perception humaine des distances, ne présentent pas
-d’intérêt pour notre cas d'application. Cette \emph{métrique} est
-employée lors de la \emph{spatialisation} de toutes les
-\emph{relations de localisation atomiques} traduisant un éloignement
-ou une relation topologique.
+d'autres distances, comme la distance de Manhattan, de Minkowski ou de
+Tchebychev. Mais ces distances alternatives, trop éloignées de la
+perception humaine des distances, ne présentent pas d’intérêt pour
+notre cas d'application. Cette \emph{métrique} est employée lors de la
+\emph{spatialisation} de toutes les \emph{relations de localisation
+  atomiques} traduisant un éloignement ou une relation topologique.
 
 \begin{table}
   \centering
