@@ -76,11 +76,11 @@ ce qui rend leur comportement similaire. Il n'est donc pas nécessaire
 de tester chaque étape de la \emph{phase de fusion} pour estimer
 l'adéquation d'une implémentation.
 
-\begin{carte}
+\begin{figure}
   \centering \input{../figures/Raster_ZIR_HT.tex}
   \caption{Zone utilisée pour la comparaison des implémentations.}
   \label{fig:ZIR_HT}
-\end{carte}
+\end{figure}
 
 % Décomposition de l'indice
 La \emph{relation de localisation} que nous avons identifiée comme la
@@ -132,14 +132,14 @@ traduit le fait que la distance planimétrique entre le \emph{sujet} et
 la distance euclidienne entre chaque position et le point le plus
 proche de \emph{l'objet de référence} (\autoref{fig:ISO_DIST_HT}).
 
-\begin{carte}
+\begin{figure}
   \centering
   \input{../figures/Raster_ISO_DIST_HT.tex}
   \caption{\emph{Métrique} pour la \emph{relation de localisation
       atomique}    \protect\onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que}
     : La distance planaire à la ligne électrique trois brins.}
   \label{fig:ISO_DIST_HT}
-\end{carte}
+\end{figure}
 
 La \emph{relation de localisation atomique}
 \onto[orla]{Al\-ti\-tu\-de\-Stric\-te\-ment\-Inf\-érieu\-re} traduit,
@@ -148,13 +148,13 @@ quant à elle, un positionnement relatif sur l'axe vertical. La
 l'altitude du point le plus proche de \emph{l'objet de référence} et
 l'altitude de chaque position (\autoref{fig:ISO_DALT_HT}).
 
-\begin{carte}
+\begin{figure}
   \centering
   \input{../figures/Raster_ISO_DALT_HT.tex}
   \caption{Différence entre l'altitude locale et l'altitude de la
     ligne électrique la plus proche.}
   \label{fig:ISO_DALT_HT}
-\end{carte}
+\end{figure}
 
 La transformation des valeurs de ces deux métriques en degré
 d'appartenance se fait à l'aide d'une fonction d'appartenance qu'il
@@ -281,8 +281,8 @@ suffisamment grande pour permettre le calcul des fonctions
 \SI{100}{\meter}.
 
 L’application de la fonction d'appartenance (figure
-\ref{fig:fnc_app_Dist}) à la métrique précédemment calculée (carte
-\ref{fig:ISO_DIST_HT}) permet d'obtenir la carte
+\ref{fig:fnc_app_Dist}) à la métrique précédemment calculée (figure
+\ref{fig:ISO_DIST_HT}) permet d'obtenir la figure
 \ref{fig:ZLC_DIST_HT}, représentant la \emph{zone de localisation
   compatible} de la \emph{relation de localisation atomique}
 \onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que}.
@@ -294,35 +294,35 @@ mètres dans le cas présent). Le diamètre est minimal lorsque le degré
 d'appartenance est supérieur à zéro et les valeurs nulles sont
 filtrées pour faciliter la lisibilité.
 
-\begin{carte}
+\begin{figure}
   \centering
   \input{../figures/Raster_ZLC_DIST_HT.tex}
   \caption{\emph{Zone de localisation compatible} pour la
     \emph{relation de localisation atomique}
     \protect\onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que}.}
   \label{fig:ZLC_DIST_HT}
-\end{carte}
+\end{figure}
 
 Une méthode identique est utilisée pour construire la \emph{zone de
   localisation compatible} issue de la \emph{spatialisation} de la
 \emph{relation de localisation atomique}
 \onto[orla]{Al\-ti\-tu\-de\-Stric\-te\-ment\-Inf\-érieu\-re}. La
-\emph{métrique} identifiée (carte \ref{fig:ISO_DALT_HT}) est calculé
+\emph{métrique} identifiée (figure \ref{fig:ISO_DALT_HT}) est calculé
 pour chaque pixel, puis ces valeurs sont transformées en \emph{degrés
   d'appartenance} à l'aide de fonction d'appartenance définie
-précédemment (Figure \ref{fig:fnc_app_AltInf}). La carte
+précédemment (Figure \ref{fig:fnc_app_AltInf}). La figure
 \ref{fig:ZLC_ALTINF_HT}, qui résulte de ce processus, représente alors
 le degré d'appartenance de chaque pixel à la \emph{zone de
   localisation compatible.}
 
-\begin{carte}
+\begin{figure}
   \centering
   \input{../figures/Raster_ZLC_ALTINF_HT.tex}
   \caption{\emph{Zone de localisation compatible} pour la
     \emph{relation de localisation atomique}
     \protect\onto[orla]{Al\-ti\-tu\-de\-Stric\-te\-ment\-Inf\-érieu\-re}.}
   \label{fig:ZLC_ALTINF_HT}
-\end{carte}
+\end{figure}
 
 Les rasters représentant les deux \emph{zones de localisation
   compatibles} à intersecter possédant les mêmes résolutions et
@@ -330,31 +330,63 @@ Les rasters représentant les deux \emph{zones de localisation
 alors, sans effectuer de ré-échantillonnage, appliquer un opérateur
 d'intersection à chaque paire de pixels représentant la même
 position. Après l'intersection des \emph{zones de localisation
-  compatibles} figurées sur les cartes \ref{fig:ZLC_DIST_HT} et
+  compatibles} figurées sur les figures \ref{fig:ZLC_DIST_HT} et
 \ref{fig:ZLC_ALTINF_HT} on obtient la \emph{zone de localisation
-  probable} (carte \ref{fig:ZLP_SOUS_HT}) correspondant à l'ensemble
+  probable} (figure \ref{fig:ZLP_SOUS_HT}) correspondant à l'ensemble
 des positions situées \emph{à proximité} et à une \emph{altitude
   inférieure} de la ligne à haute-tension. Comme on peut le voir, le
-résultat obtenu est semblable à la carte \ref{fig:ZLC_DIST_HT} et
-assez différent de la carte \ref{fig:ZLC_ALTINF_HT}. L'étendue de la
+résultat obtenu est semblable à la figure \ref{fig:ZLC_DIST_HT} et
+assez différent de la figure \ref{fig:ZLC_ALTINF_HT}. L'étendue de la
 \emph{zone de localisation probable} est donc plus contraint par
 l'éloignement à la ligne électrique que par la différence
 d'altitude. Pour le dire autrement, il y a peu de positions
 \enquote{proches} et \enquote{au-dessus} d'une ligne électrique.
 
-\begin{carte}
+\begin{figure}
   \centering
   \input{../figures/Raster_ZLP_SOUS_HT.tex}
   \caption{\emph{Zone de localisation probable} pour \emph{l'indice de
       localisation} \enquote{Je suis sous une ligne électrique trois
       brins}.}
   \label{fig:ZLP_SOUS_HT}
-\end{carte}
+\end{figure}
 
 
 \subsection{Implémentation par \emph{Alpha-cuts}}
 
-Bien que fondée sur les mêmes aspects théoriques que l'implémentation raster, l'implémentation par \emph{alpha-cuts} propose une approche très différente. On pourrait construire des \emph{alpha-cuts} de plusieurs manières. Une première solution serait de partir des résultats de l'implémentation raster (\autoref{fig:ZLP_SOUS_HT}) et d'en extraire les pixels dont le degré d'appartenance est supérieur à un seuil fixé. Cette construction par sélection \footnote{Fortement semblable à la \emph{construction en extension d'ordre supérieur} présentée dans le \autoref{chap:03}.}, n'est cependant rien de plus qu'un post-traitement des résultats de l'implémentation raster et elle ne possède pas d'avantages (ou inconvénients) qui lui soient propres. Une approche différente est cependant envisageable. \textcite{Runz2008a, Zoghlami2016}, par exemple, des \emph{alpha-cuts} directement, sans passer par une étape préalable de calcul des degrés d'appartenance, soit une \emph{construction en intension} (\autoref{:chap:03}). La construction \emph{d'alpha-cuts} en intension demande d'identifier les critères jouant sur la forme de la \emph{zone de localisation,} soit, dans notre exemple, la distance et différence d'altitude par rapport à la ligne électrique. Conformément au \emph{principe de décomposition} on peut alors définir une méthode géométrique permettant de construire, pour chaque \emph{relation de localisation atomique} et chaque \emph{alpha-cut} construite, une région, correspondant à une \emph{alpha-cut} de la \emph{zone de localisation compatible} traitée. Ces différentes \emph{alpha-cuts} seraient alors intersectées deux à deux, par même degré d'appartenance en vue d'obtenir les \emph{alpha-cuts} de la \emph{zone de localisation probable} et ce de manière fortement similaire à l'implémentation raster. Pour cette comparaison nous avons choisi de construire trois \emph{alpha-cuts,} celle dont le degré est égal à 1, délimitant le \emph{noyau} du \emph{sous-ensemble flou,} celle dont le degré d'appartenance est supérieur à 0, délimitant le \emph{support} et enfin \emph{l'alpha-cut} de degré 0,5.
+Bien que fondée sur les mêmes aspects théoriques que l'implémentation
+raster, l'implémentation par \emph{alpha-cuts} propose une approche
+très différente. On pourrait construire des \emph{alpha-cuts} de
+plusieurs manières. Une première solution serait de partir des
+résultats de l'implémentation raster (\autoref{fig:ZLP_SOUS_HT}) et
+d'en extraire les pixels dont le degré d'appartenance est supérieur à
+un seuil fixé. Cette construction par sélection \footnote{Fortement
+  semblable à la \emph{construction en extension d'ordre supérieur}
+  présentée dans le \autoref{chap:03}.}, n'est cependant rien de plus
+qu'un post-traitement des résultats de l'implémentation raster et elle
+ne possède pas d'avantages (ou inconvénients) qui lui soient
+propres. Une approche différente est cependant
+envisageable. \textcite{Runz2008a, Zoghlami2016}, par exemple, des
+\emph{alpha-cuts} directement, sans passer par une étape préalable de
+calcul des degrés d'appartenance, soit une \emph{construction en
+  intension} (\autoref{:chap:03}). La construction \emph{d'alpha-cuts}
+en intension demande d'identifier les critères jouant sur la forme de
+la \emph{zone de localisation,} soit, dans notre exemple, la distance
+et différence d'altitude par rapport à la ligne
+électrique. Conformément au \emph{principe de décomposition} on peut
+alors définir une méthode géométrique permettant de construire, pour
+chaque \emph{relation de localisation atomique} et chaque
+\emph{alpha-cut} construite, une région, correspondant à une
+\emph{alpha-cut} de la \emph{zone de localisation compatible}
+traitée. Ces différentes \emph{alpha-cuts} seraient alors intersectées
+deux à deux, par même degré d'appartenance en vue d'obtenir les
+\emph{alpha-cuts} de la \emph{zone de localisation probable} et ce de
+manière fortement similaire à l'implémentation raster. Pour cette
+comparaison nous avons choisi de construire trois \emph{alpha-cuts,}
+celle dont le degré est égal à 1, délimitant le \emph{noyau} du
+\emph{sous-ensemble flou,} celle dont le degré d'appartenance est
+supérieur à 0, délimitant le \emph{support} et enfin
+\emph{l'alpha-cut} de degré 0,5.
 
 % Détail de la méthode
 Pour chaque segment de la ligne électrique traitée, nous construisons
@@ -417,7 +449,7 @@ minimale. Pour éviter de réduire artificiellement l'étendue des
 \emph{alpha-cuts} nous avons placé ce demi-plan a une altitude
 nettement plus faible que l'altitude minimale de la \ac{zir}, simulant
 ainsi un demi-plan virtuellement à l'infini. Le résultat de
-l'implémentation par \emph{alpha-cuts} est visible sur les cartes
+l'implémentation par \emph{alpha-cuts} est visible sur les figures
 \ref{fig:AlphaCuts_coupe} et \ref{fig:AlphaCuts_zenith}.
 
 \begin{figure}
@@ -428,20 +460,20 @@ l'implémentation par \emph{alpha-cuts} est visible sur les cartes
   \label{fig:schema_polyhedre}
 \end{figure}
 
-\begin{carte}
+\begin{figure}
   \centering
   \includegraphics[width=\textwidth]{../figures/AlphaCut_coupe.png}
   \caption{Modélisation par \emph{alpha-cuts,} vue oblique.}
   \label{fig:AlphaCuts_coupe}
-\end{carte}
+\end{figure}
 
-\begin{carte}
+\begin{figure}
   \centering
   \input{../figures/Alphacut_zenith.tex}
   %\includegraphics[width=\textwidth]{../figures/AlphaCut_zenith.png}
   \caption{Modélisation par \emph{alpha-cuts,} vue zénithale.}
   \label{fig:AlphaCuts_zenith}
-\end{carte}
+\end{figure}
 
 \subsection{Comparaison et choix de l'implémentation}
 
@@ -528,8 +560,8 @@ D'autres critères techniques peuvent également être pris en compte
 pour cette comparaison, comme le temps de calcul nécessaire au
 fonctionnement des deux implémentions ou le volume des données
 qu'elles imposent de manipuler. Si l'on compare le temps nécessaire à
-la constructions des \emph{zones de localisations probables}
-correspondant à \emph{l'indice de localisation} modélisé (Cartes
+la construction des \emph{zones de localisations probables}
+correspondant à \emph{l'indice de localisation} modélisé (Figures
 \ref{fig:ZLP_SOUS_HT} et \ref{XX}), l'implémentation raster est plus
 rapide. Mais cette performance est plus liée à des facteurs exogènes,
 comme la qualité du développement et l'optimisation des bibliothèques
