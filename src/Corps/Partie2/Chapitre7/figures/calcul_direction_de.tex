@@ -1,0 +1,72 @@
+﻿\usetikzlibrary{plotmarks}
+\usetikzlibrary{intersections}
+
+\begin{tikzpicture}
+  \begin{scope}
+    \foreach \x in {0,.5,...,1.5}{
+      \foreach \y in {0,.5,...,1.5}{
+        \path[draw, line width=.01mm] (\x,\y) rectangle         
+        (\x +.5, \y +
+        .5);
+      }
+    }
+    \path[ffc, black] (0,0) rectangle (2,2);
+  \end{scope}
+
+  \node (p1) at (.75,.75) {};
+  \node (p2) at (1.25,1.25) {};
+
+  \fill[black] (p1) circle [radius=1 pt];
+  \fill[black] (p2) circle [radius=1 pt];
+  
+  \draw[black, ->] (p1) -- (p2) node[pos=.5] (Cent){};
+
+  \begin{scope}[rotate around={14.04:(Cent)}]
+    \draw[ffa, name path=ellip1] (Cent) ellipse (1cm and .5cm);
+  \end{scope}
+  
+  % \node (P1) at (1,.5) {};
+  % \node (P2) at (7,2) {};
+
+  % \path(P1) -- (P2) node[pos=.5] (Cent){};
+
+  % \begin{scope}%[rotate around={14.04:(Cent)}]
+
+  %   \draw[ffa, name path=ellip1] (Cent) ellipse (3.472cm and 1.618cm);
+  %   \draw[line width=1, color=RdBu-9-2] (Cent) ellipse (3.472cm and 1.618cm);
+  %   \draw[RdBu-9-1,fill=white,line width=1, name path=ellip2] (Cent) ellipse (2.472cm and 0.618cm);
+
+  %   \draw[RdBu-9-1,|<->|,line width=.5] (Cent) --++ (0,.518)  node [pos=.5](A){} ;
+  %   \draw[RdBu-9-1,|<->|,line width=.5] (Cent) --++ (2.372,0) node [pos=.5](B){};
+  %   \draw[RdBu-9-1,|<->|,line width=.5] (Cent) --++ (0,-.9) node [pos=.5](C){};
+
+  %   \draw[fill=red,color=red] (P1) circle (2pt);
+  %   \node[mark size=2pt,color=red] at (P2) {\pgfuseplotmark{triangle*}};
+
+  %   \path[draw, ->] (P1) -- (P2);
+  %   \draw[RdBu-9-1,fill] (intersection of P1--P2 and Cent--A) circle (1pt);
+
+  % %   draw (P1) ..controls (-2,3) and (7,2.8) .. (P2);
+  % %   \draw (P1) ..controls (5,-3) and (10,2) .. (P2);
+
+
+  %   \node[mark size=2pt,color=red] (Cb) at (0,2.25) {\pgfuseplotmark{triangle*}};
+  %   \node[mark size=2pt,color=red] (Ce) at (9,0) {\pgfuseplotmark{triangle*}};
+
+  % %   Coupe
+  %   \path[draw, name path=Coupe](Cb) -- (Ce);
+
+  %   \draw [name intersections={of=Coupe and ellip1}]  (intersection-1) node(I1){} (intersection-2) node(I2) {};
+
+  %   \draw [name intersections={of=Coupe and ellip2}]  
+  %   (intersection-1) node(I3) {}    
+  %   (intersection-2) node(I4) {};
+
+
+  %   \draw[fill=red,color=red] (I1) circle (2pt);
+  %   \draw[fill=red,color=red] (I2) circle (2pt);
+  %   \draw[fill=red,color=red] (I3) circle (2pt);
+  %   \draw[fill=red,color=red] (I4) circle (2pt);
+  % \end{scope}
+\end{tikzpicture}
+
