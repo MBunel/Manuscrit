@@ -226,16 +226,41 @@ le montre la \autoref{fig:metrique_temps_marche}.
   \label{fig:metrique_temps_marche}
 \end{figure}
 
-
-La dernière \emph{métrique} que nous ayons
-développée,\onto{Part\-Visible} est également une \emph{métrique}
-extrinsèque et non paramétrique. Elle n'est utilisée pour spatialiser
-les relations de visibilité.
-%
-On peut voir une illustration de cette \emph{métrique} sur la
-\autoref{fig:metrique_part_lac}. Dans cet exemple la taille du figuré
-représente la part de \emph{l'objet de référence} (le lac au centre de
-l'image) qui est visible depuis chaque pixel.
+Les deux dernières \emph{métriques} que nous ayons
+développées,\onto{Part\-Visible} et \onto{Part\-Vue}, sont également
+des \emph{métriques} extrinsèques et non paramétriques. Elles sont
+toutes deux destinées à \emph{spatialiser} des \emph{relations de
+  localisations} traitant de visibilité. Ces deux \emph{métriques}
+sont très similaires, si ce n'est que la première calcule une zone de
+visibilité active à partir de \emph{l'objet de référence} (\ie quels
+sont les pixels vus de \emph{l'objet de référence}) et la seconde une
+visibilité passive (\ie quels sont les pixels de \emph{l'objet de
+  référence} qui sont vus). La première \emph{métrique} est utilisée
+pour \emph{spatialiser} \onto[orla]{Site\-Voit\-Cible} et la seconde
+pour \emph{spatialiser} \onto[orla]{Cible\-Voit\-Voit}. La visibilité
+est généralement calculée de manière binaire, on vérifie si chaque
+pixel de la zone étudiée voit ou non un objet. Le problème d'une telle
+\emph{métrique} est qu'elle ne nous permet pas de définir une
+visibilité \emph{imprécise,} la zone étudiée est visible ou non. Des
+pistes pour une modélisation \emph{imprécise} de la visibilité ont été
+proposées par \textcite{}. Une des solutions proposées étant d'étudier
+la variation des zones de visibilité en fonction des modifications du
+\ac{mnt} de référence, pour identifier les zones où la visibilité est
+la plus variable et donc potentiellement la plus \emph{imprécise.}
+Nous avons cependant opté pour une autre approche, considérant que
+\emph{l'imprécision} de la visibilité doit quantifier la qualité de la
+perception de \emph{l'objet de référence} que la qualité des données
+servant a son calcul. Nous avons donc construit des \emph{métriques}
+calculant la part visible de \emph{l'objet de référence.} Ainsi, pour
+chaque pixel de la \ac{zir} on va calculer, non pas si \emph{l'objet
+  de référence} est visible, mais quelle est la part de ses pixels qui
+le sont. On obtient alors un raster dont les valeurs varient de 0,
+lorsque l'objet n'est pas visible, à 1 lorsque tous les pixels qui le
+représentent le sont. On peut voir une illustration de cette
+\emph{métrique} sur la \autoref{fig:metrique_part_lac}. Dans cet
+exemple la taille du figuré représente la part de \emph{l'objet de
+  référence} (le lac au centre de l'image) qui est visible depuis
+chaque pixel.
 
 \begin{figure}
   \centering
