@@ -44,7 +44,16 @@ grande partie des \emph{métriques} ne nécessitent pas de paramétrage,
 c'est notamment le cas de la distance à \emph{l'objet de référence} ou
 de l'altitude, déjà citées.
 
-Ces deux critères se combinent et (\autoref{fig:type_metriques})
+Le tableau \ref{fig:type_metriques} catégorise les différentes
+\emph{métriques} présentées dans la section suivante en fonction de
+ces deux critères.
+
+\begin{table}
+  \centering
+  \input{../tableaux/types_metriques.tex}
+  \caption{Types de métriques}
+  \label{fig:type_metriques}
+\end{table}
 
 \subsection{Les différentes \emph{métriques}}
 
@@ -256,11 +265,11 @@ chaque pixel de la \ac{zir} on va calculer, non pas si \emph{l'objet
   de référence} est visible, mais quelle est la part de ses pixels qui
 le sont. On obtient alors un raster dont les valeurs varient de 0,
 lorsque l'objet n'est pas visible, à 1 lorsque tous les pixels qui le
-représentent le sont. On peut voir une illustration de cette
-\emph{métrique} sur la \autoref{fig:metrique_part_lac}. Dans cet
-exemple la taille du figuré représente la part de \emph{l'objet de
-  référence} (le lac au centre de l'image) qui est visible depuis
-chaque pixel.
+représentent le sont. On peut voir une illustration du calcul de la
+\emph{métrique} \onto{Part\-visible} sur la
+\autoref{fig:metrique_part_lac}. Dans cet exemple la taille du figuré
+représente la part de \emph{l'objet de référence} (le lac au centre de
+l'image) qui est visible depuis chaque pixel.
 
 \begin{figure}
   \centering
@@ -270,13 +279,6 @@ chaque pixel.
     visible d'un lac donné.}
   \label{fig:metrique_part_lac}
 \end{figure}
-
-\begin{table}
-  \centering
-  \input{../tableaux/types_metriques.tex}
-  \caption{Types de métriques}
-  \label{fig:type_metriques}
-\end{table}
 
 %%% Local Variables:
 %%% mode: latex
