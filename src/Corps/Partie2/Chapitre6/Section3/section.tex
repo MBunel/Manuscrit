@@ -83,9 +83,11 @@ l'adéquation d'une implémentation.
 \end{figure}
 
 % Décomposition de l'indice
-La \emph{relation de localisation} que nous avons identifiée comme la
-plus adaptée à la formalisation de cet \emph{indice de localisation}
-est \onto[orl]{Sous\-Pro\-che\-De}, traduisant une relation sur l'axe
+\tdi{paragraphe étude sens et signification indice}
+
+La \emph{relation de localisation} la plus adaptée à la formalisation
+de cet \emph{indice de localisation} est donc
+\onto[orl]{Sous\-Pro\-che\-De}, qui traduit une relation sur l'axe
 vertical (l'altitude du \emph{sujet} est plus basse que celle de
 \emph{l'objet de référence}), contrainte par une distance
 planimétrique (\autoref{anx:orl_dic}). Cette \emph{relation} se
@@ -99,12 +101,11 @@ la contrainte posée sur la distance planimétrique. Conformément au
   compatible} correspondant à la \emph{relation de localisation}
 \onto[orl]{Sous\-Pro\-che\-De} peut être créée en intersectant les
 deux \emph{zones de localisation compatibles} résultant de la
-\emph{spatialisation} de ces deux \emph{relations de localisation
-  atomiques.}
+\emph{spatialisation} indépendante de ces \emph{relations de
+  localisation atomiques.}
 
 % Définition fonctions appartenance
-La construction des \emph{zones de localisation compatibles}
-correspondant à chacune des \emph{relations de localisation atomiques}
+La construction de ces deux \emph{zones de localisation compatibles}
 nécessite de définir des \emph{fonctions d'appartenance} ($f_A$), qui,
 associent à chaque élément de l'ensemble traité, un degré ---~compris
 entre 0 et 1~--- définissant l'appartenance de l'élément au
@@ -114,23 +115,31 @@ notre contexte, où les \emph{sous-ensembles fous} représentent des
 fonctions définissent l'appartenance de chacune d'entre elles à la
 \emph{zone de localisation compatible} construite. La définition des
 \emph{fonctions d'appartenance} est donc une étape extrêmement
-importante, puisqu'elle définit les règles de construction des
-\emph{zones de localisation} et donc la sémantique des \emph{relations
-  de localisation atomiques.} Leur définition se fait en deux étapes,
-tout d'abord il faut identifier une \emph{métrique,} c'est-à-dire une
-valeur quantitative ou qualitative, calculable en chaque position de
-la \emph{zone initiale de recherche} et qui peut servir de mesure à la
-sémantique de la \emph{relation de localisation atomique} (\eg une
-distance, un angle). Puis on définit la \emph{fonction
-  d'appartenance,} transformant les valeurs de la \emph{métrique} en
-un \emph{degré d'appartenance.} Dans notre exemple, les
-\emph{métriques} à utiliser sont assez instinctives et simples à
-calculer. Par exemple, la \emph{relation de localisation atomique}
+importante, puisqu'en définissant les règles de construction des
+\emph{zones de localisation} elle fixe la sémantique des
+\emph{relations de localisation atomiques.} Leur définition se fait en
+deux étapes, tout d'abord il faut identifier une \emph{métrique,}
+c'est-à-dire une valeur quantitative ou qualitative, calculable en
+chaque position de la \emph{zone initiale de recherche} et qui peut
+servir de mesure à la sémantique de la \emph{relation de localisation
+  atomique} (\eg une distance, un angle). Puis on définit la
+\emph{fonction d'appartenance,} transformant les valeurs de la
+\emph{métrique} en un \emph{degré d'appartenance.}
+
+Dans notre exemple, les \emph{métriques} à utiliser sont assez
+instinctives et simples à calculer. Par exemple, la \emph{relation de
+  localisation atomique}
 \onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que}
 traduit le fait que la distance planimétrique entre le \emph{sujet} et
 \emph{l'objet de référence} est faible. La métrique adaptée est donc
 la distance euclidienne entre chaque position et le point le plus
-proche de \emph{l'objet de référence} (\autoref{fig:ISO_DIST_HT}).
+proche de \emph{l'objet de référence} (\autoref{fig:ISO_DIST_HT}). La
+\emph{relation de localisation atomique}
+\onto[orla]{Al\-ti\-tu\-de\-Stric\-te\-ment\-Inf\-érieu\-re} traduit,
+quant à elle, un positionnement relatif sur l'axe vertical. La
+\emph{métrique} la plus adaptée est donc la différence entre
+l'altitude du point le plus proche de \emph{l'objet de référence} et
+l'altitude de chaque position (\autoref{fig:ISO_DALT_HT}).
 
 \begin{figure}
   \centering
@@ -140,13 +149,6 @@ proche de \emph{l'objet de référence} (\autoref{fig:ISO_DIST_HT}).
     : La distance planaire à la ligne électrique trois brins.}
   \label{fig:ISO_DIST_HT}
 \end{figure}
-
-La \emph{relation de localisation atomique}
-\onto[orla]{Al\-ti\-tu\-de\-Stric\-te\-ment\-Inf\-érieu\-re} traduit,
-quant à elle, un positionnement relatif sur l'axe vertical. La
-\emph{métrique} la plus adaptée est donc la différence entre
-l'altitude du point le plus proche de \emph{l'objet de référence} et
-l'altitude de chaque position (\autoref{fig:ISO_DALT_HT}).
 
 \begin{figure}
   \centering
