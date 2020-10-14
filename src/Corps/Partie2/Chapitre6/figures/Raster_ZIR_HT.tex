@@ -7,6 +7,12 @@
     \node (P2) at ([yshift=-.5cm]image.south east) {};
     \node (P1) at ([yshift=-.5cm]image.south west) {};
     % Échelle
+    \node (rect) [anchor=north west, minimum width=1cm,minimum
+    height=.5cm] at (P1) {}; \path[draw=RdBu-9-1, line
+    width=.4mm](rect.west) .. controls (rect.south) and (rect.north)
+    .. (rect.east);
+    \node[anchor=west, font=\footnotesize\vphantom{Ag}] at (rect.east) {\emph{Objet de référence}};
+    
     \draw[-] (P2 |- -1cm,-1cm) --++ (-1,0) node[et,pos=.5] {\SI{500}{\meter}};
     % Légende détaillée
     \path (P1) -- (P2) node[pos=.5, yshift=-1cm] {\tiny Pour la légende détaillée du fond topographique voir \autoref{anx:topo_leg}. Sources: BD TOPO 2018, BD ALTI 2018.}; 
