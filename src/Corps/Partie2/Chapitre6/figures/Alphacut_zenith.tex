@@ -16,12 +16,33 @@
       \emph{objet de référence}};
 
     \node (rect2) [anchor=north west, minimum width=1cm,minimum
-    height=.25cm] at ([xshift=5.5cm,yshift=-.25cm]P1) {};
-    \path[draw=RdBu-9-9, line width=.25mm](rect2.west)
-    --([xshift=-1ex]rect2.north) -- ([xshift=1ex]rect2.south) --
-    (rect2.east); \node[anchor=west, font=\tiny\vphantom{Ag}, text
-    width = 4cm] at ([xshift=1ex]rect2.east) {Isolignes d'éloignement
-      à \emph{l'objet de référence} (équidistance \SI{250}{\meter})};
+    height=.25cm] at ([xshift=5.5cm,yshift=-.25cm]P1)
+    {};
+
+    \node[anchor=west, minimum width=.5cm,minimum
+    height=.25cm, fill=RdBu-9-8] (rect2-1) at (rect2.west) {};
+
+    \node[anchor=south west, minimum width=.5cm,minimum
+    height=.25cm, fill=RdBu-9-9] (rect2-2) at (rect2-1.north west) {};
+    
+    \node[anchor=north west, minimum width=.5cm,minimum
+    height=.25cm, fill=RdBu-9-7] (rect2-3) at (rect2-1.south west) {};
+
+    \node[anchor=west, font=\fontsize{5}{5.5}\selectfont] at
+    ([xshift=.5ex]rect2-1.east) {$0< \mu < 1$};
+    
+    \node[anchor=west, font=\fontsize{5}{5.5}\selectfont] at
+    ([xshift=.5ex]rect2-2.east) {$\mu = 1$};
+    
+    \node[anchor=west, font=\fontsize{5}{5.5}\selectfont] at
+    ([xshift=.5ex]rect2-3.east) {$\mu > 0$};
+
+    \draw[decorate,decoration={brace}] ([xshift=7.5ex]rect2-2.north
+    east) -- ([xshift=7.5ex]rect2-3.south east);
+    
+    \node[anchor=west, font=\tiny\vphantom{Ag}, text width = 4cm] at
+    ([xshift=6ex]rect2.east) {\emph{Alpha-cuts} pour les valeurs du
+      \emph{degré d'appartenance} ($\mu$) à la \ac{zlp}};
 
     % Échelle
     \draw[-] (P2 |- -1cm,-1cm) --++ (-1,0) node[et,pos=.5] {\SI{500}{\meter}};
