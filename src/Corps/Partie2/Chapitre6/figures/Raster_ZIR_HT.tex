@@ -8,10 +8,11 @@
     \node (P1) at ([yshift=-.5cm]image.south west) {};
     % Échelle
     \node (rect) [anchor=north west, minimum width=1cm,minimum
-    height=.5cm] at (P1) {}; \path[draw=RdBu-9-1, line
-    width=.4mm](rect.west) .. controls (rect.south) and (rect.north)
-    .. (rect.east);
-    \node[anchor=west, font=\footnotesize\vphantom{Ag}] at (rect.east) {\emph{Objet de référence}};
+    height=.25cm] at ([yshift=-.25cm]P1) {}; \path[draw=RdBu-9-1, line
+    width=.4mm](rect.west) --([xshift=-1ex]rect.south) -- ([xshift=1ex]rect.north)
+    -- (rect.east);
+    \node[anchor=west, font=\tiny\vphantom{Ag}, text width = 4cm] at
+    ([xshift=1ex]rect.east) {Ligne électrique utilisée comme \emph{objet de référence}};
     
     \draw[-] (P2 |- -1cm,-1cm) --++ (-1,0) node[et,pos=.5] {\SI{500}{\meter}};
     % Légende détaillée
