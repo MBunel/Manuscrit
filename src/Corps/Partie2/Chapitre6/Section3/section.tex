@@ -562,29 +562,28 @@ D'autres critères techniques peuvent également être pris en compte
 pour cette comparaison, comme le temps de calcul nécessaire au
 fonctionnement des deux implémentions ou le volume des données
 qu'elles imposent de manipuler. Si l'on compare le temps nécessaire à
-la construction des \emph{zones de localisations probables}
-correspondant à \emph{l'indice de localisation} modélisé (Figures
-\ref{fig:ZLP_SOUS_HT} et \ref{XX}), l'implémentation raster est plus
-rapide. Mais cette performance est plus liée à des facteurs exogènes,
-comme la qualité du développement et l'optimisation des bibliothèques
-logicielles utilisées qu'a la complexité des algorithme utilisés. Par
-exemple, l'implémentation par \emph{alpha-cuts} ayant été plus longue
-et difficile à mettre en place, peu de temps a été consacré à
-l'optimisation, même basique, de son code, ses performances sont donc
-très certainement améliorables. De plus, le temps de calcul de
-l'implémentation raster a tendance à augmenter plus rapidement avec le
-nombre \emph{d'objets de référence} à traiter (ou avec la résolution
-utilisée), cette méthode est donc potentiellement moins performante
-que l'approche par \emph{alpha-cuts,} même si la spatialisation de
-l'indice de localisation : \enquote{Je suis sous une ligne électrique
-  trois brins} semble indiquer le contraire.
+la construction des deux \emph{zones de localisations probables}
+(Figures \ref{fig:ZLP_SOUS_HT} et \ref{XX}), l'implémentation raster
+est plus rapide. Mais cette performance est plus liée à des facteurs
+exogènes, comme la qualité du développement et l'optimisation des
+bibliothèques logicielles utilisées qu'a la complexité des algorithmes
+utilisés. De plus, l'implémentation par \emph{alpha-cuts} ayant été
+plus longue et difficile à mettre en place, peu de temps a été
+consacré à l'optimisation, même basique, de son code, ses performances
+sont donc très certainement améliorables. Le temps de calcul de
+l'implémentation raster a également tendance à augmenter plus
+rapidement avec le nombre \emph{d'objets de référence} à traiter (ou
+avec la résolution utilisée), cette méthode est donc potentiellement
+moins performante que l'approche par \emph{alpha-cuts,} même si la
+spatialisation de l'indice de localisation : \enquote{Je suis sous une
+  ligne électrique trois brins} semble indiquer le contraire.
 
 % Volume des données
 L'implémentation par \emph{alpha-cut} a également l'avantage ---~cette
 fois encore plus net~--- si l'on se penche sur la question du volume
 des données produites et manipulées. Là où les \emph{alpha-cut} sont
 construites directement, l'implémentation raster nécessite de
-pré-calculer un raster par \emph{métriques} et par \emph{objet de
+pré-calculer un raster par \emph{métrique} et par \emph{objet de
   référence} avant de pouvoir construire les \emph{zones de
   localisation compatibles.} Le nombre de raster peut augmenter
 fortement avec le nombre \emph{d'objets de référence} ou
@@ -605,9 +604,9 @@ d'intersection et d'union, ajout de nouvelles méthodes de
 \emph{spatialisation,} \emph{etc.}) sont moins contraignants et moins
 couteux. Le choix d'une implémentation raster nous permet donc
 d'aboutir plus rapidement une à méthode générique et fonctionnelle, ce
-qui nous permettra de nous concentrer sur question de la
-\emph{spatialisation} (et donc de traiter plus d'alertes) et non sur
-des problèmes technique de programmation.
+qui nous permettra de nous concentrer sur la \emph{spatialisation} (et
+donc de traiter plus d'alertes) et non sur des problèmes techniques de
+programmation.
 
 % Impacts
 Le choix de l'implémentation raster nécessite la définition préalable
