@@ -69,7 +69,7 @@ car le choix de la \emph{modélisation} des \emph{zones de
   localisation} n'a pas impact sur la \emph{phase de décomposition}
 (aucun \emph{objet géographique} n'étant encore construit), de
 l'autre, car toutes les étapes de la \emph{phase de fusion} emploient
-les mêmes outils théoriques \footnote{C'est-à-dire des unions et
+les mêmes outils théoriques \footnote{C'est-à-dire des unions et des
   intersections ensemblistes, faisant appel aux \emph{t-normes} et
   \emph{t-conormes} de la \emph{théorie des sous-ensembles flous.}},
 ce qui rend leur comportement similaire. Il n'est donc pas nécessaire
@@ -348,12 +348,11 @@ d'altitude. Pour le dire autrement, il y a peu de positions
 \begin{figure}
   \centering
   \input{../figures/Raster_ZLP_SOUS_HT.tex}
-  \caption{\emph{Zone de localisation probable} pour \emph{l'indice de
-      localisation} \enquote{Je suis sous une ligne électrique trois
-      brins}.}
+  \caption{\emph{Zone de localisation probable,} construire avec une
+    approche raster, pour \emph{l'indice de localisation} \enquote{Je
+      suis sous une ligne électrique trois brins}.}
   \label{fig:ZLP_SOUS_HT}
 \end{figure}
-
 
 \subsection{Implémentation par \emph{Alpha-cuts}}
 
@@ -620,10 +619,10 @@ résolution peut être importante pour de petites \ac{zir}
   réduite pour que nous puissions travailler avec la résolution
   maximale, celle de la moins précise des données (en l’occurrence le
   \ac{mnt}).}, elle doit nécessairement être réduite lorsque la
-\ac{zir} grandi \footnote{Plus de pixels sont alors a traiter.} ou
+\ac{zir} grandi \footnote{Plus de pixels sont alors à traiter.} ou
 lorsque les \emph{indices de localisation} se multiplient ou se
 complexifient \footnote{Plus de \emph{zones de localisation
-    compatibles,} doivent être construites.}.
+    compatibles} sont alors à construire}.
 
 \begin{landscape}
   \begin{table}[H]
