@@ -35,7 +35,7 @@ sibling distance=5mm,
   growth parent anchor=south west,
   edge from parent path={([xshift=.25cm]\tikzparentnode.south west) |-
     (\tikzchildnode.west)}]
-	\node at (r1.south west){}
+	\node[font=\tiny] at (r1.west){}
     child{node(tt){Proximal}}
    child{node{SitueSurItineraire\-Ou\-Re\-seau\-Sup\-port}};
 \end{scope}
@@ -46,7 +46,7 @@ sibling distance=5mm,
   growth parent anchor=south west,
   edge from parent path={([xshift=.25cm]\tikzparentnode.south west) |-
     (\tikzchildnode.west)}]
-	\node at (r2.south west){}
+	\node[font=\tiny] at (r2.west){}
       child{node{RelationSpatialeDeContact}
  	child{node{AExtremiteDe}}
  	child{node{ALaFrontiereDe}}
@@ -188,7 +188,7 @@ child{node{Proximal $\longrightarrow$ {\ttfamily\textcolor{red}{gum\#}}Test}
   growth parent anchor=south west,
   edge from parent path={([xshift=.25cm]\tikzparentnode.south west) |-
     (\tikzchildnode.west)}]
-	\node at (r3.south west){}
+	\node[font=\tiny] at (r3.west){}
        child{node{ADistanceQuantitativeRelative}}
        child{node{ADistanceTemps}
          child{node{ATempsDeMarche}}
