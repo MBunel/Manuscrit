@@ -1,264 +1,203 @@
 \begin{tikzpicture}[
   every node/.style={anchor=west,
-    font={\tiny\ttfamily\textcolor{RdBu-9-7}{orl\#}\sffamily}},
-  atomique/.style={text=RdBu-9-1},
-  grow via three points={one child at (.5,-.15) and
+    font={\tiny\ttfamily\textcolor{red}{orl\#}\sffamily}, 
+%text width=5cm
+},
+  atomique/.style={blue}
+  ],
+  % 
+  \begin{scope}[
+		level distance=10mm,
+		edge from parent path={(\tikzparentnode.south) |- ($(\tikzparentnode.south)!0.5!(\tikzchildnode.north)$) -|
+    (\tikzchildnode.north)},
+	level 1/.style={sibling distance=50mm, anchor=north,align=center},
+]
+	%\tikzstyle{edge from parent}=[draw,red,thick]
+    % Parents
+    \node(rl){RelationDeLocalisation}
+    child{node[level 1] (r1){Re\-la\-ti\-on\-Spa\-ti\-ale\-Fonc\-ti\-o\-nel\-le}}
+    child{node[level 1] (r2){Re\-la\-ti\-on\-Spa\-ti\-ale\-Po\-si\-tion\-Re\-la\-ti\-ve}}
+	child{node[level 1] (r3){RelationSpatialeProximité}};
+  \end{scope}
+
+  \begin{scope}[grow=right,
+level distance=10mm,
+sibling distance=5mm,
+  edge from parent path={(\tikzparentnode.east) -| ($(\tikzparentnode.east)!0.5!(\tikzchildnode.west)$) |- (\tikzchildnode.west)},
+]
+	\node[font=\tiny] at (rl.east){}
+    child{node{CibleVoitSite}}
+    child{node{SiteVoitCible}};
+\end{scope}
+
+  \begin{scope}[grow via three points={one child at (.5,-.15) and
     two children at (.5,-.15) and (.5,-.45)},
   growth parent anchor=south west,
   edge from parent path={([xshift=.25cm]\tikzparentnode.south west) |-
-    (\tikzchildnode.west)}],
-  ]
-  % 
+    (\tikzchildnode.west)}]
+	\node at (r1.south west){}
+    child{node(tt){Proximal}}
+   child{node{SitueSurItineraire\-Ou\-Re\-seau\-Sup\-port}};
+\end{scope}
 
-  \begin{scope}
-    % Parents
-    \node{RelationDeLocalisation}
-    child{node{RelationSpatialeFonctionelle}
-      child{node(tt){Proximal}}
-      child{node{SitueSurItineraireOuReseauSupport}}
-    }
-    child[missing]{}
-    child[missing]{}
-    child{node {RelationSpatialePositionRelative}
+
+  \begin{scope}[grow via three points={one child at (.5,-.15) and
+    two children at (.5,-.15) and (.5,-.45)},
+  growth parent anchor=south west,
+  edge from parent path={([xshift=.25cm]\tikzparentnode.south west) |-
+    (\tikzchildnode.west)}]
+	\node at (r2.south west){}
       child{node{RelationSpatialeDeContact}
-	child{node{AExtremiteDe}}
-	child{node{ALaFrontiereDe}}
-	child{node{DansPlanimetrique}
-          child{node{DansLaPartieBasseDe}}
-          child{node{DansLaPartieDeXLaPlusProcheDeY}}
-          child{node{DansLaPartieEstDe}}
-          child{node{DansLaPartieHauteDe}}
-          child{node{DansLaPartieNordDe}}
-          child{node{DansLaPartieOuestDe}}
-          child{node{DansLaPartieSudDe}}
-        }
-        child[missing]{}
-        child[missing]{}
-        child[missing]{}
-        child[missing]{}
-        child[missing]{}
-        child[missing]{}
-        child[missing]{}
-	child[atomique]{node{Proximal $\longrightarrow$ {\ttfamily\textcolor{RdBu-9-3}{gum\#}}Test}}
-      }
-      child[missing]{}
-      child[missing]{}
-      child[missing]{}
-      child[missing]{}
-      child[missing]{}
-      child[missing]{}
-      child[missing]{}
-      child[missing]{}
-      child[missing]{}
-      child[missing]{}
-      child[missing]{}
-      child[missing]{}
-      child[missing]{}
-      child{node{RelationSpatialeDeDirection}
-	child{node{ADroiteDe}}
-	child{node{AGaucheDe}}
-	child{node{AvoirASaDroite}}
-	child{node{AvoirASaGauche}}
-	child{node{AvoirDerriereSoit}}
-	child{node{AvoirDevantSoit}}
-	child{node{DansLaDirectionDe}}
-	child{node{RelationSpatialeDeCardinalité}
-          child{node{AEstDe}
-            child{node{AEstDeExterne}}
-            child{node{DansLaPartieEstDe}}
-          }
-          child[missing]{}
-          child[missing]{}
-          child{node{AOuestDe}
-            child{node{AOuestDeExterne}}
-            child{node{DansLaPartieOuestDe}}
-          }
-          child[missing]{}
-          child[missing]{}
-          child{node{AuNordDe}
-            child{node{AuNordDeExterne}}
-            child{node{DansLaPartieNordDe}}
-          }
-          child[missing]{}
-          child[missing]{}          
-          child{node{AuSudDe}
-            child{node{AuSudDeExterne}}
-            child{node{DansLaPartieSudDe}}
-          }
-        }
-      }
-      child[missing]{}
-      child[missing]{}
-      child[missing]{}
-      child[missing]{}
-      child[missing]{}
-      child[missing]{}
-      child[missing]{}
-      child[missing]{}
-      child[missing]{}
-      child[missing]{}
-      child[missing]{}
-      child[missing]{}
-      child[missing]{}
-      child[missing]{}
-      child[missing]{}
-      child[missing]{}
-      child{node{RelationSpatialeDisjointe}
-        child{node{AEstDeExterne $\iff$ {\ttfamily\textcolor{RdBu-9-7}{gum\#}}EastExternal}}
-        child{node{AOuestDeExterne}}
-        child{node{AuNordDeExterne}}
-        child{node{AuSudDeExterne}}
-        child{node{HorsDePlanimetrique}}
-      }
-      child[missing]{}
-      child[missing]{}
-      child[missing]{}
-      child[missing]{}
-      child[missing]{}
-      child{node{RelationSpatialeItinéraire}
-        child{node{ApresJalonSurItineraire}}
-        child{node{AuDessusJalonSurItineraire}}
-        child{node{AvantJalonSurItineraire}}
-        child{node{SitueSurItineraireOuReseauSupport}}
-        child{node{SousJalonSurItineraire}}
-      }
-      child[missing]{}
-      child[missing]{}
-      child[missing]{}
-      child[missing]{}
-      child[missing]{} 
-      child{node{RelationSpatialeTernaire}
-        child{node{DansLaPartieDeXLaPlusProcheDeY}}
-        child{node{DeAutreCoteDeParRapportA}}
-        child{node{DuMemeCoteQueParRapportA}}
-        child{node{EntreXetY}}
-      }
-      child[missing]{}
-      child[missing]{}
-      child[missing]{}
-      child[missing]{}
-      child{node{RelationSpatialeVerticale}
-        child{node{ALaMemeAltitudeQue}}
-        child{node{AuDessusALAplombDe}}
-        child{node{AuDessusAltitude}}
-        child{node{AuDessusJalonSurItineraire}}
-        child{node{AuDessusProche}}
-        child{node{DansLaPartieBasseDe}}
-        child{node{DansLaPartieHauteDe}}
-        child{node{SousALAplombDe}}
-        child{node{SousAltitude}}
-        child{node{SousJalonSurItineraire}}
-        child{node{SousProcheDe}}
-        child{node{SousRecouvertPar}}
-      }
-    }
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child{node {RelationSpatialeProximité}
-      child{node{ADistanceQuantitativeRelative}}
-      child{node{ADistanceTemps}
-        child{node{ATempsDeMarche}}
-      }
-      child[missing]{}
-      child{node{AuDessusProche}}
-      child{node{AuxAlentoursDe}}
-      child{node{DistanceQuantitativePlanimetrique}}
-      child{node{PresDe}}
-      child[atomique]{node{Proximal}}
-    }
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child[missing]{}
-    child{node {CibleVoitSite}}
-    child{node(tt2) {SiteVoitCible}};
-  \end{scope}
-  
-  \begin{scope}[xshift=8cm]
-        % Parents
-    \node{RelationDeLocalisation}
-    child{node{RelationSpatialeFonctionelle}
-      child[atomique]{node{Proximal}}
-      child{node{SitueSurItineraireOuReseauSupport}}
-    }
-    child[missing]{}
-    child[missing]{}
-    child{node {RelationSpatialePositionRelative}
-      child{node{RelationSpatialeDeContact}
-	child{node{AExtremiteDe}}
-	child{node{ALaFrontiereDe}}
-	child{node{DansPlanimetrique}
-          child{node{DansLaPartieBasseDe}}
-          child{node{DansLaPartieDeXLaPlusProcheDeY}}
-          child{node{DansLaPartieEstDe}}
-          child{node{DansLaPartieHauteDe}}
-          child{node{DansLaPartieNordDe}}
-          child{node{DansLaPartieOuestDe}}
-          child{node{DansLaPartieSudDe}}
-        }}};
-  \end{scope}
-  
-  
-  \draw (tt.east) -- ([xshift=4cm]tt.east) |- (tt2.east);
+ 	child{node{AExtremiteDe}}
+ 	child{node{ALaFrontiereDe}}
+ 	child{node{DansPlanimetrique}
+           child{node[text width=2cm]{DansLaPartie\-Bas\-se\-De}}
+         child[missing]{}
+           child{node[text width=2cm]{DansLaPartie\-De\-X\-La\-Plus\-Pro\-che\-De\-Y}}
+         child[missing]{}
+           child{node{DansLaPartieEstDe}}
+           child{node{DansLaPartieHauteDe}}
+           child{node{DansLaPartieNordDe}}
+           child{node{DansLaPartieOuestDe}}
+           child{node{DansLaPartieSudDe}}
+         }
+}
+         child[missing]{}
+         child[missing]{}
+         child[missing]{}
+         child[missing]{}
+         child[missing]{}
+         child[missing]{}
+         child[missing]{}
+         child[missing]{}
+         child[missing]{}
+         child[missing]{}
+         child[missing]{}         
+		child[missing]{}
+		child[missing]{}
+child{node{Proximal $\longrightarrow$ {\ttfamily\textcolor{red}{gum\#}}Test}
+       }
+       child{node{RelationSpatialeDeDirection}
+ 	child{node{ADroiteDe}}
+ 	child{node{AGaucheDe}}
+ 	child{node{AvoirASaDroite}}
+ 	child{node{AvoirASaGauche}}
+ 	child{node{AvoirDerriereSoit}}
+ 	child{node{AvoirDevantSoit}}
+ 	child{node{DansLaDirectionDe}}
+ 	child{node{RelationSpatialeDeCardinalité}
+           child{node{AEstDe}
+             child{node{AEstDeExterne}}
+             child{node{DansLaPartieEstDe}}
+           }
+           child[missing]{}
+           child[missing]{}
+           child{node{AOuestDe}
+             child{node{AOuestDeExterne}}
+             child{node{DansLaPartieOuestDe}}
+           }
+           child[missing]{}
+           child[missing]{}
+           child{node{AuNordDe}
+             child{node{AuNordDeExterne}}
+             child{node{DansLaPartieNordDe}}
+           }
+           child[missing]{}
+           child[missing]{}          
+           child{node{AuSudDe}
+             child{node{AuSudDeExterne}}
+             child{node{DansLaPartieSudDe}}
+           }
+         }
+       }
+       child[missing]{}
+       child[missing]{}
+       child[missing]{}
+       child[missing]{}
+       child[missing]{}
+       child[missing]{}
+       child[missing]{}
+       child[missing]{}
+       child[missing]{}
+       child[missing]{}
+       child[missing]{}
+       child[missing]{}
+       child[missing]{}
+       child[missing]{}
+       child[missing]{}
+       child[missing]{}
+       child[missing]{}
+       child[missing]{}
+       child[missing]{}
+       child[missing]{}
+       child[missing]{}
+       child{node{RelationSpatialeDisjointe}
+         child{node{AEstDeExterne $\iff$ {\ttfamily\textcolor{blue}{gum\#}}EastExternal}}
+         child{node{AOuestDeExterne}}
+         child{node{AuNordDeExterne}}
+         child{node{AuSudDeExterne}}
+         child{node{HorsDePlanimetrique}}
+       }
+       child[missing]{}
+       child[missing]{}
+       child[missing]{}
+       child[missing]{}
+       child[missing]{}
+       child{node{RelationSpatialeItinéraire}
+         child{node{ApresJalonSurItineraire}}
+         child{node{AuDessusJalonSurItineraire}}
+         child{node{AvantJalonSurItineraire}}
+         child{node{SitueSurItineraireOuReseauSupport}}
+         child{node{SousJalonSurItineraire}}
+       }
+       child[missing]{}
+       child[missing]{}
+       child[missing]{}
+       child[missing]{}
+       child[missing]{} 
+	child[missing]{} 
+       child{node{RelationSpatialeTernaire}
+         child{node{DansLaPartieDeXLaPlusProcheDeY}}
+         child{node{DeAutreCoteDeParRapportA}}
+         child{node{DuMemeCoteQueParRapportA}}
+         child{node{EntreXetY}}
+       }
+       child[missing]{}
+       child[missing]{}
+       child[missing]{}
+       child[missing]{}
+		child[missing]{} 
+       child{node{RelationSpatialeVerticale}
+         child{node{ALaMemeAltitudeQue}}
+         child{node{AuDessusALAplombDe}}
+         child{node{AuDessusAltitude}}
+         child{node{AuDessusJalonSurItineraire}}
+         child{node{AuDessusProche}}
+         child{node{DansLaPartieBasseDe}}
+         child{node{DansLaPartieHauteDe}}
+         child{node{SousALAplombDe}}
+         child{node{SousAltitude}}
+         child{node{SousJalonSurItineraire}}
+         child{node{SousProcheDe}}
+         child{node{SousRecouvertPar}}
+       };
+\end{scope}
+
+  \begin{scope}[grow via three points={one child at (.5,-.15) and
+    two children at (.5,-.15) and (.5,-.45)},
+  growth parent anchor=south west,
+  edge from parent path={([xshift=.25cm]\tikzparentnode.south west) |-
+    (\tikzchildnode.west)}]
+	\node at (r3.south west){}
+       child{node{ADistanceQuantitativeRelative}}
+       child{node{ADistanceTemps}
+         child{node{ATempsDeMarche}}
+       }
+       child[missing]{}
+       child{node{AuDessusProche}}
+       child{node{AuxAlentoursDe}}
+       child{node{DistanceQuantitativePlanimetrique}}
+       child{node{PresDe}}
+       child{node{Proximal}};
+\end{scope}
 \end{tikzpicture}	
