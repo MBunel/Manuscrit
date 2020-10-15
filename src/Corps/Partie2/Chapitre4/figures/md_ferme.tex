@@ -11,8 +11,26 @@
   \end{scope}
   \begin{scope}
     \path[ffc, draw=black] (1,0) circle [radius=.75cm];
-    \node[text width=3cm] (leg) at (-2,1)
-    {\footnotesize \itshape Ensemble des règles connues};
-    \path[draw, ->] (leg.east) --++ (-25:.9);
+  \end{scope}
+  \begin{scope}
+    \node (rect) [anchor=north, minimum width=.5cm,minimum
+    height=.25cm,ffc, draw=black] at (0,-1.25) {};
+    \node[anchor=west, font=\tiny\vphantom{Ag}, text width = 4cm] at
+    ([xshift=1ex]rect.east) {Connues};
+    
+    \node (rect2) [anchor=north, minimum width=.5cm,minimum
+    height=.25cm, ffa, ffc] at ([yshift=-.25cm]rect) {};
+    \node[anchor=west, font=\tiny\vphantom{Ag}, text width = 4cm] at
+    ([xshift=1ex]rect2.east) {Vraies};
+    
+    \node (rect3) [anchor=north, minimum width=.5cm,minimum
+    height=.25cm, ffa2, ffc2] at ([yshift=-.25cm]rect2) {};
+    \node[anchor=west, font=\tiny\vphantom{Ag}, text width = 4cm] at
+    ([xshift=1ex]rect3.east) {Fausses};
+    
+    \draw[decorate,decoration={brace}] ([xshift=7.75ex]rect.north
+    east) -- ([xshift=7.75ex]rect3.south east);
+    \node[anchor=west, font=\tiny\vphantom{Ag}, text width = 2cm] at
+    ([xshift=8ex]rect2.east) {Ensemble des règles};   
   \end{scope}
 \end{tikzpicture}
