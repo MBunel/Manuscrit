@@ -15,7 +15,8 @@ nous ne souhaitons pas sacrifier la généricité de notre méthode, c'est
 pourquoi son développement relève d'un équilibre entre la généricité
 de la méthode et la spécificité de certains paramétrages.
 
-\subsubsection{\texttt{Titre}}
+\subsubsection{Prérequis nécessaires à la méthode de construction
+  d'une zone de localisation probable}
 \label{sec:4-1-1-1}
 
 Comme nous l'indiquions dans la première partie, un des partis-pris
@@ -27,8 +28,8 @@ contraintes spécifiques sur nos travaux, il nous offre des
 possibilités inédites. En effet, ce parti-pris impose la présence
 constante d'un secouriste, en contact avec le requérant et
 interagissant avec notre méthode de localisation par le biais de
-l'interface développée au sein du lot 4
-(cf. \ref{subsec:1-2-3-3}). Par conséquent nous pouvons développer une
+l'interface développée au sein du projet Choucas
+(\ref{subsec:1-2-3-3}). Par conséquent, nous pouvons développer une
 méthode nécessitant la participation active d'un secouriste lors de
 son application.
 
@@ -65,18 +66,20 @@ compréhension de \emph{l'indice de localisation}. Ainsi, pour
 reprendre l'exemple précédent, c'est au secouriste de choisir si la
 \emph{relation de localisation} \enquote{à deux pas} doit être
 modélisée comme une relation de \emph{proximité} où une \emph{distance
-  métrique quantitative.} De manière analogue il revient au secouriste
-d'analyser l'objet de référence. Dans notre exemple, \emph{l'objet de
-  référence} (\enquote{une maison}) désigne un type d'objet (\ie un
-\emph{géotype}) auquel plusieurs objets (\ie les \emph{géons}) peuvent
+  métrique quantitative.}
+
+De manière analogue il revient au secouriste d'analyser l'objet de
+référence. Dans notre exemple, \emph{l'objet de référence}
+(\enquote{une maison}) désigne un type d'objet (\ie un \emph{géotype})
+auquel plusieurs objets (\ie les \emph{géons}) peuvent
 correspondre. Ce travail d'identification des objets géographiques
 utilisés comme référence par le requérant peut également être délégué
 au secouriste, par le biais de l'interface. Pour notre exemple le
 secouriste devra sélectionner tous les objets correspondant à la
 description donnée par le secouriste. Cette approche pose néanmoins un
 problème, celui de l'aire de la sélection. En effet, sans information
-supplémentaire tout objet géographique correspondant à la section peut
-être considéré comme un objet de référence valide. Il est donc
+supplémentaire tout objet géographique correspondant à la sélection
+peut être considéré comme un objet de référence valide. Il est donc
 nécessaire de définir une \emph{zone de travail} délimitant l'aire de
 recherche de la victime, et par conséquent de sélection des
 \emph{objets de référence.} Dans l'ontologie d'alerte CHOUCAS (OAC,
@@ -85,7 +88,7 @@ recherche de la victime, et par conséquent de sélection des
 indispensable à la \emph{spatialisation} des \emph{indices de
   localisation.}
 
-Ainsi notre méthodologie impose trois tâches au secouriste. La
+Ainsi, notre méthodologie impose trois tâches au secouriste. La
 première, effectuée au début de la phase de localisation, consiste à
 définir la ZIR. La seconde consiste à identifier, à partir d'une liste
 préalablement définir, \emph{la relation de localisation}
