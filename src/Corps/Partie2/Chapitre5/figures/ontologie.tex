@@ -7,10 +7,10 @@
   ],
   % 
   \begin{scope}[
-		level distance=10mm,
+		level distance=7.5mm,
 		edge from parent path={(\tikzparentnode.south) |- ($(\tikzparentnode.south)!0.5!(\tikzchildnode.north)$) -|
     (\tikzchildnode.north)},
-	level 1/.style={sibling distance=50mm, anchor=north,align=center},
+	level 1/.style={sibling distance=55mm, anchor=north,align=center},
 ]
 	%\tikzstyle{edge from parent}=[draw,red,thick]
     % Parents
@@ -51,10 +51,8 @@ sibling distance=5mm,
  	child{node{AExtremiteDe}}
  	child{node{ALaFrontiereDe}}
  	child{node{DansPlanimetrique}
-           child{node[text width=2cm]{DansLaPartie\-Bas\-se\-De}}
-         child[missing]{}
-           child{node[text width=2cm]{DansLaPartie\-De\-X\-La\-Plus\-Pro\-che\-De\-Y}}
-         child[missing]{}
+           child{node{DansLaPartie\-Bas\-se\-De}}
+           child{node{DansLaPartie\-De\-X\-La\-Plus\-Pro\-che\-De\-Y}}
            child{node{DansLaPartieEstDe}}
            child{node{DansLaPartieHauteDe}}
            child{node{DansLaPartieNordDe}}
@@ -62,8 +60,6 @@ sibling distance=5mm,
            child{node{DansLaPartieSudDe}}
          }
 }
-         child[missing]{}
-         child[missing]{}
          child[missing]{}
          child[missing]{}
          child[missing]{}
