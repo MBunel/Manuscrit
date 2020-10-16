@@ -4,22 +4,10 @@
   nodes={minimum size=.75cm}
   ] (zla0) at (0,0)
   {
+    \draw[ffa,ffc] (0,0) circle (.3cm);&
     \draw[ffa,ffc] (0,0) circle (.3cm);\\
   };
 
-  \matrix [matrix of nodes,
-  anchor=west,
-  nodes={minimum size=.75cm},
-  right=.75cm of zla0
-  ] (zla1)
-  {
-    \draw[ffa,ffc] (0,0) circle (.3cm);&
-    \draw[ffa,ffc] (0,0) circle (.3cm);&
-    \draw[ffa,ffc] (0,0) circle (.3cm);&
-    \draw[ffa,ffc] (0,0) circle (.3cm);&
-    \draw[ffa,ffc] (0,0) circle (.3cm);&
-    \draw[ffa,ffc] (0,0) circle (.3cm);\\
-  };
 
   \matrix [matrix of nodes,
   anchor=north,
@@ -29,19 +17,9 @@
   {
     \draw[ffa,ffc] (0,0) circle (.3cm);\\
   };
-
-  \matrix [matrix of nodes,
-  anchor=north,
-  nodes={minimum size=.75cm},
-  below=2cm of zla1
-  ] (zlb1)
-  {
-    \draw[ffa,ffc] (0,0) circle (.3cm);\\
-  };
-
  
   % Accolades
-  \foreach \m in {0,1} {
+  \foreach \m in {0} {
     \draw (zla\m.south west) |- ($(zla\m.south west)!0.5!(zla\m.south
     east) + (0,-.1)$) -| (zla\m.south east)  node[pos=0, yshift=.2]
     (zla\m-g) {};
@@ -61,44 +39,18 @@
 % \draw[|-, black] ([yshift=1.25cm]zla5-1-2.north) -- (zla5-1-2.north);
 
   
-  \node[above=0cm of zla0.north, anchor=south, align=center,
+  \node[above=0cm of zla0-1-1.north, anchor=south, align=center,
   font=\tiny, text width=1.75cm]{\enquote{Je suis proche du \emph{Pic
         Jean Ray}}};
   
-  \node[above=0cm of zla1-1-1.north, anchor=south, align=center,
-  font=\tiny, text width=1.75cm]{\enquote{Je suis proche de la \emph{crête de
-        Roche Motte}}};
-    \node[above=1.25cm of zla1-1-2.north, anchor=south, align=center,
-  font=\tiny, text width=2.25cm]{\enquote{Je suis à une altitude
-      supérieure à la \emph{crête de
-        Roche Motte}}};
-      \node[above=1.25cm of zla1-1-3.north, anchor=south, align=center,
-  font=\tiny, text width=2.25cm]{\enquote{Je suis à une altitude
-      supérieure à la \emph{crête de
-        Roche Motte}}};
-      \node[above=1.25cm of zla1-1-4.north, anchor=south, align=center,
-  font=\tiny, text width=2.25cm]{\enquote{Je suis à une altitude
-      supérieure à la \emph{crête de
-        Roche Motte}}};
-      \node[above=1.25cm of zla1-1-5.north, anchor=south, align=center,
-  font=\tiny, text width=2.25cm]{\enquote{Je suis à une altitude
-      supérieure à la \emph{crête de
-        Roche Motte}}};
-      \node[above=1.25cm of zla1-1-6.north, anchor=south, align=center,
-  font=\tiny, text width=2.25cm]{\enquote{Je suis à une altitude
-      supérieure à la \emph{crête de
-        Roche Motte}}};
-  
+  \node[above=0cm of zla0-1-2.north, anchor=south, align=center,
+  font=\tiny, text width=1.75cm]{\enquote{Je suis sous une \emph{crête}}};
 
 
     \node[below=0cm of zlb0.south, anchor=north, align=center,
-  font=\tiny, text width=1.75cm]{\enquote{Je suis proche du \emph{Pic
-        Jean Ray}}};
-  
-  \node[below=0cm of zlb1.south, anchor=north, align=center,
-  font=\tiny, text width=1.75cm]{\enquote{Je sous une \emph{crête}}};
-  
+  font=\tiny, text width=4cm]{\enquote{Je suis proche du \emph{Pic
+        Jean Ray} et sous une crête}};
 
-    \node[fill=white,align=center, font=\large\sffamily] at ($(zla1.south east)!0.5!(zlb0.north
+    \node[fill=white,align=center, font=\large\sffamily] at ($(zla0.south east)!0.5!(zlb0.north
     west)$){\emph{Fusion} des \emph{indices de localisation}};
 \end{tikzpicture}
