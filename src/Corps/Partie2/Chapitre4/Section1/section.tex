@@ -128,30 +128,36 @@ spatialiser la \emph{relation} \enquote{sous} de la même manière que
 les \emph{relations} \enquote{entre} ou \enquote{proche}. Il est donc
 nécessaire de définir (et d'implémenter) une méthode de
 \emph{spatialisation} pour toutes les \emph{relations de localisation}
-que nous souhaitons traiter.
-%
-Une possibilité serait d'écrire des fonctions \emph{ad hoc} lors de
-l'implémentation et de les détailler ici. Ce faisant l'ensemble des
-connaissances produites lors de l'élaboration des méthodes de
-spatialisation se retrouverait dans le code, ce qui ne faciliterait
-pas la compréhension et l'utilisation appliquée de notre travail.
+traitées. Ces différentes méthodes de \emph{spatialisation} sont d'une
+grande importance. D'une part, car elles constituent le cœur de notre
+travail de développement, c'est par elles qu'une description de
+position devient une \emph{zone de localisation compatible,} de
+l'autre, car l'implémentation de ces méthodes devient \emph{de facto}
+un cadre formel, fixant ---~par le biais de leur
+\emph{spatialisation}~--- la sémantique que nous attribuons à chaque
+\emph{relation de localisation.} Pour le dire autrement, la meilleure
+façon de comprendre comment est traitée une \emph{relation de
+  localisation} donnée est de consulter le code qui se destine à la
+\emph{spatialiser.} Ce faisant l'ensemble des connaissances produites
+lors de l'élaboration des méthodes de \emph{spatialisation} serait
+principalement sous forme de code, ce qui est une limite forte à la
+compréhension et l'utilisation appliquée de notre travail, en plus de
+s'opposer au principe \emph{d'intégration dans le contexte métier.}
 
-Pour faciliter l'intégration de notre travail dans le contexte métier
-du secours en montagne nous avons choisi d'adopter une démarche
-imposant la modélisation explicite des connaissances. Cette démarche
-est inspirée des \emph{systèmes à base de connaissances} où ces
-dernières sont formalisées au sein d'une ontologie lue et interprétée
-par le code. Ainsi, on peut imaginer que les règles de
-\emph{spatialisation} de toutes les \emph{relations de localisations}
-soient formalisées dans une ontologie des \emph{ad hoc,} lisible et
-modifiable à chaque instant. Cette approche offre plusieurs
-avantages. D'une part, comme énoncé précédemment elle permet aux
-utilisateurs de nos méthodes de \emph{spatialisation} de disposer
-d'une forme d'auto-documentation, permise par la centralisation de
-toutes les règles de spatialisation. Cette centralisation facilite
-également la modification où l'ajout de règles de
-\emph{spatialisation.} De plus cette ontologie peut être exploitée et
-diffusée séparément.
+Nous avons donc adopté une démarche imposant la modélisation explicite
+des connaissances. Cette démarche est inspirée des \emph{systèmes à
+  base de connaissances} où ces dernières sont formalisées au sein
+d'une ontologie lue et interprétée par le code. Ainsi, on peut
+imaginer que les règles de \emph{spatialisation} de toutes les
+\emph{relations de localisations} soient formalisées dans une
+ontologie des \emph{ad hoc,} lisible et modifiable à chaque
+instant. Cette approche offre plusieurs avantages. D'une part, comme
+énoncé précédemment elle permet aux utilisateurs de nos méthodes de
+\emph{spatialisation} de disposer d'une forme d'auto-documentation,
+permise par la centralisation de toutes les règles de
+spatialisation. Cette centralisation facilite également la
+modification où l'ajout de règles de \emph{spatialisation.} De plus
+cette ontologie peut être exploitée et diffusée séparément.
 
 \subsection{Principes de modélisation}
 
