@@ -112,26 +112,29 @@ géographiques, servant de référence.
 
 \subsubsection{La modélisation explicite des connaissances}
 
-Les phases de spatialisation et de fusion différent par un point
-essentiel. La fusion consiste à regrouper différentes \emph{zones de
-  localisation compatibles} dans le but de construire une seule
-\emph{zone de localisation probable} \footnote{Bien qu'elle puisse
-  être discontinue.}. Par conséquent, tous les individus en entrée de
-cette opération sont de la même nature, \ie des objets
-géographiques. L'opération de fusion ne nécessite donc pas la
-définition de comportements particuliers, adaptés à des cas qui le
-sont tout autant. La spatialisation par contre nécessite le
-développement d'une méthode adaptée à chaque \emph{relation de
-  localisation.} En effet on spatialise pas la \emph{relation}
-\enquote{sous} de la même manière que la \emph{relation}
-\enquote{entre}. Il est donc nécessaire de définir une méthode de
-\emph{spatialisation} pour chaque \emph{relation de localisation} et
-d'en proposer une implémentation. Une possibilité serait d'écrire des
-fonctions \emph{ad hoc} lors de l'implémentation et de les détailler
-ici. Ce faisant l'ensemble des connaissances produites lors de
-l'élaboration des méthodes de spatialisation se retrouverait dans le
-code, ce qui ne faciliterait pas la compréhension et l'utilisation
-appliquée de notre travail.
+Les phases de \emph{spatialisation} et de \emph{fusion} différent par
+un point essentiel. La fusion consiste à regrouper différentes
+\emph{zones de localisation compatibles} dans le but de construire une
+seule \emph{zone de localisation probable} \footnote{Bien qu'elle
+  puisse être discontinue.}, par conséquent, tous les individus
+fusionnés sont de même nature, ce sont des objets géographiques. Une
+même méthode peut donc être employée dans toutes les configurations,
+qu'il soit nécessaire de fusionner deux \emph{zones de localisation}
+identiques ou trente \emph{zones} extrêmement différentes. Cette
+généricité n'est cependant pas partagée par la méthode de
+\emph{spatialisation,} qui doit avoir un comportement adapté à la
+chaque \emph{relation de localisation.} En effet, on ne peut
+spatialiser la \emph{relation} \enquote{sous} de la même manière que
+les \emph{relations} \enquote{entre} ou \enquote{proche}. Il est donc
+nécessaire de définir (et d'implémenter) une méthode de
+\emph{spatialisation} pour toutes les \emph{relations de localisation}
+que nous souhaitons traiter.
+%
+Une possibilité serait d'écrire des fonctions \emph{ad hoc} lors de
+l'implémentation et de les détailler ici. Ce faisant l'ensemble des
+connaissances produites lors de l'élaboration des méthodes de
+spatialisation se retrouverait dans le code, ce qui ne faciliterait
+pas la compréhension et l'utilisation appliquée de notre travail.
 
 Pour faciliter l'intégration de notre travail dans le contexte métier
 du secours en montagne nous avons choisi d'adopter une démarche
