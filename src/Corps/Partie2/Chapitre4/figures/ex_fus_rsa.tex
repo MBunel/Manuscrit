@@ -120,9 +120,10 @@
     \draw[->>, black,] ([yshift=-.2cm]zla\m.south) -- ([yshift=.2cm]zlb\m.north);
   }
 
-\draw[|-, black] ([yshift=1.25cm]zla1-1-2.north) -- (zla1-1-2.north);
-\draw[|-, black] ([yshift=1.25cm]zla2-1-2.north) -- (zla2-1-2.north);
-\draw[|-, black] ([yshift=1.25cm]zla3-1-2.north) -- (zla3-1-2.north);
+\draw[|-, black] ([yshift=1.25cm]zla1-1-2.north) -- (zla1-1-2.north) node[pos=.85,fill=white]{};
+\draw[|-, black] ([yshift=1.25cm]zla2-1-2.north) -- (zla2-1-2.north) node[pos=.85,fill=white]{};
+\draw[|-, black] ([yshift=1.25cm]zla3-1-2.north) -- (zla3-1-2.north)
+node[pos=.55,fill=white, minimum size=.75cm]{};
 \draw[|-, black] ([yshift=1.25cm]zla4-1-2.north) -- (zla4-1-2.north);  
 \draw[|-, black] ([yshift=1.25cm]zla5-1-2.north) -- (zla5-1-2.north);
 
@@ -169,8 +170,7 @@
       supérieure à la \emph{crête du Petit Puy}}};
 
 
-  
-  \node[below=0cm of zlb0.south, anchor=north, align=center,
+    \node[below=0cm of zlb0.south, anchor=north, align=center,
   font=\tiny, text width=1.75cm]{\enquote{Je suis proche du \emph{Pic
         Jean Ray}}};
   
