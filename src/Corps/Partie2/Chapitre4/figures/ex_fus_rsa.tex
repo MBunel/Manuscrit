@@ -10,7 +10,7 @@
   \matrix [matrix of nodes,
   anchor=west,
   nodes={minimum size=.75cm},
-  right=.5cm of zla0
+  right=.75cm of zla0
   ] (zla1)
   {
     \draw[ffa,ffc] (0,0) circle (.3cm);&
@@ -20,7 +20,7 @@
   \matrix [matrix of nodes,
   anchor=west,
   nodes={minimum size=.75cm},
-  right=.5cm of zla1
+  right=.75cm of zla1
   ] (zla2)
   {
     \draw[ffa,ffc] (0,0) circle (.3cm);&
@@ -29,7 +29,7 @@
   \matrix [matrix of nodes,
   anchor=west,
   nodes={minimum size=.75cm},
-  right=.5cm of zla2
+  right=.75cm of zla2
   ] (zla3)
   {
     \draw[ffa,ffc] (0,0) circle (.3cm);&
@@ -38,7 +38,7 @@
   \matrix [matrix of nodes,
   anchor=west,
   nodes={minimum size=.75cm},
-  right=.5cm of zla3
+  right=.75cm of zla3
   ] (zla4)
   {
     \draw[ffa,ffc] (0,0) circle (.3cm);&
@@ -47,7 +47,7 @@
   \matrix [matrix of nodes,
   anchor=west,
   nodes={minimum size=.75cm},
-  right=.5cm of zla4
+  right=.75cm of zla4
   ] (zla5)
   {
     \draw[ffa,ffc] (0,0) circle (.3cm);&
@@ -119,4 +119,30 @@
     % 
     \draw[->>, black,] ([yshift=-.2cm]zla\m.south) -- ([yshift=.2cm]zlb\m.north);
   }
+
+
+  \node[below=0cm of zlb0.south, anchor=north, align=center,
+  font=\tiny, text width=1.75cm]{\enquote{Je suis proche du \emph{Pic
+        Jean Ray}}};
+  \node[below=0cm of zlb1.south, anchor=north, align=center,
+  font=\tiny, text width=1.75cm]{\enquote{Je suis sous la \emph{crête de
+        Roche Motte}}};
+  
+  \node[below=0cm of zlb2.south, anchor=north, align=center,
+  font=\tiny, text width=1.75cm]{\enquote{Je suis sous la \emph{crête de Font
+        Froide}}};
+  
+  \node[below=0cm of zlb3.south, anchor=north, align=center,
+  font=\tiny, text width=1.75cm]{\enquote{Je suis sous la \emph{crête de
+        Serre Chapelle}}};
+  
+  \node[below=0cm of zlb4.south, anchor=north, align=center,
+  font=\tiny, text width=1.75cm]{\enquote{Je suis sous la \emph{crête des Barres}}};
+  
+  \node[below=0cm of zlb5.south, anchor=north, align=center,
+  font=\tiny, text width=1.75cm]{\enquote{Je suis sous la \emph{crête du
+        Petit Puy}}};
+
+    \node[fill=white,align=center, font=\large\sffamily] at ($(zla0.south west)!0.5!(zlb5.north
+    east)$){\emph{Fusion} des \emph{relations de localisation atomiques}};
 \end{tikzpicture}
