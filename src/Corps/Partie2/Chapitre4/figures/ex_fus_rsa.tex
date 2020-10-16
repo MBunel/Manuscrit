@@ -1,7 +1,7 @@
 \begin{tikzpicture}
   \matrix [matrix of nodes,
   anchor=west,
-  nodes={minimum size=1cm}
+  nodes={minimum size=.75cm}
   ] (zla) at (0,0)
   {
     \draw[ffa,ffc] (0,0) circle (.3cm);\\
@@ -9,8 +9,8 @@
 
   \matrix [matrix of nodes,
   anchor=west,
-  nodes={minimum size=.5cm},
-  right=of zla
+  nodes={minimum size=.75cm},
+  right=.5cm of zla
   ] (zla1)
   {
     \draw[ffa,ffc] (0,0) circle (.3cm);&
@@ -19,8 +19,8 @@
 
   \matrix [matrix of nodes,
   anchor=west,
-  nodes={minimum size=1cm},
-  right=of zla1
+  nodes={minimum size=.75cm},
+  right=.5cm of zla1
   ] (zla2)
   {
     \draw[ffa,ffc] (0,0) circle (.3cm);&
@@ -28,8 +28,8 @@
   };
   \matrix [matrix of nodes,
   anchor=west,
-  nodes={minimum size=1cm},
-  right=of zla2
+  nodes={minimum size=.75cm},
+  right=.5cm of zla2
   ] (zla3)
   {
     \draw[ffa,ffc] (0,0) circle (.3cm);&
@@ -37,8 +37,8 @@
   };
   \matrix [matrix of nodes,
   anchor=west,
-  nodes={minimum size=1cm},
-  right=of zla3
+  nodes={minimum size=.75cm},
+  right=.5cm of zla3
   ] (zla4)
   {
     \draw[ffa,ffc] (0,0) circle (.3cm);&
@@ -46,11 +46,19 @@
   };
   \matrix [matrix of nodes,
   anchor=west,
-  nodes={minimum size=1cm},
-  right=of zla4
+  nodes={minimum size=.75cm},
+  right=.5cm of zla4
   ] (zla5)
   {
     \draw[ffa,ffc] (0,0) circle (.3cm);&
     \draw[ffa,ffc] (0,0) circle (.3cm);\\
-  };  
+  };
+
+
+% Accolades
+  \foreach \m in {zla,zla1,zla2,zla3,zla4,zla5} {
+    \draw (\m.south west) |- ($(\m.south west)!0.5!(\m.south
+    east) + (0,-.1)$) -| (\m.south east)  node[pos=0, yshift=.2]
+    (\m-g) {};
+  }
 \end{tikzpicture}
