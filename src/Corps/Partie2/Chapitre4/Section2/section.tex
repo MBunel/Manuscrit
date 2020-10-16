@@ -1,4 +1,45 @@
-Section 2
+
+Jusqu'à présent nous avons utilisé la notion \emph{d'indice de
+  référence}
+
+Nous allons à présent formaliser ce concept en vue de la définition de
+la méthode de construction de la \emph{zone de localisation probable}
+(\autoref{\label{sec:4-3}}).
+
+Comme nous l'expliquions dans le \autoref{Chap:02}, les \emph{indices
+  de localisation} sont l'élément de base des alertes.
+
+Ils contiennent toutes les informations données par le requérant pour
+décrire sa positon
+
+Un \emph{indice de localisation} (\(i\)) est donc formalisable en un
+triplet de la forme :
+%
+\begin{equation}
+  i = (S, Rl, Or)
+\end{equation}
+%
+Avec \(\) le \emph{sujet,} \(\) la \emph{relation de localisation} et
+\(\) \emph{l'objet de référence.}
+
+Cette définition est cependant assez restrictive, puisqu'elle ne
+permet pas d'exprimer certaines des configurations que nous avons
+décrites précédemment.                                                                                                                                             
+
+Tout d'abord, il est trop restrictif de considérer qu'un \emph{indice
+  de localisation} ne peut contenir qu'un seul \emph{objet de
+  référence}
+
+On peut donc remplacer \(\) par un ensemble \emph{d'objets de
+  référence,} la définition de \emph{l'indice de localisation} est
+alors :
+
+\begin{equation}
+  i = (S, Rl, {Or_1, Or_2, \ldots, Or_n})
+\end{equation}
+
+Cependant cette définition n'est pas non plus satisfaisante.
+
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../../../../main"
