@@ -1,0 +1,480 @@
+Dans le \autoref{chap:02} nous ébauchions une méthode de construction
+d'une \emph{zone de localisation probable} à partir \emph{d'une
+  description de position,} en deux étapes : la \emph{spatialisation}
+et la \emph{fusion.} Cette présentation n'est cependant satisfaisante
+qu'en première approximation. En effet, les principes de modélisation
+introduits dans ce chapitre (et plus particulièrement le
+\emph{principe de décomposition}) complexifient la méthodologie en y
+ajoutant de nouvelles étapes, ne pouvant être distinguées avec ces
+anciennes définitions. C'est pourquoi ces dernières seront complétées
+et revues au fur et à mesure de cette partie.
+
+Nous allons à présent formaliser notre méthode de construction de
+\emph{zones de localisation probables}. L'objectif n'est cependant pas
+d'en présenter tous les aspects, mais d'en décrire le fonctionnement
+global et les interactions entre les différentes phases de la
+méthode. Ainsi les considérations les plus avancées, comme la prise en
+compte de \emph{l'incertitude} ou de \emph{l'imprécision,} ou les
+points spécifiques à une phase particulière de la méthodologie seront
+détaillés dans des chapitres dédiés. Ce chapitre ne se destine donc qu'à
+présenter le socle de notre méthode.
+
+La méthode que nous proposons (et dont la \autoref{fig:methodo_1}
+présente une synthèse visuelle) est décomposable en trois phases, la
+\emph{décomposition,} la \emph{spatialisation} et la \emph{fusion.}
+
+\tdi{Est-ce que ce ne serait pas mieux d'ajouter ici la formalisation
+  des indices de localisation (originalement prévue pour le chapitre
+  suivant ?}
+
+\subsection{La phase de \emph{décomposition}}
+
+La phase de \emph{décomposition} (détaillé dans le \autoref{chap:05})
+est un ensemble de trois étapes permettant de passer d'un ensemble
+\emph{d'indices de localisation} à un ensemble décomposé de ces
+indices, prêts à être \emph{spatialisés.}
+
+\subsubsection{La décomposition de \emph{l'ensemble des indices de
+    localisation}}
+
+La première de ces étapes est la décomposition de \emph{l'ensemble des
+  indices de localisation}, \(I\) (\autoref{fig:methodo_1}). Cet
+ensemble contient tous les \emph{indices de localisation} (\(i_n\))
+qui nous sont transmis par les secouristes, par le biais de
+l'interface de géovisualisation :
+
+\begin{equation}
+  I = \{i_1, i_2, \dots, i_n \}
+\end{equation}
+
+La \emph{décomposition} de l'ensemble \(I\) permet d'extraire les
+différents \emph{indices de localisation} (\(i_n\), à partir desquels
+serons construites les \emph{zones de localisation compatibles.} Cette
+transformation était qualifée de \emph{spatialisation} dans le
+\autoref{chap:02}, cependant, comme le montre la
+\autoref{fig:methodo_1}, ce n'est pas à cette étape qu'apparaissent
+les objets géographiques, sous la forme des \emph{zones de
+  localisation compatibles,} mais après deux nouvelles étapes de
+\emph{décomposition.} C'est pourquoi nous préférons réserver l'usage
+de ce terme à l'étape centrale de la méthode, la création d'objets
+géographiques.
+
+Cette étape de \emph{décomposition} ne présente pas de difficultés
+techniques ou scientifique, mais elle est nécessaire à l’application
+du \emph{principe de spatialisation autonome des indices de
+  localisation.} Comme on peut le voir sur la \autoref{fig:methodo_1,}
+les indices décomposés lors de la première étape du processus sont
+fusionnés lors de la dernière étape de la \emph{phase de fusion.}
+Ainsi les différents \emph{indices de localisation} sont traités
+indépendamment, conformément au principe de modélisation précédemment
+mentionné. On peut illustrer ce principe avec l'exemple de
+\emph{l'ensemble d'indices de localisation} : \enquote{je suis proche
+  du \emph{Pic de Jean Ray} et sur une crête.} Ce dernier est composé
+de deux \emph{indices de localisation,} liés par une conjonction. Le
+but de cette étape de \emph{décomposition} est de les séparer pour en
+permettre le traitement autonome. Au terme de cette étape on dispose
+ainsi de deux \emph{indices de localisation} (\enquote{je suis proche
+  du \emph{Pic de Jean Ray}} et \enquote{je suis sur une crête}),
+indépendamment transmis à l'étape suivante de décomposition.
+
+\subsubsection{La décomposition des \emph{objets de référence indéfinis}}
+
+Contrairement à la première étape de \emph{la phase de décomposition,}
+la seconde et la troisième phase peuvent être interverties, sans que
+cela n'impacte la modélisation. L'ordre de présentation que nous
+utilisons ici correspond à celui que nous avons implémenté
+(cf. \autoref{chap:08}), mais également à une progression que nous
+estimons plus simple à présenter.
+
+Les \emph{indices de localisation} contiennent toujours un (ou
+plusieurs, si la relation de localisation est n-aire) \emph{objet de
+  référence.} Cependant ce dernier peut être une instance clairement
+définie, que l'on peut alors facilement identifier (\eg
+\enquote{Grenoble}, \enquote{Le bois des Ayes}, \emph{etc.}) ou un
+objet décrit par sa nature, qu'il est alors impossible d'identifier
+sans informations supplémentaires (\eg \enquote{une ville},
+\enquote{un bois}). Par conséquent, lorsque le secouriste identifie
+les objets correspondant à la description du requérant (conformément
+au principe \texttt{TITRE principe}, cf. \ref{sec:4-1-1-1}) il peut
+sélectionner un ou plusieurs objets. Si \emph{l'indice de
+  localisation} qui nous est transmis contient plus d'un objet (dans
+le cas où la relation modélisée n'est pas bi ou n-aire) alors
+\emph{l'objet de référence} est indéfini est \emph{l'indice de
+  localisation} doit être \emph{spatialisé} pour chacun d'entre eux et
+la position correspondant à \emph{l'indice de localisation} et l'une
+des positions possibles.  La seconde étape de la \emph{phase de
+  décomposition} permet donc de transformer un \emph{indice de
+  localisation} comportant plusieurs \emph{objets de référence}
+concurrents en un ensemble \emph{d'indices de localisation} portant
+chacun sur un des \emph{objets de référence possible.}
+
+Prenons l'exemple de \emph{l'indice de localisation} \enquote{je suis
+  sur une crête}. Le secouriste peut alors sélectionner à l'aide de
+l'interface l'ensemble des objets géographiques \enquote{crêtes}
+situés dans la ZIR \footnote{Voir dans un espace plus réduit si le
+  secouriste décide, compte-tenu de ses connaissances et de la
+  situation, de réduire la zone de recherche de cette catégorie
+  d'objets.}. Admettons qu'elles soient au nombre de six,
+\emph{l'indice de localisation} qui nous sera transmis sera donc de la
+forme \enquote{je suis sur la \emph{crête de Roche Motte} ou je suis
+  sur la \emph{crête de Font Froide} ou je suis sur la \emph{crête de
+    Serre Chapelle} ou je suis sur la \emph{crête des Barres} ou je
+  suis sur la \emph{crête du Petit Puy}}. Ainsi au sortir de cette
+seconde étape de décomposition on dispose de \(i\) \emph{indices de
+  localisation} (première décomposition), eux-mêmes divisés en
+plusieurs \emph{indices de localisation,} en fonction du nombre
+\emph{d'objets de référence} à prendre en compte.
+
+\subsubsection{La décomposition des \emph{relations de localisation}}
+
+La troisième est dernière étape de cette phase est celle de la
+décomposition des \emph{relations de localisation.} C'est durant cette
+étape qu'est appliqué le \emph{principe de décomposition} des
+\emph{relations de localisation.} Comme nous l'expliquions lors de la
+présentation de ce principe, cette étape consiste à décomposer les
+\emph{relations de localisation} en un ensemble de composantes
+sémantiquement indépendantes, les \emph{relations de localisation
+  atomiques.} Comme pour les deux précédentes étapes, cette
+décomposition n'est pas toujours nécessaire, \emph{la relation de
+  localisation utilisée} pouvant être atomique (\eg
+\enquote{proche}). La principale différence entre cette étape et les
+précédentes est qu'il est nécessaire de disposer d'une information
+supplémentaire pour savoir comment l'effectuer. En effet lorsqu'un
+ensemble d'indice de localisation nous est transmis, les différents
+\emph{indices de localisation} qui le composent sont déjà identifiés,
+puisque saisis tels quels par le secouriste, de la même manière les
+différents \emph{objets de référence.} Par conséquent, les deux
+premières étapes de la \emph{phase de décomposition} ne présentent pas
+de difficultés particulières, contrairement à la \emph{décomposition
+  des relations de localisation.} En effet note souhait est de
+permettre au secouriste de sélectionner la \emph{relation de
+  localisation} correspondant à la description du requérant à partir
+d'une liste pré-définie de \emph{relations de localisation}
+(cf. principe de modélisation explicite des connaissances). Ainsi le
+secouriste n'a pas à manipuler directement les \emph{relations de
+  localisation atomiques.} Il est donc nécessaire de connaitre la
+\emph{décomposition des relations de localisation} et de s'y référer
+lors de cette étape. Ce processus sera détaillé plus longuement dans
+le \autoref{chap:05}.
+
+Pour illustrer l'ensemble de la \emph{phase de décomposition,}
+imagions que \emph{l'ensemble des indices de localisation} (\(I\)
+saisi par un secouriste à partir de la description suivante :
+\enquote{je suis proche du \emph{Pic de Jean Ray} et suis sur une
+  crête}. Ce dernier est composé de deux \emph{indices de
+  localisation,} séparés lors de la première étape de la \emph{phase
+  de décomposition.} Les deux \emph{indices de localisation :}
+\enquote{je suis proche du \emph{Pic de Jean Ray}} et \enquote{je suis
+  sur une crête} peuvent être alors traités indépendamment. La seconde
+étape de la \emph{phase de décomposition} fragmente chaque
+\emph{indice de localisation} en fonction des \emph{objets de
+  référence.} Le premier \emph{indice de localisation} (\enquote{je
+  suis proche du \emph{Pic de Jean Ray}}) se réfère à un objet nommé
+et unique, il n'est donc pas nécessaire de le décomposer,
+contrairement au second \emph{indice de localisation,} que l'on peut
+décomposer en six nouveaux \emph{indices de localisation,} comme
+illustré précédement : \enquote{je suis sur la \emph{crête de Roche
+    Motte} ou je suis sur la \emph{crête de Font Froide} ou je suis
+  sur la \emph{crête de Serre Chapelle} ou je suis sur la \emph{crête
+    des Barres} ou je suis sur la \emph{crête du Petit Puy}.} Enfin,
+la dernière étape de la phase de \emph{décomposition,} nécessite la
+définition préalable d'un ensemble de \emph{relations de localisation
+  atomiques,} ce qui sera abordé dans le \autoref{chap:05}. Cependant,
+pour aller au bout de cet exemple nous allons considérer que la
+relation de localisation \enquote{proche} est une \emph{relation
+  spatiale atomique} (hypothèse déjà utilisée précédemment) et que la
+relation de localisation \enquote{sur} se décompose en deux
+\emph{relations spatiales atomiques,} \emph{proximité} et
+\emph{différence d'altitude positive} \footnote{Comme nous le verrons
+  ultérieurement cette décomposition est fortement
+  simplificatrice. Cet exemple n'est donc pas à considérer comme
+  représentatif de la décomposition de la \emph{relation de
+    localisation} \enquote{sur}, mais bien comme une illustration de
+  la phase de décomposition dans son ensemble.}. Ainsi, le premier
+\emph{indice de localisation} n'est pas décomposé, puisque nous
+considérons que la \emph{relation de localisation} \enquote{proche}
+est atomique, contrairement à \emph{l'ensemble des indices de
+  localisation} issus de la décomposition de l'indice : \enquote{je
+  suis sur une crête}, qui voient tous leur relation de localisation
+(\enquote{sur}) décomposée. Ainsi, au terme de la \emph{phase de
+  décomposition,} l'ensemble des \emph{indices de localisation :}
+\enquote{je suis proche du \emph{Pic de Jean Ray}} et \enquote{je suis
+  sur une crête} devient :
+
+\begin{quote}
+  \begin{tikzpicture}[%
+    grow via three points={one child at (0.5,-0.7) and
+      two children at (0.5,-0.7) and (0.5,-1.4)},
+    edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}
+    ]
+    \node[anchor=south west,text=RdBu-9-1] {Et}
+    child {node[anchor=south west] {\enquote{je suis proche du \emph{Pic
+            de Jean Ray}}}}
+    child {node[anchor=south west, text=RdBu-9-9] {Ou}
+      child{node[anchor=south west, text=RdBu-9-1] {Et}
+        child{node[anchor=south west]{\enquote{je suis proche de la
+              \emph{crête de Roche Motte}}}} 
+        child{node[anchor=south west]{\enquote{je suis à une altitude
+              supérieure à la \emph{crête de Roche Motte}}}}
+      }
+      child[missing]{}
+      child{node[anchor=south west,text=RdBu-9-1]{Et}
+        child{node[anchor=south west]{\enquote{je suis proche de la
+              \emph{crête de Font Froide}}}} 
+        child{node[anchor=south west]{\enquote{je suis à une altitude
+              supérieure à la \emph{crête de Font Froide}}}} 
+      }
+      child[missing]{}
+      child{node[anchor=south west,text=RdBu-9-1]{Et}
+        child{node[anchor=south west]{\enquote{je suis proche de la
+              \emph{crête de Serre Chapelle}}}} 
+        child{node[anchor=south west]{\enquote{je suis à une altitude
+              supérieure à la \emph{crête de Serre Chapelle}}}} 
+      }
+      child[missing]{}
+      child{node[anchor=south west,text=RdBu-9-1]{Et}
+        child{node[anchor=south west]{\enquote{je suis proche de la
+              \emph{crête des Barres}}}} 
+        child{node[anchor=south west]{\enquote{je suis à une altitude
+              supérieure à la \emph{crête des Barres}}}} 
+      }
+      child[missing]{}
+      child{node[anchor=south west,text=RdBu-9-1]{Et}
+        child{node[anchor=south west]{\enquote{je suis proche de la
+              \emph{crête du Petit Puy}}}} 
+        child{node[anchor=south west]{\enquote{je suis à une altitude
+              supérieure à la \emph{crête du Petit Puy}}}} 
+      }
+    };
+  \end{tikzpicture}
+\end{quote}
+
+Comme le montre cette longue énumération, \emph{le processus de
+  décomposition,} même lorsqu'il est appliqué à un petit
+\emph{ensemble d'indices de localisation} (ici deux), peut générer de
+nombreux \emph{indices de localisation décomposés,} qu'il est
+difficile d'énumérer. Nous sommes cependant convaincus que les apports
+permis par cette approche (\eg spatialisation indépendante,
+décomposition sémantique) compensent la multiplication des
+\emph{indices de localisation.}
+
+\subsection{La phase de \emph{spatialisation}}
+
+Une fois que les \emph{indices de localisation} ont été entièrement
+décomposés il est possible de procéder à leur \emph{spatialisation.}
+Comme nous expliquions précédemment, la phase de spatialisation
+consiste à transformer un \emph{indice de localisation} en une
+\emph{zone de localisation compatible.}
+% 
+Il s'agit de la seule étape de notre méthode qui ne modifie pas le
+nombre d'objets traité (la phase de \emph{décomposition} les augmente
+et celle de \emph{fusion} les réduit) et qui crée un nouveau type de
+données, des objets géographiques sous la forme de \emph{zones de
+  localisation compatibles.}
+
+Pour construire la \emph{zone de localisation compatible}
+correspondant à un \emph{indice de localisation} donné il est
+nécessaire d'identifier les positions pour lesquelles \emph{l'indice
+  de localisation} est vrai :
+
+\begin{equation}
+  \text{\textsf{ZLC}}_i = \{p \ |\ \text{\textsf{S}}_i(p) \wedge p ∈ \text{\textsf{ZIR}}\}
+\end{equation}
+
+Avec \(\text{\textsf{ZLC}}_i\) la \emph{zone de localisation
+  compatible} pour l'indice de localisation $i$, \(S_i\) la fonction
+de \emph{spatialisation} de ce même indice et \(p\) un point
+appartenant à la \emph{zone initiale de recherche,}
+\(\text{\textsf{ZIR}}\), elle-même un sous-ensemble de
+\(\mathbb{R}^2\), défini par le secouriste. L'objectif de la fonction
+de \emph{spatialisation} \(S_i\) est de vérifier si le point $p$ est
+situé dans la \emph{zone de localisation compatible,} \ie que cette
+position valide l'indice de localisation \(i\). Toute la difficulté de
+la phase de \emph{spatialisation} tien en la définition de cette
+fonction de spatialisation \(S\), dont la méthode de définition sera
+présentée dans le \autoref{chap:07}.
+
+Au terme de la phase de \emph{spatialisation} on dispose d'autant de
+\emph{zones de localisation} qu'il y a d'indices au terme de la
+\emph{phase de décomposition.} Ces différentes \emph{zones de
+  localisation} contiennent l'ensemble des informations produites par
+notre méthode, mais leur (potentiel) grand nombre rend leur
+exploitation directe, sinon impossible délicate, il est donc
+nécessaire de les fusionner pour obtenir une seule zone, la ZLP.
+
+\subsection{La phase de fusion}
+
+La \emph{phase de fusion} des \emph{zones de localisation} se
+décompose en trois étapes, chacune analogue à l'une des étapes de la
+\emph{phase de décomposition} (cf. \autoref{fig:methodo_1}). Cette
+phase permet de fusionner les \emph{zones de localisation compatibles}
+créées lors de la \emph{spatialisation} en une seule, la zone de
+localisation probable, correspondant à l'ensemble des indices de
+localisation. La particularité de cette phase est que la sémantique de
+fusion varie en fonction de l'étape. 
+
+
+
+De toutes les étapes de notre méthodologie, la phase de \emph{fusion}
+est, de loin, la plus simple. Son objectif est de combiner les
+différentes \emph{zones de localisation compatibles} créées lors de la
+phase de \emph{spatialisation} en une seule, la \emph{zone de
+  localisation probable} (ZLP).
+
+Ce principe sera détaillé dans le \autoref{chap:08}
+
+
+\subsubsection{La \emph{fusion} des \emph{relations de localisation
+    atomiques}}
+
+La première étape de la \emph{phase de fusion} est la \emph{fusion}
+des \emph{zones de localisation compatibles} issues de la
+\emph{spatialisation.} Cette étape répond donc à l'étape de
+\emph{décomposition des relations de localisation} de \emph{la phase
+  de décomposition,} \ie que le nombre de \emph{zones de localisation}
+en résultant est identique au nombre \emph{d'indices de localisation}
+avant la \emph{décomposition des relations de localisation}
+(cf. \autoref{fig:methodo_1}).
+
+Conformément au \emph{principe de décomposition,} les \emph{relations
+  de localisation} se décomposent en une série de \emph{relations de
+  localisation atomiques} liées par des conjonctions. Par conséquent
+pour valider une \emph{relation de localisation} il est nécessaire de
+valider toutes les \emph{relations de localisation atomiques} qui la
+composent. La méthode de \emph{fusion} des \emph{relations de
+  localisation atomiques} ne doit donc retourner que les positions
+présentes dans toutes les \emph{zones de localisations} qu'elle
+fusionne. Comme chaque \emph{zone de localisation} peut être
+formalisée comme l'ensemble des points validant une \emph{relation de
+  localisation} on peut construire la \emph{zone de localisation
+  compatible} correspondant à une \emph{relation de localisation}
+composée en intersectant les \emph{zones de localisation compatibles}
+correspondant à la \emph{spatialisation} des \emph{relations de
+  localisation atomiques.} Ainsi, la \emph{zone de localisation}
+correspondant à la fusion de plusieurs \emph{relations de
+  localisation} correspond à :
+
+\begin{equation}
+  \text{\textsf{ZLC}}_{o_i} = ⋂ \text{\textsf{ZLC}}_{rsa_i}
+\end{equation}
+
+Avec \(\text{\textsf{ZLC}}_{o_i}\), la \emph{zone de localisation
+  compatible} correspondant à \emph{l'objet de référence} \(oᵢ\) et
+\(\text{\textsf{ZLC}}_{rsa_i}\) la \emph{zone de localisation
+  compatible} correspondant à la \emph{spatialisation} de la
+\emph{relation de localisation atomique} \(i\). Conformément à cette
+formalisation, si l'on reprend l'exemple de \emph{l'ensemble d'indices
+  de localisation :} \enquote{je suis proche du \emph{Pic de Jean Ray}
+  et suis sur une crête}, on obtiendra, après l'étape de \emph{fusion}
+des \emph{relations de localisation atomiques,} sept \emph{zones de
+  localisation compatibles,} correspondant aux \emph{indices de
+  localisation :} \enquote{je suis proche du \emph{Pic de Jean Ray}},
+\enquote{je suis sur la \emph{crête de Roche Motte}}, \enquote{je suis
+  sur la \emph{crête de Font Froide}}, \enquote{je suis sur la
+  \emph{crête de Serre Chapelle}}, \enquote{je suis sur la \emph{crête
+    des Barres}}, et \enquote{je suis sur la \emph{crête du Petit
+    Puy}}.
+
+\begin{figure}
+  \centering
+  \input{../figures/ex_fus_rsa.tex}
+  \caption{sq}
+  \label{fig:ex_fus_rsa}
+\end{figure}
+
+\subsubsection{La \emph{fusion} des \emph{objets de référence
+    indéfinis}}
+
+La seconde étape de cette phase est la \emph{fusion} des différents
+\emph{objets de référence} candidats. Cette étape répond à
+\emph{l'étape de décomposition des objets de référence indéfinis.}
+Comme nous l'indiquions lors de la présentation de la \emph{phase de
+  décomposition,} les étapes de \emph{décomposition des relations de
+  localisation} et de décomposition des \emph{objets de référence
+  indéfinies} sont interchangeables et il en va de même pour les
+étapes de \emph{fusion} leur correspondant. Ainsi cette étape de
+fusion pourrait être interchangée avec l'étape, précédemment
+présentée, de \emph{fusion des relations de localisation atomiques,}
+sans que cela n'impacte le résultat de la modélisation.
+
+La \emph{fusion des objets de référence indéfinis} se distingue des
+autres étapes de \emph{fusion} sa forme conjonctive. Comme nous
+l'indiquions lors de la présentation de \emph{l'étape de décomposition
+  des objets de référence indéfinis,} les différents \emph{objets de
+  référence} candidats (pour un même indice de localisation) sont
+concurrents. Ainsi pour que \emph{l'indice de localisation spatialisé}
+soit valable en une position il est nécessaire qu'il soit vrai pour au
+moins un des \emph{objets de référence} et non pour tous (comme c'est
+le cas lors de la \emph{fusion} des \emph{relations de localisation
+  atomiques}). La \emph{zone de localisation compatible} correspondant
+à un \emph{indice de localisation} dont \emph{l'objet de référence}
+est indéfini peut, par conséquent, être construite en faisant l'union
+de l'ensemble des \emph{zones de localisation compatibles} construites
+en \emph{spatialisant} l'indice de localisation pour chaque objet de
+référence candidat :
+
+\begin{equation}
+  \text{\textsf{ZLC}}_{i} = ⋃_{i \in I} \text{\textsf{ZLC}}_{o_i}
+\end{equation}
+
+Avec \(\text{\textsf{ZLC}}_{i}\) la \emph{zone de localisation
+  compatible} correspondant à un \emph{indice de localisation} \(i\)
+et \(\text{\textsf{ZLC}}_{o_i}\) la \emph{zone de localisation
+  compatible} pour l'objet \(i\) de l'indice de localisation \(i\).
+Appliqué à l'exemple précédent on obtient, au terme de cette étape de
+\emph{fusion,} deux \emph{zones de localisation compatibles.} La
+première (inchangée depuis la \emph{spatialisation}) correspond à
+\emph{l'indice de localisation} \enquote{je suis proche du \emph{Pic
+    de Jean Ray}}. Comme \emph{l'objet de référence} est unique aucune
+\emph{fusion} n'est à effectuer, contrairement au second \emph{indice
+  de localisation,} \enquote{je suis sur une crête} qui correspond à
+l'union des \emph{zones de localisation compatibles} correspondant à
+chacune des une des crêtes candidates.
+
+\subsubsection{La \emph{fusion} des \emph{indices de localisation}}
+
+La dernière étape de \emph{la phase de fusion} est celle de la
+\emph{fusion} des \emph{indices de localisation} en vue de construire
+la \emph{zone de localisation probable,} \ie le résultat final de
+notre méthode. Contrairement aux \emph{zones de localisation
+  compatibles,} la \emph{zone de localisation probable} est toujours
+unique, même si elle peut être fragmentée ou vide (mais ce cas traduit
+une erreur dans la description de la position, dans sa saisie ou sa
+\emph{spatialisation}).
+
+Comme lors de l'étape de \emph{fusion} des \emph{relations de
+  localisation atomiques,} les différentes \emph{zones de localisation
+  compatibles} sont \emph{fusionnées} à l'aide d'une intersection
+ensembliste. En effet, la \emph{zone de localisation probable} est
+définie comme l'ensemble des positions appartenant à toutes les
+\emph{zones de localisation compatibles.} On peut donc exprimer la
+zone de localisation probable de la manière suivante :
+
+\begin{equation}
+  \text{\textsf{ZLP}}_I = ⋂_{i \in I} \text{\textsf{ZLC}}ᵢ
+\end{equation}
+
+Avec \textsf{ZLP} la \emph{zone de localisation probable,} \(I\),
+l'ensemble des \emph{indices de localisation} pris en compte, \(i\) un
+\emph{indice de localisation} et \textsf{ZLP} un \emph{zone de
+  localisation compatible.} Ainsi, dans notre exemple, la \emph{zone
+  de localisation probable} correspond à \emph{l'intersection} de deux
+\emph{zones de localisation compatibles,} celle construite à partir de
+\emph{l'indice de localisation} \enquote{je suis proche du \emph{Pic
+    de Jean Ray}} et celle construite à partir de \emph{l'indice de
+  localisation} \enquote{je suis sur une crête}.
+
+\begin{landscape}
+  \begin{figure}[H]
+    \centering
+    \input{../figures/methodologie.tex}
+    \caption{Organisation de la méthode}
+    \label{fig:methodo_1}
+  \end{figure}
+\end{landscape}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../../../../main"
+%%% End:
