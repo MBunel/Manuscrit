@@ -157,6 +157,8 @@ secouriste n'a pas à manipuler directement les \emph{relations de
 lors de cette étape. Ce processus sera détaillé plus longuement dans
 le \autoref{chap:05}.
 
+\subsubsection{Illustration de la phase de décomposition}
+
 Pour illustrer l'ensemble de la \emph{phase de décomposition,}
 imagions que \emph{l'ensemble des indices de localisation} (\(I\)
 saisi par un secouriste à partir de la description suivante :
@@ -362,18 +364,29 @@ Avec \(\text{\textsf{ZLC}}_{o_i}\), la \emph{zone de localisation
   compatible} correspondant à \emph{l'objet de référence} \(oᵢ\) et
 \(\text{\textsf{ZLC}}_{rsa_i}\) la \emph{zone de localisation
   compatible} correspondant à la \emph{spatialisation} de la
-\emph{relation de localisation atomique} \(i\). Conformément à cette
-formalisation, si l'on reprend l'exemple de \emph{l'ensemble d'indices
-  de localisation :} \enquote{je suis proche du \emph{Pic de Jean Ray}
-  et suis sur une crête}, on obtiendra, après l'étape de \emph{fusion}
-des \emph{relations de localisation atomiques,} sept \emph{zones de
-  localisation compatibles,} correspondant aux \emph{indices de
-  localisation :} \enquote{je suis proche du \emph{Pic de Jean Ray}},
-\enquote{je suis sur la \emph{crête de Roche Motte}}, \enquote{je suis
-  sur la \emph{crête de Font Froide}}, \enquote{je suis sur la
-  \emph{crête de Serre Chapelle}}, \enquote{je suis sur la \emph{crête
-    des Barres}}, et \enquote{je suis sur la \emph{crête du Petit
-    Puy}}.
+\emph{relation de localisation atomique} \(i\).
+
+La \autoref{fig:ex_fus_rsa} propose une illustration de cette étape de
+\emph{fusion}. On dispose de 11 \emph{zones de localisation
+  compatibles,} issues de la la \emph{spatialisation} indépendante de
+tous les \emph{indices de localisation} décomposés. Lors de la
+\emph{fusion} des \emph{relations de localisation atomiques,} les
+\emph{zones de localisation compatibles} issues de la
+
+Conformément à cette formalisation, si l'on reprend l'exemple de
+\emph{l'ensemble d'indices de localisation :} \enquote{je suis proche
+  du \emph{Pic de Jean Ray} et suis sur une crête},
+
+
+on obtiendra,
+après la \emph{fusion} des \emph{relations de localisation atomiques,}
+sept \emph{zones de localisation compatibles,} correspondant aux
+\emph{indices de localisation :} \enquote{je suis proche du \emph{Pic
+    de Jean Ray}}, \enquote{je suis sur la \emph{crête de Roche
+    Motte}}, \enquote{je suis sur la \emph{crête de Font Froide}},
+\enquote{je suis sur la \emph{crête de Serre Chapelle}}, \enquote{je
+  suis sur la \emph{crête des Barres}}, et \enquote{je suis sur la
+  \emph{crête du Petit Puy}}.
 
 \begin{figure}
   \centering
@@ -421,6 +434,7 @@ Avec \(\text{\textsf{ZLC}}_{i}\) la \emph{zone de localisation
   compatible} correspondant à un \emph{indice de localisation} \(i\)
 et \(\text{\textsf{ZLC}}_{o_i}\) la \emph{zone de localisation
   compatible} pour l'objet \(i\) de l'indice de localisation \(i\).
+
 Appliqué à l'exemple précédent on obtient, au terme de cette étape de
 \emph{fusion,} deux \emph{zones de localisation compatibles.} La
 première (inchangée depuis la \emph{spatialisation}) correspond à
@@ -464,12 +478,14 @@ zone de localisation probable de la manière suivante :
 Avec \textsf{ZLP} la \emph{zone de localisation probable,} \(I\),
 l'ensemble des \emph{indices de localisation} pris en compte, \(i\) un
 \emph{indice de localisation} et \textsf{ZLP} un \emph{zone de
-  localisation compatible.} Ainsi, dans notre exemple, la \emph{zone
-  de localisation probable} correspond à \emph{l'intersection} de deux
-\emph{zones de localisation compatibles,} celle construite à partir de
-\emph{l'indice de localisation} \enquote{je suis proche du \emph{Pic
-    de Jean Ray}} et celle construite à partir de \emph{l'indice de
-  localisation} \enquote{je suis sur une crête}.
+  localisation compatible.}
+
+Ainsi, dans notre exemple, la \emph{zone de localisation probable}
+correspond à \emph{l'intersection} de deux \emph{zones de localisation
+  compatibles,} celle construite à partir de \emph{l'indice de
+  localisation} \enquote{je suis proche du \emph{Pic de Jean Ray}} et
+celle construite à partir de \emph{l'indice de localisation}
+\enquote{je suis sur une crête}.
 
 \begin{figure}
   \centering
