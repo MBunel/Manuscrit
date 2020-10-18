@@ -1,3 +1,14 @@
+Les \emph{principes de modélisation} décrits, nous allons à présent
+formaliser notre méthode de construction de \emph{zones de
+  localisation probables}. L'objectif n'est cependant pas d'en
+présenter tous les aspects, mais d'en décrire le fonctionnement global
+et les interactions entre les différentes phases de la méthode. Ainsi
+les considérations les plus avancées, comme la prise en compte de
+\emph{l'incertitude} ou de \emph{l'imprécision,} ou les points
+spécifiques à une phase particulière de la méthodologie seront
+détaillés dans des chapitres dédiés. Ce chapitre ne se destine donc
+qu'à présenter le socle de notre méthode.
+
 Dans le \autoref{chap:02} nous ébauchions une méthode de construction
 d'une \emph{zone de localisation probable} à partir \emph{d'une
   description de position,} en deux étapes : la \emph{spatialisation}
@@ -9,30 +20,21 @@ ajoutant de nouvelles étapes, ne pouvant être distinguées avec ces
 anciennes définitions. C'est pourquoi ces dernières seront complétées
 et revues au fur et à mesure de cette partie.
 
-Nous allons à présent formaliser notre méthode de construction de
-\emph{zones de localisation probables}. L'objectif n'est cependant pas
-d'en présenter tous les aspects, mais d'en décrire le fonctionnement
-global et les interactions entre les différentes phases de la
-méthode. Ainsi les considérations les plus avancées, comme la prise en
-compte de \emph{l'incertitude} ou de \emph{l'imprécision,} ou les
-points spécifiques à une phase particulière de la méthodologie seront
-détaillés dans des chapitres dédiés. Ce chapitre ne se destine donc qu'à
-présenter le socle de notre méthode.
-
-La méthode que nous proposons (et dont la \autoref{fig:methodo_1}
-présente une synthèse visuelle) est décomposable en trois phases, la
-\emph{décomposition,} la \emph{spatialisation} et la \emph{fusion.}
-
-\tdi{Est-ce que ce ne serait pas mieux d'ajouter ici la formalisation
-  des indices de localisation (originalement prévue pour le chapitre
-  suivant ?}
+La méthode que nous proposons est décomposable en trois phases, la
+\emph{décomposition,} la \emph{spatialisation} et la \emph{fusion,}
+elles mêmes composées de plusieurs étapes. La \autoref{fig:methodo_1}
+présente une synthèse de l'ensemble de cette méthode.
 
 \subsection{La phase de \emph{décomposition}}
 
-La phase de \emph{décomposition} (détaillé dans le \autoref{chap:05})
+La phase de \emph{décomposition} (détaillée dans le \autoref{chap:05})
 est un ensemble de trois étapes permettant de passer d'un ensemble
 \emph{d'indices de localisation} à un ensemble décomposé de ces
-indices, prêts à être \emph{spatialisés.}
+\emph{indices,} prêts à être \emph{spatialisés.} Chacune des étapes de
+la phase de \emph{décomposition} produit des nouveaux \emph{indices de
+  localisation,} les étapes de cette phase sont donc interchangeables,
+sans que cela n'influe sur le résultat final, à l'exception de la
+première étape qui ne peut être effectuée qu'en premier.
 
 \subsubsection{La décomposition de \emph{l'ensemble des indices de
     localisation}}
@@ -78,13 +80,6 @@ ainsi de deux \emph{indices de localisation} (\enquote{je suis proche
 indépendamment transmis à l'étape suivante de décomposition.
 
 \subsubsection{La décomposition des \emph{objets de référence indéfinis}}
-
-Contrairement à la première étape de \emph{la phase de décomposition,}
-la seconde et la troisième phase peuvent être interverties, sans que
-cela n'impacte la modélisation. L'ordre de présentation que nous
-utilisons ici correspond à celui que nous avons implémenté
-(cf. \autoref{chap:08}), mais également à une progression que nous
-estimons plus simple à présenter.
 
 Les \emph{indices de localisation} contiennent toujours un (ou
 plusieurs, si la relation de localisation est n-aire) \emph{objet de
