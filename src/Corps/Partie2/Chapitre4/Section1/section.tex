@@ -308,19 +308,24 @@ approche, mais elle démontre que la \emph{décomposition} n'est pas une
 
 \subsubsection{Autonomie de la \emph{spatialisation}}
 
-Un autre principe que nous souhaitons développer est celui de la
-séparation maximale des étapes du processus.
+La création d'une \emph{zone de localisation probable} à partir d'un
+ensemble \emph{d'indices de localisation,} tels que \enquote{Je vois
+  un lac et je suis sur un chemin}, nécessite deux étapes, la
+\emph{spatialisation} des \emph{indices de localisation} () et la
+\emph{fusion} des \emph{zones de localisation compatibles} en
+résultant. Comme nous l'indiquions dans le \autoref{chap:02} ces deux
+étapes sont à la base de notre méthode.
 
-Comme nous l'expliquions dans le \autoref{chap:02} deux étapes sont
-nécessaires pour transformer une position décrite en une \emph{zone de
-  localisation probable,} la \emph{spatialisation} et la
-\emph{fusion.} Mais ces deux étapes peuvent être combinées
-différemment.
 
-Une première solution consiste à \enquote{chainer} la
-\emph{spatialisation} des différents \emph{indices de localisation,}
-comme on peut le voir sur la figure \ref{fig:comp_approches_lin}. Avec
-cette approche les différentes \emph{zones de localisation
+, il est
+possible de les combiner de manière différente.
+
+Une première solution, illustrée par la figure
+\ref{fig:comp_approches_lin}, consiste à les \enquote{chainer}, de
+manière à ce que le résultat de la \emph{spatialisation} d'un
+\emph{indice} réduise la zone de recherche de \emph{l'indice} suivant.
+%
+Avec cette approche les différentes \emph{zones de localisation
   compatibles} sont créées les unes à la suite des autres, ainsi la
 zone de recherche en entrée de chaque étape de \emph{spatialisation}
 dépend des \emph{spatialisations} précédentes. Avec cette approche,
