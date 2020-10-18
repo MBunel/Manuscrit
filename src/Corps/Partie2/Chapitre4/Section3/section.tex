@@ -125,23 +125,21 @@ décomposition n'est pas toujours nécessaire, \emph{la relation de
   localisation utilisée} pouvant être atomique (\eg
 \enquote{proche}). La principale différence entre cette étape et les
 précédentes est qu'il est nécessaire de disposer d'une information
-supplémentaire pour savoir comment l'effectuer. En effet lorsqu'un
+supplémentaire pour savoir comment l'effectuer. En effet, lorsqu'un
 ensemble d'indice de localisation nous est transmis, les différents
 \emph{indices de localisation} qui le composent sont déjà identifiés,
 puisque saisis tels quels par le secouriste, de la même manière les
-différents \emph{objets de référence.} Par conséquent, les deux
-premières étapes de la \emph{phase de décomposition} ne présentent pas
-de difficultés particulières, contrairement à la \emph{décomposition
-  des relations de localisation.} En effet note souhait est de
-permettre au secouriste de sélectionner la \emph{relation de
-  localisation} correspondant à la description du requérant à partir
-d'une liste pré-définie de \emph{relations de localisation}
-(cf. principe de modélisation explicite des connaissances). Ainsi le
-secouriste n'a pas à manipuler directement les \emph{relations de
-  localisation atomiques.} Il est donc nécessaire de connaitre la
-\emph{décomposition des relations de localisation} et de s'y référer
-lors de cette étape. Ce processus sera détaillé plus longuement dans
-le \autoref{chap:05}.
+différents \emph{objets de référence,} mais contrairement à la
+\emph{décomposition des relations de localisation.} En effet, notre
+souhait est de permettre au secouriste de sélectionner la
+\emph{relation de localisation} correspondant à la description du
+requérant à partir d'une liste pré-définie de \emph{relations de
+  localisation} (cf. principe de modélisation explicite des
+connaissances). Ainsi le secouriste n'a pas à manipuler directement
+les \emph{relations de localisation atomiques.} Il est donc nécessaire
+de connaitre la \emph{décomposition des relations de localisation} et
+de s'y référer lors de cette étape. Ce processus sera détaillé plus
+longuement dans le \autoref{chap:05}.
 
 \subsubsection{Illustration de la phase de décomposition}
 
@@ -294,23 +292,19 @@ nécessaire de les fusionner pour obtenir une seule zone, la ZLP.
 
 La \emph{phase de fusion} des \emph{zones de localisation} se
 décompose en trois étapes, chacune analogue à l'une des étapes de la
-\emph{phase de décomposition} (cf. \autoref{fig:methodo_1}). Cette
-phase permet de fusionner les \emph{zones de localisation compatibles}
-créées lors de la \emph{spatialisation} en une seule, la zone de
-localisation probable, correspondant à l'ensemble des indices de
-localisation. La particularité de cette phase est que la sémantique de
-fusion varie en fonction de l'étape. 
-
-
+\emph{phase de décomposition,} comme indiqué par des traits pointillés
+sur la \autoref{fig:methodo_1}. Cette phase permet de fusionner les
+\emph{zones de localisation compatibles} créées lors de la
+\emph{spatialisation} en une seule, la zone de localisation probable,
+correspondant à l'ensemble des indices de localisation. La sémantique
+de chaque étape de fusion et l'approche proposée seront détaillées
+dans le \autoref{chap:08}
 
 De toutes les étapes de notre méthodologie, la phase de \emph{fusion}
 est, de loin, la plus simple. Son objectif est de combiner les
 différentes \emph{zones de localisation compatibles} créées lors de la
 phase de \emph{spatialisation} en une seule, la \emph{zone de
-  localisation probable} (ZLP).
-
-Ce principe sera détaillé dans le \autoref{chap:08}
-
+  localisation probable} (\ac{zlp}).
 
 \subsubsection{La \emph{fusion} des \emph{relations de localisation
     atomiques}}
@@ -326,7 +320,7 @@ avant la \emph{décomposition des relations de localisation}
 
 Conformément au \emph{principe de décomposition,} les \emph{relations
   de localisation} se décomposent en une série de \emph{relations de
-  localisation atomiques} liées par des conjonctions. Par conséquent
+  localisation atomiques} liées par des conjonctions. Par conséquent,
 pour valider une \emph{relation de localisation} il est nécessaire de
 valider toutes les \emph{relations de localisation atomiques} qui la
 composent. La méthode de \emph{fusion} des \emph{relations de
