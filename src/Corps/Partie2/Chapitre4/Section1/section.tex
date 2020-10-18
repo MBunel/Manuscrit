@@ -308,9 +308,9 @@ approche, mais elle démontre que la \emph{décomposition} n'est pas une
 
 \subsubsection{Autonomie de la \emph{spatialisation}}
 
-La création d'une \emph{zone de localisation probable} à partir d'un
-ensemble \emph{d'indices de localisation,} tels que \enquote{Je vois
-un lac et je suis sur un chemin}, nécessite deux étapes :
+Dans le \autoref{chap:02} nous indiquions que, la création d'une
+\emph{zone de localisation probable} à partir d'un ensemble
+\emph{d'indices de localisation,} nécessitait deux étapes successives:
 % 
 \begin{enumerate*}[label=(\alph*)]
 \item la \emph{spatialisation} des \emph{indices de localisation} et
@@ -318,37 +318,41 @@ un lac et je suis sur un chemin}, nécessite deux étapes :
 résultant.
 \end{enumerate*}
 % 
-Comme nous l'indiquions dans le \autoref{chap:02} ces deux étapes sont
-à la base de notre méthode.
+Bien que ces deux étapes soient indispensables, elles peuvent être
+combinées de différentes manières. Une première solution, illustrée
+par la figure \ref{fig:comp_approches_lin}, consiste à
+\enquote{chainer} les \emph{spatialisations,} de manière à ce que la
+\emph{zone de localisation compatible} résultant de la
+\emph{spatialisation} d'un \emph{indice} soit la \emph{zone initiale
+  de recherche} du \emph{second indice de localisation.} Cette
+approche pourrait être qualifiée de soustractive, dans la mesure où
+les positions n'appartenant par à la \emph{zone de localisation
+  probable} sont retirées au fur et à mesure des
+\emph{spatialisations,} jusqu'à l'obtention de la \ac{zlp}. Les
+différentes \emph{zones de localisation compatibles} sont donc créées
+les unes à la suite des autres, ce qui a pour effet de lier
+implicitement les résultats des différentes \emph{spatialisations.}
+Avec cette approche, l'opération de \emph{fusion} est implicite, elle
+s'opère, en partie, à chaque nouvelle \emph{spatialisation,} puisque
+les zones ne correspondant pas aux \emph{indices de localisation} sont
+retirées peu à peu. La \emph{zone de localisation probable} (en bleu
+sur la figure \ref{fig:comp_approches}) est obtenue une fois que l'on
+a \emph{spatialisé} tous les \emph{indices de localisation.} Cette
+approche à l'avantage d'être simple à concevoir et à développer, mais
+elle a un défaut majeur, la propagation des erreurs. À cause de
+l'enchainement des étapes de \emph{spatialisation,} les potentielles
+erreurs de \emph{spatialisation} peuvent modifier le résultat des
+\emph{spatialisations} ultérieures. Par exemple, 
+
+Ainsi, si un des \emph{indices de
+  localisation} est mal \emph{spatialisé}, que ce soit à cause de la
+méthode utilisée ou d'une mauvaise description, cela se répercute sur
+toutes les \emph{spatialisations} ultérieures.
 
 
-, il est
-possible de les combiner de manière différente.
 
-Une première solution, illustrée par la figure
-\ref{fig:comp_approches_lin}, consiste à les \enquote{chainer}, de
-manière à ce que le résultat de la \emph{spatialisation} d'un
-\emph{indice} réduise la zone de recherche de \emph{l'indice} suivant.
-%
-Avec cette approche les différentes \emph{zones de localisation
-  compatibles} sont créées les unes à la suite des autres, ainsi la
-zone de recherche en entrée de chaque étape de \emph{spatialisation}
-dépend des \emph{spatialisations} précédentes. Avec cette approche,
-l'opération de \emph{fusion} est implicite, elle s'opère, en partie, à
-chaque nouvelle \emph{spatialisation,} puisque les zones ne
-correspondant pas aux \emph{indices de localisation} sont retirées peu
-à peu. La \emph{zone de localisation probable} (en bleu sur la figure
-\ref{fig:comp_approches}) est obtenue une fois que l'on a
-\emph{spatialisé} tous les \emph{indices de localisation.} Cette
-approche est la première que nous ayons envisagée. Elle a pour
-avantage d'être simple à concevoir et à développer. Cependant cette
-approche à un problème majeur. À cause de l'enchainement des étapes de
-\emph{spatialisation} les erreurs se répercutent d'une étape à
-l'autre. Ainsi, si un des \emph{indices de localisation} est mal
-\emph{spatialisé}, que ce soit à cause de la méthode utilisée ou d'une
-mauvaise description, cela se répercute sur toutes les
-\emph{spatialisations} ultérieures. La moindre correction impose donc
-de refaire l'ensemble des traitements.
+La moindre correction
+impose donc de refaire l'ensemble des traitements.
 
 Une seconde solution, plus robuste, consiste à effectuer l'ensemble
 des opérations de \emph{spatialisation} en parallèle, comme le montre
