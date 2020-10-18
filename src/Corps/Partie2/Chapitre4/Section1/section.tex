@@ -342,7 +342,21 @@ approche à l'avantage d'être simple à concevoir et à développer, mais
 elle a un défaut majeur, la propagation des erreurs. À cause de
 l'enchainement des étapes de \emph{spatialisation,} les potentielles
 erreurs de \emph{spatialisation} peuvent modifier le résultat des
-\emph{spatialisations} ultérieures. Par exemple, 
+\emph{spatialisations} ultérieures. Imaginons par exemple que l'on
+souhaite construire la \ac{zlp} correspondant à \emph{l'indice de
+  localisation} : \enquote{Je suis dans une forêt, près du refuge.} Si
+l'on décide de commencer par \emph{spatialiser} \emph{l'indice de
+  localisation} : \enquote{Je suis dans une forêt} on obtiendra une
+\emph{zone de localisation compatible} (qui correspond à la seconde
+étape de la figure \ref{fig:comp_approches_lin}) réduisant l'aire de
+recherche. La \emph{spatialisation} du second \emph{indice de
+  localisation} consistera donc à chercher les positions qui
+correspondent à \emph{l'indice de localisation} \enquote{Je suis
+  proche du refuge} dans cette zone réduite (\ie la troisième étape du
+la figure \ref{fig:comp_approches_lin}). Le problème de la
+répercussion des erreurs se pose si le résultat de la première
+\emph{spatialisation} est faux, (\eg une des forêts pouvant faire
+office \emph{d'objet de référence} n'est pas prise en compte).
 
 Ainsi, si un des \emph{indices de
   localisation} est mal \emph{spatialisé}, que ce soit à cause de la
