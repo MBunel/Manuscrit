@@ -363,22 +363,21 @@ cas de figure sont alors possibles, soit la \emph{zone de
   faux positifs.}, soit trop réduite \footnote{C'est-à-dire que
   certaines de positions retenues sont de faux
   négatifs.}\multiplefootnoteseparator \footnote{Ce qui est, par
-  exemple, le résultat de l'oubli d'un \emph{objet de
-    référence.}}. Dans le premier cas, la \emph{zone de localisation
-  compatible} résultant de la \emph{spatialisation} du second
-\emph{indice de localisation} sera, potentiellement, réduite, voir
-vide. Dans le second cas 
-
-
-Ainsi, si un des \emph{indices de
-  localisation} est mal \emph{spatialisé}, que ce soit à cause de la
-méthode utilisée ou d'une mauvaise description, cela se répercute sur
-toutes les \emph{spatialisations} ultérieures.
-
-
-
-La moindre correction
-impose donc de refaire l'ensemble des traitements.
+  exemple, le résultat de l'oubli d'un \emph{objet de référence.}}.
+Dans le premier cas, la \emph{spatialisation} du second \emph{indice
+  de localisation} sera effectuée dans une zone plus étendue que
+nécessaire, ce qui peut avoir pour effet de produire une \emph{zone de
+  localisation probable} contenant des positions erronées. Le second
+cas est plus problématique, puisque la \emph{spatialisation} du second
+\emph{indice de localisation} est effectuée à partir d'une zone trop
+réduite, des positions devant appartenir à la \emph{zone de
+  localisation probable} pourront donc être ignorées, dont la position
+de victime\footnote{Ces deux cas de figure correspondent à des
+  erreurs, respectivement, de type II et I.}. Ainsi, si un des
+\emph{indices de localisation} est mal \emph{spatialisé}, que ce soit
+à cause de la méthode utilisée ou d'une mauvaise description, cela se
+répercute sur toutes les \emph{spatialisations} ultérieures et la
+moindre correction impose donc de refaire l'ensemble des traitements.
 
 Une seconde solution, plus robuste, consiste à effectuer l'ensemble
 des opérations de \emph{spatialisation} en parallèle, comme le montre
