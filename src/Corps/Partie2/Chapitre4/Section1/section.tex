@@ -388,14 +388,13 @@ connaitre le résultat de la \emph{spatialisation} d'un \emph{indice de
 précédemment utilisée : \enquote{Je suis dans une forêt, près du
   refuge}, contient deux \emph{indices de localisation,} qui,
 regroupés participent à décrire une même position. Mais ces deux
-\emph{indices} conservent leur sens s'il sont énoncés
-séparément. Dire, \enquote{Je suis suis dans une forêt} est une
-description valide, même si moins précise.
-
-
-consiste à effectuer l'ensemble
-des opérations de \emph{spatialisation} en parallèle, comme le montre
-la figure \ref{fig:comp_approches_sep}. Avec cette approche la
+\emph{indices} conservent leur sens s'ils sont énoncés
+séparément. Dire, \enquote{Je suis dans une forêt} ou \enquote{je suis
+  près du refuge} est une description valide, même si moins précise
+que \emph{l'indice de localisation} initial. Cette indépendance des
+\emph{indices} permet de mettre en place une \emph{spatialisation}
+parallèle, comme le montre la figure
+\ref{fig:comp_approches_sep}. Avec cette approche la
 \emph{spatialisation} des différents \emph{indices de localisation}
 est effectuée séparément et leur \emph{fusion} est effectuée dans un
 second temps. Comme pour la démarche \enquote{chainée} une
@@ -427,10 +426,17 @@ intermédiaires ont été conservés.
   \label{fig:comp_approches}
 \end{figure}
 
-Le principe de modélisation autonome peut, de plus, tirer parti du
-principe de décomposition précédemment présenté.
-
-% Justifier choix
+Ce principe de \emph{spatialisation} autonome n'est pas cantonné aux
+\emph{indices de localisation.} Comme nous l'avons illustré
+précédemment, certaines \emph{relations de localisation} peuvent être
+décomposées en des \emph{relations de localisation atomiques.} Ce
+processus permet de construire des nouveaux \emph{indices de
+  localisation} à partir de \emph{l'indice} initial. Ces nouveaux
+\emph{indices} conservent la propriété d'indépendance, puisque les
+\emph{relations de localisation atomiques} décrivent des concepts
+sémantiquement orthogonaux. Le principe de modélisation autonome peut
+donc être étendu aux \emph{indices de localisation} décomposés, ce qui
+le rend d'autant plus pertinent.
 
 \subsection{Principes sémantiques}
 
