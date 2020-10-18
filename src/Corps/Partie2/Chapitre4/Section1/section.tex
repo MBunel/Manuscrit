@@ -438,32 +438,37 @@ sémantiquement orthogonaux. Le principe de modélisation autonome peut
 donc être étendu aux \emph{indices de localisation} décomposés, ce qui
 le rend d'autant plus pertinent.
 
-\subsection{Principes sémantiques}
+\subsubsection{Le raisonnement logique en monde ouvert}
 
-
-
-\subsubsection{Modélisation non bivalente}
-% \texttt{Ref images EDA}
-
-\tdi{Dans l'article de la RIG j'avais présenté la modélisation non
-  bivalente comme un principe de modélisation, mais j'en ai déjà parlé
-dans les objectifs scientifiques, du coup j'ai choisi de ne pas faire
-cette partie (j'ai mis le titre pour info). Je ne sais pas ce que vous
-en pensez}
-
-
-% La présentation de la méthode de modélisation de l'imprécision choisie
-% sera abordée dans le chapitre suivant (\autoref{chap:05}).
-
-\subsubsection{Le raisonnement en monde ouvert}
-
-
-Comme le montre la figure \ref{fig:md_ferme}, dans \emph{l'hypothèse
-  du monde clos} toute règle inconnue est considérée comme
-fausse. Alors que dans \emph{l'hypothèse du monde ouvert} (Figure
-\ref{fig:md_ouvert}) les règles inconnues sont considérées comme
-telles, \ie que l'on estime qu'elles peuvent être vraies, comme
-fausses.
+Le dernier des principes de modélisation que nous souhaitons fixer est
+celui du raisonnement en \emph{monde ouvert}. Ce terme, issu du monde
+de la logique formelle, désigne un cadre de raisonnement où l'on ne
+considère que l'ignorance ou l'indémontrabilité d'une règle logique
+n'implique pas sa fausseté, par opposition à l'hypothèse du
+\emph{monde clos.} La \autoref{fig:comp_md} tente d'illustrer ces deux
+hypothèses opposées. L'ensemble de toutes les assertions logiques est
+réparti entre deux ensembles, celui des assertions vraies et celui
+assertions fausses. Parmi toutes ces assertions seules certaines
+d'entre-elles nous sont connues \footnote{Où sont démontrables en un
+  temps fini}, elles forment un nouvel ensemble plus réduit, mais
+pouvant contenir des assertions vraies ou fausses, d'où
+l'intersections de ces ensembles sur les deux figures. La différence
+entre la figure \ref{fig:md_ferme}, représentant l'hypothèse du
+\emph{monde clos} et la figure \ref{fig:md_ouvert}, représentant
+l'hypothèse du \emph{monde ouvert}, réside dans la manière dont sont
+représentées les assertions inconnues, c'est-à-dire en dehors de
+l'ensemble des règles connues. Dans le premier cas elles ne peuvent
+être situées que dans l'ensemble des assertions fausses, car
+l'ensemble des assertions vraies est intégralement contenu dans
+l'ensemble des règles connues. Alors que dans la figure représentant
+l'hypothèse du \emph{monde ouvert} les assertions n'appartenant par à
+l'ensemble des assertions connues peuvent être dans l'ensemble des
+règles vraies ou des règles fausses. Ainsi, dans \emph{l'hypothèse du
+  monde clos} (figure \ref{fig:md_ferme}) toute règle inconnue est
+considérée comme fausse. Alors que dans \emph{l'hypothèse du monde
+  ouvert} (Figure \ref{fig:md_ouvert}) les règles inconnues sont
+considérées comme telles, \ie que l'on estime qu'elles peuvent être
+vraies, comme fausses.
 
 Pour illustrer la différence entre ces deux hypothèses on peut prendre
 l'exemple suivant. Imaginons que je décrive le contenu de ma
@@ -492,7 +497,7 @@ pas sa fausseté.
   \subfloat[]{
     \input{../figures/md_ferme.tex}
     \label{fig:md_ferme}
-  }\hspace{3cm}
+  }\hspace{2cm}
   \subfloat[]{
     \input{../figures/md_ouvert.tex}
     \label{fig:md_ouvert}
