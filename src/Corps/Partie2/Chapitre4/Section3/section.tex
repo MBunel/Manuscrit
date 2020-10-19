@@ -313,7 +313,7 @@ décomposition sémantique) compensent la multiplication des
 
 Une fois que les \emph{indices de localisation} ont été entièrement
 décomposés il est possible de procéder à leur \emph{spatialisation.}
-Comme nous expliquions précédemment, la phase de spatialisation
+Comme nous expliquions précédemment, la phase de \emph{spatialisation}
 consiste à transformer un \emph{indice de localisation} décomposé en
 une \emph{zone de localisation compatible.}
 % 
@@ -322,29 +322,36 @@ nombre d'objets traité (la phase de \emph{décomposition} les augmente
 et celle de \emph{fusion} les réduit) et qui crée un nouveau type de
 données, des objets géographiques sous la forme de \emph{zones de
   localisation compatibles.}
-
-
+%
+Pour construire la \emph{zone de localisation compatible}
+correspondant à un \emph{indice de localisation} donné il est
+nécessaire d'identifier les positions pour lesquelles \emph{l'indice
+  de localisation} est vrai. On peut donc imaginer une fonction
+\(\text{\textsf{S}}_{Rla}\) destinée à la \emph{spatialisation} d'une
+\emph{relation de localisation atomique} donnée. Cette fonction, que
+l'on peut définir de la manière suivante :
+%
 \begin{equation}
-  \text{\textsf{S}}_i(p, Or) = \left \{
+  \text{\textsf{S}}_{Rla}(p, o) = \left \{
     \begin{array}{l@{\,}l}
       1\ \text{si}\ p\ \text{est une \enquote{bonne position}}\\
       0\ \text{sinon}\\
     \end{array}
   \right.
 \end{equation}
-
-Pour construire la \emph{zone de localisation compatible}
-correspondant à un \emph{indice de localisation} donné il est
-nécessaire d'identifier les positions pour lesquelles \emph{l'indice
-  de localisation} est vrai. On peut alors définir la \emph{zone de
-  localisation compatible} issue de la \emph{spatialisation} d'un
-\emph{indice de localisation} décomposé \(i\) comme l'ensemble des
-positions \(p\) appartenant à la \emph{zone initiale de recherche} et
-pour lesquelles la fonction \(S_i\) est vraie.
+%
+revoie une valeur booléenne pour chaque position \(p\) indiquant si
+cette position valide la \emph{relation de localisation atomique}
+\(Rla\) par rapport à l'objet de référence \(o\). On peut alors
+définir la \emph{zone de localisation compatible} issue de la
+\emph{spatialisation} d'un \emph{indice de localisation} décomposé
+\(i\) comme l'ensemble des positions \(p\) appartenant à la \emph{zone
+  initiale de recherche} et pour lesquelles la fonction \(S_{rla}\)
+est vraie :
 
 \begin{equation}
-  \text{\textsf{ZLC}}_i = \{p \ |\ \text{\textsf{S}}_i(p, Or) \wedge p
-  ∈ \text{\textsf{ZIR}} \wedge Or ∈ i\}
+  \text{\textsf{ZLC}}_i = \{p \ |\ \text{\textsf{S}}_{Rla}(p, o) \wedge p
+  ∈ \text{\textsf{ZIR}} \wedge o ∈ i\}
 \end{equation}
 
 Avec \(\text{\textsf{ZLC}}_i\) la \emph{zone de localisation
