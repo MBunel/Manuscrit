@@ -124,18 +124,18 @@ d'union ou d'intersection non commutatif aurait pour conséquence de
 modifier le résultat de la \emph{phase de fusion} en fonction de
 l'ordre de traitement des \emph{zones de localisation
   compatibles}. Par exemple, si l'on souhaite construire la \emph{zone
-  de localisation probable} ($\text{\textsf{zlp}}$) correspondant à
+  de localisation probable} ($\text{\textsf{ZLP}}$) correspondant à
 l'ensemble \emph{d'indices de localisation} : \enquote{Je suis à côté
   d'une maison et dans une forêt}, il sera nécessaire d'identifier les
 positions situées dans les \emph{zones de localisation compatibles}
-correspondant au premier ($\text{\textsf{zlc}}_{i1}$ : \enquote{Je
-  suis à côté d'une maison.}) et au second ($\text{\textsf{zlc}}_{i2}$
+correspondant au premier ($\text{\textsf{ZLC}}_{i1}$ : \enquote{Je
+  suis à côté d'une maison.}) et au second ($\text{\textsf{ZLC}}_{i2}$
 : \enquote{Je suis dans une forêt.}) \emph{indice,} à l'aide d'un
 opérateur d'intersection. Si cet opérateur n'est pas commutatif, alors
-l'intersection de $\text{\textsf{zlc}}_{i1}$ avec
-$\text{\textsf{zlc}}_{i2}$ pourra donner un résultat différent de
-l'intersection de $\text{\textsf{zlc}}_{i2}$ avec
-$\text{\textsf{zlc}}_{i1}$. Un tel comportement est incompatible avec
+l'intersection de $\text{\textsf{ZLC}}_{i1}$ avec
+$\text{\textsf{ZLC}}_{i2}$ pourra donner un résultat différent de
+l'intersection de $\text{\textsf{ZLC}}_{i2}$ avec
+$\text{\textsf{ZLC}}_{i1}$. Un tel comportement est incompatible avec
 plusieurs des principes que nous avons définis, notamment l'autonomie
 de la \emph{spatialisation} ou le \emph{principe de décomposition,}
 qui se fondent sur l'hypothèse ---~implicite~--- d'une commutativité
