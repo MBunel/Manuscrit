@@ -92,7 +92,7 @@ concurrents en un ensemble \emph{d'indices de localisation} portant
 chacun sur un des \emph{objets de référence possible.}
 
 \begin{equation}
-  d_{Or}(i) = \{(S,Rl,or_i) \mid S \in n Rl \in , \forall or_i \in Or \} 
+  Dec_{Or}(i) = \{(S,Rl,or_i) \mid S \in , Rl \in , \forall or_i \in Or \} 
 \end{equation}
 
 \subsubsection{La décomposition des \emph{relations de localisation}}
@@ -126,8 +126,16 @@ de s'y référer lors de cette étape. Ce processus sera détaillé plus
 longuement dans le \autoref{chap:05}.
 
 \begin{equation}
-  d_{Rl}(i) = \{(S,Rla_i,Or) \mid S \in, \forall Rla_i \in Rl,  Rl \in  \} 
+  Dec_{Rl}(i) = \{(S,Rla_i,Or) \mid S \in, \forall Rla_i \in Rl,  Or \in \} 
 \end{equation}
+
+L'ensemble de la \emph{phase de décomposition} peut donc être
+formalisé de la manière suivante :
+
+\begin{equation}
+  Dec(I) = \{ i \mid i \in Dec_{Rl}(j), j \in  Dec_{Or}(k), k \in I\} 
+\end{equation}
+
 
 \subsubsection{Illustration de la phase de décomposition}
 
