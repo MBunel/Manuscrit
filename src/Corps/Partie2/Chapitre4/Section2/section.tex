@@ -96,18 +96,10 @@ toutes les \emph{instances} de type \enquote{maison} présentes dans la
 \ac{zir}. Ainsi, comme pour les \emph{relations de localisation,}
 l'objet \(Or\) n'est pas un objet individuel, mais un ensemble (non
 ordonné) \emph{d'objets} (ou de n-tuple \emph{d'objets}) \emph{de
-  référence.}
-
-
-
-Enfin
-
-On peut donc remplacer \(\) par un ensemble \emph{d'objets de
-  référence,} la définition de \emph{l'indice de localisation} est
-alors :
+  référence.} \(Or\) est donc définissable de la manière suivante :
 
 \begin{equation}
-  i = (S, Rl, \{Or_1, Or_2, \ldots, Or_n\})
+  Or = \{ x | x \wedge \forall x, |x| ≥ 1 \wedge \forall v,w \in Or^2, |v| = |w|\}
 \end{equation}
 
 Cependant cette définition n'est pas non plus satisfaisante.
