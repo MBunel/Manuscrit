@@ -65,7 +65,9 @@ de modélisation précédemment mentionné.
 
 \subsubsection{La décomposition des \emph{objets de référence indéfinis}}
 
-Comme nous l'avons 
+Comme nous l'avons indiqué lors de leur formalisation, un \emph{indice
+  de référence} peut contenir de nombreux objets de référence
+différents.
 
 Les \emph{indices de localisation} contiennent toujours un (ou
 plusieurs, si la relation de localisation est n-aire) \emph{objet de
@@ -89,6 +91,9 @@ des positions possibles.  La seconde étape de la \emph{phase de
 concurrents en un ensemble \emph{d'indices de localisation} portant
 chacun sur un des \emph{objets de référence possible.}
 
+\begin{equation}
+  d_{Or}(i) = \{(S,Rl,or_i) \mid S \in n Rl \in , \forall or_i \in Or \} 
+\end{equation}
 
 \subsubsection{La décomposition des \emph{relations de localisation}}
 
@@ -119,6 +124,10 @@ les \emph{relations de localisation atomiques.} Il est donc nécessaire
 de connaitre la \emph{décomposition des relations de localisation} et
 de s'y référer lors de cette étape. Ce processus sera détaillé plus
 longuement dans le \autoref{chap:05}.
+
+\begin{equation}
+  d_{Rl}(i) = \{(S,Rla_i,Or) \mid S \in, \forall Rla_i \in Rl,  Rl \in  \} 
+\end{equation}
 
 \subsubsection{Illustration de la phase de décomposition}
 
