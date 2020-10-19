@@ -350,7 +350,7 @@ définir la \emph{zone de localisation compatible} issue de la
 est vraie :
 
 \begin{equation}
-  \text{\textsf{ZLC}}_i = \{p \ |\ \text{\textsf{S}}_{Rla}(p, o) \wedge p
+  \text{\textsf{ZLC}}_i = \{p \mid \text{\textsf{S}}_{Rla}(p, o) \wedge p
   ∈ \text{\textsf{ZIR}} \wedge o ∈ i\}
 \end{equation}
 
@@ -364,13 +364,25 @@ phase de \emph{spatialisation} tien en la définition de cette fonction
 de spatialisation \(S\), dont la méthode de définition sera présentée
 dans le \autoref{chap:07}.
 
-Au terme de la phase de \emph{spatialisation} on dispose d'autant de
-\emph{zones de localisation} qu'il y a d'indices au terme de la
-\emph{phase de décomposition.} Ces différentes \emph{zones de
-  localisation} contiennent l'ensemble des informations produites par
-notre méthode, mais leur (potentiel) grand nombre rend leur
-exploitation directe, sinon impossible délicate, il est donc
-nécessaire de les fusionner pour obtenir une seule zone, la \ac{zlp}.
+Au terme de la phase de \emph{spatialisation} on dispose d'un grand
+ensemble de \emph{zones de localisation compatible}
+(\(\text{\textsf{ZLC}}\)), contant autant d'éléments qu'il y a
+d'indices au terme de la \emph{phase de décomposition.} Cet ensemble
+est définissable de la manière suivante :
+
+\begin{equation}
+  \text{\textsf{ZLC}} = \{\text{\textsf{ZLC}}_i \mid i \in Dec(I)\}
+\end{equation}
+
+Avec \(\text{\textsf{ZLC}}_i\) la \emph{zone de localisation
+  compatible} issue de la \emph{spatialisation} de \emph{l'indice de
+  localisation décomposé} \(i\), \(Dec\) la fonction de décomposition
+et \(I\) l'ensemble des \emph{indices de localisation.} Ces
+différentes \emph{zones de localisation} contiennent l'ensemble des
+informations produites par notre méthode, mais leur (potentiel) grand
+nombre rend leur exploitation directe, sinon impossible délicate, il
+est donc nécessaire de les fusionner pour obtenir une seule zone, la
+\ac{zlp}.
 
 \subsection{La phase de fusion}
 
@@ -421,7 +433,7 @@ correspondant à la fusion de plusieurs \emph{relations de
   localisation} correspond à :
 
 \begin{equation}
-  \text{\textsf{ZLC}}_{o_i} = ⋂ \text{\textsf{ZLC}}_{rsa_i}
+  \text{\textsf{ZLC}}_{o_i} = ⋂ \text{\textsf{ZLC}}_{Rla_i}
 \end{equation}
 
 Avec \(\text{\textsf{ZLC}}_{o_i}\), la \emph{zone de localisation
