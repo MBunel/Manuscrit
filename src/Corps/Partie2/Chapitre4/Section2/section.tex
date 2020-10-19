@@ -73,14 +73,30 @@ pour la relation \enquote{de l'autre côté de, par rapport à}. Il est
 donc nécessaire que les \emph{objets de référence} multiples soient
 représentés par un n-tuplet, par définition ordonné.
 
-On peut, cependant distinguer une autre configuration, orthogonale à
-celle des \emph{relations de localisation} \emph{n-aires,} où
-plusieurs \emph{objets de référence} sont employés. On peut en effet
-décrire une position par un \emph{objet de référence} de deux
-manières, soit en se référant à un objet nommément (\eg
+Il existe cependant une autre situation, orthogonale à la précédente,
+où plusieurs \emph{objets de référence} peuvent être employés. On
+peut, en effet, décrire une position par un \emph{objet de référence}
+de deux manières, soit en se référant à un objet nommément (\eg
 \enquote{Grenoble}, \enquote{le dôme des Écrins}), soit en le
 décrivant par sa nature (\eg \enquote{une ville}, \enquote{un
-  sommet}).
+  sommet}). Ces deux manières de désigner \emph{l'objet de référence}
+ont des implications différentes. Lorsqu'un \emph{objet} est désigné
+par son nom on se réfère à une instance donnée, le nom fait alors
+office d'identifiant unique \footnote{Des cas d’homonymie restent
+  cependant possibles, même si c'est rarement le cas aux grandes
+  échelles spatiales.} et seul un seul \emph{objet de référence} est
+contenu dans \emph{l'indice de localisation}. À l'inverse, lorsqu'un
+\emph{objet de référence} est uniquement désigné par son type on ne
+peut que rarement identifier une instance précise. Dire, toutes choses
+égales par ailleurs, \enquote{je suis proche d'une maison} est une
+description valide pour toutes les maisons présentes dans la zone
+\emph{initiale de recherche.} La \emph{spatialisation} d'une telle
+description de position nécessite donc de prendre en considération
+toutes les \emph{instances} de type \enquote{maison} présentes dans la
+\ac{zir}. Ainsi, comme pour les \emph{relations de localisation,}
+l'objet \(Or\) n'est pas un objet individuel, mais un ensemble (non
+ordonné) \emph{d'objets} (ou de n-tuple \emph{d'objets}) \emph{de
+  référence.}
 
 
 
@@ -93,7 +109,7 @@ alors :
 \begin{equation}
   i = (S, Rl, \{Or_1, Or_2, \ldots, Or_n\})
 \end{equation}
-f
+
 Cependant cette définition n'est pas non plus satisfaisante.
 
 Classe d'équivalence
