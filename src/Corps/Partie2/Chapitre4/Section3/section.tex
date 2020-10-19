@@ -433,43 +433,14 @@ correspondant à la fusion de plusieurs \emph{relations de
   localisation} correspond à :
 
 \begin{equation}
-  \text{\textsf{ZLC}}_{o_i} = ⋂ \text{\textsf{ZLC}}_{Rla_i}
+  \text{\textsf{ZLC}}_{o_i} = ⋂ \textsf{ZLC}}_{Rla}_i
 \end{equation}
 
 Avec \(\text{\textsf{ZLC}}_{o_i}\), la \emph{zone de localisation
   compatible} correspondant à \emph{l'objet de référence} \(oᵢ\) et
-\(\text{\textsf{ZLC}}_{rsa_i}\) la \emph{zone de localisation
-  compatible} correspondant à la \emph{spatialisation} de la
-\emph{relation de localisation atomique} \(i\).
-
-La \autoref{fig:ex_fus_rsa} propose une illustration de cette étape de
-\emph{fusion}. On dispose de 11 \emph{zones de localisation
-  compatibles,} issues de la la \emph{spatialisation} indépendante de
-tous les \emph{indices de localisation} décomposés. Lors de la
-\emph{fusion} des \emph{relations de localisation atomiques,} les
-\emph{zones de localisation compatibles} issues de la
-
-Conformément à cette formalisation, si l'on reprend l'exemple de
-\emph{l'ensemble d'indices de localisation :} \enquote{je suis proche
-  du \emph{Pic de Jean Ray} et suis sur une crête},
-
-
-on obtiendra,
-après la \emph{fusion} des \emph{relations de localisation atomiques,}
-sept \emph{zones de localisation compatibles,} correspondant aux
-\emph{indices de localisation :} \enquote{je suis proche du \emph{Pic
-    de Jean Ray}}, \enquote{je suis sur la \emph{crête de Roche
-    Motte}}, \enquote{je suis sur la \emph{crête de Font Froide}},
-\enquote{je suis sur la \emph{crête de Serre Chapelle}}, \enquote{je
-  suis sur la \emph{crête des Barres}}, et \enquote{je suis sur la
-  \emph{crête du Petit Puy}}.
-
-\begin{figure}
-  \centering
-  \input{../figures/ex_fus_rsa.tex}
-  \caption{Fusion}
-  \label{fig:ex_fus_rsa}
-\end{figure}
+\(\text{\textsf{ZLC}}_i\) la \emph{zone de localisation compatible}
+correspondant à la \emph{spatialisation,} pour l'objet de référence
+\(o_i\), de la \emph{relation de localisation atomique} \(Rla_i\).
 
 \subsubsection{La \emph{fusion} des \emph{objets de référence
     indéfinis}}
@@ -511,23 +482,6 @@ Avec \(\text{\textsf{ZLC}}_{i}\) la \emph{zone de localisation
 et \(\text{\textsf{ZLC}}_{o_i}\) la \emph{zone de localisation
   compatible} pour l'objet \(i\) de l'indice de localisation \(i\).
 
-Appliqué à l'exemple précédent on obtient, au terme de cette étape de
-\emph{fusion,} deux \emph{zones de localisation compatibles.} La
-première (inchangée depuis la \emph{spatialisation}) correspond à
-\emph{l'indice de localisation} \enquote{je suis proche du \emph{Pic
-    de Jean Ray}}. Comme \emph{l'objet de référence} est unique aucune
-\emph{fusion} n'est à effectuer, contrairement au second \emph{indice
-  de localisation,} \enquote{je suis sur une crête} qui correspond à
-l'union des \emph{zones de localisation compatibles} correspondant à
-chacune des une des crêtes candidates.
-
-\begin{figure}
-  \centering
-  \input{../figures/ex_fus_obj.tex}
-  \caption{Fusion}
-  \label{fig:ex_fus_obj}
-\end{figure}
-
 \subsubsection{La \emph{fusion} des \emph{indices de localisation}}
 
 La dernière étape de \emph{la phase de fusion} est celle de la
@@ -556,6 +510,57 @@ l'ensemble des \emph{indices de localisation} pris en compte, \(i\) un
 \emph{indice de localisation} et \textsf{ZLP} un \emph{zone de
   localisation compatible.}
 
+\subsubsection{Illustration de la \emph{phase de fusion}}
+
+La \autoref{fig:ex_fus_rsa} propose une illustration de cette étape de
+\emph{fusion}. On dispose de 11 \emph{zones de localisation
+  compatibles,} issues de la la \emph{spatialisation} indépendante de
+tous les \emph{indices de localisation} précédemment décomposés (). Lors de la
+\emph{fusion} des \emph{relations de localisation atomiques,} les
+\emph{zones de localisation compatibles} issues de la
+
+Conformément à cette formalisation, si l'on reprend l'exemple de
+\emph{l'ensemble d'indices de localisation :} \enquote{je suis proche
+  du \emph{Pic de Jean Ray} et suis sur une crête},
+
+
+on obtiendra,
+après la \emph{fusion} des \emph{relations de localisation atomiques,}
+sept \emph{zones de localisation compatibles,} correspondant aux
+\emph{indices de localisation :} \enquote{je suis proche du \emph{Pic
+    de Jean Ray}}, \enquote{je suis sur la \emph{crête de Roche
+    Motte}}, \enquote{je suis sur la \emph{crête de Font Froide}},
+\enquote{je suis sur la \emph{crête de Serre Chapelle}}, \enquote{je
+  suis sur la \emph{crête des Barres}}, et \enquote{je suis sur la
+  \emph{crête du Petit Puy}}.
+
+\begin{figure}
+  \centering
+  \input{../figures/ex_fus_rsa.tex}
+  \caption{Illustration de l'étape de \emph{fusion des relations de
+      localisation atomiques}}
+  \label{fig:ex_fus_rsa}
+\end{figure}
+
+Appliqué à l'exemple précédent on obtient, au terme de cette étape de
+\emph{fusion,} deux \emph{zones de localisation compatibles.} La
+première (inchangée depuis la \emph{spatialisation}) correspond à
+\emph{l'indice de localisation} \enquote{je suis proche du \emph{Pic
+    de Jean Ray}}. Comme \emph{l'objet de référence} est unique aucune
+\emph{fusion} n'est à effectuer, contrairement au second \emph{indice
+  de localisation,} \enquote{je suis sur une crête} qui correspond à
+l'union des \emph{zones de localisation compatibles} correspondant à
+chacune des une des crêtes candidates.
+
+\begin{figure}
+  \centering
+  \input{../figures/ex_fus_obj.tex}
+  \caption{Illustration de l'étape de \emph{fusion des objets de
+      référence indéfinis}}
+  \label{fig:ex_fus_obj}
+\end{figure}
+
+
 Ainsi, dans notre exemple, la \emph{zone de localisation probable}
 correspond à \emph{l'intersection} de deux \emph{zones de localisation
   compatibles,} celle construite à partir de \emph{l'indice de
@@ -563,10 +568,12 @@ correspond à \emph{l'intersection} de deux \emph{zones de localisation
 celle construite à partir de \emph{l'indice de localisation}
 \enquote{je suis sur une crête}.
 
+
 \begin{figure}
   \centering
   \input{../figures/ex_fus_ind.tex}
-  \caption{Fusion}
+  \caption{Illustration de l'étape de fusion des \emph{indices de
+      localisation}}
   \label{fig:ex_fus_inf}
 \end{figure}
 
