@@ -434,7 +434,7 @@ correspondant à la fusion de plusieurs \emph{relations de
   localisation} correspond à :
 
 \begin{equation}
-  \text{\textsf{ZLC}}_{o_i} = ⋂ \textsf{ZLC}}_{Rla}_i
+  \text{\textsf{ZLC}}_{o_i} = ⋂ \textsf{ZLC}}_{{Rla}_i}
 \end{equation}
 
 Avec \(\text{\textsf{ZLC}}_{o_i}\), la \emph{zone de localisation
@@ -571,11 +571,20 @@ une des crêtes candidates.
 
 \begin{figure}
   \centering
-  \input{../figures/ex_fus_obj.tex}
-  \caption{Illustration de l'étape de \emph{fusion des objets de
-      référence indéfinis}}
-  \label{fig:ex_fus_obj}
+  \subfloat[]{
+    \input{../figures/ex_fus_obj.tex}
+    \label{fig:ex_fus_obj}
+  }\hspace{1cm}
+  \subfloat[]{
+    \input{../figures/ex_fus_ind.tex}
+    \label{fig:ex_fus_inf}
+  }
+  \caption{Illustration des étapes de \emph{fusion des objets de
+      référence indéfinis} \protect\subref{fig:ex_fus_obj} et de
+    fusion des \emph{indices de localisation}
+    \protect\subref{fig:ex_fus_inf}}
 \end{figure}
+
 
 la troisième et dernière étape de la \emph{phase de fusion} correspond
 à la fusion des différents \emph{indices de localisation} et à la
@@ -595,13 +604,6 @@ fusionées. Ainsi, dans notre exemple, la \emph{zone de localisation
     de Jean Ray}} et celle construite à partir de \emph{l'indice de
   localisation} \enquote{je suis sur une crête}.
 
-\begin{figure}
-  \centering
-  \input{../figures/ex_fus_ind.tex}
-  \caption{Illustration de l'étape de fusion des \emph{indices de
-      localisation}}
-  \label{fig:ex_fus_inf}
-\end{figure}
 
 \begin{landscape}
   \begin{figure}[H]
