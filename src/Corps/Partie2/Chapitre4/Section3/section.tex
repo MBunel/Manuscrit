@@ -63,51 +63,64 @@ est nécessaire à l’application du \emph{principe de spatialisation
   localisation} sont traités indépendamment, conformément au principe
 de modélisation précédemment mentionné.
 
-\subsubsection{La décomposition des \emph{objets de référence indéfinis}}
+\subsubsection{La \emph{décomposition} des \emph{objets de référence indéfinis}}
 
 Comme nous l'avons indiqué lors de leur formalisation, un \emph{indice
-  de référence} peut contenir de nombreux objets de référence
-différents.
+  de référence} peut contenir de nombreux \emph{objets de référence}
+différents. Si \emph{l'indice de localisation} qui nous est transmis
+contient plus d'un objet \footnote{Ou plus d'un n-tuple, dans le cas
+  où la relation modélisée est bi ou n-aire.}, alors \emph{l'objet de
+  référence} est indéfini est \emph{l'indice de localisation} doit
+être \emph{spatialisé} pour chacun d'entre eux.
 
-Les \emph{indices de localisation} contiennent toujours un (ou
-plusieurs, si la relation de localisation est n-aire) \emph{objet de
-  référence.} Cependant ce dernier peut être une instance clairement
-définie, que l'on peut alors facilement identifier (\eg
-\enquote{Grenoble}, \enquote{Le bois des Ayes}, \emph{etc.}) ou un
-objet décrit par sa nature, qu'il est alors impossible d'identifier
-sans informations supplémentaires (\eg \enquote{une ville},
-\enquote{un bois}). Par conséquent, lorsque le secouriste identifie
-les objets correspondant à la description du requérant (conformément
-au principe \texttt{TITRE principe}, cf. \ref{sec:4-1-1-1}) il peut
-sélectionner un ou plusieurs objets. Si \emph{l'indice de
-  localisation} qui nous est transmis contient plus d'un objet (dans
-le cas où la relation modélisée n'est pas bi ou n-aire) alors
-\emph{l'objet de référence} est indéfini est \emph{l'indice de
-  localisation} doit être \emph{spatialisé} pour chacun d'entre eux et
-la position correspondant à \emph{l'indice de localisation} et l'une
-des positions possibles.  La seconde étape de la \emph{phase de
-  décomposition} permet donc de transformer un \emph{indice de
-  localisation} comportant plusieurs \emph{objets de référence}
-concurrents en un ensemble \emph{d'indices de localisation} portant
-chacun sur un des \emph{objets de référence possible.}
+L'objectif de la \emph{décomposition} des \emph{objets de référence
+  indéfini} est donc de transformer un \emph{indice de localisation}
+comportant plusieurs \emph{objets de référence} concurrents en un
+ensemble \emph{d'indices de localisation} contenant chacun un seul
+\emph{objet de référence} (ou un seul tuple), c'est-à-dire une des
+instances parmi l'ensemble des \emph{objets de référence possibles.}
+L'étape de décomposition des \emph{objets de référence indéfinis} peut
+être formalisée de la manière suivante :
 
 \begin{equation}
   Dec_{Or}(i) = \{(S,Rl,or_i) \mid S \in , Rl \in , \forall or_i \in Or \} 
 \end{equation}
 
-\subsubsection{La décomposition des \emph{relations de localisation}}
+Avec \(Dec_{Or}(i)\) la fonction de \emph{décomposition} de l'ensemble
+des \emph{objets de référence,} \(S\) le \emph{sujet} de \emph{l'indice
+  de localisation} décomposé, \(Rl\) son ensemble de \emph{relations
+  de localisation,} \(Or\) l'ensemble initial des \emph{objets de
+  référence} et \(or_i\) un objet de référence donné, appartenant
+initialement à \(Or\).
 
-La troisième et dernière étape de cette phase est celle de la
-décomposition des \emph{relations de localisation.} C'est durant cette
-étape qu'est appliqué le \emph{principe de décomposition} des
-\emph{relations de localisation.} Comme nous l'expliquions lors de la
-présentation de ce principe, cette étape consiste à décomposer les
-\emph{relations de localisation} en un ensemble de composantes
+\subsubsection{La \emph{décomposition} des \emph{relations de localisation}}
+
+La troisième et dernière étape de cette phase est la
+\emph{décomposition} des \emph{relations de localisation.} C'est
+durant cette étape qu'est appliqué le \emph{principe de décomposition}
+des \emph{relations de localisation} que nous avons déjà
+présenté. Comme nous l'expliquions, cette étape consiste à décomposer
+les \emph{relations de localisation} en un ensemble de composantes
 sémantiquement indépendantes, les \emph{relations de localisation
   atomiques.} Comme pour les deux précédentes étapes, cette
 décomposition n'est pas toujours nécessaire, \emph{la relation de
   localisation utilisée} pouvant être atomique (\eg
-\enquote{proche}). La principale différence entre cette étape et les
+\enquote{proche}). Cette étape peut être formalisée de la manière
+suivante :
+
+\begin{equation}
+  Dec_{Rl}(i) = \{(S,Rla_i,Or) \mid S \in, \forall Rla_i \in Rl,  Or \in \} 
+\end{equation}
+
+Avec \(Dec_{Rl}(i)\) la fonction de \emph{décomposition} des
+\emph{relations de localisation,} \(S\) le \emph{sujet} de
+\emph{l'indice de localisation} décomposé, \(Rl\) la \emph{relation de
+  localisation} et \(Rla_i\) une des relations de \emph{localisation
+  atomiques décomposant} la \emph{relation} \(Rl\) et \(Or\)
+l'ensemble initial des \emph{objets de référence.}
+
+
+La principale différence entre cette étape et les
 précédentes est qu'il est nécessaire de disposer d'une information
 supplémentaire pour savoir comment l'effectuer. En effet, lorsqu'un
 ensemble d'indice de localisation nous est transmis, les différents
@@ -125,9 +138,6 @@ de connaitre la \emph{décomposition des relations de localisation} et
 de s'y référer lors de cette étape. Ce processus sera détaillé plus
 longuement dans le \autoref{chap:05}.
 
-\begin{equation}
-  Dec_{Rl}(i) = \{(S,Rla_i,Or) \mid S \in, \forall Rla_i \in Rl,  Or \in \} 
-\end{equation}
 
 L'ensemble de la \emph{phase de décomposition} peut donc être
 formalisé de la manière suivante :
