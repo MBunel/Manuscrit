@@ -368,17 +368,17 @@ un seuil fixé. Cette construction par sélection \footnote{Fortement
 qu'un post-traitement des résultats de l'implémentation raster et elle
 ne possède pas d'avantages (ou inconvénients) qui lui soient
 propres. Une approche différente est cependant
-envisageable. \textcite{Runz2008a, Zoghlami2016}, par exemple, des
-\emph{alpha-cuts} directement, sans passer par une étape préalable de
-calcul des degrés d'appartenance, soit une \emph{construction en
-  intension} (\autoref{:chap:03}). La construction \emph{d'alpha-cuts}
-en intension demande d'identifier les critères jouant sur la forme de
-la \emph{zone de localisation,} soit, dans notre exemple, la distance
-et différence d'altitude par rapport à la ligne
-électrique. Conformément au \emph{principe de décomposition} on peut
-alors définir une méthode géométrique permettant de construire, pour
-chaque \emph{relation de localisation atomique} et chaque
-\emph{alpha-cut} construite, une région, correspondant à une
+envisageable. \textcite{Runz2008a, Zoghlami2016}, par exemple,
+calculent des \emph{alpha-cuts} directement, sans passer par une étape
+préalable de calcul des degrés d'appartenance, soit une
+\emph{construction en intension} (\autoref{chap:03}). La construction
+\emph{d'alpha-cuts} en intension demande d'identifier les critères
+jouant sur la forme de la \emph{zone de localisation,} soit, dans
+notre exemple, la distance et la différence d'altitude par rapport à
+la ligne électrique. Conformément au \emph{principe de décomposition}
+on peut alors définir une méthode géométrique permettant de
+construire, pour chaque \emph{relation de localisation atomique} et
+chaque \emph{alpha-cut} construite, une région, correspondant à une
 \emph{alpha-cut} de la \emph{zone de localisation compatible}
 traitée. Ces différentes \emph{alpha-cuts} seraient alors intersectées
 deux à deux, par même degré d'appartenance en vue d'obtenir les
@@ -394,11 +394,11 @@ supérieur à 0, délimitant le \emph{support} et enfin
 Pour chaque segment de la ligne électrique traitée, nous construisons
 un polyèdre, correspondant à une \emph{alpha-cut}
 tridimensionnelle. Aucun \ac{sig} ne permettant de construire ce type
-d'objets, nous avons été contrains de nous orienter vers une solution
+d'objet, nous avons été contrains de nous orienter vers une solution
 de plus bas niveau, la bibliothèque de calcul géométrique CGAL
 \autocite{CGAL2019}, ce qui a considérablement complexifié la
 tâche. Le polyèdre construit se compose de 6 faces, définies par
-autant de demis-plans (\autoref{schema_polyhedre}). Comme les
+autant de demis-plans (\autoref{fig:schema_polyhedre}). Comme les
 \emph{alpha-cuts} délimitent une \emph{zone de localisation}
 dépendante, toutes choses égales par ailleurs, de la position de
 \emph{l'objet de référence,} la position de tous ces demi-plans est
@@ -451,8 +451,8 @@ minimale. Pour éviter de réduire artificiellement l'étendue des
 \emph{alpha-cuts} nous avons placé ce demi-plan a une altitude
 nettement plus faible que l'altitude minimale de la \ac{zir}, simulant
 ainsi un demi-plan virtuellement à l'infini. Le résultat de
-l'implémentation par \emph{alpha-cuts} est visible sur les figures
-\ref{fig:AlphaCuts_coupe} et \ref{fig:AlphaCuts_zenith}.
+l'implémentation par \emph{alpha-cuts} est visible sur la
+\autoref{fig:AlphaCuts_zenith}.
 
 \begin{figure}
   \centering
@@ -464,16 +464,10 @@ l'implémentation par \emph{alpha-cuts} est visible sur les figures
 
 \begin{figure}
   \centering
-  \includegraphics[width=\textwidth]{../figures/AlphaCut_coupe.png}
-  \caption{Modélisation par \emph{alpha-cuts,} vue oblique.}
-  \label{fig:AlphaCuts_coupe}
-\end{figure}
-
-\begin{figure}
-  \centering
   \input{../figures/Alphacut_zenith.tex}
   %\includegraphics[width=\textwidth]{../figures/AlphaCut_zenith.png}
-  \caption{Modélisation par \emph{alpha-cuts,} vue zénithale.}
+  \caption{\emph{Zone de localisation probable} construire avec une
+    modélisation par \emph{alpha-cuts.}}
   \label{fig:AlphaCuts_zenith}
 \end{figure}
 
@@ -534,8 +528,9 @@ polyèdre utilisée ne pouvant fonctionner qu'avec les \emph{relations
 et les opérateurs de \textcite{Zadeh1965}. De plus, la généralisation
 de l'utilisation de l'implémentation par \emph{alpha-cuts} nécessite
 de compléter notre proposition pour offir une meilleure prise en
-compte des jointures entre \emph{objets de référence,} toutes les
-configurations ne permettant pas l'approximation fait ici.
+compte des jointures entre les polyèdres modélisant les
+\emph{alpha-cuts,} toutes les configurations ne permettant pas
+l'approximation fait ici.
 
 % Tendance à la fragmentation des alpha-cuts
 La généralisation de l'implémentation par \emph{alpha-cuts} impose
