@@ -27,14 +27,15 @@ présente une synthèse de l'ensemble de cette méthode.
 
 \subsection{La phase de \emph{décomposition}}
 
-La phase de \emph{décomposition} (détaillée dans le \autoref{chap:05})
-est un ensemble de trois étapes permettant de passer d'un ensemble
-\emph{d'indices de localisation} à un ensemble décomposé de ces
-\emph{indices,} prêts à être \emph{spatialisés.} Chacune des étapes de
-la phase de \emph{décomposition} produit des nouveaux \emph{indices de
-  localisation,} les étapes de cette phase sont donc interchangeables,
-sans que cela n'influe sur le résultat final, à l'exception de la
-première étape qui ne peut être effectuée qu'en premier.
+La phase de \emph{décomposition} (introduite dans le
+\autoref{chap:05}) est un ensemble de trois étapes permettant de
+passer d'un ensemble \emph{d'indices de localisation} à un ensemble
+décomposé de ces \emph{indices,} prêts à être \emph{spatialisés.}
+Chacune des étapes de la phase de \emph{décomposition} produit des
+nouveaux \emph{indices de localisation,} les étapes de cette phase
+sont donc interchangeables, sans que cela n'influe sur le résultat
+final, à l'exception de la première étape qui ne peut être effectuée
+qu'en premier.
 
 \subsubsection{La décomposition de \emph{l'ensemble des indices de
     localisation}}
@@ -50,27 +51,21 @@ secouristes, par le biais de l'interface de géovisualisation
 \end{equation}
 
 La \emph{décomposition} de l'ensemble \(I\) permet d'extraire les
-différents \emph{indices de localisation} (\(i_n\), à partir desquels
-serons construites les \emph{zones de localisation compatibles.} Cette
-étape de \emph{décomposition} ne présente pas de difficultés
-techniques ou scientifique, mais elle est nécessaire à l’application
-du \emph{principe de spatialisation autonome des indices de
-  localisation.} Comme on peut le voir sur la \autoref{fig:methodo_1,}
-les indices décomposés lors de la première étape du processus sont
-fusionnés lors de la dernière étape de la \emph{phase de fusion.}
-Ainsi les différents \emph{indices de localisation} sont traités
-indépendamment, conformément au principe de modélisation précédemment
-mentionné. On peut illustrer ce principe avec l'exemple de
-\emph{l'ensemble d'indices de localisation} : \enquote{je suis proche
-  du \emph{Pic de Jean Ray} et sur une crête.}  Ce dernier est composé
-de deux \emph{indices de localisation,} liés par une conjonction. Le
-but de cette étape de \emph{décomposition} est de les séparer pour en
-permettre le traitement autonome. Au terme de cette étape on dispose
-ainsi de deux \emph{indices de localisation} (\enquote{je suis proche
-  du \emph{Pic de Jean Ray}} et \enquote{je suis sur une crête}),
-indépendamment transmis à l'étape suivante de décomposition.
+différents \emph{indices de localisation} (\(i_n\)), à partir desquels
+serons construites les \emph{zones de localisation compatibles} durant
+la phase de \emph{spatialisaiton.} Cette étape de \emph{décomposition}
+ne présente pas de difficultés techniques ou scientifique, mais elle
+est nécessaire à l’application du \emph{principe de spatialisation
+  autonome des indices de localisation.} Comme on peut le voir sur la
+\autoref{fig:methodo_1,} les indices décomposés lors de la première
+étape du processus sont fusionnés lors de la dernière étape de la
+\emph{phase de fusion.}  Ainsi les différents \emph{indices de
+  localisation} sont traités indépendamment, conformément au principe
+de modélisation précédemment mentionné.
 
 \subsubsection{La décomposition des \emph{objets de référence indéfinis}}
+
+Comme nous l'avons 
 
 Les \emph{indices de localisation} contiennent toujours un (ou
 plusieurs, si la relation de localisation est n-aire) \emph{objet de
@@ -94,22 +89,6 @@ des positions possibles.  La seconde étape de la \emph{phase de
 concurrents en un ensemble \emph{d'indices de localisation} portant
 chacun sur un des \emph{objets de référence possible.}
 
-Prenons l'exemple de \emph{l'indice de localisation} \enquote{je suis
-  sur une crête}. Le secouriste peut alors sélectionner à l'aide de
-l'interface l'ensemble des objets géographiques \enquote{crêtes}
-situés dans la ZIR \footnote{Voir dans un espace plus réduit si le
-  secouriste décide, compte-tenu de ses connaissances et de la
-  situation, de réduire la zone de recherche de cette catégorie
-  d'objets.}. Admettons qu'elles soient au nombre de six,
-\emph{l'indice de localisation} qui nous sera transmis sera donc de la
-forme \enquote{je suis sur la \emph{crête de Roche Motte} ou je suis
-  sur la \emph{crête de Font Froide} ou je suis sur la \emph{crête de
-    Serre Chapelle} ou je suis sur la \emph{crête des Barres} ou je
-  suis sur la \emph{crête du Petit Puy}}. Ainsi au sortir de cette
-seconde étape de décomposition on dispose de \(i\) \emph{indices de
-  localisation} (première décomposition), eux-mêmes divisés en
-plusieurs \emph{indices de localisation,} en fonction du nombre
-\emph{d'objets de référence} à prendre en compte.
 
 \subsubsection{La décomposition des \emph{relations de localisation}}
 
@@ -151,30 +130,83 @@ saisi par un secouriste à partir de la description suivante :
   localisation,} séparés lors de la première étape de la \emph{phase
   de décomposition.} Les deux \emph{indices de localisation :}
 \enquote{je suis proche du \emph{Pic de Jean Ray}} et \enquote{je suis
-  sur une crête} peuvent être alors traités indépendamment. La seconde
-étape de la \emph{phase de décomposition} fragmente chaque
+  sur une crête} peuvent être alors traités indépendamment.
+
+\begin{quote}
+  \begin{tikzpicture}[%
+    grow via three points={one child at (0.5,-0.7) and
+      two children at (0.5,-0.7) and (0.5,-1.4)},
+    edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}
+    ]
+    \node[anchor=south west,text=RdBu-9-1] {Et} child
+    {node[anchor=south west] {\enquote{je suis proche du \emph{Pic de
+            Jean Ray}}}} child {node[anchor=south west] {\enquote{je
+          suis sous une crête}} };
+  \end{tikzpicture}
+\end{quote}
+
+
+La seconde étape de la \emph{phase de décomposition} fragmente chaque
 \emph{indice de localisation} en fonction des \emph{objets de
   référence.} Le premier \emph{indice de localisation} (\enquote{je
   suis proche du \emph{Pic de Jean Ray}}) se réfère à un objet nommé
 et unique, il n'est donc pas nécessaire de le décomposer,
-contrairement au second \emph{indice de localisation,} que l'on peut
-décomposer en six nouveaux \emph{indices de localisation,} comme
-illustré précédement : \enquote{je suis sur la \emph{crête de Roche
-    Motte} ou je suis sur la \emph{crête de Font Froide} ou je suis
-  sur la \emph{crête de Serre Chapelle} ou je suis sur la \emph{crête
-    des Barres} ou je suis sur la \emph{crête du Petit Puy}.} Enfin,
-la dernière étape de la phase de \emph{décomposition,} nécessite la
-définition préalable d'un ensemble de \emph{relations de localisation
-  atomiques,} ce qui sera abordé dans le \autoref{chap:05}. Cependant,
-pour aller au bout de cet exemple nous allons considérer que la
-relation de localisation \enquote{proche} est une \emph{relation
-  spatiale atomique} (hypothèse déjà utilisée précédemment) et que la
-relation de localisation \enquote{sur} se décompose en deux
-\emph{relations spatiales atomiques,} \emph{proximité} et
-\emph{différence d'altitude positive} \footnote{Comme nous le verrons
-  ultérieurement cette décomposition est fortement
-  simplificatrice. Cet exemple n'est donc pas à considérer comme
-  représentatif de la décomposition de la \emph{relation de
+contrairement au second \emph{indice de localisation} pour lequel
+l'ensemble des objets de type \enquote{crête} situés dans la \ac{zir}
+\footnote{Voir dans un espace plus réduit si le secouriste décide,
+  compte-tenu de ses connaissances et de la situation, de réduire la
+  zone de recherche pour cette catégorie d'objets.} peuvent
+correspondre. Admettons que six crêtes aient été sélectionnées,
+\emph{l'indice de localisation} qui nous sera transmis sera donc de la
+forme \enquote{je suis sur la \emph{crête de Roche Motte} ou je suis
+  sur la \emph{crête de Font Froide} ou je suis sur la \emph{crête de
+    Serre Chapelle} ou je suis sur la \emph{crête des Barres} ou je
+  suis sur la \emph{crête du Petit Puy}}. Ainsi au sortir de cette
+seconde étape de décomposition on dispose de \(i\) \emph{indices de
+  localisation} (première décomposition), eux-mêmes divisés en
+plusieurs \emph{indices de localisation,} en fonction du nombre
+\emph{d'objets de référence} à prendre en compte.
+
+\begin{quote}
+  \begin{tikzpicture}[%
+    grow via three points={one child at (0.5,-0.7) and
+      two children at (0.5,-0.7) and (0.5,-1.4)},
+    edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}
+    ]
+    \node[anchor=south west,text=RdBu-9-1] {Et}
+    child {node[anchor=south west] {\enquote{je suis proche du \emph{Pic
+            de Jean Ray}}}}
+    child {node[anchor=south west, text=RdBu-9-9] {Ou}
+      child{node[anchor=south west] {\enquote{je suis sous
+            \emph{crête de Roche Motte}}}}
+      child{node[anchor=south west]{\enquote{je suis
+            sous la \emph{crête de Font Froide}}} 
+      }
+      child{node[anchor=south west]{\enquote{je suis
+            sous la \emph{crête de Serre Chapelle}}} 
+      }
+      child{node[anchor=south west]{\enquote{je suis
+            sous la \emph{crête des Barres}}}  
+      }
+      child{node[anchor=south west]{\enquote{je suis
+            sous la \emph{crête du Petit Puy}}}} 
+    };
+  \end{tikzpicture}
+\end{quote}
+
+
+Enfin, la dernière étape de la phase de \emph{décomposition,}
+nécessite la définition préalable d'un ensemble de \emph{relations de
+  localisation atomiques,} ce qui sera abordé dans le
+\autoref{chap:05}. Cependant, pour aller au bout de cet exemple nous
+allons considérer que la relation de localisation \enquote{proche} est
+une \emph{relation spatiale atomique} (hypothèse déjà utilisée
+précédemment) et que la relation de localisation \enquote{sur} se
+décompose en deux \emph{relations spatiales atomiques,}
+\emph{proximité} et \emph{différence d'altitude positive}
+\footnote{Comme nous le verrons ultérieurement cette décomposition est
+  fortement simplificatrice. Cet exemple n'est donc pas à considérer
+  comme représentatif de la décomposition de la \emph{relation de
     localisation} \enquote{sur}, mais bien comme une illustration de
   la phase de décomposition dans son ensemble.}. Ainsi, le premier
 \emph{indice de localisation} n'est pas décomposé, puisque nous
