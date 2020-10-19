@@ -156,6 +156,7 @@ fonction de \emph{décomposition des relations de localisation,}
   localisation.}
 
 \subsubsection{Illustration de la phase de décomposition}
+\label{subsec:4-3-3-4}
 
 Pour illustrer l'ensemble de la \emph{phase de décomposition,}
 imagions que \emph{l'ensemble des indices de localisation} (\(I\)
@@ -512,21 +513,30 @@ l'ensemble des \emph{indices de localisation} pris en compte, \(i\) un
 
 \subsubsection{Illustration de la \emph{phase de fusion}}
 
-La \autoref{fig:ex_fus_rsa} propose une illustration de cette étape de
-\emph{fusion}. On dispose de 11 \emph{zones de localisation
-  compatibles,} issues de la la \emph{spatialisation} indépendante de
-tous les \emph{indices de localisation} précédemment décomposés (). Lors de la
-\emph{fusion} des \emph{relations de localisation atomiques,} les
-\emph{zones de localisation compatibles} issues de la
+On peut illustrer l'ensemble de la \emph{phase de fusion} à l'aide de
+l'exemple également utilisé pour décrire la \emph{phase de
+  décomposition} (\autoref{subsec:4-3-3-4}). Au terme de la
+\emph{phase de décomposition} on dispose de onze \emph{indices de
+  localisation} décomposés. Durant la phase de \emph{spatialisation}
+une \ac{zlc} est construite, indépendamment, pour chacun
+d'entre-eux. Au début de la phase de fusion on dispose donc de onze
+\ac{zlc} (comme le montre la partie supérieure de la
+\autoref{fig:ex_fus_rsa}) qu'il va falloir fusionner de sorte à
+obtenir une \ac{zlp}.
 
-Conformément à cette formalisation, si l'on reprend l'exemple de
-\emph{l'ensemble d'indices de localisation :} \enquote{je suis proche
-  du \emph{Pic de Jean Ray} et suis sur une crête},
-
-
-on obtiendra,
-après la \emph{fusion} des \emph{relations de localisation atomiques,}
-sept \emph{zones de localisation compatibles,} correspondant aux
+La \autoref{fig:ex_fus_rsa} propose une illustration de la première
+étape de la phase de \emph{fusion,} la fusion des \emph{relations de
+  localisation atomiques.}  L'objectif de cette étape est de regrouper
+les \emph{zones} issues de la \emph{spatialisation} \emph{d'indices de
+  localisation} créés suite à la décomposition d'une \emph{relation de
+  localisation.} Les \emph{zones} spatialisées à partir
+\emph{d'indices} issus de la même décomposition sont alors fusionnées
+indépendamment à l'aide d'un opérateur d'intersection permettant de
+construire une nouvelle \emph{zone de localisation} ne contenant que
+les positions appartenant aux deux \emph{zones de localisations}
+fusionnées.  si l'on reprend l'exemple précédent on obtiendra, après
+la \emph{fusion} des \emph{relations de localisation atomiques,} sept
+\emph{zones de localisation compatibles,} correspondant aux
 \emph{indices de localisation :} \enquote{je suis proche du \emph{Pic
     de Jean Ray}}, \enquote{je suis sur la \emph{crête de Roche
     Motte}}, \enquote{je suis sur la \emph{crête de Font Froide}},
@@ -541,6 +551,13 @@ sept \emph{zones de localisation compatibles,} correspondant aux
       localisation atomiques}}
   \label{fig:ex_fus_rsa}
 \end{figure}
+
+L'étape de fusion des objets de référence indéfinis est, quant à elle,
+illustrée par la \autoref{fig:ex_fus_obj}. Comme précédemment on
+regroupe les \emph{zones de localisation} en fonction de la
+décomposition dont elles sont issues et on les combine avec un
+opérateur ensembliste, ici l'union. Les \emph{zones de localisation}
+résultantes sonbt 
 
 Appliqué à l'exemple précédent on obtient, au terme de cette étape de
 \emph{fusion,} deux \emph{zones de localisation compatibles.} La
@@ -560,14 +577,12 @@ chacune des une des crêtes candidates.
   \label{fig:ex_fus_obj}
 \end{figure}
 
-
 Ainsi, dans notre exemple, la \emph{zone de localisation probable}
 correspond à \emph{l'intersection} de deux \emph{zones de localisation
   compatibles,} celle construite à partir de \emph{l'indice de
   localisation} \enquote{je suis proche du \emph{Pic de Jean Ray}} et
 celle construite à partir de \emph{l'indice de localisation}
 \enquote{je suis sur une crête}.
-
 
 \begin{figure}
   \centering
