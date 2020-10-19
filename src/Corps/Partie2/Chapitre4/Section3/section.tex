@@ -555,19 +555,19 @@ la \emph{fusion} des \emph{relations de localisation atomiques,} sept
 L'étape de fusion des objets de référence indéfinis est, quant à elle,
 illustrée par la \autoref{fig:ex_fus_obj}. Comme précédemment on
 regroupe les \emph{zones de localisation} en fonction de la
-décomposition dont elles sont issues et on les combine avec un
-opérateur ensembliste, ici l'union. Les \emph{zones de localisation}
-résultantes sonbt 
-
-Appliqué à l'exemple précédent on obtient, au terme de cette étape de
-\emph{fusion,} deux \emph{zones de localisation compatibles.} La
-première (inchangée depuis la \emph{spatialisation}) correspond à
-\emph{l'indice de localisation} \enquote{je suis proche du \emph{Pic
-    de Jean Ray}}. Comme \emph{l'objet de référence} est unique aucune
-\emph{fusion} n'est à effectuer, contrairement au second \emph{indice
-  de localisation,} \enquote{je suis sur une crête} qui correspond à
-l'union des \emph{zones de localisation compatibles} correspondant à
-chacune des une des crêtes candidates.
+décomposition dont elles sont issues et on les combine en parallèle
+avec un opérateur ensembliste, ici l'union. Les \emph{zones de
+  localisation} résultantes sont alors composées des positions
+appartenant à, au moins, une des zones fusionnées. Au terme de cette
+étape de \emph{fusion,} on obtient donc, deux \emph{zones de
+  localisation compatibles.} La première (inchangée depuis la
+\emph{spatialisation}) correspond à \emph{l'indice de localisation}
+\enquote{je suis proche du \emph{Pic de Jean Ray}}. Comme
+\emph{l'objet de référence} est unique aucune \emph{fusion} n'est à
+effectuer, contrairement au second \emph{indice de localisation,}
+\enquote{je suis sur une crête} qui correspond à l'union des
+\emph{zones de localisation compatibles} correspondant à chacune des
+une des crêtes candidates.
 
 \begin{figure}
   \centering
@@ -577,12 +577,23 @@ chacune des une des crêtes candidates.
   \label{fig:ex_fus_obj}
 \end{figure}
 
-Ainsi, dans notre exemple, la \emph{zone de localisation probable}
-correspond à \emph{l'intersection} de deux \emph{zones de localisation
-  compatibles,} celle construite à partir de \emph{l'indice de
-  localisation} \enquote{je suis proche du \emph{Pic de Jean Ray}} et
-celle construite à partir de \emph{l'indice de localisation}
-\enquote{je suis sur une crête}.
+la troisième et dernière étape de la \emph{phase de fusion} correspond
+à la fusion des différents \emph{indices de localisation} et à la
+construction de la \emph{zone de localisation probable}
+(\autoref{fig:ex_fus_inf}). À la fin de la seconde étape de la phase
+de fusion, on dispose d'une \emph{zone de localisation compatible}
+pour chaque \emph{indice de localisation} contenu dans
+\emph{l'ensemble des indices de localisation} \(I\)
+(\autoref{fig:methodo_1}). Pour obtenir une seule zone à partir de ces
+différentes \emph{zones de localisation compatibles} on utilise une
+nouvelle fois un opérateur d'intersection qui permet de construire une
+zone contenant les positions qui appartiennent à toutes les \ac{zlc}
+fusionées. Ainsi, dans notre exemple, la \emph{zone de localisation
+  probable} correspond à \emph{l'intersection} de deux \emph{zones de
+  localisation compatibles,} celle construite à partir de
+\emph{l'indice de localisation} \enquote{je suis proche du \emph{Pic
+    de Jean Ray}} et celle construite à partir de \emph{l'indice de
+  localisation} \enquote{je suis sur une crête}.
 
 \begin{figure}
   \centering
