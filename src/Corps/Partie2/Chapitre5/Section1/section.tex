@@ -3,52 +3,55 @@ seule la décomposition des \emph{relations de localisation} nécessite
 le développement d'une méthode spécifique. En effet, les étapes de
 décomposition de ensemble des \emph{indices de localisation} et des
 \emph{objets de référence indéfinis} ne font qu'expliciter un
-découpage présent dès la saisie. Ces deux opérations ne nécessitent
-donc pas l'apport de connaissances supplémentaires, contrairement à la
-décomposition des \emph{relations de localisation.}
+découpage présent dès la saisie dans l'interface utilisateur. Ces deux
+opérations ne nécessitent donc pas l'apport de connaissances
+supplémentaires, contrairement à la décomposition des \emph{relations
+  de localisation.}
 
-En effet, les \emph{principes de décomposition} et
-\texttt{d'intégration contexte métier} s'opposent en partie. Si la
-décomposition permet de faciliter la \emph{spatialisation} des
-\emph{indices de localisation} en permettant de manipuler des concepts
-précis et en minimisant les redondances, elle implique également de
-travailler à l'aide de \emph{relations de localisation} (atomiques)
-\emph{ad hoc,} qui ne sont pas destinées à être manipulées directement
-par l'utilisateur. Il est donc inenvisageable de demander à
-l'utilisateur de saisir des \emph{relations de localisation
-  atomiques,} qui ne sont pas prévues pour. C'est pourquoi nous
-proposons d'automatiser cette étape.
+En effet, les \emph{principes de décomposition} et \emph{d'intégration
+  dans le contexte métier} s'opposent en partie. Si la décomposition
+permet de faciliter la \emph{spatialisation} des \emph{indices de
+  localisation} en permettant de manipuler des concepts précis et en
+minimisant les redondances, elle implique également de travailler à
+l'aide de \emph{relations de localisation} (atomiques) \emph{ad hoc,}
+qui ne sont pas destinées à être manipulées directement par
+l'utilisateur. Il est donc inenvisageable de demander à l'utilisateur
+de saisir des \emph{relations de localisation atomiques,} qui ne sont
+pas prévues pour. C'est pourquoi nous proposons d'automatiser cette
+étape.
 
 \subsection{La décomposition des \emph{relations de localisation}}
 
 Nous avons précédemment abordé la décomposition des \emph{relations de
   localisation} en la présentant comme le processus permettant de
 passer d'une \emph{relation de localisation} à un ensemble de
-\emph{relations de localisations atomiques} liées par des conjonctions
-et auxquelles est apposée une méthode de \emph{spatialisation,}
-permettant de construire la \emph{zone de localisation compatible}
-correspondant à la \emph{relation de localisation atomique} pour un
-\emph{objet de référence} donné. La difficulté majeure de cette
-décomposition consiste donc à identifier la manière dont les
-\emph{relations de localisation} utilisées par le requérant se
-décomposent. Notre objectif étant de proposer une décomposition selon
-des critères sémantiques, propres à chaque \emph{relation de
-  localisation,} il est nécessaire de disposer de connaissances à
-priori sur la sémantique des \emph{relations de localisation.} Nous
-proposons donc de créer une base de règles, formalisant la
+\emph{relations de localisations atomiques} liées par des
+conjonctions. Chaque \emph{relation de localisation atomique} est
+adossée une méthode de \emph{spatialisation,} permettant de construire
+la \emph{zone de localisation compatible} correspondant à la
+\emph{relation de localisation atomique} pour un \emph{objet de
+  référence} donné. La difficulté majeure de cette décomposition
+consiste donc à identifier la manière dont les \emph{relations de
+  localisation} utilisées par le requérant se décomposent. Notre
+objectif étant de proposer une décomposition selon des critères
+sémantiques, propres à chaque \emph{relation de localisation,} il est
+nécessaire de disposer de connaissances à priori sur la sémantique des
+\emph{relations de localisation.}
+
+Nous proposons donc de créer une base de règles, formalisant la
 décomposition de chaque \emph{relation de localisation} en des
-\emph{relations de localisation atomiques} spatialisables. Ce qui
-permettrait de décomposer les \emph{relations de localisation} avec une
-méthode en trois étapes :
+\emph{relations de localisation atomiques} spatialisables. Ceci
+permettrait de décomposer les \emph{relations de localisation} avec
+une méthode en trois étapes :
 %
 \begin{enumerate*}[label=(\arabic*)] 
 \item réception de la \emph{relation de localisation}
-  $\text{\textsf{rl}}$ à décomposer,
+  ($\text{Rl}$) à décomposer,
 \item lecture de la base de règles et identification des règles
   définies pour la \emph{relation de localisation}
-  $\text{\textsf{rl}}$ et
+  $\text{Rl}$ et
 \item application des règles de décomposition à la \emph{relation de
-    localisation} $\text{\textsf{rl}}$.
+    localisation} $\text{Rl}$.
 \end{enumerate*}
 %
 Ce processus de décomposition, illustré par la
@@ -58,15 +61,15 @@ définissable en amont et qui ne sera modifiée que lorsque nécessaire
 (\eg correction d'erreurs, ajustement, ajout de nouvelles règles,
 \emph{etc.})
 
-La constitution d'une telle base pose cependant plusieurs problèmes,
-que ce soit au niveau de la définition de sa structure ou de son
-contenu. Il est en effet nécessaire qu'elle permette de formaliser
-toutes les variations de décompositions souhaitées, qu'il faut alors
-identifier. De plus, cette organisation ne permet de décomposer que
-des \emph{relations de localisation} incluses dans la base de
-règles. Il est donc indispensable qu'elle contienne l'ensemble des
-\emph{relations de localisation} pertinentes dans notre contexte et
-leur décomposition. La constitution d'une telle base de règles
+La constitution d'une telle base de règles pose cependant plusieurs
+problèmes, que ce soit au niveau de la définition de sa structure ou
+de son contenu. Il est en effet nécessaire qu'elle permette de
+formaliser toutes les variations de décompositions souhaitées, qu'il
+faut alors identifier. De plus, cette organisation ne permet de
+décomposer que des \emph{relations de localisation} incluses dans la
+base de règles. Il est donc indispensable qu'elle contienne l'ensemble
+des \emph{relations de localisation} pertinentes dans notre contexte
+et leur décomposition. La constitution d'une telle base de règles
 nécessite donc au préalable un travail d'identification et de
 définition des \emph{relations de localisations} utilisées dans notre
 contexte.
@@ -79,8 +82,8 @@ contexte.
   \label{fig:logique_dec}
 \end{figure}
 
-Dans le cas qui nous a servi à présenter le \emph{principe de
-  décomposition} (cf. \autoref{chap:04}) une \emph{relation de
+Dans l'exemple qui nous a servi à présenter le \emph{principe de
+  décomposition} (\autoref{subsec:4-3-3-4}) une \emph{relation de
   localisation} (\enquote{sous}) était décomposée en deux
 \emph{relations de localisation atomiques} (\enquote{proche} et
 \enquote{altitude inférieure}). Si cette configuration a pour mérite
