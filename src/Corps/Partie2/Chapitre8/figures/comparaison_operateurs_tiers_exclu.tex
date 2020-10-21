@@ -81,7 +81,7 @@
             )
           }          
           % fusion (zadeh)
-          \pgfmathsetmacro\fus{max(\fuzzy, 1-\fuzzy)}          
+          \pgfmathsetmacro\fus{max(\fuzzy, (1-\fuzzy))}          
           % Calcul du rayon à partir de la fuzzyfication
           \pgfmathsetmacro\radius{\fus*2.5}
           \fill[RdBu-9-9] (\x+.125,.125+\y) circle (\radius pt);
@@ -108,7 +108,7 @@
             )
           }
           % fusion (luka)
-          \pgfmathsetmacro\fus{min(\fuzzy + (1-\fuzzy), 0)}          
+          \pgfmathsetmacro\fus{min(\fuzzy + (1-\fuzzy), 1)}          
           % Calcul du rayon à partir de la fuzzyfication
           \pgfmathsetmacro\radius{\fus*2.5}
           \fill[RdBu-9-9] (\x+.125,.125+\y) circle (\radius pt);
