@@ -24,7 +24,7 @@
       \foreach \x in {0,.25,...,1.75}{ \foreach \y in {0,.25,...,1.75}
         {
           % Calcul de l'angle
-          \calcangle{\angle}{\pgfpoint{1cm}{1cm}}{\pgfpoint{2cm}{2cm}}{\pgfpoint{\x cm}{\y cm}}
+          \calcangle{\angle}{\pgfpoint{1cm}{1cm}}{\pgfpoint{1cm}{0cm}}{\pgfpoint{\x cm}{\y cm}}
           % Fuzzyfication de l'angle
           \pgfmathsetmacro\fuzzy{%
             ifthenelse(\angle < 90,(90-\angle)/90,
@@ -48,7 +48,7 @@
         \foreach \y in {0,.25,...,1.75}
         {
           % Calcul de l'angle
-          \calcangle{\angle}{\pgfpoint{1cm}{1cm}}{\pgfpoint{1cm}{0cm}}{\pgfpoint{\x cm}{\y cm}}
+          \calcangle{\angle}{\pgfpoint{1cm}{1cm}}{\pgfpoint{2cm}{0cm}}{\pgfpoint{\x cm}{\y cm}}
           % Fuzzyfication de l'angle
           \pgfmathsetmacro\fuzzy{%
             ifthenelse(\angle < 90,(90-\angle)/90,
@@ -71,19 +71,28 @@
       \foreach \x in {0,.25,...,1.75}{
         \foreach \y in {0,.25,...,1.75}
         {
-          % Traçage pixels 
-          % \path[draw, line width=.01mm] (\x,\y) rectangle (\x +.25, \y +
-          % .25);
-          % Calcul et représentation floue distance euclidienne
-          \pgfmathsetmacro\dist{sqrt((\x-1.125)^2+(\y-.375)^2)}
-          % Fuzzyfication de la distance
-          \pgfmathsetmacro\fuzzy{%
-            ifthenelse(\dist < .75,0,%
-            ifthenelse(\dist < 1.75,\dist-.75,1)%
+          % Calcul des angles
+          \calcangle{\angle1}{\pgfpoint{1cm}{1cm}}{\pgfpoint{1cm}{0cm}}{\pgfpoint{\x
+              cm}{\y cm}}
+          \calcangle{\angle2}{\pgfpoint{1cm}{1cm}}{\pgfpoint{2cm}{0cm}}{\pgfpoint{\x cm}{\y cm}}
+          % Fuzzyfication des angles
+          \pgfmathsetmacro\fuzzy1{%
+            ifthenelse(\angle < 90,(90-\angle)/90,
+            ifthenelse(\angle > 270,(\angle-270)/90,0)
             )
           }
+
+          \pgfmathsetmacro\fuzzy2{%
+            ifthenelse(\angle2 < 90,(90-\angle2)/90,
+            ifthenelse(\angle2 > 270,(\angle2-270)/90,0)
+            )
+          }
+
+          % fusion (zadeh)
+          \pgfmathsetmacro\fus{max(\fuzzy1, \fuzzy2)}
+          
           % Calcul du rayon à partir de la fuzzyfication
-          \pgfmathsetmacro\radius{\fuzzy*2.5}
+          \pgfmathsetmacro\radius{\fus*2.5}
           \fill[RdBu-9-9] (\x+.125,.125+\y) circle (\radius pt);
         }
       }
