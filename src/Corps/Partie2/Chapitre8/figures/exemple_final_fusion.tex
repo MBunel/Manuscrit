@@ -164,15 +164,45 @@
   % Annotations
   \begin{scope}
 
-    \begin{scope}[xshift=6cm, yshift=-8cm]
-      \path[ffc] (1.75cm,1.75cm) rectangle (2cm,2cm);
+    \begin{scope}
+      \begin{scope}
+        \path[ffc] (1.75cm,1.75cm) rectangle (2cm,2cm);
+      \end{scope}
+      \begin{scope}[yshift=-3.5cm]
+        \path[ffc] (1.75cm,1.75cm) rectangle (2cm,2cm);
+      \end{scope}
+      \begin{scope}[xshift=6cm, yshift=-1.75cm]
+        \path[ffc] (1.75cm,1.75cm) rectangle (2cm,2cm);
+      \end{scope}
+      \node[align=center,anchor=center] (zi) at (4,-1) {$\top(a,b)=c$};
+
+      \path[->, draw] (2,2) -- (zi.west);
+      \path[->, draw] (2,-1.5) -- (zi.west);
+
+      \path[->, draw] (zi.east) -- (7.75,.25);
     \end{scope}
-    \begin{scope}[xshift=6cm, yshift=-11.5cm]
-      \path[ffc] (1.75cm,1.75cm) rectangle (2cm,2cm);
+
+    
+    \begin{scope}
+      \begin{scope}[xshift=6cm, yshift=-8cm]
+        \path[ffc] (1.75cm,1.75cm) rectangle (2cm,2cm);
+      \end{scope}
+      \begin{scope}[xshift=6cm, yshift=-11.5cm]
+        \path[ffc] (1.75cm,1.75cm) rectangle (2cm,2cm);
+      \end{scope}
+      \begin{scope}[xshift=12cm, yshift=-9.75cm]
+        \path[ffc] (1.75cm,1.75cm) rectangle (2cm,2cm);
+      \end{scope}
+      \node[align=center,anchor=center] (zou) at (12,-6) {$\top(a,b)=c$};
+
+      \path[->, draw] (8,-6) -- (zou.west);
+      \path[->, draw] (8,-9.5) -- (zou.west);
+
+      \path[->, draw] (zou.east) -- (13.74,-7.75);
     \end{scope}
-    \begin{scope}[xshift=12cm, yshift=-9.75cm]
-      \path[ffc] (1.75cm,1.75cm) rectangle (2cm,2cm);
-    \end{scope}
+
+    
   \end{scope}
   
+
 \end{tikzpicture}
