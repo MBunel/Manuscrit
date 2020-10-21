@@ -99,14 +99,17 @@
     \draw[ffa,ffc] (0,0) circle (.3cm);\\
   };
 
-  % \matrix [matrix of nodes,
-  % anchor=north,
-  % nodes={minimum size=.75cm},
-  % below=2cm of ($(zlc0)!0.5!(zlc1)$)
-  % ] (zlc1)
-  % {
-  %   \draw[ffa,ffc] (0,0) circle (.3cm);\\
-  % };
+  % Ligne 4
+    \coordinate (zlc01) at ($(zlc0)!0.5!(zlc1)$);
+  
+  \matrix [matrix of nodes,
+  anchor=north,
+  nodes={minimum size=.75cm},
+  below=2cm of zlc01
+  ] (zlc1)
+  {
+    \draw[ffa,ffc] (0,0) circle (.3cm);\\
+  };
 
 
   % Accolades
