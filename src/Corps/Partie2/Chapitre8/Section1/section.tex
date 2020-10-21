@@ -53,8 +53,6 @@ qu'il y ait n-1 indices dont le dégré est de 1.}
 
 \tdi{Loi du tier-exclu}
 
-
-
 On peut s'en convaincre à l'aide de la \autoref{fig:tiers_exclu}. La
 \autoref{fig:tiers_exclu} représente le résultat de l'union d'un sous
 ensemble-flou \textcolor{RdBu-9-1}{\textsf{A}} avec son complémentaire
@@ -70,14 +68,29 @@ d'appartenance inférieurs à 1.
   \centering
   \input{../figures/comparaison_operateurs_tiers_exclu.tex}
   \caption{fig:tiers_exclu}
+  \label{fig:tiers_exclu}
 \end{figure}
 
 \tdi{Principe de non contradiction}
+
+On peut s'en convaincre à l'aide de la
+\autoref{fig:non_contradiction}. La \autoref{fig:non_contradiction}
+représente le résultat de l'intersection d'un sous ensemble-flou
+\textcolor{RdBu-9-1}{\textsf{A}} avec son complémentaire
+\textcolor{RdBu-9-9}{\textsf{A\up{C}}}, en fonction de l'opérateur
+utilisé. On peut remarquer deux comportements distincts. Les
+opérateurs drastiques et de \bsc{Łukasiewicz} produisent un résultat
+homogène, où l'ensemble des pixels possèdent un degré d'appartenance
+nul, alors que les opérateurs de \bsc{Zadeh} ou probabilistes
+aboutissent à une zone non uniforme et contenant des degrés
+d'appartenance non nuls.
+
 
 \begin{figure}
   \centering
   \input{../figures/comparaison_operateurs_non_contradiction.tex}
   \caption{non contradiction}
+  \label{fig:non_contradiction}
 \end{figure}
 
 Concepts non excluant
