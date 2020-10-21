@@ -17,6 +17,8 @@ de \emph{fusion} est scindable en trois étapes ---~\emph{fusion} des
 différents ensembles de \emph{zones de localisation compatibles.}
 
 
+\tdi{Dire qu'on fait la comparaison entre rasters}
+
 
 \tdi{Transition Pour faire ces fusions on a besoin d'opérateurs}
 
@@ -41,6 +43,7 @@ Les différentes caractéristiques des opérateurs d'intersection et de
 fusion ont été présentées dans le \autoref{chap:03}. Cependant nous ne
 les avons pas détaillées 
 
+
 \tdi{Nécessité d'utiliser des opérateurs duals}
 
 \tdi{Enlever les opérateurs drastiques car ils sont trop sévères et ne
@@ -50,10 +53,23 @@ qu'il y ait n-1 indices dont le dégré est de 1.}
 
 \tdi{Loi du tier-exclu}
 
+
+
+On peut s'en convaincre à l'aide de la \autoref{fig:tiers_exclu}. La
+\autoref{fig:tiers_exclu} représente le résultat de l'union d'un sous
+ensemble-flou \textcolor{RdBu-9-1}{\textsf{A}} avec son complémentaire
+\textcolor{RdBu-9-9}{\textsf{A\up{C}}}, en fonction de l'opérateur
+utilisé. On peut remarquer deux comportements distincts. Les
+opérateurs drastiques et de \bsc{Łukasiewicz} produisent un résultat
+homogène, où l'ensemble des pixels possèdent un degré d'appartenance
+de 1, alors que les opérateurs de \bsc{Zadeh} ou probabilistes
+aboutissent à une zone non uniforme et contenant des degrés
+d'appartenance inférieurs à 1.
+
 \begin{figure}
   \centering
   \input{../figures/comparaison_operateurs_tiers_exclu.tex}
-  \caption{tier-ex}
+  \caption{fig:tiers_exclu}
 \end{figure}
 
 \tdi{Principe de non contradiction}
