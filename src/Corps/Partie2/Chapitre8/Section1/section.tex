@@ -46,10 +46,82 @@ les avons pas détaillées
 
 \tdi{Nécessité d'utiliser des opérateurs duals}
 
+Si leurs propriétés différent, ces quatres couples partagent la
+caractéristique d'êtres \emph{duals} \autocite{Bouchon-Meunier2007},
+ce qui signifie que pour tous \(x\) et \(y\) dont la valeur est
+comprise entre 0 et 1, \emph{la négation d'une \emph{t-norme}} est
+égale à la \emph{t-conorme} de la négation de \(x\) et de \(y\) et
+inversement, soit :
+
+\begin{equation}
+  n(⊤(x,y)) = ⊥(n(x), n(y))
+\end{equation}
+
+\begin{equation}
+  n(⊥(x,y)) = ⊤(n(x), n(y))
+\end{equation}
+
+Avec \(n\) la négation.
+
+\tdi{Nécessité des opérateurs continus}
+
 \tdi{Enlever les opérateurs drastiques car ils sont trop sévères et ne
 permettent pas de conserver des positions dont le degré d'appartenance
 n'est pas au moins un fois de 1. En plus si j'ai n indices il faut
 qu'il y ait n-1 indices dont le dégré est de 1.}
+
+
+Comme les opérateurs de \textcite{Zadeh1965} la \emph{t-norme} et la
+\emph{t-conorme} de \bsc{Łukasiewicz} sont \emph{continues.} De plus,
+comme pour tout \(x \in ]0,1[\) : \(⊤_L(x,x) < x\) et
+\( ⊥_L(x,x) > x\) ces opérateurs sont dits \emph{archimédiens}
+\autocite{Bouchon-Meunier1995}, contrairement aux opérateurs de
+\textcite{Zadeh1965}. Une autre caractéristique des opérateurs de
+\bsc{Łukasiewicz} est que, contrairement aux opérateurs de
+\textcite{Zadeh1965}, ils satisfont les lois de
+\emph{non-contradiction} et du \emph{tiers exclu.} Ainsi, conformément
+à la loi de \emph{non-contradiction,} l’application de la
+\emph{t-norme} de \bsc{Łukasiewicz} à un degré appartenance et à sa
+négation est toujours nulle :
+
+\begin{equation}
+  ⊤_L(x,1-x) = 0
+\end{equation}
+
+Quant à loi du \emph{tiers exclu,} celle-ci conduit à ce que
+l’application de \emph{t-conorme} de \bsc{Łukasiewicz} à un degré
+appartenance et à sa négation soit toujours égale à 1 :
+
+\begin{equation}
+  ⊥_L(x,1-x) = 1
+\end{equation}
+
+Par conséquent, l'intersection d'un sous-ensemble flou \(A\) (de
+\(X\)) avec son complément \(A^C\) (\autoref{eq:comp}) avec ces
+opérateurs est toujours égale à l'ensemble vide :
+
+\begin{equation}
+  A \cap A^C = \emptyset
+\end{equation}
+
+et l'union de ces deux sous-ensembles avec les opérateurs de
+\bsc{Łukasiewicz} est toujours égale à l'ensemble net \(X\):
+
+\begin{equation}
+  A \cup A^C = X
+\end{equation}
+
+%%%
+
+les opérateurs probabilistes
+sont continus, les opérateurs de \textcite{Zadeh1965} ou de
+\bsc{Łukasiewicz}. Ils ont également la caractéristique d'être
+\emph{archimédiens stricts,} \ie que pour tout \(x < v\) et \(y < w\)
+: \(⊤_P(x,y) < ⊤_P(v,w)\) et \(⊥_P(x,y) > ⊥_P(v,w)\)
+\autocite{Bouchon-Meunier1995}. Cependant, comme les opérateurs de
+\textcite{Zadeh1965}, les opérateur probabilistes ne satisfont pas les
+lois de \emph{non-contradiction} et du \emph{tiers exclus.}
+
 
 \tdi{Loi du tier-exclu}
 
@@ -93,6 +165,12 @@ d'appartenance non nuls.
   \label{fig:non-contradiction}
 \end{figure}
 
+La validation des principes du tiers-exclus et de non-contradiction
+n'est pas nécessairement une condition \emph{sine qua non} à
+l'utilisation d'opérateurs. 
+
+
+
 Concepts non excluant
 
 On a pas eu de problèmes du fait que cette loi ne soit pas validée
@@ -131,7 +209,6 @@ On choisi Zadeh
   \input{../figures/comparaison_operateurs_intersection.tex}
   \caption{sq}
 \end{figure}
-
 
 
 \subsection{La prise en compte de la confiance}
