@@ -1,0 +1,128 @@
+\begin{tikzpicture}
+  \matrix [matrix of nodes,
+  anchor=west,
+  nodes={minimum size=.75cm}
+  ] (zla0) at (0,0)
+  {
+    \draw[ffa,ffc] (0,0) circle (.3cm);&
+    \draw[ffa,ffc] (0,0) circle (.3cm);\\
+  };
+
+  \matrix [matrix of nodes,
+  anchor=west,
+  nodes={minimum size=.75cm},
+  right=.75cm of zla0
+  ] (zla1)
+  {
+    \draw[ffa,ffc] (0,0) circle (.3cm);&
+    \draw[ffa,ffc] (0,0) circle (.3cm);\\
+  };
+
+
+  \matrix [matrix of nodes,
+  anchor=west,
+  nodes={minimum size=.75cm},
+  right=.75cm of zla1
+  ] (zla2)
+  {
+    \draw[ffa,ffc] (0,0) circle (.3cm);&
+    \draw[ffa,ffc] (0,0) circle (.3cm);\\
+  };
+
+  \matrix [matrix of nodes,
+  anchor=west,
+  nodes={minimum size=.75cm},
+  right=.75cm of zla2
+  ] (zla3)
+  {
+    \draw[ffa,ffc] (0,0) circle (.3cm);&
+    \draw[ffa,ffc] (0,0) circle (.3cm);\\
+  };
+
+
+  % Ligne 2
+  \matrix [matrix of nodes,
+  anchor=north,
+  nodes={minimum size=.75cm},
+  below=2cm of zla0
+  ] (zlb0)
+  {
+    \draw[ffa,ffc] (0,0) circle (.3cm);\\
+  };
+
+  \matrix [matrix of nodes,
+  anchor=north,
+  nodes={minimum size=.75cm},
+  below=2cm of zla1
+  ] (zlb1)
+  {
+    \draw[ffa,ffc] (0,0) circle (.3cm);\\
+  };
+
+  \matrix [matrix of nodes,
+  anchor=north,
+  nodes={minimum size=.75cm},
+  below=2cm of zla2
+  ] (zlb2)
+  {
+    \draw[ffa,ffc] (0,0) circle (.3cm);\\
+  };
+  \matrix [matrix of nodes,
+  anchor=north,
+  nodes={minimum size=.75cm},
+  below=2cm of zla3
+  ] (zlb3)
+  {
+    \draw[ffa,ffc] (0,0) circle (.3cm);\\
+  };
+
+  % Ligne 3
+  \coordinate (zlb01) at ($(zlb0)!0.5!(zlb1)$);
+  \coordinate (zlb23) at ($(zlb2)!0.5!(zlb3)$);
+
+  
+  \matrix [matrix of nodes,
+  anchor=north,
+  nodes={minimum size=.75cm},
+  below=2cm of zlb01
+  ] (zlc0)
+  {
+    \draw[ffa,ffc] (0,0) circle (.3cm);\\
+  };
+
+  \matrix [matrix of nodes,
+  anchor=north,
+  nodes={minimum size=.75cm},
+  below=2cm of zlb23
+  ] (zlc1)
+  {
+    \draw[ffa,ffc] (0,0) circle (.3cm);\\
+  };
+
+  % \matrix [matrix of nodes,
+  % anchor=north,
+  % nodes={minimum size=.75cm},
+  % below=2cm of ($(zlc0)!0.5!(zlc1)$)
+  % ] (zlc1)
+  % {
+  %   \draw[ffa,ffc] (0,0) circle (.3cm);\\
+  % };
+
+
+  % Accolades
+  \foreach \m in {0,1,...,3} {
+    \draw (zla\m.south west) |- ($(zla\m.south west)!0.5!(zla\m.south
+    east) + (0,-.1)$) -| (zla\m.south east)  node[pos=0, yshift=.2]
+    (zla\m-g) {};
+    % 
+    % \draw (zlb\m.north west) |- ($(zlb\m.north west)!0.5!(zlb\m.north
+    % east) + (0,.1)$) -| (zlb\m.north east)  node[pos=0, yshift=.2]
+    % (zlb\m-g) {};
+    % 
+    % \draw[->>, black,] ([yshift=-.2cm]zla\m.south) -- ([yshift=.2cm]zlb\m.north);
+  }
+
+
+  % \node[fill=white,align=center, font=\large\sffamily] at ($(zla0.south west)!0.5!(zlb5.north
+  % east)$){\emph{Fusion} des \emph{relations de localisation atomiques}};
+\end{tikzpicture}
