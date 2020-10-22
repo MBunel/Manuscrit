@@ -44,7 +44,7 @@
   \matrix [matrix of nodes,
   anchor=north,
   nodes={minimum size=.75cm},
-  below=2cm of zla0
+  below=.75cm of zla0
   ] (zlb0)
   {
     \draw[ffa,ffc] (0,0) circle (.3cm);\\
@@ -53,7 +53,7 @@
   \matrix [matrix of nodes,
   anchor=north,
   nodes={minimum size=.75cm},
-  below=2cm of zla1
+  below=.75cm of zla1
   ] (zlb1)
   {
     \draw[ffa,ffc] (0,0) circle (.3cm);\\
@@ -62,7 +62,7 @@
   \matrix [matrix of nodes,
   anchor=north,
   nodes={minimum size=.75cm},
-  below=2cm of zla2
+  below=.75cm of zla2
   ] (zlb2)
   {
     \draw[ffa,ffc] (0,0) circle (.3cm);\\
@@ -70,21 +70,21 @@
   \matrix [matrix of nodes,
   anchor=north,
   nodes={minimum size=.75cm},
-  below=2cm of zla3
+  below=.75cm of zla3
   ] (zlb3)
   {
     \draw[ffa,ffc] (0,0) circle (.3cm);\\
   };
 
   % Ligne 3
-  \coordinate (zlb01) at ($(zlb0)!0.5!(zlb1)$);
-  \coordinate (zlb23) at ($(zlb2)!0.5!(zlb3)$);
+  \coordinate (zlb01) at ($(zlb0.south)!0.5!(zlb1.south)$);
+  \coordinate (zlb23) at ($(zlb2.south)!0.5!(zlb3.south)$);
 
   
   \matrix [matrix of nodes,
   anchor=north,
   nodes={minimum size=.75cm},
-  below=2cm of zlb01
+  below=.75cm of zlb01
   ] (zlc0)
   {
     \draw[ffa,ffc] (0,0) circle (.3cm);\\
@@ -93,20 +93,20 @@
   \matrix [matrix of nodes,
   anchor=north,
   nodes={minimum size=.75cm},
-  below=2cm of zlb23
+  below=.75cm of zlb23
   ] (zlc1)
   {
     \draw[ffa,ffc] (0,0) circle (.3cm);\\
   };
 
   % Ligne 4
-    \coordinate (zlc01) at ($(zlc0)!0.5!(zlc1)$);
+    \coordinate (zlc01) at ($(zlc0.south)!0.5!(zlc1.south)$);
   
   \matrix [matrix of nodes,
   anchor=north,
   nodes={minimum size=.75cm},
-  below=2cm of zlc01
-  ] (zlc1)
+  below=.75cm of zlc01
+  ] (zld0)
   {
     \draw[ffa,ffc] (0,0) circle (.3cm);\\
   };
@@ -125,7 +125,18 @@
     % \draw[->>, black,] ([yshift=-.2cm]zla\m.south) -- ([yshift=.2cm]zlb\m.north);
   }
 
+  \draw (zlb0.south west) |- ($(zlb0.south west)!0.5!(zlb1.south
+  east) + (0,-.1)$) -| (zlb1.south east)  node[pos=0, yshift=.2]
+  (zlb1-g) {};
 
+  \draw (zlb2.south west) |- ($(zlb3.south west)!0.5!(zlb3.south
+  east) + (0,-.1)$) -| (zlb3.south east)  node[pos=0, yshift=.2]
+  (zlb3-g) {};
+
+  \draw (zlc0.south west) |- ($(zlc0.south west)!0.5!(zlc1.south
+  east) + (0,-.1)$) -| (zlc1.south east)  node[pos=0, yshift=.2]
+  (zlc0-g) {};
+  
   % \node[fill=white,align=center, font=\large\sffamily] at ($(zla0.south west)!0.5!(zlb5.north
   % east)$){\emph{Fusion} des \emph{relations de localisation atomiques}};
 \end{tikzpicture}
