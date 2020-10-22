@@ -84,10 +84,10 @@
           \pgfmathsetmacro\fus{max(\fuzzy, (1-\fuzzy))}          
           % Calcul du rayon à partir de la fuzzyfication
           \pgfmathsetmacro\radius{\fus*2.5}
-          \fill[RdBu-9-9] (\x+.125,.125+\y) circle (\radius pt);
+          \fill[black] (\x+.125,.125+\y) circle (\radius pt);
         }
       }
-      \path[ffc2] (0,0) rectangle (2,2);
+      \path[ffc, black] (0,0) rectangle (2,2);
     \end{scope}
     \node[text width=3cm, align=center, anchor=north, font=\footnotesize] at (1,-.25)
     {\itshape Zone de localisation compatible \normalfont \textcolor{RdBu-9-9}{\textsf{B}}};
@@ -111,10 +111,10 @@
           \pgfmathsetmacro\fus{min(\fuzzy + (1-\fuzzy), 1)}          
           % Calcul du rayon à partir de la fuzzyfication
           \pgfmathsetmacro\radius{\fus*2.5}
-          \fill[RdBu-9-9] (\x+.125,.125+\y) circle (\radius pt);
+          \fill[black] (\x+.125,.125+\y) circle (\radius pt);
         }
       }
-      \path[ffc2] (0,0) rectangle (2,2);
+      \path[ffc, black] (0,0) rectangle (2,2);
     \end{scope}
     \node[text width=3cm, align=center, anchor=north, font=\footnotesize] at (1,-.25)
     {\itshape Zone de localisation compatible \normalfont \textcolor{RdBu-9-9}{\textsf{B}}};
@@ -138,10 +138,10 @@
           \pgfmathsetmacro\fus{(\fuzzy + (1-\fuzzy)) - \fuzzy * (1-\fuzzy)}          
           % Calcul du rayon à partir de la fuzzyfication
           \pgfmathsetmacro\radius{\fus*2.5}
-          \fill[RdBu-9-9] (\x+.125,.125+\y) circle (\radius pt);
+          \fill[black] (\x+.125,.125+\y) circle (\radius pt);
         }
       }
-      \path[ffc2] (0,0) rectangle (2,2);
+      \path[ffc, black] (0,0) rectangle (2,2);
     \end{scope}
     \node[text width=3cm, align=center, anchor=north, font=\footnotesize] at (1,-.25)
     {\itshape Zone de localisation compatible \normalfont \textcolor{RdBu-9-9}{\textsf{B}}};
@@ -169,10 +169,10 @@
           }          
           % Calcul du rayon à partir de la fuzzyfication
           \pgfmathsetmacro\radius{\fus*2.5}
-          \fill[RdBu-9-9] (\x+.125,.125+\y) circle (\radius pt);
+          \fill[black] (\x+.125,.125+\y) circle (\radius pt);
         }
       }
-      \path[ffc2] (0,0) rectangle (2,2);
+      \path[ffc, black] (0,0) rectangle (2,2);
     \end{scope}
     \node[text width=3cm, align=center, anchor=north, font=\footnotesize] at (1,-.25)
     {\itshape Zone de localisation compatible \normalfont \textcolor{RdBu-9-9}{\textsf{B}}};
