@@ -17,13 +17,9 @@ de \emph{fusion} est scindable en trois étapes ---~\emph{fusion} des
 différents ensembles de \emph{zones de localisation compatibles.}
 
 
+
+
 \tdi{Dire qu'on fait la comparaison entre rasters}
-
-
-\tdi{Transition Pour faire ces fusions on a besoin d'opérateurs}
-
-La mise en place de ces trois étapes nécessite l'utilisation
-d'opérateurs de fusions.
 
 
 \begin{figure}
@@ -41,6 +37,14 @@ d'opérateurs de fusions.
    \caption{Synthèse des étapes de la \emph{phase de fusion}}
   \label{tab:comparaison_etapes_fusion}
 \end{table}
+
+
+\tdi{Transition Pour faire ces fusions on a besoin d'opérateurs}
+%
+La théorie des \emph{sous-ensembles flous,} que nous employons pour la
+représentation des \emph{zones de localisation} (\autoref{chap:06}),
+permet d'effectuer des opérations inter-ensemblistes à l'aide de
+plusieurs opérateurs (\autoref{chap:03}). 
 
 \subsection{Opérateurs}
 
@@ -86,6 +90,8 @@ permettent pas de conserver des positions dont le degré d'appartenance
 n'est pas au moins un fois de 1. En plus si j'ai n indices il faut
 qu'il y ait n-1 indices dont le dégré est de 1.}
 
+
+\subsubsection{Les principes du tiers-exclu \& de la non-contradiction}
 
 Comme les opérateurs de \textcite{Zadeh1965} la \emph{t-norme} et la
 \emph{t-conorme} de \bsc{Łukasiewicz} sont \emph{continues.} De plus,
@@ -200,7 +206,7 @@ Caractéristiques non excluantes
 Discuter du fait que ce soit mieux que ces principes ne soit pas
 validés.
 
-\tdi{Opérateurs archimédiens}
+\subsubsection{L'archimédianité des opérateurs}
 
 Mettre une figure de l'intersection d'angle avec les opérateurs
 archimédiens (ex. sud et sud-est).
@@ -228,6 +234,7 @@ On choisi Zadeh
 
 
 \subsection{La prise en compte de la confiance}
+\tdi{voi si c,'est pas mieux de le mettre en section}
 
 La confiance peut se définir en amont de la spatialisation.
 
@@ -250,6 +257,13 @@ contraintes.
   \label{fig:qs}
 \end{figure}
 
+
+
+
+\begin{figure}
+  \centering
+  \missingfigure{Comparaison fusion indices avec et sans incertitude}
+\end{figure}
 
 
 
