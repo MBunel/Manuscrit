@@ -213,6 +213,9 @@ validés.
 
 \subsubsection{L'archimédianité des opérateurs}
 
+Une autre propriété différenciant les opérateurs est leur
+archimédianté.
+
 Mettre une figure de l'intersection d'angle avec les opérateurs
 archimédiens (ex. sud et sud-est).
 
@@ -221,22 +224,37 @@ on est a côté de deux lac -> wtf
 
 Ce critère discalifie lukacevicz et probabiliste
 
-\tdi{Raisonnement en termes d'interprétabilité}
+L'archimédianité a des impliquations sémantiques importantes.
 
-On choisi Zadeh
+Pour illustrer ce phénomène on peut se questionner sur l'impact de
+cette propriété sur la fusion de \emph{zones de localisation
+  compatibles.}  Les figures \ref{fig:comparaison_operateurs_union} et
+\ref{fig:comparaison_operateurs_intersection} représentent le résultat
+de l'union et de l'intersection des deux mêmes \emph{zones de
+  localisation compatibles.} La \ac{zlc}
+\textcolor{RdBu-9-1}{\textsf{A}} représente la \emph{spatialisation}
+de \emph{l'indice de localisation} \enquote{au sud de} et la \ac{zlc}
+\textcolor{RdBu-9-9}{\textsf{B}} de \emph{l'indice de localisation}
+\enquote{à l'est de}.
 
 \begin{figure}
   \centering
   \input{../figures/comparaison_operateurs_union.tex}
   \caption{sq}
+  \label{fig:comparaison_operateurs_union}
 \end{figure}
 
 \begin{figure}
   \centering
   \input{../figures/comparaison_operateurs_intersection.tex}
   \caption{sq}
+  \label{fig:comparaison_operateurs_intersection}
 \end{figure}
 
+
+\tdi{Raisonnement en termes d'interprétabilité}
+
+On choisi Zadeh
 
 \subsection{La prise en compte de la confiance}
 \tdi{voi si c,'est pas mieux de le mettre en section}
