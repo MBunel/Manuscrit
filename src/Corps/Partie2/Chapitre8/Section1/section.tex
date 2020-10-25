@@ -13,13 +13,21 @@ d'un grand nombre de \emph{zones de localisation compatibles}
   des \emph{indices de localisation} (\autoref{chap:04}) ne contient
   qu'un \emph{indice} lui-même employant une \emph{relation de
     localisation atomique} exprimée par rapport à un \emph{objet de
-    référence} défini. Dans se cas les phases de \emph{décomposition}
+    référence} défini. Dans ce cas les phases de \emph{décomposition}
   et de \emph{fusion} n'ont pas de rôle à jouer.}, chacune contenant
 une part de l'information nécessaire à la construction de la
 \ac{zlp}. Le rôle de la \emph{phase de fusion} consiste simplement à
 combiner toutes ces informations de manière a obtenir une seule
 \emph{zone de localisation,} correspondant à la description de
 position donnée par l'ensemble des \emph{indices de localisation.}
+
+\begin{equation}
+ p_{\mathsf{ZLP}} = \left((p_{\mathsf{ZLC}_1} \wedge
+p_{\mathsf{ZLC}_2}) \vee (p_{\mathsf{ZLC}_3} \wedge
+p_{\mathsf{ZLC}_4})\right) \wedge \left((p_{\mathsf{ZLC}_5} \wedge
+p_{\mathsf{ZLC}_6}) \vee (p_{\mathsf{ZLC}_7} \wedge
+p_{\mathsf{ZLC}_8})\right)
+\end{equation}
 
 \subsection{Présentation des \emph{étapes} de la \emph{phase de
     fusion}}
