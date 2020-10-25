@@ -21,7 +21,14 @@ combiner toutes ces informations de manière a obtenir une seule
 \emph{zone de localisation,} correspondant à la description de
 position donnée par l'ensemble des \emph{indices de localisation.}
 
-Par exemple, XXXXX
+Le degré d'appartenance d'un pixel /(p/) donné à la \emph{zone de
+  localisation probable} peut donc être calculé en \emph{fusionnant}
+le degré d'appartenance de ce même pixel pour l'ensemble des
+\emph{zones de localisation compatibles} crée lors de la
+\emph{spatialisation.} Si l'on reprend l'exemple de la
+\autoref{fig:methodo_fusion}, où huit \ac{zlc} sont regroupées deux à
+deux jusqu'à l'obtention d'une \ac{zlp}, le degré d'appartenance d'un
+pixel à la \ac{zlp} est :
 
 \begin{equation}
  p_{\mathsf{ZLP}} = \left((p_{\mathsf{ZLC}_1} \wedge
@@ -31,7 +38,7 @@ p_{\mathsf{ZLC}_6}) \vee (p_{\mathsf{ZLC}_7} \wedge
 p_{\mathsf{ZLC}_8})\right)
 \end{equation}
 
-Avec \(p\) un pixel donné.
+
 
 \subsection{Présentation des \emph{étapes} de la \emph{phase de
     fusion}}
