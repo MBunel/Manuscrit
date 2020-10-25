@@ -17,11 +17,16 @@ d'un grand nombre de \emph{zones de localisation compatibles}
   et de \emph{fusion} n'ont pas de rôle à jouer.}, chacune contenant
 une part de l'information nécessaire à la construction de la
 \ac{zlp}. Le rôle de la \emph{phase de fusion} consiste simplement à
-combiner toutes ces informations de manière a obtenir une seule
+combiner toutes ces informations de manière à obtenir une seule
 \emph{zone de localisation,} correspondant à la description de
 position donnée par l'ensemble des \emph{indices de localisation.}
 
-Le degré d'appartenance d'un pixel /(p/) donné à la \emph{zone de
+
+\tdi{Amener la fusion de manière simple}
+
+
+
+Le degré d'appartenance d'un pixel $p$ donné à la \emph{zone de
   localisation probable} peut donc être calculé en \emph{fusionnant}
 le degré d'appartenance de ce même pixel pour l'ensemble des
 \emph{zones de localisation compatibles} crée lors de la
@@ -38,6 +43,9 @@ p_{\mathsf{ZLC}_6}) \vee (p_{\mathsf{ZLC}_7} \wedge
 p_{\mathsf{ZLC}_8})\right)
 \end{equation}
 
+Les différentes \emph{étapes} de la \emph{phase de fusion} permettent
+d'effectuer ce calcul sur l'ensemble des pixels utilisés pour
+représenter la \ac{zir}.
 
 
 \subsection{Présentation des \emph{étapes} de la \emph{phase de
