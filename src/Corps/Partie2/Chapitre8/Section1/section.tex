@@ -234,47 +234,50 @@ qu'il y ait n-1 indices dont le dégré est de 1.}
 
 Un second critère de distinction entre ces quatre opérateurs est la
 conservation des principes du \emph{tiers-exclu} et de la
-\emph{non-contractidtion.}
+\emph{non-contradiction.} Ces deux principes XXX
 
-Comme les opérateurs de \textcite{Zadeh1965} la \emph{t-norme} et la
-\emph{t-conorme} de \bsc{Łukasiewicz} sont \emph{continues.} De plus,
-comme pour tout \(x \in ]0,1[\) : \(⊤_L(x,x) < x\) et
-\( ⊥_L(x,x) > x\) ces opérateurs sont dits \emph{archimédiens}
-\autocite{Bouchon-Meunier1995}, contrairement aux opérateurs de
-\textcite{Zadeh1965}. Une autre caractéristique des opérateurs de
-\bsc{Łukasiewicz} est que, contrairement aux opérateurs de
-\textcite{Zadeh1965}, ils satisfont les lois de
-\emph{non-contradiction} et du \emph{tiers exclu.} Ainsi, conformément
-à la loi de \emph{non-contradiction,} l’application de la
-\emph{t-norme} de \bsc{Łukasiewicz} à un degré appartenance et à sa
-négation est toujours nulle :
+Le principe du \emph{tiers-exclu}
+
+Quant au principe de \emph{non-contradiction} il
+
+
+Ainsi, lorsqu'un couple d'opérateurs est conforme à la loi de
+\emph{non-contradiction,} l’application de sa \emph{t-norme} à un
+degré appartenance quelconque (\(x\)) et à sa négation donne toujours un
+degré d'appartenance nul : 
 
 \begin{equation}
-  ⊤_L(x,1-x) = 0
+  \forall x, ⊤(x,1-x) = 0
 \end{equation}
 
-Quant à loi du \emph{tiers exclu,} celle-ci conduit à ce que
-l’application de \emph{t-conorme} de \bsc{Łukasiewicz} à un degré
-appartenance et à sa négation soit toujours égale à 1 :
+De même, si un couple d'opérateurs est conforme au principe du
+\emph{tiers-exclu} alors l’application de sa \emph{t-conorme} à un
+degré appartenance quelconque (\(x\))  et à sa négation soit
+toujours égal à 1 :
 
 \begin{equation}
-  ⊥_L(x,1-x) = 1
+  \forall x, ⊥(x,1-x) = 1
 \end{equation}
 
-Par conséquent, l'intersection d'un sous-ensemble flou \(A\) (de
-\(X\)) avec son complément \(A^C\) (\autoref{eq:comp}) avec ces
-opérateurs est toujours égale à l'ensemble vide :
+Par conséquent, si la \emph{t-norme} utilisée valide le principe de
+\emph{non-contradiction,} alors l'intersection d'un sous-ensemble flou
+\(A\) (de \(X\)) avec son complément \(A^C\) (\autoref{eq:comp}) avec
+ces opérateurs est toujours égale à l'ensemble vide :
 
 \begin{equation}
   A \cap A^C = \emptyset
 \end{equation}
 
-et l'union de ces deux sous-ensembles avec les opérateurs de
-\bsc{Łukasiewicz} est toujours égale à l'ensemble net \(X\):
+et l'union de ces mêmes sous-ensembles avec les une \emph{t-conorme}
+respectant le principe du \emph{tiers-exclu} est toujours égale à
+l'ensemble net \(X\):
 
 \begin{equation}
   A \cup A^C = X
 \end{equation}
+
+On peut 
+
 
 %%%
 
@@ -354,6 +357,12 @@ validés.
 Une autre propriété différenciant les opérateurs est leur
 archimédianté.
 
+Comme les opérateurs de \textcite{Zadeh1965} la \emph{t-norme} et la
+\emph{t-conorme} de \bsc{Łukasiewicz} sont \emph{continues.} De plus,
+comme pour tout \(x \in ]0,1[\) : \(⊤_L(x,x) < x\) et
+\( ⊥_L(x,x) > x\) ces opérateurs sont dits \emph{archimédiens}
+\autocite{Bouchon-Meunier1995}, contrairement aux opérateurs de
+\textcite{Zadeh1965}.
 
 
 appliqué à notre de cas d'étude, l'archimédianité des opérateurs.
