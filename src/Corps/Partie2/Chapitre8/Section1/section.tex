@@ -428,7 +428,7 @@ implique que l'intersection, avec une telle \emph{t-norme,} de deux
 \ac{zlc} pénalisera les positions dont le degré d'appartenance est
 compris entre zéro et un.
 %
-À l'inverse l'union de deux \ac{zlc}
+À l'inverse l'union de deux \ac{zlc} 
 %
 Ainsi, utiliser une \emph{t-conorme} archimédienne, revient a
 considérer que l'assertion \enquote{De cette position on voit un lac}
@@ -450,18 +450,7 @@ La \autoref{fig:comparaison_operateurs_union} représente une situation
 qui n'a pas cours dans notre méthode (\autoref{chap:04})
 
 
-Comme on peut le voir sur ces deux figures, seuls les opérateurs de
-\bsc{XXX} et les opérateurs probabilistes sont archimédiens.
 
-
-Les conséquences de l'archimédianité nous conduisent donc à rejeter
-les opérateurs de \bsc{XX} et probabilistes. 
-
-Mettre une figure de l'intersection d'angle avec les opérateurs
-archimédiens (ex. sud et sud-est).
-
-Parler l'exemple de l'union, je suis à côté d'un lac et plus vrai si
-on est a côté de deux lac -> wtf
 
 
 \begin{figure}
@@ -480,15 +469,29 @@ on est a côté de deux lac -> wtf
   \label{fig:comparaison_operateurs_intersection}
 \end{figure}
 
+Les conséquences de l'archimédianité nous conduisent donc à rejeter
+les opérateurs de \bsc{XX} et probabilistes. 
 
-\tdi{Raisonnement en termes d'interprétabilité}
 
-On choisi Zadeh
+L'étude des différentes caractéristiques
+(\autoref{tab:synthese_operateurs}) des couples d'opérateurs les plus
+utilisés dans la littérature nous a conduit à en rejeter la plupart
+d'entre-eux. Les opérateurs drastiques ont été rejetés car
+discontinus, trop sévères et donc inadaptés à notre cas
+d'utilisation. L'étude de l'impact du rejet des principes de
+\emph{non-contradiction} et du \emph{tiers-exclu} ne nous a pas permis
+de disqualifier des opérateurs, cependant nous avons mis en évidence
+que l'archimédianité (à fortiori stricte) des opérateurs n'était pas
+souhaitable. C'est pourquoi nous avons retenu les opérateurs de
+\textcite{Zadeh1965} pour effectuer les opérations d'union et
+d'intersection inter-\ac{zlc}.
+
 
 \begin{table}
   \centering
   \input{../tableaux/synthese_car_op.tex}
   \caption{Synthèse des caractéristiques des opérateurs}
+  \label{tab:synthese_operateurs}
 \end{table}
 
 
