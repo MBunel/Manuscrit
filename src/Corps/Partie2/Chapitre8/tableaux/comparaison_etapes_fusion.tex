@@ -3,9 +3,9 @@
   & \multicolumn{1}{C{.25\textwidth}}{\bfseries Fusion des \emph{relations de localisation atomiques}}&\multicolumn{1}{C{.25\textwidth}}{\bfseries Fusion des \emph{objets de référence indéfinis}}&\multicolumn{1}{C{.25\textwidth}}{\bfseries Fusion des \emph{indices de localisation}}\\
   \midrule
   %\addlinespace
-  \bfseries Objectif & Blabla & blabla & bloublou \\
-  \bfseries Opérateur & Intersection ensembliste & Union ensembliste & Intersection ensembliste \\
-  \bfseries Entrée &  & ss & ss \\
-  \bfseries Sortie & Une \ac{zlc} par \emph{indice de localisation} & Une \ac{zlc} par \emph{indice de localisation} (avant décomposition) & La \ac{zlp} \\
+  \bfseries Objectif & Fusionner les \ac{zlc} \emph{spatialisant} une même \emph{relation de localisation} pour le même \emph{objet de référence} (\ie provenant de la \emph{décomposition} des \emph{relations de localisation atomiques})& Fusionner les \ac{zlc} \emph{spatialisant} la même \emph{relation de localisation} pour des \emph{objets de référence} du même type (\ie provenant de la décomposition d'un même \emph{objet de référence indéfini}) & Fusionner les \ac{zlc} spatialisant différents \emph{indices de localisation} (\ie provenant de la \emph{décomposition} de \emph{l'ensemble des indices de localisation})\\
+  \bfseries Opérateur & \emph{t-norme} (Intersection) & \emph{t-conorme} (Union) & \emph{t-norme} (Intersection) \\
+  \bfseries Entrée & \ac{zlc} directement issues de la \emph{spatialisation} & \ac{zlc} issues de la \emph{fusion} des \emph{relations de localisation atomiques} & \ac{zlc} issues de la \emph{fusion} des \emph{objets de référence indéfinis} \\
+  \bfseries Sortie & Une \ac{zlc} par \emph{indice de localisation} et par \emph{objet de référence} & Une \ac{zlc} par \emph{indice de localisation} & La \ac{zlp} \\
   \bottomrule
 \end{tabular}
