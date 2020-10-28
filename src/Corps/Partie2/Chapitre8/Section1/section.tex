@@ -19,20 +19,6 @@ qui les spatialisent et qu'il est par conséquent possible de
 \emph{décomposant} \emph{l'ensemble des indices de localisation}
 (\autoref{fig:methodo_1}).
 
-Au terme de la phase de \emph{spatialisation} on dispose généralement
-d'un grand nombre de \emph{zones de localisation compatibles}
-\footnote{Des configurations où seule une \ac{zlc} est construite sont
-  possibles, mais cela correspond à des cas particuliers où l'ensemble
-  des \emph{indices de localisation} (\autoref{chap:04}) ne contient
-  qu'un \emph{indice} lui-même employant une \emph{relation de
-    localisation atomique} exprimée par rapport à un \emph{objet de
-    référence} défini. Dans ce cas les phases de \emph{décomposition}
-  et de \emph{fusion} n'ont pas de rôle à jouer.}, chacune contenant
-une part de l'information nécessaire à la construction de la
-\ac{zlp}. Le rôle de la \emph{phase de fusion} consiste simplement à
-combiner toutes ces informations de manière à obtenir une seule
-\emph{zone de localisation,} correspondant à la description de
-position donnée par l'ensemble des \emph{indices de localisation.}
 
 
 
@@ -58,25 +44,44 @@ d'effectuer ce calcul sur l'ensemble des pixels utilisés pour
 représenter la \ac{zir}.
 
 
+
+
+Au terme de la phase de \emph{spatialisation} on dispose généralement
+d'un grand nombre de \emph{zones de localisation compatibles}
+\footnote{Des configurations où seule une \ac{zlc} est construite sont
+  possibles, mais cela correspond à des cas particuliers où l'ensemble
+  des \emph{indices de localisation} (\autoref{chap:04}) ne contient
+  qu'un \emph{indice} lui-même employant une \emph{relation de
+    localisation atomique} exprimée par rapport à un \emph{objet de
+    référence} défini. Dans ce cas les phases de \emph{décomposition}
+  et de \emph{fusion} n'ont pas de rôle à jouer.}, chacune contenant
+une part de l'information nécessaire à la construction de la
+\ac{zlp}. Le rôle de la \emph{phase de fusion} consiste simplement à
+combiner toutes ces informations de manière à obtenir une seule
+\emph{zone de localisation,} correspondant à la description de
+position donnée par l'ensemble des \emph{indices de localisation.}
+
+
+
+
+
+
 \subsection{Présentation des \emph{étapes} de la \emph{phase de
     fusion}}
 
-Comme la \emph{phase de décomposition} (\autoref{chap:05}), la phase
-de \emph{fusion} est scindable en trois étapes ---~\emph{fusion} des
-\emph{relations de localisation atomiques,} \emph{fusion} des
-\emph{objets de référence indéfinis} et \emph{fusion} des
-\emph{indices de localisation}~--- effectuées successivement sur
-différents ensembles de \emph{zones de localisation compatibles.}
-
-Comme nous l'avons expliqué dans le \autoref{chap:04} chacune de ces
-étapes est destinée à fusionner des \emph{zones de localisation
-  compatibles} spatialisées à partir \emph{d'indices de localisation
-  décomposés}
-
-Les étapes de \emph{fusion} et de \emph{décomposition} se répondent
-donc, comme l'illustre la \autoref{fig:methodo_1}
-
-\tdi{Dire qu'on fait la comparaison entre rasters}
+Comme nous l'avons expliqué dans le \autoref{chap:04} la \emph{phase
+  de fusion} est composée de trois étapes :
+%
+\begin{enumerate*}[label=(\arabic*)]
+\item la \emph{fusion} des \emph{relations de localisation atomiques,}
+\item la \emph{fusion} des objets de \emph{référence indéfinis,} et
+\item la \emph{fusion} des \emph{indices de localisation,}
+\end{enumerate*}
+%
+chacune destinée à fusionner des \emph{zones de localisation
+  compatibles} issues de la \emph{spatialisation} \emph{d'indices de
+  localisation} décomposés à une étape particulière de la \emph{phase
+  de décomposition} (\autoref{fig:methodo_1}).
 
 
 \begin{figure}
