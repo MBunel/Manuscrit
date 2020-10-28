@@ -439,13 +439,20 @@ d'appartenance (\(x\)) est toujours égale a cette même valeur, soit :
 Les opérateurs de \bsc{Łukasiewicz} sont quant a eux archimédiens et
 les opérateurs probabilistes archimédiens stricts.
 
+\tdi{Vérifier que les équations soient ok}
+%
 L’idempotence est une propriété des opérateurs, liée à
 l'acrhimédianité. Un opérateur est dit idempotent, lorsque le résultat
 de son application n'est pas modifié par le nombre d’applications,
 c'est-à-dire, que pour une \emph{t-norme} ou une \emph{t-conorme}
 idempotante : \(⊤(⊤(x,y), ⊤(x,y)) = ⊤(x,y)\) et
 \(⊥(⊥(x,y),⊥(x,y)) = ⊥(x,y)\). Parmi les quatre couples d'opérateurs
-présentés ici, seuls les opérateurs de \bsc{Zadeh} sont idempotent.
+présentés ici, seuls les opérateurs de \bsc{Zadeh} sont idempotent,
+les applications successives des \emph{t-normes} (\emph{t-conormes})
+des trois autres couples d'opérateurs ont pour effet de faire diminuer
+(ou augmenter) le degré d'appartenance. Ainsi, pour les opérateurs de
+\bsc{Łukasiewicz}, probabilistes et drastiques :
+\(⊤(⊤(x,y), ⊤(x,y)) ≤ ⊤(x,y)\) et \(⊥(⊥(x,y),⊥(x,y)) ≥ ⊥(x,y)\).
 
 % D'accord mais RAF non ?
 Comme les principes du \emph{tiers-exclu} et de la
