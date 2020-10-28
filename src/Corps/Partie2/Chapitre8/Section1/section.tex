@@ -404,8 +404,8 @@ préférable que ces deux principes ne soient pas validés.
 \subsubsection{L'archimédianité et l’idempotence}
 
 Une autre propriété différenciant ces différents opérateurs est
-l'archimédianté. Un couple d'opérateurs est dit archimédien lorsque sa
-\emph{t-norme} et sa \emph{t-conorme} sont continues et que, pour
+l'archimédianité. Un couple d'opérateurs est dit archimédien lorsque
+sa \emph{t-norme} et sa \emph{t-conorme} sont continues et que, pour
 toute valeur de degré d’apparence (\(x\)) entre 0 et 1 (exclus), la
 \emph{t-norme} de \(x\) avec lui-même est strictement inférieure à
 \(x\) et la \emph{t-conorme} de \(x\) avec lui-même est strictement
@@ -436,16 +436,14 @@ puisque l’application de la \emph{t-norme} (́\(⊤_Z\)) ou de la
 d'appartenance (\(x\)) est toujours égale a cette même valeur, soit :
 \(∀ x ∈ [0,1]\): \(⊤_Z(x,x) = x\) et \(⊥_Z(x,x) = x\).
 %
-Les opérateurs de \bsc{Łukasiewicz} sont quant a eux archimédiens et
+Les opérateurs de \bsc{Łukasiewicz} sont quant à eux archimédiens et
 les opérateurs probabilistes archimédiens stricts.
 
-\tdi{Vérifier que les équations soient ok}
-%
-L’idempotence est une propriété des opérateurs, liée à
-l'acrhimédianité. Un opérateur est dit idempotent, lorsque le résultat
+L’idempotence est une autre propriété des opérateurs, liée à
+l'archimédianité. Un opérateur est dit idempotent, lorsque le résultat
 de son application n'est pas modifié par le nombre d’applications,
 c'est-à-dire, que pour une \emph{t-norme} ou une \emph{t-conorme}
-idempotante : \(⊤(⊤(x,y), ⊤(x,y)) = ⊤(x,y)\) et
+idempotente : \(⊤(⊤(x,y), ⊤(x,y)) = ⊤(x,y)\) et
 \(⊥(⊥(x,y),⊥(x,y)) = ⊥(x,y)\). Parmi les quatre couples d'opérateurs
 présentés ici, seuls les opérateurs de \bsc{Zadeh} sont idempotent,
 les applications successives des \emph{t-normes} (\emph{t-conormes})
@@ -457,13 +455,13 @@ des trois autres couples d'opérateurs ont pour effet de faire diminuer
 % D'accord mais RAF non ?
 Comme les principes du \emph{tiers-exclu} et de la
 \emph{non-contradiction,} l'archimédianité et l'idempotence des
-\emph{t-normes} et des \emph{t-conormes} apparaissent comme des
-propriétés théoriques, assez éloignées des considérations principales
-de ce travail. Cependant, en modifiant le comportement des
-\emph{t-normes} et des \emph{t-conormes} ces propriétés influent le
-résultat des intersections et des unions, c'est-à-dire le cœur de la
-\emph{phase de fusion.} Il est donc nécessaire d'en étudier
-attentivement les conséquences.
+\emph{t-(co)normes} apparaissent comme des propriétés théoriques,
+assez éloignées des considérations principales de ce
+travail. Cependant, en modifiant le comportement des \emph{t-normes}
+et des \emph{t-conormes} ces propriétés influent le résultat des
+intersections et des unions, c'est-à-dire le cœur de la \emph{phase de
+  fusion.} Il est donc nécessaire d'en étudier attentivement les
+conséquences.
 %
 Comme nous l'avons expliqué ci-dessus,
 lorsqu'une \emph{t-norme} est archimédienne, son application à la même
