@@ -467,7 +467,19 @@ substantiellement les trois étapes de la \emph{fusion} n'est donc
 envisageable qu'après une étude attentive de leur comportement et de
 son influence sur la sémantique des \emph{zones de localisation.}
 
-%
+On peut illustrer l'effet de ces deux propriétés en analysant le
+comportement des ces différentes \emph{t-(co)normes} pour une même
+intersection (ou union). La
+\ref{fig:comparaison_operateurs_intersection} représente le résultat
+de l'intersection deux \ac{zlc}, \textcolor{RdBu-9-1}{\textsf{A}}
+représentant la \emph{spatialisation} de \emph{l'indice de
+  localisation} \enquote{au sud de} et
+\textcolor{RdBu-9-9}{\textsf{B}} de \emph{l'indice de localisation}
+\enquote{à l'est de}. Le résultat de l'intersection des \ac{zlc}
+\textcolor{RdBu-9-1}{\textsf{A}} et \textcolor{RdBu-9-9}{\textsf{B}}
+correspond à la \ac{zlc} de \emph{l'indice de localisation}
+\enquote{Je suis au sud-est de} \footnote{XXXX}.
+
 Comme nous l'avons expliqué ci-dessus,
 lorsqu'une \emph{t-norme} est archimédienne, son application à la même
 valeur de degré d’appartenance (\(x\), qui est strictement supérieure
@@ -496,14 +508,18 @@ respectivement, le résultat de l'union et de l'intersection des deux
 \emph{zones de localisation compatibles,} à l'aide des quatre couples
 d'opérateurs.
 %
-La \ac{zlc} \textcolor{RdBu-9-1}{\textsf{A}} représente
-la \emph{spatialisation} de \emph{l'indice de localisation}
-\enquote{au sud de} et la \ac{zlc} \textcolor{RdBu-9-9}{\textsf{B}} de
-\emph{l'indice de localisation} \enquote{à l'est de}.
+
 %
 La \autoref{fig:comparaison_operateurs_union} représente une situation
 qui n'a pas cours dans notre méthode (\autoref{chap:04})
 
+\begin{figure}
+  \centering
+  \input{../figures/comparaison_operateurs_intersection.tex}
+  \caption{Comparaison de l'intersection de deux \ac{zlc} en fonction
+    de la \emph{t-norme} utilisée.}
+  \label{fig:comparaison_operateurs_intersection}
+\end{figure}
 
 \begin{figure}
   \centering
@@ -513,13 +529,7 @@ qui n'a pas cours dans notre méthode (\autoref{chap:04})
   \label{fig:comparaison_operateurs_union}
 \end{figure}
 
-\begin{figure}
-  \centering
-  \input{../figures/comparaison_operateurs_intersection.tex}
-  \caption{Comparaison de l'intersection de deux \ac{zlc} en fonction
-    de la \emph{t-norme} utilisée.}
-  \label{fig:comparaison_operateurs_intersection}
-\end{figure}
+
 
 Les conséquences de l'archimédianité nous conduisent donc à rejeter
 les opérateurs de \bsc{XX} et probabilistes. 
