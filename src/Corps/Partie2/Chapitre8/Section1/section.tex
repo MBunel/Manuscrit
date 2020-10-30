@@ -470,10 +470,10 @@ son influence sur la sémantique des \emph{zones de localisation.}
 On peut illustrer l'effet de ces deux propriétés en analysant le
 comportement des ces différentes \emph{t-(co)normes} pour une même
 intersection (ou union). La
-\ref{fig:comparaison_operateurs_intersection} représente le résultat
-de l'intersection deux \ac{zlc}, \textcolor{RdBu-9-1}{\textsf{A}}
-représentant la \emph{spatialisation} de \emph{l'indice de
-  localisation} \enquote{au sud de} et
+\autoref{fig:comparaison_operateurs_intersection} représente le
+résultat de l'intersection deux \ac{zlc},
+\textcolor{RdBu-9-1}{\textsf{A}} représentant la \emph{spatialisation}
+de \emph{l'indice de localisation} \enquote{au sud de} et
 \textcolor{RdBu-9-9}{\textsf{B}} de \emph{l'indice de localisation}
 \enquote{à l'est de}. Le résultat de l'intersection des \ac{zlc}
 \textcolor{RdBu-9-1}{\textsf{A}} et \textcolor{RdBu-9-9}{\textsf{B}}
@@ -491,25 +491,18 @@ intersectées. Ainsi, si une position \(p\) appartient
 \emph{degré d’appartenance} compris entre 0,4 et 0,6), alors une
 \emph{t-norme} archimédienne considèrera que \(p\) appartient
 faiblement à l'intersection de \(A\) et de \(B\) et ce même si les
-degrés d'appartenance sont identiques.
+degrés d'appartenance sont identiques. Ce comportement n'est pas
+inadapté à notre cas d'utilisation, il participe à proposer une
+conjonction plus stricte, ce qui est une raison suffisante pour
+utiliser des opérateurs alternatifs.
 
-Comme nous l'avons expliqué ci-dessus,
-lorsqu'une \emph{t-norme} est archimédienne, son application à la même
-valeur de degré d’appartenance (\(x\), qui est strictement supérieure
-à 0 et strictement inférieure à 1) renvoie un degré d’appartenance
-strictement inférieur à la valeur de \(x\).
-%
-Si l'on utilise une telle \emph{t-norme} pour réaliser les
-intersections entre \ac{zlc}, alors on tendra à pénaliser la
+L'archimédianité est cependant plus problématique pour les
+\emph{t-conormes.} La \autoref{fig:comparaison_operateurs_union}
+représente le résultat de l'union deux \ac{zlc},
+\textcolor{RdBu-9-1}{\textsf{A}} représentant la \emph{spatialisation}
+de la même \emph{relation de localisation} (\enquote{XX}), mais pour
+deux \emph{objets de référence} différents.
 
-
-Cela
-implique que l'intersection, avec une telle \emph{t-norme,} de deux
-\ac{zlc} pénalisera les positions dont le degré d'appartenance est
-compris entre zéro et un.
-%
-À l'inverse l'union de deux \ac{zlc} 
-%
 Ainsi, utiliser une \emph{t-conorme} archimédienne, revient a
 considérer que l'assertion \enquote{De cette position on voit un lac}
 est \emph{plus vraie} si l'on voit (partiellement) deux lacs, que si
