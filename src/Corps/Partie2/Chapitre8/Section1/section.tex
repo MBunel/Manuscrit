@@ -487,11 +487,15 @@ toute position. Cela peut s'expliquer par la
 Les \emph{t-normes} archimédiennes tendent à pénaliser la conjonction
 entre des positions appartenant partiellement aux \ac{zlc}
 intersectées. Ainsi, si une position \(p\) appartient
-\enquote{moyennement} aux \ac{zlc} \(A\) et \(B\) (\eg avec un
-\emph{degré d’appartenance} compris entre 0,4 et 0,6), alors une
-\emph{t-norme} archimédienne considèrera que \(p\) appartient
-faiblement à l'intersection de \(A\) et de \(B\) et ce même si les
-degrés d'appartenance sont identiques. Ce comportement n'est pas
+\enquote{moyennement} aux \ac{zlc} \textcolor{RdBu-9-1}{\textsf{A}} et
+\textcolor{RdBu-9-9}{\textsf{B}}, (\eg avec un \emph{degré
+  d’appartenance} compris entre 0,4 et 0,6), alors une \emph{t-norme}
+archimédienne considèrera que \(p\) appartient faiblement à
+l'intersection de \textcolor{RdBu-9-1}{\textsf{A}} et de
+\textcolor{RdBu-9-9}{\textsf{B}} et ce même si les degrés
+d'appartenance sont identiques.
+%
+Ce comportement n'est pas
 inadapté à notre cas d'utilisation, il participe à proposer une
 conjonction plus stricte, ce qui est une raison suffisante pour
 utiliser des opérateurs alternatifs.
@@ -501,12 +505,30 @@ L'archimédianité est cependant plus problématique pour les
 représente le résultat de l'union deux \ac{zlc},
 \textcolor{RdBu-9-1}{\textsf{A}} représentant la \emph{spatialisation}
 de la même \emph{relation de localisation} (\enquote{XX}), mais pour
-deux \emph{objets de référence} différents.
-
-Ainsi, utiliser une \emph{t-conorme} archimédienne, revient a
-considérer que l'assertion \enquote{De cette position on voit un lac}
-est \emph{plus vraie} si l'on voit (partiellement) deux lacs, que si
-on n'en voie qu'un.
+deux \emph{objets de référence} différents. Comme le montre la
+\autoref{fig:comparaison_operateurs_union}, le degré d'appartenance
+résultant de l'union de ces deux \ac{zlc} on peut constater que les
+\emph{t-conormes} archimédiennes tendent à le faire augmenter.
+%
+Les \emph{t-conormes} archimédiennes ont pour effet de favoriser la
+disjonction entre les positions appartenant partiellement aux \ac{zlc}
+unies. Ainsi, si une position \(p\) appartient \enquote{moyennement}
+aux \ac{zlc} \textcolor{RdBu-9-1}{\textsf{A}} et
+\textcolor{RdBu-9-9}{\textsf{B}}, alors une \emph{t-conorme}
+archimédienne considèrera que \(p\) appartient fortement à l'union de
+\textcolor{RdBu-9-1}{\textsf{A}} et de
+\textcolor{RdBu-9-9}{\textsf{B}} et ce même si les degrés
+d'appartenance sont identiques. Par exemple, si une première \ac{zlc}
+correspond à la \emph{zone} où l'on voit tout le lac \(i\) et qu'une
+seconde \ac{zlc} correspond à la zone où l'on voit tout le lac \(j\),
+alors une position \(p_1\), à partir de laquelle on voit partiellement
+les lacs \(i\) et \(j\) sera considéré, par une \emph{t-conorme}
+archimédienne, comme une \enquote{meilleure} position, qu'un position
+\(p_2\) à partir de laquelle on voit partiellement un seul lac. Pour
+le dire autrement, utiliser une \emph{t-conorme} archimédienne,
+revient a considérer que l'assertion \enquote{De cette position on
+  voit totalement un lac} est \emph{plus vraie} si l'on voit
+partiellement deux lacs, que si on n'en voit qu'un.
 
 Les figures \ref{fig:comparaison_operateurs_union} et
 \ref{fig:comparaison_operateurs_intersection} représentent
