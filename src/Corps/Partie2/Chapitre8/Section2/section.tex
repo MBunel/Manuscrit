@@ -1,41 +1,67 @@
+\tdi{voi si c,'est pas mieux de le mettre en section}
+
+
+La théorie des \emph{sous-ensembles flous} ne permet pas, du moins
+dans sa formulation initiale, de modéliser l'incertitude d'une
+connaissance, seulement son \emph{imprécision.}
+
+\textcite{Zadeh1978}
+
+\begin{figure}
+  \centering
+  %\input{../figures/comparaison_intersection_incertitude.tex}
+  \caption{Influence de l'incertitude d'un \emph{indice de
+      localisation} sur la \emph{zone de localisation} résultant de la
+    fusion de deux \ac{zlc}.}
+  \label{fig:intersection}
+\end{figure}
+
+
+Une fonction d'appartenance normalisée est donc une distribution de
+possibilité.
+
+La confiance peut se définir en amont de la spatialisation.
+
+Diminuer la confiance c'est augmenter le degré d'appartenance minimal
+
+Proposer une version améliorée de la fig finale du chapitre 4 avec la
+confiance.
+
+Dire que les fonctions présentées reviennent a considérer que la
+confiance est absolue
+
+Parler des seuils de la confiance (3) et des valeurs associées ou
+contraintes.
+
+
+\begin{figure}
+  \centering  \subfloat[\label{fig:fnc_app_inc}]{\input{../figures/fnc_app_inc.tex}}\hfill
+  \subfloat[\label{fig:fnc_app_inc_2}]{\input{../figures/fnc_app_inc_2.tex}}
+
+  \subfloat[\label{fig:fnc_app_inc_3}]{\input{../figures/fnc_app_inc_3.tex}}\hfill
+  \subfloat[\label{fig:fnc_app_inc_4}]{\input{../figures/fnc_app_inc_4.tex}}
+  %
+  \caption[Représentation des \emph{fonctions d'appartenance} de
+  différents \emph{fuzzyfieurs} avec une
+  \emph{incertitude}]{Représentation des \emph{fonctions
+      d'appartenance} des \emph{fuzzyfieurs}
+    \protect\onto[orla]{Eq\-Val} \protect\subref{fig:fnc_app_inc},
+    \protect\onto[orla]{Sup\-Val} \protect\subref{fig:fnc_app_inc_2},
+    \protect\onto[orla]{Inf\-Val} \protect\subref{fig:fnc_app_inc_3}
+    et \protect\onto[orla]{Eq\-Val} avec le \emph{modifieur}
+    \protect\onto[orla]{Not} \protect\subref{fig:fnc_app_inc_4}, avec
+    un degré de \emph{certitude} (\(i\)) variable (respectivement
+    0,8, 0,4, 0,2 et 0,5).}
+  \label{fig:qs}
+\end{figure}
 
 
 
-\tdi{Dérouler un exemple}
 
-Pour illustrer l'ensemble des \emph{étapes} de la \emph{phase de
-  fusion} nous nous fonderons sur l'exemple de la construction de la
-\ac{zlp} correspondant à \emph{l'ensemble des indices de localisation}
-\enquote{Je suis à l'extérieur, au sud de XXX (qui a été spatialisé
-  dans le \autoref{chap:07}) et je suis proche d'un refuge}
-(\autoref{fig:exemple_final_fusion}). Pour les besoins de l'exemple,
-nous considérerons que le secouriste a attribué une confiance absolue
-au premier \emph{indice} \footnote{C'est le choix qui a implicitement
-  été fait lors de la \emph{spatialisation} de cet \emph{indice} dans
-  le \autoref{chap:05}.} et une confiance moyenne (\ie un coefficient
-de \si{0,0}) au second. Le second \emph{indice de localisation}
-utilisant un \emph{objet de référence indéfini} (\eg \enquote{un
-  refuge}) nous avons considéré qu'il n'existait que deux objets
-candidats, utilisés pour la spatialisation des \ac{zlc} XX et XX
-(\autoref{fig:exemple_final_fusion}).
-
-
-\subsection{La \emph{fusion} des \emph{relations de localisation
-atomiques}}
-
-\subsection{La \emph{fusion} des \emph{objets de référence indéfinis}}
-
-\subsection{La \emph{fusion} des indices de \emph{localisation}}
-
-
-\begin{landscape}
-  \begin{figure}[H]
-    \centering
-    \input{../figures/exemple_final_fusion.tex}
-    \caption{Gros exemple}
-    \label{fig:exemple_final_fusion}
-  \end{figure}
-\end{landscape}
+\begin{figure}
+  \centering
+  \missingfigure{Comparaison fusion indices avec et sans incertitude}
+\end{figure}
 
 
 %%% Local Variables:

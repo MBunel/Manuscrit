@@ -441,14 +441,14 @@ les opérateurs probabilistes archimédiens stricts.
 
 L’idempotence est une autre propriété des opérateurs, liée à
 l'archimédianité. Un opérateur est dit idempotent, lorsque le résultat
-de son application n'est pas modifié par le nombre d’applications,
+de son application n'est pas modifié si elle est répétée,
 c'est-à-dire, que pour une \emph{t-norme} ou une \emph{t-conorme}
 idempotente : \(⊤(⊤(x,y), ⊤(x,y)) = ⊤(x,y)\) et
 \(⊥(⊥(x,y),⊥(x,y)) = ⊥(x,y)\). Parmi les quatre couples d'opérateurs
-présentés ici, seuls les opérateurs de \bsc{Zadeh} sont idempotent,
-les applications successives des \emph{t-normes} (\emph{t-conormes})
-des trois autres couples d'opérateurs ont pour effet de faire diminuer
-(ou augmenter) le degré d'appartenance. Ainsi, pour les opérateurs de
+présentés ici, seuls les opérateurs de \bsc{Zadeh} sont idempotents,
+les applications successives des \emph{t-(co)normes} des trois autres
+couples d'opérateurs ont pour effet de faire diminuer (ou augmenter)
+le degré d'appartenance. Ainsi, pour les opérateurs de
 \bsc{Łukasiewicz}, probabilistes et drastiques :
 \(⊤(⊤(x,y), ⊤(x,y)) ≤ ⊤(x,y)\) et \(⊥(⊥(x,y),⊥(x,y)) ≥ ⊥(x,y)\).
 
@@ -456,60 +456,49 @@ des trois autres couples d'opérateurs ont pour effet de faire diminuer
 Comme les principes du \emph{tiers-exclu} et de la
 \emph{non-contradiction,} l'archimédianité et l'idempotence des
 \emph{t-(co)normes} apparaissent comme des propriétés théoriques,
-assez éloignées des considérations principales de ce
-travail. Cependant, en modifiant le comportement des \emph{t-normes}
-et des \emph{t-conormes} ces propriétés influent le résultat des
-intersections et des unions, c'est-à-dire le cœur de la \emph{phase de
-  fusion.} Il est donc nécessaire d'en étudier attentivement les
-conséquences.
+assez éloignées des considérations applicatives de ce
+travail. Cependant, il n'est est rien. Ces deux propriétés modifient,
+en effet, le comportement des \emph{t-normes} et des
+\emph{t-conormes,} et donc le résultat des intersections et des
+unions, a fortiori quand ces opérations sont répétées. Or, la
+répétions \emph{d'intersection} et de \emph{fusions} est au cœur de la
+\emph{phase de fusion.} Utiliser des opérateurs impactant
+substantiellement les trois étapes de la \emph{fusion} n'est donc
+envisageable qu'après une étude attentive de leur comportement et de
+son influence sur la sémantique des \emph{zones de localisation.}
+
+On peut illustrer l'effet de ces deux propriétés en analysant le
+comportement des ces différentes \emph{t-(co)normes} pour une même
+intersection (ou union). La
+\autoref{fig:comparaison_operateurs_intersection} représente le
+résultat de l'intersection deux \ac{zlc},
+\textcolor{RdBu-9-1}{\textsf{A}} représentant la \emph{spatialisation}
+de \emph{l'indice de localisation} \enquote{au sud de} et
+\textcolor{RdBu-9-9}{\textsf{B}} de \emph{l'indice de localisation}
+\enquote{à l'est de}. Le résultat de l'intersection des \ac{zlc}
+\textcolor{RdBu-9-1}{\textsf{A}} et \textcolor{RdBu-9-9}{\textsf{B}}
+correspond à la \ac{zlc} de \emph{l'indice de localisation}
+\enquote{Je suis au sud-est de} \footnote{XXXX}. Si l'on compare le
+résultat de cette intersection en fonction de la \emph{t-norme}
+utilisée on peut remarquer que les \emph{t-normes archimédiennes}
+construisent une \ac{zlc} dont le degré d'appartenance est moindre en
+toute position. Cela peut s'expliquer par la
 %
-Comme nous l'avons expliqué ci-dessus,
-lorsqu'une \emph{t-norme} est archimédienne, son application à la même
-valeur de degré d’appartenance (\(x\), qui est strictement supérieure
-à 0 et strictement inférieure à 1) renvoie un degré d’appartenance
-strictement inférieur à la valeur de \(x\).
+Les \emph{t-normes} archimédiennes tendent à pénaliser la conjonction
+entre des positions appartenant partiellement aux \ac{zlc}
+intersectées. Ainsi, si une position \(p\) appartient
+\enquote{moyennement} aux \ac{zlc} \textcolor{RdBu-9-1}{\textsf{A}} et
+\textcolor{RdBu-9-9}{\textsf{B}}, (\eg avec un \emph{degré
+  d’appartenance} compris entre 0,4 et 0,6), alors une \emph{t-norme}
+archimédienne considèrera que \(p\) appartient faiblement à
+l'intersection de \textcolor{RdBu-9-1}{\textsf{A}} et de
+\textcolor{RdBu-9-9}{\textsf{B}} et ce même si les degrés
+d'appartenance sont identiques.
 %
-Si l'on utilise une telle \emph{t-norme} pour réaliser les
-intersections entre \ac{zlc}, alors on tendra à pénaliser la
-
-
-Cela
-implique que l'intersection, avec une telle \emph{t-norme,} de deux
-\ac{zlc} pénalisera les positions dont le degré d'appartenance est
-compris entre zéro et un.
-%
-À l'inverse l'union de deux \ac{zlc} 
-%
-Ainsi, utiliser une \emph{t-conorme} archimédienne, revient a
-considérer que l'assertion \enquote{De cette position on voit un lac}
-est \emph{plus vraie} si l'on voit (partiellement) deux lacs, que si
-on n'en voie qu'un.
-
-Les figures \ref{fig:comparaison_operateurs_union} et
-\ref{fig:comparaison_operateurs_intersection} représentent
-respectivement, le résultat de l'union et de l'intersection des deux
-\emph{zones de localisation compatibles,} à l'aide des quatre couples
-d'opérateurs.
-%
-La \ac{zlc} \textcolor{RdBu-9-1}{\textsf{A}} représente
-la \emph{spatialisation} de \emph{l'indice de localisation}
-\enquote{au sud de} et la \ac{zlc} \textcolor{RdBu-9-9}{\textsf{B}} de
-\emph{l'indice de localisation} \enquote{à l'est de}.
-%
-La \autoref{fig:comparaison_operateurs_union} représente une situation
-qui n'a pas cours dans notre méthode (\autoref{chap:04})
-
-
-
-
-
-\begin{figure}
-  \centering
-  \input{../figures/comparaison_operateurs_union.tex}
-  \caption{Comparaison de l'union de deux \ac{zlc} en fonction de la
-    \emph{t-conorme} utilisée.}
-  \label{fig:comparaison_operateurs_union}
-\end{figure}
+Ce comportement n'est pas
+inadapté à notre cas d'utilisation, il participe à proposer une
+conjonction plus stricte, ce qui est une raison suffisante pour
+utiliser des opérateurs alternatifs.
 
 \begin{figure}
   \centering
@@ -519,8 +508,55 @@ qui n'a pas cours dans notre méthode (\autoref{chap:04})
   \label{fig:comparaison_operateurs_intersection}
 \end{figure}
 
-Les conséquences de l'archimédianité nous conduisent donc à rejeter
-les opérateurs de \bsc{XX} et probabilistes. 
+L'archimédianité est cependant plus problématique pour les
+\emph{t-conormes.} La \autoref{fig:comparaison_operateurs_union}
+représente le résultat de l'union deux \ac{zlc},
+\textcolor{RdBu-9-1}{\textsf{A}} représentant la \emph{spatialisation}
+de la même \emph{relation de localisation} (\enquote{XX}), mais pour
+deux \emph{objets de référence} différents. Comme le montre la
+\autoref{fig:comparaison_operateurs_union}, le degré d'appartenance
+résultant de l'union de ces deux \ac{zlc} on peut constater que les
+\emph{t-conormes} archimédiennes tendent à le faire augmenter.
+%
+Les \emph{t-conormes} archimédiennes ont pour effet de favoriser la
+disjonction entre les positions appartenant partiellement aux \ac{zlc}
+unies. Ainsi, si une position \(p\) appartient \enquote{moyennement}
+aux \ac{zlc} \textcolor{RdBu-9-1}{\textsf{A}} et
+\textcolor{RdBu-9-9}{\textsf{B}}, alors une \emph{t-conorme}
+archimédienne considèrera que \(p\) appartient fortement à l'union de
+\textcolor{RdBu-9-1}{\textsf{A}} et de
+\textcolor{RdBu-9-9}{\textsf{B}} et ce même si les degrés
+d'appartenance sont identiques. Par exemple, si une première \ac{zlc}
+correspond à la \emph{zone} où l'on voit tout le lac \(i\) et qu'une
+seconde \ac{zlc} correspond à la zone où l'on voit tout le lac \(j\),
+alors une position \(p_1\), à partir de laquelle on voit partiellement
+les lacs \(i\) et \(j\) sera considéré, par une \emph{t-conorme}
+archimédienne, comme une \enquote{meilleure} position, qu'un position
+\(p_2\) à partir de laquelle on voit partiellement un seul lac. Pour
+le dire autrement, utiliser une \emph{t-conorme} archimédienne,
+revient a considérer que l'assertion \enquote{De cette position on
+  voit totalement un lac} est \emph{plus vraie} si l'on voit
+partiellement deux lacs, que si on n'en voit qu'un. Ce comportement
+est cependant incompatible avec notre cas d'application. L'étape de
+\emph{décomposition des objets de référence indéfinis}
+(\autoref{fig:methodo_1}) a pour fonction de 
+
+\begin{figure}
+  \centering
+  \input{../figures/comparaison_operateurs_union.tex}
+  \caption{Comparaison de l'union de deux \ac{zlc} en fonction de la
+    \emph{t-conorme} utilisée.}
+  \label{fig:comparaison_operateurs_union}
+\end{figure}
+
+% Idempotence
+
+Les conséquences de l'archimédianité et de l'idempotence nous
+conduisent donc à rejeter les opérateurs de \bsc{XX} et probabilistes.
+
+
+
+
 
 
 L'étude des différentes caractéristiques
@@ -542,60 +578,6 @@ d'intersection inter-\ac{zlc}.
   \caption{Synthèse des caractéristiques des opérateurs}
   \label{tab:synthese_operateurs}
 \end{table}
-
-\subsection{La prise en compte de la confiance}
-\tdi{voi si c,'est pas mieux de le mettre en section}
-
-
-La théorie des \emph{sous-ensembles flous} ne permet pas, du moins
-dans sa formulation initiale, de modéliser l'incertitude d'une
-connaissance, seulement son \emph{imprécision.}
-
-\textcite{Zadeh1978}
-
-\begin{figure}
-  \centering
-  %\input{../figures/comparaison_intersection_incertitude.tex}
-  \caption{Influence de l'incertitude d'un \emph{indice de
-      localisation} sur la \emph{zone de localisation} résultant de la
-    fusion de deux \ac{zlc}.}
-  \label{fig:intersection}
-\end{figure}
-
-
-Une fonction d'appartenance normalisée est donc une distribution de
-possibilité.
-
-La confiance peut se définir en amont de la spatialisation.
-
-Diminuer la confiance c'est augmenter le degré d'appartenance minimal
-
-Proposer une version améliorée de la fig finale du chapitre 4 avec la
-confiance.
-
-Dire que les fonctions présentées reviennent a considérer que la
-confiance est absolue
-
-Parler des seuils de la confiance (3) et des valeurs associées ou
-contraintes.
-
-
-\begin{figure}
-  \centering
-  \input{../figures/fnc_app_inc.tex}
-  \caption{sq}
-  \label{fig:qs}
-\end{figure}
-
-
-
-
-\begin{figure}
-  \centering
-  \missingfigure{Comparaison fusion indices avec et sans incertitude}
-\end{figure}
-
-
 
 
 %%% Local Variables:
