@@ -500,6 +500,14 @@ inadapté à notre cas d'utilisation, il participe à proposer une
 conjonction plus stricte, ce qui est une raison suffisante pour
 utiliser des opérateurs alternatifs.
 
+\begin{figure}
+  \centering
+  \input{../figures/comparaison_operateurs_intersection.tex}
+  \caption{Comparaison de l'intersection de deux \ac{zlc} en fonction
+    de la \emph{t-norme} utilisée.}
+  \label{fig:comparaison_operateurs_intersection}
+\end{figure}
+
 L'archimédianité est cependant plus problématique pour les
 \emph{t-conormes.} La \autoref{fig:comparaison_operateurs_union}
 représente le résultat de l'union deux \ac{zlc},
@@ -530,25 +538,6 @@ revient a considérer que l'assertion \enquote{De cette position on
   voit totalement un lac} est \emph{plus vraie} si l'on voit
 partiellement deux lacs, que si on n'en voit qu'un.
 
-Les figures \ref{fig:comparaison_operateurs_union} et
-\ref{fig:comparaison_operateurs_intersection} représentent
-respectivement, le résultat de l'union et de l'intersection des deux
-\emph{zones de localisation compatibles,} à l'aide des quatre couples
-d'opérateurs.
-%
-
-%
-La \autoref{fig:comparaison_operateurs_union} représente une situation
-qui n'a pas cours dans notre méthode (\autoref{chap:04})
-
-\begin{figure}
-  \centering
-  \input{../figures/comparaison_operateurs_intersection.tex}
-  \caption{Comparaison de l'intersection de deux \ac{zlc} en fonction
-    de la \emph{t-norme} utilisée.}
-  \label{fig:comparaison_operateurs_intersection}
-\end{figure}
-
 \begin{figure}
   \centering
   \input{../figures/comparaison_operateurs_union.tex}
@@ -557,10 +546,14 @@ qui n'a pas cours dans notre méthode (\autoref{chap:04})
   \label{fig:comparaison_operateurs_union}
 \end{figure}
 
+% Idempotence
+
+Les conséquences de l'archimédianité et de l'idempotence nous
+conduisent donc à rejeter les opérateurs de \bsc{XX} et probabilistes.
 
 
-Les conséquences de l'archimédianité nous conduisent donc à rejeter
-les opérateurs de \bsc{XX} et probabilistes. 
+
+
 
 
 L'étude des différentes caractéristiques
