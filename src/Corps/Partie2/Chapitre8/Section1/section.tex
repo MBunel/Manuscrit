@@ -467,6 +467,10 @@ substantiellement les trois étapes de la \emph{fusion} n'est donc
 envisageable qu'après une étude attentive de leur comportement et de
 son influence sur la sémantique des \emph{zones de localisation.}
 
+% Les
+% opérateurs de \bsc{Zadeh} étant idempotents et non-archimédiens
+% \autocite{Bouchon-Meunier1995}, on peut a
+
 On peut illustrer l'effet de ces deux propriétés en analysant le
 comportement des ces différentes \emph{t-(co)normes} pour une même
 intersection (ou union). La
@@ -531,15 +535,23 @@ correspond à la \emph{zone} où l'on voit tout le lac \(i\) et qu'une
 seconde \ac{zlc} correspond à la zone où l'on voit tout le lac \(j\),
 alors une position \(p_1\), à partir de laquelle on voit partiellement
 les lacs \(i\) et \(j\) sera considéré, par une \emph{t-conorme}
-archimédienne, comme une \enquote{meilleure} position, qu'un position
+archimédienne, comme une \enquote{meilleure} position, qu'une position
 \(p_2\) à partir de laquelle on voit partiellement un seul lac. Pour
 le dire autrement, utiliser une \emph{t-conorme} archimédienne,
 revient a considérer que l'assertion \enquote{De cette position on
   voit totalement un lac} est \emph{plus vraie} si l'on voit
 partiellement deux lacs, que si on n'en voit qu'un. Ce comportement
-est cependant incompatible avec notre cas d'application. L'étape de
-\emph{décomposition des objets de référence indéfinis}
-(\autoref{fig:methodo_1}) a pour fonction de 
+est cependant incompatible avec notre cas d'application.
+%
+L'étape de \emph{décomposition des objets de référence indéfinis}
+(\autoref{fig:methodo_1}) a pour fonction de permettre la
+\emph{spatialisation} d'un \emph{indice de localisation} dont
+\emph{l'objet de référence} n'est connu que par sa nature. Chaque
+instance correspondant est potentiellement le bon \emph{objet de
+  référence.} Cependant, la multiplicité des candidats n'implique pas
+%
+Compte-tenu du rôle que prennent les unions dans notre méthode, les
+\emph{t-conormes} archimédiennes sont à proscrire.
 
 \begin{figure}
   \centering
@@ -550,7 +562,11 @@ est cependant incompatible avec notre cas d'application. L'étape de
 \end{figure}
 
 % Idempotence
+Pour illustrer l'impact de la non idempotence on peut procéder de la
+même manière.
 
+
+% Conclusion
 Les conséquences de l'archimédianité et de l'idempotence nous
 conduisent donc à rejeter les opérateurs de \bsc{XX} et probabilistes.
 
