@@ -91,7 +91,20 @@ la figure. Comme nous l'avons vu, les \ac{zlc}
 \emph{spatialisent} la même \emph{relation de localisation atomique}
 (et ne nécessitent donc pas d'être fusionnées lors de la première
 étape de la phase de spatialisation) mais pour deux instances
-différentes d'un même type \emph{d'objet de référence.}
+différentes d'un même type \emph{d'objet de référence.} Ces deux
+\ac{zlc} doivent donc être \emph{fusionnées,} de manière a obtenir la
+\emph{zone de localisaiton} spatialisant \emph{l'indice de
+  localisation} initial, c'est-à-dire avant la \emph{décomposition des
+  objets de référence} et la \emph{décomposition des relations de
+  localisation.} Pour ce faire on crée l'union des deux \ac{zlc},
+conformément à la méthode précédemment définie, ce qui équivaut à
+construire une \ac{zlc} constituée de toutes les positions
+\emph{proches} d'au moins un refuge. Compte-tenu des opérateurs
+choisis, cette union est réalisée à l'aide de la \emph{t-conorme} de
+\textcite{Zadeh1965}. Le degré d’appartenance d'une position donnée, à
+l'union des \ac{zlc} \textcolor{RdBu-9-7}{\textsf{C}} et
+\textcolor{RdBu-9-9}{\textsf{D}} correspond donc au maximum de son
+degré d'appartenance pour ces deux \ac{zlc}.
 
 \subsection{La \emph{fusion} des indices de \emph{localisation}}
 
