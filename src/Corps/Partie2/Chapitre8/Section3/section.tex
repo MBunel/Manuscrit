@@ -1,11 +1,6 @@
-
-
-
-\tdi{Dérouler un exemple}
-
-Pour illustrer l'ensemble des \emph{étapes} de la \emph{phase de
-  fusion} nous nous fonderons sur l'exemple de la construction de la
-\ac{zlp} correspondant à \emph{l'ensemble des indices de localisation}
+Pour illustrer le déroulement de la \emph{phase de fusion} nous nous
+fonderons sur l'exemple de la construction de la \ac{zlp}
+correspondant à \emph{l'ensemble des indices de localisation}
 \enquote{Je suis à l'extérieur, au sud de XXX (qui a été spatialisé
   dans le \autoref{chap:07}) et je suis proche d'un refuge}
 (\autoref{fig:exemple_final_fusion}). Pour les besoins de l'exemple,
@@ -19,6 +14,24 @@ utilisant un \emph{objet de référence indéfini} (\eg \enquote{un
 candidats, utilisés pour la spatialisation des \ac{zlc} XX et XX
 (\autoref{fig:exemple_final_fusion}).
 
+Au terme de la \emph{phase de spatialisation} (\autoref{chap:07}) nous
+disposons donc de quatre \ac{zlc} :
+% 
+\begin{enumerate*}[label=(\arabic*)]
+\item la \ac{zlc} \textcolor{RdBu-9-1}{\textsf{A}}, spatialisant la \emph{relation de localisation
+    atomique} \onto[orla]{Hors\-De} pour \emph{l'objet de référence}
+  XX,
+\item la \ac{zlc} \textcolor{RdBu-9-3}{\textsf{B}}, spatialisant la \emph{relation de localisation
+    atomique} \onto[orla]{Sud\-De}, également pour \emph{l'objet de
+    référence} XXX,
+\item la \ac{zlc} \textcolor{RdBu-9-7}{\textsf{C}}, spatialisant la \emph{relation de localisation
+    atomique} \onto[orla]{XXX} pour la première des deux instances de
+  type \enquote{refuge} identifiées, avec un degré de certitude de \si{0,0}, et
+\item la \ac{zlc} \textcolor{RdBu-9-9}{\textsf{D}}, spatialisant,
+  également avec une certitude de \si{0,0}, la \emph{relation de
+    localisation atomique} \onto[orla]{XXX} pour le second refuge.
+\end{enumerate*}
+% 
 
 \subsection{La \emph{fusion} des \emph{relations de localisation
 atomiques}}
