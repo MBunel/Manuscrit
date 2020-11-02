@@ -565,11 +565,52 @@ Compte-tenu du rôle que prennent les unions dans notre méthode, les
 L'utilisation d'autres opérateurs que ceux proposés par
 \textcite{Zadeh1965} implique également de renoncer à la propriété
 d'idempotence. Or, l'absence de cette propriété impacte, plus encore
-que l'archimédianité, le résultat de la \emph{phase de fusion.}
+que l'archimédianité, le résultat de la \emph{phase de fusion.} En
+effet, la non-idempotance implique une variation du résultat en
+fonction du nombre de \ac{zlc} fusionnées.
 
-Les \emph{t-(co)normes} non-idempotentes ont tendance à voir leur
-résultat varier en fonction du nombre de \ac{zlc} \emph{fusionnées.}
+Appliqués aux \emph{t-conormes} cette propriété tend à faire augmenter
+le degré d’appartenance résultant de l'union des \ac{zlc}. Par
+conséquent plus les \emph{objets de référence} correspondant à un
+\emph{objet de référence indéfini} serons nombreux, plus la \emph{zone
+  de localisation compatible} issue des l'union des \ac{zlc} leur
+correspondant aura tendance à avoir un degré d'appartenace élevé. Dit
+autrement, plus une position sera dans la \ac{zlc} d'un grand nombre
+\emph{d'objets de référence,} plus son degré d'appartenance à l'union
+de ces \emph{zones} sera important. Ce comportement est fortement
+similaire à celui induit par l'archimédianité des \emph{t-conormes,}
+et de la même manière que l'archimédianité des \emph{t-conormes} pose
+problème, il est difficile de justifier l'utilisation d'une
+\emph{t-conorme} non-idempotente, rien dans une formulation employant
+un \emph{objet de référence indéfini} n'impliquant que la
+\emph{relation de localisation} doivent être validée par plus d'un
+\emph{objet de référence.} À l'inverse, la non-idempotence appliquée
+aux \emph{t-normes} tend à faire diminuer les degrés d'appartenance en
+fonction du nombre de \ac{zlc} intersectées. Par conséquent, plus une
+position aura fréquemment un degré d'appartenance faible aux
+différentes \ac{zlc}, plus sont degré d'appartenance à la \ac{zlp}
+sera faible. La non-idempotence conduit donc à utiliser des opérateurs
+d'union et d'intersection qui sont impactés par le nombre de \ac{zlc}
+à fusionner.
 
+On pourrait cependant penser que cette sensibilité à la taille de
+l'échantillon n'est pas problématique, au contraire même puisqu'elle
+permet d'introduire ---~implicitement~--- une nouvelle information, la
+régularité des résultats. Aussi une \emph{t-norme} non-idempotente n'a
+que pour effet de réduire le degré d'appartenance des positions ayant
+déjà un degré d'appartenance faible et ce dans plusieurs
+\ac{zlc}. Avec ce type de \emph{t-norme} \enquote{le moins entraine le
+  moins}, et le degré d'appartenance n'est réduit que par la
+succession de degrés d'appartenance inférieurs à un. Le cas des
+\emph{t-conormes} est quant à lui plus problématique, comme nous
+l'avons expliqué, mais il peut être considéré comme acceptable,
+puisqu'il ne peut qu'aboutir, dans le pire des cas, à des faux
+positifs. Ces compromis sont cependant inacceptables.
+%
+Par exemple, avec la \emph{t-norme} de \bsc{Łukasiewicz} une
+intersection de 10 fois la valeur 0,9 donnera un degré d’appartenance
+nul, là où il serait de 0,34 avec une \emph{t-norme} probabiliste et
+de 0,9 avec la \emph{t-norme} de \textcite{Zadeh1965}.
 % Conclusion
 Les conséquences de l'archimédianité et de la non-idempotence nous
 conduisent donc à rejeter les opérateurs de \bsc{XX} et probabilistes.
