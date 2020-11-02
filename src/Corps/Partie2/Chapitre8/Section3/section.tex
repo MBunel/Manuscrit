@@ -77,9 +77,21 @@ d'intersecter ces deux zones.
 \subsection{La \emph{fusion} des \emph{objets de référence indéfinis}}
 
 La seconde étape de la \emph{phase de fusion} est la fusion des
-\emph{objets de référence indéfinis.} Comme pour la fusion des
+\emph{objets de référence indéfinis.} Son objectif est de regrouper
+les \ac{zlc} spatialisant la même \emph{relation de localisation,} du
+même \emph{indice de localisation} mais pour des instances différentes
+du même type \emph{d'objet de référence.} Comme pour la fusion des
 \emph{relations de localisation atomiques,} cette étape ne concerne
-qu'une partie de l'exemple. 
+qu'une partie de l'exemple. Dans la partie supérieure de la
+\autoref{fig:exemple_final_fusion}, un seul \emph{objet de référence}
+est mentionné (\enquote{xxx}), il n'y a donc pas d'alternatives qu'il
+serait nécessaire de regrouper, contrairement à la seconde partie de
+la figure. Comme nous l'avons vu, les \ac{zlc}
+\textcolor{RdBu-9-7}{\textsf{C}} et \textcolor{RdBu-9-9}{\textsf{D}}
+\emph{spatialisent} la même \emph{relation de localisation atomique}
+(et ne nécessitent donc pas d'être fusionnées lors de la première
+étape de la phase de spatialisation) mais pour deux instances
+différentes d'un même type \emph{d'objet de référence.}
 
 \subsection{La \emph{fusion} des indices de \emph{localisation}}
 
