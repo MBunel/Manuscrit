@@ -605,13 +605,36 @@ succession de degrés d'appartenance inférieurs à un. Le cas des
 \emph{t-conormes} est quant à lui plus problématique, comme nous
 l'avons expliqué, mais il peut être considéré comme acceptable,
 puisqu'il ne peut qu'aboutir, dans le pire des cas, à des faux
-positifs. Ces compromis sont cependant inacceptables.
-%
-Par exemple, avec la \emph{t-norme} de \bsc{Łukasiewicz} une
-intersection de 10 fois la valeur 0,9 donnera un degré d’appartenance
-nul, là où il serait de 0,34 avec une \emph{t-norme} probabiliste et
-de 0,9 avec la \emph{t-norme} de \textcite{Zadeh1965}.
+positifs. Ces compromis sont cependant inacceptables. D'une part car
+l'augmentation (ou la diminution) des degrés d'appartenance est assez
+rapide, tout du moins elle nécessite moins de \ac{zlc} que ce que nous
+sommes amenés à manipuler. Par exemple, avec la \emph{t-norme} de
+\bsc{Łukasiewicz} une intersection de 10 fois la valeur 0,9 donnera un
+degré d’appartenance nul, là où il serait de 0,34 avec une
+\emph{t-norme} probabiliste et de 0,9 avec la \emph{t-norme} de
+\textcite{Zadeh1965}. Or, il est très fréquent de manipuler plus de
+dix \emph{objets de référence.} L'exemple de décomposition proposé
+dans le \autoref{chap:04} contient déjà 5 instances pour \emph{l'objet
+  de référence} \enquote{crêtes}, alors que la \ac{zir}
+(implicitement) utilisée pour les identifier est extrêmement
+réduite. Un \emph{indice} plus vague, comme \enquote{Je suis sous une
+  route} (tiré du fil rouge), peut, pour peu que la \ac{zir} soit de
+grande taille, aboutir à la sélection de centaines, voir de milliers
+d'instances. D'autre part, et c'est sans aucun doute le point le plus
+problématique, une \emph{t-norme} non-idempotente peut conduire à
+attribuer un degré d'appartenance nul à la \ac{zlp} à des positions
+ayant un degré d’appartenance non nul à toutes \ac{zlc}. Pour
+reprendre l'exemple précédent, avec la \emph{t-norme} de
+\bsc{Łukasiewicz}, un pixel ayant un degré d'appartenance élevé (0,9)
+à 10 \ac{zlc} se verra attribuer un degré d'appartenance nul à
+l'intersection de ces \emph{zones,} ce qui équivaut à retirer de la
+\ac{zlp} une position vraisemblablement pertinente, puisque qu'ayant
+un fort degré d’appartenance à toutes les \ac{zlc}, soit un potentiel
+faux négatif.
+
 % Conclusion
+L'utilisation d'opérateurs archimédiens ou
+
 Les conséquences de l'archimédianité et de la non-idempotence nous
 conduisent donc à rejeter les opérateurs de \bsc{XX} et probabilistes.
 
