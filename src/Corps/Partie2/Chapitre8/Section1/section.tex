@@ -584,13 +584,19 @@ problème, il est difficile de justifier l'utilisation d'une
 \emph{t-conorme} non-idempotente, rien dans une formulation employant
 un \emph{objet de référence indéfini} n'impliquant que la
 \emph{relation de localisation} doivent être validée par plus d'un
-\emph{objet de référence.}
+\emph{objet de référence.} À l'inverse, la non-idempotence appliquée
+aux \emph{t-normes} tend à faire diminuer les degrés d'appartenance en
+fonction du nombre de \ac{zlc} intersectées. Par conséquent, plus une
+position aura fréquemment un degré d'appartenance faible aux
+différentes \ac{zlc}, plus sont degré d'appartenance à la \ac{zlp}
+sera faible. La non-idempotence conduit donc à utiliser des opérateurs
+d'union et d'intersection qui sont impactés par le nombre de \ac{zlc}
+à fusionner.
 
-Les \emph{t-(co)normes} non-idempotentes ont tendance à voir leur
-résultat varier en fonction du nombre de \ac{zlc} \emph{fusionnées.}
-%
-La non-idempotence implique donc une sensibilité à la taille de
-l'échantillon, ce qui n'est pas compatible avec notre méthode.
+On pourrait cependant penser que cette sensibilité à la taille de
+l'échantillon n'est pas problématique, au contraire même puisqu'elle
+permet d'introduire ---~implicitement~--- une nouvelle information, la
+régularité des résultats.
 
 % Conclusion
 Les conséquences de l'archimédianité et de la non-idempotence nous
