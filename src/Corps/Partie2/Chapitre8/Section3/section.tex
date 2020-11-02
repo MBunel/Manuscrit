@@ -71,7 +71,7 @@ Bien que provenant du même \emph{indice de localisation} (\enquote{Je
 \textcolor{RdBu-9-7}{\textsf{C}} et \textcolor{RdBu-9-9}{\textsf{D}}
 n'ont pas à être fusionnées lors de cette étape. En effet elles sont
 toutes deux construites à partir d'une \emph{relation de localisation
-  atomique} (\onto[orla]{Proche\-De}, il n'est donc pas nécessaire
+  atomique} (\onto[orla]{Proche\-De}), il n'est donc pas nécessaire
 d'intersecter ces deux zones.
 
 \subsection{La \emph{fusion} des \emph{objets de référence indéfinis}}
@@ -108,6 +108,24 @@ degré d'appartenance pour ces deux \ac{zlc}.
 
 \subsection{La \emph{fusion} des indices de \emph{localisation}}
 
+Une fois que l'on dispose d'une \ac{zlc} par \emph{indice de
+  localisation,} on peut les regrouper pour obtenir la \ac{zlp}. Dans
+l'exemple de la \autoref{fig:exemple_final_fusion}, cette dernière
+étape de \emph{fusion} combine deux \ac{zlc}, celle correspondant à
+\emph{l'indice de localisation} \enquote{je suis au sud et à
+  l'extérieur de XXX} et celle correspondant à l'indice de
+localisation \enquote{Je suis proche d'un refuge}. Comme lors de
+l'étape de la fusion des \emph{relations de localisation atomiques} on
+cherche à construire la \emph{zone de localisation} correspondant à
+ces deux indices, c'est-à-dire la zone composée de toutes les
+positions qui valident l'assertion \enquote{Cette position est au sud
+  et à l'extérieur de XXXX} \emph{et} l'assertion \enquote{Cette zone
+  est proche d'un refuge}. Pour ce faire on construit, comme pour la
+première étape de cette phase, l'intersection de ces deux \ac{zlc},
+avec la \emph{t-norme} de \textcite{Zadeh1965}. Le degré
+d’appartenance d'une position donnée à la \ac{zlp} est donc égal au
+minimum de son degré d'appartenance aux \ac{zlc} spatialisant les deux
+\emph{indices de localisation.}
 
 \begin{landscape}
   \begin{figure}[H]
