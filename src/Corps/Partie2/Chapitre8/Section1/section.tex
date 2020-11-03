@@ -277,38 +277,52 @@ qu'il y ait n-1 indices dont le dégré est de 1.}
 
 Un second critère de distinction entre ces quatre opérateurs est la
 conservation des principes du \emph{tiers-exclu} et de la
-\emph{non-contradiction.} Ces deux principes XXX
+\emph{non-contradiction,} fondamentaux en logique classique. Le
+principe de \emph{non-contradiction} postule qu'une même proposition
+logique \(p\), ne peut pas être vraie et fausse en même temps
+\footnote{La notation formelle de ce principe est :
+  \(\neg(p \wedge \neg p) \). Comme on pourra facilement s'en
+  convaincre cette formule est tautologique, aucune valeur de \(p\) ne
+  peut aboutir à invalider la proposition.}. Il est complété par le
+principe du \emph{tiers-exclu,} selon lequel une même proposition
+logique est nécessairement vraie ou fausse \footnote{La notation
+  formelle de ce principe est : \(p \vee \neg p\). La remarque sur la
+  tautologie du principe de non-contradiction s'applique également à
+  cette formulation.} On pourrait penser que la \emph{logique floue}
+est fondamentalement incompatible avec ces deux principes, une même
+proposition pouvant être à la fois (partiellement) vraie et fausse, ce
+qui semble s'opposer au principe de \emph{non-contradiction}
+\footnote{C'est par exemple le cas dans l'exemple illustré par le
+  \autoref{tab:conf_tnormes}, où une personne appartient partiellement
+  aux ensembles des \emph{personnes de grande taille} et des
+  \emph{personnes âgés} et donc partiellement aux complémentaires
+  respectifs de ces ensembles. Par conséquent, si les assertions
+  \enquote{cette personne est de grande taille} et \enquote{cette
+    personne est âgée} sont partiellemetn vraies, c'est également le
+  cas de leur négation respective.}. Toutefois, ce serait confondre la
+\emph{non-contradiction} avec le principe de \emph{non-bivalence}
+utilisé en \emph{logique floue,} mais égalment par d'autres logiques
+alternatives \autocite{Gottwald2020}. La \emph{non-bivalence}
+n'implique pas nécessairement la contradiciton des principes de
+\emph{non-contradiction} et du \emph{tiers-exclu,} par exemple la
+logique ternaire de \bsc{Łukasiewicz} valide ces deux principes.
 
-Le principe de \emph{non-contradiction} postule qu'une même
-proposition logique ne peut pas être vraie et fausse en même temps.
-
-
-Le principe du \emph{tiers-exclu} postule qu'une même proposition
-logique est nécessairement vraie ou fausse \footnote{Ce principe ne
-  doit pas être confondu avec le principe de \emph{non-bivalence}
-  (dont nous avons déjà discuté) à la base de la \emph{logique floue.}
-  Une logique peut être non-bivalente, comme la \emph{logique floue,}
-  tout en respectant le principe du \emph{tiers-exclu} (\eg la logique
-  ternaire de \bsc{Łukasiewicz}).}.
-
-
-
-
-
-
-Ainsi, lorsqu'un couple d'opérateurs est conforme à la loi de
-\emph{non-contradiction,} l’application de sa \emph{t-norme} à un
-degré appartenance quelconque (\(x\)) et à sa négation donne toujours
-un degré d'appartenance nul :
+Pour qu'un couple d'opérateurs soit conforme au principe de
+\emph{non-contradiction} il est nécessaire que la proposition
+\(\neg (p \wedge \neg p)\) soit vraie, soit que l’application de sa
+\emph{t-norme} à un degré appartenance quelconque (\(x\)) et à sa
+négation, \(1-x\) (\autoref{eq:comp}) donne toujours un degré
+d'appartenance nul :
 
 \begin{equation}
   \forall x, ⊤(x,1-x) = 0
 \end{equation}
 
-De même, si un couple d'opérateurs est conforme au principe du
-\emph{tiers-exclu} alors l’application de sa \emph{t-conorme} à un
-degré appartenance quelconque (\(x\))  et à sa négation soit
-toujours égal à 1 :
+De même, pour q'un couple d'opérateurs soit conforme au principe du
+\emph{tiers-exclu,} il est nécessaie que la proposition
+\(p \vee \neg p\) soit vraie, soit que l’application de sa
+\emph{t-conorme} à un degré appartenance quelconque (\(x\)) et à sa
+négation soit toujours égal à 1 :
 
 \begin{equation}
   \forall x, ⊥(x,1-x) = 1
@@ -320,6 +334,7 @@ Par conséquent, si la \emph{t-norme} utilisée valide le principe de
 ces opérateurs est toujours égale à l'ensemble vide :
 
 \begin{equation}
+  \label{eq:ensemble_LNC}
   A \cap A^C = \emptyset
 \end{equation}
 
@@ -328,35 +343,36 @@ respectant le principe du \emph{tiers-exclu} est toujours égale à
 l'ensemble net \(X\):
 
 \begin{equation}
+  \label{eq:ensemble_LEM}
   A \cup A^C = X
 \end{equation}
 
-Parmi les opérateurs étudiés seuls les opérateurs de \bsc{Łukasiewicz}
-(et les opérateurs drastiques, déjà disqualifiés) valident les
-principes de \emph{non-contradiction} et du \emph{tiers-exclu}
-\autocite{Bouchon-Meunier2007}, comme l'illustrent les figures
-\ref{fig:tiers-exclu} et \ref{fig:non-contradiction}. La
-\autoref{fig:tiers-exclu} représente le résultat de l'union d'un sous
-ensemble-flou \textcolor{RdBu-9-1}{\textsf{A}} avec son complémentaire
-\textcolor{RdBu-9-9}{\textsf{A\up{C}}}, en fonction de l'opérateur
-utilisé. On peut remarquer deux comportements distincts. Les
+On peut vérifier le comportement des opérateurs en représentant le
+résultat de l'union (\autoref{fig:tiers-exclu}) et de l'intersection
+(\autoref{fig:non-contradiction}) d'un sous-ensemble flou
+(\textcolor{RdBu-9-1}{\textsf{A}}), représentant une \ac{zlc}
+spatialisant la \emph{relation de localisaiton atomique}
+\onto[orla]{Près\-De}, avec son complémentaire \footnote{Soit la
+  \ac{zlc} correspondant à la spatilisation de la \ac{zlc}
+  \onto[orla]{Près\-De} avec le \emph{modifieur} \onto[orla]{Not}
+  (\autoref{chap:07}).}
+(\textcolor{RdBu-9-9}{\textsf{A\up{C}}}). Quelle que soit la figure
+considérée, on peut remarquer deux comportements distincts. Les
 opérateurs drastiques et de \bsc{Łukasiewicz} produisent un résultat
-homogène, où l'ensemble des pixels possèdent un degré d'appartenance
-de 1, correspondant à \emph{l'ensemble de référence} \(X\)
-(\autoref{eq:def_ensemble_flou}), alors que les opérateurs de
-\bsc{Zadeh} ou probabilistes aboutissent à une zone non uniforme et
-contenant des degrés d'appartenance inférieurs à 1, ils ne valident
-donc pas le principe de \emph{non-contradiction.} De manière similaire
-la \autoref{fig:non-contradiction} représente le résultat de
-l'intersection d'un sous ensemble-flou
-\textcolor{RdBu-9-1}{\textsf{A}} avec son complémentaire
-\textcolor{RdBu-9-9}{\textsf{A\up{C}}}, en fonction de l'opérateur
-utilisé. Les opérateurs drastiques et de \bsc{Łukasiewicz} produisent
-un résultat toujours homogène, où l'ensemble des pixels possèdent un
-degré d'appartenance nul, ce qui équivaut à l'ensemble vide. À
-l'inverse, les opérateurs de \bsc{Zadeh} ou probabilistes aboutissent
-à une zone non uniforme et contenant des degrés d'appartenance non
-nuls, ce qui contredit le principe du \emph{tiers-exclu.}
+homogène, où tous les pixels possèdent le même degré d'appartenance,
+qu'il soit égal à 1 \footnote{Ce qui correspond à \emph{l'ensemble de
+    référence} \(X\).} (\autoref{fig:tiers-exclu}) ou nul \footnote{Ce
+  qui correspond à l'enseble vide.}
+(\autoref{fig:non-contradiction}). À l'inverse, les opérateurs de
+\bsc{Zadeh} ou probabilistes aboutissent à une zone non uniforme,
+contenant des positions dont le degré d'appartenance est inférieur à 1
+(\autoref{fig:tiers-exclu}) ou supérieur à zéro
+(\autoref{fig:non-contradiction}). Les équations \ref{eq:ensemble_LNC}
+et \ref{eq:ensemble_LEM} ne sont donc valides qu'avec les opérateurs
+de \bsc{Łukasiewicz} et les opérateurs drastiques, les opérateurs de
+\bsc{Zadeh} et les opérateurs probabilistes ne valident donc pas les
+principes de \emph{non-contradiction} et du \emph{tiers-exclu}
+\autocite{Bouchon-Meunier2007}.
 
 \begin{figure}
   \centering
@@ -387,14 +403,29 @@ nuls, ce qui contredit le principe du \emph{tiers-exclu.}
   \label{fig:non-contradiction}
 \end{figure}
 
-La mise en évidence de ces deux principes et de leur (non) validation
-ne permet cependant pas de juger de leur pertinence pour notre cas
-d’application. Il est donc nécessaire que nous questionnons sur
-l'impact de ces deux principes sur la \emph{fusion} des \ac{zlc} et
-sur la \ac{zlp}.
+La non-validation de ces deux principes n'est cependant pas une raison
+intrisèque de rejet d'un couple d'opérateurs. Ces considérations étant
+assez théoriques et les opérations permettant de les mettre
+directement en évidence (équations \ref{eq:ensemble_LNC} et
+\ref{eq:ensemble_LEM}) n'entrant pas dans la \emph{phase de fusion.}
+On peut toutefois augurer que le non-respect de ces principes puisse
+avoir des effets indirects sur les résultats des différentes
+opérations inter-zones réalisées durant la \emph{fusion,} qu'ils
+conduisent à une amélioration de la modélisation ou, au contraire,
+qu'ils la dégradent. L'importance de la conservation de ces deux
+principes doit donc être jugée à l'aune de leur impact sur la
+modélisation et plus gnéralement sur la sémantique des opérations
+inter-zones.
 
-Ces deux principes ont un rôle capital en logique. Ils sont des
-axiomes en logique aristotélicienne \autoref{contradiciton} et 
+
+
+
+
+
+
+
+
+
 
 La validation des principes du \emph{tiers-exclus} et de
 \emph{non-contradiction} n'est donc pas nécessairement une condition
