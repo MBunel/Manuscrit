@@ -334,6 +334,7 @@ Par conséquent, si la \emph{t-norme} utilisée valide le principe de
 ces opérateurs est toujours égale à l'ensemble vide :
 
 \begin{equation}
+  \label{eq:ensemble_LNC}
   A \cap A^C = \emptyset
 \end{equation}
 
@@ -342,6 +343,7 @@ respectant le principe du \emph{tiers-exclu} est toujours égale à
 l'ensemble net \(X\):
 
 \begin{equation}
+  \label{eq:ensemble_LEM}
   A \cup A^C = X
 \end{equation}
 
@@ -357,37 +359,19 @@ résultat de l'union (\autoref{fig:tiers-exclu}) et de l'intersection
 (\textcolor{RdBu-9-9}{\textsf{A\up{C}}}). Quelle que soit la figure
 considérée, on peut remarquer deux comportements distincts. Les
 opérateurs drastiques et de \bsc{Łukasiewicz} produisent un résultat
-homogène, où l'ensemble des pixels possèdent le même degré
-d'appartenance, qu'il soit égal à 1 (\autoref{fig:tiers-exclu}) ou nul
-(\autoref{fig:non-contradiction}). À l'inverse, les opérateurs de
-\bsc{Zadeh} ou probabilistes aboutissent à une zone non uniforme,
-contenant des positions dont le degré d'appartenance est inférieur à 1
-(\autoref{fig:tiers-exclu}) ou supérieur à zéro
-(\autoref{fig:non-contradiction}).
-
-de 1, correspondant à \emph{l'ensemble de référence} \(X\)
-(\autoref{eq:def_ensemble_flou}), alors que
-s à 1, ils ne valident
-donc pas le principe de \emph{non-contradiction.} De manière similaire
-la \autoref{fig:non-contradiction} représente le résultat de
-l'intersection d'un sous ensemble-flou
-\textcolor{RdBu-9-1}{\textsf{A}} avec son complémentaire
-\textcolor{RdBu-9-9}{\textsf{A\up{C}}}, en fonction de l'opérateur
-utilisé. Les opérateurs drastiques et de \bsc{Łukasiewicz} produisent
-un résultat toujours homogène, où l'ensemble des pixels possèdent un
-degré d'appartenance nul, ce qui équivaut à l'ensemble vide. À
-l'inverse, les opérateurs de \bsc{Zadeh} ou probabilistes aboutissent
-à une zone non uniforme et contenant des degrés d'appartenance non
-nuls, ce qui contredit le principe du \emph{tiers-exclu.}
-
-
-Parmi les opérateurs étudiés seuls les opérateurs de \bsc{Łukasiewicz}
-(et les opérateurs drastiques, déjà disqualifiés) valident les
+homogène, où tous les pixels possèdent le même degré d'appartenance,
+qu'il soit égal à 1, ce qui correspond à \emph{l'ensemble de
+  référence} \(X\) (\autoref{fig:tiers-exclu}) ou nul, ce qui équivaut
+à l'enseble vide (\autoref{fig:non-contradiction}). À l'inverse, les
+opérateurs de \bsc{Zadeh} ou probabilistes aboutissent à une zone non
+uniforme, contenant des positions dont le degré d'appartenance est
+inférieur à 1 (\autoref{fig:tiers-exclu}) ou supérieur à zéro
+(\autoref{fig:non-contradiction}). Les équations \ref{eq:ensemble_LNC}
+et \ref{eq:ensemble_LEM} ne sont donc valides qu'avec les opérateurs
+de \bsc{Łukasiewicz} et les opérateurs drastiques, les opérateurs de
+\bsc{Zadeh} et les opérateurs probabilistes ne valident donc pas les
 principes de \emph{non-contradiction} et du \emph{tiers-exclu}
-\autocite{Bouchon-Meunier2007}, comme l'illustrent les figures
-\ref{fig:tiers-exclu} et \ref{fig:non-contradiction}.
-
-
+\autocite{Bouchon-Meunier2007}.
 
 \begin{figure}
   \centering
