@@ -345,23 +345,28 @@ l'ensemble net \(X\):
   A \cup A^C = X
 \end{equation}
 
-Parmi les opérateurs étudiés seuls les opérateurs de \bsc{Łukasiewicz}
-(et les opérateurs drastiques, déjà disqualifiés) valident les
-principes de \emph{non-contradiction} et du \emph{tiers-exclu}
-\autocite{Bouchon-Meunier2007}, comme l'illustrent les figures
-\ref{fig:tiers-exclu} et \ref{fig:non-contradiction}. La
-\autoref{fig:tiers-exclu} représente le résultat de l'union d'un sous
-ensemble-flou \textcolor{RdBu-9-1}{\textsf{A}} avec son complémentaire
-\textcolor{RdBu-9-9}{\textsf{A\up{C}}}, en fonction de l'opérateur
-utilisé. On peut remarquer deux comportements distincts. Les
-opérateurs drastiques et de \bsc{Łukasiewicz} produisent un résultat
-homogène, où l'ensemble des pixels possèdent un degré d'appartenance
-de 1, correspondant à \emph{l'ensemble de référence} \(X\)
-(\autoref{eq:def_ensemble_flou}), alors que les opérateurs de
-\bsc{Zadeh} ou probabilistes aboutissent à une zone non uniforme et
-contenant des degrés d'appartenance inférieurs à 1, ils ne valident
-donc pas le principe de \emph{non-contradiction.} De manière similaire
-la \autoref{fig:non-contradiction} représente le résultat de
+On peut vérifier le comportement des opérateurs en représentant le
+résultat de l'union (\autoref{fig:tiers-exclu}) et de l'intersection
+(\autoref{fig:non-contradiction}) d'un sous-ensemble flou
+(\textcolor{RdBu-9-1}{\textsf{A}}), représentant une \ac{zlc} (ici
+spatialisant la \emph{relation de localisaiton atomique}
+\onto[orla]{Près\-De}), avec son complémentaire \footnote{Soit la
+  \ac{zlc} correspondant à la spatilisation de la \ac{zlc}
+  \onto[orla]{Près\-De} avec le \emph{modifieur} \onto[orla]{Not}
+  (\autoref{chap:07}).} (\textcolor{RdBu-9-9}{\textsf{A\up{C}}}).
+
+La \autoref{fig:tiers-exclu} représente le résultat de l'union d'un
+sous ensemble-flou  avec son
+complémentaire , en fonction de
+l'opérateur utilisé. On peut remarquer deux comportements
+distincts. Les opérateurs drastiques et de \bsc{Łukasiewicz}
+produisent un résultat homogène, où l'ensemble des pixels possèdent un
+degré d'appartenance de 1, correspondant à \emph{l'ensemble de
+  référence} \(X\) (\autoref{eq:def_ensemble_flou}), alors que les
+opérateurs de \bsc{Zadeh} ou probabilistes aboutissent à une zone non
+uniforme et contenant des degrés d'appartenance inférieurs à 1, ils ne
+valident donc pas le principe de \emph{non-contradiction.} De manière
+similaire la \autoref{fig:non-contradiction} représente le résultat de
 l'intersection d'un sous ensemble-flou
 \textcolor{RdBu-9-1}{\textsf{A}} avec son complémentaire
 \textcolor{RdBu-9-9}{\textsf{A\up{C}}}, en fonction de l'opérateur
@@ -371,6 +376,15 @@ degré d'appartenance nul, ce qui équivaut à l'ensemble vide. À
 l'inverse, les opérateurs de \bsc{Zadeh} ou probabilistes aboutissent
 à une zone non uniforme et contenant des degrés d'appartenance non
 nuls, ce qui contredit le principe du \emph{tiers-exclu.}
+
+
+Parmi les opérateurs étudiés seuls les opérateurs de \bsc{Łukasiewicz}
+(et les opérateurs drastiques, déjà disqualifiés) valident les
+principes de \emph{non-contradiction} et du \emph{tiers-exclu}
+\autocite{Bouchon-Meunier2007}, comme l'illustrent les figures
+\ref{fig:tiers-exclu} et \ref{fig:non-contradiction}.
+
+
 
 \begin{figure}
   \centering
