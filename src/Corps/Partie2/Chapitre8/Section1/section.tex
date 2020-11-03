@@ -362,16 +362,16 @@ opérateurs drastiques et de \bsc{Łukasiewicz} produisent un résultat
 homogène, où tous les pixels possèdent le même degré d'appartenance,
 qu'il soit égal à 1 \footnote{Ce qui correspond à \emph{l'ensemble de
     référence} \(X\).} (\autoref{fig:tiers-exclu}) ou nul \footnote{Ce
-  qui équivaut à l'enseble vide.} (\autoref{fig:non-contradiction}). À
-l'inverse, les opérateurs de \bsc{Zadeh} ou probabilistes aboutissent
-à une zone non uniforme, contenant des positions dont le degré
-d'appartenance est inférieur à 1 (\autoref{fig:tiers-exclu}) ou
-supérieur à zéro (\autoref{fig:non-contradiction}). Les équations
-\ref{eq:ensemble_LNC} et \ref{eq:ensemble_LEM} ne sont donc valides
-qu'avec les opérateurs de \bsc{Łukasiewicz} et les opérateurs
-drastiques, les opérateurs de \bsc{Zadeh} et les opérateurs
-probabilistes ne valident donc pas les principes de
-\emph{non-contradiction} et du \emph{tiers-exclu}
+  qui correspond à l'enseble vide.}
+(\autoref{fig:non-contradiction}). À l'inverse, les opérateurs de
+\bsc{Zadeh} ou probabilistes aboutissent à une zone non uniforme,
+contenant des positions dont le degré d'appartenance est inférieur à 1
+(\autoref{fig:tiers-exclu}) ou supérieur à zéro
+(\autoref{fig:non-contradiction}). Les équations \ref{eq:ensemble_LNC}
+et \ref{eq:ensemble_LEM} ne sont donc valides qu'avec les opérateurs
+de \bsc{Łukasiewicz} et les opérateurs drastiques, les opérateurs de
+\bsc{Zadeh} et les opérateurs probabilistes ne valident donc pas les
+principes de \emph{non-contradiction} et du \emph{tiers-exclu}
 \autocite{Bouchon-Meunier2007}.
 
 \begin{figure}
@@ -403,14 +403,27 @@ probabilistes ne valident donc pas les principes de
   \label{fig:non-contradiction}
 \end{figure}
 
+La non-validation de ces deux principes n'est cependant pas une raison
+intrisèque de rejet d'un couple d'opérateurs. Ces considérations étant
+assez théoriques et les opérations permettant de les mettre
+directement en évidence (équations \ref{eq:ensemble_LNC} et
+\ref{eq:ensemble_LEM}) n'entrant pas dans la \emph{phase de fusion.}
+On peut toutefois augurer que le non-respect de ces principes puisse
+avoir des effets indirects sur les résultats des différentes
+opérations inter-zones réalisées durant la \emph{fusion,} qu'ils
+soient positifs ou négatifs.
+
+L'importance de la conservation de ces deux principes doit donc être
+jugée à l'aune de leur impact sur la sémantique des opérations
+inter-zones.
+
 La mise en évidence de ces deux principes et de leur (non) validation
 ne permet cependant pas de juger de leur pertinence pour notre cas
 d’application. Il est donc nécessaire que nous questionnons sur
 l'impact de ces deux principes sur la \emph{fusion} des \ac{zlc} et
-sur la \ac{zlp}.
+sur la \ac{zlp}. Le non-respect de 
 
-Ces deux principes ont un rôle capital en logique. Ils sont des
-axiomes en logique aristotélicienne \autoref{contradiciton} et 
+
 
 La validation des principes du \emph{tiers-exclus} et de
 \emph{non-contradiction} n'est donc pas nécessairement une condition
