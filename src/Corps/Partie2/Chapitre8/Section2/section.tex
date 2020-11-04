@@ -52,7 +52,7 @@ l'ensemble des parties de \emph{l'ensemble des événements}
     :} \(Π(X)=1\)
 \item Définir la \emph{possibilité} conjonctive de deux événements
   (\(A\) et \(B\)) comme la \emph{possibilité} de l'événement le plus
-  possible : \(∀ A,B ∈ P(X), Π(A ∪ B) = \max(Π(A), Π(B))\)
+  possible : \(∀ A,B ∈ P(X),\ Π(A ∪ B) = \max(Π(A),\ Π(B))\)
 \end{itemize}
 
 Par déduction, la possibilité disjonctive de deux événements est
@@ -60,7 +60,7 @@ toujours inférieure à la \emph{possibilité} de l'événement le moins
 possible :
 %
 \begin{equation}
-  ∀ A,B ∈ P(X), Π(A ∩ B) ≤ \min(Π(A), Π(B))
+  ∀ A,\ B ∈ P(X),\ Π(A ∩ B) ≤ \min(Π(A),\ Π(B))
 \end{equation}
 %
 Par conséquent, deux événements peuvent avoir chacun une possibilité
@@ -78,11 +78,15 @@ c'est-à-dire que si un événement \(A\) est inclus dans un événement
 Enfin, tous les événements de \(X\) ou leur complémentaires sont
 \enquote{tout à fait possibles} :
 \begin{equation}
-  ∀ A ∈ P(X), \max(Π(A), Π(A^C)) = 1  
+  ∀ A ∈ P(X),\ \max(Π(A),\ Π(A^C)) = 1  
 \end{equation}
 %
 Par conséquent, la somme des possibilité des ces deux événements peut
-dépasser 1 : \(Π(A) + Π(A^C) ≥ 1\) \autocite{Bouchon-Meunier2007}.
+dépasser 1 :
+%
+\begin{equation}
+  Π(A) + Π(A^C) ≥ 1
+\end{equation}
 
 Lorsqu'une \emph{mesure de possibilité} attribue à chaque
 \emph{événement} de \(X\) \footnote{Et par conséquent pour tous les
@@ -108,8 +112,13 @@ Dans le cas où \emph{l'incertitude} (\(i\)) est homogène, la
 \emph{distribution de possibilité} (\(π\)) de cette proposition est
 obtenue en tronquant la base de la fonction d'appartenance par la
 droite d'ordonnée \(i\) \autocite{Bouchon-Meunier2007}. La
-\emph{distribution de possibilité} combinant incerti XX est donc :
-\(π'(x) = \max(π(x),i)\).
+\emph{distribution de possibilité} (\(π'\)) combinant incerti XX est
+donc :
+%
+\begin{equation}
+  (π'(x)) = \max(π(x),\ i).  
+\end{equation}
+
 
 La confiance peut se définir en amont de la spatialisation.
 
