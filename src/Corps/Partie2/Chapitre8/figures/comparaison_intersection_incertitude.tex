@@ -13,16 +13,14 @@
           }
           % Calcul du rayon à partir de la fuzzyfication
           \pgfmathsetmacro\radius{max(\fuzzy, 0.6)*2.5}
-          \fill[RdBu-9-1] (\x+.125,.125+\y) circle (\radius pt);
+          \fill[black] (\x+.125,.125+\y) circle (\radius pt);
         }
       }
-      \path[ffc] (0,0) rectangle (2,2);
+      \path[ffc, black] (0,0) rectangle (2,2);
     \end{scope}
-    \node[text width=3cm, align=center, anchor=north, font=\footnotesize] at (1,-.25)
-    {\itshape Zone de localisation compatible \normalfont \textcolor{RdBu-9-1}{\textsf{A}}};
   \end{scope} 
   
-  \begin{scope}[xshift=2cm]
+  \begin{scope}[xshift=1.2cm]
     \begin{scope}
       \foreach \x in {0,.25,...,1.75}{ \foreach \y in {0,.25,...,1.75}
         {
@@ -35,17 +33,15 @@
             )
           }
           % Calcul du rayon à partir de la fuzzyfication
-          \pgfmathsetmacro\radius{max(\fuzzy, 0.6)*2.5}
+          \pgfmathsetmacro\radius{max(\fuzzy, 0.2)*2.5}
           \fill[RdBu-9-1] (\x+.125,.125+\y) circle (\radius pt);
         }
       }
       \path[ffc] (0,0) rectangle (2,2);
     \end{scope}
-    \node[text width=3cm, align=center, anchor=north, font=\footnotesize] at (1,-.25)
-    {\itshape Zone de localisation compatible \normalfont \textcolor{RdBu-9-1}{\textsf{A}}};
   \end{scope}
 
-    \begin{scope}[xshift=6cm]
+    \begin{scope}[xshift=6.8cm]
     \begin{scope}
       \foreach \x in {0,.25,...,1.75}{ \foreach \y in {0,.25,...,1.75}
         {
@@ -59,12 +55,15 @@
           }
           % Calcul du rayon à partir de la fuzzyfication
           \pgfmathsetmacro\radius{max(\fuzzy, 0.6)*2.5}
-          \fill[RdBu-9-1] (\x+.125,.125+\y) circle (\radius pt);
+          \fill[RdBu-9-9] (\x+.125,.125+\y) circle (\radius pt);
         }
       }
-      \path[ffc] (0,0) rectangle (2,2);
+      \path[ffc2] (0,0) rectangle (2,2);
     \end{scope}
-    \node[text width=3cm, align=center, anchor=north, font=\footnotesize] at (1,-.25)
-    {\itshape Zone de localisation compatible \normalfont \textcolor{RdBu-9-1}{\textsf{A}}};
-  \end{scope} 
+  \end{scope}
+
+  \node[scale=5] at (-3.2,1) {\(\top(\)};
+  \node[scale=5] at (.45,0) {\(,\)};
+  \node[scale=5] at (4.7,1) {\() = \)};
+  
 \end{tikzpicture}
