@@ -1,22 +1,120 @@
 
+
+\subsection{La théorie des possibilités}
+
+
 La théorie des \emph{sous-ensembles flous} ne permet pas, du moins
 dans sa formulation initiale, de modéliser l'incertitude d'une
 connaissance, seulement son \emph{imprécision.}
 
-\textcite{Zadeh1978}
+\textcite{Zadeh1978} a donc proposé en 1978 la \emph{théorie des
+  possibilités,} qui permet d'étendre la théorie des sous-ensembles
+flous en permettant la modélisation conjointe de \emph{l'imprécision}
+et de \emph{l'incertitude.}
 
-\begin{figure}
-  \centering
-  %\input{../figures/comparaison_intersection_incertitude.tex}
-  \caption{Influence de l'incertitude d'un \emph{indice de
-      localisation} sur la \emph{zone de localisation} résultant de la
-    fusion de deux \ac{zlc}.}
-  \label{fig:intersection}
-\end{figure}
+La \emph{théorie des possibilités} ne doit pas être confondue avec la
+\emph{théorie des probabilités.} Si ces théories modélisent toutes
+deux \emph{l'incertitude,} elles utilisent un formalisme et ont des
+propriétés différentes. Cependant, ces deux théories restent
+comparables, en plus de s’inscrire toutes deux dans le cadre plus
+général \autocite{Bouchon-Meunier1995}, celui de la théorie des
+fonctions de croyances \autocite{Shafer1976}.
+
+Comme la \emph{théorie des probabilité} (et donc des \emph{fonctions
+  de croyance}), la \emph{théorie des possibilités} permet évaluer la
+\enquote{chance} qu'un événement donné se produise. Ces événements
+sont regroupés dans un ensemble fini \(X\), appelé \emph{ensemble des
+  événements.} La \emph{théorie des possibilités} permet d'attribuer à
+chaque événement défini dans \(X\) un coefficient, compris entre 0 et
+1, évaluant la possibilité de l'événement. Une valeur de 1 indiquant
+que l'événement est \enquote{tout à fait possible}
+\autocite[p. 43]{Bouchon-Meunier2007} et une valeur nulle, qu'il est
+impossible. Ce coefficient est attribué par une fonction \(Π\), nommée
+\emph{mesure de possibilité,} qui l'attribue à chaque élément de
+l'ensemble des parties de \emph{l'ensemble des événements}
+(\(Π : P(X) → [0,1]\)). La fonction \(Π\) doit nécessairement :
+
+\begin{itemize}
+\item Attribuer un coefficient nul à \emph{l'ensemble vide} :
+  \(Π(∅)=0\)
+\item Attribuer un coefficient de 1 à \emph{l'ensemble des événements
+    :} \(Π(X)=1\)
+\item Définir la \emph{possibilité} conjonctive de deux événements
+  (\(A\) et \(B\)) comme la \emph{possibilité} de l'événement le plus
+  possible : \(∀ A,B ∈ P(X),\ Π(A ∪ B) = \max(Π(A),\ Π(B))\)
+\end{itemize}
+
+Par déduction, la possibilité disjonctive de deux événements est
+toujours inférieure à la \emph{possibilité} de l'événement le moins
+possible :
+%
+\begin{equation}
+  ∀ A,\ B ∈ P(X),\ Π(A ∩ B) ≤ \min(Π(A),\ Π(B))
+\end{equation}
+%
+Il est par conséquent possible que deux événements aient
+respectivement une possibilité non nulle, mais que leur occurrence
+simultanée soit nulle (\( Π(A ∪ B) = 0\)) n'implique pas que \(Π(A)\)
+et \(Π(B)\) soient égaux à 0). Une autre propriété des \emph{mesures
+  de possibilités} est leur \emph{monotonie} relativement à
+l'inclusion des parties de \(X\), c'est-à-dire que si un événement
+\(A\) est inclus dans un événement \(B\), alors la possibilité de
+\(B\) est supérieure à celle de \(A\) :
+%
+\begin{equation}
+  A \subseteq B, Π(A) ≤ Π(B)
+\end{equation}
+%
+De plus, tous les événements de \(X\) ou leurs complémentaires sont
+\enquote{tout à fait possibles} :
+%
+\begin{equation}
+  ∀ A ∈ P(X),\ \max(Π(A),\ Π(A^C)) = 1  
+\end{equation}
+
+Lorsqu'une \emph{mesure de possibilité} attribue à chaque
+\emph{événement} de \(X\) \footnote{Et par conséquent pour tous les
+  événements de l'ensemble des parties de \emph{l'ensemble des
+    événements} \(P(X)\), puisque ce dernier est constructible à
+  partir de l'union des éléments élémentaires de \(X\).} un
+coefficient de possibilité, on parle de mesure \enquote{totalement
+  définie} \autocite{Bouchon-Meunier2007}. Pour attribuer un
+\emph{coefficient de possibilité} à chaque événement de \(X\) on
+définit une \emph{distribution de possibilité} (\(π : X → [0,1]\)),
+dont le supremum pour un événement \(x\) de \(X\) doit être égal à 1 :
+%
+\begin{equation}
+  \sup_{x ∈ X}π(x)=1
+\end{equation}
+
+À l'exception de ce dernier point, toutes ces propriétés sont
+partagées par les \emph{fonctions d'appartenance}
+(\autoref{sec:3-2}). Ainsi, dans le cas où une \emph{fonction
+  d'appartenance} respecte cette dernière condition, c'est-à-dire
+qu'elle soit normalisée \footnote{Contrairement à une
+  \emph{distribution de possibilité,} une fonction d'appartenance
+  n'est pas tenue d'avoir 1 pour supremum. On parle de
+  \emph{sous-ensemble flou} normalisé quant au moins un de ces élément
+  à un degré d’appartenance égal à un
+  \autocite{Bouchon-Meunier2007}.}, elle est équivalente à une
+\emph{distribution de possibilités.}
 
 
 Une fonction d'appartenance normalisée est donc une distribution de
 possibilité.
+
+
+Dans le cas où \emph{l'incertitude} (\(i\)) est homogène, la
+\emph{distribution de possibilité} (\(π\)) de cette proposition est
+obtenue en tronquant la base de la fonction d'appartenance par la
+droite d'ordonnée \(i\) \autocite{Bouchon-Meunier2007}. La
+\emph{distribution de possibilité} (\(π'\)) combinant incerti XX est
+donc :
+%
+\begin{equation}
+  π'(x) = \max(π(x),\ i).  
+\end{equation}
+
 
 La confiance peut se définir en amont de la spatialisation.
 
@@ -31,12 +129,35 @@ confiance est absolue
 Parler des seuils de la confiance (3) et des valeurs associées ou
 contraintes.
 
-\subsection{La théorie des possibilités}
 
 \subsection{La modélisation de la confiance d'un \emph{indice de
     localisation}}
 
+Pour permettre la prise en compte de la confiance
 
+
+La confiance donnée par le secouriste portant sur \emph{l'indice de
+  localisation} et non sur l'une de ces composantes (\eg \emph{objet
+  de référence,} \emph{relation de localisation,} \emph{etc.}), le
+degré de confiance est distribué de manière homogène, chaque position
+de la \ac{zir} se voyant attribuer la même valeur.
+
+
+La modification des degrés d'appartenance des positions est
+équivalente à une modification de la forme de la fonction
+d'appartenance utilisée pour \emph{spatialiser l'indice de
+  localisation} (\autoref{fig:fnc_incert}). Comme pour les
+\emph{modifieurs} (\autoref{chap:07}), la variation du seuil de
+confiance modifie la forme générale de la courbe, mais ne change pas
+les paramètres du \emph{fuzzyficateur,} que sont l'écartement
+(\(\delta\)) et la valeur de référence (\(v\)). Toutefois,
+contrairement aux \emph{modifieurs,} la modification de la confiance à
+également pour effet de changer la valeur de seuils de la fonction
+d'appartenance. En effet, si la pente des fonctions appartenance est
+conservée lors du rehaussement de la valeur minimale, ce n'est pas le
+cas de la valeur où la fonction d'appartenance atteint la valeur
+nulle, cette dernière étant rehaussée par la diminution de la
+confiance.
 
 \begin{figure}
   \centering  \subfloat[\label{fig:fnc_app_inc}]{\input{../figures/fnc_app_inc.tex}}\hfill
@@ -56,27 +177,48 @@ contraintes.
     \protect\onto[orla]{Not} \protect\subref{fig:fnc_app_inc_4}, avec
     un degré de \emph{certitude} (\(i\)) variable (respectivement
     0,8, 0,4, 0,2 et 0,5).}
-  \label{fig:qs}
+  \label{fig:fnc_incert}
 \end{figure}
 
+On peut illustrer les effets de cette modélisation en comparant le
+résultat de la \emph{spatialisation} d'un même \emph{indice de
+  localisation} avec une confiance variable. La
+\autoref{fig:zlc_cert_vs_inceret} illustre la \emph{spatialisation} de
+la \emph{relation de localisation atomique} \onto[orla]{Pres\-De}
+(comme pour les figures \ref{fig:tiers-exclu} et
+\ref{fig:non-contradiction}) à partir du même pixel, avec la même
+fonction d'appartenance. Cependant, alors qu'une confiance absolue est
+donnée au premier cas, c'est une confiance partielle (0,4) qui est
+donnée à la seconde modélisation. Par conséquent, la valeur minimale
+que peut prendre une position est de 0,6. Si cette approche permet de
+XXXXX, c'est par le jeu des opérations inter-zones qu'elle prend tout
+son sens.
 
 \begin{figure}
   \centering
   \subfloat[]{\input{../figures/zlc_certaine.tex}}\hspace{2cm}
   \subfloat[]{\input{../figures/zlc_incertaine.tex}}
   \caption{Modélisation d'un même \emph{relation de localisation
-      atomique} (\protect\onto[orla]{Pres\-De}, à partir du même
+      atomique} (\protect\onto[orla]{Pres\-De}), à partir du même
     \emph{objet de référence} avec deux certitudes différentes,
     absolue et partielle (0,4).}
+  \label{fig:zlc_cert_vs_inceret}
 \end{figure}
 
-
-
+En rehaussant la valeur du degré d'appartenance minimal à la \ac{zlc},
+la m (\autoref{fig:intersection}).
 
 \begin{figure}
   \centering
-  \missingfigure{Comparaison fusion indices avec et sans incertitude}
+  \subfloat[]{\input{../figures/comparaison_intersection_incertitude.tex}}
+
+  \subfloat[]{\input{../figures/comparaison_intersection_incertitude_2.tex}}
+  \caption{Influence de l'incertitude d'un \emph{indice de
+      localisation} sur la \emph{zone de localisation} résultant de la
+    fusion de deux \ac{zlc}.}
+  \label{fig:intersection}
 \end{figure}
+
 
 
 %%% Local Variables:
