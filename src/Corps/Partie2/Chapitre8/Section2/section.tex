@@ -50,6 +50,9 @@ degré de confiance est distribué de manière homogène, chaque position
 de la \ac{zir} se voyant attribuer la même valeur.
 
 
+
+
+
 \begin{figure}
   \centering  \subfloat[\label{fig:fnc_app_inc}]{\input{../figures/fnc_app_inc.tex}}\hfill
   \subfloat[\label{fig:fnc_app_inc_2}]{\input{../figures/fnc_app_inc_2.tex}}
@@ -71,23 +74,31 @@ de la \ac{zir} se voyant attribuer la même valeur.
   \label{fig:qs}
 \end{figure}
 
+On peut illustrer les effets de cette modélisation en comparant le
+résultat de la \emph{spatialisation} d'un même \emph{indice de
+  localisation} avec une confiance variable. La
+\autoref{fig:zlc_cert_vs_inceret} illustre la \emph{spatialisation} de
+la \emph{relation de localisation atomique} \onto[orla]{Pres\-De}
+(comme pour les figures \ref{fig:tiers-exclu} et
+\ref{fig:non-contradiction}) à partir du même pixel, avec la même
+fonction d'appartenance. Cependant, alors qu'une confiance absolue est
+donnée au premier cas, c'est une confiance partielle (0,4) qui est
+donnée à la seconde modélisation. Par conséquent, la valeur minimale
+que peut prendre une position est de 0,6. Si cette approche permet de
+XXXXX, c'est par le jeu des opérations inter-zones qu'elle prend tout
+son sens.
+
+
 
 \begin{figure}
   \centering
   \subfloat[]{\input{../figures/zlc_certaine.tex}}\hspace{2cm}
   \subfloat[]{\input{../figures/zlc_incertaine.tex}}
   \caption{Modélisation d'un même \emph{relation de localisation
-      atomique} (\protect\onto[orla]{Pres\-De}, à partir du même
+      atomique} (\protect\onto[orla]{Pres\-De}), à partir du même
     \emph{objet de référence} avec deux certitudes différentes,
     absolue et partielle (0,4).}
-\end{figure}
-
-
-
-
-\begin{figure}
-  \centering
-  \missingfigure{Comparaison fusion indices avec et sans incertitude}
+  \label{fig:zlc_cert_vs_inceret}
 \end{figure}
 
 
