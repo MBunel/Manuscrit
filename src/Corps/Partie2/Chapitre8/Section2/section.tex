@@ -37,11 +37,13 @@ Comme la \emph{théorie des probabilité} (et donc des \emph{fonctions
 sont regroupés dans un ensemble fini \(X\), appelé \emph{ensemble des
   événements.} La \emph{théorie des possibilités} permet d'attribuer à
 chaque événement défini dans \(X\) un coefficient, compris entre 0 et
-1, évaluant la possibilité de l'événement. Ce coefficient est attribué
-par une fonction \(Π\), nommée \emph{mesure de possibilité,} qui
-l'attribue à chaque élément de l'ensemble des parties de
-\emph{l'ensemble des événements} (\(Π : P(X) → [0,1]\)). La fonction
-\(Π\) doit nécessairement :
+1, évaluant la possibilité de l'événement. Une valeur de 1 indiquant
+que l'événement est \enquote{tout à fait possible}
+\autocite[p. 43]{Bouchon-Meunier2007} et une valeur nulle, qu'il est
+impossible. Ce coefficient est attribué par une fonction \(Π\), nommée
+\emph{mesure de possibilité,} qui l'attribue à chaque élément de
+l'ensemble des parties de \emph{l'ensemble des événements}
+(\(Π : P(X) → [0,1]\)). La fonction \(Π\) doit nécessairement :
 
 \begin{itemize}
 \item Attribuer un coefficient nul à \emph{l'ensemble vide} :
@@ -50,8 +52,9 @@ l'attribue à chaque élément de l'ensemble des parties de
     :} \(Π(X)=1\)
 \item Définir la \emph{possibilité} conjonctive de deux événements
   (\(A\) et \(B\)) comme la \emph{possibilité} de l'événement le plus
-  possible : \(∀ A,B ∈ P(X), Π(A ∪ B) = max(Π(A), Π(B))\)
+  possible : \(∀ A,B ∈ P(X), Π(A ∪ B) = \max(Π(A), Π(B))\)
 \end{itemize}
+
 
 
 
