@@ -18,7 +18,18 @@ La théorie des \emph{sous-ensembles flous} ne permet pas, du moins
 dans sa formulation initiale, de modéliser l'incertitude d'une
 connaissance, seulement son \emph{imprécision.}
 
+\textcite{Zadeh1978} a donc proposé en 1978 la \emph{théorie des
+  possibilités,} qui permet d'étendre la théorie des sous-ensembles
+flous en permettant la modélisation conjointe de \emph{l'imprécision}
+et de \emph{l'incertitude.}
 
+La \emph{théorie des possibilités} ne doit pas être confondue avec la
+\emph{théorie des probabilités.} Si ces théories modélisent toutes
+deux \emph{l'incertitude,} elles utilisent un formalisme et ont des
+propriétés différentes. Cependant, ces deux théories restent
+comparables, en plus de s’inscrire toutes deux dans le cadre plus
+général \autocite{Bouchon-Meunier1995}, celui de la théorie des
+fonctions de croyances \autocite{Shafer1976}.
 
 Une fonction d'appartenance normalisée est donc une distribution de
 possibilité.
@@ -50,8 +61,6 @@ degré de confiance est distribué de manière homogène, chaque position
 de la \ac{zir} se voyant attribuer la même valeur.
 
 
-
-
 La modification des degrés d'appartenance des positions est
 équivalente à une modification de la forme de la fonction
 d'appartenance utilisée pour \emph{spatialiser l'indice de
@@ -62,8 +71,11 @@ les paramètres du \emph{fuzzyficateur,} que sont l'écartement
 (\(\delta\)) et la valeur de référence (\(v\)). Toutefois,
 contrairement aux \emph{modifieurs,} la modification de la confiance à
 également pour effet de changer la valeur de seuils de la fonction
-d'appartenance.
-
+d'appartenance. En effet, si la pente des fonctions appartenance est
+conservée lors du rehaussement de la valeur minimale, ce n'est pas le
+cas de la valeur où la fonction d'appartenance atteint la valeur
+nulle, cette dernière étant rehaussée par la diminution de la
+confiance.
 
 \begin{figure}
   \centering  \subfloat[\label{fig:fnc_app_inc}]{\input{../figures/fnc_app_inc.tex}}\hfill
