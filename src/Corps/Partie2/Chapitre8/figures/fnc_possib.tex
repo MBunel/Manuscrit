@@ -3,16 +3,11 @@
   \def\decalageY{-.2}
   % Courbe
   \begin{scope}[transparency group]
-    % fond
-    \begin{scope}
-      \path[ffa]  (1,.4) -- (3.3,.4) -- (4.5, 2) -- (5.7,.4) -- (8,.4)
-      -- (8,0) -- (1,0) -- cycle;
-    \end{scope}
-    % bords
     \begin{scope}
       \foreach \n/\t in {0/{2},1/{1.8},2/{1.6},3/{0.4},4/{0},5/{0},6/{0}}
       {
         \pgfmathsetmacro\nn{\n*(10/7)}
+        \path[ffa]  (\nn,\t) --++ (10/7,0) --++ (0, -\t) -- (\nn,0) -- cycle;
         \path[ffc] (\nn,\t) --++ (10/7,0);
       }
     \end{scope}
