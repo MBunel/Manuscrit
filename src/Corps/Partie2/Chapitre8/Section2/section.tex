@@ -112,26 +112,30 @@ Ces valeurs signifient qu'il est \enquote{tout à fait possible} que le
 colis arrive en début de semaine, relativement possible qu'il arrive
 le mercredi, peu possible qu'il arrive le jeudi et impossible qu'il
 arrive en fin de semaine. Comme on peut le remarquer il n'est pas
-nécessaire d'attribuer une mesure de nécessité à toutes les parties de
-\(X\).
-%
-XXX
-%
-Il est par ailleurs possible de calculer la possibilité de chaque
-partie de \(X\) en ne connaissant que la partie de chaque événement de
-\(X\) (ici la possibilité que le colis arrive chaque jour de la
-semaine, pris indépendamment des autres).
+nécessaire d'attribuer une mesure de \emph{possibilité} à toutes les
+parties de \(X\), cela n'empêche pas d'estimer les \emph{possibilités}
+d'autres parties de \(X\), par exemple la \emph{possibilité} que le
+colis arrive un mercredi ou un jeudi est de 0,8 \footnote{Soit le
+  maximum des deux valeurs, conformément à la règle définissant la
+  possibilité conjonctive.} ou la possibilité qu'il arrive le dimanche
+est nulle \footnote{Étant donné que
+  \(\Pi(\{\text{vendredi, samedi, dimanche}\})=0\) et que l'union
+  possibilités est réalisée avec le maximum, cela implique que ni le
+  vendredi, ni le samedi, ni le dimanche ont une possibilité non
+  nulle.}. Il n'est cependant pas possible de connaitre précisément
+certaines possibilités, comme par exemple celle que le colis arrive un
+mardi. Il est toutefois possible de calculer la possibilité de chaque
+partie de \(X\) en ne connaissant que la possibilité individuelle de
+chaque événement, ici la possibilité que le colis arrive chaque jour
+de la semaine, pris indépendamment des autres.
 
 Lorsqu'une \emph{mesure de possibilité} attribue à chaque
-\emph{événement} de \(X\) \footnote{Et par conséquent pour tous les
-  événements de l'ensemble des parties de \emph{l'ensemble des
-    événements} \(P(X)\), puisque ce dernier est constructible à
-  partir de l'union des éléments élémentaires de \(X\).} un
-coefficient de possibilité, on parle de mesure \enquote{totalement
-  définie} \autocite{Bouchon-Meunier2007}. Pour attribuer un
-\emph{coefficient de possibilité} à chaque événement de \(X\) on
-définit une \emph{distribution de possibilité} (\(π : X → [0,1]\)),
-dont le supremum pour un événement \(x\) de \(X\) doit être égal à 1 :
+\emph{événement} de \(X\) un coefficient de possibilité, on parle de
+mesure \enquote{totalement définie}
+\autocite{Bouchon-Meunier2007}. Pour attribuer un \emph{coefficient de
+  possibilité} à chaque événement de \(X\) on définit une
+\emph{distribution de possibilité} (\(π : X → [0,1]\)), dont le
+supremum pour un événement \(x\) de \(X\) doit être égal à 1 :
 %
 \begin{equation}
   \sup_{x ∈ X}π(x)=1
