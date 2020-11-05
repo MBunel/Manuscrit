@@ -12,11 +12,7 @@
     \end{scope}
     % bords
     \begin{scope}
-      \path[ffc] (1,.4) -- (3.3,.4) -- (4.5, 2) -- (5.7,.4) -- (8,.4);
-      \path[ffc, dotted] (3.3,.4) -- (3,0);
-      \path[ffc, dotted] (5.7,.4) -- (6,0);
-      \path[ffc_fade_m] (0,.4) -- (1,.4) ;
-      \path[ffc_fade] (8,.4) -- (9,.4) ;
+      \path[ffc] (0,.4) -- (3.3,.4) -- (4.5, 2) -- (5.7,.4) -- (10,.4);
     \end{scope}
   \end{scope}
   % Axes X, Y
@@ -24,16 +20,16 @@
     % Axe X
     \begin{scope}
       % Axe
-      \draw[-] (0, \decalageX) --++ (9, 0) coordinate (x axis);
+      \draw[-] (0, \decalageX) --++ (10, 0) coordinate (x axis);
       % Graduations
       \foreach \n/\t in {0/{lundi},1/{mardi},2/{mercredi},3/{jeudi},4/{vendredi},5/{samedi},6/{dimanche},7/{}}
       {
-        \pgfmathsetmacro\nn{\n*(9/7)}
+        \pgfmathsetmacro\nn{\n*(10/7)}
         \draw[-] (\nn, \decalageX - .05) --++ (0, .1);
-        \node[below, font=\tiny] at (\nn + .645, \decalageX - .05) {\t};
+        \node[below, font=\tiny] at (\nn + .71, \decalageX - .05) {\t};
       }
       % label
-      \node[below left, yshift=-.1cm, font=\small] at (x axis) {\itshape Métrique};
+      %\node[below left, yshift=-.1cm, font=\small] at (x axis) {\itshape Métrique};
     \end{scope}
     % Axe Y
     \begin{scope}
