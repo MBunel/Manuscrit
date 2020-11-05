@@ -209,6 +209,26 @@ est une fonction (\(N\)) attribuant à chaque partie de l'ensemble des
   nécessaire : \(∀ A,B ∈ P(X),\ N(A \cap B) = \min(N(A),\ N(B))\)
 \end{itemize}
 
+La \emph{nécessité} et la \emph{possibilité} sont des mesures duales,
+la \emph{nécessité} d'un événement \(A\) est donc fortement liée à la
+\emph{possibilité} du complémentaire de cet événement, \(A^C\). La
+nécessité de \(A\) peut donc s'exprimer de la manière suivante :
+
+\begin{equation}
+  \forall A \in P(X), N(A) = 1 - \Pi(A^C)
+\end{equation}
+
+Ce qui implique que plus l'événement complémentaire de \(A\) est
+\emph{possible,} moins \(A\) est nécessaire. Pour reprendre l'exemple
+précédent, si la \emph{possibilité} que le colis arrive lundi est de 1
+et que la \emph{possibilité} qu'il n'arrive pas lundi est également de
+1, alors la \emph{nécessité} de cet événement est nulle. Dans cette
+configuration, il est parfaitement possible que le colis arrive lundi
+(la possibilité est maximale) mais on n'en est absolument pas sûrs la
+nécessité est nulle). Si la \emph{possibilité} que le colis n'arrive
+pas lundi est nulle, alors la \emph{nécessité} qu'il arrive lundi est
+de 1, c'est-à-dire qu'on a une confiance absolue dans la réalisation
+de cet événement.
 
 Dans le cas où \emph{l'incertitude} (\(i\)) est homogène, la
 \emph{distribution de possibilité} (\(π\)) de cette proposition est
