@@ -6,9 +6,7 @@
     acc3m/.style={acc3,decoration={mirror}},
     cardinalite/.style={font=\footnotesize\ttfamily}
   }
-
   
-  % \draw[step=.5,black,thin] (0,0) grid (22,-14);
 
   %% Matrices
   %%% Lvl 1
@@ -20,7 +18,7 @@
     nodes={anchor=center, minimum height=.75cm}] (zlp) at
     ([xshift=18cm]I.east)
     {
-      \draw[ffa2,ffc2] (0,0) circle (.3cm);\\
+      \tikz \draw[ffa2,ffc2] (-.15,-.15) circle (.3cm);\\
     };
   \end{scope}
   %%% Lvl 2
@@ -31,10 +29,10 @@
 
     \matrix [matrix of nodes, anchor=south west, nodes={minimum size=1cm}]
     (zlc) at (4cm,0) {
-      \draw[ffa,ffc] (0,0) circle (.3cm);&
+      \tikz \draw[ffa,ffc] (-.15,-.15) circle (.3cm);&
       \node{$\cdots{}$};&
-      \draw[ffa,ffc] (0,0) circle (.3cm);&
-      \draw[ffa,ffc] (0,0) circle (.3cm);\\
+      \tikz \draw[ffa,ffc] (-.15,-.15) circle (.3cm);&
+      \tikz \draw[ffa,ffc] (-.15,-.15) circle (.3cm);\\
     };
   \end{scope}
   %%% lvl 3
@@ -48,10 +46,10 @@
   ] (zlb) at
   (2cm,0)
   {
-    \draw[ffa,ffc] (0,0) circle (.3cm);&
+    \tikz \draw[ffa,ffc] (0,0) circle (.3cm);&
     \node{$\cdots{}$};&
-    \draw[ffa,ffc] (0,0) circle (.3cm);&
-    \draw[ffa,ffc] (0,0) circle (.3cm);\\
+    \tikz \draw[ffa,ffc] (0,0) circle (.3cm);&
+    \tikz \draw[ffa,ffc] (0,0) circle (.3cm);\\
   };
   \end{scope}
   %%% lvl4
@@ -71,10 +69,10 @@
     nodes={minimum size=1cm}
     ] (zla) at (.5cm,0)
     {
-      \draw[ffa,ffc] (0,0) circle (.3cm);&
+      \tikz \draw[ffa,ffc] (0,0) circle (.3cm);&
       \node{$\cdots{}$};&
-      \draw[ffa,ffc] (0,0) circle (.3cm);&
-      \draw[ffa,ffc] (0,0) circle (.3cm);\\
+      \tikz \draw[ffa,ffc] (0,0) circle (.3cm);&
+      \tikz \draw[ffa,ffc] (0,0) circle (.3cm);\\
     };    
   \end{scope}
 
@@ -174,8 +172,7 @@
 
     \node[anchor=west,baseline, fill=white, inner sep=.9pt] at
     ([xshift=1ex]t_fus_3.south west) {\tiny des \emph{indices de
-        localisation}};
-    
+        localisation}};    
   \end{scope}
 
   \begin{scope}
@@ -194,9 +191,6 @@
     node[pos=0.5, fill=white, align=center] {\tiny Bijection}
     node[pos=1,below,cardinalite]{1};
   \end{scope}
-
-  %% XX
-
   % \begin{scope}[below of=I]
   %   \draw[acc3m] (0,0) --++ (8,0) node[pos=.5, yshift=-.5cm] {\emph{Décomposition}};
   %   \draw[acc3m] (8,0) --++ (3,0) node[pos=.5, yshift=-.5cm] {\emph{Spatialisation}};
