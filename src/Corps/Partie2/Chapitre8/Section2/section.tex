@@ -187,7 +187,28 @@ possibilité de son complémentaire \(A^C\) (\ie le colis n'arrive pas
 lundi) peut prendre n'importe quelle autre valeur, y compris 1, ce qui
 indique que les deux événements sont tout à fait possibles,
 c'est-à-dire que l'on ne sait rien, ou 0, ce qui indique une certitude
-absolue dans la réception du colis (\ie il ne peut en être autrement).
+absolue dans la réception du colis, c'est-à-dire qu'il ne peut en être
+autrement \autocite{Bouchon-Meunier1995}. La \emph{mesure de
+  nécessité} a pour fonction de quantifier la \emph{certitude} d'un
+événement, elle permet donc de distinguer une situation d'ignorance
+totale, d'une situation de connaissance absolue.
+
+Comme la \emph{mesure de possibilité,} une \emph{mesure de nécessité}
+est une fonction (\(N\)) attribuant à chaque partie de l'ensemble des
+événements un degré, compris entre 0 et 1
+(\(N : P(X) \rightarrow [0,1]\)). Cette fonction \(N\) doit également
+:
+
+\begin{itemize}
+\item Attribuer un coefficient nul à \emph{l'ensemble vide} :
+  \(N(∅)=0\)
+\item Attribuer un coefficient de 1 à \emph{l'ensemble des événements
+    :} \(N(X)=1\)
+\item Définir la \emph{nécessité} disjonctive de deux événements
+  (\(A\) et \(B\)) comme la \emph{nécessité} de l'événement le moins
+  nécessaire : \(∀ A,B ∈ P(X),\ N(A \cap B) = \min(N(A),\ N(B))\)
+\end{itemize}
+
 
 Dans le cas où \emph{l'incertitude} (\(i\)) est homogène, la
 \emph{distribution de possibilité} (\(π\)) de cette proposition est
