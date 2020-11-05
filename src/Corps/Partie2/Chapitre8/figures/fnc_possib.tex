@@ -7,12 +7,14 @@
     \begin{scope}
       \path[ffa]  (1,.4) -- (3.3,.4) -- (4.5, 2) -- (5.7,.4) -- (8,.4)
       -- (8,0) -- (1,0) -- cycle;
-      \path[ffa_fade_m] (0,.4) -- (1,.4) -- (1,0) -- (0,0) -- cycle ;
-      \path[ffa_fade] (8,.4) -- (9,.4) -- (9,0) -- (8,0) -- cycle ;
     \end{scope}
     % bords
     \begin{scope}
-      \path[ffc] (0,.4) -- (3.3,.4) -- (4.5, 2) -- (5.7,.4) -- (10,.4);
+      \foreach \n/\t in {0/{2},1/{1.8},2/{1.6},3/{0.4},4/{0},5/{0},6/{0}}
+      {
+        \pgfmathsetmacro\nn{\n*(10/7)}
+        \path[ffc] (\nn,\t) --++ (10/7,0);
+      }
     \end{scope}
   \end{scope}
   % Axes X, Y
