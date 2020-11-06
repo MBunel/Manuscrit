@@ -268,20 +268,24 @@ Cette caractéristique à deux conséquences majeures :
 Ces deux propriétés impliquent que dès qu'un événement est, ne
 serai-ce qu'un peu, certain (\(N(A) ≠ 0\) alors il est parfaitement
 possible (\(Π(A)=1\)). De même si un événement n'est pas parfaitement
-possible (\(Π(A) ≠ 1\) alors on ne peut pas être certains
+possible (\(Π(A) ≠ 1\) alors on ne peut pas être certain
 (\(N(A) = 0\)) qu'il se produira.
 
-Étant donné que la nécessité
+Étant donné que la nécessité sont des mesures duales, on peut définir
+la mesure de nécessité (\(N(A)\)) à partir de la distribution de
+possibilité (\(π\)) :
 
-
-La \emph{mesure de nécessité} est définissable à partir d'une
-distribution de possibilité \(pi\).
-%
-Ainsi :
 \begin{equation}
-  N(A) = \inf_{x \notin A}(1-\pi(x))
+  N(A) = \inf_{x ∉ A}(1-π(x))
 \end{equation}
 
+Par exemple, si l'on reprend la distribution de possibilité proposée
+par la \autoref{fig:fnc_possib}, on peut calculer la nécessité de
+chaque événement. Par exemple, si la possibilité que le colis arrive
+le lundi est de 1, la nécessité de ce même événement est de 0,2,
+puisque que le minimum de la fonction \(1-π(x)\), pour tous les
+événements à l'exception de celui étudié est de 0,2 (ce qui correspond
+à \(1-π(\text{mardi})\)).
 
 
 
