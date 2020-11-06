@@ -20,6 +20,8 @@ comparables, en plus de s’inscrire toutes deux dans le cadre plus
 général \autocite{Bouchon-Meunier1995}, celui de la théorie des
 fonctions de croyances \autocite{Shafer1976}.
 
+\subsubsection{Mesures de possibilité et de nécessité}
+
 Comme la \emph{théorie des probabilité} (et donc des \emph{fonctions
   de croyance}), la \emph{théorie des possibilités} permet évaluer la
 \enquote{chance} qu'un événement donné se produise. Ces événements
@@ -55,34 +57,88 @@ possible :
 %
 Il est par conséquent possible que deux événements aient
 respectivement une possibilité non nulle, mais que leur occurrence
-simultanée soit nulle (\( Π(A ∪ B) = 0\)) n'implique pas que \(Π(A)\)
-et \(Π(B)\) soient égaux à 0). Une autre propriété des \emph{mesures
-  de possibilités} est leur \emph{monotonie} relativement à
-l'inclusion des parties de \(X\), c'est-à-dire que si un événement
-\(A\) est inclus dans un événement \(B\), alors la possibilité de
-\(B\) est supérieure à celle de \(A\) :
+simultanée soit nulle (\( Π(A ∩ B) = 0\)) n'implique pas que \(Π(A)\)
+et \(Π(B)\) soient égaux à 0). Une autre propriété déductible est que
+les \emph{mesures de possibilités} sont \emph{monotones} relativement
+à l'inclusion des parties de \(X\). Ce qui implique que si un
+événement \(A\) est inclus dans un événement \(B\) (\eg si \(A\) est
+la \emph{possibilité} qu'il pleuve en fin de journée, \(B\) pourrait
+être la \emph{possibilité} que le temps change en fin de journée),
+alors la possibilité de \(B\) est supérieure à celle de \(A\) :
 %
 \begin{equation}
   A \subseteq B, Π(A) ≤ Π(B)
 \end{equation}
 %
-De plus, tous les événements de \(X\) ou leurs complémentaires sont
-\enquote{tout à fait possibles} :
+Ce qui revient à dire que la probabilité que le temps change (\(B\))
+est supérieure à la \emph{possibilité} qu'il pleuve (\(A\)).
+
+Une autre propriété des \emph{mesures de possibilités} est la faible
+influence de la \emph{possibilité} d'un événement \(A\) sur la
+\emph{possibilité} de son complémentaire \(A^C\). En effet, quelque
+soit l’événement traité, lui ou son contraire est \enquote{tout à fait
+  possible}, par conséquent :
 %
 \begin{equation}
+  \label{eq:poss_cont}
   ∀ A ∈ P(X),\ \max(Π(A),\ Π(A^C)) = 1  
 \end{equation}
+%
+Il est donc possible que la somme des \emph{possibilités} de \(A\) et
+de \(A^C\) soit supérieure à 1. Cette propriété diffère fortement de
+ce que l'on peut trouver en \emph{théories des probabilités} où la
+probabilité du contraire d'un événement est plus contrainte, puisque
+la somme de ces deux probabilités et toujours égale à 1. En
+\emph{théorie des possibilités} il est simplement nécessaire qu'une
+des \emph{possibilité} soit de 1.
+
+\textcite{Bouchon-Meunier1995} illustre les \emph{mesures de
+  possibilités} avec l'exemple de la réception d'un colis. On peut
+définir une \emph{mesure de possibilité} donnant la susceptibilité que
+le colis soit reçu un jour donné de la semaine. Dans ce cas,
+\emph{l'ensemble des événements} \(X\) correspond à l'ensemble des
+jours de la semaine et les parties de \(X\) aux combinaisons de ces
+jours (\eg \(\{\text{lundi},\ \text{mardi}\}\),
+\(\{\text{jeudi, vendredi, samedi}\}\), \emph{etc.})  On peut
+attribuer une \emph{mesure de possibilité} à ces différentes parties
+de \(X\). Si l'on reprend les valeurs proposées par
+\textcite{Bouchon-Meunier1995} alors :
+% 
+\begin{itemize}
+\item \(\Pi(\{\text{lundi, mardi}\})=1\)
+\item \(\Pi(\{\text{mercredi}\})=0,8\)
+\item \(\Pi(\{\text{jeudi}\})=0,2\)
+\item \(\Pi(\{\text{vendredi, samedi, dimanche}\})=0\)
+\end{itemize}
+%
+Ces valeurs signifient qu'il est \enquote{tout à fait possible} que le
+colis arrive en début de semaine, relativement possible qu'il arrive
+le mercredi, peu possible qu'il arrive le jeudi et impossible qu'il
+arrive en fin de semaine. Comme on peut le remarquer il n'est pas
+nécessaire d'attribuer une mesure de \emph{possibilité} à toutes les
+parties de \(X\), cela n'empêche pas d'estimer les \emph{possibilités}
+d'autres parties de \(X\), par exemple la \emph{possibilité} que le
+colis arrive un mercredi ou un jeudi est de 0,8 \footnote{Soit le
+  maximum des deux valeurs, conformément à la règle définissant la
+  possibilité conjonctive.} ou la possibilité qu'il arrive le dimanche
+est nulle \footnote{Étant donné que
+  \(\Pi(\{\text{vendredi, samedi, dimanche}\})=0\) et que l'union
+  possibilités est réalisée avec le maximum, cela implique que ni le
+  vendredi, ni le samedi, ni le dimanche ont une possibilité non
+  nulle.}. Il n'est cependant pas possible de connaitre précisément
+certaines possibilités, comme par exemple celle que le colis arrive un
+mardi. Il est toutefois possible de calculer la possibilité de chaque
+partie de \(X\) en ne connaissant que la possibilité individuelle de
+chaque événement, ici la possibilité que le colis arrive chaque jour
+de la semaine, pris indépendamment des autres.
 
 Lorsqu'une \emph{mesure de possibilité} attribue à chaque
-\emph{événement} de \(X\) \footnote{Et par conséquent pour tous les
-  événements de l'ensemble des parties de \emph{l'ensemble des
-    événements} \(P(X)\), puisque ce dernier est constructible à
-  partir de l'union des éléments élémentaires de \(X\).} un
-coefficient de possibilité, on parle de mesure \enquote{totalement
-  définie} \autocite{Bouchon-Meunier2007}. Pour attribuer un
-\emph{coefficient de possibilité} à chaque événement de \(X\) on
-définit une \emph{distribution de possibilité} (\(π : X → [0,1]\)),
-dont le supremum pour un événement \(x\) de \(X\) doit être égal à 1 :
+\emph{événement} de \(X\) un coefficient de possibilité, on parle de
+mesure \enquote{totalement définie}
+\autocite{Bouchon-Meunier2007}. Pour attribuer un \emph{coefficient de
+  possibilité} à chaque événement de \(X\) on définit une
+\emph{distribution de possibilité} (\(π : X → [0,1]\)), dont le
+supremum pour un événement \(x\) de \(X\) doit être égal à 1 :
 %
 \begin{equation}
   \sup_{x ∈ X}π(x)=1
@@ -100,6 +156,151 @@ qu'elle soit normalisée \footnote{Contrairement à une
   \autocite{Bouchon-Meunier2007}.}, elle est équivalente à une
 \emph{distribution de possibilités.}
 
+On peut reconstruire la \emph{mesure de possibilité} de chaque
+événement à partir de la \emph{distribution de possibilités,} la
+\emph{mesure de possibilité} d'un événement \(A\) est alors égale à la
+valeur la plus importante de la \emph{distribution des possibilités}
+sur cet intervalle, soit :
+
+\begin{equation}
+  \Pi(A) = \sup_{x \in A}\pi(x)
+\end{equation}
+
+Par exemple, on peut définir une \emph{distribution de possibilité}
+par paliers donnant la \emph{possibilité} qu'un colis soit livré un
+jour donné (\autoref{fig:fnc_possib}). À partir d'une telle fonction
+on peut calculer la \emph{mesure de possibilité} de chaque partie de
+\emph{l'ensemble des événements.} Par exemple, la possibilité que le
+\emph{colis} ne soit pas livré un jeudi est égale à la valeur maximale
+de la distribution de possibilité pour tous les jours à l'exception du
+jeudi, soit 1.
+
+\begin{figure}[hb]
+  \centering
+  \input{../figures/fnc_possib.tex}
+  \caption{Exemple d'une distribution de possibilité par paliers : la
+    possibilité qu'un colis arrive chaque jours de la semaine.}
+  \label{fig:fnc_possib}
+\end{figure}
+
+La \emph{mesure de possibilité} est associée à une seconde mesure, la
+\emph{nécessité.} Cette mesure permet de compléter l'information
+donnée par la \emph{possibilité.} En effet, même si un événement \(A\)
+à une \emph{possibilité} de 1 (\eg 1 pour le colis arrive lundi), la
+possibilité de son complémentaire \(A^C\) (\ie le colis n'arrive pas
+lundi) peut prendre n'importe quelle autre valeur, y compris 1, ce qui
+indique que les deux événements sont tout à fait possibles,
+c'est-à-dire que l'on ne sait rien, ou 0, ce qui indique une certitude
+absolue dans la réception du colis, c'est-à-dire qu'il ne peut en être
+autrement \autocite{Bouchon-Meunier1995}. La \emph{mesure de
+  nécessité} a pour fonction de quantifier la \emph{certitude} d'un
+événement, elle permet donc de distinguer une situation d'ignorance
+totale, d'une situation de connaissance absolue. 
+
+Comme la \emph{mesure de possibilité,} une \emph{mesure de nécessité}
+est une fonction (\(N\)) attribuant à chaque partie de l'ensemble des
+événements un degré, compris entre 0 et 1
+(\(N : P(X) \rightarrow [0,1]\)). Cette fonction \(N\) doit également
+:
+
+\begin{itemize}
+\item Attribuer un coefficient nul à \emph{l'ensemble vide} :
+  \(N(∅)=0\)
+\item Attribuer un coefficient de 1 à \emph{l'ensemble des événements
+    :} \(N(X)=1\)
+\item Définir la \emph{nécessité} disjonctive de deux événements
+  (\(A\) et \(B\)) comme la \emph{nécessité} de l'événement le moins
+  nécessaire : \(∀ A,B ∈ P(X),\ N(A \cap B) = \min(N(A),\ N(B))\)
+\end{itemize}
+
+La \emph{nécessité} et la \emph{possibilité} sont des mesures duales,
+la \emph{nécessité} d'un événement \(A\) est donc fortement liée à la
+\emph{possibilité} du complémentaire de cet événement, \(A^C\). La
+nécessité de \(A\) peut donc s'exprimer de la manière suivante :
+
+\begin{equation}
+  \label{eq:nec_comp}
+  \forall A \in P(X), N(A) = 1 - \Pi(A^C)
+\end{equation}
+
+Ce qui implique que plus l'événement complémentaire de \(A\) est
+\emph{possible,} moins \(A\) est nécessaire. Pour reprendre l'exemple
+précédent, si la \emph{possibilité} que le colis arrive lundi est de 1
+et que la \emph{possibilité} qu'il n'arrive pas lundi est également de
+1, alors la \emph{nécessité} de cet événement est nulle. Dans cette
+configuration, il est parfaitement possible que le colis arrive lundi
+(la possibilité est maximale) mais on n'en est absolument pas sûrs la
+nécessité est nulle). Si la \emph{possibilité} que le colis n'arrive
+pas lundi est nulle, alors la \emph{nécessité} qu'il arrive lundi est
+de 1, c'est-à-dire qu'on a une confiance absolue dans la réalisation
+de cet événement. La dualité de ces deux mesures contraint cependant
+leurs valeurs respectives. Tout d'abord la \emph{nécessité} ne peut
+pas être plus élevée que la \emph{possibilité} \footnote{Ce qui
+  traduirait une situation, absurde, où un événement doit arriver mais
+  ne le peut.}, mais les deux valeurs peuvent cependant être égales,
+comme dans le cas d'une certitude absolue en la réalisation d'un
+événement \footnote{Dans ce cas la certitude et la nécessité ont une
+  valeur de 1.}, par conséquent :
+
+\begin{equation}
+  \forall A \in P(X), N(A) ≤ \Pi(A)
+\end{equation}
+
+De plus, comme la nécessité d'un événement est liée à la possibilité
+de l'événement opposé (\autoref{eq:nec_comp}) et que la possiblité
+d'un événement et de son opposé sont liées (\autoref{eq:poss_cont})
+alors la nécessité et la possibilité sont également liées :
+
+\begin{equation}
+  \forall A \in P(X), \max(\Pi(A), 1-N(A)) = 1
+\end{equation}
+
+Cette caractéristique à deux conséquences majeures :
+
+\begin{itemize}
+\item S'il existe une incertitude alors la possibilité est maximale ;
+  \(\text{si : } N(A) ≠ 0, \text{ alors : } Π(A)=1\)
+\item Si l'événement n'est pas \enquote{tout à fait possible} alors il
+  n'est pas nécessaire ;
+  \(\text{si : } Π(A) ≠ 1, \text{ alors : } N(A)=0\)
+\end{itemize}
+
+Ces deux propriétés impliquent que dès qu'un événement est, ne
+serai-ce qu'un peu, certain (\(N(A) ≠ 0\) alors il est parfaitement
+possible (\(Π(A)=1\)). De même si un événement n'est pas parfaitement
+possible (\(Π(A) ≠ 1\) alors on ne peut pas être certain
+(\(N(A) = 0\)) qu'il se produira.
+
+Étant donné que la nécessité sont des mesures duales, on peut définir
+la mesure de nécessité (\(N(A)\)) à partir de la distribution de
+possibilité (\(π\)) :
+
+\begin{equation}
+  N(A) = \inf_{x ∉ A}(1-π(x)) = 1 - \sup_{x ∉ A}π(x)
+\end{equation}
+
+Par exemple, si l'on reprend la distribution de possibilité proposée
+par la \autoref{fig:fnc_possib}, on peut calculer la nécessité de
+chaque événement. Par exemple, si la possibilité que le colis arrive
+le lundi est de 1, la nécessité de ce même événement est de 0,2,
+puisque que le minimum de la fonction \(1-π(x)\), pour tous les
+événements à l'exception de celui étudié est de 0,2 (ce qui correspond
+à : \(1-π(\text{mardi})\)).
+
+
+Comme la nécessité est une mesure de cer
+
+On peut dès lors modéliser l'incertitude des \emph{indices de
+  localisation} à l'aide d'une 
+
+\subsubsection{Modélisation conjointe de \emph{l'incertitude} et de
+  \emph{l'imprécision}}
+
+Pour combiner la modélisation des 
+
+Comme nous l'avons déjà indiqué, une fonction d'appartenance
+normalisée est une distribution de possibilité,
+
 Dans le cas où \emph{l'incertitude} (\(i\)) est homogène, la
 \emph{distribution de possibilité} (\(π\)) de cette proposition est
 obtenue en tronquant la base de la fonction d'appartenance par la
@@ -110,6 +311,14 @@ donc :
 \begin{equation}
   π'(x) = \max(π(x),\ i).  
 \end{equation}
+
+
+\begin{figure}
+  \centering
+  \input{../figures/fnc_incert_floue.tex}
+  \caption{SS}
+  \label{fig:ss}
+\end{figure}
 
 
 La confiance peut se définir en amont de la spatialisation.
