@@ -80,6 +80,7 @@ soit l’événement traité, lui ou son contraire est \enquote{tout à fait
   possible}, par conséquent :
 %
 \begin{equation}
+  \label{eq:poss_cont}
   ∀ A ∈ P(X),\ \max(Π(A),\ Π(A^C)) = 1  
 \end{equation}
 %
@@ -218,6 +219,7 @@ la \emph{nécessité} d'un événement \(A\) est donc fortement liée à la
 nécessité de \(A\) peut donc s'exprimer de la manière suivante :
 
 \begin{equation}
+  \label{eq:nec_comp}
   \forall A \in P(X), N(A) = 1 - \Pi(A^C)
 \end{equation}
 
@@ -231,20 +233,37 @@ configuration, il est parfaitement possible que le colis arrive lundi
 nécessité est nulle). Si la \emph{possibilité} que le colis n'arrive
 pas lundi est nulle, alors la \emph{nécessité} qu'il arrive lundi est
 de 1, c'est-à-dire qu'on a une confiance absolue dans la réalisation
-de cet événement. Ces deux mesures ne peuvent cependant pas prendre
-toutes les valeurs possibles. Tout d'abord la \emph{nécessité} ne peut
+de cet événement. La dualité de ces deux mesures contraint cependant
+leurs valeurs respectives. Tout d'abord la \emph{nécessité} ne peut
 pas être plus élevée que la \emph{possibilité} \footnote{Ce qui
   traduirait une situation, absurde, où un événement doit arriver mais
   ne le peut.}, mais les deux valeurs peuvent cependant être égales,
 comme dans le cas d'une certitude absolue en la réalisation d'un
 événement \footnote{Dans ce cas la certitude et la nécessité ont une
-  valeur de 1.}
+  valeur de 1.}, par conséquent :
 
-La nécessité ne peut pas être plus imporante que la possibilité
+\begin{equation}
+  \forall A \in P(X), N(A) ≤ \Pi(A)
+\end{equation}
 
-La dualité entre les mesures de possibilité et de nécessité à
-plusieurs conséquences. Tout d'abord, 
+De plus, comme la nécessité d'un événement est liée à la possibilité
+de l'événement opposé (\autoref{eq:nec_comp}) et que la possiblité
+d'un événement et de son opposé sont liées (\autoref{eq:poss_cont})
+alors la nécessité et la possibilité sont également liées :
 
+\begin{equation}
+  \forall A \in P(X), \max(\Pi(A), 1-N(A)) = 1
+\end{equation}
+
+Cette caractéristique à deux conséquences majeures :
+
+\begin{itemize}
+\item S'il existe une incertitude alors la possibilité est maximale :
+  \(\text{si : } N(A) ≠ 0,\ \text{alors : } Π(A)=1\)
+\item Si l'événement n'est pas \enquote{tout à fait possible} alors il
+  n'est pas nécessaire :
+  \(\text{si : } Π(A) ≠ 1,\ \text{alors : } N(A)=0\)
+\end{itemize}
 
 
 
