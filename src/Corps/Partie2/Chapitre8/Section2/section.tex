@@ -203,23 +203,21 @@ les jours à l'exception du jeudi, soit 1.
 
 La mesure de possibilité ne permet pas à elle seule de quantifier la
 \emph{certitude} d'un événement, elle ne renseigne que sur sa capacité
-de réalisation. Si l'on reprend l’exemple précédent
-(\autoref{fig:fnc_possib}) en ne considérant que la possibilité que le
-colis arrive le lundi (\ie on ignore les autres mesures de
-possibilité). Le fait que la possibilité que le colis attendu arrive
-le lundi soit maximale ne donne pas suffisamment d'informations pour
-savoir si le colis va réellement arriver le lundi, tout dépend de la
-valeur prise par l'événement contraire (\ie le colis n'arrive pas
-lundi). Si nous considérons que la possibilité que le colis n'arrive
-pas lundi est nulle, alors cela traduit le fait que le colis ne peut
-pas arriver un autre jour de la semaine, il peut donc arriver le lundi
-(car : \(\Pi(\{\text{lundi}\}=1\)) et ne peut pas arriver un autre
-jour (car : \(\Pi\{\text{mardi, …, dimanche}\}=0\)), on est donc
-\emph{certains} que le colis arrivera lundi. À l'inverse, si la
-possibilité que le colis n'arrive pas lundi est également de 1 (\ie
-\(\Pi\{\text{mardi, …, dimanche}\}=1\)) alors le colis peut aussi bien
-arriver le lundi que n'importe quel autre jour de la semaine, on n'a
-donc aucune idée de ce qui va réellement se produire, notre
+de réalisation. Si l'on reprend l’exemple du colis, mais en ne
+conservant que la possibilité que le colis arrive le lundi. Le fait
+que cette possibilité soit maximale ne donne pas suffisamment
+d'informations pour savoir si le colis va réellement arriver le lundi,
+tout dépend de la valeur prise par l'événement contraire (\ie le colis
+n'arrive pas lundi). Si nous considérons que la possibilité que le
+colis n'arrive pas lundi est nulle, alors cela traduit le fait que le
+colis ne peut pas arriver un autre jour de la semaine, il peut donc
+arriver le lundi (car : \(\Pi(\{\text{lundi}\}=1\)) et ne peut pas
+arriver un autre jour (car : \(\Pi\{\text{mardi, …, dimanche}\}=0\)),
+on est donc \emph{certains} que le colis arrivera lundi. À l'inverse,
+si la possibilité que le colis n'arrive pas lundi est également de 1
+(\ie \(\Pi\{\text{mardi, …, dimanche}\}=1\)) alors le colis peut aussi
+bien arriver le lundi que n'importe quel autre jour de la semaine, on
+n'a donc aucune idée de ce qui va réellement se produire, notre
 incertitude sur cet événement est totale.
 
 La certitude d'un événement ne peut donc être jugée qu'à l'aune de
@@ -329,6 +327,13 @@ conjointe de \emph{l'imprécision} et de \emph{l'incertitude.}
 Comme nous l'avons déjà indiqué, une fonction d'appartenance
 normalisée est une distribution de possibilité,
 
+Dans notre cas, on cherche à utiliser la théorie des possibilités pour
+représenter le doute du secouriste sur la véracité de l'indice de
+localisation donné par le requérant. Ce parti-pris a donc une
+implication majeure. Comme les sous-ensembles flous que nous
+manipulons représentent des \emph{zones de localisation,} alors la
+certide
+
 Dans le cas où \emph{l'incertitude} (\(i\)) est homogène, la
 \emph{distribution de possibilité} (\(π\)) de cette proposition est
 obtenue en tronquant la base de la fonction d'appartenance par la
@@ -341,11 +346,20 @@ donc :
 \end{equation}
 
 
+La \autoref{fig:combinaison_incertitude_imprecision} illustre cette
+combinaison. On définit une distribution de possibilité homogène sur
+l'espace de la métrique et une fonction d'appartenance, permettant de
+définir un \emph{sélecteur,} utilisé lors de la spatialisation. Si
+l'on combine ces deux distributions on obtient une fonction
+d'appartenance \enquote{rehaussée} par l'incertitude. Dans cette
+configuration, le degré d'appartenance ne pourra être supérieur à la
+valeur de 
+
 \begin{figure}
   \centering
   \input{../figures/fnc_incert_floue.tex}
   \caption{SS}
-  \label{fig:ss}
+  \label{fig:combinaison_incertitude_imprecision}
 \end{figure}
 
 
