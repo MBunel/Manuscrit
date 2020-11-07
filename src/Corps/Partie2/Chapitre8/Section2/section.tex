@@ -183,21 +183,27 @@ sur cet intervalle, soit :
 \end{equation}
 
 Par exemple, on peut définir une \emph{distribution de possibilité}
-par paliers donnant la \emph{possibilité} qu'un colis soit livré un
-jour donné (\autoref{fig:fnc_possib}). À partir d'une telle fonction
-on peut calculer la \emph{mesure de possibilité} de chaque partie de
+donnant la \emph{possibilité} qu'un colis soit livré un jour donné
+(\autoref{fig:fnc_possib}). À partir d'une telle fonction on peut
+calculer la \emph{mesure de possibilité} de chaque partie de
 \emph{l'ensemble des événements.} Par exemple, la possibilité que le
-\emph{colis} ne soit pas livré un jeudi est égale à la valeur maximale
-de la distribution de possibilité pour tous les jours à l'exception du
-jeudi, soit 1.
+\emph{colis} soit livré entre jeudi et dimanche et de 0,2, puisque
+c'est la valeur maximale prise par la fonction \(\pi\) sur cette
+période et la possibilité que le colis ne soit pas livré un jeudi est
+égale à la valeur maximale de la distribution de possibilité pour tous
+les jours à l'exception du jeudi, soit 1.
 
-\begin{figure}[hb]
+\begin{figure}
   \centering
   \input{../figures/fnc_possib.tex}
   \caption{Exemple d'une distribution de possibilité par paliers : la
     possibilité qu'un colis arrive chaque jours de la semaine.}
   \label{fig:fnc_possib}
 \end{figure}
+
+La mesure de possibilité n'est pas une métrique suffisante pour
+modéliser l'incertitude.
+
 
 La \emph{mesure de possibilité} est associée à une seconde mesure, la
 \emph{nécessité.} Cette mesure permet de compléter l'information
