@@ -224,21 +224,16 @@ incertitude sur cet événement est totale.
 
 La certitude d'un événement ne peut donc être jugée qu'à l'aune de
 deux mesures, la possibilité d'un événement et la possibilité de
-l'événement contraire. c
+l'événement contraire. On définit donc une seconde mesure, \emph{la
+  nécessité,} quantifiant la certitude que l'on a sur la réalisation
+d'un événement donné. La \emph{nécessité} est une mesure duale de la
+possibilité et elle est exprimée à partir de la possibilité du
+contraire de l'événement étudié :
 
-La \emph{mesure de possibilité} est associée à une seconde mesure, la
-\emph{nécessité.} Cette mesure permet de compléter l'information
-donnée par la \emph{possibilité.} En effet, même si un événement \(A\)
-à une \emph{possibilité} de 1 (\eg 1 pour le colis arrive lundi), la
-possibilité de son complémentaire \(A^C\) (\ie le colis n'arrive pas
-lundi) peut prendre n'importe quelle autre valeur, y compris 1, ce qui
-indique que les deux événements sont tout à fait possibles,
-c'est-à-dire que l'on ne sait rien, ou 0, ce qui indique une certitude
-absolue dans la réception du colis, c'est-à-dire qu'il ne peut en être
-autrement \autocite{Bouchon-Meunier1995}. La \emph{mesure de
-  nécessité} a pour fonction de quantifier la \emph{certitude} d'un
-événement, elle permet donc de distinguer une situation d'ignorance
-totale, d'une situation de connaissance absolue. 
+\begin{equation}
+  \label{eq:nec_comp}
+  \forall A \in P(X), N(A) = 1 - \Pi(A^C)
+\end{equation}
 
 Comme la \emph{mesure de possibilité,} une \emph{mesure de nécessité}
 est une fonction (\(N\)) attribuant à chaque partie de l'ensemble des
@@ -256,15 +251,7 @@ est une fonction (\(N\)) attribuant à chaque partie de l'ensemble des
   nécessaire : \(∀ A,B ∈ P(X),\ N(A \cap B) = \min(N(A),\ N(B))\)
 \end{itemize}
 
-La \emph{nécessité} et la \emph{possibilité} sont des mesures duales,
-la \emph{nécessité} d'un événement \(A\) est donc fortement liée à la
-\emph{possibilité} du complémentaire de cet événement, \(A^C\). La
-nécessité de \(A\) peut donc s'exprimer de la manière suivante :
 
-\begin{equation}
-  \label{eq:nec_comp}
-  \forall A \in P(X), N(A) = 1 - \Pi(A^C)
-\end{equation}
 
 Ce qui implique que plus l'événement complémentaire de \(A\) est
 \emph{possible,} moins \(A\) est nécessaire. Pour reprendre l'exemple
