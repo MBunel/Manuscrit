@@ -201,9 +201,30 @@ les jours à l'exception du jeudi, soit 1.
   \label{fig:fnc_possib}
 \end{figure}
 
-La mesure de possibilité n'est pas une métrique suffisante pour
-modéliser l'incertitude.
+La mesure de possibilité ne permet pas à elle seule de quantifier la
+\emph{certitude} d'un événement, elle ne renseigne que sur sa capacité
+de réalisation. Si l'on reprend l’exemple précédent
+(\autoref{fig:fnc_possib}) en ne considérant que la possibilité que le
+colis arrive le lundi (\ie on ignore les autres mesures de
+possibilité). Le fait que la possibilité que le colis attendu arrive
+le lundi soit maximale ne donne pas suffisamment d'informations pour
+savoir si le colis va réellement arriver le lundi, tout dépend de la
+valeur prise par l'événement contraire (\ie le colis n'arrive pas
+lundi). Si nous considérons que la possibilité que le colis n'arrive
+pas lundi est nulle, alors cela traduit le fait que le colis ne peut
+pas arriver un autre jour de la semaine, il peut donc arriver le lundi
+(car : \(\Pi(\{\text{lundi}\}=1\)) et ne peut pas arriver un autre
+jour (car : \(\Pi\{\text{mardi, …, dimanche}\}=0\)), on est donc
+\emph{certains} que le colis arrivera lundi. À l'inverse, si la
+possibilité que le colis n'arrive pas lundi est également de 1 (\ie
+\(\Pi\{\text{mardi, …, dimanche}\}=1\)) alors le colis peut aussi bien
+arriver le lundi que n'importe quel autre jour de la semaine, on n'a
+donc aucune idée de ce qui va réellement se produire, notre
+incertitude sur cet événement est totale.
 
+La certitude d'un événement ne peut donc être jugée qu'à l'aune de
+deux mesures, la possibilité d'un événement et la possibilité de
+l'événement contraire. c
 
 La \emph{mesure de possibilité} est associée à une seconde mesure, la
 \emph{nécessité.} Cette mesure permet de compléter l'information
