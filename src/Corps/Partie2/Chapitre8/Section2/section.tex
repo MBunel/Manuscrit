@@ -251,8 +251,6 @@ est une fonction (\(N\)) attribuant à chaque partie de l'ensemble des
   nécessaire : \(∀ A,B ∈ P(X),\ N(A \cap B) = \min(N(A),\ N(B))\)
 \end{itemize}
 
-
-
 Ce qui implique que plus l'événement complémentaire de \(A\) est
 \emph{possible,} moins \(A\) est nécessaire. Pour reprendre l'exemple
 précédent, si la \emph{possibilité} que le colis arrive lundi est de 1
@@ -309,19 +307,15 @@ possibilité (\(π\)) :
   N(A) = \inf_{x ∉ A}(1-π(x)) = 1 - \sup_{x ∉ A}π(x)
 \end{equation}
 
-Par exemple, si l'on reprend la distribution de possibilité proposée
-par la \autoref{fig:fnc_possib}, on peut calculer la nécessité de
-chaque événement. Par exemple, si la possibilité que le colis arrive
-le lundi est de 1, la nécessité de ce même événement est de 0,2,
-puisque que le minimum de la fonction \(1-π(x)\), pour tous les
-événements à l'exception de celui étudié est de 0,2 (ce qui correspond
-à : \(1-π(\text{mardi})\)).
-
-
-Comme la nécessité est une mesure de cer
-
-On peut dès lors modéliser l'incertitude des \emph{indices de
-  localisation} à l'aide d'une 
+Ainsi, une seule distribution (\(\pi\)) est nécessaire pour calculer
+les mesures de possibilité et de nécessité de chaque événement. Par
+exemple, si l'on reprend la distribution de possibilité proposée par
+la \autoref{fig:fnc_possib}, on peut calculer la nécessité de chaque
+événement. Par exemple, si la possibilité que le colis arrive le lundi
+est de 1, la nécessité de ce même événement est de 0,2, puisque que le
+minimum de la fonction \(1-π(x)\), pour tous les événements à
+l'exception de celui étudié est de 0,2 (ce qui correspond à :
+\(1-π(\text{mardi})\)).
 
 \subsubsection{Modélisation conjointe de \emph{l'incertitude} et de
   \emph{l'imprécision}}
