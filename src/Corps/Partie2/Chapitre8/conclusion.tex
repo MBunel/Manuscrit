@@ -1,1 +1,35 @@
-Conclusion chapitre 8
+Dans ce chapitre nous avons présenter le déroulé de la dernière phase
+de notre méthode : \emph{la fusion.} La \emph{phase de fusion} a pour
+objectif de regrouper toutes les \emph{zones de localisation}
+construites lors de la phase de spatialisation, en vue d'obtenir la
+zone de localisation probable de la victime.
+
+Pour ce faire il est nécessaire de regrouper les \ac{zlc} qui ont été
+construites à partir \emph{d'indices de localisation,} décomposés lors
+de la première phase de la méthode. La phase de décomposition et la
+phase de fusion se répondent, si bien qu'au trois étapes de
+décomposition répondent trois étapes de fusion. Pour être mises en
+place ces étapes nécessitent des opérateurs permettant de réaliser des
+intersection et des unions inter-zones, les \emph{t-normes} et les
+\emph{t-conormes.} Toutefois plusieurs couples de
+\emph{t-normes}/\emph{t-conormes,} aux propriétés diverses, ont été
+proposés. À près avoir analysé leurs caractéristiques spécifiques,
+nous avons choisi d'utiliser les opérateurs initialement proposés par
+\textcite{Zadeh1965}, qui sont apparus comme les plus adaptés à notre
+cas d’application.
+
+Nous avons également présenté la méthode retenue pour modéliser la
+confiance des secouristes dans les indices qu'ils traitent. Pour ce
+faire nous avons employé la \emph{théorie des possibilités} proposée
+par \textcite{Zadeh1978} en complément de la théorie des
+sous-ensembles flous et permettant de combiner modélisation de
+l’imprécision et de l'incertitude.
+
+Au terme de ce chapitre on a donc un regard complet sur l'ensemble de
+la méthode proposée pour transformer des descriptions de position en
+des positions exprimées dans un référentiel direct.
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../../../main"
+%%% End:
