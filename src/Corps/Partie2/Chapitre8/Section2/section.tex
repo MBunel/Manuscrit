@@ -2,7 +2,6 @@
 
 \subsection{La théorie des possibilités}
 
-
 La théorie des \emph{sous-ensembles flous} ne permet pas, du moins
 dans sa formulation initiale, de modéliser l'incertitude d'une
 connaissance, seulement son \emph{imprécision.}
@@ -312,7 +311,7 @@ la \autoref{fig:fnc_possib}, on peut calculer la nécessité de chaque
 événement. Par exemple, si la possibilité que le colis arrive le lundi
 est de 1, la nécessité de ce même événement est de 0,2, puisque que le
 minimum de la fonction \(1-π(x)\), pour tous les événements à
-l'exception de celui étudié est de 0,2 (ce qui correspond à :
+l'exception de celui étudié est de 0,2 (ce qui correspond a :
 \(1-π(\{\text{mardi}\})\)).
 
 \subsubsection{Modélisation conjointe de \emph{l'incertitude} et de
@@ -334,7 +333,23 @@ implication majeure. Comme les sous-ensembles flous que nous
 manipulons représentent des \emph{zones de localisation,} alors la
 certitude
 
-Rien ne peut être considéré comme impossible
+
+Dans le cas où une même valeur d'incertitude s'applique à tous les
+éléments de l'ensemble de référence, alors aucun ce ses éléments ne
+peut être qualifié d'impossible.
+%
+Admettons que l'on cherche à spatialiser l'indice de localisation :
+\enquote{Elle est à 500 mètres du refuge}. Pour ce faire on recourra
+la relation de localisation atomique
+\onto[orla]{A\-Distance\-Planimetrique}, qui emploie le fuzzyficateur
+\onto[orla]{Eq\-Val} avec une valeur de référence de 500 mètres. La
+spatialisation de cette relation de localisation permet alors de
+construire une \ac{zlc} représentée par un raster ne comprenant que
+les pixels qui lui appartiennent, du moins partiellement
+(\autoref{chap:06}). Dans le cas où ce même indice de localisation
+n'est pas certain tout à fait certain il devient impossible d'affirmer
+qu'un pixel donné n'appartient pas à la zone de localisation
+compatible.
 
 
 Dans le cas où \emph{l'incertitude} (\(i\)) est fixe et s'applique de
