@@ -1,35 +1,52 @@
+La méthode de construction des zones de localisation probables que
+nous avons détaillé au cours des précédents chapitres ne remplit pas
+encore tous les objectifs que nous avions fixés dans le
+\autoref{chap:02}, nous ne pouvons pas encore prendre en compte la
+confiance du secouriste en la qualité des indices qu'il traite.
 
+Nous allons à présent détailler la manière dont nous modélisons cette
+confiance, en commençant par présenter le cadre théorique sur lequel
+nous nous appuyons, \emph{la théorie des possibilités} et la manière
+dont il est utilisé pour ajouter la modélisation de la confiance à
+notre méthode.
 
 \subsection{La théorie des possibilités}
 
-La théorie des \emph{sous-ensembles flous} ne permet pas, du moins
-dans sa formulation initiale, de modéliser l'incertitude d'une
-connaissance, seulement son \emph{imprécision.}
+Le cadre théorique sur lequel nous avons bâti notre méthode, la
+théorie des \emph{sous-ensembles flous} ne permet pas de modéliser
+\emph{l'incertitude} d'une connaissance, seulement son
+\emph{imprécision.} Il est ainsi impossible de traiter des situations
+où les limites de la zone de localisation sont imprécises (\eg
+\enquote{Je suis proche d'une ligne électrique}) et incertaines (\eg
+\enquote{Je crois que je suis proche d'une ligne électrique}). Pour
+permettre leur modélisation conjointe, \textcite{Zadeh1978} a proposé
+la \emph{théorie des possibilités,} qui permet la modélisation de
+\emph{l'incertitude} et qui, combinée à la théorie des sous-ensembles
+flous nous permettra de modéliser des zones de localisation
+imprécises, issues de la spatialisation d'indices de localisation
+incertains.
 
-\textcite{Zadeh1978} a donc proposé en 1978 la \emph{théorie des
-  possibilités,} qui permet d'étendre la théorie des sous-ensembles
-flous en permettant la modélisation conjointe de \emph{l'imprécision}
-et de \emph{l'incertitude.}
-
-La \emph{théorie des possibilités} ne doit pas être confondue avec la
-\emph{théorie des probabilités.} Si ces théories modélisent toutes
-deux \emph{l'incertitude,} elles utilisent un formalisme et ont des
-propriétés différentes. Cependant, ces deux théories restent
-comparables, en plus de s’inscrire toutes deux dans le cadre plus
-général \autocite{Bouchon-Meunier1995}, celui de la théorie des
-fonctions de croyances \autocite{Shafer1976}.
+Comme la \emph{théorie des probabilités,} la \emph{théorie des
+  possibilités} permet de modéliser une incertitude sur la réalisation
+d'un événement. Cependant ces deux théories utilisent un formalisme et
+ont des propriétés différentes. Ces deux théories ne sont donc pas
+équivalentes, même si elles s’inscrivent toutes deux dans le cadre
+plus général \autocite{Bouchon-Meunier1995}, celui de la théorie des
+fonctions de croyances \autocite{Shafer1976}. Le terme de
+\emph{possibilité,} que nous allons régulièrement employer ci-dessous
+ne doit donc pas être interprété comme un synonyme de probabilité,
+mais bien comme un concept différent, que nous allons détailler.
 
 \subsubsection{Mesures de possibilité et de nécessité}
 
-Comme la \emph{théorie des probabilités} et la théorie des
-\emph{fonctions de croyance,} la \emph{théorie des possibilités}
-permet d'évaluer un doute sur la réalisation d'un (ou plusieurs)
-\emph{événement(s)} donné(s). L'ensemble des événements étudiés sont
-regroupés dans un ensemble fini \(X\), appelé \emph{ensemble des
-  événements.} La \emph{théorie des possibilités} permet d'attribuer à
-chaque événement défini dans \(X\) un coefficient, compris entre 0 et
-1, évaluant la \emph{possibilité} de l'événement. Une valeur de 1
-indiquant que l'événement est \enquote{tout à fait possible}
+La \emph{théorie des possibilités} permet d'évaluer un doute sur la
+réalisation d'un (ou plusieurs) \emph{événement(s)}
+donné(s). L'ensemble des événements étudiés sont regroupés dans un
+ensemble fini \(X\), appelé \emph{ensemble des événements.} La
+\emph{théorie des possibilités} permet d'attribuer à chaque événement
+défini dans \(X\) un coefficient, compris entre 0 et 1, évaluant la
+\emph{possibilité} de l'événement. Une valeur de 1 indiquant que
+l'événement est \enquote{tout à fait possible}
 \autocite[p. 43]{Bouchon-Meunier2007} et une valeur nulle, qu'il est
 impossible. Bien que proches, la notion de possibilité ne doit pas
 être confondue celle de probabilité. La probabilité quantifie, en
@@ -317,14 +334,14 @@ l'exception de celui étudié est de 0,2 (ce qui correspond a :
 \subsubsection{Modélisation conjointe de \emph{l'incertitude} et de
   \emph{l'imprécision}}
 
-On peut combiner le formalisme de la théorie des possibilités à la
-théorie des sous-ensembles flous pour permettre la modélisation
-conjointe de \emph{l'imprécision} et de \emph{l'incertitude.}
+Pour permettre la conjointe de \emph{l'imprécision} et de
+\emph{l'incertitude,} il est nécessaire de combiner le formalisme de
+la théorie des possibilités à la théorie des sous-ensembles flous.
 
 Comme nous l'avons déjà indiqué, une fonction d'appartenance
 normalisée possède les mêmes caractéristiques qu'une distribution de
 possibilité.
-
+%
 On peut alors définir la distribution de possibilité de la manière
 suivante :
 
@@ -332,9 +349,9 @@ suivante :
   \forall x \in X, \pi_{V, A}(x)=f_A(x)
 \end{equation}
 
-Ainsi, si un élément à une degré d'appartenance de 0,7 au
-sous-ensemble flou \(A\), alors la possibilité que \(V\) prenne la
-valeur \(x\) est également de 0,7 et sa nécessité est nulle.
+Ainsi, si un élément à un degré d'appartenance de 0,7 au sous-ensemble
+flou \(A\), alors la possibilité que \(V\) prenne la valeur \(x\) est
+également de 0,7 et sa nécessité est nulle.
 %
 Comme le signale \textcite{Bouchon-Meunier1995} la capacité de définir
 une distribution de possibilité à partir d'une fonction d'appartenance
@@ -372,6 +389,7 @@ d'appartenance par la droite d'ordonnée \(i\)
 (\(π'\)) combinant incerti XX est donc :
 %
 \begin{equation}
+  \label{eq:incert_imp}
   π'(x) = \max(π(x),\ i).  
 \end{equation}
 
@@ -382,12 +400,13 @@ définir un \emph{sélecteur,} utilisé lors de la spatialisation. Si
 l'on combine ces deux distributions on obtient une fonction
 d'appartenance \enquote{rehaussée} par l'incertitude. Dans cette
 configuration, le degré d'appartenance ne pourra être supérieur à la
-valeur de 
+valeur \(i\), fixant le seuil d'incertitude.
 
 \begin{figure}
   \centering
   \input{../figures/fnc_incert_floue.tex}
-  \caption{SS}
+  \caption{Illustration de la combinaison d'une distribution de
+    possibilité constante et d'une fonction d'appartenance.}
   \label{fig:combinaison_incertitude_imprecision}
 \end{figure}
 
@@ -399,29 +418,20 @@ représenter le doute du secouriste sur la véracité de l'indice de
 localisation donné par le requérant. Ce parti-pris a donc une
 implication majeure. Comme les sous-ensembles flous que nous
 manipulons représentent des \emph{zones de localisation,} alors la
-certitude
+certitude s'applique de manière homogène à l'ensemble de
+\emph{l'indice de localisation,} dit autrement nous nous plaçons dans
+le cadre de \autoref{eq:incert_imp}.
 
-Nous souhaitons ajouter à notre méthode la capacité de prendre en
-compte la confiance du secouriste traitant l'alerte.
-
-Cette notion de confiance pourrait être appliquée indépendamment à de
-nombreux aspects de l'alerte. Par exemple pour qualifier les qualité
-de l'alerte dans son ensemble, des noms 
-
-Nous avons choisi de permettre au secouriste d'attribuer une confiance
-indépendante à chaque \emph{indice de localisation.} Cette grandeur
-permet au secouriste de donner son opinion sur la qualité perçue de
-\emph{l'indice de localisation} et ce dans tous ces aspects.
-
-Cette XX permet de 
-
+Nous avons donc choisi de permettre au secouriste d'attribuer une
+confiance indépendante à chaque \emph{indice de localisation.} Cette
+grandeur permet au secouriste de donner son opinion sur la qualité
+perçue de \emph{l'indice de localisation} et ce dans tous ces aspects.
 
 La confiance donnée par le secouriste portant sur \emph{l'indice de
   localisation} et non sur l'une de ces composantes (\eg \emph{objet
   de référence,} \emph{relation de localisation,} \emph{etc.}), le
 degré de confiance est distribué de manière homogène, chaque position
 de la \ac{zir} se voyant attribuer la même valeur.
-
 
 La modification des degrés d'appartenance des positions est
 équivalente à une modification de la forme de la fonction
@@ -485,22 +495,9 @@ son sens.
   \label{fig:zlc_cert_vs_inceret}
 \end{figure}
 
-
-La confiance peut se définir en amont de la spatialisation.
-
-Diminuer la confiance c'est augmenter le degré d'appartenance minimal
-
-Proposer une version améliorée de la fig finale du chapitre 4 avec la
-confiance.
-
-Dire que les fonctions présentées reviennent à considérer que la
-confiance est absolue
-
-
 La quantification de la confiance en la validation d'un \emph{indice
   de localisation} nous semble être une tâche assez délicate. C'est
 pourquoi nous avons décidé d'en proposer une pré-quantification.
-
 
 \subsubsection{L'influence de l'incertitude sur la fusion des zones de
   localisation compatibles}
@@ -547,8 +544,7 @@ indice de localisation incertain ne pourra pas réduire la \ac{zlp},
 seulement diminuer le degré d'appartenance de certaines positions.
 
 \begin{figure}
-  \centering
-  \subfloat[\label{fig:intersection_incert_1}]{\input{../figures/comparaison_intersection_incertitude.tex}}
+  \centering  \subfloat[\label{fig:intersection_incert_1}]{\input{../figures/comparaison_intersection_incertitude.tex}}
 
   \subfloat[\label{fig:intersection_incert_2}]{\input{../figures/comparaison_intersection_incertitude_2.tex}}
   \caption{Résultat de l'intersection de deux \protect\ac{zlc} avec la
