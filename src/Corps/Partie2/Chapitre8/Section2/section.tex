@@ -321,18 +321,30 @@ On peut combiner le formalisme de la théorie des possibilités à la
 théorie des sous-ensembles flous pour permettre la modélisation
 conjointe de \emph{l'imprécision} et de \emph{l'incertitude.}
 
-
-
 Comme nous l'avons déjà indiqué, une fonction d'appartenance
-normalisée est une distribution de possibilité,
+normalisée possède les mêmes caractéristiques qu'une distribution de
+possibilité.
 
-Dans notre cas, on cherche à utiliser la théorie des possibilités pour
-représenter le doute du secouriste sur la véracité de l'indice de
-localisation donné par le requérant. Ce parti-pris a donc une
-implication majeure. Comme les sous-ensembles flous que nous
-manipulons représentent des \emph{zones de localisation,} alors la
-certitude
+On peut alors définir la distribution de possibilité de la manière
+suivante :
 
+\begin{equation}
+  \forall x \in X, \pi_{V, A}(x)=f_A(x)
+\end{equation}
+
+Ainsi, si un élément à une degré d'appartenance de 0,7 au
+sous-ensemble flou \(A\), alors la possibilité que \(V\) prenne la
+valeur \(x\) est également de 0,7 et sa nécessité est nulle.
+%
+Comme le signale \textcite{Bouchon-Meunier1995} la capacité de définir
+une distribution de possibilité à partir d'une fonction d'appartenance
+n'implique pas que ces deux fonctions doivent être identiques, il est
+possible de combiner une distribution de possibilité et une fonction
+d'appartenance différentes.
+%
+C'est par exemple le cas lorsque l'on cherche à définir une
+incertitude s'appliquant de manière homogène à tous les éléments du
+sous-ensemble flou considéré.
 
 Dans le cas où une même valeur d'incertitude s'applique à tous les
 éléments de l'ensemble de référence, alors aucun ce ses éléments ne
@@ -381,6 +393,13 @@ valeur de
 
 \subsection{La modélisation de la confiance d'un \emph{indice de
     localisation}}
+
+Dans notre cas, on cherche à utiliser la théorie des possibilités pour
+représenter le doute du secouriste sur la véracité de l'indice de
+localisation donné par le requérant. Ce parti-pris a donc une
+implication majeure. Comme les sous-ensembles flous que nous
+manipulons représentent des \emph{zones de localisation,} alors la
+certitude
 
 Nous souhaitons ajouter à notre méthode la capacité de prendre en
 compte la confiance du secouriste traitant l'alerte.
