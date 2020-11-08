@@ -519,7 +519,14 @@ la seconde \ac{zlc} est diminuée. Les pixels ayant un degré
 d'appartenance inférieur à la valeur de l'incertitude (\ie
 \(1-\text{certitude}\), ici 0,8) voient leur appartenance augmenter
 jusqu'à cette valeur. Par conséquent, aucun des pixels représentant la
-\ac{zir} n'a un degré d'appartenance nul. 
+\ac{zir} n'a un degré d'appartenance nul. La seconde \ac{zlc} est
+alors moins contraignante que dans le premier cas
+(\ref{fig:intersection_incert_1}). Cela à deux effets, tout d'abord le
+degré d'appartenance d'une position à la \ac{zlp} peut être amené a
+augmenter si son degré d'appartenance était contraint par la seconde
+\ac{zlc}. De plus, par corolaire, aucun pixel ne peut être retiré de
+la \ac{zlp} par cette \ac{zlc}, aucun pixel n'ayant un degré
+d'appartenance nul.
 
 
 \begin{figure}
