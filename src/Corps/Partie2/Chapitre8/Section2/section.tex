@@ -501,8 +501,14 @@ un degré d'appartenance nul a une des \ac{zlc} intersectées.
 La diminution de la certitude d'un indice de localisation a pour effet
 d'attribuer un degré d'appartenance non nul à tous les pixels qui, en
 cas de certitude absolue, auraient été considérés comme en dehors de
-la \ac{zlc}.
+la \ac{zlc}. Ainsi, ces pixels, qui auraient été retirés de la
+\ac{zlp} par le jeu des intersections peuvent à présent s'y retrouver,
+à moins que leur degré d'appartenance à une seconde zone de
+localisation compatible soit également nul.
 
+La \auotref{fig:intersection_incert} représente le résultat de
+l'intersection de deux zones de localisations compatibles, dont l'une
+spatialise un indice de localisation de certitude variable.
 
 \begin{figure}
   \centering
@@ -517,16 +523,16 @@ la \ac{zlc}.
 
 
 
-\begin{figure}
-  \centering
-  \subfloat[]{\input{../figures/comparaison_union_incertitude.tex}}
+% \begin{figure}
+%   \centering
+%   \subfloat[]{\input{../figures/comparaison_union_incertitude.tex}}
 
-  \subfloat[]{\input{../figures/comparaison_union_incertitude_2.tex}}
-  \caption{Influence de l'incertitude d'un \emph{indice de
-      localisation} sur la \emph{zone de localisation} résultant de la
-    fusion de deux \ac{zlc}.}
-  \label{fig:union_incert}
-\end{figure}
+%   \subfloat[]{\input{../figures/comparaison_union_incertitude_2.tex}}
+%   \caption{Influence de l'incertitude d'un \emph{indice de
+%       localisation} sur la \emph{zone de localisation} résultant de la
+%     fusion de deux \ac{zlc}.}
+%   \label{fig:union_incert}
+% \end{figure}
 
 La quantification de la confiance en la validation d'un \emph{indice
   de localisation} nous semble être une tâche assez délicate. C'est
