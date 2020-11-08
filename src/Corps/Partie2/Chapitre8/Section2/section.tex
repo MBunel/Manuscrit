@@ -389,6 +389,7 @@ d'appartenance par la droite d'ordonnée \(i\)
 (\(π'\)) combinant incerti XX est donc :
 %
 \begin{equation}
+  \label{eq:incert_imp}
   π'(x) = \max(π(x),\ i).  
 \end{equation}
 
@@ -399,7 +400,7 @@ définir un \emph{sélecteur,} utilisé lors de la spatialisation. Si
 l'on combine ces deux distributions on obtient une fonction
 d'appartenance \enquote{rehaussée} par l'incertitude. Dans cette
 configuration, le degré d'appartenance ne pourra être supérieur à la
-valeur de 
+valeur \(i\), fixant le seuil d'incertitude.
 
 \begin{figure}
   \centering
@@ -417,29 +418,20 @@ représenter le doute du secouriste sur la véracité de l'indice de
 localisation donné par le requérant. Ce parti-pris a donc une
 implication majeure. Comme les sous-ensembles flous que nous
 manipulons représentent des \emph{zones de localisation,} alors la
-certitude
+certitude s'applique de manière homogène à l'ensemble de
+\emph{l'indice de localisation,} dit autrement nous nous plaçons dans
+le cadre de \autoref{eq:incert_imp}.
 
-Nous souhaitons ajouter à notre méthode la capacité de prendre en
-compte la confiance du secouriste traitant l'alerte.
-
-Cette notion de confiance pourrait être appliquée indépendamment à de
-nombreux aspects de l'alerte. Par exemple pour qualifier les qualité
-de l'alerte dans son ensemble, des noms 
-
-Nous avons choisi de permettre au secouriste d'attribuer une confiance
-indépendante à chaque \emph{indice de localisation.} Cette grandeur
-permet au secouriste de donner son opinion sur la qualité perçue de
-\emph{l'indice de localisation} et ce dans tous ces aspects.
-
-Cette XX permet de 
-
+Nous avons donc choisi de permettre au secouriste d'attribuer une
+confiance indépendante à chaque \emph{indice de localisation.} Cette
+grandeur permet au secouriste de donner son opinion sur la qualité
+perçue de \emph{l'indice de localisation} et ce dans tous ces aspects.
 
 La confiance donnée par le secouriste portant sur \emph{l'indice de
   localisation} et non sur l'une de ces composantes (\eg \emph{objet
   de référence,} \emph{relation de localisation,} \emph{etc.}), le
 degré de confiance est distribué de manière homogène, chaque position
 de la \ac{zir} se voyant attribuer la même valeur.
-
 
 La modification des degrés d'appartenance des positions est
 équivalente à une modification de la forme de la fonction
@@ -560,8 +552,7 @@ indice de localisation incertain ne pourra pas réduire la \ac{zlp},
 seulement diminuer le degré d'appartenance de certaines positions.
 
 \begin{figure}
-  \centering
-  \subfloat[\label{fig:intersection_incert_1}]{\input{../figures/comparaison_intersection_incertitude.tex}}
+  \centering  \subfloat[\label{fig:intersection_incert_1}]{\input{../figures/comparaison_intersection_incertitude.tex}}
 
   \subfloat[\label{fig:intersection_incert_2}]{\input{../figures/comparaison_intersection_incertitude_2.tex}}
   \caption{Résultat de l'intersection de deux \protect\ac{zlc} avec la
