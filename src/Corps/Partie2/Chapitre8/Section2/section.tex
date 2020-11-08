@@ -2,7 +2,6 @@
 
 \subsection{La théorie des possibilités}
 
-
 La théorie des \emph{sous-ensembles flous} ne permet pas, du moins
 dans sa formulation initiale, de modéliser l'incertitude d'une
 connaissance, seulement son \emph{imprécision.}
@@ -22,18 +21,26 @@ fonctions de croyances \autocite{Shafer1976}.
 
 \subsubsection{Mesures de possibilité et de nécessité}
 
-Comme la \emph{théorie des probabilité} (et donc des \emph{fonctions
-  de croyance}), la \emph{théorie des possibilités} permet évaluer la
-\enquote{chance} qu'un événement donné se produise. Ces événements
-sont regroupés dans un ensemble fini \(X\), appelé \emph{ensemble des
+Comme la \emph{théorie des probabilités} et la théorie des
+\emph{fonctions de croyance,} la \emph{théorie des possibilités}
+permet d'évaluer un doute sur la réalisation d'un (ou plusieurs)
+\emph{événement(s)} donné(s). L'ensemble des événements étudiés sont
+regroupés dans un ensemble fini \(X\), appelé \emph{ensemble des
   événements.} La \emph{théorie des possibilités} permet d'attribuer à
 chaque événement défini dans \(X\) un coefficient, compris entre 0 et
-1, évaluant la possibilité de l'événement. Une valeur de 1 indiquant
-que l'événement est \enquote{tout à fait possible}
+1, évaluant la \emph{possibilité} de l'événement. Une valeur de 1
+indiquant que l'événement est \enquote{tout à fait possible}
 \autocite[p. 43]{Bouchon-Meunier2007} et une valeur nulle, qu'il est
-impossible. Ce coefficient est attribué par une fonction \(Π\), nommée
-\emph{mesure de possibilité,} qui l'attribue à chaque élément de
-l'ensemble des parties de \emph{l'ensemble des événements}
+impossible. Bien que proches, la notion de possibilité ne doit pas
+être confondue celle de probabilité. La probabilité quantifie, en
+effet, la \enquote{chance} de réalisation d'un événement, alors que la
+possibilité ne quantifie que la plausibilité de ce même événement. Dit
+autrement, une probabilité maximale indique que l'événement considéré
+va se réaliser, alors qu'une possibilité maximale n'indique que qu'il
+certain que cet événement puisse se produire et non qu'il se produira.
+Le coefficient de possibilité est attribué par une fonction \(Π\),
+nommée \emph{mesure de possibilité,} qui l'attribue à chaque élément
+de l'ensemble des parties de \emph{l'ensemble des événements}
 (\(Π : P(X) → [0,1]\)). La fonction \(Π\) doit nécessairement :
 
 \begin{itemize}
@@ -90,7 +97,10 @@ ce que l'on peut trouver en \emph{théories des probabilités} où la
 probabilité du contraire d'un événement est plus contrainte, puisque
 la somme de ces deux probabilités et toujours égale à 1. En
 \emph{théorie des possibilités} il est simplement nécessaire qu'une
-des \emph{possibilité} soit de 1.
+des \emph{possibilité} soit de 1. Il est par conséquent possible qu'un
+événement et son contraire soient tous les deux parfaitement
+possibles, ce qui traduit une situation d'ignorance absolue quant à la
+réalisation de l'événement considéré.
 
 \textcite{Bouchon-Meunier1995} illustre les \emph{mesures de
   possibilités} avec l'exemple de la réception d'un colis. On peut
@@ -127,18 +137,23 @@ est nulle \footnote{Étant donné que
   vendredi, ni le samedi, ni le dimanche ont une possibilité non
   nulle.}. Il n'est cependant pas possible de connaitre précisément
 certaines possibilités, comme par exemple celle que le colis arrive un
-mardi. Il est toutefois possible de calculer la possibilité de chaque
-partie de \(X\) en ne connaissant que la possibilité individuelle de
-chaque événement, ici la possibilité que le colis arrive chaque jour
-de la semaine, pris indépendamment des autres.
+mardi. Il serait toutefois possible de calculer la possibilité de
+chaque partie de \(X\) si l'on connaissait la possibilité de chaque
+événement singleton (\ie la possibilité que le colis arrive lundi,
+mardi, mercredi, \emph{etc.}), la possibilité des événements
+composites (\eg la possibilité que le colis arrive lundi ou dimanche)
+étant calculable en combinant les événements singletons.
 
-Lorsqu'une \emph{mesure de possibilité} attribue à chaque
-\emph{événement} de \(X\) un coefficient de possibilité, on parle de
-mesure \enquote{totalement définie}
-\autocite{Bouchon-Meunier2007}. Pour attribuer un \emph{coefficient de
-  possibilité} à chaque événement de \(X\) on définit une
-\emph{distribution de possibilité} (\(π : X → [0,1]\)), dont le
-supremum pour un événement \(x\) de \(X\) doit être égal à 1 :
+Dans cette situation, c'est-à-dire lorsqu'une \emph{mesure de
+  possibilité} attribue à chaque \emph{événement} singleton
+\footnote{C'est-à-dire lorsque la possibilité n'est attribuée qu'aux
+  éléments de \(X\) et non aux éléments des parties de \(X\).}) un
+coefficient de possibilité, on parle de mesure de possibilité
+\enquote{totalement définie} \autocite{Bouchon-Meunier2007}. Pour
+attribuer un \emph{coefficient de possibilité} à chaque événement de
+\(X\) on définit une \emph{distribution de possibilité}
+(\(π : X → [0,1]\)), dont le supremum pour un événement \(x\) de \(X\)
+doit être égal à 1 :
 %
 \begin{equation}
   \sup_{x ∈ X}π(x)=1
@@ -167,15 +182,17 @@ sur cet intervalle, soit :
 \end{equation}
 
 Par exemple, on peut définir une \emph{distribution de possibilité}
-par paliers donnant la \emph{possibilité} qu'un colis soit livré un
-jour donné (\autoref{fig:fnc_possib}). À partir d'une telle fonction
-on peut calculer la \emph{mesure de possibilité} de chaque partie de
+donnant la \emph{possibilité} qu'un colis soit livré un jour donné
+(\autoref{fig:fnc_possib}). À partir d'une telle fonction on peut
+calculer la \emph{mesure de possibilité} de chaque partie de
 \emph{l'ensemble des événements.} Par exemple, la possibilité que le
-\emph{colis} ne soit pas livré un jeudi est égale à la valeur maximale
-de la distribution de possibilité pour tous les jours à l'exception du
-jeudi, soit 1.
+\emph{colis} soit livré entre jeudi et dimanche et de 0,2, puisque
+c'est la valeur maximale prise par la fonction \(\pi\) sur cette
+période et la possibilité que le colis ne soit pas livré un jeudi est
+égale à la valeur maximale de la distribution de possibilité pour tous
+les jours à l'exception du jeudi, soit 1.
 
-\begin{figure}[hb]
+\begin{figure}
   \centering
   \input{../figures/fnc_possib.tex}
   \caption{Exemple d'une distribution de possibilité par paliers : la
@@ -183,19 +200,37 @@ jeudi, soit 1.
   \label{fig:fnc_possib}
 \end{figure}
 
-La \emph{mesure de possibilité} est associée à une seconde mesure, la
-\emph{nécessité.} Cette mesure permet de compléter l'information
-donnée par la \emph{possibilité.} En effet, même si un événement \(A\)
-à une \emph{possibilité} de 1 (\eg 1 pour le colis arrive lundi), la
-possibilité de son complémentaire \(A^C\) (\ie le colis n'arrive pas
-lundi) peut prendre n'importe quelle autre valeur, y compris 1, ce qui
-indique que les deux événements sont tout à fait possibles,
-c'est-à-dire que l'on ne sait rien, ou 0, ce qui indique une certitude
-absolue dans la réception du colis, c'est-à-dire qu'il ne peut en être
-autrement \autocite{Bouchon-Meunier1995}. La \emph{mesure de
-  nécessité} a pour fonction de quantifier la \emph{certitude} d'un
-événement, elle permet donc de distinguer une situation d'ignorance
-totale, d'une situation de connaissance absolue. 
+La mesure de possibilité ne permet pas à elle seule de quantifier la
+\emph{certitude} d'un événement, elle ne renseigne que sur sa capacité
+de réalisation. Si l'on reprend l’exemple du colis, mais en ne
+conservant que la possibilité que le colis arrive le lundi. Le fait
+que cette possibilité soit maximale ne donne pas suffisamment
+d'informations pour savoir si le colis va réellement arriver le lundi,
+tout dépend de la valeur prise par l'événement contraire (\ie le colis
+n'arrive pas lundi). Si nous considérons que la possibilité que le
+colis n'arrive pas lundi est nulle, alors cela traduit le fait que le
+colis ne peut pas arriver un autre jour de la semaine, il peut donc
+arriver le lundi (car : \(\Pi(\{\text{lundi}\}=1\)) et ne peut pas
+arriver un autre jour (car : \(\Pi\{\text{mardi, …, dimanche}\}=0\)),
+on est donc \emph{certains} que le colis arrivera lundi. À l'inverse,
+si la possibilité que le colis n'arrive pas lundi est également de 1
+(\ie \(\Pi\{\text{mardi, …, dimanche}\}=1\)) alors le colis peut aussi
+bien arriver le lundi que n'importe quel autre jour de la semaine, on
+n'a donc aucune idée de ce qui va réellement se produire, notre
+incertitude sur cet événement est totale.
+
+La certitude d'un événement ne peut donc être jugée qu'à l'aune de
+deux mesures, la possibilité d'un événement et la possibilité de
+l'événement contraire. On définit donc une seconde mesure, \emph{la
+  nécessité,} quantifiant la certitude que l'on a sur la réalisation
+d'un événement donné. La \emph{nécessité} est une mesure duale de la
+possibilité et elle est exprimée à partir de la possibilité du
+contraire de l'événement étudié :
+
+\begin{equation}
+  \label{eq:nec_comp}
+  \forall A \in P(X), N(A) = 1 - \Pi(A^C)
+\end{equation}
 
 Comme la \emph{mesure de possibilité,} une \emph{mesure de nécessité}
 est une fonction (\(N\)) attribuant à chaque partie de l'ensemble des
@@ -212,16 +247,6 @@ est une fonction (\(N\)) attribuant à chaque partie de l'ensemble des
   (\(A\) et \(B\)) comme la \emph{nécessité} de l'événement le moins
   nécessaire : \(∀ A,B ∈ P(X),\ N(A \cap B) = \min(N(A),\ N(B))\)
 \end{itemize}
-
-La \emph{nécessité} et la \emph{possibilité} sont des mesures duales,
-la \emph{nécessité} d'un événement \(A\) est donc fortement liée à la
-\emph{possibilité} du complémentaire de cet événement, \(A^C\). La
-nécessité de \(A\) peut donc s'exprimer de la manière suivante :
-
-\begin{equation}
-  \label{eq:nec_comp}
-  \forall A \in P(X), N(A) = 1 - \Pi(A^C)
-\end{equation}
 
 Ce qui implique que plus l'événement complémentaire de \(A\) est
 \emph{possible,} moins \(A\) est nécessaire. Pour reprendre l'exemple
@@ -279,66 +304,116 @@ possibilité (\(π\)) :
   N(A) = \inf_{x ∉ A}(1-π(x)) = 1 - \sup_{x ∉ A}π(x)
 \end{equation}
 
-Par exemple, si l'on reprend la distribution de possibilité proposée
-par la \autoref{fig:fnc_possib}, on peut calculer la nécessité de
-chaque événement. Par exemple, si la possibilité que le colis arrive
-le lundi est de 1, la nécessité de ce même événement est de 0,2,
-puisque que le minimum de la fonction \(1-π(x)\), pour tous les
-événements à l'exception de celui étudié est de 0,2 (ce qui correspond
-à : \(1-π(\text{mardi})\)).
-
-
-Comme la nécessité est une mesure de cer
-
-On peut dès lors modéliser l'incertitude des \emph{indices de
-  localisation} à l'aide d'une 
+Ainsi, une seule distribution (\(\pi\)) est nécessaire pour calculer
+les mesures de possibilité et de nécessité de chaque événement. Par
+exemple, si l'on reprend la distribution de possibilité proposée par
+la \autoref{fig:fnc_possib}, on peut calculer la nécessité de chaque
+événement. Par exemple, si la possibilité que le colis arrive le lundi
+est de 1, la nécessité de ce même événement est de 0,2, puisque que le
+minimum de la fonction \(1-π(x)\), pour tous les événements à
+l'exception de celui étudié est de 0,2 (ce qui correspond a :
+\(1-π(\{\text{mardi}\})\)).
 
 \subsubsection{Modélisation conjointe de \emph{l'incertitude} et de
   \emph{l'imprécision}}
 
-Pour combiner la modélisation des 
+On peut combiner le formalisme de la théorie des possibilités à la
+théorie des sous-ensembles flous pour permettre la modélisation
+conjointe de \emph{l'imprécision} et de \emph{l'incertitude.}
 
 Comme nous l'avons déjà indiqué, une fonction d'appartenance
-normalisée est une distribution de possibilité,
+normalisée possède les mêmes caractéristiques qu'une distribution de
+possibilité.
 
-Dans le cas où \emph{l'incertitude} (\(i\)) est homogène, la
-\emph{distribution de possibilité} (\(π\)) de cette proposition est
-obtenue en tronquant la base de la fonction d'appartenance par la
-droite d'ordonnée \(i\) \autocite{Bouchon-Meunier2007}. La
-\emph{distribution de possibilité} (\(π'\)) combinant incerti XX est
-donc :
+On peut alors définir la distribution de possibilité de la manière
+suivante :
+
+\begin{equation}
+  \forall x \in X, \pi_{V, A}(x)=f_A(x)
+\end{equation}
+
+Ainsi, si un élément à une degré d'appartenance de 0,7 au
+sous-ensemble flou \(A\), alors la possibilité que \(V\) prenne la
+valeur \(x\) est également de 0,7 et sa nécessité est nulle.
+%
+Comme le signale \textcite{Bouchon-Meunier1995} la capacité de définir
+une distribution de possibilité à partir d'une fonction d'appartenance
+n'implique pas que ces deux fonctions doivent être identiques, il est
+possible de combiner une distribution de possibilité et une fonction
+d'appartenance différentes.
+%
+C'est par exemple le cas lorsque l'on cherche à définir une
+incertitude s'appliquant de manière homogène à tous les éléments du
+sous-ensemble flou considéré.
+
+Dans le cas où une même valeur d'incertitude s'applique à tous les
+éléments de l'ensemble de référence, alors aucun ce ses éléments ne
+peut être qualifié d'impossible.
+%
+Admettons que l'on cherche à spatialiser l'indice de localisation :
+\enquote{Elle est à 500 mètres du refuge}. Pour ce faire on recourra
+la relation de localisation atomique
+\onto[orla]{A\-Distance\-Planimetrique}, qui emploie le fuzzyficateur
+\onto[orla]{Eq\-Val} avec une valeur de référence de 500 mètres. La
+spatialisation de cette relation de localisation permet alors de
+construire une \ac{zlc} représentée par un raster ne comprenant que
+les pixels qui lui appartiennent, du moins partiellement
+(\autoref{chap:06}). Dans le cas où ce même indice de localisation
+n'est pas certain tout à fait certain (\eg \enquote{Je pense qu'elle
+  est à 500 mètres du refuge}), il devient impossible d'affirmer qu'un
+pixel donné n'appartient pas à la zone de localisation compatible. On
+ne peut donc pas attribuer un degré d'appartenance nul aux pixels,
+même s'ils sont situés à très grande distance de l'objet de référence.
+
+Dans ce cas la \emph{distribution de possibilité} (\(π\)) de cette
+proposition est obtenue en tronquant la base de la fonction
+d'appartenance par la droite d'ordonnée \(i\)
+\autocite{Bouchon-Meunier2007}. La \emph{distribution de possibilité}
+(\(π'\)) combinant incerti XX est donc :
 %
 \begin{equation}
   π'(x) = \max(π(x),\ i).  
 \end{equation}
 
+La \autoref{fig:combinaison_incertitude_imprecision} illustre cette
+combinaison. On définit une distribution de possibilité homogène sur
+l'espace de la métrique et une fonction d'appartenance, permettant de
+définir un \emph{sélecteur,} utilisé lors de la spatialisation. Si
+l'on combine ces deux distributions on obtient une fonction
+d'appartenance \enquote{rehaussée} par l'incertitude. Dans cette
+configuration, le degré d'appartenance ne pourra être supérieur à la
+valeur de 
 
 \begin{figure}
   \centering
   \input{../figures/fnc_incert_floue.tex}
   \caption{SS}
-  \label{fig:ss}
+  \label{fig:combinaison_incertitude_imprecision}
 \end{figure}
-
-
-La confiance peut se définir en amont de la spatialisation.
-
-Diminuer la confiance c'est augmenter le degré d'appartenance minimal
-
-Proposer une version améliorée de la fig finale du chapitre 4 avec la
-confiance.
-
-Dire que les fonctions présentées reviennent a considérer que la
-confiance est absolue
-
-Parler des seuils de la confiance (3) et des valeurs associées ou
-contraintes.
-
 
 \subsection{La modélisation de la confiance d'un \emph{indice de
     localisation}}
 
-Pour permettre la prise en compte de la confiance
+Dans notre cas, on cherche à utiliser la théorie des possibilités pour
+représenter le doute du secouriste sur la véracité de l'indice de
+localisation donné par le requérant. Ce parti-pris a donc une
+implication majeure. Comme les sous-ensembles flous que nous
+manipulons représentent des \emph{zones de localisation,} alors la
+certitude
+
+Nous souhaitons ajouter à notre méthode la capacité de prendre en
+compte la confiance du secouriste traitant l'alerte.
+
+Cette notion de confiance pourrait être appliquée indépendamment à de
+nombreux aspects de l'alerte. Par exemple pour qualifier les qualité
+de l'alerte dans son ensemble, des noms 
+
+Nous avons choisi de permettre au secouriste d'attribuer une confiance
+indépendante à chaque \emph{indice de localisation.} Cette grandeur
+permet au secouriste de donner son opinion sur la qualité perçue de
+\emph{l'indice de localisation} et ce dans tous ces aspects.
+
+Cette XX permet de 
 
 
 La confiance donnée par le secouriste portant sur \emph{l'indice de
@@ -410,21 +485,86 @@ son sens.
   \label{fig:zlc_cert_vs_inceret}
 \end{figure}
 
-En rehaussant la valeur du degré d'appartenance minimal à la \ac{zlc},
-la m (\autoref{fig:intersection}).
+
+La confiance peut se définir en amont de la spatialisation.
+
+Diminuer la confiance c'est augmenter le degré d'appartenance minimal
+
+Proposer une version améliorée de la fig finale du chapitre 4 avec la
+confiance.
+
+Dire que les fonctions présentées reviennent à considérer que la
+confiance est absolue
+
+
+La quantification de la confiance en la validation d'un \emph{indice
+  de localisation} nous semble être une tâche assez délicate. C'est
+pourquoi nous avons décidé d'en proposer une pré-quantification.
+
+
+\subsubsection{L'influence de l'incertitude sur la fusion des zones de
+  localisation compatibles}
+
+La prise en compte de l'incertitude n'impacte pas seulement les
+\emph{zones de localisation compatibles} représentant un indice de
+localisation, mais également la \emph{zone de localisation probable}
+construite par leur intersection.
+
+La t-norme de \bsc{Zadeh} que nous utilisons pour les intersections
+inter-\ac{zlc} a pour effet de retirer de la \ac{zlp} tout pixel ayant
+un degré d'appartenance nul a une des \ac{zlc} intersectées.
+
+La diminution de la certitude d'un indice de localisation a pour effet
+d'attribuer un degré d'appartenance non nul à tous les pixels qui, en
+cas de certitude absolue, auraient été considérés comme en dehors de
+la \ac{zlc}. Ainsi, ces pixels, qui auraient été retirés de la
+\ac{zlp} par le jeu des intersections peuvent à présent s'y retrouver,
+à moins que leur degré d'appartenance à une seconde zone de
+localisation compatible soit également nul.
+
+La \autoref{fig:intersection_incert} représente le résultat de
+l'intersection de deux zones de localisations compatibles, dont l'une
+spatialise un indice de localisation de certitude variable. Dans le
+premier cas (\ref{fig:intersection_incert_1}) la certitude dans les
+deux \ac{zlc} intersectées est totale\footnote{Ce qui correspond à
+  toutes les \ac{zlc} traitées jusqu'ici.}, certains pixels ont donc
+un degré d'appartenance nul.
+%
+Dans le second cas (\ref{fig:intersection_incert_2}) la certitude de
+la seconde \ac{zlc} est diminuée. Les pixels ayant un degré
+d'appartenance inférieur à la valeur de l'incertitude (\ie
+\(1-\text{certitude}\), ici 0,8) voient leur appartenance augmenter
+jusqu'à cette valeur. Par conséquent, aucun des pixels représentant la
+\ac{zir} n'a un degré d'appartenance nul. La seconde \ac{zlc} est
+alors moins contraignante que dans le premier cas
+(\ref{fig:intersection_incert_1}). Cela à deux effets, tout d'abord le
+degré d'appartenance d'une position à la \ac{zlp} peut être amené à
+augmenter si son degré d'appartenance était contraint par la seconde
+\ac{zlc}. De plus, par corolaire, aucun pixel ne peut être retiré de
+la \ac{zlp} par cette \ac{zlc}, aucun pixel n'ayant un degré
+d'appartenance nul. Avec cette approche une \ac{zlc} spatialisant un
+indice de localisation incertain ne pourra pas réduire la \ac{zlp},
+seulement diminuer le degré d'appartenance de certaines positions.
 
 \begin{figure}
   \centering
-  \subfloat[]{\input{../figures/comparaison_intersection_incertitude.tex}}
+  \subfloat[\label{fig:intersection_incert_1}]{\input{../figures/comparaison_intersection_incertitude.tex}}
 
-  \subfloat[]{\input{../figures/comparaison_intersection_incertitude_2.tex}}
-  \caption{Influence de l'incertitude d'un \emph{indice de
-      localisation} sur la \emph{zone de localisation} résultant de la
-    fusion de deux \ac{zlc}.}
-  \label{fig:intersection}
+  \subfloat[\label{fig:intersection_incert_2}]{\input{../figures/comparaison_intersection_incertitude_2.tex}}
+  \caption{Résultat de l'intersection de deux \protect\ac{zlc} avec la
+    \emph{t-norme} de \bsc{Zadeh} avec
+    \protect\subref{fig:intersection_incert_1} et sans
+    \protect\subref{fig:intersection_incert_2} incertitude.}
+  \label{fig:intersection_incert}
 \end{figure}
 
 
+Dans le cas où tous les indices sont incertains, alors aucune position
+de la \ac{zir} ne pourra avoir un degré d'appartenance nul. La
+\ac{zlp} occupera alors tout l'espace de la \ac{zir}. Dans ces
+conditions, seules les variations de degré d'appartenance permettent
+d'identifier les régions correspondant le mieux à la description
+donnée par le requérant.
 
 %%% Local Variables:
 %%% mode: latex
