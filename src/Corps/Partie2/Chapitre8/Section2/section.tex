@@ -506,18 +506,20 @@ la \ac{zlc}. Ainsi, ces pixels, qui auraient été retirés de la
 à moins que leur degré d'appartenance à une seconde zone de
 localisation compatible soit également nul.
 
-La \auotref{fig:intersection_incert} représente le résultat de
+La \autoref{fig:intersection_incert} représente le résultat de
 l'intersection de deux zones de localisations compatibles, dont l'une
-spatialise un indice de localisation de certitude variable.
+spatialise un indice de localisation de certitude variable. Dans le
+premier cas () la cer
 
 \begin{figure}
   \centering
-  \subfloat[]{\input{../figures/comparaison_intersection_incertitude.tex}}
+  \subfloat[\label{fig:intersection_incert_1}]{\input{../figures/comparaison_intersection_incertitude.tex}}
 
-  \subfloat[]{\input{../figures/comparaison_intersection_incertitude_2.tex}}
-  \caption{Influence de l'incertitude d'un \emph{indice de
-      localisation} sur la \emph{zone de localisation} résultant de la
-    fusion de deux \ac{zlc}.}
+  \subfloat[\label{fig:intersection_incert_2}]{\input{../figures/comparaison_intersection_incertitude_2.tex}}
+  \caption{Résultat de l'intersection de deux \ac{zlc} avec la
+    \emph{t-norme} de \bsc{Zadeh} avec
+    \subref{fig:intersection_incert_1} et sans
+    \subref{fig:intersection_incert_2} incertitude.}
   \label{fig:intersection_incert}
 \end{figure}
 
