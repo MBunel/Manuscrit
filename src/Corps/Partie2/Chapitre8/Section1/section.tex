@@ -195,8 +195,6 @@ de \emph{fusion} et étudier leur influence sur la \emph{fusion} des
 \ac{zlc}, en vue de choisir le couple d'opérateur le plus adapté à
 notre méthode.
 
-\subsubsection{Propriétés partagées}
-
 Si chaque couple d'opérateur à des propriétés spécifiques, tous ont
 les mêmes caractéristiques de base. Comme nous l'avons expliqué lors
 de la présentation des différents couples d'opérateurs
@@ -222,15 +220,6 @@ plusieurs \ac{zlc} donnera, toutes choses égales par ailleurs, le même
 résultat. Les trois étapes de la \emph{phase de fusion} ne sont donc
 pas impactées par l'ordre des \ac{zlc} qu'elles traitent.
 
-La \emph{monotonie}
-
-
-Enfin, les \emph{éléments neutres} garantissent qu'une position dont
-le degré d'appartenance est nul sera toujours XX lors des unions et
-qu'une position dont le degré d’appartenance est de 1 sera toujours XX
-lors des unions inter-\ac{zlc}.
-
-
 Une autre caractéristique des ces quatre couples est qu'ils sont
 \emph{duals} \autocite{Bouchon-Meunier2007}, ce qui signifie que pour
 tous \(x\) et \(y\) dont la valeur est comprise entre 0 et 1, \emph{la
@@ -245,12 +234,7 @@ négation de \(x\) et de \(y\) et inversement, soit :
   n\left(⊥(x,y)\right) = ⊤\left(n(x), n(y)\right)
 \end{equation}
 
-Avec \(n\) la négation. Cette caractéristique
-
-\tdi{Nécessité d'utiliser des opérateurs duals}
-
-
-\tdi{parler de la durté des opérateurs}
+Avec \(n\) la négation.
 
 \subsubsection{La continuité des opérateurs}
 
@@ -262,15 +246,10 @@ couple d'opérateur, la valeurs des \emph{t-normes} et des
 un comportement particulier, sans transition \footnote{À l'exception
   du cas où, soit \(x\), soit \(y\) est nul.} entre les degrés
 d’appartenance minimaux et maximaux. Ce couple d'opérateurs à la
-particularité d'être discontinu. La discontinuité des
-\emph{t-(co)normes}
+particularité d'être discontinu.
 
-
-\tdi{Enlever les opérateurs drastiques car ils sont trop sévères et ne
-permettent pas de conserver des positions dont le degré d'appartenance
-n'est pas au moins un fois de 1. En plus si j'ai n indices il faut
-qu'il y ait n-1 indices dont le dégré est de 1.}
-
+Le comportement des opérateurs drastiques est assez particulier et il
+ne nous semble pas pertinent de les conserver.
 
 \subsubsection{Les principes du \emph{tiers-exclu} \& de la
   \emph{non-contradiction}}
@@ -501,10 +480,6 @@ répétions \emph{d'intersection} et de \emph{fusions} est au cœur de la
 substantiellement les trois étapes de la \emph{fusion} n'est donc
 envisageable qu'après une étude attentive de leur comportement et de
 son influence sur la sémantique des \emph{zones de localisation.}
-
-% Les
-% opérateurs de \bsc{Zadeh} étant idempotents et non-archimédiens
-% \autocite{Bouchon-Meunier1995}, on peut a
 
 On peut illustrer l'effet de ces deux propriétés en analysant le
 comportement des ces différentes \emph{t-(co)normes} pour une même
