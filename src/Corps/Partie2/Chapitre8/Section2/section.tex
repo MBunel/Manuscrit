@@ -562,16 +562,23 @@ aurait décidé d'attribuer une confiance moyenne (0,7)
 (\ref{fig:intersection_incert_2}). Tous les pixels ayant un degré
 d'appartenance inférieur à 0,3 voient donc leur degré d'appartenance à
 la \ac{zlc} augmenter. Il en résulte une zone de localisation assez
-différente, où aucun pixel n'a un degré d'appartenance nul.
-%
-Cela à deux effets, tout d'abord le degré d'appartenance d'une
-position à la \ac{zlp} peut être amené à augmenter si son degré
-d'appartenance était contraint par la seconde \ac{zlc}. De plus, par
-corolaire, aucun pixel ne peut être retiré de la \ac{zlp} par cette
-\ac{zlc}, aucun pixel n'ayant un degré d'appartenance nul. Avec cette
-approche une \ac{zlc} spatialisant un indice de localisation incertain
-ne pourra pas réduire la \ac{zlp}, seulement diminuer le degré
-d'appartenance de certaines positions.
+différente, où aucun pixel n'a un degré d'appartenance nul. Ainsi,
+cette seconde \ac{zlc} dont dépendait la valeur de nombreux pixels
+dans le premier cas (\ref{fig:intersection_incert_1}), devient moins
+contraignante. Cela se voit particulièrement dans la partie
+inférieure-gauche de la \ac{zir}. Sans incertitude, aucun pixel de
+cette partie n’appartenait à la \ac{zlp}, ces derniers étant contraint
+par la seconde \ac{zlc}. Avec l'augmentation de l'incertitude de cette
+même \ac{zlc}, des pixels qui avaient auparavant un degré
+d'appartenance nuls se retrouvent à voir un degré d'appartenance non
+nul sur les deux \ac{zlc}, ils sont donc intégrés à la \ac{zlp}. On
+peut également remarquer qu'avec l'augmentation de l'incertitude,
+seule la première \ac{zlc} peut permettre de retirer des pixels de la
+\ac{zlp}. Dit autrement, pour qu'une position soit absente de la
+\ac{zlp}, il faut qu'une \ac{zlc} \enquote{affirme} que cette position
+n'y est pas. Ainsi, une \ac{zlc} spatialisant un indice de
+localisation incertain ne pourra pas réduire la \ac{zlp}, seulement
+diminuer le degré d'appartenance de certaines positions.
 
 \begin{figure}
   \centering  \subfloat[\label{fig:intersection_incert_1}]{\input{../figures/comparaison_intersection_incertitude.tex}}
