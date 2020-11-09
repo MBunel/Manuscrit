@@ -188,26 +188,25 @@ normalisée \footnote{Contrairement à une \emph{distribution de
   \autocite{Bouchon-Meunier2007}.}, est parfaitement équivalente à une
 \emph{distribution de possibilités.}
 
-On peut reconstruire la \emph{mesure de possibilité} de chaque
-événement à partir de la \emph{distribution de possibilités,} la
-\emph{mesure de possibilité} d'un événement \(A\) est alors égale à la
-valeur la plus importante de la \emph{distribution des possibilités}
-sur cet intervalle, soit :
+La \emph{mesure de possibilité} (\(\Pi\)) d'un événement donné (\(A\))
+est reconstruction à partir d'une \emph{distribution de possibilités,}
+elle est alors égale à la valeur la plus importante de la
+\emph{distribution des possibilités} sur cet intervalle, soit :
 
 \begin{equation}
   \Pi(A) = \sup_{x \in A}\pi(x)
 \end{equation}
 
-Par exemple, on peut définir une \emph{distribution de possibilité}
-donnant la \emph{possibilité} qu'un colis soit livré un jour donné
-(\autoref{fig:fnc_possib}). À partir d'une telle fonction on peut
-calculer la \emph{mesure de possibilité} de chaque partie de
-\emph{l'ensemble des événements.} Par exemple, la possibilité que le
-\emph{colis} soit livré entre jeudi et dimanche et de 0,2, puisque
-c'est la valeur maximale prise par la fonction \(\pi\) sur cette
-période et la possibilité que le colis ne soit pas livré un jeudi est
-égale à la valeur maximale de la distribution de possibilité pour tous
-les jours à l'exception du jeudi, soit 1.
+Pour approfondir notre précédent exemple, on peut définir une
+\emph{distribution de possibilité} donnant la \emph{possibilité} qu'un
+colis soit livré un jour donné (\autoref{fig:fnc_possib}). À partir
+d'une telle fonction on peut calculer la \emph{mesure de possibilité}
+de chaque partie de \emph{l'ensemble des événements.} Par exemple, la
+possibilité que le \emph{colis} soit livré entre jeudi et dimanche et
+de 0,2, puisque c'est la valeur maximale prise par la fonction \(\pi\)
+sur cette période et la possibilité que le colis ne soit pas livré un
+jeudi est égale à la valeur maximale de la distribution de possibilité
+pour tous les jours à l'exception du jeudi, soit 1.
 
 \begin{figure}
   \centering
@@ -341,7 +340,7 @@ la théorie des possibilités à la théorie des sous-ensembles flous.
 Comme nous l'avons déjà indiqué, une fonction d'appartenance
 normalisée possède les mêmes caractéristiques qu'une distribution de
 possibilité.
-%
+\tdi{Manque transition}
 On peut alors définir la distribution de possibilité de la manière
 suivante :
 
@@ -380,14 +379,15 @@ n'est pas certain tout à fait certain (\eg \enquote{Je pense qu'elle
   est à 500 mètres du refuge}), il devient impossible d'affirmer qu'un
 pixel donné n'appartient pas à la zone de localisation compatible. On
 ne peut donc pas attribuer un degré d'appartenance nul aux pixels,
-même s'ils sont situés à très grande distance de l'objet de référence.
-
-Dans ce cas la \emph{distribution de possibilité} (\(π\)) de cette
-proposition est obtenue en tronquant la base de la fonction
+même s'ils sont situés à très grande distance de l'objet de
+référence. Dans ce cas la \emph{distribution de possibilité} (\(π\))
+de cette proposition est obtenue en tronquant la base de la fonction
 d'appartenance par la droite d'ordonnée \(i\)
 \autocite{Bouchon-Meunier2007}. La \emph{distribution de possibilité}
-(\(π'\)) combinant incerti XX est donc :
-%
+(\(π'\)) combinant une incertitude constante, de valeur \(i\) et une
+imprécision modélisée par la distribution de possibilité \(\pi\) est
+donc :
+
 \begin{equation}
   \label{eq:incert_imp}
   π'(x) = \max(π(x),\ i).  
