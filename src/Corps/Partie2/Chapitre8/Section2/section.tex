@@ -418,16 +418,18 @@ proposée par le \emph{fuzzyficateur} \onto[orla]{Eq\-Val} et
 permettant de modéliser une assertion logique telle que : \enquote{La
   \emph{métrique} à une valeur d'environ \(v\)}. On définit en
 parallèle une distribution de possibilité homogène, de certitude
-\(c\), permettant de
-
-
-définit une distribution de possibilité homogène sur
-l'espace de la métrique et une fonction d'appartenance, permettant de
-définir un \emph{sélecteur,} utilisé lors de la spatialisation. Si
-l'on combine ces deux distributions on obtient une fonction
-d'appartenance \enquote{rehaussée} par l'incertitude. Dans cette
-configuration, le degré d'appartenance ne pourra être supérieur à la
-valeur \(i\), fixant le seuil d'incertitude.
+\(c\), indiquant qu'il est totalement possible et (faiblement dans cet
+exemple) nécessaire que la \emph{métrique} prenne n'importe quelle
+valeur de l'ensemble des valeurs possibles. On peut ensuite combiner
+ces deux fonctions, pour obtenir la distribution de possibilité
+\(\pi'\), correspondant à la fonction d’appartenance précédemment
+définie, dont a diminué la \emph{certitude,} jusqu'à une valeur
+\(c\). Comme le montre clairement la
+\autoref{fig:combinaison_incertitude_imprecision}, il est ici
+impossible d'obtenir un degré d'appartenance inférieur à l'incertitude
+(\(1-c\)), quelle que soit la valeur de la \emph{métrique.} Les
+\ac{zlc} construites à partir d'une fonction d'appartenance serons
+donc constituées de tous les pixels de la \ac{zir}.
 
 \begin{figure}
   \centering
