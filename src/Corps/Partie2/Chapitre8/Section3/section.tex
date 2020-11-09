@@ -87,27 +87,29 @@ du même type \emph{d'objet de référence.} Comme pour la fusion des
 \emph{relations de localisation atomiques,} cette étape ne concerne
 qu'une partie de l'exemple. Dans la partie supérieure de la
 \autoref{fig:exemple_final_fusion}, un seul \emph{objet de référence}
-est mentionné (\enquote{xxx}), il n'y a donc pas d'alternatives qu'il
-serait nécessaire de regrouper, contrairement à la seconde partie de
-la figure. Comme nous l'avons vu, les \ac{zlc}
+est mentionné (\enquote{une forêt}), il n'y a donc pas d'alternatives
+qu'il serait nécessaire de regrouper, contrairement à la seconde
+partie de la figure.
+
+Les \ac{zlc} \textcolor{RdBu-9-8}{\textsf{C}} et
+\textcolor{RdBu-9-9}{\textsf{D}} \emph{spatialisent} en effet, la même
+\emph{relation de localisation atomique} (et ne nécessitent donc pas
+d'être fusionnées lors de la première étape de la phase de
+spatialisation) mais pour deux instances différentes d'un même type
+\emph{d'objet de référence.} Ces deux \ac{zlc} doivent donc être
+\emph{fusionnées,} de manière a obtenir la \emph{zone de localisation}
+spatialisant \emph{l'indice de localisation} initial, c'est-à-dire
+avant la \emph{décomposition des objets de référence} et la
+\emph{décomposition des relations de localisation.} Pour ce faire on
+crée l'union des deux \ac{zlc}, conformément à la méthode précédemment
+définie, ce qui équivaut à construire une \ac{zlc} constituée de
+toutes les positions \emph{proches} d'au moins un refuge. Compte-tenu
+des opérateurs choisis, cette union est réalisée à l'aide de la
+\emph{t-conorme} de \textcite{Zadeh1965}. Le degré d’appartenance
+d'une position donnée, à l'union des \ac{zlc}
 \textcolor{RdBu-9-8}{\textsf{C}} et \textcolor{RdBu-9-9}{\textsf{D}}
-\emph{spatialisent} la même \emph{relation de localisation atomique}
-(et ne nécessitent donc pas d'être fusionnées lors de la première
-étape de la phase de spatialisation) mais pour deux instances
-différentes d'un même type \emph{d'objet de référence.} Ces deux
-\ac{zlc} doivent donc être \emph{fusionnées,} de manière a obtenir la
-\emph{zone de localisaiton} spatialisant \emph{l'indice de
-  localisation} initial, c'est-à-dire avant la \emph{décomposition des
-  objets de référence} et la \emph{décomposition des relations de
-  localisation.} Pour ce faire on crée l'union des deux \ac{zlc},
-conformément à la méthode précédemment définie, ce qui équivaut à
-construire une \ac{zlc} constituée de toutes les positions
-\emph{proches} d'au moins un refuge. Compte-tenu des opérateurs
-choisis, cette union est réalisée à l'aide de la \emph{t-conorme} de
-\textcite{Zadeh1965}. Le degré d’appartenance d'une position donnée, à
-l'union des \ac{zlc} \textcolor{RdBu-9-8}{\textsf{C}} et
-\textcolor{RdBu-9-9}{\textsf{D}} correspond donc au maximum de son
-degré d'appartenance pour ces deux \ac{zlc}.
+correspond donc au maximum de son degré d'appartenance pour ces deux
+\ac{zlc}.
 
 \subsection{La \emph{fusion} des indices de \emph{localisation}}
 
@@ -116,15 +118,15 @@ Une fois que l'on dispose d'une \ac{zlc} par \emph{indice de
 l'exemple de la \autoref{fig:exemple_final_fusion}, cette dernière
 étape de \emph{fusion} combine deux \ac{zlc}, celle correspondant à
 \emph{l'indice de localisation} \enquote{je suis au sud et à
-  l'extérieur de XXX} et celle correspondant à l'indice de localisation
-\enquote{Je suis proche d'un refuge}. Comme lors de l'étape de la
-fusion des \emph{relations de localisation atomiques} on cherche à
-construire la \emph{zone de localisation} correspondant à ces deux
-indices, c'est-à-dire la zone composée de toutes les positions qui
-valident l'assertion \enquote{Cette position est au sud et à
-  l'extérieur de XXXX} \emph{et} l'assertion \enquote{Cette zone est
-  proche d'un refuge}. Pour ce faire on construit, comme pour la
-première étape de cette phase, l'intersection de ces deux \ac{zlc},
+  l'extérieur de la forêt} et celle correspondant à l'indice de
+localisation \enquote{Je suis proche d'un refuge}. Comme lors de
+l'étape de la fusion des \emph{relations de localisation atomiques} on
+cherche à construire la \emph{zone de localisation} correspondant à
+ces deux indices, c'est-à-dire la zone composée de toutes les
+positions qui valident l'assertion \enquote{Cette position est au sud
+  et à l'extérieur de la forêt} \emph{et} l'assertion \enquote{Cette
+  zone est proche d'un refuge}. Pour ce faire on construit, comme pour
+la première étape de cette phase, l'intersection de ces deux \ac{zlc},
 avec la \emph{t-norme} de \textcite{Zadeh1965}. Le degré
 d’appartenance d'une position donnée à la \ac{zlp} est donc égal au
 minimum de son degré d'appartenance aux \ac{zlc} spatialisant les deux
@@ -139,9 +141,10 @@ prise en compte de la \emph{certitude} des \emph{indices de
 l'ensemble des positions de la \ac{zir} utilisée pour
 \emph{spatialiser} un \emph{indice de localisation} donné.
 
-Après la réalisation de cette dernière étape on obtient la \ac{zlp}.
+Après la réalisation de cette dernière étape on obtient la \ac{zlp},
+correspondant à la spatialisation de l'ensemble des indices
+localisation.
 
-Comme on peut le voir avec cet exemple XXXXX
 
 \begin{landscape}
   \begin{figure}[H] \centering
@@ -152,5 +155,7 @@ Comme on peut le voir avec cet exemple XXXXX
 \end{landscape}
 
 
-%%% Local Variables: %%% mode: latex %%% TeX-master:
-"../../../../main" %%% End:
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../../../../main"
+%%% End:
