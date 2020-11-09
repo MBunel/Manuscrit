@@ -4,85 +4,98 @@
     accm/.style={acc,decoration={mirror}},
     acc3/.style={acc,decoration={amplitude=0cm}},
     acc3m/.style={acc3,decoration={mirror}},
-    cardinalite/.style={font=\footnotesize\ttfamily}
+    cardinalite/.style={font=\footnotesize\ttfamily},
+    matNode/.style={nodes={anchor=base, baseline,minimum size=1cm, minimum height=1.3cm}}
   }
-
   
-  % \draw[step=.5,black,thin] (0,0) grid (22,-14);
 
   %% Matrices
   %%% Lvl 1
   \begin{scope}[local bounding box=lvl1]
-    \matrix [matrix of math nodes, anchor=east,
-    nodes={anchor=base, baseline, minimum height=.75cm}] (I) at (0,0) {I\\};
-
-    \matrix [matrix of nodes, column sep=.25cm, anchor=west,
-    nodes={anchor=center, minimum height=.75cm}] (zlp) at
+    %
+    \matrix [matrix of math nodes,
+    anchor=east,
+    matNode,
+    nodes={minimum size=.5cm}] (I) at (0,0) {I\\};
+    %
+    \matrix [matrix of nodes,
+    column sep=.25cm,
+    anchor=west,
+    matNode,
+    nodes={minimum size=.5cm}] (zlp) at
     ([xshift=18cm]I.east)
     {
-      \draw[ffa2,ffc2] (0,0) circle (.3cm);\\
+      \tikz \draw[ffa2,ffc2] (-.15,-.15) circle (.3cm);\\
     };
   \end{scope}
+  %
+  %
   %%% Lvl 2
-  \begin{scope}[shift={($(lvl1.north) +(0,2cm)$)}, local bounding box=lvl2]
-    \matrix [matrix of math nodes, anchor=south east,
-    nodes={anchor=base, baseline,minimum size=1cm}] (is) at (-4cm,0)
+  \begin{scope}[shift={($(lvl1.north) +(0,2cm)$)}, local bounding
+    box=lvl2]
+    %
+    \matrix [matrix of math nodes, anchor=south east, matNode] (is) at (-4cm,0)
     {i_1&i_2&\cdots{}&i_n\\};
-
-    \matrix [matrix of nodes, anchor=south west, nodes={minimum size=1cm}]
+    %
+    \matrix [matrix of nodes, anchor=south west, matNode]
     (zlc) at (4cm,0) {
-      \draw[ffa,ffc] (0,0) circle (.3cm);&
+      \tikz \draw[ffa,ffc] (-.15,-.15) circle (.3cm);&
       \node{$\cdots{}$};&
-      \draw[ffa,ffc] (0,0) circle (.3cm);&
-      \draw[ffa,ffc] (0,0) circle (.3cm);\\
+      \tikz \draw[ffa,ffc] (-.15,-.15) circle (.3cm);&
+      \tikz \draw[ffa,ffc] (-.15,-.15) circle (.3cm);\\
     };
   \end{scope}
+  %
+  %
   %%% lvl 3
   \begin{scope}[shift={($(lvl2.north) +(0,2cm)$)}, local bounding box=lvl3]
-  \matrix [matrix of math nodes,
-  anchor=south east, nodes={baseline,minimum size=1cm}] (is_o) at
-  (-2cm,0) {or_1&or_2&\cdots{}&or_n\\};
-    \matrix [matrix of nodes,
-  anchor=south west,
-  nodes={minimum size=1cm}
-  ] (zlb) at
-  (2cm,0)
-  {
-    \draw[ffa,ffc] (0,0) circle (.3cm);&
-    \node{$\cdots{}$};&
-    \draw[ffa,ffc] (0,0) circle (.3cm);&
-    \draw[ffa,ffc] (0,0) circle (.3cm);\\
-  };
-  \end{scope}
-  %%% lvl4
-  \begin{scope}[shift={($(lvl3.north) +(0,2cm)$)}, local bounding box=lvl4]
+    % 
     \matrix [matrix of math nodes,
     anchor=south east,
-    nodes={minimum size=1cm}] (is_o_r) at (-.5cm,0)
+    matNode] (is_o) at
+    (-2cm,0) {or_1&or_2&\cdots{}&or_n\\};
+    % 
+    \matrix [matrix of nodes,
+    anchor=south west,
+    matNode
+    ] (zlb) at
+    (2cm,0)
+    {
+      \tikz \draw[ffa,ffc] (0,0) circle[radius=.3cm];&
+      \node{$\cdots{}$};&
+      \tikz \draw[ffa,ffc] (0,0) circle (.3cm);&
+      \tikz \draw[ffa,ffc] (0,0) circle (.3cm);\\
+    };
+  \end{scope}
+  % 
+  %
+  %%% lvl4
+  \begin{scope}[shift={($(lvl3.north) +(0,2cm)$)}, local bounding
+    box=lvl4]
+    %
+    \matrix [matrix of math nodes,
+    anchor=south east,
+    matNode] (is_o_r) at (-.5cm,0)
     {
       \text{\textsf{Rla}}_1&
       \text{\textsf{Rla}}_2&
       \cdots{}&
       \text{\textsf{Rla}}_n\\
     };
-
+    %
     \matrix [matrix of nodes,
     anchor=south west,
-    nodes={minimum size=1cm}
+    matNode
     ] (zla) at (.5cm,0)
     {
-      \draw[ffa,ffc] (0,0) circle (.3cm);&
+      \tikz \draw[ffa,ffc] (0,0) circle (.3cm);&
       \node{$\cdots{}$};&
-      \draw[ffa,ffc] (0,0) circle (.3cm);&
-      \draw[ffa,ffc] (0,0) circle (.3cm);\\
+      \tikz \draw[ffa,ffc] (0,0) circle (.3cm);&
+      \tikz \draw[ffa,ffc] (0,0) circle (.3cm);\\
     };    
   \end{scope}
-
-  % \text{ZLC}_{rsa1}\\ 
-  % \text{ZLC}_{rsa_2}\\
-  % ts{}\\              
-  % \text{ZLC}_{rsa_n}\\
-  
+  %
+  %
   %% Accolades
   \begin{scope}
     \draw (I.north west) |-
@@ -174,8 +187,7 @@
 
     \node[anchor=west,baseline, fill=white, inner sep=.9pt] at
     ([xshift=1ex]t_fus_3.south west) {\tiny des \emph{indices de
-        localisation}};
-    
+        localisation}};    
   \end{scope}
 
   \begin{scope}
@@ -194,9 +206,6 @@
     node[pos=0.5, fill=white, align=center] {\tiny Bijection}
     node[pos=1,below,cardinalite]{1};
   \end{scope}
-
-  %% XX
-
   % \begin{scope}[below of=I]
   %   \draw[acc3m] (0,0) --++ (8,0) node[pos=.5, yshift=-.5cm] {\emph{Décomposition}};
   %   \draw[acc3m] (8,0) --++ (3,0) node[pos=.5, yshift=-.5cm] {\emph{Spatialisation}};
