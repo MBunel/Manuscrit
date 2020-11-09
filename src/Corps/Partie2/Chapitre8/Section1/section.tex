@@ -77,7 +77,7 @@ Comme nous l'avons expliqué dans le \autoref{chap:04}, la \emph{phase
 chacune destinée à fusionner des \emph{zones de localisation
   compatibles} issues de la \emph{spatialisation} \emph{d'indices de
   localisation} décomposés à une étape particulière de la \emph{phase
-  de décomposition} (\autoref{fig:methodo_1}).
+  de décomposition} (\autoref{tab:comparaison_etapes_fusion}).
 
 \begin{figure}
   \centering
@@ -258,8 +258,6 @@ négation de \(x\) et de \(y\) et inversement, soit :
 
 Avec \(n\) la négation.
 
-\subsubsection{La continuité des opérateurs}
-
 Si l'on observe les figures \ref{fig:zadeh_op}, \ref{fig:luka_op},
 \ref{fig:prob_op} et \ref{fig:drast_op}, représentant, pour chaque
 couple d'opérateur, la valeurs des \emph{t-normes} et des
@@ -268,10 +266,12 @@ couple d'opérateur, la valeurs des \emph{t-normes} et des
 un comportement particulier, sans transition \footnote{À l'exception
   du cas où, soit \(x\), soit \(y\) est nul.} entre les degrés
 d’appartenance minimaux et maximaux. Ce couple d'opérateurs à la
-particularité d'être discontinu.
-
-Le comportement des opérateurs drastiques est assez particulier et il
-ne nous semble pas pertinent de les conserver.
+particularité d'être discontinu. La discontinuité des opérateurs
+drastiques ne nous semble pas très adaptée à notre cas
+d’application. De plus ces opérateurs sont particulièrement extrêmes
+puisqu'ils correspondent à la plus sévère des \emph{t-normes} et à la
+plus lâche des \emph{t-conormes,} il ne nous semble donc pas pertinent
+de les conserver.
 
 \subsubsection{Les principes du \emph{tiers-exclu} \& de la
   \emph{non-contradiction}}
