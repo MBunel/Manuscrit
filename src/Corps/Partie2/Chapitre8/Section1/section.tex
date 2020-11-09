@@ -17,19 +17,22 @@ qui les spatialisent et qu'il est par conséquent possible de
 \emph{spatialiser} la \ac{zlp} en \emph{fusionnant} les \ac{zlc}
 \emph{spatialisant} les \emph{indices de localisation}
 \emph{décomposant} \emph{l'ensemble des indices de localisation}
-(\autoref{fig:methodo_1}).
+(\autoref{fig:methodo_1}). Ainsi, de la même manière que les
+\emph{indices de localisation} sont décomposables à l'aide de
+disjonctions et de conjonctions (\autoref{chap:04}), il est possible
+de construire la \emph{zone de localisaiton probable,} spatialisant
+l'ensemble des indices de localisation initial en appliquant les
+mêmes combinaisons logiques entre les \ac{zlc} spatialisant les
+indices localisation décomposés.
 
-
-
-
-Le degré d'appartenance d'un pixel $p$ donné à la \emph{zone de
+Le degré d'appartenance d'un pixel \(p\) donné à la \emph{zone de
   localisation probable} peut donc être calculé en \emph{fusionnant}
 le degré d'appartenance de ce même pixel pour l'ensemble des
 \emph{zones de localisation compatibles} crée lors de la
-\emph{spatialisation.} Si l'on reprend l'exemple de la
-\autoref{fig:methodo_fusion}, où huit \ac{zlc} sont regroupées deux à
-deux jusqu'à l'obtention d'une \ac{zlp}, le degré d'appartenance d'un
-pixel à la \ac{zlp} est :
+\emph{spatialisation.} Par exemple, si huit \ac{zlc} sont regroupées
+deux à deux jusqu'à l'obtention d'une \ac{zlp}, comme illustré par la
+\autoref{fig:methodo_fusion}, le degré d'appartenance d'un pixel à la
+\ac{zlp} est :
 
 \begin{equation}
  p_{\mathsf{ZLP}} = \left((p_{\mathsf{ZLC}_1} \wedge
@@ -39,12 +42,10 @@ p_{\mathsf{ZLC}_6}) \vee (p_{\mathsf{ZLC}_7} \wedge
 p_{\mathsf{ZLC}_8})\right)
 \end{equation}
 
-Les différentes \emph{étapes} de la \emph{phase de fusion} permettent
-d'effectuer ce calcul sur l'ensemble des pixels utilisés pour
-représenter la \ac{zir}.
-
-
-
+Où chacun des trois niveau d'imbrication correspond à une étape
+différente de la phase de fusion. Les différentes \emph{étapes} de la
+\emph{phase de fusion} permettent d'effectuer ce calcul sur l'ensemble
+des pixels utilisés pour représenter la \ac{zir}.
 
 Au terme de la phase de \emph{spatialisation} on dispose généralement
 d'un grand nombre de \emph{zones de localisation compatibles}
@@ -61,11 +62,6 @@ combiner toutes ces informations de manière à obtenir une seule
 \emph{zone de localisation,} correspondant à la description de
 position donnée par l'ensemble des \emph{indices de localisation.}
 
-
-
-
-
-
 \subsection{Présentation des \emph{étapes} de la \emph{phase de
     fusion}}
 
@@ -81,7 +77,7 @@ Comme nous l'avons expliqué dans le \autoref{chap:04}, la \emph{phase
 chacune destinée à fusionner des \emph{zones de localisation
   compatibles} issues de la \emph{spatialisation} \emph{d'indices de
   localisation} décomposés à une étape particulière de la \emph{phase
-  de décomposition} (\autoref{fig:methodo_1}).
+  de décomposition} (\autoref{tab:comparaison_etapes_fusion}).
 
 \begin{figure}
   \centering
@@ -137,11 +133,37 @@ La seconde étape de la fusion est la fusion des \emph{objets de
 \ac{zlc} issues de la fusion des \emph{relations de localisation
   atomiques.} On dispose donc d'un ensemble de \emph{zones de
   localisation compatibles} définies à partir de plusieurs instances
-d'un même type \emph{d'objet de référence.}
-
+d'un même type \emph{d'objet de référence.} Cette ce distingue de la
+précédente par l'utilisation d'un opérateur conjonctif entre les
+différentes \ac{zlc}. En effet, si lors de la fusion des relations de
+localisation atomiques on cherche à construire les \ac{zlc} comprenant
+toutes les positions correspondant à toutes les \emph{relations de
+  localisation atomiques,} ici on cherche à identifier toutes les
+positions validant la relation de localisation spatialisée pour au
+moins un \emph{objet de référence.}
+%
+Au terme de cette seconde étape de \emph{fusion} on dispose donc
+d'autant de \emph{zones de localisation compatibles} qu'il y a
+d'indices de localisation dans l'ensemble d'indices de localisation
+initial, c'est-à-dire d'autant de \emph{zones} que l'on a d'indices à
+la fin de la première étape de décomposition
+(\autoref{fig:methodo_1}).
 
 La dernière étape de la phase de fusion est la \emph{fusion des
-  indices de localisation.}
+  indices de localisation.} Cette étape vise à combiner les \ac{zlc}
+spatialisant les différents indices de localisaiton en une seule zone,
+la \ac{zlp}. Contrairement aux précédentes étapes, cette étape crée
+toujours une \emph{zone de localisation,} que l'on spatialise un seul
+\emph{indice de localisation} utilisant une \emph{relation de
+  localisation atomique} et se référant à un \emph{objet de référence}
+nommé, ou que l'on spatialise une dizaine d'indices de localisation
+complexes. Cette étape utilise, comme la première, un opérateur
+conjonctif, permettant d'identifier les pixels appartenant à
+l'ensemble des \ac{zlc} combinées. Toutefois il présente une
+différence majeure avec la première étape de la phase de
+\emph{fusion,} puisqu'elle nécessite de prendre en compte l'évaluation
+de la qualité de l'indice de localisation par le secouriste, ce que
+détaillerons dans la seconde partie de ce chapitre.
 
 \begin{table}
   \centering
@@ -236,8 +258,6 @@ négation de \(x\) et de \(y\) et inversement, soit :
 
 Avec \(n\) la négation.
 
-\subsubsection{La continuité des opérateurs}
-
 Si l'on observe les figures \ref{fig:zadeh_op}, \ref{fig:luka_op},
 \ref{fig:prob_op} et \ref{fig:drast_op}, représentant, pour chaque
 couple d'opérateur, la valeurs des \emph{t-normes} et des
@@ -246,10 +266,12 @@ couple d'opérateur, la valeurs des \emph{t-normes} et des
 un comportement particulier, sans transition \footnote{À l'exception
   du cas où, soit \(x\), soit \(y\) est nul.} entre les degrés
 d’appartenance minimaux et maximaux. Ce couple d'opérateurs à la
-particularité d'être discontinu.
-
-Le comportement des opérateurs drastiques est assez particulier et il
-ne nous semble pas pertinent de les conserver.
+particularité d'être discontinu. La discontinuité des opérateurs
+drastiques ne nous semble pas très adaptée à notre cas
+d’application. De plus ces opérateurs sont particulièrement extrêmes
+puisqu'ils correspondent à la plus sévère des \emph{t-normes} et à la
+plus lâche des \emph{t-conormes,} il ne nous semble donc pas pertinent
+de les conserver.
 
 \subsubsection{Les principes du \emph{tiers-exclu} \& de la
   \emph{non-contradiction}}

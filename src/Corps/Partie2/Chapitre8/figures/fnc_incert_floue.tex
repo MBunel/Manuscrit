@@ -2,7 +2,7 @@
   \def\decalageX{-.2}
   \def\decalageY{-.2}
 
-  \begin{scope}
+  \begin{scope}[xshift=12cm]
     \begin{scope}[transparency group]
       % fond
       \begin{scope}
@@ -47,7 +47,7 @@
       \end{scope}
     \end{scope}
     \begin{scope}
-      \draw[<->,shorten <=2pt] (2,.4cm) --++ (0,1.6cm) node[pos=.5, right, font=\small] {$i$};
+      \draw[<->,shorten <=2pt] (2,.4cm) --++ (0,1.6cm) node[pos=.5, right, font=\small] {$c$};
     \end{scope}
   \end{scope}
   % 
@@ -55,7 +55,7 @@
   % 
   % 
   % 
-  \begin{scope}[xshift=12cm]
+  \begin{scope}
     \begin{scope}[transparency group]
       \begin{scope}
         \path[ffa]  (3,0) -- (4.5, 2) -- (6,0) -- cycle;
@@ -164,7 +164,7 @@
       \draw[fill, RdBu-9-9] (6,\decalageY) circle (2pt);
       \draw[|-|] (3,-.7cm) --++(3,0) node[pos=.5, fill=white, inner
       sep=1pt, font=\small] {$\delta$};
-      \draw[<->,shorten <=2pt] (2,.4cm) --++ (0,1.6cm) node[pos=.5, right, font=\small] {$i$};
+      \draw[<->,shorten <=2pt] (2,.4cm) --++ (0,1.6cm) node[pos=.5, right, font=\small] {$c$};
     \end{scope}
   \end{scope}
 \end{tikzpicture}

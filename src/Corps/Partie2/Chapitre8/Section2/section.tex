@@ -169,46 +169,50 @@ coefficient de possibilité, on parle de mesure de possibilité
 \enquote{totalement définie} \autocite{Bouchon-Meunier2007}. Pour
 attribuer un \emph{coefficient de possibilité} à chaque événement de
 \(X\) on définit une \emph{distribution de possibilité}
-(\(π : X → [0,1]\)), dont le supremum pour un événement \(x\) de \(X\)
-doit être égal à 1, c'est-à-dire qu'au moins un événement (\(x\)) de
-l'ensemble considéré (\(X\)) doit être totalement possible :
-%
+(\(π : X → [0,1]\)), dont le supremum doit être égal à 1, c'est-à-dire
+qu'au moins un événement (\(x\)) de l'ensemble considéré (\(X\)) doit
+être totalement possible :
+
 \begin{equation}
   \sup_{x ∈ X}π(x)=1
 \end{equation}
 
-À l'exception de ce dernier point, toutes ces propriétés sont
+À l'exception de cette dernière condition, toutes ces propriétés sont
 partagées par les \emph{fonctions d'appartenance}
-(\autoref{sec:3-2}). Ainsi, dans le cas où une \emph{fonction
-  d'appartenance} respecte cette dernière condition, c'est-à-dire
-qu'elle soit normalisée \footnote{Contrairement à une
-  \emph{distribution de possibilité,} une fonction d'appartenance
-  n'est pas tenue d'avoir 1 pour supremum. On parle de
-  \emph{sous-ensemble flou} normalisé quant au moins un de ces élément
-  à un degré d’appartenance égal à un
-  \autocite{Bouchon-Meunier2007}.}, elle est équivalente à une
-\emph{distribution de possibilités.}
+(\autoref{sec:3-2}). Ainsi, une \emph{fonction d'appartenance}
+respectant cette dernière condition, c'est-à-dire qu'elle est
+normalisée \footnote{Contrairement à une \emph{distribution de
+    possibilité,} une fonction d'appartenance n'est pas tenue d'avoir
+  1 pour supremum. On parle de \emph{sous-ensemble flou} normalisé
+  quant au moins un de ces élément à un degré d’appartenance égal à un
+  \autocite{Bouchon-Meunier2007}.}, est parfaitement équivalente à une
+\emph{distribution de possibilités.} C'est par exemple le cas de
+toutes les fonctions d'appartenance définies au cours du
+\autoref{chap:07}, comme les fonctions \onto[orla]{Eq\-Val} ou
+\onto[orla]{Sup\-Val}, mais aussi de leurs dériviés (\eg
+\onto[orla]{Eq\-Val\-0}, \onto[orla]{Inf\-Val\-0}) ou des fonctions
+d'appartenance obtenues par l’application d'un modifieur à une
+fonction normalisée.
 
-On peut reconstruire la \emph{mesure de possibilité} de chaque
-événement à partir de la \emph{distribution de possibilités,} la
-\emph{mesure de possibilité} d'un événement \(A\) est alors égale à la
-valeur la plus importante de la \emph{distribution des possibilités}
-sur cet intervalle, soit :
+La \emph{mesure de possibilité} (\(\Pi\)) d'un événement donné (\(A\))
+est reconstruction à partir d'une \emph{distribution de possibilités,}
+elle est alors égale à la valeur la plus importante de la
+\emph{distribution des possibilités} sur cet intervalle, soit :
 
 \begin{equation}
   \Pi(A) = \sup_{x \in A}\pi(x)
 \end{equation}
 
-Par exemple, on peut définir une \emph{distribution de possibilité}
-donnant la \emph{possibilité} qu'un colis soit livré un jour donné
-(\autoref{fig:fnc_possib}). À partir d'une telle fonction on peut
-calculer la \emph{mesure de possibilité} de chaque partie de
-\emph{l'ensemble des événements.} Par exemple, la possibilité que le
-\emph{colis} soit livré entre jeudi et dimanche et de 0,2, puisque
-c'est la valeur maximale prise par la fonction \(\pi\) sur cette
-période et la possibilité que le colis ne soit pas livré un jeudi est
-égale à la valeur maximale de la distribution de possibilité pour tous
-les jours à l'exception du jeudi, soit 1.
+Pour approfondir notre précédent exemple, on peut définir une
+\emph{distribution de possibilité} donnant la \emph{possibilité} qu'un
+colis soit livré un jour donné (\autoref{fig:fnc_possib}). À partir
+d'une telle fonction on peut calculer la \emph{mesure de possibilité}
+de chaque partie de \emph{l'ensemble des événements.} Par exemple, la
+possibilité que le \emph{colis} soit livré entre jeudi et dimanche et
+de 0,2, puisque c'est la valeur maximale prise par la fonction \(\pi\)
+sur cette période et la possibilité que le colis ne soit pas livré un
+jeudi est égale à la valeur maximale de la distribution de possibilité
+pour tous les jours à l'exception du jeudi, soit 1.
 
 \begin{figure}
   \centering
@@ -342,7 +346,7 @@ la théorie des possibilités à la théorie des sous-ensembles flous.
 Comme nous l'avons déjà indiqué, une fonction d'appartenance
 normalisée possède les mêmes caractéristiques qu'une distribution de
 possibilité.
-%
+\tdi{Manque transition}
 On peut alors définir la distribution de possibilité de la manière
 suivante :
 
@@ -381,27 +385,51 @@ n'est pas certain tout à fait certain (\eg \enquote{Je pense qu'elle
   est à 500 mètres du refuge}), il devient impossible d'affirmer qu'un
 pixel donné n'appartient pas à la zone de localisation compatible. On
 ne peut donc pas attribuer un degré d'appartenance nul aux pixels,
-même s'ils sont situés à très grande distance de l'objet de référence.
-
-Dans ce cas la \emph{distribution de possibilité} (\(π\)) de cette
-proposition est obtenue en tronquant la base de la fonction
+même s'ils sont situés à très grande distance de l'objet de
+référence. Dans ce cas la \emph{distribution de possibilité} (\(π\))
+de cette proposition est obtenue en tronquant la base de la fonction
 d'appartenance par la droite d'ordonnée \(i\)
 \autocite{Bouchon-Meunier2007}. La \emph{distribution de possibilité}
-(\(π'\)) combinant incerti XX est donc :
-%
+(\(π'\)) combinant une incertitude constante, de valeur \(i\) et une
+imprécision modélisée par la distribution de possibilité \(\pi\) est
+donc :
+
 \begin{equation}
   \label{eq:incert_imp}
   π'(x) = \max(π(x),\ i).  
 \end{equation}
 
-La \autoref{fig:combinaison_incertitude_imprecision} illustre cette
-combinaison. On définit une distribution de possibilité homogène sur
-l'espace de la métrique et une fonction d'appartenance, permettant de
-définir un \emph{sélecteur,} utilisé lors de la spatialisation. Si
-l'on combine ces deux distributions on obtient une fonction
-d'appartenance \enquote{rehaussée} par l'incertitude. Dans cette
-configuration, le degré d'appartenance ne pourra être supérieur à la
-valeur \(i\), fixant le seuil d'incertitude.
+On peut remarquer que dans cette situation où l'on modélise une
+incertitude constante, la valeur de la \emph{mesure de nécessité,}
+quantifiant la certitude, est égale au plus grand écart entre la
+mesure de possibilité \footnote{Dont la valeur est nécessairement de 1
+  puisqu’il y a incertitude.} et la fonction \(\pi'\). Comme la
+nécessité mesure la certitude, plus cet écart est important, plus la
+certitude est importante et le degré d'appartenance minimal est
+faible, à l'inverse, plus cet écart est important, plus l'incertitude
+est élevée, plus la valeur minimale prise par la fonction
+d'appartenance \(\pi'\) est importante et les variations liées à la
+distribution de possibilité \(\pi\) sont réduites.
+
+La \autoref{fig:combinaison_incertitude_imprecision} illustre le
+résultat d'une telle combinaison. On commence par définir une fonction
+d'appartenance triangulaire et normalisée, équivalente à celle
+proposée par le \emph{fuzzyficateur} \onto[orla]{Eq\-Val} et
+permettant de modéliser une assertion logique telle que : \enquote{La
+  \emph{métrique} à une valeur d'environ \(v\)}. On définit en
+parallèle une distribution de possibilité homogène, de certitude
+\(c\), indiquant qu'il est totalement possible et (faiblement dans cet
+exemple) nécessaire que la \emph{métrique} prenne n'importe quelle
+valeur de l'ensemble des valeurs possibles. On peut ensuite combiner
+ces deux fonctions, pour obtenir la distribution de possibilité
+\(\pi'\), correspondant à la fonction d’appartenance précédemment
+définie, dont a diminué la \emph{certitude,} jusqu'à une valeur
+\(c\). Comme le montre clairement la
+\autoref{fig:combinaison_incertitude_imprecision}, il est ici
+impossible d'obtenir un degré d'appartenance inférieur à l'incertitude
+(\(1-c\)), quelle que soit la valeur de la \emph{métrique.} Les
+\ac{zlc} construites à partir d'une fonction d'appartenance serons
+donc constituées de tous les pixels de la \ac{zir}.
 
 \begin{figure}
   \centering
@@ -421,34 +449,33 @@ implication majeure. Comme les sous-ensembles flous que nous
 manipulons représentent des \emph{zones de localisation,} alors la
 certitude s'applique de manière homogène à l'ensemble de
 \emph{l'indice de localisation,} dit autrement nous nous plaçons dans
-le cadre de \autoref{eq:incert_imp}.
+le cadre de l'équation \ref{eq:incert_imp}.
 
-Nous avons donc choisi de permettre au secouriste d'attribuer une
-confiance indépendante à chaque \emph{indice de localisation.} Cette
-grandeur permet au secouriste de donner son opinion sur la qualité
-perçue de \emph{l'indice de localisation} et ce dans tous ces aspects.
-
-La confiance donnée par le secouriste portant sur \emph{l'indice de
-  localisation} et non sur l'une de ces composantes (\eg \emph{objet
-  de référence,} \emph{relation de localisation,} \emph{etc.}), le
-degré de confiance est distribué de manière homogène, chaque position
-de la \ac{zir} se voyant attribuer la même valeur.
-
-La modification des degrés d'appartenance des positions est
-équivalente à une modification de la forme de la fonction
-d'appartenance utilisée pour \emph{spatialiser l'indice de
-  localisation} (\autoref{fig:fnc_incert}). Comme pour les
-\emph{modifieurs} (\autoref{chap:07}), la variation du seuil de
-confiance modifie la forme générale de la courbe, mais ne change pas
-les paramètres du \emph{fuzzyficateur,} que sont l'écartement
-(\(\delta\)) et la valeur de référence (\(v\)). Toutefois,
-contrairement aux \emph{modifieurs,} la modification de la confiance à
-également pour effet de changer la valeur de seuils de la fonction
-d'appartenance. En effet, si la pente des fonctions appartenance est
-conservée lors du rehaussement de la valeur minimale, ce n'est pas le
-cas de la valeur où la fonction d'appartenance atteint la valeur
-nulle, cette dernière étant rehaussée par la diminution de la
-confiance.
+Pour prendre en compte la confiance du secouriste dans un indice de
+localisation donné on peut employer la méthode décrite ci-dessus,
+permettant d'aboutir à la
+\autoref{fig:combinaison_incertitude_imprecision}. Comme pour les
+modifieurs (\autoref{chap:07}), la modification de la certitude
+implique une modification de la forme de la fonction d'appartenance
+utilisée pour \emph{spatialiser l'indice de localisation,} mais cette
+modification n'est pas réellement effectuée lors de la fusion, la
+\ac{zlc} spatialisant \emph{l'indice de localisation} incertain est
+simplement unie avec un raster homogène, attribuant ) chaque pixel un
+degré d'appartenance égale à l'incertitude (\(1-c\)). Comme pour les
+\emph{modifieurs,} on peut représenter le résultat de la modification
+théoriques des fonctions d'appartenance. La \autoref{fig:fnc_incert}
+représente la forme des principales fonctions d'appartenance définies
+précédemment, avec une certitude variable. De manière similaire au
+comportement des modificateurs, la diminution de la confiance modifie
+la forme générale de la courbe, mais ne change pas les paramètres du
+\emph{fuzzyficateur,} que sont l'écartement (\(\delta\)) et la valeur
+de référence (\(v\)). Toutefois, contrairement aux \emph{modifieurs,}
+la modification de la confiance à également pour effet de changer la
+valeur de seuils de la fonction d'appartenance. En effet, si la pente
+des fonctions appartenance est conservée lors du rehaussement de la
+valeur minimale, ce n'est pas le cas de la valeur où la fonction
+d'appartenance atteint la valeur nulle, cette dernière étant rehaussée
+par la diminution de la confiance.
 
 \begin{figure}
   \centering  \subfloat[\label{fig:fnc_app_inc}]{\input{../figures/fnc_app_inc.tex}}\hfill
@@ -466,8 +493,8 @@ confiance.
     \protect\onto[orla]{Inf\-Val} \protect\subref{fig:fnc_app_inc_3}
     et \protect\onto[orla]{Eq\-Val} avec le \emph{modifieur}
     \protect\onto[orla]{Not} \protect\subref{fig:fnc_app_inc_4}, avec
-    un degré de \emph{certitude} (\(i\)) variable (respectivement
-    0,8, 0,4, 0,2 et 0,5).}
+    une \emph{certitude} (\(c\)) variable (respectivement 0,8, 0,4,
+    0,2 et 0,5).}
   \label{fig:fnc_incert}
 \end{figure}
 
@@ -480,10 +507,14 @@ la \emph{relation de localisation atomique} \onto[orla]{Pres\-De}
 \ref{fig:non-contradiction}) à partir du même pixel, avec la même
 fonction d'appartenance. Cependant, alors qu'une confiance absolue est
 donnée au premier cas, c'est une confiance partielle (0,4) qui est
-donnée à la seconde modélisation. Par conséquent, la valeur minimale
-que peut prendre une position est de 0,6. Si cette approche permet de
-XXXXX, c'est par le jeu des opérations inter-zones qu'elle prend tout
-son sens.
+donnée à la seconde modélisation. Comme nous l'indiquions
+précédemment, on peut remarquer qu'aucune position ne possède un degré
+d'appartenance inférieur à l'incertitude, ici 0,6, aucune position de
+la \ac{zir} ne peut pas ne pas appartenir à la \ac{zlc}. On peut
+remarquer que, la modification de la certitude à un impact conséquent
+sur la \ac{zlc}. Réduire la confiance a donc un impact conséquent sur
+les \ac{zlc} et par extension sur la \ac{zlp}, par le biais de
+l'intersection des \ac{zlc}.
 
 \begin{figure}
   \centering
@@ -508,58 +539,57 @@ qualification des indices de localisation par les secouristes.
 \subsubsection{L'influence de l'incertitude sur la fusion des zones de
   localisation compatibles}
 
-La prise en compte de l'incertitude n'impacte pas seulement les
-\emph{zones de localisation compatibles} représentant un indice de
-localisation, mais également la \emph{zone de localisation probable}
-construite par leur intersection.
-
 La t-norme de \bsc{Zadeh} que nous utilisons pour les intersections
 inter-\ac{zlc} a pour effet de retirer de la \ac{zlp} tout pixel ayant
-un degré d'appartenance nul a une des \ac{zlc} intersectées.
-
-La diminution de la certitude d'un indice de localisation a pour effet
+un degré d'appartenance nul a une des \ac{zlc} intersectées. Or, la
+diminution de la certitude d'un indice de localisation a pour effet
 d'attribuer un degré d'appartenance non nul à tous les pixels qui, en
 cas de certitude absolue, auraient été considérés comme en dehors de
 la \ac{zlc}. Ainsi, ces pixels, qui auraient été retirés de la
 \ac{zlp} par le jeu des intersections peuvent à présent s'y retrouver,
-à moins que leur degré d'appartenance à une seconde zone de
-localisation compatible soit également nul.
+ce qui peut conduire à une augmentation de la taille de la \ac{zlp}.
 
-La \autoref{fig:intersection_incert} représente le résultat de
-l'intersection de deux zones de localisations compatibles, dont l'une
-spatialise un indice de localisation de certitude variable. Dans le
-premier cas (\ref{fig:intersection_incert_1}) la certitude dans les
-deux \ac{zlc} intersectées est totale\footnote{Ce qui correspond à
-  toutes les \ac{zlc} traitées jusqu'ici.}, certains pixels ont donc
-un degré d'appartenance nul.
-%
-Dans le second cas (\ref{fig:intersection_incert_2}) la certitude de
-la seconde \ac{zlc} est diminuée. Les pixels ayant un degré
-d'appartenance inférieur à la valeur de l'incertitude (\ie
-\(1-\text{certitude}\), ici 0,8) voient leur appartenance augmenter
-jusqu'à cette valeur. Par conséquent, aucun des pixels représentant la
-\ac{zir} n'a un degré d'appartenance nul. La seconde \ac{zlc} est
-alors moins contraignante que dans le premier cas
-(\ref{fig:intersection_incert_1}). Cela à deux effets, tout d'abord le
-degré d'appartenance d'une position à la \ac{zlp} peut être amené à
-augmenter si son degré d'appartenance était contraint par la seconde
-\ac{zlc}. De plus, par corolaire, aucun pixel ne peut être retiré de
-la \ac{zlp} par cette \ac{zlc}, aucun pixel n'ayant un degré
-d'appartenance nul. Avec cette approche une \ac{zlc} spatialisant un
-indice de localisation incertain ne pourra pas réduire la \ac{zlp},
-seulement diminuer le degré d'appartenance de certaines positions.
+La \autoref{fig:intersection_incert} illustre ce phénomène, en
+représentant le résultat de l'intersection de deux zones de
+localisations compatibles, la première spatialisant une relation de
+proximité et la seconde une orientation. Le premier cas correspond à
+toutes les fusions que nous avons réalisées jusqu'ici, les deux
+\ac{zlc} ont une certitude absolue et il existe donc des pixels
+n'appartenant pas à chacune des \ac{zlc}
+(\ref{fig:intersection_incert_1}). La seconde situation y ajoute la
+prise en compte de la certitude. Elle figure un cas où le secouriste
+aurait décidé d'attribuer une confiance moyenne (0,7)
+(\ref{fig:intersection_incert_2}). Tous les pixels ayant un degré
+d'appartenance inférieur à 0,3 voient donc leur degré d'appartenance à
+la \ac{zlc} augmenter. Il en résulte une zone de localisation assez
+différente, où aucun pixel n'a un degré d'appartenance nul. Ainsi,
+cette seconde \ac{zlc} dont dépendait la valeur de nombreux pixels
+dans le premier cas (\ref{fig:intersection_incert_1}), devient moins
+contraignante. Cela se voit particulièrement dans la partie
+inférieure-gauche de la \ac{zir}. Sans incertitude, aucun pixel de
+cette partie n’appartenait à la \ac{zlp}, ces derniers étant contraint
+par la seconde \ac{zlc}. Avec l'augmentation de l'incertitude de cette
+même \ac{zlc}, des pixels qui avaient auparavant un degré
+d'appartenance nuls se retrouvent à voir un degré d'appartenance non
+nul sur les deux \ac{zlc}, ils sont donc intégrés à la \ac{zlp}. On
+peut également remarquer qu'avec l'augmentation de l'incertitude,
+seule la première \ac{zlc} peut permettre de retirer des pixels de la
+\ac{zlp}. Dit autrement, pour qu'une position soit absente de la
+\ac{zlp}, il faut qu'une \ac{zlc} \enquote{affirme} que cette position
+n'y est pas. Ainsi, une \ac{zlc} spatialisant un indice de
+localisation incertain ne pourra pas réduire la \ac{zlp}, seulement
+diminuer le degré d'appartenance de certaines positions.
 
 \begin{figure}
   \centering  \subfloat[\label{fig:intersection_incert_1}]{\input{../figures/comparaison_intersection_incertitude.tex}}
 
   \subfloat[\label{fig:intersection_incert_2}]{\input{../figures/comparaison_intersection_incertitude_2.tex}}
   \caption{Résultat de l'intersection de deux \protect\ac{zlc} avec la
-    \emph{t-norme} de \bsc{Zadeh} avec
-    \protect\subref{fig:intersection_incert_1} et sans
+    \emph{t-norme} de \bsc{Zadeh} sans
+    \protect\subref{fig:intersection_incert_1} et avec
     \protect\subref{fig:intersection_incert_2} incertitude.}
   \label{fig:intersection_incert}
 \end{figure}
-
 
 Dans le cas où tous les indices sont incertains, alors aucune position
 de la \ac{zir} ne pourra avoir un degré d'appartenance nul. La
