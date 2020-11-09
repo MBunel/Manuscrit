@@ -10,11 +10,11 @@
   \end{scope}
 
 
-  %%%%%%%%%%%%
+  %%%%%%%%%%%% 
   % Colonne 1
-  %%%%%%%%%%%%
-  %
-  %
+  %%%%%%%%%%%% 
+  % 
+  % 
   % Zone de localisation compatible 1
   \begin{scope}[local bounding box=zlc1]
     \begin{scope}
@@ -28,7 +28,7 @@
     \node[text width=3cm, align=center, anchor=north, font=\footnotesize] at (1,-.25)
     {\itshape Zone de localisation compatible \normalfont \textcolor{RdBu-9-1}{\textsf{A}}};
   \end{scope}
-  %
+  % 
   % ZLC 2
   \begin{scope}[yshift=-3.5cm,local bounding box=zlc2]
     \begin{scope}
@@ -43,14 +43,24 @@
     \node[text width=3cm, align=center, anchor=north, font=\footnotesize] at (1,-.25)
     {\itshape Zone de localisation compatible \normalfont \textcolor{RdBu-9-2}{\textsf{B}}};
   \end{scope}
-  %
+  % 
   % ZlC 3
   \begin{scope}[yshift=-8cm,local bounding box=zlc3]
     \begin{scope}
       \foreach \x in {0,.25,...,1.75}{
         \foreach \y in {0,.25,...,1.75}
         {
-          \fill[RdBu-9-8] (\x+.125,.125+\y) circle (2 pt);
+          % Calcul et représentation floue distance euclidienne
+          \pgfmathsetmacro\dist{sqrt((\x-0.125)^2+(\y-1.375)^2)}
+          % Fuzzyfication de la distance
+          \pgfmathsetmacro\fuzzy{%
+            ifthenelse(\dist < .25,1,%
+            ifthenelse(\dist < 2,-0.57*\dist+1.14,0)%
+            )
+          }
+          % Calcul du rayon à partir de la fuzzyfication
+          \pgfmathsetmacro\radius{\fuzzy*2.5}
+          \fill[RdBu-9-8] (\x+.125,.125+\y) circle (\radius pt);
         }
       }
       \path[ffc2, RdBu-9-8] (0,0) rectangle (2,2);
@@ -58,14 +68,24 @@
     \node[text width=3cm, align=center, anchor=north, font=\footnotesize] at (1,-.25)
     {\itshape Zone de localisation compatible \normalfont \textcolor{RdBu-9-8}{\textsf{C}}};
   \end{scope}
-  %
+  % 
   % Zlc 4
   \begin{scope}[yshift=-11.5cm,local bounding box=zlc4]
     \begin{scope}
       \foreach \x in {0,.25,...,1.75}{
         \foreach \y in {0,.25,...,1.75}
         {
-          \fill[RdBu-9-9] (\x+.125,.125+\y) circle (2 pt);
+          % Calcul et représentation floue distance euclidienne
+          \pgfmathsetmacro\dist{sqrt((\x-2.125)^2+(\y-1.875)^2)}
+          % Fuzzyfication de la distance
+          \pgfmathsetmacro\fuzzy{%
+            ifthenelse(\dist < .25,1,%
+            ifthenelse(\dist < 2,-0.57*\dist+1.14,0)%
+            )
+          }
+          % Calcul du rayon à partir de la fuzzyfication
+          \pgfmathsetmacro\radius{\fuzzy*2.5}
+          \fill[RdBu-9-9] (\x+.125,.125+\y) circle (\radius pt);
         }
       }
       \path[ffc2] (0,0) rectangle (2,2);
@@ -95,7 +115,17 @@
       \foreach \x in {0,.25,...,1.75}{
         \foreach \y in {0,.25,...,1.75}
         {
-          \fill[RdBu-9-8] (\x+.125,.125+\y) circle (2 pt);
+          % Calcul et représentation floue distance euclidienne
+          \pgfmathsetmacro\dist{sqrt((\x-0.125)^2+(\y-1.375)^2)}
+          % Fuzzyfication de la distance
+          \pgfmathsetmacro\fuzzy{%
+            ifthenelse(\dist < .25,1,%
+            ifthenelse(\dist < 2,-0.57*\dist+1.14,0)%
+            )
+          }
+          % Calcul du rayon à partir de la fuzzyfication
+          \pgfmathsetmacro\radius{\fuzzy*2.5}
+          \fill[RdBu-9-8] (\x+.125,.125+\y) circle (\radius pt);
         }
       }
       \path[ffc2, RdBu-9-8] (0,0) rectangle (2,2);
@@ -109,7 +139,17 @@
       \foreach \x in {0,.25,...,1.75}{
         \foreach \y in {0,.25,...,1.75}
         {
-          \fill[RdBu-9-9] (\x+.125,.125+\y) circle (2 pt);
+          % Calcul et représentation floue distance euclidienne
+          \pgfmathsetmacro\dist{sqrt((\x-2.125)^2+(\y-1.875)^2)}
+          % Fuzzyfication de la distance
+          \pgfmathsetmacro\fuzzy{%
+            ifthenelse(\dist < .25,1,%
+            ifthenelse(\dist < 2,-0.57*\dist+1.14,0)%
+            )
+          }
+          % Calcul du rayon à partir de la fuzzyfication
+          \pgfmathsetmacro\radius{\fuzzy*2.5}
+          \fill[RdBu-9-9](\x+.125,.125+\y) circle (\radius pt);
         }
       }
       \path[ffc2] (0,0) rectangle (2,2);
@@ -133,13 +173,29 @@
     \node[text width=3cm, align=center, anchor=north, font=\footnotesize] at (1,-.25)
     {\itshape Zone de localisation compatible \normalfont \textcolor{RdBu-9-9}{\textsf{B}}};
   \end{scope}
-  %
+  % 
   \begin{scope}[xshift=12cm, yshift=-9.75cm]
     \begin{scope}
       \foreach \x in {0,.25,...,1.75}{
         \foreach \y in {0,.25,...,1.75}
         {
-          \fill[RdBu-9-9] (\x+.125,.125+\y) circle (2 pt);
+          \pgfmathsetmacro\dista{sqrt((\x-0.125)^2+(\y-1.375)^2)}
+          % Fuzzyfication de la distance
+          \pgfmathsetmacro\fuzzya{%
+            ifthenelse(\dista < .25,1,%
+            ifthenelse(\dista < 2,-0.57*\dista+1.14,0)%
+            )
+          }
+          % Calcul et représentation floue distance euclidienne
+          \pgfmathsetmacro\distb{sqrt((\x-2.125)^2+(\y-1.875)^2)}
+          % Fuzzyfication de la distance
+          \pgfmathsetmacro\fuzzyb{%
+            ifthenelse(\distb < .25,1,%
+            ifthenelse(\distb < 2,-0.57*\distb+1.14,0)%
+            )
+          }
+          \pgfmathsetmacro\radius{max(\fuzzya, \fuzzyb)*2.5}
+          \fill[RdBu-9-9](\x+.125,.125+\y) circle (\radius pt);
         }
       }
       \path[ffc2] (0,0) rectangle (2,2);
@@ -148,7 +204,7 @@
     {\itshape Zone de localisation compatible \normalfont \textcolor{RdBu-9-9}{\textsf{B}}};
   \end{scope}
   %%%%%%%%%%% 
-  % Colonne 3
+  % Colonne 4
   %%%%%%%%%%%% 
   \begin{scope}[xshift=18cm, yshift=-5.75cm]
     \begin{scope}
@@ -180,7 +236,7 @@
       \path[->, draw] (2,-1.5) -- (zi.west);
       \path[->, draw] (zi.east) -- (7.75,.25);
     \end{scope}
-    %
+    % 
     \begin{scope}
       \begin{scope}[xshift=6cm, yshift=-8cm]
         \path[ffc] (1.75cm,1.75cm) rectangle (2cm,2cm);
@@ -196,7 +252,7 @@
       \path[->, draw] (8,-9.5) -- (zou.west);
       \path[->, draw] (zou.east) -- (13.75,-7.75);
     \end{scope}
-    %
+    % 
     \begin{scope}
       \begin{scope}[xshift=12cm, yshift=-1.75cm]
         \path[ffc] (1.75cm,1.75cm) rectangle (2cm,2cm);
