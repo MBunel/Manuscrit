@@ -32,7 +32,7 @@
     \begin{scope}
       \foreach \x in {0,.25,...,1.75}{ \foreach \y in {0,.25,...,1.75}
         {
-          \calcangle{\angle}{\pgfpoint{.75cm}{.75cm}}{\pgfpoint{1.875cm}{1.875cm}}{\pgfpoint{\x cm}{\y cm}}
+          \calcangle{\angle}{\pgfpoint{.625cm}{.625cm}}{\pgfpoint{1.875cm}{1.875cm}}{\pgfpoint{\x cm}{\y cm}}
           % Fuzzyfication de l'angle
           \pgfmathsetmacro\fuzzy{%
             ifthenelse(\angle < 90,(90-\angle)/90,
@@ -51,7 +51,7 @@
     \begin{scope}
       \foreach \x in {0,.25,...,1.75}{ \foreach \y in {0,.25,...,1.75}
         {
-          \calcangle{\angle}{\pgfpoint{.75cm}{.75cm}}{\pgfpoint{1.875cm}{1.875cm}}{\pgfpoint{\x cm}{\y cm}}
+          \calcangle{\angle}{\pgfpoint{.625cm}{.625cm}}{\pgfpoint{1.875cm}{1.875cm}}{\pgfpoint{\x cm}{\y cm}}
           % Fuzzyfication de l'angle
           \pgfmathsetmacro\fuzzya{%
             ifthenelse(\angle < 90,(90-\angle)/90,
