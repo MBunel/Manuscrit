@@ -1,7 +1,7 @@
 Pour illustrer le déroulement de la \emph{phase de fusion} nous nous
 fonderons sur l'exemple de la construction de la \ac{zlp}
 correspondant à \emph{l'ensemble des indices de localisation}
-\enquote{Je suis à l'extérieur, au sud d'une forêt (qui a été
+\enquote{Je suis à l'extérieur, au sud de la forêt (qui a été
   spatialisé dans le \autoref{chap:07}) et je suis proche d'un refuge}
 (\autoref{fig:exemple_final_fusion}). Pour les besoins de l'exemple,
 nous considérerons que le secouriste a attribué une confiance absolue
@@ -22,17 +22,16 @@ disposons donc de quatre \ac{zlc} :
 \item la \ac{zlc} \textcolor{RdBu-9-1}{\textsf{A}}, spatialisant la
   \emph{relation de localisation atomique} \onto[orla]{Hors\-De} pour
   \emph{l'objet de référence} forêt,
-\item la \ac{zlc} \textcolor{RdBu-9-2}{\textsf{B}}, spatialisant la \emph{relation de localisation
-    atomique} \onto[orla]{Sud\-De}, également pour \emph{l'objet de
-    référence} forêt,
+\item la \ac{zlc} \textcolor{RdBu-9-2}{\textsf{B}}, spatialisant la
+  \emph{relation de localisation atomique} \onto[orla]{Sud\-De},
+  également pour \emph{l'objet de référence} forêt,
 \item la \ac{zlc} \textcolor{RdBu-9-8}{\textsf{C}}, spatialisant la
   \emph{relation de localisation atomique} \onto[orla]{Pres\-De} pour
   la première des deux instances de type \enquote{refuge} identifiées,
-  avec un degré de certitude de \si{0,7}, et
-\item la \ac{zlc} \textcolor{RdBu-9-9}{\textsf{D}}, spatialisant,
-  également avec une certitude de \si{0,7}, la \emph{relation de
-    localisation atomique} \onto[orla]{Pres\-De} pour le second
-  refuge.
+  et
+\item la \ac{zlc} \textcolor{RdBu-9-9}{\textsf{D}}, spatialisant la
+  \emph{relation de localisation atomique} \onto[orla]{Pres\-De} pour
+  le second refuge.
 \end{enumerate*}
 
 \subsection{La \emph{fusion} des \emph{relations de localisation
@@ -48,16 +47,16 @@ différentes. Dans la partie supérieure de la figure se situent les
 \ac{zlc} \textcolor{RdBu-9-1}{\textsf{A}} et
 \textcolor{RdBu-9-2}{\textsf{B}}, spatialisant deux \emph{relations de
   localisation atomiques} traitant du même \emph{indice de
-  localisation} (\enquote{Je suis à l'extérieur, au sud de XXX}), du
-même \emph{objet de référence} (\enquote{XXX}) et de la même
+  localisation} (\enquote{Je suis à l'extérieur, au sud de la forêt}),
+du même \emph{objet de référence} (\enquote{forêt}) et de la même
 \emph{relation de localisation}
 (\onto[orl]{Au\-Sud\-De\-Ex\-ter\-ne}). Ces deux \emph{zones de
   localisation compatibles} doivent donc être \emph{fusionnées,} de
 manière a construire la \ac{zlc} spatialisant la \emph{relation de
   localisaiton} \onto[orl]{Au\-Sud\-De\-Ex\-ter\-ne} pour
-\emph{l'objet de référence} \enquote{XXX}, de \emph{l'indice de
-  localisation} : \enquote{Je suis à l'extérieur, au sud de
-  XXX}. Cette nouvelle \emph{zone de localisation} est construite en
+\emph{l'objet de référence} \enquote{forêt}, de \emph{l'indice de
+  localisation} : \enquote{Je suis à l'extérieur, au sud de la
+  forêt}. Cette nouvelle \emph{zone de localisation} est construite en
 \emph{intersectant} les \ac{zlc} \textcolor{RdBu-9-1}{\textsf{A}} et
 \textcolor{RdBu-9-2}{\textsf{B}}, ce qui équivaut à construire une
 \emph{zone} constituée de toutes les positions de la \ac{zir} validant
@@ -115,14 +114,14 @@ Une fois que l'on dispose d'une \ac{zlc} par \emph{indice de
 l'exemple de la \autoref{fig:exemple_final_fusion}, cette dernière
 étape de \emph{fusion} combine deux \ac{zlc}, celle correspondant à
 \emph{l'indice de localisation} \enquote{je suis au sud et à
-  l'extérieur de XXX} et celle correspondant à l'indice de
-localisation \enquote{Je suis proche d'un refuge}. Comme lors de
-l'étape de la fusion des \emph{relations de localisation atomiques} on
-cherche à construire la \emph{zone de localisation} correspondant à
-ces deux indices, c'est-à-dire la zone composée de toutes les
-positions qui valident l'assertion \enquote{Cette position est au sud
-  et à l'extérieur de XXXX} \emph{et} l'assertion \enquote{Cette zone
-  est proche d'un refuge}. Pour ce faire on construit, comme pour la
+  l'extérieur de XXX} et celle correspondant à l'indice de localisation
+\enquote{Je suis proche d'un refuge}. Comme lors de l'étape de la
+fusion des \emph{relations de localisation atomiques} on cherche à
+construire la \emph{zone de localisation} correspondant à ces deux
+indices, c'est-à-dire la zone composée de toutes les positions qui
+valident l'assertion \enquote{Cette position est au sud et à
+  l'extérieur de XXXX} \emph{et} l'assertion \enquote{Cette zone est
+  proche d'un refuge}. Pour ce faire on construit, comme pour la
 première étape de cette phase, l'intersection de ces deux \ac{zlc},
 avec la \emph{t-norme} de \textcite{Zadeh1965}. Le degré
 d’appartenance d'une position donnée à la \ac{zlp} est donc égal au
@@ -143,8 +142,7 @@ Après la réalisation de cette dernière étape on obtient la \ac{zlp}.
 Comme on peut le voir avec cet exemple XXXXX
 
 \begin{landscape}
-  \begin{figure}[H]
-    \centering
+  \begin{figure}[H] \centering
     \input{../figures/exemple_final_fusion.tex}
     \caption{Gros exemple}
     \label{fig:exemple_final_fusion}
@@ -152,7 +150,5 @@ Comme on peut le voir avec cet exemple XXXXX
 \end{landscape}
 
 
-%%% Local Variables:
-%%% mode: latex
-%%% TeX-master: "../../../../main"
-%%% End:
+%%% Local Variables: %%% mode: latex %%% TeX-master:
+"../../../../main" %%% End:
