@@ -39,7 +39,7 @@
             )
           }
           % Calcul du rayon à partir de la fuzzyfication
-          \pgfmathsetmacro\radius{max(\fuzzy, 0.6)*2.5}
+          \pgfmathsetmacro\radius{max(\fuzzy, 0.3)*2.5}
           \fill[RdBu-9-1] (\x+.125,.125+\y) circle (\radius pt);
         }
       }
@@ -68,7 +68,7 @@
             )
           }
           % 
-          \pgfmathsetmacro\radius{min(max(\fuzzya, 0.6), \fuzzyb)*2.5}
+          \pgfmathsetmacro\radius{min(max(\fuzzya, 0.3), \fuzzyb)*2.5}
           \fill[RdBu-9-9] (\x+.125,.125+\y) circle (\radius pt);
         }
       }
