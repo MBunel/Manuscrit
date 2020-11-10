@@ -1,6 +1,24 @@
 Section 1
 
-\subsection{Généralités}
+
+
+\subsection{Présentation des alertes}
+
+\subsubsection{Statistiques}
+
+Pour justifier le choix des alertes nous avons fait des stats 
+
+\subsection{Données}
+
+Pour appliquer notre méthodologie nous nous sommes appuyés sur deux
+jeux de donnée principaux, produits par l'IGN,
+
+La BDTOPO est une base de données représentant
+
+La BDALTI est la composante altimétrique du référentiel à grande
+échelle de l'IGN.
+
+\subsection{Cadre d'implémentation}
 
 L'implémentation de la méthode proposée a été réalisée à l'aide du
 langage de programmation python, dans sa version 3.5, de septembre
@@ -28,13 +46,42 @@ des logiciels de SIG, uniquement fondée sur des bibliothèques de bas
 niveau.
 
 
-
-\subsection{Détail des trois phases}
-
 Les trois phases de notre méthode traitant d'objets différents (\ie
 des \emph{indices de localisation} dans la phase de décomposition et
 des \ac{zlc} dans la phase de spatialisation et de fusion), il en
 résulte que les bibliothèques qui 
+
+\subsubsection{Implémentation de la phase de décomposition}
+
+
+
+\subsubsection{Implémentation des phases de spatialisation \& de fusion}
+
+Les objets géographiques sont manipulés (pour les \emph{objets de
+  référence}) et construits (pour les zones de localisation
+compatibles et probables) à partir de l'étape de spatialisation.
+
+La mise en place de ces étapes nécessite donc de mettre en place de
+nouveaux outils pour manipuler les géométries.
+
+Notre travail faisant une grande utilisation de rasters, la
+bibliothèque permettant leur manipulation prend une place centrale
+lors de cette étape.
+
+Nous avons construit notre implémentation autour de la bibliothèque
+\emph{numpy,} conçue pour le calcul scientifique et plus précisément
+la manipulation optimisée de matrices volumineuses
+\autocite{vanderWalt2011}. Le type de données défini par \emph{numpy}
+\footnote{Le The N-dimensional array (ndarray).} fait office de
+standard du calcul scientifique dans l'univers du python, il est donc
+à la base de nombreuses bibliothèques de calcul scientifique.  La
+bibliothèque \emph{numpy} permet d'effectuer de nombreux calculs
+avancés, toutefois certaines méthodes spécifiques n'y figurent pas,
+c'est pourquoi nous avons également fait appel aux bibliothèques
+\emph{SciPy} et \emph{scikit-image}
+\autocite{vanderWalt2014,Virtanen2020} qui proposent des outils
+supplémentaires tout en opérant de à partir des types de données
+définis par \emph{numpy.}
 
 
 
