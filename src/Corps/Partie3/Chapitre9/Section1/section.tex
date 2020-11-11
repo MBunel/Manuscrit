@@ -1,37 +1,15 @@
+L’application de notre méthode à des cas réels nécessite d'aborder
+trois questions supplémentaires.
 
+Il est tout d'abord nécessaire de procéder à l'implémentation de la
+méthode que nous avons définie.
 
-\subsection{Présentation des alertes}
+Puis il est nécessaire de sélectionner les alertes à modéliser
 
-\subsubsection{Statistiques}
+Enfin, il convient de définir les données utilisées lors de la
+spatialisation.
 
-Pour justifier le choix des alertes nous avons fait des stats 
-
-\subsection{Données}
-
-L'ensemble des \emph{objets de référence} utilisés pour la
-spatialisation des indices de localisation proviennent de la même base
-de données, la BDTOPO, produite par l'IGN. Cette dernière
-%
-Pour nos modélisations nous avons travaillé exclusivement à partir du
-millésime de 2018
-
-
-Une base de données comme la BDTOPO, ne propose pas une représentation
-exhaustive et à l'échelle unitaire du territoire qu'elle
-cartographie. Tous les objets du territoire n'y figurent pas et les
-géométries qui les représentent ne sont que des abstractions
-simplifiée de la forme réelle de l'objet.
-
-Le principal problème d'une telle base de donnée est donc que certains
-objets du réels, pouvant donc être utilisés comme \emph{objets de
-  référence} dans un \emph{indice de localisation,} n'y figurent pas
-nécessairement.
-
-
-La BDALTI est la composante altimétrique du référentiel à grande
-échelle de l'IGN.
-
-\subsection{Cadre d'implémentation}
+\subsection{L'implémentation de la méthode de spatialisation}
 
 L'implémentation de la méthode proposée a été réalisée à l'aide du
 langage de programmation python, dans sa version 3.5, de septembre
@@ -101,6 +79,41 @@ types de données définis par \emph{numpy.}
 
 
 Owlready \autocite{Lamy2017}
+
+
+
+
+
+\subsection{Présentation des alertes}
+
+\subsubsection{Statistiques}
+
+Pour justifier le choix des alertes nous avons fait des stats 
+
+\subsection{Données}
+
+L'ensemble des \emph{objets de référence} utilisés pour la
+spatialisation des indices de localisation proviennent de la même base
+de données, la BDTOPO, produite par l'IGN. Cette dernière
+%
+Pour nos modélisations nous avons travaillé exclusivement à partir du
+millésime de 2018
+
+
+Une base de données comme la BDTOPO, ne propose pas une représentation
+exhaustive et à l'échelle unitaire du territoire qu'elle
+cartographie. Tous les objets du territoire n'y figurent pas et les
+géométries qui les représentent ne sont que des abstractions
+simplifiée de la forme réelle de l'objet.
+
+Le principal problème d'une telle base de donnée est donc que certains
+objets du réels, pouvant donc être utilisés comme \emph{objets de
+  référence} dans un \emph{indice de localisation,} n'y figurent pas
+nécessairement.
+
+
+La BDALTI est la composante altimétrique du référentiel à grande
+échelle de l'IGN.
 
 
 
