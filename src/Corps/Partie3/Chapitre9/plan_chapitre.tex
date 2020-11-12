@@ -1,71 +1,97 @@
-% Citation début de chapitre
-\dictum[Loi de Hofstadter]{It always takes longer than you expect, even when
-  you take into account Hofstadter's Law}%
 
 \chaptertoc{}
 
-L'objectif de ce chapitre est de présenter l'implémentation des
-méthodes présentées précédement (voir chapitres \ref{chap:04},
-\ref{chap:05}, \ref{chap:06}, \ref{chap:07} et
-\ref{chap:08}). Cependant contrairement aux précédents chapitres nous
-allons adopter une démarche calquée sur le fonctionnement interne du
-code et non sur des aspects plus thématiques.
-
 \addsec{Introduction}
+\subimport{.}{introduction.tex}
 
-L'objectif de ce chapitre est de présenter l'implémentation des
-méthodes présentées précédement (voir chapitres \ref{chap:04},
-\ref{chap:05}, \ref{chap:06}, \ref{chap:07} et
-\ref{chap:08}). Cependant contrairement aux précédents chapitres nous
-allons adopter une démarche calquée sur le fonctionnement interne du
-code et non sur des aspects plus thématiques.
-
-\section{Cadre général}
-
-\subsection{Cadre de développement}
-
-
-
-\subsection{Analyse statistique}
-
-
-
-\section{Analyse des indices}
+\section{Généralités sur XXX}
 \label{sec:9-1}
+\subimport{Section1/}{section.tex}
 
-\subsection{Extraction des indices}
-\label{subsec:9-1-1}
+\section{Grand Veymont}
+\label{sec:9-2}
+\subimport{Section2/}{section.tex}
 
-\subsection{Décomposition des indices}
-\label{subsec:9-1-2}
-
-\section{Spatialisation}
+%%
+\section{Moucherotte}
 \label{sec:9-2}
 
-\subsection{Rasterisation des géométries}
+\subsection{Présentation de l'alerte}
 \label{subsec:9-2-1}
 
-\subsection{Construction des métriques}
+
+\begin{figure}
+  \centering
+  \input{./figures/ZIR_moucherotte.tex}
+  \caption{Zone initiale de recherche de l'alerte
+    \enquote{Moucherotte}}
+  \label{fig:zir_moucherotte}
+\end{figure}
+
+\subsubsection{Retranscription et identification des indices de localisation}
+\label{subsec:9-2-1-1}
+
+\subsection{Modélisation de l'alerte}
 \label{subsec:9-2-2}
 
-\subsection{Sélection floue}
+\subsubsection{Décomposition des indices de localisation}
+\label{subsec:9-2-2-2}
+
+\subsubsection{Spatialisation des indices de localisation}
+\label{subsec:9-2-2-3}
+
+\subsubsection{Fusion des zones de localisation compatibles}
+\label{subsec:9-2-2-4}
+
+\subsection{Critique de la modélisation}
 \label{subsec:9-2-3}
 
-\section{Agrégation}
+
+
+
+\section{Modélisation du \emph{fil rouge}}
 \label{sec:9-3}
 
-\subsection{Agrégation des RSA}
+La dernière alerte modélisée est le cas dit du \enquote{fil rouge} que
+nous avions présenté dans le premier chapitre de cette thèse. Comme
+nous l'avions indiqué lors de sa première présentation, le \emph{fil
+  rouge} est une alerte particulière, contenant de nombreux indices
+très imprécis et incertains. Par conséquent la \ac{zir} est
+extrêmement étendue.
+
+
+\subsection{Présentation de l'alerte}
 \label{subsec:9-3-1}
 
-\subsection{Agrégation des objets}
+Le fil rouge est une alerte composée de XX \emph{indices de
+  localisation.}
+
+\begin{figure}
+  \centering
+  \input{./figures/ZIR_fil_rouge.tex}
+  \caption{Zone initiale de recherche pour le \emph{fil rouge}}
+  \label{fig:zir_fil_rouge}
+\end{figure}
+
+\subsection{Modélisation de l'alerte}
 \label{subsec:9-3-2}
 
-\subsection{Agégation des indices}
+La \ac{zir} définie pour cette alerte est une zone de
+\SI{625}{\kilo\meter\squared}
+
+\subsubsection{Décomposition des indices de localisation}
+\label{subsec:9-3-2-1}
+
+\subsubsection{Spatialisation des indices de localisation}
+\label{subsec:9-3-2-2}
+
+\subsubsection{Fusion des zones de localisation compatibles}
+\label{subsec:9-3-2-3}
+
+\subsection{Critique de la modélisation}
 \label{subsec:9-3-3}
 
-\addsec{Conclusion}
-
-Conclusion chapitre 9
+\addsec{Conclusion / synthèse critique}
 
 %%% Local Variables:
 %%% mode: latex

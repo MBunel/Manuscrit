@@ -1,0 +1,127 @@
+L’application de notre méthode à des cas réels nécessite d'aborder
+trois questions supplémentaires.
+
+Il est tout d'abord nécessaire de procéder à l'implémentation de la
+méthode que nous avons définie.
+
+Puis il est nécessaire de sélectionner les alertes à modéliser
+
+Enfin, il convient de définir les données utilisées lors de la
+spatialisation.
+
+\subsection{L'implémentation de la méthode de spatialisation}
+
+L'implémentation de la méthode proposée a été réalisée à l'aide du
+langage de programmation python, dans sa version 3.5, de septembre
+2015. Le choix de ce langage de programmation a été réalisé, d'une
+part en fonction de nos compétences personnelles, mais également car
+il s'agit d'un langage de programmation répandu dans le monde de la
+géomatique et disposant de nombreux bibliothèques facilitant le
+développement.
+
+Plusieurs cadres étaient possibles pour mettre en place
+
+Une première solution est d'employer le framework d'un logiciel SIG,
+comme QGis, ArcGis, ou d'autres, ce qui permet d’accéder aux fonctions
+internes au logiciel, ce qui, dans notre cas, peut faciliter le
+développement des fonctions de spatialisation. Cette solution nous
+rend cependant dépendant du logiciel de SIG utilisé, ce qui a deux
+défauts majeurs. D'une part il est nécessaire de se familiariser avec
+les fonctions spécifiques du logiciel, ce qui ajoute un coup de
+développement et d'appropriation du code supplémentaire. De plus cela
+ajoute une dépendance forte au code, ce qui est un frein
+supplémentaire.
+
+Nous avons donc choisi d'utiliser une solution totalement indépendante
+des logiciels de SIG, uniquement fondée sur des bibliothèques de bas
+niveau.
+
+
+Les trois phases de notre méthode traitant d'objets différents (\ie
+des \emph{indices de localisation} dans la phase de décomposition et
+des \ac{zlc} dans la phase de spatialisation et de fusion), il en
+résulte que les bibliothèques qui 
+
+\subsubsection{Implémentation de la phase de décomposition}
+
+La phase de décomposition
+
+
+\subsubsection{Implémentation des phases de spatialisation \& de fusion}
+
+Les objets géographiques sont manipulés (pour les \emph{objets de
+  référence}) et construits (pour les zones de localisation
+compatibles et probables) à partir de l'étape de spatialisation.
+
+La mise en place de ces étapes nécessite donc de mettre en place de
+nouveaux outils pour manipuler les géométries.
+
+Notre travail faisant une grande utilisation de rasters, la
+bibliothèque permettant leur manipulation prend une place centrale
+lors de cette étape.
+
+Nous avons construit notre implémentation autour de la bibliothèque
+\emph{numpy,} conçue pour le calcul scientifique et plus précisément
+la manipulation optimisée de matrices volumineuses
+\autocite{vanderWalt2011}. Le type de données défini par \emph{numpy}
+\footnote{Le \emph{ndarray,} pour
+  \foreigntextquote{english}{N-dimensional array} (Tableau
+  multidimensionnel).} fait office de standard du calcul scientifique
+dans l'univers du python, il est donc à la base de nombreuses
+bibliothèques de calcul scientifique.  La bibliothèque \emph{numpy}
+permet d'effectuer de nombreux calculs avancés, toutefois certaines
+méthodes spécifiques n'y figurent pas, c'est pourquoi nous avons
+également fait appel aux bibliothèques \emph{SciPy} et
+\emph{scikit-image} \autocite{vanderWalt2014,Virtanen2020} qui
+proposent des outils supplémentaires tout en opérant de à partir des
+types de données définis par \emph{numpy.}
+
+
+
+Owlready \autocite{Lamy2017}
+
+
+\subsection{Présentation des alertes}
+
+
+
+L'ensemble des retranscriptions et des \emph{templates} de
+retranscription qui y sont associés sont présentés dans
+l'\autoref{anx:retrans}.
+
+
+\subsubsection{Statistiques}
+
+Pour justifier le choix des alertes nous avons fait des stats 
+
+\subsection{Données}
+
+L'ensemble des \emph{objets de référence} utilisés pour la
+spatialisation des indices de localisation proviennent de la même base
+de données, la BDTOPO, produite par l'IGN. Cette dernière
+%
+Pour nos modélisations nous avons travaillé exclusivement à partir du
+millésime de 2018
+
+
+Une base de données comme la BDTOPO, ne propose pas une représentation
+exhaustive et à l'échelle unitaire du territoire qu'elle
+cartographie. Tous les objets du territoire n'y figurent pas et les
+géométries qui les représentent ne sont que des abstractions
+simplifiée de la forme réelle de l'objet.
+
+Le principal problème d'une telle base de donnée est donc que certains
+objets du réels, pouvant donc être utilisés comme \emph{objets de
+  référence} dans un \emph{indice de localisation,} n'y figurent pas
+nécessairement.
+
+
+La BDALTI est la composante altimétrique du référentiel à grande
+échelle de l'IGN.
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../../../../main"
+%%% End:
