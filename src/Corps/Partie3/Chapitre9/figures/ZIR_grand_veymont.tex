@@ -1,25 +1,19 @@
 \begin{tikzpicture}
   \tikzset{et/.style={above,font=\footnotesize\vphantom{Ag}}}
-  %
+  % 
   \node[inner sep=0pt, anchor=south west] (image) at (0,0){\includegraphics{./figures/ZIR_grand_veymont.png}};
-  %
+  % 
   \begin{scope}
     \node (P2) at ([yshift=-.5cm]image.south east) {};
     \node (P1) at ([yshift=-.5cm]image.south west) {};
+    % 
+    \node (rect) [anchor=north west, minimum width=1cm,minimum
+    height=.25cm] at ([yshift=-.25cm]P1) {}; \path[draw=RdBu-9-1, line
+    width=1mm](rect.west) --([xshift=-1ex]rect.south) -- ([xshift=1ex]rect.north)
+    -- (rect.east);
     %
-    \foreach \x [evaluate=\xshift using \x/10, evaluate=\rad using (\x * .0004) + .01] in {0,...,100}
-    {
-      \draw[fill=black,draw=none, below] ([xshift=\xshift cm, yshift=-.5cm]P1) circle [radius=\rad cm];
-    }
-    %
-    \path(P1 |- 0cm,-1cm) --++ (10,0)
-    node[et,pos=0] {0}
-    node[et,pos=.1] {0,1}
-    node[et,pos=.2] {0,2}
-    node[et,pos=.3] {0,3}
-    node[et,pos=.4] {0,4}
-    node[et,pos=.65] {0,65}
-    node[et,pos=1] {1};
+    \node[anchor=west, font=\tiny\vphantom{Ag}, text width = 4cm] at
+    ([xshift=1ex]rect.east) {Limite de la \ac{zir}};
     % Échelle
     \draw[-] (P2 |- -1cm,-1cm) --++ (-1,0) node[et,pos=.5] {\SI{500}{\meter}};
     % Légende détaillée
