@@ -59,22 +59,20 @@ professionnels, comme QGis ou ArcGis. Cette solution permet de
 disposer des nombreuses fonctions de manipulation, d'analyse et de
 visualisation de ces logiciels. Cette approche a cependant deux
 défauts, dont l'un majeur. Tout d'abord il est nécessaire de se
-familiariser avec ce nouveau cadre,
+familiariser avec ces fonctions spécifiques, ce qui peut nécessiter un
+temps d’apprentissage conséquent, bien que cette remarque soit valable
+pour n'importe quelle bibliothèque logicielle. De plus, le choix
+d'utiliser le \emph{cadriciel} d'un SIG donné, impose une forte
+dépendance à ce logiciel, ce qui peut considérablement augmenter la
+difficulté du déploiement d'un logiciel fondé sur ces technologies. À
+la réflexion, l'utilisation du \emph{cadriciel} d'un SIG nous semble
+plus adapté à un développement de \emph{scripts} ---~de petits
+logiciels conçus pour une tâche spécifique et déclenchés manuellement
+par l'utilisateur~---, étendant les fonctionnalités d'un SIG, plutôt
+que d'un logiciel unique, fonctionnant de manière quasi-automatisée.
 
-En revanche elle introduit une
-dépendance 
-%
-ce qui permet d’accéder aux fonctions
-internes au logiciel, ce qui, dans notre cas, peut faciliter le
-développement des fonctions de spatialisation. Cette solution nous
-rend cependant dépendant du logiciel de SIG utilisé, ce qui a deux
-défauts majeurs. D'une part il est nécessaire de se familiariser avec
-les fonctions spécifiques du logiciel, ce qui ajoute un coup de
-développement et d'appropriation du code supplémentaire. De plus cela
-ajoute une dépendance forte au code, ce qui est un frein
-supplémentaire.
-
-
+Le rejets des \emph{cadriciels} d'un SIG n'impose cependant pas de
+rejeter toute bibliothèque de manipulations de données géométrique.
 
 
 Nous avons donc choisi d'utiliser une solution totalement indépendante
