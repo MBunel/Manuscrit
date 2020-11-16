@@ -145,9 +145,16 @@ Owlready \autocite{Lamy2017}
 
 \subsection{Données}
 
-L'implémentation 
+La spatialisation des alertes sélectionnées nécessite la définition
+d'une base de données géographique contenant l'ensemble des objets
+géographiques pouvant faire office \emph{d'objets de référence.}
 
+La mise en place de cette base de données n'est nécessaire que pour le
+test de notre implémentation, dans la version finale les données sont
+stoquées dans une base de données construite dans un autre axe du
+projet CHOUCAS (\autoref{chap:02}).
 
+Laba 
 
 L'ensemble des \emph{objets de référence} utilisés pour la
 spatialisation des indices de localisation proviennent de la même base
@@ -168,6 +175,14 @@ objets du réels, pouvant donc être utilisés comme \emph{objets de
   référence} dans un \emph{indice de localisation,} n'y figurent pas
 nécessairement.
 
+Les données vectorielles utilisées pour la représentation des
+\emph{objets de référence données} ne sont pas les seules dont nous
+ayons besoin pour traiter les alertes. Il est en effet nécessaire de
+disposer d e données altimétriques, sous la forme de \ac{mnt}, pour
+spatialiser des \emph{indices de localisation} impactés par le relief,
+comme le temps de marche (\onto[orl]{A\-Temps\-De\-Marche}), les
+relations traitant de verticalité (\eg \onto[orl]{Sous\-Altitude}) ou
+la visibilité (\onto[orl]{Site\-Voit\-Cible}).
 
 La BDALTI est la composante altimétrique du référentiel à grande
 échelle de l'IGN.
