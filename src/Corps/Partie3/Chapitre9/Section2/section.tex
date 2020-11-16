@@ -70,6 +70,10 @@ concept \onto[orl]{Après\-Jalon\-Sut\-Itineraire}
 Ce dernier indice de localisation ne présente pas de difficultés
 spécifiques pour être mis en place.
 
+
+
+
+
 \subsubsection{Fusion des zones de localisation compatibles}
 
 À la suite de la spatialisation des différents indices de localisation
@@ -78,7 +82,16 @@ et de la composition des
 \subsection{Critique de la modélisation}
 \label{subsec:9-2-3}
 
-\tdi{Impact de la position du toponyme "pas de la ville" sur la modélisation}
+\tdi{Impact de la position du toponyme "pas de la ville" sur la
+  modélisation}
+
+Un autre problème notable est l'impact que peut avoir la géométrie des
+objets de référence sur le résultat de la spatialisation. Par exemple,
+l'indice de localisation : \enquote{À \SI{800}{\meter} du Pas de la
+  Ville} a été spatialisé en calculant la métrique
+\onto[orla]{Distance} à partir du ponctuel plaçant l'oronyme
+\enquote{Pas de la Ville} dans la base de données.
+
 
 %%% Local Variables:
 %%% mode: latex
