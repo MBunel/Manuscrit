@@ -71,17 +71,23 @@ logiciels conçus pour une tâche spécifique et déclenchés manuellement
 par l'utilisateur~---, étendant les fonctionnalités d'un SIG, plutôt
 que d'un logiciel unique, fonctionnant de manière quasi-automatisée.
 
-Le rejets des \emph{cadriciels} d'un SIG n'impose cependant pas de
-rejeter toute bibliothèque de manipulations de données géométrique.
+Le rejet des \emph{cadriciels} d'un SIG n'impose cependant pas de se
+passer de toute bibliothèque de manipulations de données
+géométrique. Certains projets libres, au premier rang desquels on
+trouve les développements de \emph{l'open géo consortium} (OGC),
+proposent de nombreuses bibliothèques permettant la manipulation de
+données géographiques, qu'elles soient représentées par des vecteurs
+ou des rasters. Cependant, les fonctions qui auraient été regroupées
+dans un même \emph{cadriciel,} sont alors dispersées entre plusieurs
+bibliothèques indépendantes, généralement plus flexibles, mais qui ne
+sont pas nécessairement conçues pour fonctionner ensemble.
 
-
-Nous avons donc choisi d'utiliser une solution totalement indépendante
-des logiciels de SIG, uniquement fondée sur des bibliothèques de bas
-niveau.
-
-
-
-
+Choisir entre un \emph{cadriciel} de SIG et un ensemble de
+bibliothèques indépendantes, revient donc à choisir entre un cadre de
+développement cohérent, mais contraignant par son apprentissage et sa
+mise en place, et un ensemble de bibliothèques indépendantes, plus
+versatiles. Nous avons privilégié la seconde option, les contraintes
+apportées par les \emph{cadriciels} de SIG étant trop restrictives.
 
 Les trois phases de notre méthode traitant d'objets différents (\ie
 des \emph{indices de localisation} dans la phase de décomposition et
@@ -139,6 +145,17 @@ Owlready \autocite{Lamy2017}
 
 \subsection{Données}
 
+La spatialisation des alertes sélectionnées nécessite la définition
+d'une base de données géographique contenant l'ensemble des objets
+géographiques pouvant faire office \emph{d'objets de référence.}
+
+La mise en place de cette base de données n'est nécessaire que pour le
+test de notre implémentation, dans la version finale les données sont
+stoquées dans une base de données construite dans un autre axe du
+projet CHOUCAS (\autoref{chap:02}).
+
+Laba 
+
 L'ensemble des \emph{objets de référence} utilisés pour la
 spatialisation des indices de localisation proviennent de la même base
 de données, la BDTOPO, produite par l'IGN. Cette dernière
@@ -158,10 +175,16 @@ objets du réels, pouvant donc être utilisés comme \emph{objets de
   référence} dans un \emph{indice de localisation,} n'y figurent pas
 nécessairement.
 
-
-La BDALTI est la composante altimétrique du référentiel à grande
-échelle de l'IGN.
-
+Les données vectorielles utilisées pour la représentation des
+\emph{objets de référence données} ne sont pas les seules dont nous
+ayons besoin pour traiter les alertes. Il est en effet nécessaire de
+disposer d e données altimétriques, sous la forme de \ac{mnt}, pour
+spatialiser des \emph{indices de localisation} impactés par le relief,
+comme le temps de marche (\onto[orl]{A\-Temps\-De\-Marche}), les
+relations traitant de verticalité (\eg \onto[orl]{Sous\-Altitude}), ou
+la visibilité (\onto[orl]{Site\-Voit\-Cible}). Pour disposer de
+données altimétriques nous avons utilisé la BDALTI, qui est la
+composante altimétrique du référentiel à grande échelle de l'IGN.
 
 
 %%% Local Variables:

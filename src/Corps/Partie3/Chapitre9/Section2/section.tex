@@ -1,12 +1,23 @@
-L'alerte dite du \emph{Grand Veymont} est l'enregistrement audio d'un
-appel au secours effectué au 
+La première des alertes que nous proposons de traiter est l'alerte
+dite du \emph{Grand Veymont,} issue de l'enregistrement d'un appel au
+secours effectué par un accompagnateur en montagne, au sujet d'un de
+ses clients.
+%
+Cette alerte est la plus simple est la plus courte de celles que nous
+traiterons ici.
 
 \subsection{Présentation de l'alerte}
 \label{subsec:9-2-1}
 
+L'alerte du \emph{Grand Veymont} est l'extrait, d'une durée de 1
+minute 06, d'un appel effectué par un accompagnateur en montagne au
+sujet d'un de ses clients \autoref{anx:retrans-gv-verb}.
+
+
 Cette alerte est la plus courte de celles que nous présenterons ici,
-elle est composée de 12 extraits, pour un total de 16 \emph{indices de
-  localisation.}
+elle est composée de 12 extraits, pour un total de 16 expressions.
+
+
 
 Pas d'objets multiples
 
@@ -33,38 +44,340 @@ est donné dans la \autoref{anx:retrans-gv-verb}.
 Comme nous l’expliquions dans le \autoref{chap:05}, 
 
 
-Une partie des indices retranscrits ne sont cependant pas pertinents
-pour notre cas d'appliqaution.
+L'alerte commence par deux extraits (\nex{1} et \nex{2}) décrivant
+le contexte de la descente :
+%
+\begin{dialogue}
+  % 
+  \Req \nex{1-1} J'ai eu du mal à descendre entre le sommet du grand
+veymont et là où je suis. \nex{2-1} La descente était très très lente.
+\end{dialogue}
+%
+Ces deux premiers extraits ne donnent pas
+%
+On peut cependant extrapoler certaines informations de ces deux
+extraits. Par exemple, on peut légitimement considérer que le
+requérant n'est plus sur le sommet du \emph{Grand Veymont,} ce que
+l'on peut alors traduire par la relation de localisation
+\onto[orl]{Hors\-De\-Planimétrique}, indiquant que la cible est à
+l'extérieur du site. Dans le contexte de l'alerte, le site est le
+sommet du \emph{Grand Veymont,} sont étendue est donc particulièrement
+réduite. Par conséquent la \ac{zlc} de cet indice sera de grande
+taille, ce qui rend cet indice de localisation peu discriminant.
+%
+Compte-tenu du contexte on peut également considérer que la position
+de la cible est située à une altitude inférieure à celle de du sommet
+du \emph{Grand Veymont}.
+%
 
-% Entre Grand Veymont et pas de la ville
 
-% Côté Sud/Nord
 
-% Au dela
+Les premiers indices donnant une information réellement discriminante
+sont ceux que l'on peut construire à partir des extraits \nex{3} et
+\nex{4}, plus riches :
+%
+\begin{dialogue}
+  %
+  \Sec \nex{3-1} Vous êtes entre \emph{Grand Veymont} et \emph{Pas de
+la Ville} ?
 
-% not foret
+\Req \nex{4-1} Je suis entre le \emph{Grand Veymont,} \nex{4-2} sous le
+\emph{Grand Veymont} et \emph{Pas de la Ville,} tout à fait, \nex{4-3}
+coté sud.
+\end{dialogue}
+%
+Les extraits \nex{3-1} et \nex{4-1} indiquent que le requérant se
+situe entre le sommet du \emph{Grand Veymont} et le \emph{Pas de la
+  Ville,} ce que l'on peut modéliser avec la \emph{relation de
+  localisation} \onto[orl]{Entre\-X\-et\-Y}.
+%
+Dans l'extrait \nex{4-2} le requérant indique que sa position est
+située en dessous du \emph{Grand Veymont.} Bien que ce ne soit pas
+explicitement mentionné dans l'extrait on comprend à l'aide du
+contexte et de l'extrait \nex{1-1} que le requérant se réfère ici au
+\emph{sommet} du \emph{Grand Veymont} et non à la montagne dans son
+ensemble. On peut donc ajouter un second indice de localisation,
+utilisant une relation de localisation retranscrivant cette
+description, comme \onto[orl]{Sous\-Altitude}. Nous avons cependant
+défini plusieurs relations de localisation dérivées de cette dernière,
+comme \onto[orl]{Sous\-Proche\-De}, permettant une spatialisation plus
+fine. Cependant, aucune de ces relations ne nous semble adaptée à la
+situation. La relation de localisation \onto[orl]{Sous\-Proche\-De},
+contraint l'éloignement au site. Or, rien dans les extraits de cette
+alerte ne permet d'affirmer que le requérant est proche du site, au
+contraire, des extraits comme le \nex{1-1} ou le \nex{4-2} laissent
+supposer que le requérant s'est déjà considérablement éloigné du
+sommet du \emph{Grand Veymont.} De la même manière, la relation de
+localisation \onto[orl]{Sous\-A\-L\-Aplomb\-De} ne nous semble pas
+adaptée pour représenter la sémantique de cet extrait. En effet, cette
+relation de localisation contraint la \ac{zlc} suivant l'axe de plus
+grande pente (\autoref{anx:orl_dic}). Cette contrainte nous semble ici
+trop restrictive, aucun élément de l'alerte ne permettant d'affirmer
+qu'une telle relation existe ici. Quant à la relation de localisation
+\onto[orl]{Sous\-Jalon\-Sur\-Itineraire}, cette dernière contraint la
+relation de localisation \onto[orl]{Sous\-Altitude}, par la position
+des itinéraires.
 
-% 800
+%
+Dans l'extrait \nex{4-3} le requérant complète cette information en
+précisant sa position par une relation de localisation cardinale,
+relative au site.
+%
+Cette description est cependant difficile à interpréter, d'une part
+car le contexte ne permet pas de savoir si c'est le sommet du
+\emph{Grand Veymont} ou le \emph{Pas de la Ville} qui fait office de
+site, ce qui est relevé par le secouriste :
+%
+\begin{dialogue}
+  %
+  \Sec \nex{5-1} Côté Sud du \emph{Pas de la Ville} ?
+%
+  \Req \nex{6-1} Non, côté Nord.
+\end{dialogue}
+%
+En précisant le site dans sa question (\nex{5-1}) le secouriste nous
+permet d'interpréter l'indice de localisation donné par le requérant
+(\nex{6-1}).
+%
+Dans ce contexte il est difficile de savoir si la contradiction ente
+les extraits \nex{4-3} et \nex{6-1} est due à une erreur du requérant,
+ou à une utilisation implicite du second site (le \emph{Grand
+  Veymont}). Toutefois, si l'on observe le cadre géographique de
+l'alerte (\autoref{fig:zir_grand_veyont}) on peut remarquer que seules
+trois configurations sont possibles :
+%
+\begin{enumerate*}[label=(\arabic*)]
+\item le requérant est au nord du \emph{Grand Veymont} et du \emph{Pas
+    de la Ville},
+\item le requérant est au nord du \emph{Grand Veymont} et au sud du
+  pas de la Ville, et
+\item le requérant est au sud du \emph{Pas de la Ville} et du
+  \emph{Grand Veymont.}
+\end{enumerate*}
+%
+
+On peut déduire de ces extraits (\nex{4-3, 5-1, 6-1}) que le requérant
+est situé au
+%
+On peut donc envisager d'utiliser la relation de localisation
+\onto[orl]{Au\-Nord\-De} pour spatialiser cet indice de
+localisation. Cependant, cette relation correspond au regroupement de
+deux autres relations \onto[orl]{Dans\-La\-Partie\-Nord\-De} et
+\onto[orl]{Au\-Nord\-De\-Externe}, dont l'usage peut être ici plus
+pertinent.
+%
+La relation de localisation \onto[orl]{Dans\-La\-Partie\-Nord\-De}
+décrit une situation où la cible est située à \emph{l'intérieur} du
+site et dans sa partie nord.
+%
+Rien dans la situation décrite par le requérant n'indique qu'il serait
+situé dans le site
+%
+La relation de localisation \onto[orl]{Au\-Nord\-De\-Externe} décrit
+quant à elle une situation où la cible est au nord du site, sans être
+ni contact, ni au sein de celui-ci.
+%
+Dans le contexte de cette alerte, l'utilisation de cette relation
+indiquerait que le requérantxxx
+
+
+
+
+
+\begin{dialogue}
+  % 
+  \Sec \nex{7-1} Vous êtes au-delà du \emph{Pas de la Ville} ?
+  \nex{7-2} Entre \emph{Pas de la ville} et \emph{Pierre Blanche ?}
+  % 
+  \Req \nex{8-1} Oui, je suis au-delà du \emph{Pas de la Ville.}
+\end{dialogue}
+%
+
+
+
+Viennent ensuite les extraits \nex{9-1} et \nex{10-1} :
+%
+\begin{dialogue}
+  %
+  \Req \nex{9-1} Sur une zone à peu près plate et
+  caillouteuse. \nex{10-1} Sur une petite prairie.
+\end{dialogue}
+%
+Ces deux extraits décrivent la nature du terrain où se situe
+actuellement le requérant. Dans ce cas la relation de localisation la
+plus adaptée est \onto[orl]{Dans\-Planimetrique}, qui est conçue pour
+décrire des situations d'inclusions.
+
+
+La dernière partie de l'alerte est composée des extraits \nex{11-1} et
+\nex{12-1}, portant sur l'éloignement de la position du requérant au
+\emph{Pas de la ville :}
+%
+\begin{dialogue}
+  \Sec \nex{11-1} Vous êtes à combien du Pas de la ville ?
+  % 
+  \Req \nex{12-1} \textins{À} 800 mètres, je crois, à vol d'oiseau.
+\end{dialogue}
+%
+Dans cet extrait, le requérant précise clairement la nature de la
+distance qu'il décrit, il s'agit d'une distance à vol d'oiseau,
+visuellement approximée.
+
+Ce type de configuration est représenté par la relation de
+localisation
+\onto[orl]{Distance\-Quanti\-ta\-ti\-ve\-Planimetrique}. Comme nous
+l'indiquions dans le \autoref{chap:07}, cette relation de localisation
+est atomique, elle n'admet donc pas de décomposition.
+
+%
+Au terme de cette phase de retranscription et d'identification des
+indices de localisation on a donc un ensemble de XX indices de
+localisation.
+%
+\begin{enumerate}
+\item ss
+\item XX
+\item R, \onto[orl]{Distance\-Quantitative}(800m), \emph{Pas de la Ville}
+\end{enumerate}
 
 
 \subsection{Modélisation de l'alerte}
 \label{subsec:9-2-2}
 
 
-\subsubsection{Décomposition des indices des indices de localisation}
-\label{subsec:9-2-2-2}
 
-\subsubsection{Spatialisation des indices de localisation décomposés}
-\label{subsec:9-2-2-3}
+
+\subsubsection{Au nord du Pas de la Ville}
+
+La relation de localisation \onto[orl]{Au\-Nord\-De\-Externe},
+utilisée pour retranscrire la sémantique de l'extrait \nex{6-1} est
+une relation de localisation décomposable.
+%
+Cette relation se décompose en deux relation de localisation
+atomiques, \onto[orla]{Au\-Nord\-De} et
+\onto[orla]{Hors\-De\-Planimétrique}. La relation de localisation
+atomique \onto[orla]{Au\-Nord\-De} \footnote{Que la relation de
+  localisation \protect\onto[orla]{Au\-Nord\-De\-Externe} partage avec
+  sa relation sœur \protect\onto[orla]{Dans\-La\-Partie\-Nord\-De}.}
+
+
+\begin{figure}
+  \centering
+  \input{./figures/EcartNord_PasVille.tex}
+  \caption{Métrique \protect\onto[orla]{Ecart\-Angulaire}, calculée
+    pour la spatialisation de la relation de localisation
+    \protect\onto[orl]{AuNordDe}. La résolution du raster a
+    été réduite de 5 à 50 mètres pour la représentation.}
+  \label{fig:veyont_EcartNord}
+\end{figure}
+
+
+% \begin{figure}
+%   \centering
+%   \input{./figures/fuzzy_veymont_distance.tex}
+%   \caption{XXXX \enquote{Grand Veymont}}
+%   \label{fig:fuzzy_veyont_distance}
+% \end{figure}
+
+
+
+\subsubsection{Au-delà du Pas de la Ville}
+
+La spatialisation de l'indice de localisation \enquote{je suis au-delà
+  du Pas de la Ville}, pose certaines difficultés.
+
+La relation de localisation de cet indice est représentée par le
+concept \onto[orl]{Après\-Jalon\-Sut\-Itineraire}
+(\autoref{anx:orl_dic})
+
+\subsubsection{À 800 mètres du Pas de la Ville}
+
+Ce dernier indice de localisation ne présente pas de difficultés
+spécifiques pour être mis en place.
+
+
+Cette relation est spatialisée à l'aide du \emph{rasteriser}
+\onto[orla]{Geometrie}, de la \emph{métrique}
+\onto[orla]{Dis\-tan\-ce} et du \emph{fuzzyficateur}
+\onto[orla]{Eq\-Val}.
+
+Dans le cas présent, \emph{l'objet de référence} mentionné est le
+\emph{Pas de la Ville,} représenté par un ponctuel dans la composante
+oronymie de la BDTOPO.
+
+
+La rasterisation de ce
+
+
+
+La \autoref{fig:veyont_distance} représente le résultat du calcul de
+la métrique \onto[orla]{Distance} ---~calculée à partir du ponctuel
+(rasterisé) représentant le \emph{Pas de la Ville}~--- pour l'ensemble
+des positions de la \ac{zir}. Si cette métrique ne présente pas de
+caractéristiques particulièrement surprenantes, on peut quand même
+noter l'approximation qui est ici faite. Le \emph{Pas de la Ville} est
+en effet résumé par un point, alors que le toponyme désigne un
+passage, une zone de transition, qui serait sans doute mieux
+représentée par un polygone, voire une polyligne. De plus, le point
+utilisé n'est pas placé au niveau du point central du Pas de la Ville,
+mais à plusieurs centaines de mètres de ce dernier.
+
+
+\begin{figure}
+  \centering
+  \input{./figures/distance_PasVille.tex}
+  \caption{Métrique \protect\onto[orla]{Distance}, calculée pour la
+    spatialisation de la relation de localisation atomique
+    \protect\onto[orla]{Distance\-Pla\-ni\-mé\-trique}. La résolution
+    du raster a été réduite de 5 à 50 mètres pour la représentation.}
+  \label{fig:veyont_distance}
+\end{figure}
+
+Pour construire la \ac{zlc} spatialisant cet indice de localisation il
+est ensuite nécessaire de \emph{fuzzyfier} la métrique
+(\autoref{fig:veyont_distance}) à l'aide du fuzzyficateur
+\onto[orla]{Eq\-Val}.
+
+\begin{figure}
+  \centering
+  \input{./figures/fuzzy_veymont_distance.tex}
+  \caption{XXXX \enquote{Grand Veymont}}
+  \label{fig:fuzzy_veyont_distance}
+\end{figure}
+
+
+
+\begin{figure}
+  \centering
+  \input{./figures/Distance_GrandVeymont.tex}
+  \caption{XXXX \enquote{Grand Veymont}}
+  \label{fig:Distance_GrandVeymont}
+\end{figure}
+
+
+
 
 \subsubsection{Fusion des zones de localisation compatibles}
-\label{subsec:9-2-2-4}
 
+À la suite de la spatialisation des différents indices de localisation
+et de la composition des 
 
 \subsection{Critique de la modélisation}
 \label{subsec:9-2-3}
 
-\tdi{Impact de la position du toponyme "pas de la ville" sur la modélisation}
+\tdi{Impact de la position du toponyme "pas de la ville" sur la
+  modélisation}
+
+Un autre problème notable est l'impact que peut avoir la géométrie des
+objets de référence sur le résultat de la spatialisation. Par exemple,
+l'indice de localisation : \enquote{À \SI{800}{\meter} du Pas de la
+  Ville} a été spatialisé en calculant la métrique
+\onto[orla]{Distance} à partir du ponctuel plaçant l'oronyme
+\enquote{Pas de la Ville} dans la base de données. Or, la
+représentation d'un géotype étendu, comme un pas ou une crête, par un
+point est une approximation conséquente, impactant fortement la
+spatialisation.
+
 
 %%% Local Variables:
 %%% mode: latex
