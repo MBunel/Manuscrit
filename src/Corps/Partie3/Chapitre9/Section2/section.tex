@@ -85,28 +85,7 @@ Dans le cas présent, \emph{l'objet de référence} mentionné est le
 \emph{Pas de la Ville,} représenté par un ponctuel dans la composante
 oronymie de la BDTOPO.
 
-La rasterisation de ce
 
-La métrique 
-
-
-\begin{figure}
-  \centering
-  \input{./figures/distance_PasVille.tex}
-  \caption{Métrique \protect\onto[orla]{Distance} calculée pour la
-    spatialisation de la relation de localisation atomique
-    \protect\onto[orla]{Distance\-Pla\-ni\-mé\-trique}}
-  \label{fig:veyont_distance}
-\end{figure}
-
-
-
-\begin{figure}
-  \centering
-  \input{./figures/fuzzy_veymont_distance.tex}
-  \caption{XXXX \enquote{Grand Veymont}}
-  \label{fig:fuzzy_veyont_distance}
-\end{figure}
 
 
 \subsection{Modélisation de l'alerte}
@@ -127,6 +106,35 @@ concept \onto[orl]{Après\-Jalon\-Sut\-Itineraire}
 Ce dernier indice de localisation ne présente pas de difficultés
 spécifiques pour être mis en place.
 
+
+
+La rasterisation de ce
+
+La métrique \onto[orla]{Distance} est calculée pour l'ensemble des
+positions de la \ac{zir}, on obtient alors la
+\autoref{fig:veyont_distance}.
+
+\begin{figure}
+  \centering
+  \input{./figures/distance_PasVille.tex}
+  \caption{Métrique \protect\onto[orla]{Distance}, calculée pour la
+    spatialisation de la relation de localisation atomique
+    \protect\onto[orla]{Distance\-Pla\-ni\-mé\-trique}. La résolution
+    du raster a été réduite de 5 à 50 mètres pour la représentation.}
+  \label{fig:veyont_distance}
+\end{figure}
+
+Pour construire la \ac{zlc} spatialisant cet indice de localisation il
+est ensuite nécessaire de \emph{fuzzyfier} la métrique
+(\autoref{fig:veyont_distance}) à l'aide du fuzzyficateur
+\onto[orla]{Eq\-Val}.
+
+\begin{figure}
+  \centering
+  \input{./figures/fuzzy_veymont_distance.tex}
+  \caption{XXXX \enquote{Grand Veymont}}
+  \label{fig:fuzzy_veyont_distance}
+\end{figure}
 
 
 
