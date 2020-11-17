@@ -21,7 +21,7 @@
       % Axe
       \draw[<->] (0, \decalageX) --++ (9, 0) coordinate (x axis);
       % Graduations
-      \foreach \n/\t in {0.5/{},1.5/{},2.5/{},3.5/{},4.5/{0},5.5/{},6.5/{},7.5/{},8.5/{}}
+      \foreach \n/\t in {0.5/{},1.5/{},2.5/{},3.5/{},4.5/{800},5.5/{},6.5/{},7.5/{},8.5/{}}
       {
         \draw[-] (\n, \decalageX - .05) --++ (0, .1);
         \node[below, font=\footnotesize] at (\n, \decalageX - .05) {\t};
@@ -53,12 +53,9 @@
     \draw[ffc,line width=.5] (4.5,\decalageY) -- (4.5,2);
     \draw[fill, RdBu-9-1] (4.5,\decalageY) circle (2pt);
     \draw[fill, RdBu-9-1] (4.5,2) circle (2pt);
-    \node[above] at (4.5,2) {\(v\)};
     % Seuil 3
     \draw[ffc,line width=.5] (6,\decalageY) -- (6,0);
     \draw[fill, RdBu-9-1] (6,\decalageY) circle (2pt);
     \draw[fill, RdBu-9-1] (6,0) circle (2pt);
-    \draw[|-|] (3,-1.4cm) --++(3,0) node[pos=.5, fill=white, inner
-    sep=1pt, font=\small] {$\delta$};
   \end{scope}
 \end{tikzpicture}
