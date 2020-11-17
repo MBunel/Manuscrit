@@ -14,16 +14,20 @@
     % 
     \node[anchor=west, font=\tiny\vphantom{Ag}, text width = 4cm] at
     ([xshift=1ex]rect.east) {Limite de la \ac{zir}};
-    % 
+    %
+    \node[anchor=west, font=\tiny\vphantom{Ag}, text width = 4cm] at
+    (P1 |- 0,-1.5) {Distance au \emph{Pas de la Ville :}};
+    %
     \foreach \x [evaluate=\xshift using \x/10, evaluate=\rad using (\x * .0004) + .01] in {0,...,100}
     {
-      \draw[fill=black,draw=none, below] ([xshift=\xshift cm, yshift=-1.5cm]P1) circle [radius=\rad cm];
+      \draw[fill=black,draw=none, below] ([xshift=\xshift cm, yshift=-1.75cm]P1) circle [radius=\rad cm];
     }
     % 
-    \path(P1 |- 0cm,-2cm) --++ (10,0)
+    \path(P1 |- 0cm,-2.25cm) --++ (10,0)
     node[et,pos=0] {0}
     node[et,pos=.5] {\SI{2500}{\meter}}
     node[et,pos=1] {\SI{5000}{\meter}};
+
     % Échelle
     \draw[-] (P2 |- -1cm,-1cm) --++ (-1,0) node[et,pos=.5] {\SI{500}{\meter}};
     % Légende détaillée
