@@ -1,14 +1,21 @@
 La première des alertes que nous proposons de traiter est l'alerte
 dite du \emph{Grand Veymont,} issue de l'enregistrement d'un appel au
-secours effectué XXXXX par un accompagnateur en montagne, au sujet
-d'un de ses clients.
+secours effectué par un accompagnateur en montagne, au sujet d'un de
+ses clients.
+%
+Cette alerte est la plus simple est la plus courte de celles que nous
+traiterons ici.
 
 \subsection{Présentation de l'alerte}
 \label{subsec:9-2-1}
 
+L'alerte du \emph{Grand Veymont} est l'extrait, d'une durée de 1
+minute 06, d'un appel effectué par un accompagnateur en montagne au
+sujet d'un de ses clients \autoref{anx:retrans-gv-verb}.
+
+
 Cette alerte est la plus courte de celles que nous présenterons ici,
-elle est composée de 12 extraits, pour un total de 16 \emph{indices de
-  localisation.}
+elle est composée de 12 extraits, pour un total de 16 expressions.
 
 
 
@@ -50,6 +57,22 @@ pour notre cas d'appliqaution.
 % not foret
 
 % 800
+Enfin, les deux derniers extraits, nous renseignent sur la distance
+euclidienne qui sépare actuellement le requérant et la victime du Pas
+de la Ville, qui est d'environ 800 mètres.
+%
+\begin{dialogue}
+  \Sec \direct{11-1} Vous êtes à combien du Pas de la ville ?
+  % 
+  \Req \direct{12-1} \textins{À} 800 mètres, je crois, à vol d'oiseau
+\end{dialogue}
+
+Ce type de configuration est représenté par la relation de
+localisation
+\onto[orl]{Distance\-Quanti\-ta\-ti\-ve\-Planimetrique}. Comme nous
+l'indiquions dans le \autoref{chap:07}, cette relation de localisation
+est atomique, elle n'admet donc pas de décomposition.
+
 
 
 \subsection{Modélisation de l'alerte}
