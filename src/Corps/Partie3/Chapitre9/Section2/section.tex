@@ -44,8 +44,34 @@ est donné dans la \autoref{anx:retrans-gv-verb}.
 Comme nous l’expliquions dans le \autoref{chap:05}, 
 
 
-Une partie des indices retranscrits ne sont cependant pas pertinents
-pour notre cas d'appliqaution.
+L'alerte commence par deux extraits (\nex{1} et \nex{2}) décrivant
+le contexte de la descente :
+%
+\begin{dialogue}
+  % 
+  \Req \nex{1-1} J'ai eu du mal à descendre entre le sommet du grand
+veymont et là où je suis. \nex{2-1} La descente était très très lente.
+\end{dialogue}
+%
+Ces deux informations sont de la configuration, elles ne correspondent
+donc pas à un indice de localisation
+
+Viennent ensuite les extraits \nex{3} et \nex{4} qui donnent beaucoup
+d'informations :
+%
+\begin{dialogue}
+  %
+  \Sec \nex{3-1} Vous êtes entre \emph{Grand Veymont} et \emph{Pas de
+    la Ville} ?
+
+  \Req \nex{3-1} Je suis entre le \emph{Grand Veymont}
+  \textins{\nex{4-2} sous le \emph{Grand Veymont}} et \emph{Pas de la
+    Ville,} tout à fait, \nex{4-3} coté sud.
+\end{dialogue}
+%
+
+
+
 
 % Entre Grand Veymont et pas de la ville
 % Je ne suis pas sur le sommet
@@ -76,17 +102,6 @@ localisation
 \onto[orl]{Distance\-Quanti\-ta\-ti\-ve\-Planimetrique}. Comme nous
 l'indiquions dans le \autoref{chap:07}, cette relation de localisation
 est atomique, elle n'admet donc pas de décomposition.
-%
-Cette relation est spatialisée à l'aide du \emph{rasteriser}
-\onto[orla]{Geometrie}, de la \emph{métrique} \onto[orla]{Distance} et
-du \emph{fuzzyficateur} \onto[orla]{Eq\-Val}.
-
-Dans le cas présent, \emph{l'objet de référence} mentionné est le
-\emph{Pas de la Ville,} représenté par un ponctuel dans la composante
-oronymie de la BDTOPO.
-
-
-
 
 \subsection{Modélisation de l'alerte}
 \label{subsec:9-2-2}
@@ -106,6 +121,14 @@ concept \onto[orl]{Après\-Jalon\-Sut\-Itineraire}
 Ce dernier indice de localisation ne présente pas de difficultés
 spécifiques pour être mis en place.
 
+
+Cette relation est spatialisée à l'aide du \emph{rasteriser}
+\onto[orla]{Geometrie}, de la \emph{métrique} \onto[orla]{Distance} et
+du \emph{fuzzyficateur} \onto[orla]{Eq\-Val}.
+
+Dans le cas présent, \emph{l'objet de référence} mentionné est le
+\emph{Pas de la Ville,} représenté par un ponctuel dans la composante
+oronymie de la BDTOPO.
 
 
 La rasterisation de ce
