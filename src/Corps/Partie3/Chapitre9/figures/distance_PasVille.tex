@@ -15,18 +15,20 @@
     \node[anchor=west, font=\tiny\vphantom{Ag}, text width = 4cm] at
     ([xshift=1ex]rect.east) {Limite de la \ac{zir}};
     %
-    \node[anchor=west, font=\tiny\vphantom{Ag}, text width = 4cm] at
-    (P1 |- 0cm,-1.5cm) {Distance au \emph{Pas de la Ville :}};
+    \node[anchor=west, font=\footnotesize\vphantom{Ag}] at
+    (P1 |- 0cm,-1.7cm) {Distance au \emph{Pas de la Ville :}};
     %
-    \foreach \x [evaluate=\xshift using \x/10, evaluate=\rad using (\x * .0004) + .01] in {0,...,100}
-    {
-      \draw[fill=black,draw=none, below] ([xshift=\xshift cm, yshift=-1.75cm]P1) circle [radius=\rad cm];
-    }
-    % 
-    \path(P1 |- 0cm,-2.25cm) --++ (10,0)
-    node[et,pos=0] {0}
-    node[et,pos=.5] {\SI{2500}{\meter}}
-    node[et,pos=1] {\SI{5000}{\meter}};
+    \begin{scope}
+      \foreach \x [evaluate=\xshift using 1+\x/10, evaluate=\rad using (\x * .0004) + .01] in {0,...,100}
+      {
+        \draw[fill=black,draw=none, below] ([xshift=\xshift cm, yshift=-2cm]P1) circle [radius=\rad cm];
+      }
+      % 
+      \path(1,-2.5) --++ (10,0)
+      node[et,pos=0] {\SI{0}{\meter}}
+      node[et,pos=.5] {\SI{2500}{\meter}}
+      node[et,pos=1] {\SI{5000}{\meter}};
+    \end{scope}
 
     % Échelle
     \draw[-] (P2 |- -1cm,-1cm) --++ (-1,0) node[et,pos=.5] {\SI{500}{\meter}};
