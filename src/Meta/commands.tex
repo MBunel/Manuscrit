@@ -103,6 +103,13 @@
 
 \newcommand\nex[1]{\textsf{\footnotesize[#1]}}
 
+\makeatletter
+\newcommand{\lnex}[2]{%
+  \phantomsection
+   \nex{#1}\def\@currentlabel{\unexpanded{\nex{#1}}}\label{#2}%
+}
+\makeatother
+
 
 \newcommand\tdi[1]{\todo[inline]{#1}}
 
