@@ -83,6 +83,14 @@
   \scshape\lowercase{#1}~:\hfil
 }
 
+\newenvironment{dialogue*}{%
+  \begin{quote}
+    \begin{dialogue}
+    }{%
+    \end{dialogue}
+  \end{quote}
+}
+
 \newcommand\Req{\speak{\makebox[3pt]{R.}\,}}
 \newcommand\Sec{\speak{\makebox[3pt]{S.}\,}}
 \newcommand\CRec{\direct{Enregistrement coup\'e}}
