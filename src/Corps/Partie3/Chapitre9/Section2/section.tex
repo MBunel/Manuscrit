@@ -356,11 +356,21 @@ localisation étant décomposés dès leur saisie. Dans le cas de l'alerte
 \emph{Grand Veymont} on a donc 9 indices de localisation, dans
 l'ensemble assez simples à spatialiser, comme nous allons le voir.
 
+Pour des raisons de lisibilité nous présenterons l'ensemble des
+opérations permettant de passer des indices de localisation identifiés
+précédemment à leur \ac{zlc}, en regroupant dans une même partie la
+décomposition des objets de référence et de relations de localisation,
+la spatialisation, la fusion de relations de localisation atomiques et
+des objets de référence indéfinis. Seule la fusion des \ac{zlc} des
+différents indices en vue de la construction de la \ac{zlp} sera
+séparée du reste.
+
 \subsubsection{XXX}
 
-Le premier des indices de localisation que nous avons identifié est :
-\enquote{le requérant est \onto[orl]{Hors\-De\-Planimetrique} du
-  sommet du \emph{Grand Veymont}}
+Si l'on converse l'ordre des extraits, le premier des indices de
+localisation est \enquote{le requérant est
+  \onto[orl]{Hors\-De\-Planimetrique} du sommet du \emph{Grand
+    Veymont}}. Pour 
 
 Comme nous l'expliquions dans le \autoref{chap:07}, la relation de
 localisation \onto[orl]{Hors\-De\-Planimetrique} est, comme la
@@ -369,6 +379,13 @@ relation \onto[orl]{Dans\-Planimetrique} à laquelle elle s'oppose
 localisation atomique.
 
 De plus 
+
+\begin{figure}
+  \centering
+  \input{./figures/Distance_GrandVeymont.tex}
+  \caption{Distance euclidienne au sommet du \enquote{Grand Veymont}}
+  \label{fig:Distance_GrandVeymont}
+\end{figure}
 
 
 \subsubsection{Au nord du Pas de la Ville}
@@ -475,12 +492,6 @@ est ensuite nécessaire de \emph{fuzzyfier} la métrique
 
 
 
-\begin{figure}
-  \centering
-  \input{./figures/Distance_GrandVeymont.tex}
-  \caption{XXXX \enquote{Grand Veymont}}
-  \label{fig:Distance_GrandVeymont}
-\end{figure}
 
 
 
