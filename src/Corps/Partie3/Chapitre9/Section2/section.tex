@@ -510,6 +510,27 @@ atomique \onto[orla]{Au\-Nord\-De} \footnote{Que la relation de
 Une nouvelle fois l'objet de référence utilisé est nommé, il n'est
 donc pas nécessaire de procéder à sa décomposition.
 
+Il est ici nécessaire de spatialiser deux relations de localisaiton
+atomiques, puis de les fusionner
+
+La première d'entre elles, \onto[orla]{Au\-Nord\-De}
+(\autoref{fig:ex_parties_statialisation_AuNordDe})
+
+\begin{figure}
+  \centering
+  \input{../figures/exemple_parties_spatialisation_AuNordDe.tex}
+  \caption{\emph{Rasteriser,} \emph{métrique} et \emph{fuzzyficateur}
+    utilisés pour la \emph{spatialisation} de la \emph{relation de
+      localisation atomique} \protect\onto[orla]{Au\-Nord\-De}.}
+  \label{fig:ex_parties_statialisation_AuNordDe}
+\end{figure}
+
+La seconde \emph{relation de localisaiton atomique} est
+\onto[orla]{Hors\-De\-Pla\-ni\-mé\-tri\-que}, dont nous avons déjà
+présenté la spatialisation (fig:ex_parties_statialisation_horsdeplani)
+
+On peut alors calculer les métriques
+
 \begin{figure}
   \centering
   \input{./figures/EcartNord_PasVille.tex}
@@ -520,6 +541,7 @@ donc pas nécessaire de procéder à sa décomposition.
   \label{fig:veyont_EcartNord}
 \end{figure}
 
+Puis fuzzyfier le résulta
 
 % \begin{figure}
 %   \centering
@@ -528,7 +550,15 @@ donc pas nécessaire de procéder à sa décomposition.
 %   \label{fig:fuzzy_veyont_distance}
 % \end{figure}
 
+On obtient alors la \ac{zlc} de ce troisième indice de localisation.
 
+% \begin{figure}
+%   \centering
+%   \input{./figures/Distance_GrandVeymont.tex}
+%   \caption{Zone de localisation compatible pour l'indice de
+%     localisation 1}
+%   \label{fig:ZLC_GrandVeymont_3}
+% \end{figure}
 
 \subsubsection{Au-delà du Pas de la Ville}
 
