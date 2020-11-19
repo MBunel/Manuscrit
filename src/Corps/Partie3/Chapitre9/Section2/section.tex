@@ -605,7 +605,18 @@ de référence nommé et la relation de localisation
 \onto[orl]{Distance\-Quantitative\-Planimetrique} étant atomique. 
 
 Comme le montre la
-\autoref{fig:ex_parties_statialisation_distancePlani}
+\autoref{fig:ex_parties_statialisation_distancePlani}, la relation de
+localisation \onto[orla]{Distance\-Quantitative\-Planimetrique} est
+spatialisée à l'aide du \emph{rasteriser} \onto[orla]{Geometrie}, de
+la \emph{métrique} \onto[orla]{Dis\-tan\-ce} et du
+\emph{fuzzyficateur} \onto[orla]{Eq\-Val}. On peut noter qu'elle
+partage le rasteriser et la métrique de la relation de localisaiton
+atomique \onto[orla]{Hors\-De\-Planimétrique}, déjà utilisée pour
+spatialiser le premier indice de localisation (\enquote{Le requérant
+  n'est pas au sommet du \emph{Grand Veymont}}) et lors de la
+décomposition de la relation de localisation
+\onto[orl]{Au\-Nord\-De\-Externe} (cf. troisième indice de
+localisation).
 
 \begin{figure}
   \centering
@@ -617,10 +628,7 @@ Comme le montre la
   \label{fig:ex_parties_statialisation_distancePlani}
 \end{figure}
 
-Cette relation est spatialisée à l'aide du \emph{rasteriser}
-\onto[orla]{Geometrie}, de la \emph{métrique}
-\onto[orla]{Dis\-tan\-ce} et du \emph{fuzzyficateur}
-\onto[orla]{Eq\-Val}.
+
 
 Dans le cas présent, \emph{l'objet de référence} mentionné est le
 \emph{Pas de la Ville,} représenté par un ponctuel dans la composante
