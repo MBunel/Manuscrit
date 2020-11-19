@@ -390,7 +390,15 @@ directement spatialisable.
 (\autoref{fig:ex_parties_statialisation_dansplani}), on peut
 spatialiser les deux concepts de manière assez semblable. Ces deux
 relations sont, en effet, spatialisées avec le même rasteriser et la
-même métrique, seul le fuzzyficateur les distingue. 
+même métrique, seul le fuzzyficateur les distingue
+(\autoref{fig:ex_parties_statialisation_horsdeplani}). Nous avons déjà
+détaillé les raisons du choix de ce rasteriser et de cette métrique
+pour la relation \onto[orla]{Dans\-Planimetrique} dans le
+\autoref{chap:07}. L'utilisation du fuzzyficateur \onto[otla]{Sup\-0}
+permet quand à elle d'attributer un degré d'appartenance non nul aux
+positions pour lesquelles la distance à l'objet de référence est
+supérieure à zéro, c'est-à-dire aux positions situées à l'extérieur de
+l'objet de référence.
 
 \begin{figure}
   \centering
@@ -401,6 +409,15 @@ même métrique, seul le fuzzyficateur les distingue.
     \protect\onto[orla]{Hors\-De\-Pla\-ni\-mé\-tri\-que}.}
   \label{fig:ex_parties_statialisation_horsdeplani}
 \end{figure}
+
+Dans le cas particulier de cet indice de localisation, l'objet de
+référence est un point
+
+
+On peut alors calculer la métrique à partir de cette rasterisation. La
+\autoref{fig:Distance_GrandVeymont} représente le résultat du calcul
+de la métrique \onto[orla]{Distance} pour toutes les positions de la
+\ac{zir} \footnote{} à partir du sommet du \emph{Grand Veymont.}
 
 
 \begin{figure}
