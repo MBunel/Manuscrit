@@ -589,7 +589,7 @@ La spatialisation de l'indice de localisation \enquote{je suis au-delà
   du Pas de la Ville}, pose certaines difficultés.
 
 La relation de localisation de cet indice est représentée par le
-concept \onto[orl]{Après\-Jalon\-Sut\-Itineraire}
+concept \onto[orl]{Apres\-Jalon\-Sut\-Itineraire}
 (\autoref{anx:orl_dic})
 
 \subsubsection{Entre}
@@ -599,7 +599,20 @@ concept \onto[orl]{Après\-Jalon\-Sut\-Itineraire}
 \subsubsection{Les Dans plani}
 
 Les \emph{indices de localisation} \ref{ind:gv6}, \ref{ind:gv7} et
-\ref{ind:gv8} sont spatialisables de la même manière.
+\ref{ind:gv8} utilisent la même relation de localisation,
+\onto[orl]{Dans\-Planimetrique}, mais appliquée à trois objets de
+référence différents, leur processus de spatialisation est donc
+identique.
+
+
+Objets de référence
+
+Comme nous l’expliquions lors de la spatialisation du premier indice
+de localisation (\ref{ind:gv1}), la relation de localisation
+\onto[orl]{Dans\-Planimetrique} est atomique. Son rasteriser est
+\onto[orla]{Geometrie}, sa métrique est \onto[orla]{Distance} et son
+fuzzyficateur est \onto[orla]{Inf\-0}
+(\autoref{fig:ex_parties_statialisation_dansplani}).
 
 
 
@@ -608,11 +621,12 @@ Les \emph{indices de localisation} \ref{ind:gv6}, \ref{ind:gv7} et
 \subsubsection{À 800 mètres du Pas de la Ville}
 
 Le dernier indice de localisation de l'alerte est : \enquote{le
-  requérant est à 800 mètres du \emph{Pas de la Ville}}. Une nouvelle
-fois nous sommes en présence d'un indice de localisation qu'il n'est
-pas nécessaire de décomposer, le \emph{Pas de la Ville} étant un objet
-de référence nommé et la relation de localisation
-\onto[orl]{Distance\-Quantitative\-Planimetrique} étant atomique. 
+  requérant est à 800 mètres du \emph{Pas de la Ville}}
+(\ref{ind:gv9}). Une nouvelle fois nous sommes en présence d'un indice
+de localisation qu'il n'est pas nécessaire de décomposer, le \emph{Pas
+  de la Ville} étant un objet de référence nommé et la relation de
+localisation \onto[orl]{Distance\-Quantitative\-Planimetrique} étant
+atomique.
 
 Comme le montre la
 \autoref{fig:ex_parties_statialisation_distancePlani}, la relation de
