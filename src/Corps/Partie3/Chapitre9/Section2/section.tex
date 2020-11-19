@@ -455,14 +455,23 @@ Le second indice de localisation que nous avons défini est \enquote{Le
   requérant est situé sous le sommet du \emph{Grand Veymont}}. Pour le
 modéliser nous avons choisi d'utiliser la relation de localisation
 \onto[orl]{Sous\-Altitude}, traduisant une différence d'altitude, sans
-autre forme de contrainte.
+autre forme de contrainte. Comme nous l'avons détaillé dans le
+\autoref{chap:07}, cette relation de localisation est atomique, il
+n'est donc pas nécessaire de la décomposer. De plus l'objet de
+référence utilisé, est comme nous l'avons vu pour l'indice de
+localisation précédent, nommé. On peut alors spatialiser directement
+cet indice de localisation.
 
-Comme nous l'avons détaillé dans le \autoref{chap:07}, la relation de
-localisation \onto[orl]{Sous\-Altitude} est une relation de
-localisation atomique, ayant \onto[orla]{Geometrie} comme rasteriser,
-\onto[orla]{Delta\-Nearest\-Val} comme métrique et
-\onto[orla]{Inf\-Val\-0} comme fuzzyficateur
-(\autoref{fig:ex_parties_statialisation_sousalt}).
+Le processus de spatialisation de la relation de localisation atomique
+\onto[orla]{Sous\-Altitude} a déjà été présenté dans le
+\autoref{chap:07}
+(\autoref{fig:ex_parties_statialisation_sousalt}). Pour ce faire on
+utilise le rasteriser \onto[orla]{Geometrie}, la métrique
+\onto[orla]{Delta\-Nearest\-Val}, qui calcule pour chaque position de
+la \ac{zir}, la différence d'altitude avec la position la plus proche
+de l'objet de référence et le fuzzyficateur \onto[orla]{Inf\-Val\-0},
+qui attribue un degré d'appartenance non nul à toutes les positions
+pour lesquelles la métrique à une valeur inférieure à zéro.
 
 L'objet de référence étant le même que pour le précédent indice
 
