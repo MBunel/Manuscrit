@@ -309,35 +309,35 @@ confiance moyenne à cet indice de localisation.
 Au terme de l'analyse de la retranscription de l'alerte on peut
 construire un ensemble d'indices (\autoref{eq:ens_ind_loc}), composé
 de 9 indices de localisation différents et non contradictoires :
-%
+% 
 \begin{enumerate}
-\item Le requérant est \onto[orl]{Hors\-De\-Planimetrique} du sommet
-  du \emph{Grand Veymont}
+\item \label{ind:gv1} Le requérant est
+  \onto[orl]{Hors\-De\-Planimetrique} du sommet du \emph{Grand Veymont}
   % 
-\item Le requérant est \onto[orl]{Sous\-Altitude} du sommet du
-  \emph{Grand Veymont}
+\item \label{ind:gv2} Le requérant est \onto[orl]{Sous\-Altitude} du
+  sommet du \emph{Grand Veymont}
   % 
-\item Le requérant est \onto[orl]{Au\-Nord\-De\-Externe} du \emph{Pas
-    de la Ville}
+\item \label{ind:gv3} Le requérant est
+  \onto[orl]{Au\-Nord\-De\-Externe} du \emph{Pas de la Ville}
   % 
-\item Le requérant est \onto[orl]{XX} du \emph{Pas de la Ville,} par
-  rapport au sommet du \emph{Grand Veymont}
+\item \label{ind:gv4} Le requérant est \onto[orl]{XX} du \emph{Pas de
+    la Ville,} par rapport au sommet du \emph{Grand Veymont}
   % 
-\item Le requérant est \onto[orl]{EntreXetY} le \emph{Pas de la ville}
-  est \emph{Pierre Blanche}
+\item \label{ind:gv5} Le requérant est \onto[orl]{EntreXetY} le
+  \emph{Pas de la ville} est \emph{Pierre Blanche}
   % 
-\item Le requérant est \onto[orl]{Dans\-Planimétrique} une zone à peu
-  près plate
+\item \label{ind:gv6} Le requérant est \onto[orl]{Dans\-Planimétrique}
+  une zone à peu près plate
   % 
-\item Le requérant est \onto[orl]{Dans\-Planimétrique} une zone
-  caillouteuse
+\item \label{ind:gv7} Le requérant est \onto[orl]{Dans\-Planimétrique}
+  une zone caillouteuse
   % 
-\item Le requérant est \onto[orl]{Dans\-Planimétrique} une petite
-  prairie
+\item \label{ind:gv8} Le requérant est \onto[orl]{Dans\-Planimétrique}
+  une petite prairie
   % 
-\item Le requérant est \onto[orl]{Distance\-Quantitative} de
-  \SI{800}{\meter}, avec une certitude moyenne, du \emph{Pas de la
-    Ville}
+\item \label{ind:gv9} Le requérant est
+  \onto[orl]{Distance\-Quantitative} de \SI{800}{\meter}, avec une
+  certitude moyenne, du \emph{Pas de la Ville}
 \end{enumerate}
 
 Chacun de ces indices de localisation peut à présent être traité,
@@ -598,7 +598,8 @@ concept \onto[orl]{Après\-Jalon\-Sut\-Itineraire}
 
 \subsubsection{Les Dans plani}
 
-XXX
+Les \emph{indices de localisation} \ref{ind:gv6}, \ref{ind:gv7} et
+\ref{ind:gv8} sont spatialisables de la même manière.
 
 
 
@@ -666,6 +667,8 @@ Pour cette modélisation (\autoref{fig:fuzzy_veyont_distance})
 L’application du fuzzyficateur (\autoref{fig:fuzzy_veyont_distance}) à
 la métrique (\autoref{fig:veyont_distance}) permet de construire la
 \ac{zlc} de cet indice ()
+
+
 
 Dans le cas présent, \emph{l'objet de référence} mentionné est le
 \emph{Pas de la Ville,} représenté par un ponctuel dans la composante
