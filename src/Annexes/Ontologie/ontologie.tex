@@ -180,17 +180,18 @@
     plaines, je vois un grand découvert devant moi.}}%
 
 \dict{\onto{DansLaDirection\-De\-X\-DepuisY}}{Cette relation de
-  localisation nécessite deux \emph{sites} : X qui fixe la direction
+  localisation nécessite deux \emph{sites} : $X$ qui fixe la direction
   et Y qui donne le point d'origine de cette direction. Cette relation
   de localisation indique que la \emph{cible} est située quelque part
-  \enquote{sur un cheminement entre X et Y}. Cette relation diffère de
-  \onto{EntreXetY} pour deux raisons : (1) il y a une tolérance au
-  dépassement dans l'axe du segment [XY], à une extrémité ou à
-  l'autre, pour tenir compte des éventuels détours nécessaires selon
-  le support du cheminement (espace homogène vs muni d'un réseau,
-  etc.); (2) dans la direction orthogonale à l'axe [XY], la
-  \emph{cible} est a priori davantage susceptible d'être éloignée du
-  segment à l'aplomb du milieu de celui-ci qu'à ses extrémités}{}%
+  \enquote{sur un cheminement entre $X$ et $Y$}. Cette relation
+  diffère de \onto{EntreXetY} pour deux raisons : (1) il y a une
+  tolérance au dépassement dans l'axe du segment $[XY]$, à une
+  extrémité ou à l'autre, pour tenir compte des éventuels détours
+  nécessaires selon le support du cheminement (espace homogène
+  \emph{vs} muni d'un réseau, etc.); (2) dans la direction orthogonale
+  à l'axe $[XY]$, la \emph{cible} est a priori davantage susceptible
+  d'être éloignée du segment à l'aplomb du milieu de celui-ci qu'à ses
+  extrémités}{}%
 
 \dict{\onto{DansLaPartieBasseDe}}{La \emph{cible} est située dans
   la partie basse du \emph{site}.}{}%
@@ -221,8 +222,15 @@
 \dict{\onto{DansLaPartieSudDe}}{La \emph{cible} se situe dans le
   \emph{site} et dans se partie sud.}{}%
 
-\dict{\onto{Dans\-Planimétrique}}{}{\enquote{Non, on est en
-    forêt.}}%
+\dict{\onto{Dans\-Planimetrique}}{La \emph{cible} est située dans
+  l’espace 2,5 D délimité par le \emph{site,} qui est donc considéré
+  comme délimitant une région sur la surface terrestre.  Cette
+  relation de localisation est mutuellement exclusive avec
+  \onto{HorsDePlanimetrique}, mais n'en est pas le complémentaire
+  (cf. \onto{ALaFrontiereDe}, qui est compatible avec
+  \onto{HorsDePlanimetrique}, avec \onto{DansPlanimetrique}, ou avec
+  une situation ou ni l'un ni l'autre ne s'applique).}{\enquote{Non,
+    on est en forêt.}}%
 
 \dict{\onto{DeAutreCoteDeParRapportA}}{La \emph{cible} est de l’autre
   côté du \emph{site} 1 par rapport au \emph{site} 2. Autrement dit,
