@@ -50,7 +50,8 @@ Comme nous l'avions déjà signalé lors de la présentation du \emph{fil
 fortement imprécises, surtout si on les compare aux extraits des
 alertes \emph{Grand Veymont} (\autoref{anx:retrans_grand_veymont}) et
 \emph{Moucherotte} (\autoref{anx:retrans_moucherotte}). Les
-descriptions sont ici peu informatives et discriminantes.
+descriptions sont ici peu informatives et discriminantes. La
+construction d'indices de localisations est ici plus délicate.
 
 La première de ces sept descriptions donne beaucoup d'informations sur
 le trajet suivit par la victime jusqu'à sa position actuelle. On
@@ -119,11 +120,18 @@ information un indice de localisation exprimant la position actuelle
 de la victime, par rapport au chemin dont elle vient de chuter.
 
 
-Vient ensuite la quatrième description où la victime indique qu'elle
-voit une partie de plan d'eau.
-%
-Il est ici assez facile d’identifier la relation de localisation
-adaptée à la modélisation de cette relation de localisation
+
+L'interprétation de la quatrième description de l'alerte, \enquote{La
+  victime voit une partie d'un plan d'eau} est plus évidente que celle
+des descriptions précédentes. En effet, deux relations de localisation
+spécifiques ont été introduites pour traiter des relations de
+visibilité \onto[orl]{Site\-Voit\-Cible} et
+\onto[orl]{Cible\-Voit\-Site}. Ces différentes relations permettent de
+distinguer les visibilités actives et passives. Dans le cas présent,
+la victime décrit ce qu'elle voit, on est donc dans une situation
+modélisable à l'aide de la relation de localisation
+\onto[orl]{Cible\-Voit\-Site}.
+
 
 L'interprétation de la cinquième description ne pose pas non plus de
 problèmes. La victime indique qu'elle se situe sous une route. Or,
