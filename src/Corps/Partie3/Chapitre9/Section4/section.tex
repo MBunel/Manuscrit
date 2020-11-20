@@ -50,15 +50,48 @@ Comme on peut le remarquer, ces indications
 
 La première description nous donne de nombreuses informations, 
 
-La seconde description nous indique que la victime a marché plusieurs
-heures. Ici le point de départ et la direction ne sont pas
-explicitement mentionnés.
+Le second élément de cette alerte, \enquote{La victime a marché
+  plusieurs heures}, nous donne une indication de la durée du
+déplacement de la victime. 
+
 
 Le troisième élément donné par le secouriste indique que la victime
-a chuté
+a chuté.
+%
+Nous n'avons cependant pas défini de relations de localisation
+permettant d'exprimer
+%
+On peut cependant adopter une approche alternative, en cherchant à
+décrire la position de la victime suite à cet événement.
 
-Vient ensuite la quatrième description
+Vient ensuite la quatrième description où la victime indique qu'elle
+voit une partie de plant d'eau.
+%
+Il est ici assez facile d’identifier la relation de localisation
+adaptée à la modélisation de cette relation de localisation
 
+
+
+Dans la cinquième descrition, la victime indique qu'elle est sous une
+route
+
+
+Dans la sixième description, la victime indique qu'elle se situe sous
+une ligne électrique trois brins.
+%
+Nous avons déjà présenté ce cas, notamment dans le \autoref{chap:06}
+où nous comparions les différentes implémentations de la théorie des
+sous-ensembles flous pour représenter des zones de localisation. Si
+nous n'avions pas encore présenté les différentes relations de
+localisation, définies dans l'ontologie des relations de localisation,
+nous avions déjà expliqué que cette description nécessitait que la
+relation de verticalité entre le \emph{site} et la \emph{cible} soit
+contrainte selon l'axe horizontal. Dit autrement, il est ici
+nécessaire d'être proche du \emph{site} et à une altitude inférieure
+du \emph{site} pour que l'on puisse affirmer qu'une position soit
+\enquote{sous} le \emph{site.} Une relation de localisation,
+\onto{Sous\-Proche\-De} a spécifiquement été définie pour modéliser ce
+type de relation.
 
 
 XXXXXXXXXXX
@@ -96,14 +129,32 @@ La \ac{zir} définie pour cette alerte est une zone de
   \label{fig:zir_fil_rouge}
 \end{figure}
 
-\subsubsection{Décomposition des indices de localisation}
-\label{subsec:9-4-2-1}
+\subsubsection{La victime est \protect\onto[orl]{Sous\-Proche\-De} un chemin}
 
-\subsubsection{Spatialisation des indices de localisation}
-\label{subsec:9-4-2-2}
+L'indice de localisation suivant (\ref{ind:fr3}) utilise la relation
+de localisation \onto[orl]{Sous\-Proche\-De} que nous avions déjà
+présenté, sans la nommer, dans le \autoref{chap:06}. Cette relation de
+localisation n'est pas atomique, elle est définie comme la conjonction
+de deux relations de localisation atomiques,
+\onto[orla]{Sous\-Altitude} et \onto[orla]{Proximal}.
 
-\subsubsection{Fusion des zones de localisation compatibles}
-\label{subsec:9-4-2-3}
+La première de ces deux relations de localisation atomiques
+\onto[orla]{Sous\-Altitude} a déjà été employée dans les exemples
+précédents, comme pour la spatialisation de l'indice de localisaiton :
+\enquote{Le requérant est \onto[orl]{Sous\-Altitude} du sommet du
+  \emph{Grand Veymont}} (\ref{ind:gv2}) pour l'alerte :
+\enquote{\emph{Grand Veymont}}. Pour rappel, cette relation de
+localisation atomique emploie \onto[orla]{Geometrie} comme rasteriser,
+\onto[orla]{Delta\-Nearest\-Val} comme métrique et
+\onto[orla]{Inf\-Val\-0} comme fuzzyficateur
+(\autoref{fig:ex_parties_statialisation_sousalt}).
+
+\subsubsection{La victime est \protect\onto[orl]{Sous\-Proche\-De} une ligne
+  électrique trois brins}
+
+Comme pour l'indice précédent (\ref{ind:fr5}), ce sixième indice de
+localisation emploie la relation de localisation
+\onto{Sous\-Proche\-De}. 
 
 \subsection{Critique de la modélisation}
 \label{subsec:9-4-3}
