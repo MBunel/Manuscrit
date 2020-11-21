@@ -43,6 +43,8 @@ les secouristes :
 \item La victime est sous une route et entend des véhicules.
 \item La victime est sous une ligne électrique 3 brins.
 \item La victime vient de passer du soleil à l'ombre.
+\item Le téléphone de la victime est connecté à une antenne GSM située
+  à XXXXX et orientée à XX
 \end{enumerate}
 
 Comme nous l'avions déjà signalé lors de la présentation du \emph{fil
@@ -200,6 +202,30 @@ horizontal. Dit autrement, il est ici nécessaire d'être proche du
 puisse affirmer qu'une position soit \enquote{sous} le \emph{site.}
 Une relation de localisation, \onto{Sous\-Proche\-De} a spécifiquement
 été définie pour modéliser ce type de relation.
+
+La sixième est dernière information que nous ayons sur cette alerte
+donne la position du relais téléphonique auquel le téléphone de la
+victime est connecté. Nous n'avons développé une relation de
+localisation permettant de prendre en compte ce type d'indice
+spécifique, ce qui imposerait de traiter des problèmes spécifiques,
+uniquement dédiés à la spatialisation de cette relation de
+localisation.
+%
+Il est cependant possible d'utiliser cette information pour extrapoler
+un nouvel indice de localisation, certes moins précis que celui que
+l'on pourrait obtenir avec une relation de localisation dédiée, mais
+tout de même discriminant.
+%
+On connait en effet l'orientation générale de l'antenne téléphonique
+de à laquelle le téléphone de la victime est connecté.
+%
+On peut alors employer la relation de localisation
+\onto[orl]{A\-L\-Est\-De}. Il n'y a ici pas de raisons d'employer une
+des relations de localisation dérivée de \onto[orl]{A\-L\-Est\-De},
+comme \onto[orl]{Dans\-La\-Partie\-Est\-De} ou
+\onto[orl]{A\-L\-Est\-De\-Externe}.
+
+
 
 Au terme de l'analyse de l'alerte on dispose donc de 6 indices de
 localisation à spatialiser:
