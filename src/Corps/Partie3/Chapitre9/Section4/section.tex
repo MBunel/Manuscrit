@@ -96,7 +96,19 @@ une estimation de la distance parcourue par la victime. Pour ce faire
 nous avons défini une relation de localisation
 \onto[orl]{A\-Temps\-De\-Marche\-De}, permettant de construire la
 \ac{zlc} atteignable en un temps de marche et à partir d'un point de
-départ donné.
+départ donné. La possibilité de construire un tel indice de
+localisation remplace avantageusement l'utilisation d'une relation de
+localisation telle que \onto[orl]{Aux\-Alentours\-De}. En effet, cette
+dernière ne donne qu'une information très vague sur la zone de
+présence de la victime, alors que la relation de localisation
+\onto[orl]{A\-Temps\-De\-Marche\-De} permet une modélisation plus
+fine, même dans le cas présent, où l'estimation du temps de parcours
+est très imprécise. Dans le cas de cette alerte nous avons donc
+considéré qu'il était inutile de définir un indice de localisation
+employant les relations de localisaiton \onto[orl]{Aux\-Alentours\-De}
+ou \onto[orl]{Proximal}, la relation
+\onto[orl]{A\-Temps\-De\-Marche\-De} étant plus pertinente et plus
+discriminante.
 
 Le troisième élément de l'alerte nous indique que \enquote{la victime
   a chuté de plusieurs mètres}. Prise sous cette forme, cette
