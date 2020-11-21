@@ -151,7 +151,6 @@ permet pas d'exprimer une telle description, il est donc nécessaire
 d'employer un modifieur, ce que nous détaillerons lors de la
 modélisation de cet indice de localisation.
 
-
 De manière similaire, la cinquième description est assez explicite. La
 victime indique qu'elle est située sous une route
 %
@@ -191,7 +190,6 @@ de créer des faux négatifs. En effet, l'hypothèse que nous proposons
 ici est assez contraignante et il nous semble inenvisageable de
 l'appliquer sans la confirmation de la victime.
 
-
 Dans la sixième description, la victime indique qu'elle se situe sous
 une ligne électrique trois brins. Nous avons déjà présenté ce cas,
 notamment dans le \autoref{chap:06} où nous comparions les différentes
@@ -204,37 +202,45 @@ le \emph{site} et la \emph{cible} soit contrainte selon l'axe
 horizontal. Dit autrement, il est ici nécessaire d'être proche du
 \emph{site} et à une altitude inférieure du \emph{site} pour que l'on
 puisse affirmer qu'une position soit \enquote{sous} le \emph{site.}
-Une relation de localisation, \onto{Sous\-Proche\-De} a spécifiquement
+La relation de localisation \onto{Sous\-Proche\-De} a spécifiquement
 été définie pour modéliser ce type de relation.
 
-La septième description donnée par le secouriste nous permet de savoir
-que la XXXX
+La septième description donnée par le secouriste nous indique que la
+position de la victime vient de passer du Soleil à l'ombre.
 
 
 La huitième et dernière information que nous ayons sur cette alerte
 donne la position du relais téléphonique auquel le téléphone de la
-victime est connecté. Nous n'avons développé une relation de
-localisation permettant de prendre en compte ce type d'indice
-spécifique, ce qui imposerait de traiter des problèmes spécifiques,
-uniquement dédiés à la spatialisation de cette relation de
-localisation.
-%
-Il est cependant possible d'utiliser cette information pour extrapoler
-un nouvel indice de localisation, certes moins précis que celui que
-l'on pourrait obtenir avec une relation de localisation dédiée, mais
-tout de même discriminant.
-%
-On connait en effet l'orientation générale de l'antenne téléphonique
-de à laquelle le téléphone de la victime est connecté.
-%
-On peut alors employer la relation de localisation
-\onto[orl]{A\-L\-Est\-De}. Il n'y a ici pas de raisons d'employer une
-des relations de localisation dérivée de \onto[orl]{A\-L\-Est\-De},
-comme \onto[orl]{Dans\-La\-Partie\-Est\-De} ou
+victime est connecté. Comme pour la description précédente nous
+n'avons pas défini une relation de localisation spécifique à ce type
+d'information, mais pour des raisons différentes. En effet, si
+l’indication \enquote{Je viens de passer du Soleil à l'ombre} est
+unique, ce qui nous a conduit à l'ignorer provisoirement, la
+connaissance de l'antenne de rattachement du téléphone de la victime
+est plus fréquente. Toutefois l'exploitation fine de cet indice est
+assez complexe, comme nous l'avions rapidement évoqué dans le
+\autoref{chap:01}. L'implémentation d'une hypothétique relation
+\onto{Connecte\-A\-Antenne} nécessiterai, en effet, de prendre la
+portée du signal, fortement influencée par les conditions
+climatiques. Nous avons donc choisi d'ajourner sa définition. Il est
+cependant possible d'utiliser cette information pour extrapoler un
+nouvel indice de localisation, certes moins précis que celui que l'on
+pourrait obtenir avec une relation de localisation dédiée, mais tout
+de même discriminant. On connait en effet l'orientation générale de
+l'antenne téléphonique de à laquelle le téléphone de la victime est
+connecté. On peut alors approximer la zone où le téléphone de la
+victime peut se connecter à une antenne donnée en l'approximant à
+l'aide d'une relation cardinale. On peut ici employer la relation de
+localisation \onto[orl]{A\-L\-Est\-De}, pour créer ce cône. Il n'y a
+ici pas de raisons d'employer une des relations de localisation
+dérivée de \onto[orl]{A\-L\-Est\-De}, comme
+\onto[orl]{Dans\-La\-Partie\-Est\-De} ou
 \onto[orl]{A\-L\-Est\-De\-Externe}. En effet, l'objet de référence
 utilisé pour cet indice de localisation, une antenne GSM, n'est pas de
-taille suffisante pour que cette distinction est un sens.
-
+taille suffisante pour que cette distinction est un sens. Cette
+approche ne permettra cependant pas de modéliser la portée du signal,
+le cône construit par la relation \onto[orl]{A\-L\-Est\-De} étant
+virtuellement infini. Cependant 
 
 
 Au terme de l'analyse de l'alerte on dispose donc de 7 indices de
