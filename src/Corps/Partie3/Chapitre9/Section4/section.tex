@@ -52,39 +52,37 @@ Comme nous l'avions déjà signalé lors de la présentation du \emph{fil
 fortement imprécises, surtout si on les compare aux extraits des
 alertes \emph{Grand Veymont} (\autoref{anx:retrans_grand_veymont}) et
 \emph{Moucherotte} (\autoref{anx:retrans_moucherotte}). Les
-descriptions sont ici peu informatives et discriminantes. La
-construction d'indices de localisations est ici plus délicate.
+descriptions sont ici peu informatives et discriminantes et la
+construction d'indices de localisations est par conséquent plus
+délicate.
 
-La première de ces sept descriptions donne beaucoup d'informations sur
-le trajet suivit par la victime jusqu'à sa position actuelle. On
-connait sont point de départ, clairement identifié, la destination
-visée, une station de ski inconnue et son mode de déplacement, à pied
-sur un chemin. Cependant la plupart des informations contenues dans
-cette description ne sont pas directement utilisables pour construire
-un indice de localisation et devrons être combinées à d'autres pour
-avoir suffisamment d'informations pour construire un indice de
-localisation. On pourrait par exemple augurer que l'information
-\enquote{La victime est partie de \emph{Bourg-d'Oisans}} est
-suffisante pour utiliser la relation de localisation
-\onto[orl]{Aux\-Alentours\-De} ou \onto[orl]{Proximal}. Cependant,
-rien dans cette première description ne nous permet d'affirmer que la
-victime est toujours à proximité de \emph{Bourg-d'Oisans,} en fonction
-de la durée de sa sortie il peut avoir parcouru suffisamment de
-kilomètres pour que ces indices ne soient plus valides, c'est pourquoi
-il nous semble préférable de ne pas créer, pour le moment, ces indices
-de localisation. De manière similaire nous pourrions envisager
-d'utiliser la relation de localisation
-\onto[orla]{Si\-tue\-Sur\-Itineraire\-Ou\-Reseau\-Support} pour
-prendre en compte le fait que la victime ait indiqué avoir utilisé un
-chemin. Cependant, il est une nouvelle fois impossible d'affirmer que
-la victime se situe toujours sur un chemin, c'est pourquoi cette
-seconde possibilité doit également attendre d'être confirmée par de
-nouvelles informations.
-
-Il est cependant possible de construire un indice de localisation à
-partir de cette première description. En effet, la victime indique
-qu'elle est partie de \emph{Bourg-d'Oisans} dans la direction
-\enquote{globale} d'une station de ski. Ainsi, 
+La première de ces sept descriptions donne plusieurs informations sur
+le trajet suivit par la victime jusqu'à sa position actuelle. Elle
+nous renseigne sur son point de départ, clairement identifié, sa
+destination visée, une station de ski inconnue et son mode de
+déplacement, à pied sur un chemin. Ces informations ne sont cependant
+pas directement transposables en un indice de localisation. On
+pourrait certes supposer qu'étant donné que \enquote{La victime est
+  partie de \emph{Bourg-d'Oisans}}, elle est probablement à proximité
+de cette ville, ce qui permettrait d'utiliser les relations de
+localisations \onto[orl]{Aux\-Alentours\-De} ou
+\onto[orl]{Proximal}. Cependant, rien dans cette première description
+ne nous permet d'affirmer que la victime est toujours à proximité de
+\emph{Bourg-d'Oisans.} En effet, nous ne connaissons pas la durée de
+sa sortie et il se peut que la victime ait parcouru suffisamment de
+kilomètres pour que ces relations de localisaiton ne soient plus
+valides. Il nous semble donc prématuré d'utiliser ces relations de
+localisaiton. De manière similaire nous pourrions envisager d'utiliser
+la relation de localisation
+\onto[orla]{Si\-tue\-Sur\-Itineraire\-Ou\-Reseau\-Support}, la victime
+ayant indiqué avoir utilisé un chemin. Cependant, il est une nouvelle
+fois impossible d'affirmer que la victime se situe toujours sur un
+chemin, c'est pourquoi cette seconde possibilité doit également
+attendre d'être confirmée par de nouvelles informations. Il est
+cependant possible de construire un indice de localisation à partir de
+cette première description. En effet, la victime indique qu'elle est
+partie de \emph{Bourg-d'Oisans} dans la direction \enquote{globale}
+d'une station de ski, ce qui nous renseigne sur sa direction globale.
 %
 On peut représenter cette information en utilisant la relation de
 localisaiton \onto[orl]{Dans\-La\-Direction\-De\-X\-Depuis\-Y}.
@@ -337,6 +335,9 @@ Le dernier indice de localisation de cette alerte (\ref{ind:fr7})
 \end{figure}
 
 \subsection{Construction de la \ac{zlp}}
+
+
+
 
 \begin{figure}
   \centering
