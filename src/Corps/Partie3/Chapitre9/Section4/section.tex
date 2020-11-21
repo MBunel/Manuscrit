@@ -151,37 +151,37 @@ permet pas d'exprimer une telle description, il est donc nécessaire
 d'employer un modifieur, ce que nous détaillerons lors de la
 modélisation de cet indice de localisation.
 
-De manière similaire, la cinquième description est assez explicite. La
-victime indique qu'elle est située sous une route
-%
-Or, comme nous l’indiquions précédemment, cela implique qu'elle soit
-%
-On peut donc utiliser une nouvelle fois la relation de localisation
+De manière similaire, la cinquième description, \enquote{La victime
+  est sous une route et entend des voitures}, est assez explicite. On
+reconnait dans cette formulation l'utilisation de la préposition
+\enquote{sous} traduisant une relation de verticalité. Or, comme nous
+l'indiquions lors de l'analyse de la seconde description (\enquote{La
+  victime a chuté de plusieurs mètres}), la relation de localisation
+\onto{Sous\-Altitude}, n'apportant aucune contrainte sur l'axe
+horizontal, n'est pas nécessairement la plus pertinente ici. On peut
+donc utiliser une nouvelle fois la relation de localisation
 \onto[orl]{Sous\-Proche\-De} pour construire un nouvel indice de
-localisation.
-%
-La seconde information qui nous est donnée, \enquote{la victime entend
-  des véhicules}, n'est pas directement interprétable avec une
-relation de localisation, pourtant cette information peut être
-exploitée de manière à raffiner la modélisation de \emph{l'indice de
-  localisation.}
-%
+localisation. Cette description donne une seconde information,
+\enquote{la victime entend des véhicules}. Cette dernière n'est, une
+nouvelle, pas directement interprétable avec une relation de
+localisation, pourtant cette information peut être exploitée de
+manière à raffiner la modélisation de \emph{l'indice de localisation.}
 On peut tirer deux informations différentes de cette indication. Tout
-d'abord une indication de proximité.
-%
-Il serait même possible de définir une nouvelle relation de
-localisation \onto{A\-Porte\-De\-Son} pour retranscrire cette
-indication.
-%
-Une telle relation permettrait sans aucun doute d'affiner cette
-approximation, particulièrement si elle permet la prise en compte des
-effets d’échos, particulièrement présents en montagne, pouvant
-conduire à une perception faussée de la distance d'un son.
-%
-La seconde information que l'on peut tirer de cet élément est la
-nature de la route. On peut en effet considérer que, pour que la
-victime note entendre une route, il est nécessaire que celle-ci soit
-suffisamment fréquentée pour que le trafic soit notable. Un tel
+d'abord une indication de proximité. En effet, la victime indique
+indirectement qu'elle se situe a portée de son de la route, ce qui, si
+l'on disposait d'un modèle adapté, permettrait d'estimer la distance
+de victime à la route.Il serait même possible de définir une nouvelle
+relation de localisation \onto{A\-Porte\-De\-Son} pour retranscrire
+cette indication. Une telle relation permettrait sans aucun doute
+d'affiner cette approximation, particulièrement si elle permet la
+prise en compte des effets d’échos, particulièrement présents en
+montagne, pouvant conduire à une perception faussée de la distance
+d'un son. Cependant nous n'avons pas travaillé au développement d'une
+telle méthode, cette alerte étant la seule où une portée sonore est
+mentionnée. La seconde information que l'on peut tirer de cet élément
+est la nature de la route. On peut en effet considérer que, pour que
+la victime note entendre une route, il est nécessaire que celle-ci
+soit suffisamment fréquentée pour que le trafic soit notable. Un tel
 critère permet d'affiner la sélection des objets de référence, qui,
 compte-tenu de l’imprécision de la description, seront relativement
 nombreux. Il est cependant délicat de procéder à une telle sélection
@@ -246,7 +246,6 @@ parfaitement acceptable lorsque remise dans le contexte de la
 modélisation de l'alerte dans son ensemble, la multiplication des
 indices de localisation permettant de compenser la faiblesse de
 certains d'entre eux.
-
 
 Au terme de l'analyse de l'alerte on dispose donc de 7 indices de
 localisation à spatialiser:
