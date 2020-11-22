@@ -356,6 +356,38 @@ Le dernier indice de localisation de cette alerte (\ref{ind:fr7})
       est à l'est de l'antenne GSM XXX} (\ref{ind:fr7})}
 \end{figure}
 
+
+
+\begin{table}
+  \centering
+  \begin{tabular}{ccccc}
+    \toprule
+    \textbf{Indice}&\textbf{Fuzzyficateur}&\textbf{$v$}&\textbf{$\delta$}&\textbf{Fonction}\\
+    \midrule
+    \ref{ind:fr1}&\onto[orla]{Sup\-Val\-0}&\emph{0}&\SI{100}{\meter}& \\
+    \ref{ind:fr2}&\onto[orla]{Inf\-Val\-0}&\emph{0}&\SI{10}{\meter}& \\
+    \addlinespace
+    \multirow{2}{*}{\ref{ind:fr3}}&\onto[orla]{Sup\-Val\-0}&\emph{0}&\SI{100}{\meter}&\\
+                   &\onto[orla]{Sup\-Val\-0}&\emph{0}&\SI{100}{\meter}&\\
+    \addlinespace
+    \ref{ind:fr4}&\onto[orla]{Inf\-Val\-0}&\emph{0}&\SI{10}{\meter}& \\
+    \addlinespace
+    \multirow{2}{*}{\ref{ind:fr5}}&\onto[orla]{Inf\-Val\-0}&\emph{0}&\SI{10}{\meter}&\\
+                   &\onto[orla]{Inf\-Val\-0}&\emph{0}&\SI{10}{\meter}&\\
+    \addlinespace
+    \multirow{2}{*}{\ref{ind:fr6}}&\onto[orla]{Inf\-Val\-0}&\emph{0}&\SI{10}{\meter}&\\
+                   &\onto[orla]{Inf\-Val\-0}&\emph{0}&\SI{10}{\meter}&\\
+    \addlinespace
+    \ref{ind:fr7}&\onto[orla]{Eq\-Val}&\SI{800}{\meter}&\SI{10}{\meter}&\autoref{fig:fuzzy_veyont_distance}\\
+    \bottomrule
+  \end{tabular}
+  \caption{Synthèse des fonctions d'appartenance et de leurs
+    paramètres utilisés pour la spatialisation des indices de
+    localisation de l'alerte \emph{Fil rouge.}}
+  \label{tab:syn_fuzzy_fr}
+\end{table}
+
+
 \subsection{Construction de la \ac{zlp}}
 
 
