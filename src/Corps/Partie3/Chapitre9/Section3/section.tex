@@ -89,7 +89,10 @@ effet, décrit son point de départ, \enquote{le haut du tremplin}
 secours lors de son retour. Ainsi, bien que ce ne soit pas directement
 mentionné, on peut raisonnablement considérer que la victime était en
 direction de son point de départ, \enquote{le haut du tremplin}, ce
-qui sera confirmé ci-dessous (extraits \ref{mc:28} et \ref{mc:29}).
+qui sera confirmé ci-dessous (extraits \ref{mc:28} et \ref{mc:29}). On
+peut dès lors construire un nouvel indice de localisation utilisant la
+relation de localisation
+\onto[orl]{Dans\-La\-Direction\-De\-X\-Depuis\-Y}
 
 
 C'est à partir de l'extrait \ref{mc:11} qu'apparaissent les premières
@@ -219,6 +222,24 @@ Pour finir
 \subsection{Modélisation de l'alerte}
 \label{subsec:9-3-2}
 
+
+
+
+
+\begin{table}
+  \centering
+  \begin{tabular}{ccccc}
+    \toprule
+    \textbf{Indice}&\textbf{Fuzzyficateur}&\textbf{$v$}&\textbf{$\delta$}&\textbf{Fonction}\\
+    \midrule
+    \ref{ind:fr1}&\onto[orla]{Sup\-Val\-0}&\emph{0}&\SI{100}{\meter}& \\
+    \bottomrule
+  \end{tabular}
+  \caption{Synthèse des fonctions d'appartenance et de leurs
+    paramètres utilisés pour la spatialisation des indices de
+    localisation de l'alerte \emph{Moucherotte.}}
+  \label{tab:syn_fuzzy_mc}
+\end{table}
 
 \subsection{Critique de la modélisation}
 \label{subsec:9-3-3}
