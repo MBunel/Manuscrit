@@ -37,7 +37,25 @@ victime donne sa position à 17h30 :
   \Req \lnex{2}{mc:2} Ouais.
 \end{dialogue*}
 
-Ces 
+Ces deux premiers extrais décrivent une positon,
+%
+ce qui peut être
+représenté par une relation de localisaiton \onto[orl]{Proximal}.
+
+Cette relation de localisation n'est cependant pas directement
+exploitable, puisqu'elle décrit la position de la victime dans le
+passé.
+%
+Il serait cependant possible de la prendre en compte si nous
+disposions d'autres informations, qui ne sont pas présentes dans la
+retranscription de l'alerte mais qui auraient été connu durant
+l'alerte.
+%
+Par exemple si nous connaissions l'heure de l'appel nous pourrions
+définir un indice de localisation utilisant la relation de
+localisation \onto[orl]{A\-Temps\-De\-Marche}, ce qui nous aurait
+permis d'estimer la zone de présence de la victime.
+
 
 \begin{dialogue*}
   \Sec \lnex{3}{mc:3} Vous êtes redescendue par le chemin que
@@ -60,7 +78,15 @@ Les premiers extraits de cette alerte potent
   \Req \lnex{10}{mc:10} Saint-Nizier ouais, le haut du tremplin
 \end{dialogue*}
 % 
-Ffdsfdsf
+Comme les extraits \ref{mc:1} et \ref{mc:2} ces deux extraits donnent
+une indication assez précise d'une position qui
+%
+On peut cependant interpréter les extraits \ref{mc:1} à \ref{mc:10}
+pour construire un nouvel indice de localisation. La victime a, en
+effet, décrit son point de départ, \enquote{le haut du tremplin}
+(\ref{mc:10}) et d'arrivée, sommet du \emph{Moucherotte} (extraits
+\ref{mc:1} et \ref{mc:2}).
+
 
 C'est à partir de l'extrait \ref{mc:11} qu'apparaissent les premières
 informations sur la position actuelle de la victime :
