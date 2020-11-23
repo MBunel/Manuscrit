@@ -629,15 +629,31 @@ concept \onto[orl]{Apres\-Jalon\-Sut\-Itineraire}
 \subsubsection{Entre}
 
 L'indice \ref{ind:gv5} utilise une relation de localisation binaire,
-nécessitant deux sites, ici le \emph{Pas de la Ville} et le
-\emph{Grand Veymont}.
+nécessitant deux sites. Comme pour les précédents indices de
+localisation, les objets faisant office de référence, le \emph{Pas de
+  la Ville} et le \emph{Grand Veymont}, sont nommés. Il n'est donc pas
+nécessaire de procéder à la décomposition des objets de référence non
+nommés.
 
-Comme pour les indices de localisation précédent, les deux sites
-utilisés ici sont nommés, il n'est donc pas nécessaire de procéder à
-la décomposition des objets de référence non nommés.
+Cet indice de localisation emploie la relation de localisation binaire
+\onto[orl]{Entre\-X\-et\-Y}.
+%
+Cette relation de localisation à la particularité de ce décomposer
+en deux variantes de la relations de localisation atomique
+\onto[orla]{DansLaDirectionDeXDepuisY}, la première utilisant le
+%
+et la seconde les inversant.
+%
+Ainsi, cette définition revient a considérer qu'être entre deux
+objets, revient a être dans la direction de X depuis Y et inversement.
 
-La relation de localisation utilisée pour modéliser cet indice de
-localisation, \onto[orl]{Entre\-X\-et\-Y}
+La relation de localisaiton \onto[orl]{DansLaDirectionDeXDepuisY} est
+une version générique des relations de cardinalité (\eg
+\onto[orl]{Au\-Nord\-De})que nous avons déjà présentées.
+%
+Cette relation partage donc sa métrique, son fuzzyfieur et son
+rasteriser avec ces relations
+
 
 
 
@@ -648,6 +664,16 @@ localisation, \onto[orl]{Entre\-X\-et\-Y}
   \caption{Métriques}
   \label{fig:Ente_metriques_GrandVeymont}
 \end{figure}
+
+Une fois que la métrique a été calculée pour chacune des deux
+relations de localisation atomiques
+(\autoref{fig:Ente_metriques_GrandVeymont}), on peut construire les
+\ac{zlc} correspondantes à l'aide du fuzzyficateur
+\onto[orla]{Eq\-Angle}, déjà présenté
+(\autoref{fig:fuzzy_veyont_angleNord}).
+
+On abouti alors aux \ac{zlc} représentées par la
+\autoref{fig:Entre_GrandVeymont_RSA}.
 
 
 \begin{figure}
@@ -660,6 +686,9 @@ localisation, \onto[orl]{Entre\-X\-et\-Y}
 \end{figure}
 
 
+On peut alors intersecter ces deux \ac{zlc} pour construire la
+\ac{zlc} correspondant à l'indice de localisation \ref{ind:gv5},
+visible sur la \autoref{fig:ZLC_GrandVeymont_5}
 
 \begin{figure}
   \centering
@@ -703,7 +732,7 @@ fuzzyficateur est \onto[orla]{Inf\-0}
 \begin{figure}
   \centering
   \includegraphics{./figures/NotForet_GrandVeymont.png}
-  \caption{XXXX \enquote{Grand Veymont}}
+  \caption{\ac{zlc} pour l'indice de localisaiton }
   \label{fig:ZLC_GrandVeymont_X}
 \end{figure}
 
@@ -812,17 +841,18 @@ mais à plusieurs centaines de mètres de ce dernier.
     \toprule
     \textbf{Indice}&\multicolumn{1}{c}{\textbf{Fuzzyficateur}}&\textbf{$v$}&\textbf{$\delta$}&\textbf{Fonction}\\
     \midrule
-    \ref{ind:gv1}&\onto[orla]{Not},\onto[orla]{Inf\-Val\-0}&\emph{0}&\SI{100}{\meter}& \\
-    \ref{ind:gv2}&\onto[orla]{Inf\-Val\-0}&\emph{0}&\SI{10}{\meter}& \\
+    \ref{ind:gv1}&\onto[orla]{Not},\onto[orla]{Inf\-Val\-0}&\emph{0}&\SI{500}{\meter}& \\
+    \ref{ind:gv2}&\onto[orla]{Inf\-Val\-0}&\emph{0}&\SI{5}{\meter}& \\
     \addlinespace
     \multirow{2}{*}{\ref{ind:gv3}}&\onto[orla]{Not}, \onto[orla]{Sup\-Val\-0}&\emph{0}&\SI{500}{\meter}&\\
-                    &\onto[orla]{Eq\-Angle}&\SI{90}{\degree}&\SI{180}{\degree}&\\
+                   &\onto[orla]{Eq\-Angle}&\SI{90}{\degree}&\SI{180}{\degree}&\\
     \addlinespace
-    \multirow{2}{*}{\ref{ind:gv4}}&\onto[orla]{Sup\-Val\-0}&\SI{19}{\degree}&\SI{180}{\degree}&\\
-                    &\onto[orla]{Sup\-Val\-0}&\SI{199}{\degree}&\SI{180}{\degree}&\\
+    \multirow{2}{*}{\ref{ind:gv4}}&\onto[orla]{Eq\-Angle}&\SI{0}{\degree}&\SI{180}{\degree}&\\
+                   &\onto[orla]{Eq\-Angle}&\SI{0}{\degree}&\SI{180}{\degree}&\\
     \addlinespace
-    \multirow{2}{*}{\ref{ind:gv5}}&\onto[orla]{Eq\-Angle}&\SI{0}{\degree}&\SI{180}{\degree}&\\
-                    &\onto[orla]{Eq\-Angle}&\SI{0}{\degree}&\SI{180}{\degree}&\\
+    \multirow{2}{*}{\ref{ind:gv5}}&\onto[orla]{Sup\-Val\-0}&\SI{19}{\degree}&\SI{180}{\degree}&\\
+                   &\onto[orla]{Sup\-Val\-0}&\SI{199}{\degree}&\SI{180}{\degree}&\\
+
     \addlinespace
     \ref{ind:gv6}&\onto[orla]{Inf\-Val\-0}&\emph{0}&\SI{10}{\meter}&\\
     \ref{ind:gv7}&\onto[orla]{Inf\-Val\-0}&\emph{0}&\SI{10}{\meter}&\\
