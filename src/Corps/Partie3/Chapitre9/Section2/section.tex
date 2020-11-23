@@ -462,15 +462,15 @@ permet pas, à lui seul, de localiser le requérant.
 %\subsubsection{Sous Altitude Grand Veymont}
 
 Le second indice de localisation que nous avons défini est \enquote{Le
-  requérant est situé sous le sommet du \emph{Grand Veymont}}. Pour le
-modéliser nous avons choisi d'utiliser la relation de localisation
-\onto[orl]{Sous\-Altitude}, traduisant une différence d'altitude, sans
-autre forme de contrainte. Comme nous l'avons détaillé dans le
-\autoref{chap:07}, cette relation de localisation est atomique, il
-n'est donc pas nécessaire de la décomposer. De plus l'objet de
-référence utilisé, est comme nous l'avons vu pour l'indice de
-localisation précédent, nommé. On peut alors spatialiser directement
-cet indice de localisation.
+  requérant est situé sous le sommet du \emph{Grand Veymont}}
+(\ref{ind:2}). Pour le modéliser nous avons choisi d'utiliser la
+relation de localisation \onto[orl]{Sous\-Altitude}, traduisant une
+différence d'altitude, sans autre forme de contrainte. Comme nous
+l'avons détaillé dans le \autoref{chap:07}, cette relation de
+localisation est atomique, il n'est donc pas nécessaire de la
+décomposer. De plus l'objet de référence utilisé, est comme nous
+l'avons vu pour l'indice de localisation précédent, nommé. On peut
+alors spatialiser directement cet indice de localisation.
 
 Le processus de spatialisation de la relation de localisation atomique
 \onto[orla]{Sous\-Altitude} a déjà été présenté dans le
@@ -512,6 +512,15 @@ On obtient alors la \ac{zlc} de ce second indice de localisation.
     localisation \ref{ind:gv2}}
   \label{fig:ZLC_GrandVeymont_2}
 \end{figure}
+
+Comme pour l'indice précédent (\ref{ind:gv1}), la zone de localisation
+obtenue est ici très étendue, de nombreuses positions ayant un degré
+d'appartenance proche de 1. En effet, l'indice de localisation
+modélisé se réfère au sommet du \emph{Grand Veymont,} or, ce sommet
+est le plus haut du massif du Vercors. Tous les points de la \ac{zir},
+ou presque, sont donc situés à une altitude inférieure à l'objet de
+référence, ce qui rend cet indice de localisation très peu
+discriminant.
 
 %\subsubsection{Au nord du Pas de la Ville}
 
