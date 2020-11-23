@@ -928,7 +928,22 @@ et de la composition des
 \tdi{Impact de la position du toponyme "pas de la ville" sur la
   modélisation}
 
-Un autre problème notable est l'impact que peut avoir la géométrie des
+
+
+
+Un autre problème notable est l'impact de la représentation
+géométrique des objets de référence sur les résultats de la
+modélisation. Par exemple, le \emph{Pas de la Ville} et le sommet du
+\emph{Grand Veymont} sont régulièrement employés dans les alertes
+comme objet de référence. Ces deux objets sont représentés dans la
+BDTOPO par des ponctuels, dont la fonction première n'est pas de
+représenter l'emprise des objets, mais \enquote{d'ancrer} les
+toponymes, en vue d'une représentation cartographique. L'utilisation
+de telles géométries comme objets de référence nous expose donc à
+quelques problèmes.
+
+
+que peut avoir la géométrie des
 objets de référence sur le résultat de la spatialisation. Par exemple,
 l'indice de localisation : \enquote{À \SI{800}{\meter} du Pas de la
   Ville} a été spatialisé en calculant la métrique
