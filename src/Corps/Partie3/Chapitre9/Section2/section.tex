@@ -508,25 +508,43 @@ On obtient alors la \ac{zlc} de ce second indice de localisation.
 %\subsubsection{Au nord du Pas de la Ville}
 
 La relation de localisation \onto[orl]{Au\-Nord\-De\-Externe},
-utilisée pour modéliser le troisième indice de localisation est la
-première des relations de localisation non atomiques de cette alerte.
-
-% 
-Cette relation se décompose en deux relation de localisation
-atomiques, \onto[orla]{Au\-Nord\-De} et
+utilisée pour modéliser le troisième indice de localisation
+(\ref{ind:gv3}) est la première des relations de localisation non
+atomiques de cette alerte. Cette relation se décompose, en effet, en
+deux relation de localisation atomiques, \onto[orla]{Au\-Nord\-De} et
 \onto[orla]{Hors\-De\-Planimétrique}. La relation de localisation
 atomique \onto[orla]{Au\-Nord\-De} \footnote{Que la relation de
   localisation \protect\onto[orla]{Au\-Nord\-De\-Externe} partage avec
   sa relation sœur \protect\onto[orla]{Dans\-La\-Partie\-Nord\-De}.}
+est une relation cardinale générale, qui permet de construire une zone
+au nord de l'objet de référence, à partir de son centroide. La zone
+construite à l'aide de cette relation peut être située au sein de
+l'objet de référence, notamment si celui-ci est étendu (\eg une
+vallée). L'ajout de la relation de localisation
+\onto[orla]{Hors\-De\-Planimétrique} permet de modifier ce
+comportement, en imposant que les positions appartenant à la \ac{zlc}
+soient situées à l'extérieur de l'objet de référence.
 
-Une nouvelle fois l'objet de référence utilisé est nommé, il n'est
-donc pas nécessaire de procéder à sa décomposition.
+Comme pour les indices précédents l'objet de référence de cet indice
+de localisation est nommé, il n'est donc pas nécessaire de procéder à
+la décomposition des objets de référence, contrairement à la relation
+de localisation.
 
-Il est ici nécessaire de spatialiser deux relations de localisaiton
-atomiques, puis de les fusionner
-
-La première d'entre elles, \onto[orla]{Au\-Nord\-De}
-(\autoref{fig:ex_parties_statialisation_AuNordDe})
+La première d'entre elles, \onto[orla]{Au\-Nord\-De} est une relation
+de localisaiton cardinale ayant \onto[orla]{Centroide} comme
+rasteriser, \onto[orla]{Ecart\-Angulaire} comme métrique et
+\onto[orla]{Eq\-Angle} comme fuzzyfieur
+(\autoref{fig:ex_parties_statialisation_AuNordDe}). La métrique
+\onto[orla]{Ecart\-Angulaire}, que nous avions déjà présentée dans le
+\autoref{chap:07}, calcule l'écart angulaire entre la demi-droite
+partant du centroïde du site et orientée vers la direction de
+référence (ici le Nord) et la demi-droite partant du centroïde du
+site et passant par la position pour laquelle la métrique est
+calculée. Dans le cas présent, cette métrique calcule donc l'écart
+angulaire entre la demi-droite partant du \emph{Pas de la Ville} et
+orientée au nord et la demi-droite partant également du \emph{Pas de
+  la Ville} et passant par la position étudiée, comme on peut le voir
+sur la \auoref{fig:veyont_EcartNord}.
 
 \begin{figure}
   \centering
@@ -537,13 +555,6 @@ La première d'entre elles, \onto[orla]{Au\-Nord\-De}
   \label{fig:ex_parties_statialisation_AuNordDe}
 \end{figure}
 
-La seconde \emph{relation de localisaiton atomique} est
-\onto[orla]{Hors\-De\-Pla\-ni\-mé\-tri\-que}, dont nous avons déjà
-présenté la spatialisation
-(\autoref{fig:ex_parties_statialisation_horsdeplani})
-
-On peut alors calculer les métriques
-
 \begin{figure}
   \centering
   \input{./figures/EcartNord_PasVille.tex}
@@ -553,6 +564,18 @@ On peut alors calculer les métriques
     été réduite de 5 à 50 mètres pour la représentation.}
   \label{fig:veyont_EcartNord}
 \end{figure}
+
+La seconde \emph{relation de localisaiton atomique} est
+\onto[orla]{Hors\-De\-Pla\-ni\-mé\-tri\-que}, qui à déjà été employée
+directement pour la spatialisation du premier indice de localisation
+de cette alerte.
+
+dont nous avons déjà
+présenté la spatialisation
+(\autoref{fig:ex_parties_statialisation_horsdeplani})
+
+On peut alors calculer les métriques
+
 
 \begin{figure}
   \centering
@@ -609,7 +632,8 @@ On obtient alors la \ac{zlc} de ce troisième indice de localisation.
   \label{fig:ZLC_GrandVeymont_3}
 \end{figure}
 
-
+On peut noter que les figures \autoref{fig:ZLC_GrandVeymont_3} et
+\autoref{fig:ZLC_Nord_Pas_Ville} 
 
 
 %\subsubsection{Au-delà du Pas de la Ville}
