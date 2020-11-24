@@ -268,7 +268,8 @@ localisation à spatialiser:
 \item \label{ind:fr3} La victime est \onto[orl]{Sous\-Proche\-De} un
   chemin
   % 
-\item \label{ind:fr4} La victime voit
+\item \label{ind:fr4} La victime voit (\onto[orl]{Cible\-Voit\-Site})
+  une partie d'un lac
   % 
 \item \label{ind:fr5} La victime est \onto[orl]{Sous\-Proche\-De} une
   route
@@ -319,6 +320,14 @@ Pour modéliser cet indice de localisation nous avons donc mis en place
 une version \emph{ad hoc} de la relation de localisation
 \onto[orla]{A\-Temps\-De\-Marche\-De} utilisant le fuzzyficateur
 \onto[orla]{Sup\-Val}.
+
+Cependant le changement du fuzzyficateur ne permet pas de XXX
+%
+Pour ce faire on peut ajouter un second indice, utilisant la même
+relation de localisation, \onto[orla]{A\-Temps\-De\-Marche\-De}, mais
+destinée à limiter la distance parcourue par la victime.
+%
+
 
 \subsubsection{La victime est \protect\onto[orl]{Sous\-Proche\-De} un chemin}
 
