@@ -391,7 +391,14 @@ localisation en fonction des instances correspondant au type donné et
 situées dans la \ac{zir}. La BDTOPO contient, au sein des
 \SI{625}{\kilo\meter\squared} de la \ac{zir}, 2XXX objets de type
 \enquote{chemins} ou \enquote{sentiers} qui sont autant d'objets de
-référence potentiels.
+référence potentiels. Un indice de localisation est alors construit
+pour chacune de ces instances \footnote{Conformément à la deuxième
+  étape de la phase de décomposition (\autoref{chap:04}).}. À cela
+s'ajoute la décompostion des relations de localisaiton atomiques, qui
+subdivise chacun de ces 2XXX nouveaux indices de localisaiton en deux
+nouveaux indices, le premier correspondant à la relation de
+localisaiton \onto[orla]{Sous\-Altitude} et le second à la relation de
+localisation \onto[orla]{Proximal}.
 
 
 La relation de localisaiton \onto[orl]{Sous\-Proche\-De} 
