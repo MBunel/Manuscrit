@@ -365,23 +365,29 @@ destinée à limiter la distance parcourue par la victime.
 
 L'indice de localisation suivant (\ref{ind:fr3}) utilise la relation
 de localisation \onto[orl]{Sous\-Proche\-De} que nous avions déjà
-présenté, sans la nommer, dans le \autoref{chap:06}. Cette relation de
-localisation n'est pas atomique, elle est définie comme la conjonction
-de deux relations de localisation atomiques,
-\onto[orla]{Sous\-Altitude} et \onto[orla]{Proximal}.
-
-La première de ces deux relations de localisation atomiques
-\onto[orla]{Sous\-Altitude} a déjà été employée dans les exemples
-précédents, comme pour la spatialisation de l'indice de localisaiton :
-\enquote{Le requérant est \onto[orl]{Sous\-Altitude} du sommet du
-  \emph{Grand Veymont}} (\ref{ind:gv2}) pour l'alerte :
+présenté, sans la nommer, dans le \autoref{chap:06}. Comme nous
+l'avons déjà montré cette relation est définie comme la composition
+des relations \onto[orla]{Sous\-Altitude} et \onto[orla]{Proximal},
+elle n'est donc pas atomique. La première de ces deux relations de
+localisation atomiques \onto[orla]{Sous\-Altitude} a déjà été employée
+dans les exemples précédents, comme pour la spatialisation de l'indice
+de localisaiton : \enquote{Le requérant est \onto[orl]{Sous\-Altitude}
+  du sommet du \emph{Grand Veymont}} (\ref{ind:gv2}) pour l'alerte :
 \enquote{\emph{Grand Veymont}}. Pour rappel, cette relation de
 localisation atomique emploie \onto[orla]{Geometrie} comme rasteriser,
 \onto[orla]{Delta\-Nearest\-Val} comme métrique et
 \onto[orla]{Inf\-Val\-0} comme fuzzyficateur
-(\autoref{fig:ex_parties_statialisation_sousalt}).
+(\autoref{fig:ex_parties_statialisation_sousalt}). Le seconde relation
+de localisation atomique, \onto[orla]{Proximal}, est utilisée pour
+contraindre l'éloignement à l'objet de référence. Elle est spatialisée
+à l'aide du rasteriser \onto[orla]{Geometrie}, de la métrique
+\onto[orla]{Distance\-Euclidienne} et du fuzzyficateur
+\onto[orla]{Inf\-Val}.
 
-Le seconde relation de localisaiton atomique, \onto[orla]{Proximal},
+
+
+
+
 
 
 \begin{figure}
