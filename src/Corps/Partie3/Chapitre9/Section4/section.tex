@@ -296,10 +296,27 @@ La \ac{zir} définie pour cette alerte est une zone de
 
 % Direction
 Le premier des indices de localisation de cette alerte (\ref{ind:fr1})
-emploie la relation de localisation
-\onto[orl]{Dans\-La\-Direction\-De\-X\-Depuis\-Y} et un objet
+est fondé sur la relation de localisation
+\onto[orl]{Dans\-La\-Direction\-De\-X\-Depuis\-Y}. Comme nous
+l'expliquions précédent, cette relation de localisation permet de
+modéliser une relation de direction sans considération de
+l’implantation.
+%
+Cette relation de localisation est atomique et elle fait appel 
+
+
+et un objet
 géographique non nommé (\enquote{une station de ski}) comme objet de
 référence.
+
+\begin{figure}
+  \centering
+  \input{./figures/exemple_parties_spatialisation_DansLaDirectionDe.tex}
+  \caption{Rasteriser, métrique et fuzzyficateur utilisés pour la
+    spatialisation de la relation de localisation atomique
+    \protect\onto[orla]{Dans\-La\-Direction\-De\-X\-Depuis\-Y}}
+  \label{fig:ex_parties_statialisation_DanslaDirectionDe}
+\end{figure}
 
 L'utilisation d'un tel objet de référence nous contraints à procéder à
 la décomposition de l'indice de localisation en fonction des
@@ -308,6 +325,8 @@ référence. Dans le cas présent on peut identifier X stations de ski
 dans la \ac{zir}, chacune entre elles pouvant être un objet de
 référence potentiel.
 
+La métrique, \onto[orla]{Direction\-De}, utilisée par cette relation
+de localisation atomique 
 
 % Temps de marche
 
