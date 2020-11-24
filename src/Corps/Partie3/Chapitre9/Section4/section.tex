@@ -516,7 +516,7 @@ Dans le cas présent, la connaissance de la station de ski visée
       \draw (img3.south west) rectangle (img3.north east);
     \end{tikzpicture}
   }
-  \begin{tikzpicture}[overlay]
+  \begin{tikzpicture}[overlay, remember picture]
     \draw (B1) -- (img1);
     \draw (B2) -- (img2);
     \draw (B3) -- (img3);
