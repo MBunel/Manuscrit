@@ -293,6 +293,33 @@ La \ac{zir} définie pour cette alerte est une zone de
   \label{fig:zir_fil_rouge}
 \end{figure}
 
+% Direction
+
+% Temps de marche
+
+Le second indice de localisaiton (\ref{ind:fr2}) emploie la relation
+de localisation \onto[orl]{A\-Temps\-De\-Marche\-De}. Il s'agit une
+nouvelle fois d'une relation de localisaiton atomique, qu'il n'est pas
+nécessaire de décomposer. De même, l'objet de référence utilisé,
+\emph{Bourg-d'Oisans} est nommé, il n'est donc pas nécessaire de
+procéder à la décomposition des objets de référence.
+
+Dans sa version \enquote{standart} la relation de localisation
+atomique \onto[orla]{A\-Temps\-De\-Marche\-De} utilise le rasteriser
+\onto[orla]{Geometrie}, la métrique \onto[orla]{} et la fuzzyficateur
+\onto[orla]{Eq\-Val} prenant comme paramètre la durée de
+déplacement. Toutefois le cas que nous modélisons ici est un peu
+différent, puisque la durée donnée, \enquote{plusieurs heures}, est
+très approximée.
+%
+L'utilisation du fuzzyficateur \onto[orla]{Eq\-Val}
+n'est donc pas des plus adaptées.
+%
+Pour modéliser cet indice de localisation nous avons donc mis en place
+une version \emph{ad hoc} de la relation de localisation
+\onto[orla]{A\-Temps\-De\-Marche\-De} utilisant le fuzzyficateur
+\onto[orla]{Sup\-Val}.
+
 \subsubsection{La victime est \protect\onto[orl]{Sous\-Proche\-De} un chemin}
 
 L'indice de localisation suivant (\ref{ind:fr3}) utilise la relation
