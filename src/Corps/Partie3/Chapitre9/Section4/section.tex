@@ -393,9 +393,18 @@ Objets de ref
 \end{figure}
 
 
-\subsubsection{La victime est à l'est de l'antenne GSM}
+%\subsubsection{La victime est à l'est de l'antenne GSM}
 
-Le dernier indice de localisation de cette alerte (\ref{ind:fr7})
+Le dernier indice de localisation de cette alerte (\ref{ind:fr7}) est
+sans aucun doute le plus simple à modéliser.
+
+Comme nous l'expliquions lors de la modélisation de l'alerte
+\emph{Grand Veymont} (cf. indice \ref{ind:gv3}) les relations
+cardinales comme \onto[orl]{Au\-Nord\-De} ou \onto[orl]{A\-L\-Est\-De}
+sont des relations de localisation atomiques, utilisant le rasteriser
+\onto[orla]{Centroide}, la métrique \onto[orla]{} avec pour paramètre
+la direction et le fuzzyficateur \onto[orla]{Eq\-Angle}.
+
 
 
 \begin{figure}
