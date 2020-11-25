@@ -293,7 +293,6 @@ localisation à spatialiser:
 
 \subsection{Modélisation de l'alerte}
 \label{subsec:9-4-2}
-v
 
 Les informations données par la victime étant très imprécises, il est
 difficile de définir la \emph{zone initiale de recherche} pour cette
@@ -570,6 +569,8 @@ sont a paramétrer.
 Après l'étape de fuzzyfication on obtient les deux \ac{zlc}
 représentées par les figures \ref{fig:ZLC_1_TempsMarche} et
 \ref{fig:ZLC_2_TempsMarche}.
+%
+Comme on peut le constater la première zone
 
 
 \begin{figure}
@@ -594,7 +595,6 @@ en \enquote{plusieurs heures} de marche est assez étendue.
 %
 Comme on peut le constater les limites de la \ac{zir} sont
 atteignables en moins de \SI{12}{\hour} de marche.
-
 
 \begin{figure}
   \centering
@@ -683,10 +683,29 @@ troisième indice de localisation (\ref{ind:fr3}).
 
 \begin{figure}
   \centering
-  \input{./figures/ZIR_fil_rouge.tex}
+  \input{./figures/SousProcheChemin_ZLC_FilRouge.tex}
   \caption{\ac{zlc} pour l'indice de localisation \enquote{La victime
       est sous un chemin} (\ref{ind:fr3})}
 \end{figure}
+
+% Visibilité
+
+
+\begin{figure}
+  \centering
+  \input{./figures/Visibilite_ZLC_FilRouge.tex}
+  \caption{\ac{zlc} pour l'indice de localisation  (\ref{ind:fr4})}
+\end{figure}
+
+% Sous route
+
+\begin{figure}
+  \centering
+  \input{./figures/SousProcheRoute_ZLC_FilRouge.tex}
+  \caption{\ac{zlc} pour l'indice de localisation  (\ref{ind:fr5})}
+\end{figure}
+
+
 
 %\subsubsection{La victime est \protect\onto[orl]{Sous\-Proche\-De} une ligne
 %  électrique trois brins}
@@ -703,7 +722,7 @@ Objets de ref
 
 \begin{figure}
   \centering
-  \input{./figures/ZIR_fil_rouge.tex}
+  \input{./figures/SousProcheLigne_ZLC_FilRouge.tex}
   \caption{\ac{zlc} pour l'indice de localisation \enquote{La victime
       est sous une ligne électrique trois brins} (\ref{ind:fr5})}
 \end{figure}
