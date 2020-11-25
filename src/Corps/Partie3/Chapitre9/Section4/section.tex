@@ -293,7 +293,7 @@ localisation à spatialiser:
 
 \subsection{Modélisation de l'alerte}
 \label{subsec:9-4-2}
-
+v
 
 Les informations données par la victime étant très imprécises, il est
 difficile de définir la \emph{zone initiale de recherche} pour cette
@@ -483,10 +483,20 @@ localisation est donc directement spatialisable.
 Dans sa version \enquote{standard} la relation de localisation
 atomique \onto[orla]{A\-Temps\-De\-Marche\-De} utilise le rasteriser
 \onto[orla]{Geometrie}, la métrique \onto[orla]{} et la fuzzyficateur
-\onto[orla]{Eq\-Val} prenant comme paramètre la durée de
-déplacement. Toutefois le cas que nous modélisons ici est un peu
-différent, puisque la durée donnée, \enquote{plusieurs heures}, est
-très approximée.
+\onto[orla]{Eq\-Val} prenant comme paramètre la durée de déplacement
+(\autoref{fig:ex_parties_statialisation_ATempsDeMarcheDe}). Cependant
+cette méthode de spatialisation ne peut s'appliquer ici, le requérant
+donnant une valeur très imprécise (\ie \enquote{Plusieurs heures}) de
+sa durée de déplacement. Or, la méthode de spatialisation de la
+relation \onto[orla]{A\-Temps\-De\-Marche\-De} que nous avons définie
+ne permet que la modélisation d'indices où la durée de déplacement est
+clairement définie, comme \enquote{J'ai marché environ deux heures} ou
+\enquote{Il a marché pendant cinq heures}.
+
+
+Toutefois
+le cas que nous modélisons ici est un peu différent, puisque la durée
+donnée, \enquote{plusieurs heures}, est très approximée.
 %
 L'utilisation du fuzzyficateur \onto[orla]{Eq\-Val}
 n'est donc pas des plus adaptées.
@@ -502,6 +512,16 @@ Pour ce faire on peut ajouter un second indice, utilisant la même
 relation de localisation, \onto[orla]{A\-Temps\-De\-Marche\-De}, mais
 destinée à limiter la distance parcourue par la victime.
 %
+
+\begin{figure}
+  \centering
+  \input{./figures/exemple_parties_spatialisation_ATempsDeMarcheDe.tex}
+  \caption{Rasteriser, métrique et fuzzyficateur utilisés pour la
+    spatialisation de la relation de localisation atomique
+    \protect\onto[orla]{A\-Temps\-De\-Marche\-De}}
+  \label{fig:ex_parties_statialisation_ATempsDeMarcheDe}
+\end{figure}
+
 
 
 %\subsubsection{La victime est \protect\onto[orl]{Sous\-Proche\-De} un chemin}
