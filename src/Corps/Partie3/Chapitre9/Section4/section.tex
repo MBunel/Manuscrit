@@ -361,7 +361,15 @@ les centroïdes des sites \texttt{X} et \texttt{Y} et dont la taille
 distance entre \texttt{X} et \texttt{Y}. La figure
 \ref{fig:Metrique_FilRouge_1_obj_1} représente le résultat de la
 métrique pour l'indice de localisation décomposé : \enquote{La victime
-  est partie de Bourg-d'Oisans en direction des Deux-Alpes}.
+  est partie de \emph{Bourg-d'Oisans} en direction des
+  \emph{Deux-Alpes}}. Comme on peut le voir sur cette figure, les deux
+sites sont légèrement en dehors de l'ellipse. Nous avons en effet
+considéré que cette relation de localisation perdait en pertinence à
+proximité des deux sites. Ainsi, nous avons fixé la longueur de
+l'ellipse à 90 \% de la longueur du segment reliant les deux sites.
+
+Une fois que la métrique a été calculée nous pouvons passer à la
+construction de la \ac{zlc}
 
 
 
