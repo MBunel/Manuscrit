@@ -14,6 +14,8 @@ Le fil rouge est une alerte composée de XX \emph{indices de
   localisation.}
 
 
+
+
 Faute d'enregistrement audio, le fil rouge n'a pas été retranscrit,
 les indices dont nous disposons (et qui avaient été présentés dans le
 \autoref{chap:01}) ont donc été directement saisis par le secouriste.
@@ -25,6 +27,14 @@ Le traitement du \emph{fil rouge} est donc plus proche du traitement
 opérationnel qui sera réellement effectué lors du traitement d'une
 alerte.
 
+
+
+\begin{figure}
+  \centering
+  \input{./figures/ZIR_fil_rouge.tex}
+  \caption{Zone initiale de recherche pour le \emph{fil rouge}}
+  \label{fig:zir_fil_rouge}
+\end{figure}
 
 Pour le cas du \emph{fil rouge} nous ne disposons pas de
 l'enregistrement audio et donc de son verbatim, les indices ayant déjà 
@@ -284,15 +294,19 @@ localisation à spatialiser:
 \subsection{Modélisation de l'alerte}
 \label{subsec:9-4-2}
 
-La \ac{zir} définie pour cette alerte est une zone de
-\SI{625}{\kilo\meter\squared}
 
-\begin{figure}
-  \centering
-  \input{./figures/ZIR_fil_rouge.tex}
-  \caption{Zone initiale de recherche pour le \emph{fil rouge}}
-  \label{fig:zir_fil_rouge}
-\end{figure}
+Les informations données par la victime étant très imprécises, il est
+difficile de définir la \emph{zone initiale de recherche} pour cette
+alerte. On sait cependant, grâce au premier indice de localisation
+(\ref{ind:fr1}), que la victime est partie de Bourg-d'Oisans, on peut
+donc centrer la \ac{zir} sur ce lieu. Cependant, aucun autre indice de
+nous permet d'estimer la taille que devrait faire cette zone. Nous
+avons donc pris la décision de définir une \ac{zir} dont les limites
+ne seraient pas atteignables en une journée par un randonneur (à moins
+qu'il se déplace en fond de vallée).
+%
+Nous avons donc créé une \ac{zir} de \SI{25}{\kilo\meter} de côté,
+pour une aire de \SI{625}{\kilo\meter\squared}.
 
 % Direction
 Le premier des indices de localisation de cette alerte (\ref{ind:fr1})
@@ -321,9 +335,10 @@ référence.
 L'utilisation d'un tel objet de référence nous contraints à procéder à
 la décomposition de l'indice de localisation en fonction des
 différentes instances correspondant à la description de l'objet de
-référence. Dans le cas présent on peut identifier X stations de ski
-dans la \ac{zir}, chacune entre elles pouvant être un objet de
-référence potentiel.
+référence. Dans le cas présent on peut identifier 7 stations de ski
+\footnote{Les deux Alpes, Auris en Oisans, Ornon, l'Alpe d'Huez, Oz,
+  Villard-Reculas et Vaujany.}  dans la \ac{zir}, chacune entre elles
+pouvant être un objet de référence potentiel.
 
 La métrique, \onto[orla]{Direction\-De}, utilisée par cette relation
 de localisation atomique 
