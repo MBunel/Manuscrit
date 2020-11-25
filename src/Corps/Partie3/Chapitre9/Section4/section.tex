@@ -566,6 +566,11 @@ Une fois le calcul de la métrique effectué, on peut procéder à la
 fuzzyfication et à la construction des \ac{zlc}. Dans le cas présent,
 deux \ac{zlc} sont à construire et donc deux fonctions d'appartenance
 sont a paramétrer.
+%
+Après l'étape de fuzzyfication on obtient les deux \ac{zlc}
+représentées par les figures \ref{fig:ZLC_1_TempsMarche} et
+\ref{fig:ZLC_2_TempsMarche}.
+
 
 \begin{figure}
   \centering
@@ -581,11 +586,21 @@ sont a paramétrer.
   \label{fig:ZLC_1_2_TempsMarche}
 \end{figure}
 
+L'intersection des \ac{zlc} représentées par les figures
+\ref{fig:ZLC_1_TempsMarche} et \ref{fig:ZLC_2_TempsMarche} permet de
+construire la \ac{zlc} de ce second indice de localisation. Comme on
+peut le voir sur la \autoref{fig:ZLC_TempsMarche} la zone atteignable
+en \enquote{plusieurs heures} de marche est assez étendue.
+%
+Comme nous le signalions lors de la modélisation de l'indice de
+localisation précédent.
+
 
 \begin{figure}
   \centering
   \input{./figures/TempsMarche_ZLC_FilRouge.tex}
   \caption{\ac{zlc} pour l'indice de localisation  (\ref{ind:fr2})}
+  \label{fig:ZLC_TempsMarche}.  
 \end{figure}
 
 %\subsubsection{La victime est \protect\onto[orl]{Sous\-Proche\-De} un chemin}
