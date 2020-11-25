@@ -491,8 +491,35 @@ sa durée de déplacement. Or, la méthode de spatialisation de la
 relation \onto[orla]{A\-Temps\-De\-Marche\-De} que nous avons définie
 ne permet que la modélisation d'indices où la durée de déplacement est
 clairement définie, comme \enquote{J'ai marché environ deux heures} ou
-\enquote{Il a marché pendant cinq heures}.
-
+\enquote{Il a marché pendant cinq heures}. Pour modéliser un indice
+donnant un intervalle de durée de déplacement (\eg \enquote{J'ai
+  marché entre trois et cinq heures, je ne sais plus exactement}) il
+est nécessaire d'utiliser une fonction d'appartenance plus adaptée,
+comme une fonction de forme trapézoïdale. Pour ce faire plusieurs
+solutions sont envisageables. On peut, par exemple, utiliser un
+modifieur pour transformer la fonction d'appartenance initiale. On
+peut également définir un nouveau fuzzyficateur et une nouvelle
+relation de localisation spécifiquement adaptée a cette situation. Si
+ces deux approches sont parfaitement défendables, nous avons opté pour
+une troisième solution, plus pérenne.
+%
+Nous avons créé une variante \emph{ad hoc} de la relation de
+localisation \onto[orla]{A\-Temps\-De\-Marche\-De} utilisant le
+fuzzyficateur \onto[orla]{Inf\-Val}, ce qui permet la modélisation de
+situations ou la victime donne la borne supérieure de sa durée de
+déplacement et non une valeur précise. Cette nouvelle relation de
+localisation, \onto{Temps\-De\-Marche\-Inferieur\-A} \footnote{Cette
+  nouvelle relation de localisation n'a pas encore été intégrée à
+  l'ontologie des relations de localisation, d'où son absence de
+  préfixe.}, nous permet de transformer l'indice de localisation :
+\enquote{J'ai marché plusieurs heures} en l'indice de localisation
+\enquote{J'ai marché moins de \(n\) heures}. Cette transformation ne
+permet cependant pas de conserver toute la sémantique du premier
+indice. En effet, la relation de localisation
+\onto{Temps\-De\-Marche\-Inferieur\-A} ne fixe pas de borne inférieure
+à la durée de déplacement, alors qu'on comprend intuitivement que la
+formulation : \enquote{J'ai marché plusieurs heures} n'est pas
+compatible avec un déplacement de quelques dizaines de minutes.
 
 Toutefois
 le cas que nous modélisons ici est un peu différent, puisque la durée
@@ -502,9 +529,7 @@ L'utilisation du fuzzyficateur \onto[orla]{Eq\-Val}
 n'est donc pas des plus adaptées.
 %
 Pour modéliser cet indice de localisation nous avons donc mis en place
-une version \emph{ad hoc} de la relation de localisation
-\onto[orla]{A\-Temps\-De\-Marche\-De} utilisant le fuzzyficateur
-\onto[orla]{Sup\-Val}.
+
 
 Cependant le changement du fuzzyficateur ne permet pas de XXX
 %
