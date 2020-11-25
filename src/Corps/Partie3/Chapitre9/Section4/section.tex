@@ -335,6 +335,15 @@ même relation de localisation et le même site \texttt{Y} (\ie le même
 point de départ) et se distinguant par leur destination, site
 \texttt{X}.
 
+\begin{figure}
+  \centering
+  \input{./figures/exemple_parties_spatialisation_DansLaDirectionDe.tex}
+  \caption{Rasteriser, métrique et fuzzyficateur utilisés pour la
+    spatialisation de la relation de localisation atomique
+    \protect\onto[orla]{Dans\-La\-Direction\-De\-X\-Depuis\-Y}}
+  \label{fig:ex_parties_statialisation_DanslaDirectionDe}
+\end{figure}
+
 Pour représenter les objets utilisés comme site nous avons, à nouveau,
 utilisé les données ponctuelles, destinées au placement des toponymes,
 présents dans la BDTOPO. Les géotypes désignés par la victime sont
@@ -369,8 +378,12 @@ proximité des deux sites. Ainsi, nous avons fixé la longueur de
 l'ellipse à 90 \% de la longueur du segment reliant les deux sites. La
 longueur du demi-grand axe de l'ellipse est quant à elle définie en
 fonction de la longueur du demi grand-axe \footnote{Précisément 25 \%
-  de la longueur du demi grand-axe.}.
-
+  de la longueur du demi grand-axe.}. En choisissant de faire des deux
+axes de l'ellipse des longueurs proportionnelles à la distance
+séparant les deux sites de la relation de localisation, nous faisions
+l'hypothèse que plus la destination est éloignée de l'origine du
+déplacement, plus il est probable que la victime suive un chemin
+s'éloignant considérablement de la droite.
 
 Une fois que la métrique a été calculée nous pouvons passer à la
 construction de la \ac{zlc} par le biais de la fuzzyfication. La
@@ -439,14 +452,6 @@ cette caractéristique disparaisse.
 
 
 
-\begin{figure}
-  \centering
-  \input{./figures/exemple_parties_spatialisation_DansLaDirectionDe.tex}
-  \caption{Rasteriser, métrique et fuzzyficateur utilisés pour la
-    spatialisation de la relation de localisation atomique
-    \protect\onto[orla]{Dans\-La\-Direction\-De\-X\-Depuis\-Y}}
-  \label{fig:ex_parties_statialisation_DanslaDirectionDe}
-\end{figure}
 
 
 \begin{figure}
