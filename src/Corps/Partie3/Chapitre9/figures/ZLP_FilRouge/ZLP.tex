@@ -1,5 +1,5 @@
 \subfloat[\label{fig:zlp_fil_rouge_main}]{
-  \begin{tikzpicture}[remember picture]
+  \begin{tikzpicture}[remember picture,inner sep=0pt,outer sep=0pt]
     \tikzset{et/.style={above,font=\footnotesize\vphantom{Ag}}}
     \node[anchor=south west] (img)
     {\includegraphics{../figures/ZLP_FilRouge/ZLP.png}};
@@ -35,44 +35,43 @@
       \path (P1) -- (P2) node[pos=.5, yshift=-2.5cm] {\tiny Pour la légende détaillée du fond topographique voir \autoref{anx:topo_leg}. Sources: BD TOPO 2018, BD ALTI 2018.}; 
     \end{scope}
     \begin{scope}[x=(img.south east),y=(img.north west)]
-      \node[draw,minimum height=1.6cm,minimum width=1.00cm] (B1) at (0.2,0.60) {};
-      \node[draw,minimum height=0.8cm,minimum width=0.50cm] (B2) at (0.7,0.25) {};
-      \node[draw,minimum height=0.4cm,minimum width=0.25cm] (B3) at (0.9,0.10) {};
+      \node[draw,red,thick,minimum height=1.6cm,minimum width=1.00cm] (B1) at (0.2,0.60) {};
+      \node[draw,red,thick,minimum height=0.8cm,minimum width=0.50cm] (B2) at (0.7,0.25) {};
+      \node[draw,red,thick,minimum height=0.4cm,minimum width=0.25cm] (B3) at (0.9,0.10) {};
     \end{scope}
   \end{tikzpicture}
 }
 
 \subfloat[\label{fig:zlp_fil_rouge_a}]{%
-  \begin{tikzpicture}[remember picture]
+  \begin{tikzpicture}[remember picture,inner sep=0pt,outer sep=0pt]
     \tikzset{et/.style={above,font=\footnotesize\vphantom{Ag}}}
     \node (img1)
     {\includegraphics{../figures/ZLP_FilRouge/ZLP_3.png}};
     \draw[-] ([yshift=-1cm]img1.south east) --++ (-1,0) node[et,pos=.5] {\SI{500}{\meter}};
-    \draw (img1.south west) rectangle (img1.north east);
+    \draw[red,thick,draw] (img1.south west) rectangle (img1.north east);
   \end{tikzpicture}
 }\hfill
 % 
 \subfloat[\label{fig:zlp_fil_rouge_b}]{%
-  \begin{tikzpicture}[remember picture]
+  \begin{tikzpicture}[remember picture,inner sep=0pt,outer sep=0pt]
     \tikzset{et/.style={above,font=\footnotesize\vphantom{Ag}}}
     \node (img2)
     {\includegraphics{../figures/ZLP_FilRouge/ZLP_2.png}};
     \draw[-] ([yshift=-1cm]img2.south east) --++ (-1,0) node[et,pos=.5] {\SI{500}{\meter}};
-    \draw (img2.south west) rectangle (img2.north east);
+    \draw[red,thick,draw] (img2.south west) rectangle (img2.north east);
   \end{tikzpicture}
 }\hfill
 % 
 \subfloat[\label{fig:zlp_fil_rouge_c}]{%
-  \begin{tikzpicture}[remember picture]
+  \begin{tikzpicture}[remember picture,inner sep=0pt,outer sep=0pt]
     \tikzset{et/.style={above,font=\footnotesize\vphantom{Ag}}}
     \node (img3)
     {\includegraphics{../figures/ZLP_FilRouge/ZLP_4.png}};
     \draw[-] ([yshift=-1cm]img3.south east) --++ (-1,0) node[et,pos=.5] {\SI{500}{\meter}};
-    \draw (img3.south west) rectangle (img3.north east);
+    \draw[red,thick,draw] (img3.south west) rectangle (img3.north east);
   \end{tikzpicture}
 }
-\begin{tikzpicture}[overlay, remember picture]
-  \tikzset{et/.style={above,font=\footnotesize\vphantom{Ag}}}
+\begin{tikzpicture}[overlay, remember picture,red,thick,draw,inner sep=0pt,outer sep=0pt]
   \draw (B1) -- (img1);
   \draw (B2) -- (img2);
   \draw (B3) -- (img3);
