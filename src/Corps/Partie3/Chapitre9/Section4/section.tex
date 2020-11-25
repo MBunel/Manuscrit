@@ -369,7 +369,23 @@ proximité des deux sites. Ainsi, nous avons fixé la longueur de
 l'ellipse à 90 \% de la longueur du segment reliant les deux sites.
 
 Une fois que la métrique a été calculée nous pouvons passer à la
-construction de la \ac{zlc}
+construction de la \ac{zlc} par le biais de la fuzzyfication. La
+figure \ref{fig:ZLC_FilRouge_1_obj_1} représente le résultat de la
+fuzzyfication de la figure \ref{fig:Metrique_FilRouge_1_obj_1}
+\footnote{On pourra remarquer que l'ellipse représentée sur les
+  figures \ref{fig:Metrique_FilRouge_1_obj_1} et
+  \ref{fig:ZLC_FilRouge_1_obj_1} ne semble pas être parfaitement
+  parallèle au segment reliant \emph{Bourg-d'Oisans} aux
+  \emph{Deux-Alpes.} Cette déformation est liée au changement de
+  résolution effectué pour la représentation de ces résultats et n'est
+  donc pas présente à la résolution native.}.
+%
+La fonction de fuzzyfication choisie, \onto[orla]{Inf\-Val\-0}, a été
+paramétrée avec une valeur \(\delta\) de XX.
+%
+Comme on peut le remarquer, la zone de localisation ainsi construite
+inclut et dépasse de part et d'autre des deux sites, même si le degré
+d'appartenance est plus faible que celui au centre de l'ellipse. 
 
 
 
