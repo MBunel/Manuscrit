@@ -323,7 +323,44 @@ nécessite donc deux sites, \texttt{X} et \texttt{Y}, le premier
 donnant le point visé et le second le point de départ. Dans le cas
 présent l'un des deux sites est clairement identifié
 (\enquote{Bourg-d'Oisans}) alors que le second est désigné par son
-type (\enquote{Une station de ski}).
+type (\enquote{Une station de ski}). Il est donc nécessaire de
+procéder à la décomposition de l'indice de localisation en fonction
+des différentes instances correspondant à la description de l'objet de
+référence. Dans le cas présent on peut identifier 7 stations de ski
+\footnote{Les deux Alpes, Auris en Oisans, Ornon, l'Alpe d'Huez, Oz,
+  Villard-Reculas et Vaujany.}  dans la \ac{zir}, chacune entre elles
+pouvant être un objet de référence potentiel. On est donc amenés a
+décomposer cet indice de localisation en 7 sous-indices, partageant la
+même relation de localisation et le même site \texttt{Y} (\ie le même
+point de départ) et se distinguant par leur destination, site
+\texttt{X}.
+
+Pour représenter les objets utilisés comme site nous avons, à nouveau,
+utilisé les données ponctuelles, destinées au placement des toponymes,
+présents dans la BDTOPO. Les géotypes désignés par la victime sont
+donc représentés par des points, ce qui est une approximation
+significative. Cependant, nous avons choisi d'utiliser le rasteriser
+\onto[orla]{Centroide} pour la spatialisation de la relation de
+localisation \onto[orl]{Dans\-La\-Direction\-De\-X\-Depuis\-Y},
+l'utilisation d'une autre géométrie n'aurait donc pas impacté le
+résultat de la modélisation.
+
+Une fois la décomposition effectuée on peut procéder à la
+spatialisation indépendante des indices de localisation. L'opération
+de rasterisation ne présente pas caractéristiques particulières, si ce
+n'est que nous avons choisi d'employer la rasteriser
+\onto[orla]{Centroide}, celui-ci nous semblant plus adapté à la
+modélisation d'une direction.
+
+Une fois la rasterisation effectuée la métrique
+\onto[orla]{Direction\-De} est calculée. Cette métrique, déjà
+présentée dans le \autoref{chap:07}, mesure la distance de chaque
+position de la \ac{zir} à une ellipse alignée sur la droite reliant
+les centroïdes des sites \texttt{X} et \texttt{Y} et dont la taille
+(\ie la taille des demi-grand et petit axes) est proportionnelle à la
+distance entre \texttt{X} et \texttt{Y}.
+
+
 
 
 
@@ -357,16 +394,6 @@ cette caractéristique disparaisse.
   \label{fig:ex_parties_statialisation_DanslaDirectionDe}
 \end{figure}
 
-L'utilisation d'un tel objet de référence nous contraints à procéder à
-la décomposition de l'indice de localisation en fonction des
-différentes instances correspondant à la description de l'objet de
-référence. Dans le cas présent on peut identifier 7 stations de ski
-\footnote{Les deux Alpes, Auris en Oisans, Ornon, l'Alpe d'Huez, Oz,
-  Villard-Reculas et Vaujany.}  dans la \ac{zir}, chacune entre elles
-pouvant être un objet de référence potentiel.
-
-La métrique, \onto[orla]{Direction\-De}, utilisée par cette relation
-de localisation atomique 
 
 \begin{figure}
   \centering
@@ -642,6 +669,8 @@ Dans l'état actuel la
 La zone de localisation probable obtenue à la suite de la
 spatialisation de l'alerte \emph{fil rouge.}
 
+
+Pb de représentation des géométries
 
 Pour la modélisation du second indice de localisation nous avons
 employé la relation de localisaiton
