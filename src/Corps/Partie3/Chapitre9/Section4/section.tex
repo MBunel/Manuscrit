@@ -519,7 +519,17 @@ indice. En effet, la relation de localisation
 \onto{Temps\-De\-Marche\-Inferieur\-A} ne fixe pas de borne inférieure
 à la durée de déplacement, alors qu'on comprend intuitivement que la
 formulation : \enquote{J'ai marché plusieurs heures} n'est pas
-compatible avec un déplacement de quelques dizaines de minutes.
+compatible avec un déplacement de quelques dizaines de minutes. On
+pourrait créer une nouvelle relation de localisation employant le
+fuzzyficateur \onto[oral]{Sup\-Val}. Cependant, contrairement à la
+relation de localisation \onto{Temps\-De\-Marche\-Inferieur\-A}, il ne
+nous semble pas intéressant de définir cette nouvelle variante de la
+relation de localisation \onto[orl]{A\-Temps\-De\-Marche\-De}, le cas
+d'une description semblable à : \enquote{J'ai marché plus de deux
+  heures} nous semblant très improbable. Il nous a donc semblé plus
+pertinent d'utiliser la relation de localisation
+\onto{Temps\-De\-Marche\-Inferieur\-A} couplée au modifieur
+\onto[orla]{Not} pour définir un nouvel indice de localisaion.
 
 Toutefois
 le cas que nous modélisons ici est un peu différent, puisque la durée
