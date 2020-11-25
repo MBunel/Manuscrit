@@ -497,8 +497,6 @@ On obtient alors la \ac{zlc} de la zone située à l'est de l'antenne.
 \end{figure}
 
 
-
-
 \begin{table}
   \centering
   \begin{tabular}{clccc}
@@ -530,34 +528,47 @@ On obtient alors la \ac{zlc} de la zone située à l'est de l'antenne.
 \end{table}
 
 
-\subsection{Construction de la \ac{zlp}}
+%\subsection{Construction de la \ac{zlp}}
 
 Une fois que les \ac{zlc} des 7 indices de localisation ont été
 construites on peut procéder à la dernière étape de la phase de
-fusion, qui abouti à la construction de la \ac{zlp} de l'alerte.
-
-Dans le cas de l'alerte \emph{fil rouge}, la ac{zlp} ainsi obtenue est
-représentée par la \autoref{fig:zlp_fil_rouge}.
+fusion, la fusion des \ac{zlp} correspondant à la spatialisation des
+indices de localisation, qui abouti à la construction de la \ac{zlp}
+de l'alerte. Dans le cas de l'alerte \emph{fil rouge}, la ac{zlp}
+ainsi obtenue est représentée par la \autoref{fig:zlp_fil_rouge}.
 
 Comme on peut le remarquer la \ac{zlp} ainsi obtenue est
 significativement différente de celles obtenues pour les alertes
 \emph{Grand Veymont} (\autoref{}) et \emph{Moucherotte}
-(\autoref{}). Dans les précédentes exemples, les \ac{zlp} étaient
-continues et permettaient de délimiter une zone globale.
-%
-Dans le cas du fil rouge, la \ac{zlp} est fragmentée, de nombreuses
-petites zones existent et sont parfois très éloignées les unes des
-autres.
+(\autoref{}). En effet, les \ac{zlp} de ces précédentes alertes sont
+relativement \enquote{compactes} et forment une zone d'un seul
+tenant. La zone que nous obtenons ici composée de plusieurs clusters,
+parfois éloignés de plusieurs kilomètres.
 
-Cette différence s'explique par l'imprécision des indices de
-localisaiton
+Les degrés d'appartenance les plus élevés à la \ac{zlp} se trouvent
+dans la partie centrale de la \ac{zir} (Figure
+\ref{fig:zlp_fil_rouge_b}).
+%
+Le cluster situé le plus au nord de la \ac{zir} (Figure
+\ref{fig:zlp_fil_rouge_a}) est
+%
+Le degré d'appartenance à la \ac{zlp} des positions situées dans ce
+cluster est principalement limité par le dernier indice de
+localisation (\ref{ind:fr:7}). En effet, cette zone est quasiment
+située au nord de la Chapelle \emph{St-Philomene,} ce qui conduit a un
+très faible degré d’appartenance pour cet indice de localisation. Or,
+comme nous l'expliquions précédemment, la relation de localisation
+\onto[orla]{A\-Est\-De}, utilisée pour modéliser le dernier élément de
+l'alerte \emph{fil rouge,} ne propose qu'une approximation de la zone
+où le signal de l'antenne GSM est présent.
+
+
+Dans l'état actuel la 
 
 Dans le cas présent, la connaissance de la station de ski visée
 (\ref{ind:fr1}), du chemin emprunté (\ref{ind:fr3}) ou même du lac vu
 (\ref{ind:fr4}) aurait permis de réduire sensiblement l'étendue de la
 \ac{zlp}.
-
-
 
 \begin{figure}
   \centering
@@ -566,9 +577,12 @@ Dans le cas présent, la connaissance de la station de ski visée
   \label{fig:zlp_fil_rouge}
 \end{figure}
 
-
 \subsection{Critique de la modélisation}
 \label{subsec:9-4-3}
+
+XXXX
+
+
 
 %%% Local Variables:
 %%% mode: latex
