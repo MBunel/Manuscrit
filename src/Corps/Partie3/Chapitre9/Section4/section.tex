@@ -306,17 +306,30 @@ ne seraient pas atteignables en une journée par un randonneur (à moins
 qu'il se déplace en fond de vallée).
 %
 Nous avons donc créé une \ac{zir} de \SI{25}{\kilo\meter} de côté,
-pour une aire de \SI{625}{\kilo\meter\squared}.
+pour une aire de \SI{625}{\kilo\meter\squared}
+(\autoref{fig:zir_fil_rouge}).
 
 % Direction
 Le premier des indices de localisation de cette alerte (\ref{ind:fr1})
 est fondé sur la relation de localisation
-\onto[orl]{Dans\-La\-Direction\-De\-X\-Depuis\-Y}. Comme nous
-l'expliquions précédent, cette relation de localisation permet de
-modéliser une relation de direction sans considération de
-l’implantation.
-%
-Cette relation de localisation est atomique et elle fait appel 
+\onto[orl]{Dans\-La\-Direction\-De\-X\-Depuis\-Y}, qui permet de
+modéliser une relation de direction sans considération d'itinéraire ou
+de support. Il s'agit d'une relation de localisation atomique
+utilisant le rasteriser \onto[orla]{Centroide}, la métrique
+\onto[orla]{XXX} et le fuzzyficateur \onto[orla]{XXXX}
+(\autoref{fig:ex_parties_statialisation_DanslaDirectionDe}). Cette
+relation de localisation a la particularité d'être binaire, elle
+nécessite donc deux objets de référence, \texttt{X} et \texttt{Y}, le
+premier donnant le point visé et le second le point de départ. Comme
+la relation de localisation \onto[orl]{Entre\-X\-Et\-Y} \footnote{Que
+  nous avons déjà utilisée pour modéliser le \href{cinquième
+    indice}{ind:gv5} de l'alerte \emph{Grand Veymont.}} la \ac{zlc}
+correspondant a cette relation de localisation est symétrique,
+c'est-à-dire que l'inversion des objets \texttt{X} et \texttt{Y}
+n'impacte pas le résultat de la spatialisation.
+
+
+
 
 
 et un objet
