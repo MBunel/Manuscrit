@@ -1,4 +1,4 @@
-\subfloat[]{
+\subfloat[\label{fig:zlp_fil_rouge_main}]{
   \begin{tikzpicture}[remember picture]
     \tikzset{et/.style={above,font=\footnotesize\vphantom{Ag}}}
     \node[anchor=south west] (img)
@@ -42,27 +42,27 @@
   \end{tikzpicture}
 }
 
-\subfloat[]{%
+\subfloat[\label{fig:zlp_fil_rouge_a}]{%
   \begin{tikzpicture}[remember picture]
     \tikzset{et/.style={above,font=\footnotesize\vphantom{Ag}}}
     \node (img1)
-    {\includegraphics{../figures/ZLP_FilRouge/ZLP_2.png}};
+    {\includegraphics{../figures/ZLP_FilRouge/ZLP_3.png}};
     \draw[-] ([yshift=-1cm]img1.south east) --++ (-1,0) node[et,pos=.5] {\SI{500}{\meter}};
     \draw (img1.south west) rectangle (img1.north east);
   \end{tikzpicture}
 }\hfill
 % 
-\subfloat[]{%
+\subfloat[\label{fig:zlp_fil_rouge_b}]{%
   \begin{tikzpicture}[remember picture]
     \tikzset{et/.style={above,font=\footnotesize\vphantom{Ag}}}
     \node (img2)
-    {\includegraphics{../figures/ZLP_FilRouge/ZLP_3.png}};
+    {\includegraphics{../figures/ZLP_FilRouge/ZLP_2.png}};
     \draw[-] ([yshift=-1cm]img2.south east) --++ (-1,0) node[et,pos=.5] {\SI{500}{\meter}};
     \draw (img2.south west) rectangle (img2.north east);
   \end{tikzpicture}
 }\hfill
 % 
-\subfloat[]{%
+\subfloat[\label{fig:zlp_fil_rouge_c}]{%
   \begin{tikzpicture}[remember picture]
     \tikzset{et/.style={above,font=\footnotesize\vphantom{Ag}}}
     \node (img3)
