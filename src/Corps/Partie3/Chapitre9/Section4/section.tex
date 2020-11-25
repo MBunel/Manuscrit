@@ -552,12 +552,40 @@ référence (\ie \emph{Bourg-d'Oisans}) et la même métrique,
 l'estimation du temps de déplacement nécessaire pour atteindre la
 position à partir du site, calculée avec le modèle de
 \textcite{Tobler1993}. La \autoref{fig:TempsMarche_Metrique_FilRouge}
+représente la valeur de la métrique pour l'ensemble des positions de
+la \ac{zir}.
 
 \begin{figure}
   \centering
   \input{./figures/TempsMarche_Metrique_FilRouge.tex}
   \caption{Metrique temps marche}
   \label{fig:TempsMarche_Metrique_FilRouge}
+\end{figure}
+
+Une fois le calcul de la métrique effectué, on peut procéder à la
+fuzzyfication et à la construction des \ac{zlc}. Dans le cas présent,
+deux \ac{zlc} sont à construire et donc deux fonctions d'appartenance
+sont a paramétrer.
+
+\begin{figure}
+  \centering
+  %
+  \subfloat[\label{fig:ZLC_1_TempsMarche}]{%
+    \includegraphics{../figures/EnDirectionDe_metrique_1_FilRouge.png}}\hspace{1cm}
+  % 
+  \subfloat[\label{fig:ZLC_2_TempsMarche}]{%
+    \includegraphics{../figures/EnDirectionDe_ZLC_1_FilRouge.png}}
+  % 
+  \caption{XX \protect\subref{ZLC_1_TempsMarche} et
+    XX \protect\subref{ZLC_2_TempsMarche} }
+  \label{fig:ZLC_1_2_TempsMarche}
+\end{figure}
+
+
+\begin{figure}
+  \centering
+  \input{./figures/TempsMarche_ZLC_FilRouge.tex}
+  \caption{\ac{zlc} pour l'indice de localisation  (\ref{ind:fr2})}
 \end{figure}
 
 %\subsubsection{La victime est \protect\onto[orl]{Sous\-Proche\-De} un chemin}
