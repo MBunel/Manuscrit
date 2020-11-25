@@ -535,24 +535,8 @@ minimale de déplacement. Ainsi, l'indice de localisation initial
 (\enquote{J'ai marché plusieurs heures}) est transformé en deux
 nouveaux indices de localisation : \enquote{J'ai marché moins de \(n\)
   heures} et \enquote{J'ai marche plus de \(m\) heures} \footnote{Ou :
-  \enquote{Je n'ai pas marché moins de \(m\) heures}.}.
-
-Toutefois
-le cas que nous modélisons ici est un peu différent, puisque la durée
-donnée, \enquote{plusieurs heures}, est très approximée.
-%
-L'utilisation du fuzzyficateur \onto[orla]{Eq\-Val}
-n'est donc pas des plus adaptées.
-%
-Pour modéliser cet indice de localisation nous avons donc mis en place
-
-
-Cependant le changement du fuzzyficateur ne permet pas de XXX
-%
-Pour ce faire on peut ajouter un second indice, utilisant la même
-relation de localisation, \onto[orla]{A\-Temps\-De\-Marche\-De}, mais
-destinée à limiter la distance parcourue par la victime.
-%
+  \enquote{Je n'ai pas marché moins de \(m\) heures}.}, liés par une
+conjonction logique.
 
 \begin{figure}
   \centering
@@ -563,7 +547,18 @@ destinée à limiter la distance parcourue par la victime.
   \label{fig:ex_parties_statialisation_ATempsDeMarcheDe}
 \end{figure}
 
+Ces deux nouveaux indices de localisation utilisent le même objet de
+référence (\ie \emph{Bourg-d'Oisans}) et la même métrique,
+l'estimation du temps de déplacement nécessaire pour atteindre la
+position à partir du site, calculée avec le modèle de
+\textcite{Tobler1993}. La \autoref{fig:TempsMarche_Metrique_FilRouge}
 
+\begin{figure}
+  \centering
+  \input{./figures/TempsMarche_Metrique_FilRouge.tex}
+  \caption{Metrique temps marche)}
+  \label{fig:TempsMarche_Metrique_FilRouge}
+\end{figure}
 
 %\subsubsection{La victime est \protect\onto[orl]{Sous\-Proche\-De} un chemin}
 
