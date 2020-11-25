@@ -408,9 +408,20 @@ dépassements, potentiellement fréquents en montagne. Ainsi, si la
 victime, partant de Bourg-d'Oisans à destination des deux-Alpes, suit
 un chemin l'amenant à contourner sa destination pour arriver par le
 nord ou le sud (voir l'est) toute position sur cet itinéraire pourra
-être considérée comme validant la relation de localisaiton.
-
-
+être considérée comme validant la relation de localisation.
+%
+Un autre point notable est que, comme la relation de localisation
+\onto[orl]{Entre\-X\-Et\-Y} \footnote{Que nous avons déjà utilisée
+  pour modéliser le cinquième indice (\ref{ind:gv5}) de l'alerte
+  \emph{Grand Veymont.}} la \ac{zlc} ici construite est symétrique,
+c'est-à-dire que l'inversion des objets \texttt{X} et \texttt{Y}
+n'impacte pas le résultat de la spatialisation. Cependant, là où la
+symétrie de la relation de localisation \onto[orl]{Entre\-X\-Et\-Y}
+est un choix de modélisation, celle de la relation
+\onto[orl]{Dans\-La\-Direction\-De\-X\-Depuis\-Y} est la conséquence
+de la métrique choisie. Ainsi, si nous changeons le processus de
+spatialisation de cette relation de localisation il est probable que
+cette caractéristique disparaisse.
 
 \begin{figure}
   \centering
@@ -429,30 +440,12 @@ nord ou le sud (voir l'est) toute position sur cet itinéraire pourra
   \label{fig:FilRouge_1_obj_1}
 \end{figure}
 
-
-
-
-et un objet
-géographique non nommé (\enquote{une station de ski}) comme objet de
-référence.
-
-Comme
-la relation de localisation \onto[orl]{Entre\-X\-Et\-Y} \footnote{Que
-  nous avons déjà utilisée pour modéliser le cinquième indice
-  (\ref{ind:gv5}) de l'alerte \emph{Grand Veymont.}} la \ac{zlc}
-correspondant a cette relation de localisation est symétrique,
-c'est-à-dire que l'inversion des objets \texttt{X} et \texttt{Y}
-n'impacte pas le résultat de la spatialisation. Cependant, là où la
-symétrie de la relation de localisation \onto[orl]{Entre\-X\-Et\-Y}
-est un choix de modélisation, celle de la relation
-\onto[orl]{Dans\-La\-Direction\-De\-X\-Depuis\-Y} est la conséquence
-de la métrique choisie. Ainsi, si nous changeons le processus de
-spatialisation de cette relation de localisation il est probable que
-cette caractéristique disparaisse.
-
-
-
-
+Après avoir répété le processus de spatialisation de la relation de
+localisation \onto[orla]{Dans\-La\-Direction\-De\-X\-Depuis\-Y} pour
+toutes les stations de ski situées dans la \ac{zir}, on peut en
+calculer l'union et construire la \ac{zlc} de ce premier indice de
+localisation. La \autoref{fig:ZLC_FilRouge_1} représente le résultat
+de cette union. 
 
 \begin{figure}
   \centering
