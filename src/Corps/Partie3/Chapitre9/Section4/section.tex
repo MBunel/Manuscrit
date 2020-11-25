@@ -366,7 +366,11 @@ métrique pour l'indice de localisation décomposé : \enquote{La victime
 sites sont légèrement en dehors de l'ellipse. Nous avons en effet
 considéré que cette relation de localisation perdait en pertinence à
 proximité des deux sites. Ainsi, nous avons fixé la longueur de
-l'ellipse à 90 \% de la longueur du segment reliant les deux sites.
+l'ellipse à 90 \% de la longueur du segment reliant les deux sites. La
+longueur du demi-grand axe de l'ellipse est quant à elle définie en
+fonction de la longueur du demi grand-axe \footnote{Précisément 25 \%
+  de la longueur du demi grand-axe.}.
+
 
 Une fois que la métrique a été calculée nous pouvons passer à la
 construction de la \ac{zlc} par le biais de la fuzzyfication. La
@@ -385,7 +389,13 @@ paramétrée avec une valeur \(\delta\) de XX.
 %
 Comme on peut le remarquer, la zone de localisation ainsi construite
 inclut et dépasse de part et d'autre des deux sites, même si le degré
-d'appartenance est plus faible que celui au centre de l'ellipse. 
+d'appartenance est plus faible que celui au centre de l'ellipse. Nous
+avons souhaité ce comportement pour prendre en compte d'éventuels
+dépassements, potentiellement fréquents en montagne. Ainsi, si la
+victime, partant de Bourg-d'Oisans à destination des deux-Alpes, suit
+un chemin l'amenant à contourner sa destination pour arriver par le
+nord ou le sud (voir l'est) toute position sur cet itinéraire pourra
+être considérée comme validant la relation de localisaiton.
 
 
 
