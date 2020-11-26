@@ -710,7 +710,10 @@ chaque objet de référence, la métrique
 position de la \ac{zir}, la différence entre l'altitude de chaque
 position avec celle de la position, appartenant à l'objet de
 référence, la plus proche. La figure \ref{fig:SousAlt_Metrique_1}
-représente la valeur de cette métrique pour un chemin donné. 
+représente la valeur de cette métrique pour un chemin donné. Une fois
+le calcul de la métrique effectué on peut procéder à la construction
+de la \ac{zlc} spatialisant la relation de localisation atomique
+\onto[orla]{Sous\-Altitude}, pour chacune des instances. 
 
 \begin{figure}
   \centering
@@ -721,10 +724,13 @@ représente la valeur de cette métrique pour un chemin donné.
   \subfloat[\label{fig:SousAlt_ZLC_1}]{%
     \includegraphics{../figures/EnDirectionDe_ZLC_1_FilRouge.png}}
   % 
-  \caption{XX \protect\subref{fig:SousAlt_Metrique_1} et
-    XX \protect\subref{fig:SousAlt_ZLC_1} }
+  \caption{Métrique \protect\subref{fig:SousAlt_Metrique_1} et
+    \ac{zlc} \protect\subref{fig:SousAlt_ZLC_1} pour la relation de
+    localisation \protect\onto[orla]{Sous\-Proche\-De} appliquée à une
+    instance de chemin.}
   \label{fig:SousAlt_1}
 \end{figure}
+
 
 
 La seconde relation de localisation atomique utilise la métrique
@@ -733,6 +739,20 @@ La seconde relation de localisation atomique utilise la métrique
 Une fois que ces deux métriques ont été calculées on peut procéder à
 leur fuzzyfication. Les Figures \ref{} \ref{} affichent le résultat de
 cette opération pour l'instance prise en exemple.
+
+\begin{figure}
+  \centering
+  %
+  \subfloat[\label{fig:SousAlt_fnc}]{%
+    \includegraphics{../figures/FNC_ALTINF_Chemin_FilRouge.tex}}\hspace{1cm}
+  % 
+  \subfloat[\label{fig:Proximal_fnc}]{%
+    \includegraphics{../figures/FNC_DIST_Chemin_FilRouge.tex}}
+  % 
+  \caption{}
+  \label{fig:SousProche_fnc}
+\end{figure}
+
 
 Une fois que l'on dispose des \ac{zlc} des relations de localisations
 \onto[orla]{Sous\-Altitude} et \onto[orla]{Distance\-Euclidienne} pour
