@@ -690,14 +690,24 @@ L'objet de référence employé dans ce troisième indice de localisation
 décomposer également l'indice de localisation en fonction des
 instances correspondant a la description donnée et situées dans la
 \ac{zir}. La BDTOPO contient, au sein des
-\SI{625}{\kilo\meter\squared} de la \ac{zir}, \num{1976} objets de
-type \enquote{chemins} ou \enquote{sentiers} qui sont autant d'objets
-de référence potentiels. Un indice de localisation est alors construit
-pour chacune de ces instances \footnote{Conformément à la deuxième
-  étape de la phase de décomposition (\autoref{chap:04}).}. À cela
-s'ajoute la décomposition des relations de localisation atomiques, qui
-subdivise chacun de ces \num{1976} nouveaux indices de localisation en
-deux nouveaux indices, le premier correspondant à la relation de
+\SI{625}{\kilo\meter\squared} de la \ac{zir}, de très nombreuses
+instances de chemin. Pour faciliter la modélisation de cet indice de
+localisation nous avons légèrement filtré cet ensemble d'instances, de
+manière à en retirer les instances les moins suitées dans les parties
+nord-est et sud-ouest de la \ac{zir}, qui sont très peu susceptibles
+d'être l'instance désignée par le secouriste. Cette opération de
+dé-sélection manuelle a, certes, été réalisée pour des raisons
+techniques, mais elle s'intègre parfaitement dans le processus métier
+des secouristes, ces derniers pouvant retirer (ou ajouter)
+manuellement des objets à la sélection automatique. Après cette
+sélection nous disposons \num{1976} objets de type \enquote{chemins}
+ou \enquote{sentiers} qui sont autant d'objets de référence
+potentiels. Un indice de localisation est alors construit pour chacune
+de ces instances \footnote{Conformément à la deuxième étape de la
+  phase de décomposition (\autoref{chap:04}).}. À cela s'ajoute la
+décomposition des relations de localisation atomiques, qui subdivise
+chacun de ces \num{1976} nouveaux indices de localisation en deux
+nouveaux indices, le premier correspondant à la relation de
 localisation \onto[orla]{Sous\-Altitude} et le second à la relation de
 localisation \onto[orla]{Proximal}. Au terme de la décomposition de ce
 troisième indice de localisation on dispose donc de \num{3952}
@@ -771,8 +781,12 @@ permet une décroissance plus lente de la fonction d'appartenance et
 donc une fuzzyfication moins sévère. Nous avons laissé le paramètre
 \(v\) a sa valeur précédente de \SI{50}{\meter}, celle-ci nous ayant
 semblé être toujours pertinente. La figure \ref{fig:Proximal_fnc}
-représente la fonction d'appartenance ainsi construite.
-
+représente la fonction d'appartenance ainsi construite. Si l'on
+applique cette fonction d'appartenance à la métrique précédemment
+calculée (Figure \ref{fig:Proximal_Metrique_1}) on obtient la \ac{zlc}
+de cette seconde relation de localisation atomique. La figure
+\ref{fig:Proximal_ZLC_1} représenta la \ac{zlc} résultante de cette
+opération pour un chemin donné.
 
 \begin{figure}
   \centering
@@ -806,7 +820,6 @@ et \protect\onto[proximal]{Proximal}
 \protect\subref{fig:Proximal_fnc}.}
   \label{fig:SousProche_fnc}
 \end{figure}
-
 
 Une fois que l'on dispose des \ac{zlc} des relations de localisations
 \onto[orla]{Sous\-Altitude} et \onto[orla]{Distance\-Euclidienne} pour
