@@ -5,11 +5,11 @@
   \begin{scope}[transparency group]
     % fond
     \begin{scope}
-      \path[ffa] (0,2) -- (2.5,2) -- (5, 0)  -- (0,0) -- cycle;
+      \path[ffa] (0,2) -- (2.5,2) -- (7.5, 0)  -- (8,0) -- cycle;
     \end{scope}
     % bords
     \begin{scope}
-      \path[ffc] (0,2) -- (2.5,2) -- (5, 0) -++ (3,0) ;
+      \path[ffc] (0,2) -- (2.5,2) -- (7.5, 0) -++ (3,0) ;
       \path[ffc_fade] (8,0) -- (9,0) ;
     \end{scope}
   \end{scope}
@@ -26,7 +26,7 @@
         \node[below, font=\footnotesize] at (\n, \decalageX - .05) {\t};
       }
       % label
-      \node[above left, yshift=.1cm, font=\small] at (x axis) {$Distance\ (m)$};
+      \node[below left, yshift=-.25cm, font=\small] at (x axis) {$Distance\ (m)$};
     \end{scope}
     % Axe Y
     \begin{scope}
