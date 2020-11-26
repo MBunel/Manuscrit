@@ -821,37 +821,47 @@ et \protect\onto[proximal]{Proximal}
   \label{fig:SousProche_fnc}
 \end{figure}
 
-Une fois que l'on dispose des \ac{zlc} des relations de localisations
-\onto[orla]{Sous\-Altitude} et \onto[orla]{Distance\-Euclidienne} pour
-chaque instance (Soit \num{3952} \ac{zlc} dans le cas présent) commence la
-phase de fusion. Tout d'abord les \ac{zlc} correspondant à la
-spatialisation des relations de localisation atomiques
-\onto[orla]{Sous\-Altitude} et \onto[orla]{Distance\-Euclidienne} pour
-chaque instance de chemin sont intersectées. On obtient alors, pour
-chaque instance, la \ac{zlc} spatialisant la relation de localisation
-\onto{Sous\-Proche\-De}. La \autoref{} représente cette zone pour
-l'instance de \enquote{chemin} précédemment prise en exemple. Comme on
-peut le remarquer \footnote{C'est une remarque que nous avions déjà
-  formulée dans le \autoref{chap:06}.} la \ac{zlc} ainsi obtenue est
-avant tout contrainte par la relation de localisation
-\onto[orla]{Proximal} (\autoref{}). La relation de localisation
-\onto[orla]{Sous\-Altitude} ne limite quant à elle que l'étendue dans
-la partie supérieure.
-
-Pour construire la \ac{zlc} correspondant à l'indice de localisation
-initial il est nécessaire de procéder à une nouvelle fusion, celle des
-objets de référence non nommés.
-%
-Après le regroupement des 2XXX \ac{zlc} spatialisant la relation de
-localisation \onto[orl]{Sous\-Proche\-De} pour chacune des instances
-de chemin, on obtient la \ac{zlc} (\autoref{}) spatialisant le
-troisième indice de localisation (\ref{ind:fr3}).
+Une fois que l'on dispose des \ac{zlc} spatialisant les relations de
+localisations \onto[orla]{Sous\-Altitude} et
+\onto[orla]{Distance\-Euclidienne} pour chaque instance (Soit
+\num{3952} \ac{zlc} dans le cas présent) commence la phase de
+fusion. Durant la première étape de cette phase, les \ac{zlc}
+correspondant à la spatialisation des relations de localisation
+atomiques \onto[orla]{Sous\-Altitude} et
+\onto[orla]{Distance\-Euclidienne} pour chaque instance de chemin sont
+intersectées, de manière à construire la \ac{zlc} spatialisant la
+relation de localisation \onto[orl]{Sous\-Proche\-De}. Dans le cas de
+cet indice de localisation, \num{3952} \ac{zlc} sont fusionnées deux à
+deux, en \num{1976} \ac{zlc}, une par instance. La
+\autoref{fig:ZLC_SousProche_1} représente cette zone pour l'instance
+de \enquote{chemin} précédemment prise en exemple. Comme on peut le
+remarquer \footnote{C'est une remarque que nous avions déjà formulée
+  dans le \autoref{chap:06}.} la \ac{zlc} ainsi obtenue est avant tout
+contrainte par la relation de localisation \onto[orla]{Proximal}
+(\autoref{}). La relation de localisation \onto[orla]{Sous\-Altitude}
+ne limite quant à elle que l'étendue dans la partie supérieure.
 
 \begin{figure}
   \centering
-  \input{./figures/SousProcheChemin_ZLC_FilRouge.tex}
+  \input{../figures/FNC_ALTINF_Chemin_FilRouge.tex}
+  \caption{\ac{zlc} de la relation de localisaiton
+    \protect\onto[orl]{Sous\-Proche} pour une instance de chemin.}
+    \label{fig:ZLC_SousProche_1}
+\end{figure}
+
+La seconde étape de la phase de fusion consiste à regrouper toutes les
+\ac{zlc} spatialisant la relation de localisation
+\onto[orl]{Sous\-Proche\-De}, calculées pour chaque instance en une
+seule \ac{zlc}, spatialisant le troisième indice de localisation
+(\ref{ind:fr3}). La \autoref{fig:ZLC_FilRouge_3} représente le
+résultat de cette opération.
+
+\begin{figure}
+  \centering
+  \input{./figures/ZLC_SousProche_Chemin/ZLC_SousProche.tex}
   \caption{\ac{zlc} pour l'indice de localisation \enquote{La victime
       est sous un chemin} (\ref{ind:fr3})}
+    \label{fig:ZLC_FilRouge_3}
 \end{figure}
 
 % Visibilité
