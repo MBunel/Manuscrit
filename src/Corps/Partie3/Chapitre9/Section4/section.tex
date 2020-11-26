@@ -589,8 +589,27 @@ ont un degré d'appartenance maximal et seules quelques zones, situées
 a haute altitude et éloignées de \emph{Bourg-d'Oisans} ont un degré
 d'appartenance faible voir nul.
 
-La seconde \ac{zlc} est 
-
+La seconde \ac{zlc} est également construite à l'aide du fuzzyficateur
+\onto[orla]{Inf\-Val}, mais couplé au modifieur \onto[orla]{Not}, ce
+qui permet d'attribuer un degré d'appartenance non nul a toutes les
+positions atteignables en marchant plus qu'une durée donnée. Toujours
+confrontés à l'imprécision de l'estimation de la durée de déplacement
+de la victime, nous avons choisi de considérer que les positions
+situées à plus de 2 heures de marche, la durée minimale pour que l'on
+puisse parler de \enquote{Plusieurs heures}, devaient se voir
+attribuer un degré d'appartenance maximal. Cependant rien ne nous
+garantit que la victime ait suivi ces considérations lexicales lors de
+la discussion téléphonique avec les secours. Il est donc utile de
+fixer le paramètre \(v\) \footnote{Qui fixe ici le seuil à partir du
+  quel le degré d'appartenance n'est plus nul
+  (\autoref{fig:fnc_not}).} a une valeur suffisamment faible pour
+garantir que la victime ce soit déplacée plus longtemps que cette
+valeur. Nous avons choisi de fixer la valeur de \(v\) a 30 minutes et
+le paramètre \(\delta\) a 1h30. L’application de cette fonction de
+fuzzyfication à la métrique précédemment calculée permet de construire
+la \autoref{fig:ZLC_2_TempsMarche}. Comme on peut le remarquer seules
+les positions situées en fond de vallée et a proximité directe de
+\emph{Bourg-d'Oisans} se voient attribuer un degré d'appartenance nul.
 
 \begin{figure}
   \centering
@@ -608,12 +627,14 @@ La seconde \ac{zlc} est
 
 L'intersection des \ac{zlc} représentées par les figures
 \ref{fig:ZLC_1_TempsMarche} et \ref{fig:ZLC_2_TempsMarche} permet de
-construire la \ac{zlc} de ce second indice de localisation. Comme on
-peut le voir sur la \autoref{fig:ZLC_TempsMarche} la zone atteignable
-en \enquote{plusieurs heures} de marche est assez étendue.
-%
-Comme on peut le constater les limites de la \ac{zir} sont
-atteignables en moins de \SI{12}{\hour} de marche.
+construire la \ac{zlc} de ce second indice de localisation,
+c'est-à-dire la \ac{zlc} contenant les positions qui sont atteignables
+en moins de 12 heures de marche (\autoref{fig:ZLC_1_TempsMarche}),
+mais en plus d'une demi-heure (\autoref{fig:ZLC_2_TempsMarche}). Comme
+on peut le remarquer sur la \autoref{fig:ZLC_TempsMarche} la \ac{zlc}
+ainsi obtenue est étendue, ce second indice de localisation est donc
+assez peu discriminant. Cependant il complète efficaccement le
+précédent indice
 
 \begin{figure}
   \centering
