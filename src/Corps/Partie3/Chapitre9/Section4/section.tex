@@ -728,7 +728,17 @@ semble préférable d'adopter une démarche multipliant les indices peu
 précis (\ie avec des fonctions d'appartenance \enquote{larges}),
 plutôt que de se reposer sur une paire d'indices optimisés. Nous avons
 donc fixé la valeur de \(v\) à 0 et conservé la valeur de
-\SI{5}{\meter} pour \(\delta\).
+\SI{5}{\meter} pour \(\delta\). La figure \ref{fig:SousAlt_fnc}
+représente la fonction d'appartenance ainsi définie. Avec un tel
+paramétrage, toutes positions située a une altitude inférieure à
+l'objet de référence se voient attribuer un degré d'appartenance
+maximal et les positions situées légèrement au-dessus de l'objet de
+référence (jusqu'à \SI{5}{\meter}) ont un degré d'appartenance non
+nul. Si l'on applique cette fonction de fuzzyfication à la métrique
+représentée par la figure \ref{fig:SousAlt_Metrique_1} on obtient la
+figure \ref{fig:SousAlt_ZLC_1}, représentant la \ac{zlc} de la
+relation de localisation \onto[orla]{Sous\-Altitude} pour une instance
+donnée de chemin.
 
 \begin{figure}
   \centering
@@ -741,7 +751,7 @@ donc fixé la valeur de \(v\) à 0 et conservé la valeur de
   % 
   \caption{Métrique \protect\subref{fig:SousAlt_Metrique_1} et
     \ac{zlc} \protect\subref{fig:SousAlt_ZLC_1} pour la relation de
-    localisation \protect\onto[orla]{Sous\-Proche\-De} appliquée à une
+    localisation \protect\onto[orla]{Sous\-Altitude} appliquée à une
     instance de chemin.}
   \label{fig:SousAlt_1}
 \end{figure}
@@ -759,10 +769,10 @@ cette opération pour l'instance prise en exemple.
   \centering
   %
   \subfloat[\label{fig:SousAlt_fnc}]{%
-    \includegraphics{../figures/FNC_ALTINF_Chemin_FilRouge.tex}}\hspace{1cm}
+    \input{../figures/FNC_ALTINF_Chemin_FilRouge.tex}}\hspace{1cm}
   % 
   \subfloat[\label{fig:Proximal_fnc}]{%
-    \includegraphics{../figures/FNC_DIST_Chemin_FilRouge.tex}}
+    \input{../figures/FNC_DIST_Chemin_FilRouge.tex}}
   % 
   \caption{}
   \label{fig:SousProche_fnc}
