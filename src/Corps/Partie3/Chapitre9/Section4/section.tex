@@ -880,7 +880,17 @@ des objets présents dans la base de données ne nous semblaient pas
 correspondre à la description donnée par la victime. Au final 6 plans
 d'eau ont été sélectionnés.
 
-Comme pour le second indice de localisation (\ref{ind:fr2})
+Comme pour le second indice de localisation (\ref{ind:fr2}) il n'est
+pas possible d'utiliser directement la relation de localisation
+envisagée (\onto[orl]{Cible\-Voit\-Site}) pour modéliser cet indice de
+localisation. En effet, cette relation est destinée a modéliser des
+situations où le requérant indique voir un objet. La métrique
+\onto[orla]{Part\-Visible}, couplée au fuzzyficateur
+\onto[orla]{Sup-\Val} permet de considérer qu'un objet est visible a
+partir du moment où une portion minimale est visible. Toutefois dans
+le cas présent, la victime indique qu'elle ne voit qu'une partie d'un
+plant d'eau et non son intégralité, ce que le fuzzyficateur
+\onto[orla]{Sup-\Val} ne peut modéliser.
 
 
 
