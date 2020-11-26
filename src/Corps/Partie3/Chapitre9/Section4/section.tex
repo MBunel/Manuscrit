@@ -871,8 +871,35 @@ indices.
 % Visibilité
 Le quatrième indice de cette alerte emploie la relation de
 localisation \onto[orl]{Cible\-Voit\-Site}. Il s'agit d'une relation
-de localisation atomique.
+de localisation atomique utilisant le rasteriser
+\onto[orla]{Geometrie}, la métrique \onto[orla]{Part\-Visible} et le
+fuzzyficateur \onto{Sup\-Val}.
 
+\begin{figure}
+  \centering
+  %
+  \subfloat[\label{fig:Visib_Metrique_1}]{%
+    \includegraphics{../figures/EnDirectionDe_metrique_1_FilRouge.png}}\hspace{1cm}
+  % 
+  \subfloat[\label{fig:Visib_ZLC_1}]{%
+    \includegraphics{../figures/EnDirectionDe_ZLC_1_FilRouge.png}}
+
+  \subfloat[\label{fig:Visib_Metrique_2}]{%
+    \includegraphics{../figures/EnDirectionDe_metrique_1_FilRouge.png}}\hspace{1cm}
+  % 
+  \subfloat[\label{fig:Visib_ZLC_2}]{%
+    \includegraphics{../figures/EnDirectionDe_ZLC_1_FilRouge.png}}
+  % 
+  \caption{Métrique \protect\subref{fig:Visib_Metrique_1} et \ac{zlc}
+    \protect\subref{fig:Visib_ZLC_1} pour la relation de localisation
+    \protect\onto[orla]{Cible\-Voit\-Site} appliquée à une instance de
+    lac.}
+  \label{fig:visib}
+\end{figure}
+
+Une fois que les \ac{zlc} ont été calculée pour tous les objets de
+référence candidat on peut procéder à leur fusion et construire la
+\ac{zlc} de cet indice de localisation
 
 \begin{figure}
   \centering
@@ -894,7 +921,7 @@ larges mais ils nouspermette
 Comme pour les instances de chemin, nous avons choisi de filtrer les
 instances de routes situées dans la \ac{zir}. Les mêmes zones ont été
 retirées, \num{4743} routes ont donc été sélectionnées.
-
+%
 La \autoref{fig:ZLC_FilRouge_5} représente le résultat de la
 spatialisation de ce cinquième indice de localisation.
 
