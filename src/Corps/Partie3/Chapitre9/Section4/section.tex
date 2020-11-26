@@ -713,7 +713,22 @@ référence, la plus proche. La figure \ref{fig:SousAlt_Metrique_1}
 représente la valeur de cette métrique pour un chemin donné. Une fois
 le calcul de la métrique effectué on peut procéder à la construction
 de la \ac{zlc} spatialisant la relation de localisation atomique
-\onto[orla]{Sous\-Altitude}, pour chacune des instances. 
+\onto[orla]{Sous\-Altitude}, pour chacune des instances. Pour la
+modélisation de cette alerte nous avons légèrement modifié les valeurs
+de la fonction d'appartenance que nous avions utilisé lors du
+\autoref{chap:06}. En effet, lors de ce premier essai nous avions
+choisi de fixer le paramètre \(v\) à \SI{-5}{\meter} et le paramètre
+\(\delta\) à \SI{5}{\meter}. Le choix d'une valeur négative de \(\v\)
+était justifié par le fait que l'altitude des linéaires représentant
+les lignes électriques dans la BDTOPO était définie par la hauteur des
+pylônes et non par celle du sol. Un tel paramétrage nous semblait ici
+trop sévère, d'une part car l'altitude des objets \enquote{chemin} de
+la BDTOPO équivaut à la hauteur du sol, mais également car il nous
+semble préférable d'adopter une démarche multipliant les indices peu
+précis (\ie avec des fonctions d'appartenance \enquote{larges}),
+plutôt que de se reposer sur une paire d'indices optimisés. Nous avons
+donc fixé la valeur de \(v\) à 0 et conservé la valeur de
+\SI{5}{\meter} pour \(\delta\).
 
 \begin{figure}
   \centering
