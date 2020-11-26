@@ -1,0 +1,22 @@
+\begin{tikzpicture} 
+  \node[anchor=east] (x1) at (-3.5,0) {\onto[orla]{Proximal}};
+
+  \node[anchor=west] (y1) at (3.5,.8) {\onto[orla]{Centroide}};
+  \node[anchor=west] (y2) at (3.5,0) {\onto[orla]{Ecart\-Angulaire}};
+  \node[anchor=west] (y3) at (3.5,-0.8) {\onto[orla]{Eq\-Angle}};
+  
+  \fill[RdBu-9-9] (x1.east) circle (2pt);
+  
+  \fill[RdBu-9-1] (y1.west) circle (2pt);
+  \fill[RdBu-9-1] (y2.west) circle (2pt);
+  \fill[RdBu-9-1] (y3.west) circle (2pt);
+
+  \draw[->, shorten >=5pt, shorten <=5pt] (x1.east) |- (y1.west)
+  node[pos=0.75, sloped, anchor=center, fill=white] {\tiny\emph{À pour rasteriser}};
+  
+  \draw[->, shorten >=5pt, shorten <=5pt] (x1.east) -- (y2.west)
+  node[pos=0.5, sloped, anchor=center, fill=white] {\tiny\emph{À pour métrique}};
+
+    \draw[->, shorten >=5pt, shorten <=5pt] (x1.east) |- (y3.west)
+  node[pos=0.75, sloped, anchor=center, fill=white] {\tiny\emph{À pour fuzzyficateur}};
+\end{tikzpicture}

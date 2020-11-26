@@ -554,7 +554,7 @@ position à partir du site, calculée avec le modèle de
 représente la valeur de la métrique pour l'ensemble des positions de
 la \ac{zir}.
 
-\begin{figure}
+\begin{figure}[htb]
   \centering
   \input{./figures/TempsMarche_Metrique_FilRouge.tex}
   \caption{Metrique temps marche}
@@ -642,7 +642,7 @@ considérés comme pertinentes selon ce second indice (\eg la partie est
 de la \ac{zir}) sont considérées comme peut pertinentes selon le
 premier indice de localisation.
 
-\begin{figure}
+\begin{figure}[htb]
   \centering
   \input{./figures/TempsMarche_ZLC_FilRouge.tex}
   \caption{\ac{zlc} pour l'indice de localisation  (\ref{ind:fr2})}
@@ -657,20 +657,33 @@ présenté, sans la nommer, dans le \autoref{chap:06}. Comme nous
 l'avons déjà montré cette relation est définie comme la composition
 des relations \onto[orla]{Sous\-Altitude} et \onto[orla]{Proximal},
 elle n'est donc pas atomique. La première de ces deux relations de
-localisation atomiques \onto[orla]{Sous\-Altitude} a déjà été employée
-dans les exemples précédents, comme pour la spatialisation de l'indice
-de localisaiton : \enquote{Le requérant est \onto[orl]{Sous\-Altitude}
-  du sommet du \emph{Grand Veymont}} (\ref{ind:gv2}) pour l'alerte :
-\enquote{\emph{Grand Veymont}}. Pour rappel, cette relation de
-localisation atomique emploie \onto[orla]{Geometrie} comme rasteriser,
+localisation atomiques, \onto[orla]{Sous\-Altitude}, a déjà été
+employée dans les exemples précédents, comme pour la spatialisation de
+l'indice de localisaiton : \enquote{Le requérant est
+  \onto[orl]{Sous\-Altitude} du sommet du \emph{Grand Veymont}}
+(\ref{ind:gv2}). Pour rappel, cette relation de localisation atomique
+emploie \onto[orla]{Geometrie} comme rasteriser,
 \onto[orla]{Delta\-Nearest\-Val} comme métrique et
 \onto[orla]{Inf\-Val\-0} comme fuzzyficateur
-(\autoref{fig:ex_parties_statialisation_sousalt}). Le seconde relation
-de localisation atomique, \onto[orla]{Proximal}, est utilisée pour
-contraindre l'éloignement à l'objet de référence. Elle est spatialisée
-à l'aide du rasteriser \onto[orla]{Geometrie}, de la métrique
+(\autoref{fig:ex_parties_statialisation_sousalt}). La relation de
+localisation atomique \onto[orla]{Proximal} complète la relation
+\onto[orl]{Sous\-Altitude}, leur combinaison permettant d'exprimer une
+relation de localisation verticale, avec une contrainte sur
+l'éloignement planimétrique. La relation de localisation
+\onto[orla]{Proximal} est spatialisée à l'aide du rasteriser
+\onto[orla]{Geometrie}, de la métrique
 \onto[orla]{Distance\-Euclidienne} et du fuzzyficateur
-\onto[orla]{Inf\-Val}.
+\onto[orla]{Inf\-Val}
+(\autoref{fig:ex_parties_statialisation_Proximal}).
+
+\begin{figure}
+  \centering
+  \input{./figures/exemple_parties_spatialisation_Proximal.tex}
+  \caption{Rasteriser, métrique et fuzzyficateur utilisés pour la
+    spatialisation de la relation de localisation atomique
+    \protect\onto[orla]{Proximal}}
+  \label{fig:ex_parties_statialisation_Proximal}
+\end{figure}
 
 L'objet de référence employé dans ce troisième indice de localisation
 (\enquote{Un chemin}) n'est, une nouvelle fois, pas nommé, il est donc
@@ -727,7 +740,7 @@ localisation \onto[orl]{Sous\-Proche\-De} pour chacune des instances
 de chemin, on obtient la \ac{zlc} (\autoref{}) spatialisant le
 troisième indice de localisation (\ref{ind:fr3}).
 
-\begin{figure}
+\begin{figure}[htb]
   \centering
   \input{./figures/SousProcheChemin_ZLC_FilRouge.tex}
   \caption{\ac{zlc} pour l'indice de localisation \enquote{La victime
