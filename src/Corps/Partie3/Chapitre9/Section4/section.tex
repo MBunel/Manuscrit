@@ -686,26 +686,46 @@ l'éloignement planimétrique. La relation de localisation
 \end{figure}
 
 L'objet de référence employé dans ce troisième indice de localisation
-(\enquote{Un chemin}) n'est, une nouvelle fois, pas nommé, il est donc
-également nécessaire de procéder à la décomposition de l'indice de
-localisation en fonction des instances correspondant au type donné et
-situées dans la \ac{zir}. La BDTOPO contient, au sein des
-\SI{625}{\kilo\meter\squared} de la \ac{zir}, 2XXX objets de type
-\enquote{chemins} ou \enquote{sentiers} qui sont autant d'objets de
-référence potentiels. Un indice de localisation est alors construit
+(\enquote{Un chemin}) n'est ici pas nommé. Il est donc nécessaire de
+décomposer également l'indice de localisation en fonction des
+instances correspondant a la description donnée et situées dans la
+\ac{zir}. La BDTOPO contient, au sein des
+\SI{625}{\kilo\meter\squared} de la \ac{zir}, \num{1976} objets de
+type \enquote{chemins} ou \enquote{sentiers} qui sont autant d'objets
+de référence potentiels. Un indice de localisation est alors construit
 pour chacune de ces instances \footnote{Conformément à la deuxième
   étape de la phase de décomposition (\autoref{chap:04}).}. À cela
 s'ajoute la décomposition des relations de localisation atomiques, qui
-subdivise chacun de ces 2XXX nouveaux indices de localisation en deux
-nouveaux indices, le premier correspondant à la relation de
+subdivise chacun de ces \num{1976} nouveaux indices de localisation en
+deux nouveaux indices, le premier correspondant à la relation de
 localisation \onto[orla]{Sous\-Altitude} et le second à la relation de
 localisation \onto[orla]{Proximal}. Au terme de la décomposition de ce
-troisième indice de localisation on dispose donc de 5XXX nouveaux
-indices à spatialiser indépendamment.
+troisième indice de localisation on dispose donc de \num{3952}
+nouveaux indices à spatialiser indépendamment.
 
-La spatialisation de la relation de localisaiton atomique
-\onto[orla]{Sous\-Altitude} nécessite le calcul de la métrique
-\onto[orla]{Delta\-Nearest\-Val}.
+Pour spatialiser la première relation de localisation atomique
+(\onto[orla]{Sous\-Altitude}), il est nécessaire de calculer, pour
+chaque objet de référence, la métrique
+\onto[orla]{Delta\-Nearest\-Val}. Cette métrique calcule, pour chaque
+position de la \ac{zir}, la différence entre l'altitude de chaque
+position avec celle de la position, appartenant à l'objet de
+référence, la plus proche. La figure \ref{fig:SousAlt_Metrique_1}
+représente la valeur de cette métrique pour un chemin donné. 
+
+\begin{figure}
+  \centering
+  %
+  \subfloat[\label{fig:SousAlt_Metrique_1}]{%
+    \includegraphics{../figures/EnDirectionDe_metrique_1_FilRouge.png}}\hspace{1cm}
+  % 
+  \subfloat[\label{fig:SousAlt_ZLC_1}]{%
+    \includegraphics{../figures/EnDirectionDe_ZLC_1_FilRouge.png}}
+  % 
+  \caption{XX \protect\subref{fig:SousAlt_Metrique_1} et
+    XX \protect\subref{fig:SousAlt_ZLC_1} }
+  \label{fig:SousAlt_1}
+\end{figure}
+
 
 La seconde relation de localisation atomique utilise la métrique
 \onto[orla]{Distance\-Euclidienne}.
@@ -716,7 +736,7 @@ cette opération pour l'instance prise en exemple.
 
 Une fois que l'on dispose des \ac{zlc} des relations de localisations
 \onto[orla]{Sous\-Altitude} et \onto[orla]{Distance\-Euclidienne} pour
-chaque instance (Soit 5XXX \ac{zlc} dans le cas présent) commence la
+chaque instance (Soit \num{3952} \ac{zlc} dans le cas présent) commence la
 phase de fusion. Tout d'abord les \ac{zlc} correspondant à la
 spatialisation des relations de localisation atomiques
 \onto[orla]{Sous\-Altitude} et \onto[orla]{Distance\-Euclidienne} pour
