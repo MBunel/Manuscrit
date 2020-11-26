@@ -880,34 +880,44 @@ de localisation atomique.
   \caption{\ac{zlc} pour l'indice de localisation  (\ref{ind:fr4})}
 \end{figure}
 
-% Sous route
+% Sous route & ligne électrique
+Les cinquièmes (\ref{ind:fr5}) et sixièmes (\ref{ind:fr6}) indices de
+localisation utilisent tout deux la relation de localisation
+\onto[orl]{Sous\-Proche\-De}, comme le troisième indice de
+localisaiton (\ref{ind:fr3}). Par conséquent nous ne reviendrons pas
+ici sur la méthode de construction de la \ac{zlc} de ces deux indices,
+celle-ci ayant déjà été détaillée ci-dessus. Nous avons pris la
+décision de conserver les mêmes paramètres que ceux sélectionnés pour
+le troisième indice de localisation. Ces paramètres sont, certes,
+larges mais ils nouspermette
+
+Comme pour les instances de chemin, nous avons choisi de filtrer les
+instances de routes situées dans la \ac{zir}. Les mêmes zones ont été
+retirées, \num{4743} routes ont donc été sélectionnées.
+
+La \autoref{fig:ZLC_FilRouge_5} représente le résultat de la
+spatialisation de ce cinquième indice de localisation.
 
 \begin{figure}
   \centering
   \input{./figures/SousProcheRoute_ZLC_FilRouge.tex}
   \caption{\ac{zlc} pour l'indice de localisation  (\ref{ind:fr5})}
+  \label{fig:ZLC_FilRouge_5}
 \end{figure}
 
+Pour le sixième indice de localisation les objets de référence
+potentiels n'ont pas été filtrés, seuls 34 instances correspondant à
+la description donnée par la victime.
 
-
-%\subsubsection{La victime est \protect\onto[orl]{Sous\-Proche\-De} une ligne
-%  électrique trois brins}
-
-Comme pour l'indice précédent (\ref{ind:fr5}, ce sixième indice de
-localisation emploie la relation de localisation
-\onto[orla]{Sous\-Proche\-De}.
-%
-La spatialisation de cet indice de localisaiton nécessite donc de
-construire la \ac{zlc} valisant les relations de localisation
-atomiques \onto[orla]{Sous\-Altitude} et \onto[orla]{Proximal}.
-
-Objets de ref
+La \autoref{fig:ZLC_FilRouge_6} représente le résultat de la
+spatialisation de ce sixième indice de localisation.
 
 \begin{figure}
   \centering
   \input{./figures/SousProcheLigne_ZLC_FilRouge.tex}
   \caption{\ac{zlc} pour l'indice de localisation \enquote{La victime
-      est sous une ligne électrique trois brins} (\ref{ind:fr5})}
+      est sous une ligne électrique trois brins} (\ref{ind:fr6})}
+  \label{fig:ZLC_FilRouge_6}
 \end{figure}
 
 
@@ -933,14 +943,18 @@ ayant déjà été présentés (\autoref{}), nous ne les afficherons pas ici
 
 On obtient alors la \ac{zlc} de la zone située à l'est de l'antenne.
 
+La \autoref{fig:ZLC_FilRouge_7} représente le résultat de la
+spatialisation de ce septième indice de localisation.
+
 \begin{figure}
   \centering
   \input{./figures/ZLC_EstDe_FilRouge.tex}
   \caption{\ac{zlc} pour l'indice de localisation \enquote{La victime
       est à l'est de l'antenne GSM XXX} (\ref{ind:fr7})}
+    \label{fig:ZLC_FilRouge_7}
 \end{figure}
 
-Cet indice de localisation est le seul à avoir un effet global
+
 
 
 \begin{table}
@@ -958,8 +972,8 @@ Cet indice de localisation est le seul à avoir un effet global
     \addlinespace
     \ref{ind:fr4}&\onto[orla]{Inf\-Val\-0}&\emph{0}&\SI{10}{\meter}& \\
     \addlinespace
-    \multirow{2}{*}{\ref{ind:fr5}}&\onto[orla]{Inf\-Val\-0}&\emph{0}&\SI{10}{\meter}&\\
-                   &\onto[orla]{Inf\-Val\-0}&\emph{0}&\SI{10}{\meter}&\\
+    \multirow{2}{*}{\ref{ind:fr5}}&\onto[orla]{Inf\-Val}&\SI{0}{\meter}&\SI{5}{\meter}&\\
+                   &\onto[orla]{Inf\-Val}&\SI{50}{\meter}&\SI{150}{\meter}&\\
     \addlinespace
     \multirow{2}{*}{\ref{ind:fr6}}&\onto[orla]{Inf\-Val\-0}&\emph{0}&\SI{10}{\meter}&\\
                    &\onto[orla]{Inf\-Val\-0}&\emph{0}&\SI{10}{\meter}&\\
