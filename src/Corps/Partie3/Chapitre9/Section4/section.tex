@@ -573,17 +573,22 @@ imprécision dans l'estimation de la durée de déplacement
 la journée. La valeur \(v\) \footnote{Pour rappel cette valeur
   définit, pour le fuzzyficateur \onto[orla]{Inf\-Val}, dans la borne
   maximale ou les valeurs appartiennent totalement à la \ac{zlc}
-  (\autoref{fig:select_infval}).}, a donc été fixée à 6 heures, ce qui
-correspond à la durée d'une longue randonnée.
+  (\autoref{fig:select_infval}).} a donc été fixée à 6 heures, ce qui
+correspond à la durée d'une longue randonnée. Pour prendre en compte
+des déplacement plus longs nous avons également fixé la valeur du
+second paramètre, \(\delta\), à 6 heures, ce qui permet d'attribuer un
+degré d'appartenance non nul a toutes les randonnées durant moins de
+12 heures. Comme on peut le remarquer sur la
+\autoref{fig:ZLC_1_TempsMarche}, l’application de cette fonction
+d'appartenance à la métrique précédemment calculée
+(\autoref{fig:TempsMarche_Metrique_FilRouge}) conduit à la
+construction d'une \ac{zlc} moins discriminante que celle du premier
+indice de localisation (\autoref{fig:ZLC_FilRouge_1}).
 
-ce qui indique que toute position atteignable en
-moins de 6 heures de marche à partir de \emph{Bourg-d'Oisans}
-appartiendra totalement à la \ac{zlc} de ce premier sous-indice
-. Le second paramètre, \(\delta\), a
-également été fixé à 6 heures. Ainsi, le degré d'appartenance
-commencera à décroitre à partir de 6 heures de marche et deviendra nul
-à 12 heures. La fonction d'appartenance ainsi définie décroit donc
-assez lentement, ce qui permet la 
+Ainsi, le degré
+d'appartenance commencera à décroitre à partir de 6 heures de marche
+et deviendra nul à 12 heures. La fonction d'appartenance ainsi définie
+décroit donc assez lentement, ce qui permet la
 
 %
 Après l'étape de fuzzyfication on obtient les deux \ac{zlc}
