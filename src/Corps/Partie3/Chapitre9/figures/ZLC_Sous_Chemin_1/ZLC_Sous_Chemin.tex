@@ -6,7 +6,7 @@
     \begin{scope}
       \node (P2) at ([yshift=-.5cm]img.south east) {};
       \node (P1) at ([yshift=-.5cm]img.south west) {};
-      \draw[-] (P2 |- -1cm,-.5cm) --++ (-1,0) node[et,pos=.5] {\SI{6}{\kilo\meter}};
+      \draw[-] (P2 |- -1cm,-1cm) --++ (-1,0) node[et,pos=.5] {\SI{6}{\kilo\meter}};
     \end{scope}
     \begin{scope}[x=(img.south east),y=(img.north west)]
       \node[draw,RdBu-9-1,thick,minimum height=1.6cm,minimum width=1.00cm] (B1) at (0.2,0.60) {};
@@ -19,7 +19,7 @@
     \tikzset{et/.style={above,font=\footnotesize\vphantom{Ag}}}
     \node (img1)
     {\includegraphics{../figures/ZLC_Sous_Chemin_1/ZLC_2.png}};
-    \draw[-] ([yshift=-.5cm]img1.south east) --++ (-1,0) node[et,pos=.5] {\SI{2,5}{\kilo\meter}};
+    \draw[-] ([yshift=-1cm]img1.south east) --++ (-1,0) node[et,pos=.5] {\SI{2,5}{\kilo\meter}};
     \draw[RdBu-9-1,thick,draw] (img1.south west) rectangle (img1.north east);
   \end{tikzpicture}
 }
