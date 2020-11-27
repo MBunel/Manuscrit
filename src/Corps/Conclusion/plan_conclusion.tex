@@ -87,7 +87,13 @@ fuzzyficateur pouvant être couplé avec plusieurs métriques, qui ne
 partagent donc pas leur unités.
 %
 On peut raffiner cette solution en rattachant la paramétrisation à la
-relation de localisation et non plus au fuzzyficateur.
+relation de localisation et non plus au fuzzyficateur. Pour donner un
+exemple, avec cette solution toute utilisation de la relation de
+localisation \onto[orl]{Sous\-Altitude} utilisera le même paramétrage
+implicite du fuzzyficateur \onto[orla]{Inf\-Val\-0}, mais ce
+paramétrage pourra être différent lorsque ce fuzzyficateur est appelé
+par une autre relation de localisation, comme
+\onto[orla]{Dans\-Planimetrique}.
 
 % La sélection de la maille
 
