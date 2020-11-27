@@ -399,10 +399,6 @@ l'objet de référence.
   \label{fig:ex_parties_statialisation_horsdeplani}
 \end{figure}
 
-Dans le cas particulier de cet indice de localisation, l'objet de
-référence est un point
-
-
 On peut alors calculer la métrique à partir de cette rasterisation. La
 \autoref{fig:Distance_GrandVeymont} représente le résultat du calcul
 de la métrique \onto[orla]{Distance} pour toutes les positions de la
@@ -467,9 +463,11 @@ utilise le rasteriser \onto[orla]{Geometrie}, la métrique
 la \ac{zir}, la différence d'altitude avec la position la plus proche
 de l'objet de référence et le fuzzyficateur \onto[orla]{Inf\-Val\-0},
 qui attribue un degré d'appartenance non nul à toutes les positions
-pour lesquelles la métrique à une valeur inférieure à zéro.
-
-La métrique
+pour lesquelles la métrique à une valeur inférieure à zéro. La
+\autoref{fig:Metrique_alt_GrandVeymont} représente le résultat du
+calcul de la métrique pour chaque position de la \ac{zir}. Comme on
+peut le remarquer très peu de positions ont une altitude supérieure au
+sommet du \emph{Grand Veymont.}
 
 \begin{figure}
   \centering
@@ -478,8 +476,10 @@ La métrique
   \label{fig:Metrique_alt_GrandVeymont}
 \end{figure}
 
-
-La fonction d'appartenance utilisée pour la fuzzyfication de  
+La fonction d'appartenance utilisée pour la fuzzyfication de la
+métrique nécessite la définition de deux valeurs \(v\), la valeur de
+référence et \(\delta\) l'écartement, ici nous avons fixé la valeur de
+\(\delta\) à \SI{5}{\meter}.
 
 % \begin{figure}
 %   \centering
@@ -489,7 +489,15 @@ La fonction d'appartenance utilisée pour la fuzzyfication de
 %   \label{fig:fuzzy_veyont_distanceSommet}
 % \end{figure}
 
-On obtient alors la \ac{zlc} de ce second indice de localisation.
+Comme pour l'indice précédent (\ref{ind:gv1}), la zone de localisation
+obtenue après la fuzzyficaiton de la métrique
+(\autoref{fig:ZLC_GrandVeymont_2}) est très étendue, de nombreuses
+positions ayant un degré d'appartenance proche de 1. En effet,
+l'indice de localisation modélisé se réfère au sommet du \emph{Grand
+  Veymont,} or, ce sommet est le plus haut du massif du Vercors. Tous
+les points de la \ac{zir}, ou presque, sont donc situés à une altitude
+inférieure à l'objet de référence, ce qui rend cet indice de
+localisation très peu discriminant.
 
 \begin{figure}
   \centering
@@ -498,15 +506,6 @@ On obtient alors la \ac{zlc} de ce second indice de localisation.
     localisation \ref{ind:gv2}}
   \label{fig:ZLC_GrandVeymont_2}
 \end{figure}
-
-Comme pour l'indice précédent (\ref{ind:gv1}), la zone de localisation
-obtenue est ici très étendue, de nombreuses positions ayant un degré
-d'appartenance proche de 1. En effet, l'indice de localisation
-modélisé se réfère au sommet du \emph{Grand Veymont,} or, ce sommet
-est le plus haut du massif du Vercors. Tous les points de la \ac{zir},
-ou presque, sont donc situés à une altitude inférieure à l'objet de
-référence, ce qui rend cet indice de localisation très peu
-discriminant.
 
 %\subsubsection{Au nord du Pas de la Ville}
 La relation de localisation \onto[orl]{Au\-Nord\-De\-Externe},
@@ -572,13 +571,6 @@ La seconde \emph{relation de localisaiton atomique} est
 directement pour la spatialisation du premier indice de localisation
 de cette alerte.
 
-dont nous avons déjà
-présenté la spatialisation
-(\autoref{fig:ex_parties_statialisation_horsdeplani})
-
-On peut alors calculer les métriques
-
-
 \begin{figure}
   \centering
   \input{./figures/distance_PasVille.tex}
@@ -587,8 +579,6 @@ On peut alors calculer les métriques
     \protect\onto[orla]{Hors\-De\-Pla\-ni\-mé\-trique}.}
   \label{fig:veyont_distance}
 \end{figure}
-
-Puis fuzzyfier le résulta
 
 % \begin{figure}
 %   \centering
@@ -620,7 +610,6 @@ Puis fuzzyfier le résulta
   \caption{Zone de localisation compatible pour l'indice de
     localisation 1}
 \end{figure}
-
 
 On obtient alors la \ac{zlc} de ce troisième indice de localisation.
 
@@ -670,22 +659,19 @@ nommés.
 Cet indice de localisation emploie la relation de localisation binaire
 \onto[orl]{Entre\-X\-et\-Y}.
 %
-Cette relation de localisation à la particularité de ce décomposer
-en deux variantes de la relations de localisation atomique
-\onto[orla]{DansLaDirectionDeXDepuisY}, la première utilisant le
-%
-et la seconde les inversant.
-%
-Ainsi, cette définition revient a considérer qu'être entre deux
-objets, revient a être dans la direction de X depuis Y et inversement.
+Cette relation de localisation à la particularité de décomposer en
+deux variantes de la relations de localisation atomique
+\onto[orla]{DansLaDirectionDeXDepuisY}, la seconde inversant les
+objets de référence \texttt{X} et \texttt{Y}. Ainsi, cette définition
+revient a considérer qu'être entre deux objets, revient a être dans la
+direction de X depuis Y et inversement.
 
 La relation de localisaiton \onto[orl]{DansLaDirectionDeXDepuisY} est
 une version générique des relations de cardinalité (\eg
 \onto[orl]{Au\-Nord\-De})que nous avons déjà présentées.
 %
 Cette relation partage donc sa métrique, son fuzzyfieur et son
-rasteriser avec ces relations
-
+rasteriser avec ces relations.
 
 \begin{figure}
   \centering
@@ -701,10 +687,9 @@ relations de localisation atomiques
 \ac{zlc} correspondantes à l'aide du fuzzyficateur
 \onto[orla]{Eq\-Angle}, déjà présenté
 (\autoref{fig:fuzzy_veyont_angleNord}).
-
-On abouti alors aux \ac{zlc} représentées par la
+%
+On obtient alors les \ac{zlc} représentées par la
 \autoref{fig:Entre_GrandVeymont_RSA}.
-
 
 \begin{figure}
   \centering
@@ -714,7 +699,6 @@ On abouti alors aux \ac{zlc} représentées par la
     localisation 1}
   \label{fig:Entre_GrandVeymont_RSA}
 \end{figure}
-
 
 On peut alors intersecter ces deux \ac{zlc} pour construire la
 \ac{zlc} correspondant à l'indice de localisation \ref{ind:gv5},
@@ -819,7 +803,7 @@ localisation. Si la relation de localisation atomique
 elle le fuzzyficateur \onto[orla]{Eq\-Val}, paramétré par la distance
 désirée (ici \SI{800}{\meter}).
 
-Pour cette modélisation (\autoref{fig:fuzzy_veyont_distance})
+% Pour cette modélisation (\autoref{fig:fuzzy_veyont_distance})
 
 \begin{figure}
   \centering
@@ -828,33 +812,21 @@ Pour cette modélisation (\autoref{fig:fuzzy_veyont_distance})
   \label{fig:fuzzy_veyont_distance}
 \end{figure}
 
-
 L’application du fuzzyficateur (\autoref{fig:fuzzy_veyont_distance}) à
 la métrique (\autoref{fig:veyont_distance}) permet de construire la
-\ac{zlc} de cet indice ()
+\ac{zlc} de cet indice (\autoref{fig:ZLC_GrandVeymont_9}).
 
-
-
-Dans le cas présent, \emph{l'objet de référence} mentionné est le
-\emph{Pas de la Ville,} représenté par un ponctuel dans la composante
-oronymie de la BDTOPO.
-
-
-La rasterisation de ce
-
-
-
-La \autoref{fig:veyont_distance} représente le résultat du calcul de
-la métrique \onto[orla]{Distance} ---~calculée à partir du ponctuel
-(rasterisé) représentant le \emph{Pas de la Ville}~--- pour l'ensemble
-des positions de la \ac{zir}. Si cette métrique ne présente pas de
-caractéristiques particulièrement surprenantes, on peut quand même
-noter l'approximation qui est ici faite. Le \emph{Pas de la Ville} est
-en effet résumé par un point, alors que le toponyme désigne un
-passage, une zone de transition, qui serait sans doute mieux
-représentée par un polygone, voire une polyligne. De plus, le point
-utilisé n'est pas placé au niveau du point central du Pas de la Ville,
-mais à plusieurs centaines de mètres de ce dernier.
+% La \autoref{fig:veyont_distance} représente le résultat du calcul de
+% la métrique \onto[orla]{Distance} ---~calculée à partir du ponctuel
+% (rasterisé) représentant le \emph{Pas de la Ville}~--- pour l'ensemble
+% des positions de la \ac{zir}. Si cette métrique ne présente pas de
+% caractéristiques particulièrement surprenantes, on peut quand même
+% noter l'approximation qui est ici faite. Le \emph{Pas de la Ville} est
+% en effet résumé par un point, alors que le toponyme désigne un
+% passage, une zone de transition, qui serait sans doute mieux
+% représentée par un polygone, voire une polyligne. De plus, le point
+% utilisé n'est pas placé au niveau du point central du Pas de la Ville,
+% mais à plusieurs centaines de mètres de ce dernier.
 
 
 \begin{figure}
