@@ -12,15 +12,10 @@ traiterons ici.
 L'alerte du \emph{Grand Veymont} est l'extrait, d'une durée de 1
 minute 06, d'un appel effectué par un accompagnateur en montagne au
 sujet d'un de ses clients \autoref{anx:retrans-gv-verb}.
-
-
+%
 Cette alerte est la plus courte de celles que nous présenterons ici,
 elle est composée de 12 extraits, pour un total de 16 expressions.
-
-
-
-Pas d'objets multiples
-
+%
 les indications données par le requérant sont assez précises et
 détaillées, il est donc possible de définir une \emph{zone initiale de
   recherche} de petite taille. Nous avons défini une \ac{zir} de
@@ -300,7 +295,6 @@ mais il nous semble très probable qu'elle serait plus faible que celle
 des autres indices. C'est pourquoi nous proposons d'attribuer une
 confiance moyenne à cet indice de localisation.
 
-
 Au terme de l'analyse de la retranscription de l'alerte on peut
 construire un ensemble d'indices (\autoref{eq:ens_ind_loc}), composé
 de 9 indices de localisation différents et non contradictoires :
@@ -362,8 +356,7 @@ des objets de référence indéfinis. Seule la fusion des \ac{zlc} des
 différents indices en vue de la construction de la \ac{zlp} sera
 séparée du reste.
 
-%\subsubsection{XXX}
-
+% Indice 1
 Le premier des indices de localisation est \enquote{le requérant est
   \onto[orl]{Hors\-De\-Planimetrique} du sommet du \emph{Grand
     Veymont}} (\ref{ind:gv1}). Pour construire la \ac{zlc}
@@ -445,7 +438,6 @@ permet pas, à lui seul, de localiser le requérant.
   \label{fig:fuzzy_veyont_distanceSommet}
 \end{figure}
 
-
 \begin{figure}
   \centering
   \includegraphics{./figures/PasSommet_GrandVeymont.png}
@@ -455,7 +447,6 @@ permet pas, à lui seul, de localiser le requérant.
 \end{figure}
 
 %\subsubsection{Sous Altitude Grand Veymont}
-
 Le second indice de localisation que nous avons défini est \enquote{Le
   requérant est situé sous le sommet du \emph{Grand Veymont}}
 (\ref{ind:2}). Pour le modéliser nous avons choisi d'utiliser la
@@ -518,7 +509,6 @@ référence, ce qui rend cet indice de localisation très peu
 discriminant.
 
 %\subsubsection{Au nord du Pas de la Ville}
-
 La relation de localisation \onto[orl]{Au\-Nord\-De\-Externe},
 utilisée pour modéliser le troisième indice de localisation
 (\ref{ind:gv3}) est la première des relations de localisation non
@@ -780,11 +770,7 @@ fuzzyficateur est \onto[orla]{Inf\-0}
   \label{fig:ZLC_GrandVeymont_X}
 \end{figure}
 
-
-
-
-%\subsubsection{À 800 mètres du Pas de la Ville}
-
+% À 800 mètres du Pas de la Ville
 Le dernier indice de localisation de l'alerte est : \enquote{le
   requérant est à 800 mètres du \emph{Pas de la Ville}}
 (\ref{ind:gv9}). Une nouvelle fois nous sommes en présence d'un indice
@@ -911,7 +897,6 @@ mais à plusieurs centaines de mètres de ce dernier.
 \end{table}
 
 
-
 \subsubsection{Construction de la zone de localisation probable}
 
 À la suite de la spatialisation des différents indices de localisation
@@ -922,9 +907,6 @@ et de la composition des
 
 \tdi{Impact de la position du toponyme "pas de la ville" sur la
   modélisation}
-
-
-
 
 Un autre problème notable est l'impact de la représentation
 géométrique des objets de référence sur les résultats de la
