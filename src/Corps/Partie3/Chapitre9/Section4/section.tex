@@ -974,15 +974,16 @@ localisaiton (\ref{ind:fr3}). Par conséquent nous ne reviendrons pas
 ici sur la méthode de construction de la \ac{zlc} de ces deux indices,
 celle-ci ayant déjà été détaillée ci-dessus. Nous avons pris la
 décision de conserver les mêmes paramètres que ceux sélectionnés pour
-le troisième indice de localisation. Ces paramètres sont, certes,
-larges mais ils nous permette
+le troisième indice de localisation.
 
 Comme pour les instances de chemin, nous avons choisi de filtrer les
 instances de routes situées dans la \ac{zir}. Les mêmes zones ont été
 retirées, \num{4743} routes ont donc été sélectionnées.
 %
 La \autoref{fig:ZLC_FilRouge_5} représente le résultat de la
-spatialisation de ce cinquième indice de localisation.
+spatialisation de ce cinquième indice de localisation. Comme on peut
+le constater la structure spatiale ainsi obtenue est assez similaire a
+celle de la \autoref{fig:ZLC_FilRouge_3}.
 
 \begin{figure}
   \centering
@@ -1013,27 +1014,21 @@ taille de la \ac{zlc} de chacune de ces instances.
 %\subsubsection{La victime est à l'est de l'antenne GSM}
 
 Le dernier indice de localisation de cette alerte (\ref{ind:fr7}) est
-sans aucun doute le plus simple à modéliser.
-
-Comme nous l'expliquions lors de la modélisation de l'alerte
-\emph{Grand Veymont} (cf. indice \ref{ind:gv3}) les relations
-cardinales comme \onto[orl]{Au\-Nord\-De} ou \onto[orl]{A\-L\-Est\-De}
-sont des relations de localisation atomiques, utilisant le rasteriser
+sans aucun doute le plus simple à modéliser. Il est en effet le seul
+indice de cette alerte a ne nécessiter ni décomposition des relations
+de localisation, ni des objets de référence indéfinis. Comme nous
+l'expliquions lors de la modélisation de l'alerte \emph{Grand Veymont}
+(cf. indice \ref{ind:gv3}) les relations cardinales comme
+\onto[orl]{Au\-Nord\-De} ou \onto[orl]{A\-L\-Est\-De} sont des
+relations de localisation atomiques, utilisant le rasteriser
 \onto[orla]{Centroide}, la métrique \onto[orla]{} avec pour paramètre
-la direction et le fuzzyficateur \onto[orla]{Eq\-Angle}.
-
-Dans le cas de cet indice de localisation l'objet de référence est
-nommé, il n'est donc pas nécessaire de le décomposer.
-%
-Les données XXX ne sont pas présentes dans la BDTOPO.
-
-La métrique \onto[orla]{} et le fuzzificateur \onto[orla]{Eq\-Val}
-ayant déjà été présentés (\autoref{}), nous ne les afficherons pas ici
-
-On obtient alors la \ac{zlc} de la zone située à l'est de l'antenne.
-
-La \autoref{fig:ZLC_FilRouge_7} représente le résultat de la
-spatialisation de ce septième indice de localisation.
+la direction et le fuzzyficateur \onto[orla]{Eq\-Angle}. La seule
+particularité de cet indice de localisaiton comparé au troisième
+indice de l'alerte \emph{Grand Veymont} est son objet de référence. En
+effet, les antennes téléphoniques ne sont pas représentées dans la
+BDTOPO, nous avons donc complété notre jeu de données avec les données
+métier de l'ANFR. La \autoref{fig:ZLC_FilRouge_7} représente le
+résultat de la spatialisation de ce septième indice de localisation.
 
 \begin{figure}
   \centering
