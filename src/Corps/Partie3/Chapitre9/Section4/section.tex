@@ -902,11 +902,30 @@ positions voyant au moins une partie de l'objet de référence, ce
 second indice de localisation permet la sélection de toutes les
 positions ne voyant pas l'intégralité de l'objet de référence.
 
+Nous avons fixé le paramètre \(v\) de la fonction d'appartenance du
+premier indice de localisation à \num{0,1} et le paramètre \(\delta\)
+qui y est associé à \num{0,1}. Par conséquent toute position voyant
+une partie, même minime de l'objet de référence aura un degré
+d'appartenance à la première \ac{zlc} non nul et toute position d'où
+l'on peut au voir au moins 10 \% de l'objet de référence auront un
+degré d'appartenance maximal. Pour le second indice de localisation la
+valeur de \(v\) a été fixée à \num{0,9} et celle de \(\delta\) a
+\num{0,1}. Par conséquent, toute position d'où l'on peut voir plus de
+90 \% de l'objet de référence aura un degré d'appartenance inférieur a
+1.
 
-Comme nous l'expliquions dans le
-\autoref{chap:07}, le rasteriser \onto[orla]{Part\-Visible} calcule la
-part de l'objet de référence visible pour chaque position de la
-\ac{zir}. Dans le cas de cet indice de localisation, la
+L'ensemble de figures \ref{fig:visib} représente la valeur de la
+métrique \onto[orla]{Part\-Visible} pour un plan d'eau donné (Figure
+\ref{fig:Visib_Metrique_1}), ainsi que les deux \ac{zlc} (Figures
+\ref{fig:Visib_ZLC_1} et \ref{fig:Visib_ZLC_2}) calculées a l'aide des
+deux fonction de fuzzyfication décrites. Comme on peut le voir sur la
+figure \ref{fig:Visib_ZLC_2} peu de positions permettent de voir plus
+de 90 \% de la surface de ce plan d'eau. Cependant cet effet est, une
+nouvelle fois renforcé par la diminution de la résolution nécessaire à
+la représentation et qui gomme les variations locales. La figure
+\ref{fig:Visib_ZLC_3} représente quant a elle le résultat de la
+combinaisons de ces deux \ac{zlc}, c'est-à-dire la \ac{zlc} au sein de
+laquelle on voit une partie du plan d'eau étudié.
 
 \begin{figure}
   \centering
