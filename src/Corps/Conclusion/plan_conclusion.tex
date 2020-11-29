@@ -71,49 +71,42 @@ potentielles, celles plutôt techniques, visant à offrir une meilleure
 utilisabilité de notre prototype dans le contexte métier du secours en
 montagne et les perspectives scientifiques.
 
-% Ajout de relations
-
-Portée sonore
-
-Passage ombre
-
-antenne téléphonique
-
-Une première perspective d'amélioration serait de proposer de
-nouvelles relations de localisation adaptées aux besoins métier. Le
-\autoref{chap:09} et plus particulièrement la modélisation du
-\emph{fil rouge} nous a permis de constater que certains indices très
-spécifiques comme \enquote{la victime entend des voitures} ou
-\enquote{le téléphone de la victime est connectée à une antenne
-  téléphonique donnée}, n'étaient pas correctement modélisés avec les
-concepts que nous avions développés.
-%
-Nous avons donc proposé de compléter l'ontologie des relations de
-localisation spécifiquement dédiées a la modélisation de ce type
-d'indices
-%
-La spatialisation de telles relations de localisation est également
-assez 
 
 
- %L'évaluation de la qualité des \ac{zlp}
 
-Comme l'étude du \emph{fil rouge} l'a montré (\autoref{chap:09}), la
-\emph{zone de localisation probable} produite par notre méthode peut,
-en fonction des indices de localisation, avoir des configurations très
-différentes. Elle peut être d'un bloc, ou fragmentée. Dans cette
-seconde situation,  e
-
-% Incomplétude de la base
-
-
-% Problèmes de paramétrisation
+\subsection*{Calibration de la méthode}
 
 Une première piste d'amélioration générale est de travailler sur la
 question de la paramétrisation de la méthode. 
 
+
+% Seuils de la confiance
+
+Enfin, les seuils proposés pour la modélisation de la confiance ont
+été sélectionnés de manière empirique
+
+% La sélection de la maille
+
+Un second problème de paramétrisation est celui du choix de la
+résolution du calcul. Comme nous l'avons expliqué dans le
+\autoref{chap:06}, la représentation raster des \ac{zlc}, implique de
+définir une résolution de maille, qui impacte la précision du
+résultat, mais également le temps de calcul et le volume du
+résultat. Pour les modélisations présentées dans le \autoref{chap:09},
+où nous n'étions pas contrains par les temps de calcul, nous avons
+pris la décision de travailler à l'aide de la résolution la plus fine
+possible. Toutefois
+
+
+De nombreux facteurs peuvent par ailleurs influer sur le temps de
+calcul, comme le nombre d'indices de localisation dans l'alerte
+traitée, la complexité des métriques à calculer et le nombre d'objets
+de référence candidats.
+
 %% La sélection des seuils
 
+Mais la principale limite d
+%
 Une autre limite de la méthode proposée est la paramétrisation des
 fuzzyficateurs. Comme nous l'avons montré dans le \autoref{chap:09}
 cette paramétrisation doit être effectuée manuellement, en fonction de
@@ -170,44 +163,30 @@ leurs propres limites, mais elles offrent des pistes de réflexion
 intéressantes quant à la question de la paramétrisation du
 fuzzyficateurs.
 
-% La sélection de la maille
+\subsection*{Extension, extensions}
 
-Un second problème de paramétrisation est celui du choix de la
-résolution du calcul. Comme nous l'avons expliqué dans le
-\autoref{chap:06}, la représentation raster des \ac{zlc}, implique de
-définir une résolution de maille, qui impacte la précision du
-résultat, mais également le temps de calcul et le volume du
-résultat. Pour les modélisations présentées dans le \autoref{chap:09},
-où nous n'étions pas contrains par les temps de calcul, nous avons
-pris la décision de travailler à l'aide de la résolution la plus fine
-possible. Toutefois
+ %L'évaluation de la qualité des \ac{zlp}
 
+Comme l'étude du \emph{fil rouge} l'a montré (\autoref{chap:09}), la
+\emph{zone de localisation probable} produite par notre méthode peut,
+en fonction des indices de localisation, avoir des configurations très
+différentes. Elle peut être d'un bloc, ou fragmentée. Dans cette
+seconde situation,  e
 
-De nombreux facteurs peuvent par ailleurs influer sur le temps de
-calcul, comme le nombre d'indices de localisation dans l'alerte
-traitée, la complexité des métriques à calculer et le nombre d'objets
-de référence candidats.
-
-% Seuils de la confiance
-
-Système d'inférence flou ?
-
-
-
-% Extension méthode
-
-
-%% Décomposition des objets de référence
-
-Cette piste, que nous avons déjà explorée \autocite{Bunel2019a},
-
-%% Évolution de la qualité
 
 Différentes pistes ont longuement été explorées.
 
 Une approche, fondée sur la théorie des fonctions de croyance
 \autocite{Shafer1976} et inspirée des travaux de
 \textcite{Olteanu2008},
+
+
+%% Décomposition des objets de référence
+
+Cette piste, que nous avons déjà explorée \autocite{Bunel2019a},
+
+
+%% Incomplétude de la base
 
 %% Objets de référence flous
 
@@ -229,6 +208,37 @@ La possibilité de travailler à partir d'objets de référence imprécis
 offre également la possibilité d'utiliser les \ac{zlc} produites par
 notre méthode comme objets de référence de nouveaux indices de
 localisation.
+
+
+\subsection*{Confrontations}
+
+% Réduire / augmenter la précision
+
+% Pertinance / Non pertinence de relations
+
+
+% Ajout de relations
+Portée sonore
+
+Passage ombre
+
+antenne téléphonique
+
+Une première perspective d'amélioration serait de proposer de
+nouvelles relations de localisation adaptées aux besoins métier. Le
+\autoref{chap:09} et plus particulièrement la modélisation du
+\emph{fil rouge} nous a permis de constater que certains indices très
+spécifiques comme \enquote{la victime entend des voitures} ou
+\enquote{le téléphone de la victime est connectée à une antenne
+  téléphonique donnée}, n'étaient pas correctement modélisés avec les
+concepts que nous avions développés.
+%
+Nous avons donc proposé de compléter l'ontologie des relations de
+localisation spécifiquement dédiées a la modélisation de ce type
+d'indices
+%
+La spatialisation de telles relations de localisation est également
+assez 
 
 
 %%% Local Variables:
