@@ -50,22 +50,36 @@ Nous avons donc proposé une méthode s'appuyant sur le cadre théorique
 de la théorie des sous-ensembles flous et sur la théorie des
 possibilités.
 
+Cette méthode a été structurée selon trois grandes phases, la
+\emph{décomposition,} la \emph{spatialisation} et la \emph{fusion.}
+Chacune de ces phases répond à un objectif précis, la décomposition
+traite les indices de localisation saisis par le secouriste de manière
+a les rendre spatialisables, la spatialisation transforme ces indices
+en des zones de localisation floues et la fusion les regroupe, jusqu'à
+aboutir à une seule zone, la \ac{zlp}, spatialisant l'ensemble de
+l'alerte traitée.
+
+D'une certaine manière, la spatialisation est le cœur de notre travail
+et les phases de décomposition et de fusion ne servent qu'a permettre
+sa mise en place.
+
 La méthode de spatialisation proposée présente l'avantage d'être
-extrêmement flexible. Elle s'appuie sur trois éléments, le rasteriser,
-la métrique et le fuzzyficateur, qui combinés permettent la
-spatialisation d'une relation de localisation. Un grand nombre de ces
-trois éléments ont été définis. Certains sont très spécifiques et sont
-employés que pour la spatialisation d'une relation de localisation
-particulière, mais une grande partie sont génériques. Ces derniers
-peuvent donc être réemployés pour modéliser d'autre relations de
-localisation, voir pour en définir des nouvelles.
-
-
-% spatialisation des indices
-Cette méthode offre un cadre permettant de modéliser des indices de
-localisation 
+extrêmement flexible. Elle s'appuie sur trois éléments, le
+\emph{rasteriser,} la \emph{métrique} et le \emph{fuzzyficateur,} qui
+combinés permettent la spatialisation d'une relation de
+localisation. Un grand nombre de ces trois éléments ont été
+définis. Certains sont très spécifiques et sont employés que pour la
+spatialisation d'une relation de localisation particulière, mais une
+grande partie sont génériques et partagés par plusieurs relations de
+localisation. Ces derniers peuvent donc être réemployés pour modéliser
+d'autre relations de localisation, voir pour en définir des nouvelles.
 
 % Construction ORL et ORLA
+L'ensemble des connaissances nécessaires à la spatialisation,
+c'est-a-dire la liste des relations de localisation et leur
+décomposition, a été formalisée dans une ontologie, \ac{orl}.
+
+
 Nous avons pris la décision d'adopter une démarche orientée
 connaissances, ce qui nous a conduit à définir une ontologie,
 \ac{orl}, regroupant l'ensemble des relations de localisations
