@@ -41,7 +41,25 @@ l'implémentation d'une méthode de transformation des positions
 exprimées dans un référentiel indirect en des positions exprimées dans
 un référentiel direct.
 %
-Le développement de cette méthode nous a nécessité l 
+Le développement de cette méthode nous a nécessité de travailler à la
+résolution de plusieurs problèmes, comme la prise en compte de
+l'imprécision des descriptions de position, de l'incertitude des
+indices ou de la combinaison de différents indices de localisation.
+
+Nous avons donc proposé une méthode s'appuyant sur le cadre théorique
+de la théorie des sous-ensembles flous et sur la théorie des
+possibilités.
+
+La méthode de spatialisation proposée présente l'avantage d'être
+extrêmement flexible. Elle s'appuie sur trois éléments, le rasteriser,
+la métrique et le fuzzyficateur, qui combinés permettent la
+spatialisation d'une relation de localisation. Un grand nombre de ces
+trois éléments ont été définis. Certains sont très spécifiques et sont
+employés que pour la spatialisation d'une relation de localisation
+particulière, mais une grande partie sont génériques. Ces derniers
+peuvent donc être réemployés pour modéliser d'autre relations de
+localisation, voir pour en définir des nouvelles.
+
 
 % spatialisation des indices
 Cette méthode offre un cadre permettant de modéliser des indices de
@@ -208,17 +226,14 @@ une station d'arrivée et de départ.
 Cette piste, que nous avons
 déjà explorée \autocite{Bunel2019a},
 
-
 %% Incomplétude de la base
+Un autre point que nous souhaiterions aborder est la prise en compte
+de l'incomplétude des données.
 
 %% Objets de référence flous
-
-\tdi{Parler de l'avantage de manipuler directement des objets flous,
-  par exemple pour la durée de déplacement (bourg d'oisans fil rouge}
-
-Une autre perspective importante de ce travail serait d'étendre notre
-méthode de manière a ce qu'elle puisse traiter des objets de référence
-imprécis.
+Une dernière possibilité d'extension de ce travail, serait d'étendre
+notre méthode de manière a ce qu'elle puisse traiter des objets de
+référence imprécis.
 
 Comme l'ont montré certains indices de localisation traités dans le
 \autoref{chap:09}, la représentation géométrique de certains objets de
@@ -232,8 +247,10 @@ offre également la possibilité d'utiliser les \ac{zlc} produites par
 notre méthode comme objets de référence de nouveaux indices de
 localisation.
 
+\subsection*{Intégration contexte métier}
 
-\subsection*{Confrontations}
+Une dernière perspective majeure pour ce travail est de travailler à
+son intégration dans le processus métier de la localisation de victimes.
 
 % Réduire / augmenter la précision
 
@@ -241,6 +258,10 @@ localisation.
 
 
 % Ajout de relations
+Nous pensons que cette confrontation impliquera également de nombreux
+retours sur les relations de localisations définies dans l'ontologie
+\ac{orl}.
+
 Portée sonore
 
 Passage ombre
