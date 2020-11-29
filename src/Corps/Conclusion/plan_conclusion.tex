@@ -35,6 +35,7 @@ réelles.
 % Avantages
 La méthode proposée présente de multiples avantages
 
+% Implémentation
 
 \addsec{Résumé des contributions}
 
@@ -171,9 +172,21 @@ fuzzyficateurs.
 
 % La sélection de la maille
 
-Un second problème de paramétrisation est celui de la résolution du
-calcul. Comme nous l'avons expliqué dans le \autoref{chap:06}, la
-représentation raster des \ac{zlc},
+Un second problème de paramétrisation est celui du choix de la
+résolution du calcul. Comme nous l'avons expliqué dans le
+\autoref{chap:06}, la représentation raster des \ac{zlc}, implique de
+définir une résolution de maille, qui impacte la précision du
+résultat, mais également le temps de calcul et le volume du
+résultat. Pour les modélisations présentées dans le \autoref{chap:09},
+où nous n'étions pas contrains par les temps de calcul, nous avons
+pris la décision de travailler à l'aide de la résolution la plus fine
+possible. Toutefois
+
+
+De nombreux facteurs peuvent par ailleurs influer sur le temps de
+calcul, comme le nombre d'indices de localisation dans l'alerte
+traitée, la complexité des métriques à calculer et le nombre d'objets
+de référence candidats.
 
 % Seuils de la confiance
 
