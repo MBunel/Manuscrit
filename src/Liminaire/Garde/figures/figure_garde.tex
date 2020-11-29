@@ -1,0 +1,56 @@
+﻿\begin{tikzpicture}
+  \begin{scope}[local bounding box=obr]
+    \fill[ffa] (1.125,.375) circle [radius=3pt];
+    \path[ffc] (1.125,.375) circle [radius=3pt];
+    \path[ffc] (0,0) rectangle (2,2);
+  \end{scope}
+  \begin{scope}[xshift=4.25cm]
+    \begin{scope}
+      \foreach \x in {0,.25,...,1.75}{
+        \foreach \y in {0,.25,...,1.75}
+        \path[draw, line width=.01mm] (\x,\y) rectangle (\x +.25, \y + .25);
+      }
+      \path[ffa] (1,.25) rectangle (1.25, .5);
+      \path[ffc] (0,0) rectangle (2,2);
+    \end{scope}
+  \end{scope}
+  \begin{scope}[xshift=8.5cm,local bounding box=met]
+    \begin{scope}
+      \foreach \x in {0,.25,...,1.75}{
+        \foreach \y in {0,.25,...,1.75}
+        {
+          \path[draw, line width=.01mm] (\x,\y) rectangle (\x +.25, \y +
+          .25);
+          \pgfmathsetmacro\radius{sqrt((\x-1.125)^2+(\y-.375)^2)*1.25}
+          \fill[black] (\x+.125,.125+\y) circle (\radius pt);
+        }
+      }
+      \path[ffc] (0,0) rectangle (2,2);
+    \end{scope}
+  \end{scope}
+  \begin{scope}[xshift=12.75cm,local bounding box=fuzz]
+    \begin{scope}
+      \foreach \x in {0,.25,...,1.75}{
+        \foreach \y in {0,.25,...,1.75}
+        {
+          \path[draw, line width=.01mm] (\x,\y) rectangle (\x +.25, \y +
+          .25);
+          \pgfmathsetmacro\dist{sqrt((\x-1.125)^2+(\y-.375)^2)}
+          \pgfmathsetmacro\fuzzy{%
+            ifthenelse(\dist < .25,1,%
+            ifthenelse(\dist < 2,-0.57*\dist+1.14,0)%
+            )
+          }
+          \pgfmathsetmacro\radius{\fuzzy*2.5}
+          \fill[black] (\x+.125,.125+\y) circle (\radius pt);
+        }
+      }
+      \path[ffc] (0,0) rectangle (2,2);
+    \end{scope}
+  \end{scope}
+  \begin{scope}
+    \path[draw, ->] (2.5,1) --++ (1.25,0);
+    \path[draw, ->] (6.75,1) --++ (1.25,0);
+    \path[draw, ->] (11,1) --++ (1.25,0);
+  \end{scope}
+\end{tikzpicture}
