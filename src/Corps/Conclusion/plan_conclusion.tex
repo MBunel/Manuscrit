@@ -43,29 +43,36 @@ d'en analyser les résultats (\autoref{chap:09}).
 La principale contribution de cette thèse est la définition et
 l'implémentation d'une méthode de transformation des positions
 exprimées dans un référentiel indirect en des positions exprimées dans
-un référentiel direct.
-%
-Le développement de cette méthode nous a nécessité de travailler à la
-résolution de plusieurs problèmes, comme la prise en compte de
-l'imprécision des descriptions de position, de l'incertitude des
-indices ou de la combinaison de différents indices de localisation.
-
-Nous avons donc proposé une méthode s'appuyant sur le cadre théorique
-de la théorie des sous-ensembles flous et sur la théorie des
-possibilités.
+un référentiel direct. Le développement de cette méthode nous a
+nécessité de travailler à la résolution de plusieurs problèmes
+scientifiques, tels que la prise en compte de l'imprécision des
+descriptions de position données par la victime, de la confiance du
+secouriste en ces informations ou de la fusion de différents indices
+de localisation. Mais la question centrale de ce travail est la
+question de la spatialisation des descriptions de positions. Pour y
+répondre, nous avons proposé une méthode que nous avons voulu
+générique, mais que nous avons calibrée pour notre cas
+d’application, le secours en montagne.
 
 Cette méthode a été structurée selon trois grandes phases, la
 \emph{décomposition,} la \emph{spatialisation} et la \emph{fusion.}
-Chacune de ces phases répond à un objectif précis, la décomposition
+Chacune d'entre elles répond à un objectif précis. La décomposition
 traite les indices de localisation saisis par le secouriste de manière
-a les rendre spatialisables, la spatialisation transforme ces indices
-en des zones de localisation floues et la fusion les regroupe, jusqu'à
+à les rendre spatialisables, la spatialisation transforme ces indices
+en des zones de localisation et la fusion les regroupe, jusqu'à
 aboutir à une seule zone, la \ac{zlp}, spatialisant l'ensemble de
 l'alerte traitée.
+
+
 
 D'une certaine manière, la spatialisation est le cœur de notre travail
 et les phases de décomposition et de fusion ne servent qu'a permettre
 sa mise en place.
+
+
+Nous avons donc proposé une méthode s'appuyant sur le cadre théorique
+de la théorie des sous-ensembles flous et sur la théorie des
+possibilités.
 
 La phase de décomposition
 
