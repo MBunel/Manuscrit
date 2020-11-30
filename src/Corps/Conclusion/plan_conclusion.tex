@@ -124,55 +124,50 @@ relations de localisation atomiques nous avons chacun des concepts de
 cette ontologie a un ensemble de concepts décrivant des méthodes qui
 seront appliquées lors de la spatialisation.
 
-La lecture et l’application de ces concepts est réalisée au court de
-la seconde phase, la spatialisation.
+La lecture et l’application de ces concepts est réalisée au cours de
+la seconde phase, la spatialisation. Trois concepts différents,
+correspondant à autant d'étapes de la spatialisation ont été
+définis. Le \emph{rasteriser} transforme l'objet utilisé comme
+référence en un raster. Le choix du \emph{rasteriser} permet de
+sélectionner la partie de l'objet qui est utilisée comme référence
+(centre, frontière, ensemble de l'objet). La seconde étape est celle
+de la construction de la \emph{métrique}. Durant cette étape une
+mesure permettant de quantifier la sémantique de la relation de
+localisation spatialisée est calculée pour toutes les positions de la
+zone étudiée à partir de l'objet de référence rasterisé. Cette
+métrique est ensuite utilisé pour construire la zone de localisation
+compatible lors de la \emph{fuzzyfication.} Un grand nombre de
+\emph{rasterisers,} de \emph{métriques} et de \emph{fuzzyficateurs}
+ont été définis. Certains sont très spécifiques et sont employés que
+pour la spatialisation d'une relation de localisation particulière,
+mais une grande partie sont génériques et partagés par plusieurs
+relations de localisation. Ces derniers peuvent donc être réemployés
+pour modéliser d'autre relations de localisation, voir pour en définir
+des nouvelles, ce qui offre une grande flexibilité.
 
- Elle s'appuie sur trois éléments, le
-\emph{rasteriser,} la \emph{métrique} et le \emph{fuzzyficateur,} qui
-combinés permettent la spatialisation d'une relation de
-localisation. Un grand nombre de ces trois éléments ont été
-définis. Certains sont très spécifiques et sont employés que pour la
-spatialisation d'une relation de localisation particulière, mais une
-grande partie sont génériques et partagés par plusieurs relations de
-localisation. Ces derniers peuvent donc être réemployés pour modéliser
-d'autre relations de localisation, voir pour en définir des nouvelles.
+L'ensemble de la méthode a été implémenté dans un prototype, RUITOR,
+qui nous a permis de confronter nos propositions théoriques a la
+modélisations d'alertes réelles. Ce qui nous a permis de mettre en
+évidence les qualités et les défauts de notre approche.
 
-La méthode de spatialisation proposée présente l'avantage d'être
-extrêmement flexible.
-
-
-La phase de fusion
-
-% Construction ORL et ORLA
-L'ensemble des connaissances nécessaires à la spatialisation,
-c'est-a-dire la liste des relations de localisation et leur
-décomposition, a été formalisée dans une ontologie, \ac{orl}.
-
-% identification concepts
-
-
-Nous avons pris la décision d'adopter une démarche orientée
-connaissances, ce qui nous a conduit à définir une ontologie,
-\ac{orl}, regroupant l'ensemble des relations de localisations
-utilisées dans notre contexte.
-
-L'utilisation d'une ontologie des relations de localisation offre le
-double avantage de clarifier la définition des relations de
-localisation, tout en permettant leur évolutivité.
-
-
-% Prototypage implémentation
-Enfin, nous avons proposé une implémentation de cette méthode.
-
-La formalisation d'une méthode de spatialisation des descriptions de
-positions est complétée par son implémentation au sein d'un prototype.
-
-
-
-% Enseignements
-
-Le développement de RUITOR a quant à lui permi de mettre en évidence
-les problèmes que pouvait poser l'implémentation de notre méthode.
+Les deux qualités majeures de notre méthode sont sa généricité et son
+évolutivité. La généricité de la méthode est principalement permise
+par le principe de décomposition et à la réalisation de la
+spatialisation à l'aide de trois concepts spécifiques, le
+\emph{rasterizer,} la \emph{métrique} et le \emph{fuzzyficateur.} La
+possibilité de combiner ces trois éléments pour créer un grand nombre
+de relations de localisation atomiques et la possibilité de combiner
+ces mêmes relations de localisation atomiques permet la définition
+d'un grand nombre de concepts. L'évolutivité de notre méthode est, en
+partie, une conséquence de sa généricité. En effet, l'ajout d'un
+nouveau concept, comme une \emph{métrique,} permet de définir de
+nombreuses nouvelles relations de localisation atomiques, ces
+dernières étant construites par la combinaison de
+concepts. L'utilisation d'une  ontologie pour formaliser les liens de
+décomposition permet également de faciliter l'évolution de notre
+méthode. En effet, cette approche permet d'extraire la formalisation
+de la spatialisation de l'implémentation, la rendant plus facilement
+consultable et modifiable et facilite donc son évolution.
 
 \addsec{Perspectives}
 
