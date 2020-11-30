@@ -69,8 +69,8 @@ théorique de la théorie des sous-ensembles flous
 de localisation floues, c'est-à-dire dotées de limites
 progressives. On peut alors faire la distinction entre les positions
 correspondant partiellement ou totalement à l'indice de localisation
-spatialisé et donc modéliser leur imprécision.
-%
+spatialisé et donc modéliser leur imprécision. 
+
 La confiance du secouriste traitant l'alerte en la véracité des
 indices de localisation qu'il traite a quant à elle été modélisée à
 l'aide de la théorie des possibilités \autocite{Zadeh1978}. Ce cadre
@@ -181,38 +181,47 @@ a l'expérience des secouristes.
 \subsection*{Calibration de la méthode}
 
 % Seuils de la confiance
-Une première piste d'amélioration
-Enfin, les seuils proposés pour la modélisation de la confiance ont
-été sélectionnés de manière empirique
+Une première piste d'amélioration consiste à améliorer la
+paramétrisation de notre méthode. En effet, dans la situation actuelle
+certains paramètres, comme les seuils de confiance, ont été fixés
+empiriquement.
 
-% La sélection de la maille
-
-Un second problème de paramétrisation est celui du choix de la
-résolution du calcul. Comme nous l'avons expliqué dans le
-\autoref{chap:06}, la représentation raster des \ac{zlc}, implique de
-définir une résolution de maille, qui impacte la précision du
-résultat, mais également le temps de calcul et le volume du
-résultat. Pour les modélisations présentées dans le \autoref{chap:09},
-où nous n'étions pas contrains par les temps de calcul, nous avons
-pris la décision de travailler à l'aide de la résolution la plus fine
-possible. Toutefois
-
-
-De nombreux facteurs peuvent par ailleurs influer sur le temps de
-calcul, comme le nombre d'indices de localisation dans l'alerte
-traitée, la complexité des métriques à calculer et le nombre d'objets
-de référence candidats.
+C'est un problème qui se pose également pour le choix de la résolution
+du calcul. Comme nous l'avons expliqué dans le \autoref{chap:06}, la
+représentation raster des \ac{zlc}, implique de définir une résolution
+de maille, qui impacte la précision du résultat, mais également le
+temps de calcul et le volume du résultat. Pour les modélisations
+présentées dans le \autoref{chap:09}, où nous n'étions pas contrains
+par les temps de calcul, nous avons pris la décision de travailler à
+l'aide de la résolution la plus fine possible. Toutefois cette
+solution n'est pas perenne, notre méthode visant à être appliquée dans
+des contextes où le temps peut être limité. Nous souhaitons donc
+offrir aux secouristes la possibilité de paramétrer la résolution du
+calcul. Pour ce faire deux solutions seraient envisageables, la
+première serait de laisser le secouriste fixer manuellement la maille
+du calcul, ce qui est déjà techniquement possible, mais non accessible
+pour l'utilisateur. Une seconde solution serait d'adapter
+automatiquement cette résolution en fonction de la zone étudiée, ce
+qui libérerait les secouristes de ces considérations. Cependant la
+mise en place de cette solution pose un autre problème, nous ne savons
+pas quelle est la meilleure résolution de spatialisation. Il est en
+effet possible de des résolutions plus faibles que celles que nous
+avons utilisées dans nos essais (\eg 100, voire 250~m) soient
+satisfaisantes pour déclencher une intervention, ce que nous ne
+pouvons savoir à l'heure actuelle. Il est donc possible qu'une
+spatialisation à une résolution fixe et peu élevée soit satisfaisante
+pour la localisation d'appels. Il nous semble donc nécessaire de
+confronter notre méthode a de nouveaux cas et a l'avis des secouristes
+pour approfondir ces questions.
 
 %% La sélection des seuils
-
-Mais la principale limite d
-%
-Une autre limite de la méthode proposée est la paramétrisation des
-fuzzyficateurs. Comme nous l'avons montré dans le \autoref{chap:09}
-cette paramétrisation doit être effectuée manuellement, en fonction de
-considérations empiriques. Or, si l'utilisation de fuzzyficateurs
-spécialisés comme \onto[orla]{Sup\-Val\-0} ou \onto[orla]{Eq\-Val\-0}
-facilite l'utilisation de certaines relations de localisation (\eg
+Le problème majeur de la calibration de la méthode est la
+paramétrisation des fuzzyficateurs. Comme nous l'avons montré dans le
+\autoref{chap:09} cette paramétrisation doit être effectuée
+manuellement, en fonction de considérations empiriques. Or, si
+l'utilisation de fuzzyficateurs spécialisés comme
+\onto[orla]{Sup\-Val\-0} ou \onto[orla]{Eq\-Val\-0} facilite
+l'utilisation de certaines relations de localisation (\eg
 \onto[orl]{Alt\-Inf} il est toujours nécessaire de fixer la valeur
 d'un paramètre \(\delta\). Si cette tâche n'est que peu contraignante
 pour l'exercice de modélisation effectué dans le \autoref{chap:09}, il
@@ -222,26 +231,24 @@ fuzzyficateurs durant la phase de secours.
 Une première solution serait de définir un paramétrage par défaut des
 fuzzyficateurs, mais cette solution n'est pas envisageable, un même
 fuzzyficateur pouvant être couplé avec plusieurs métriques, qui ne
-partagent donc pas leurs unités.
-%
-On peut raffiner cette solution en rattachant la paramétrisation à la
-relation de localisation et non plus au fuzzyficateur. Pour donner un
-exemple, avec cette solution toute utilisation de la relation de
-localisation \onto[orl]{Sous\-Altitude} utilisera le même paramétrage
-implicite du fuzzyficateur \onto[orla]{Inf\-Val\-0}, mais ce
-paramétrage pourra être différent lorsque ce fuzzyficateur est appelé
-par une autre relation de localisation, comme
-\onto[orla]{Dans\-Planimetrique}. Bien qu'elle soit plus
-satisfaisante, cette seconde solution ne règle pas tous les problèmes
-qui peuvent être posés par la question de la paramétrisation. Peut-on,
-par exemple, considérer que la relation de localisation
-\onto[orl]{Pres\-De} traduit le même ordre de grandeur lorsqu'elle
-s'applique à une maison ou à une ville ? Des relations de localisation
-comme \onto[orl]{Aux\-Alentours\-De} intègrent même cette notion dans
-leur définition. Il nous semble donc indispensable de prendre
-également en compte la taille, voir la saillance, de l'objet de
-référence lors de la spatialisation. Les principes de décomposition et
-de modélisation autonome (\autoref{chap:04}) permettent, en effet,
+partagent donc pas leurs unités. On peut raffiner cette solution en
+rattachant la paramétrisation à la relation de localisation et non
+plus au fuzzyficateur. Pour donner un exemple, avec cette solution
+toute utilisation de la relation de localisation
+\onto[orl]{Sous\-Altitude} utilisera le même paramétrage implicite du
+fuzzyficateur \onto[orla]{Inf\-Val\-0}, mais ce paramétrage pourra
+être différent lorsque ce fuzzyficateur est appelé par une autre
+relation de localisation, comme \onto[orla]{Dans\-Planimetrique}. Bien
+qu'elle soit plus satisfaisante, cette seconde solution ne règle pas
+tous les problèmes qui peuvent être posés par la question de la
+paramétrisation. Peut-on, par exemple, considérer que la relation de
+localisation \onto[orl]{Pres\-De} traduit le même ordre de grandeur
+lorsqu'elle s'applique à une maison ou à une ville ? Des relations de
+localisation comme \onto[orl]{Aux\-Alentours\-De} intègrent même cette
+notion dans leur définition. Il nous semble donc indispensable de
+prendre également en compte la taille, voir la saillance, de l'objet
+de référence lors de la spatialisation. Les principes de décomposition
+et de modélisation autonome (\autoref{chap:04}) permettent, en effet,
 d'utiliser un paramétrage spécifique pour chaque objet de référence,
 ce qui permettrait d'aboutir à une modélisation beaucoup plus fine.
 
@@ -263,7 +270,25 @@ leurs propres limites, mais elles offrent des pistes de réflexion
 intéressantes quant à la question de la paramétrisation du
 fuzzyficateurs.
 
-\subsection*{Extension, extensions}
+\subsection*{Extension de la méthode}
+
+Différentes pistes d'amélioration de notre méthode ont été envisagées
+au cours de notre travail. La plus avancée d'entre elles est la
+décomposition des objets de référence.
+
+Nous avons en effet remarqué que certains objets de référence utilisés
+par les requérants étaient \enquote{composites}, c'est-à-dire qu'ils
+sont une composition de plusieurs parties relativement
+différentes. C'est par exemple le cas des lignes électriques, qui sont
+composées de pylônes et d'un câble suspendu ou des lignes de
+téléphérique, composées des mêmes éléments mais auxquels s'ajoutent
+une station d'arrivée et de départ. Le problème que soulèvent ces
+objets est que la sémantique des relations de localisation qui s'y
+appliquent peut changer en fonction de la partie de l'objet
+considérée.
+
+Cette piste, que nous avons
+déjà explorée \autocite{Bunel2019a},
 
  %L'évaluation de la qualité des \ac{zlp}
 
@@ -281,18 +306,7 @@ Une approche, fondée sur la théorie des fonctions de croyance
 \textcite{Olteanu2008},
 
 
-%% Décomposition des objets de référence
-Une seconde extension sur laquelle nous souhaiterions travailler est
-la décomposition des objets de référence. Nous avons en effet remarqué
-que certains objets de référence pouvaient être \enquote{composites},
-c'est-à-dire composés de plusieurs parties relativement
-différentes. C'est par exemple le cas des lignes électriques, qui sont
-composées de pylônes et d'un câble suspendu ou des lignes de
-téléphérique, composées des mêmes éléments mais auxquels s'ajoutent
-une station d'arrivée et de départ.
 
-Cette piste, que nous avons
-déjà explorée \autocite{Bunel2019a},
 
 %% Incomplétude de la base
 Un autre point que nous souhaiterions aborder est la prise en compte
