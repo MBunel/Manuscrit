@@ -46,12 +46,13 @@ exprimées dans un référentiel indirect en des positions exprimées dans
 un référentiel direct. Le développement de cette méthode nous a
 nécessité de travailler à la résolution de plusieurs problèmes
 scientifiques, tels que la prise en compte de l'imprécision des
-descriptions de position données par la victime, de la confiance du
+descriptions de position ---~que nous appelons \emph{indices de
+  localisation}~--- données par la victime, de la confiance du
 secouriste en ces informations ou de la fusion de différents indices
 de localisation. Mais la question centrale de ce travail est la
 question de la spatialisation des descriptions de positions. Pour y
 répondre, nous avons proposé une méthode que nous avons voulu
-générique, mais que nous avons calibrée pour notre cas
+générique, tout en la calibrant spécifiquement pour notre cas
 d’application, le secours en montagne.
 
 Cette méthode a été structurée selon trois grandes phases, la
@@ -63,6 +64,14 @@ en des zones de localisation et la fusion les regroupe, jusqu'à
 aboutir à une seule zone, la \ac{zlp}, spatialisant l'ensemble de
 l'alerte traitée.
 
+Pour permettre la prise en compte de l'imprécision des indices de
+localisation, nous avons construit notre méthode autour du cadre
+théorique de la théorie des sous-ensembles flous
+\autocite{Zadelg1965}. Ainsi, la phase de spatialisation crée des
+zones de localisation floues, c'est-à-dire dotées de limites
+progressives. On peut alors faire la distinction entre les positions
+correspondant partiellement ou totalement à l'indice de localisation
+spatialisé.
 
 
 D'une certaine manière, la spatialisation est le cœur de notre travail
