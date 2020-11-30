@@ -283,9 +283,20 @@ différentes. C'est par exemple le cas des lignes électriques, qui sont
 composées de pylônes et d'un câble suspendu ou des lignes de
 téléphérique, composées des mêmes éléments mais auxquels s'ajoutent
 une station d'arrivée et de départ. Le problème que soulèvent ces
-objets est que la sémantique des relations de localisation qui s'y
-appliquent peut changer en fonction de la partie de l'objet
-considérée.
+objets est que la sémantique ou le paramétrage des relations de
+localisation qui s'y appliquent peut changer en fonction de la partie
+de l'objet considérée. Par exemple pour une ligne de téléphérique il
+parait raisonnable de considérer qu'une relation de proximité a un
+rayon plus important si elle se rapporte aux bâtiments qu'aux pylônes
+ou au câble. Dit autrement, on est plus vite loin d'un pylône que
+d'une gare de téléphérique. Les parties de l'objet peuvent influer le
+paramétrage des relations de localisation. Un exemple peut être celui
+d'une route contenant des ponts et des tunnels. Si un requérant décrit
+sa position en indiquant se trouver \enquote{sous une route} il est
+pertinent d'adapter le concept à la composante de l'objet. On sera
+\onto[orl]{Sous\-Proche\-De} une route mais
+\onto[orl]{Sous\-Recouvert\-Par} un tunnel ou un pont. Les parties de
+l'objet peuvent donc influencer le choix des concepts.
 
 Cette piste, que nous avons
 déjà explorée \autocite{Bunel2019a},
