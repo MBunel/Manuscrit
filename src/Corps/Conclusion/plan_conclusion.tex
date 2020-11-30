@@ -298,8 +298,24 @@ pertinent d'adapter le concept à la composante de l'objet. On sera
 \onto[orl]{Sous\-Recouvert\-Par} un tunnel ou un pont. Les parties de
 l'objet peuvent donc influencer le choix des concepts.
 
-Cette piste, que nous avons
-déjà explorée \autocite{Bunel2019a},
+La solution que nous avons envisagée pour traiter ces cas consiste à
+ajouter une étape à la phase de décomposition, la décomposition des
+objets de référence composites \autocite{Bunel2019a}. Le rôle de cette
+étape, qui vient après la décomposition des objets de référence non
+nommés, est de créer un nouvel indice de localisation pour chaque
+composante des objets de référence, puis d’adapter si nécessaire la
+relation de localisation utilisée ou son paramétrage. Cette étape
+permettrait une plus grande finesse lors du processus de
+spatialisation des indices de localisation. Cependant, elle est assez
+contraignante à mettre en place. Cette étape nécessite en effet la
+création de nouvelles informations, notamment la formalisation des
+liens de composition existant entre objets de référence et la
+formalisation de l'impact de la nature de l'objet de référence sur la
+relation de localisation. La généralisation de cette proposition
+impliquerait donc une refonte de l'ontologie des relations de
+localisation et des relations de localisation atomiques, mais
+également la création d'une nouvelle ontologie, celle des objets de
+référence composites.
 
  %L'évaluation de la qualité des \ac{zlp}
 
