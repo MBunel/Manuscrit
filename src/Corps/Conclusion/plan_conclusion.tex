@@ -111,31 +111,23 @@ atomiques décomposant une relation de localisation sont alors
 spatialisables indépendamment, puis fusionnables, de manière à obtenir
 la zone de localisation spatialisant la relation de localisation non
 décomposée.
-%
+
 Le rôle de la phase de décomposition est, en partie, d'effectuer cette
 décomposition des relations de localisation de manière à permettre
 leur spatialisation et celui de la phase de fusion de les combiner, de
 manière a obtenir la zone de localisation spatialisant la relation de
-localisation non décomposée.
-%
-La définition des relations de localisation atomiques et les liens de
-décomposition les rattachant aux relations de localisation sont
-définis dans l'ontologie des relations de localisation atomiques.
+localisation non décomposée. La définition des relations de
+localisation atomiques et les liens de décomposition les rattachant
+aux relations de localisation sont définis dans l'ontologie des
+relations de localisation atomiques. Pour pouvoir spatialiser les
+relations de localisation atomiques nous avons chacun des concepts de
+cette ontologie a un ensemble de concepts décrivant des méthodes qui
+seront appliquées lors de la spatialisation.
 
+La lecture et l’application de ces concepts est réalisée au court de
+la seconde phase, la spatialisation.
 
-Pour ce faire nous
-avons défini une seconde ontologie, 
-
-
-D'une certaine manière, la spatialisation est le cœur de notre travail
-et les phases de décomposition et de fusion ne servent qu'a permettre
-sa mise en place.
-
-
-La phase de décomposition
-
-La méthode de spatialisation proposée présente l'avantage d'être
-extrêmement flexible. Elle s'appuie sur trois éléments, le
+ Elle s'appuie sur trois éléments, le
 \emph{rasteriser,} la \emph{métrique} et le \emph{fuzzyficateur,} qui
 combinés permettent la spatialisation d'une relation de
 localisation. Un grand nombre de ces trois éléments ont été
@@ -144,6 +136,10 @@ spatialisation d'une relation de localisation particulière, mais une
 grande partie sont génériques et partagés par plusieurs relations de
 localisation. Ces derniers peuvent donc être réemployés pour modéliser
 d'autre relations de localisation, voir pour en définir des nouvelles.
+
+La méthode de spatialisation proposée présente l'avantage d'être
+extrêmement flexible.
+
 
 La phase de fusion
 
