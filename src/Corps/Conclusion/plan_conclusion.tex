@@ -317,27 +317,41 @@ localisation et des relations de localisation atomiques, mais
 également la création d'une nouvelle ontologie, celle des objets de
 référence composites.
 
- %L'évaluation de la qualité des \ac{zlp}
+ % L'évaluation de la qualité des \ac{zlp}
+Une seconde piste d'amélioration que nous déjà explorée est la
+définition d'une méthode d'évaluation de la qualité des zones de
+localisation construites et plus particulièrement de la zone de
+localisation probable. Comme l'étude du \emph{fil rouge} l'a montré
+(\autoref{chap:09}), la \emph{zone de localisation probable} produite
+par notre méthode peut, en fonction des indices de localisation, avoir
+des configurations très différentes. Elle peut par exemple être d'un
+bloc, ou fragmentée, comme le résultat de la spatialisation du
+\emph{fil rouge.} Dans ce second cas il est difficile de savoir dans
+quelle zone chercher en priorité. Une première approche est de se
+focaliser sur les zones dont de degré d'appartenance est le plus
+élevé, mais ce critère ne permet pas de distinguer toutes les
+zones.
 
-Comme l'étude du \emph{fil rouge} l'a montré (\autoref{chap:09}), la
-\emph{zone de localisation probable} produite par notre méthode peut,
-en fonction des indices de localisation, avoir des configurations très
-différentes. Elle peut être d'un bloc, ou fragmentée. Dans cette
-seconde situation,  e
-
-
-Différentes pistes ont longuement été explorées.
-
-Une approche, fondée sur la théorie des fonctions de croyance
-\autocite{Shafer1976} et inspirée des travaux de
-\textcite{Olteanu2008},
-
-
-
+Pour faciliter l'exploitation des résultats nous avons réfléchi à
+mettre en place une méthode permettant d'évaluer la qualité de chaque
+fragment de la \ac{zlp}, puis de les classer de manière à faciliter
+l'analyse du secouristes. Pour ce faire différentes pistes
+méthodologiques ont été explorées, comme la définition d'un système
+d'inférence flou ou d'une méthode fondée sur la théorie des fonctions
+de croyance \autocite{Shafer1976} et inspirée des travaux de
+\textcite{Olteanu2008}. Cependant nous n'avons pas encore réussi à
+identifier des métriques de classifications qui soient pleinement
+pertinentes, ce travail doit encore être approfondi.
 
 %% Incomplétude de la base
 Un autre point que nous souhaiterions aborder est la prise en compte
-de l'incomplétude des données.
+de l'incomplétude des données. À l'heure actuelle notre méthode ne
+permet pas d'éviter les faux négatifs liés a l'absence d'une instance
+dans la base de données utilisée. Ainsi, si un requérant indique être
+situé a proximité d'un objet de référence, mais que ce dernier
+n'existe pas dans la base de données utilisée, sa position sera
+simplement ignorée. Il est donc nécessaire de travailler a la mise ne
+place d'une solution permettant d'éviter ce type d'erreur. 
 
 %% Objets de référence flous
 Une dernière possibilité d'extension de ce travail, serait d'étendre
