@@ -353,16 +353,40 @@ n'existe pas dans la base de données utilisée, sa position sera
 simplement ignorée. Il est donc nécessaire de travailler a la mise ne
 place d'une solution permettant d'éviter ce type d'erreur. 
 
-%% Objets de référence flous
-Une dernière possibilité d'extension de ce travail, serait d'étendre
-notre méthode de manière a ce qu'elle puisse traiter des objets de
-référence imprécis.
+%% relation
+Une autre perspective d'amélioration serait de proposer de nouvelles
+relations de localisation adaptées aux besoins métier. Le
+\autoref{chap:09} et plus particulièrement la modélisation du
+\emph{fil rouge} nous a permis de constater que certains indices très
+spécifiques comme \enquote{la victime entends des voitures} ou
+\enquote{le téléphone de la victime est connectée à une antenne
+  téléphonique donnée}, n'étaient pas correctement modélisés avec les
+concepts que nous avions développés. Nous avons donc proposé de
+compléter l'ontologie des relations de localisation spécifiquement
+dédiées a la modélisation de ce type d'indices. Le choix de
+l'implémentation de nouvelles relations de localisation devra
+cependant être discuté avec les principaux utilisateurs de notre
+méthode, les secouristes.
 
-Comme l'ont montré certains indices de localisation traités dans le
-\autoref{chap:09}, la représentation géométrique de certains objets de
-référence, notamment les formes du relief, peu être sommaire. Des
-objets très entendus, comme les \emph{combes,} les \emph{pas} ou les
-\emph{vallées} peuvent, par exemple, être représentés par des points.
+%% Objets de référence flous
+Une dernière possibilité d'extension que nous envisageons pour ce
+travail, serait d'étendre notre méthode pour qu'elle puisse traiter
+des objets de référence imprécis. Comme l'ont montré certains indices
+de localisation traités dans le \autoref{chap:09}, la représentation
+géométrique de certains objets de référence, notamment les formes du
+relief, peu être sommaire. Des objets très fréquents, comme les
+\emph{combes,} les \emph{pas} ou les \emph{vallées} peuvent, par
+exemple, être représentés par des points. Or il s'agit d'objets
+foncièrement imprécis, qu'il serait pertinent de modéliser comme
+tels. Cependant cela nécessite de pouvoir construire une base de
+données géographique floue, mais également que notre méthode soit a
+même de travailler à partir de ces objets. La mise en place d'une
+telle possibilité nécessiterait d'importantes modifications dans le
+fonctionnement de la phase de spatialisation et plus particulièrement
+dans le calcul de la métrique, qui doit être adaptée au cas
+flou. Cette dernière perspective est probablement la plus complexe a
+mettre en place, cependant nous sommes persuadés qu'il s'agit d'une
+évolution pertinente, voir nécessaire.
 
 
 La possibilité de travailler à partir d'objets de référence imprécis
@@ -391,21 +415,6 @@ Passage ombre
 
 antenne téléphonique
 
-Une première perspective d'amélioration serait de proposer de
-nouvelles relations de localisation adaptées aux besoins métier. Le
-\autoref{chap:09} et plus particulièrement la modélisation du
-\emph{fil rouge} nous a permis de constater que certains indices très
-spécifiques comme \enquote{la victime entend des voitures} ou
-\enquote{le téléphone de la victime est connectée à une antenne
-  téléphonique donnée}, n'étaient pas correctement modélisés avec les
-concepts que nous avions développés.
-%
-Nous avons donc proposé de compléter l'ontologie des relations de
-localisation spécifiquement dédiées a la modélisation de ce type
-d'indices
-%
-La spatialisation de telles relations de localisation est également
-assez 
 
 
 %%% Local Variables:
