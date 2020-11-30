@@ -1,7 +1,10 @@
-On pourrait commencer toutes les thèses en géomatique de la même
-manière : l'informatisation de la société et plus spécifiquement des
-données géographiques a révolutionné notre rapport à l'espace et a sa
-représentation archétypale, la carte, \emph{etc.} Pourtant 
+% On pourrait commencer toutes les thèses en géomatique de la même
+% manière : l'informatisation de la société et plus spécifiquement des
+% données géographiques a révolutionné notre rapport à l'espace et a sa
+% représentation archétypale, la carte, \emph{etc.} Pourtant 
+
+L'informatisation de la société a permis 
+
 
 Toutefois, des descriptions de configurations spatiales parfaitement
 courantes et inéligibles pour le locuteur humain, comme \enquote{La
@@ -20,10 +23,10 @@ par des coordonéess
 
 %-> transition secours en montagne "le problème devient grave"
 
-La difficulté de cette opération peut devenir contraignante
-lorsque la rapidité de la localisation est indispensable, notamment
-dans les secours a la personne. Plusieurs travaux ont donc cherché a
-méliorer le processus de 
+La difficulté de cette opération peut devenir contraignante lorsque la
+rapidité de la localisation est indispensable, notamment dans les
+secours a la personne. Plusieurs travaux ont donc cherché a améliorer
+le processus de
 
 \autocite{DosSantosFerreria2019} 
 
@@ -50,21 +53,19 @@ et de son bon fonctionnement. De nombreux facteurs peuvent rendre
 cette solution inopérante, notamment lorsque le requérant ne dispose
 pas d'un téléphone avec GPS, lorsque les secours sont contactés par un
 tiers ou lorsque la victime n'arrive pas à effectuer la manipulation
-nécessaire.
+nécessaire. Dans ces situations les secouristes n'ont d'autres choix
+que d'identifier la position du requérant manuellement, en recoupant
+les informations qui leur sont données avec leurs connaissances
+personnelles et les données géographiques qu'ils ont à leur
+disposition. Le résultat de ce processus est assez variable, si les
+secouristes peuvent parvenir à identifier très rapidement la position
+de la victime a l'aide de quelques éléments très discriminants, il est
+parfois difficile pour la victime de donner des informations qui
+soient suffisamment claires ou discriminantes pour que les secouristes
+puissent les interpréter. Dans ces conditions, la phase de
+localisation peut devenir extrêmement longue et critique.
 
-Dans ces situations les secouristes n'ont d'autres choix que
-d'identifier la position manuellement, en recoupant les informations
-qui leur sont données par téléphone par le requérant avec leurs
-connaissances personnelles et les données géographiques qu'ils ont à
-leur disposition. Le résultat de ce processus est assez variable, si
-les secouristes peuvent parvenir à identifier très rapidement la
-position de la victime a l'aide de quelques éléments très
-discriminants, il est parfois difficile pour la victime de donner des
-informations qui soient suffisamment claires ou discriminantes pour
-que les secouristes puissent les interpréter. Dans ces conditions, la
-phase de localisation peut devenir extrêmement longue et critique.
-
-Le projet de recherche Choucas a été construit en vue de développer
+Le projet de recherche Choucas a été initié dans le but de développer
 des solutions permettant de faciliter le traitement de ces alertes
 spécifiques. L'hypothèse première de ce projet est que la géomatique
 et ses méthodes peuvent aider à identifier les zones correspondant aux
@@ -75,27 +76,58 @@ des questions de visibilité pourraient être exploités pour identifier
 la position d'un requérant décrivant son champ de vision, les travaux
 sur la modélisation de trajectoire pourraient être utilisés pour
 localiser une personne indiquant qu'elle a suivi un itinéraire donné,
-\emph{etc.}
-
-Un tel objectif n'est cependant pas réalisable par la \enquote{simple}
-concaténation de méthodes préexistantes et impose de travailler à
-l'étude et a l’enrichissement des données utilisables par les
-secouristes, de définir des solutions leur permettant d’interagir avec
-les solutions développées au sein du projet, d'étudier les subtilités
-et les spécificités des descriptions de localisation en milieux
-montagneux, \emph{etc.} 
+\emph{etc.} Un tel objectif n'est cependant pas réalisable par la
+\enquote{simple} concaténation de méthodes préexistantes et impose de
+travailler à l'étude et a l’enrichissement des données utilisables par
+les secouristes, de définir des solutions leur permettant d’interagir
+avec les solutions développées au sein du projet, d'étudier les
+subtilités et les spécificités des descriptions de localisation en
+milieux montagneux, \emph{etc.}
 
 % Présentaiont thèse
 Notre thèse se rattache spécifiquement à ce dernier point. Plus
 précisément notre objectif est de proposer des solutions permettant de
 construire les zones correspondant aux descriptions de positions
-données par les requérants. Notre objectif n'est cependant pas de
-créer un \enquote{secouriste virtuel}, réalisant l'ensemble des tâches
-effectuées manuellement pas ces derniers, mais de proposer des
+données par les requérants. Notre but n'est cependant pas de créer un
+\enquote{secouriste virtuel}, réalisant l'ensemble des tâches
+effectuées manuellement par ces derniers et interprétant
+automatiquement le discours du requérant, mais de proposer des
 solutions d'assistance, facilitant l'identification des zones
 correspondant à une description de position.
 
+Cet objectif induit de nombreuses difficultés, la première d'entre
+elles étant la taille de l'espace des possibles. Une personne
+décrivant sa position peut être amenée à utiliser de nombreux
+éléments, parfois très différents, comme son itinéraire, sa position
+de départ, son objectif visé, décrire son champ de vision, \emph{etc.}
+L'identification de la position du requérant impose donc d'être en
+capacité de pouvoir interpréter tous, sinon une majorité des
+informations qu'elle donne. De plus nous devons être en mesure de
+combiner ces différentes informations de manière identifier la
+position qu'elles décrivent conjointement.
+
 % inteprétation sémantique
+La seconde difficulté est d'interpréter correctement les informations
+données par le requérant. Il est donc nécessaire d'étudier les termes
+utilisés pour décrire une localisation en montagne et de veiller a
+leur bonne interprétation.
+
+% prise en compte imprécision
+Un autre problème lié a l'interprétation des concepts du langage
+naturels est leur imprécision. Il est, par exemple, difficile de fixer
+la limite entre ce qui est proche et ce qui est éloigné. Or ce type de
+descriptions sont assez courantes dans le langage naturel et leur
+interprétation implique de nombreux ajustements.
+
+% incertitude
+Indépendamment de leur imprécision, les informations données par les
+victimes peuvent également êtres faussées. Il est par exemple possible
+qu'elles se trompent dans le nom d'un point leur servant de reprère ou
+qu'elles fassent des confusions. Lorsque ces erreurs sont manifestes
+le secouriste peut les identifier et les corriger, mais ce n'est pas
+toujours possible. Il est donc nécessaire de proposer une méthode de
+gestion des erreurs.
+
 
 % spatialisaiton
 
@@ -105,15 +137,12 @@ les spatialisations d'une alerte pour construire la zone correspondant
 à l'ensemble des descriptions données par le réquérant et don à la
 position de la victime.
 
-% prise en compte imprécision
-
-% incertitude
 
 
 
-% Pas de Tal
-Notre propos n'est cependant pas de travailler sur le \emph{traitement
-  automatisé des langues} (TAL), 
+
+
+
 
 %\begin{figure}
 %   \centering
