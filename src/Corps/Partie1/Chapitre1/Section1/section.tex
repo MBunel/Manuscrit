@@ -735,28 +735,41 @@ géoréférencement de ces plans et donc faciliter leur utilisation
 \subsubsection{L'identification assistée de la position de la victime}
 \label{subsec:1-1-2-2}
 
-% TODO
-% \tdi{Parler de google et de leurs travaux sur ce suejt}
-
 La localisation des victimes peut être améliorée ou facilitée par
 l'utilisation de solutions de permettant une géolocalisation facile,
 précise et non ambiguë, comme les récepteurs GPS. La généralisation
-des smartphones, majoritairement équipés de récepteurs GPS, a fait
-émerger un marché de solutions de partage de localisation. Les
-applications dédiées, comme \emph{Alpify,} sont peu à peu supplantées
-par les solutions directement intégrées dans le système d'exploitation
-des appareils. De telles solutions sont certes utiles, mais elles ne
-sont que des aides occasionnelles, totalement dépendantes de la
-victime et de sa capacité a les utiliser. Il existe cependant deux
-solutions que les secouristes peuvent utiliser a leur initiative,
-l'identification de l'antenne GSM servant à passer l'appel et
-l'application de géolocalisation \emph{Gend'Loc.}
+des smartphones, qui en sont majoritairement équipés, a fait émerger
+un marché de solutions de partage de localisation pensées pour le
+secours. Les applications dédiées, comme \emph{Alpify,} sont peu à peu
+supplantées par les solutions directement intégrées dans le système
+d'exploitation des appareils, comme le système \emph{Android Emergency
+  Location Service} \autocite{Google2019}. De telles solutions sont
+certes utiles, mais elles ne sont que des aides occasionnelles,
+totalement dépendantes de la victime et de sa capacité a les
+utiliser. Il existe cependant deux solutions que les secouristes
+peuvent utiliser a leur initiative, l'identification de l'antenne GSM
+servant à passer l'appel et l'application de géolocalisation
+\emph{Gend'Loc.}
 
-\paragraph{La localisation des téléphones}
+\paragraph{L'identification de l'antenne GSM}
 % TODO
 % \todo[inline]{Pas de refs sur le sujet}
 
-Les \ac{usem} peuvent localiser indirectement le téléphone qui les
+Les \ac{usem} ont la possibilité de localiser la victime en
+identifiant l'antenne GSM à laquelle son téléphone est connecté. Le
+principal avantage de cette méthode est qu'elle est totalement
+transparente pour la victime. Aucune action de sa part n'est
+nécessaire pour la localiser. Toutefois c'est le seul avantage de
+cette méthode. En effet, cette solution n'est pas très précise, les
+antennes GSM étant assez espacées en dehors des milieux urbains. De
+plus l'antenne de rattachement d'un téléphone mobile n'est pas
+systématiquement celle qui en est la plus proche, divers facteurs,
+comme la météo ou l'utilisation du réseau, pouvant modifier l'antenne
+de rattachement. À la faible précision de cette méthode s'ajoute sa
+lenteur. Pour des raisons légales les secouristes ne peuvent obtenir
+cette information des opérateurs qu'avec une réquisition judiciaire.
+
+peuvent localiser indirectement le téléphone qui les
 contacte en faisant une réquisition judiciaire auprès de l'opérateur
 téléphonique. Ce dernier leur transmet, dans un délai plus ou moins
 court, %\todo{Délais}
@@ -764,13 +777,8 @@ la cellule GSM à laquelle le téléphone est
 connecté. La position et l'angle de la cellule étant connus, ce qui
 permet de réduire grandement l'aire de recherche.
 
-Le principal avantage de cette méthode est qu'elle est totalement
-transparente pour la victime. Aucune action de sa part n'est
-nécessaire pour le localiser. Cependant cette méthode n'est pas pas
-très précise. En effet l'antenne de rattachement d'un téléphone mobile
-n'est pas systématiquement celle qui en est la plus proche. Divers
-facteurs peuvent influer sur le rattachement des téléphones, comme les
-conditions météo.
+. Cependant cette méthode n'est pas pas
+très précise. En effet 
 % 
 Par conséquent il n'est pas forcément simple de localiser une personne
 à partir de la localisation de relais téléphonique auquel elle est
