@@ -755,26 +755,36 @@ servant à passer l'appel et l'application de géolocalisation
 % TODO
 % \todo[inline]{Pas de refs sur le sujet}
 
-Les \ac{usem} ont la possibilité de localiser la victime en
+Les \ac{usem} ont la possibilité de localiser le requérant en
 identifiant l'antenne GSM à laquelle son téléphone est connecté. Le
 principal avantage de cette méthode est qu'elle est totalement
 transparente pour la victime. Aucune action de sa part n'est
 nécessaire pour la localiser. Toutefois c'est le seul avantage de
 cette méthode, qui n'est ni précise, ni rapide.
 
-\autocite{FenChong2012}. Tout d'abord elle
+D'une part cette approche ne renseigne les secouristes que sur
+l'antenne téléphonique de rattachement, le requérant peut donc se
+situer n'importe où dans la zone couverte par l'antenne. Or, lorsque
+que le maillage est composé d'un faible nombre d'antennes puissantes,
+comme c'est généralement le cas en dehors des milieux urbains, la zone
+couverte par l'antenne peut devenir très importante (\ie atteindre
+plusieurs centaines de km\up{2}) et donc ne pas permettre une
+localisation suffisamment précise. À cela s'ajoute le fait que la zone
+couverte par une antenne peut varier sensiblement, notamment en
+fonction des conditions météo, ce qui renforce l'imprécision de la
+localisation par ce bais \autocite{FenChong2012,OlteanuRaimond2012}.
 
-, les antennes GSM
-étant assez espacées en dehors des milieux urbains . De plus l'antenne
-de rattachement d'un téléphone mobile n'est pas systématiquement celle
-qui en est la plus proche, divers facteurs, comme la météo ou
-l'utilisation du réseau, pouvant modifier l'antenne de rattachement
-\autocite{FenChong2012,OlteanuRaimond2012}. À la faible précision de
-cette méthode s'ajoute sa lenteur. Pour des raisons légales les
-secouristes ne peuvent obtenir cette information des opérateurs
-qu'avec une réquisition judiciaire. L'ensemble du processus peut donc
-prendre plusieurs dizaines de minutes.
+À la faible précision de cette méthode s'ajoute sa lenteur. Pour des
+raisons légales les secouristes ne peuvent obtenir cette information
+des opérateurs qu'avec une réquisition judiciaire. La demande de cette
+réquisition n'est pas automatique, il est donc nécessaire de faire une
+demande manuellement, d'attendre sa validation avant de contacter
+l'opérateur du requérant qui renverra l'information
+demandée. L'ensemble de ce processus peut donc prendre plusieurs
+dizaines de minutes, ce qui, dans un contexte d'urgence et de
+ressources matérielles limitées, est considérablement long.
 
+Dans les faits, cette solution est rarement employée par les secouristes.
 
 Par conséquent il n'est pas forcément simple de localiser une personne
 à partir de la localisation de relais téléphonique auquel elle est
