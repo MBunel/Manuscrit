@@ -13,12 +13,6 @@
   % \draw[help lines,xstep=.1,ystep=.1] (0,0) grid (image.north east);
 
   \begin{scope}
-    \node[etiquette] (vs) at (5.55,3.85) {Le Versoud};
-    \node[etiquette, anchor=base east] (ah) at (6.7,3.05) {L'Alpe d'Huez};
-    \node[etiquette, anchor=base east] (bé) at (7.7,2.1) {La Bérarde};
-  \end{scope}
-
-  \begin{scope}
     \node (P2) at ([xshift=.5cm]image.south east) {};
     \node (P1) at ([xshift=.5cm]image.north east) {};
 
@@ -27,10 +21,10 @@
     \path[route](rect.west) -- (rect.north) -- (rect.east);
     \node[right of=rect, legende] {\scriptsize Limies départementales};
 
-    \node (rect) [anchor=north west, caisson, fill=red] at ([yshift=-2.75cm]P1) {};
+    \node (rect) [anchor=north west, caisson, fill=RdBu-9-1] at ([yshift=-2.75cm]P1) {};
     \node[right of=rect, legende] {\scriptsize Zones urbaines};
 
-    \node (rect) [anchor=north west, caisson, pattern=dots] at
+    \node (rect) [anchor=north west, caisson, pattern=north west lines] at
     ([yshift=-3.5cm]P1) {}; \node[right of=rect, legende] {\scriptsize
       Zone d'application du \ac{pms}};
 
