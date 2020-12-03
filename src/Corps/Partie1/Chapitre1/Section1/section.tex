@@ -422,7 +422,9 @@ n'en est qu'une composante parmi d'autres. Dans ce cas, c'est le
 \emph{directeur départemental des services d'incendies et de secours}
 \acp{ddsis} qui prend la fonction de \ac{cos}. Il est alors assisté
 d'un \emph{chef d'opérations montagne,} responsable de cette partie
-spécifique de l'opération de secours.
+spécifique de l'opération de secours. Le \autoref{tbl:org_sec} dresse
+une synthèse des différentes personnes participant aux opérations de
+secours.
 
 % Organisation géographique
 C'est également au niveau national que sont fixés les domaines
@@ -459,6 +461,13 @@ cadre légal leur impose, dès lors que l’opération a été qualifiée de
 tous les acteurs concernés par ce type d'opération. La décision de la
 médicalisation est à la charge du \ac{samu} et celle de l'engagement
 des moyens héliportés est prise collectivement.
+
+\begin{table}
+  \centering
+  \input{../tableaux/organisation_secours}
+  \caption{Synthèse des acteurs participant aux opérations de secours}
+  \label{tbl:org_sec}
+\end{table}
 
 \paragraph{Spécificités locales}
 
@@ -596,13 +605,6 @@ disponibilité suffisante des moyens humains et matériels; si ceux-ci
 ne sont pas suffisants, le maintient de la base du Versoud est
 prioritaire.
 
-\begin{table}
-  \centering
-  \input{../tableaux/organisation_secours}
-  \caption{Synthèse des acteurs participant aux opérations de secours}
-  \label{tbl:org_sec}
-\end{table}
-
 \subsection{La phase de localisation des victimes}
 \label{susec:1-1-2}
 
@@ -712,16 +714,23 @@ l'ensemble des plans de piste des \emph{domaines skiables} de leur
 zone d'intervention, complétés par carroyage commun entre
 \emph{pisteurs-secouristes} et \ac{usem}. Ce dernier permet aux
 pisteurs de communiquer rapidement une position aux secouristes, bien
-plus qu'avec une description.
+plus qu'avec une description.  Les problèmes pouvant apparaitre lors
+de la localisation manuelle des victimes sont donc inexistants dans le
+cas particulier des secours en station de ski, c'est pourquoi nous ne
+traiterons pas de ce cas dans notre thèse.
 
-Cependant, cette solution n'est pas exempte de défauts. Pour des
-raisons autant pratiques qu’esthétiques, les plans de stations de ski
-sont fortement déformés, voir peu réalistes pour ceux dessinés
-manuellement \autocite{Gauchon2014,LaPorte2017}. Tout carroyage tracé
-sur ces représentations est donc difficilement transposable dans une
+On peut toutefois noter que la solution développée par les secouristes
+et les pisteurs n'est pas exempte de défauts. Pour des raisons autant
+pratiques qu’esthétiques, les plans de stations de ski sont fortement
+déformés, voir peu réalistes pour ceux dessinés manuellement
+\autocite{Gauchon2014,LaPorte2017}. Tout carroyage tracé sur ces
+représentations est donc difficilement transposable dans une
 représentation azimutale, comme une carte topographique ou un
 \ac{sig}, ce qui impose aux secouristes ou aux pilotes de faire cette
-transformation mentalement.
+transformation mentalement. Au sein du projet Choucas plusieurs
+travaux d'étudiants ont été mis en place pour permettre le
+géoréférencement de ces plans et donc faciliter leur utilisation
+\autocite{Gauer2019,Xi2020}.
 
 \subsubsection{Les solutions de géolocalisation}
 \label{subsec:1-1-2-2}
