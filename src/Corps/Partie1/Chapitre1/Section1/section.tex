@@ -762,16 +762,17 @@ nécessaire pour la localiser. Toutefois c'est le seul avantage de
 cette méthode, qui n'est ni précise, ni rapide.
 
 D'une part cette approche ne renseigne les secouristes que sur
-l'antenne téléphonique de rattachement, le requérant peut donc se
-situer n'importe où dans la zone couverte par l'antenne. Or, lorsque
-que le maillage est composé d'un faible nombre d'antennes puissantes,
-comme c'est généralement le cas en dehors des milieux urbains, la zone
-couverte par l'antenne peut devenir très importante (\ie atteindre
-plusieurs centaines de km\up{2}) et donc ne pas permettre une
-localisation suffisamment précise. À cela s'ajoute le fait que la zone
-couverte par une antenne peut varier sensiblement, notamment en
-fonction des conditions météo, ce qui renforce l'imprécision de la
-localisation par ce biais \autocite{FenChong2012,OlteanuRaimond2012}.
+l'antenne téléphonique de rattachement et sur son angle d'émission, le
+requérant peut donc se situer n'importe où dans la zone couverte par
+l'antenne. Or, lorsque que le maillage est composé d'un faible nombre
+d'antennes puissantes, comme c'est généralement le cas en dehors des
+milieux urbains, la zone couverte par l'antenne peut devenir très
+importante (\ie atteindre plusieurs centaines de km\up{2}) et donc ne
+pas permettre une localisation suffisamment précise. À cela s'ajoute
+le fait que la zone couverte par une antenne peut varier sensiblement,
+notamment en fonction des conditions météo, ce qui renforce
+l'imprécision de la localisation par ce biais
+\autocite{FenChong2012,OlteanuRaimond2012}.
 
 À la faible précision de cette méthode s'ajoute sa lenteur. Pour des
 raisons légales les secouristes ne peuvent obtenir cette information
@@ -792,31 +793,33 @@ l’application \emph{Gend'Loc} n'est pas utilisable.
 
 \paragraph{La solution \emph{Gend'Loc}}
 
-Une autre solution de géolocalisation a été proposée avec le
-développement de \emph{Gend'Loc.} Ce logiciel, développé à partir de
-2013 au sein du \ac{pghm} de Grenoble, permet la géolocalisation des
-victimes avec plus de précision et plus rapidement qu'avec une requête
-auprès des opérateurs téléphoniques et ce sans nécessiter un aval
-judiciaire.
+Pour disposer d'une aide à la localisation plus rapide, précise et
+efficace que l'identification de l'antenne GSM utilisée, les
+secouristes du \ac{pghm} de Grenoble ont développé, à partir de 2013,
+l’application \emph{Gend'Loc.}
 
-% Mouvement vers l'informatisation Google IRega
-
-
-Le principe de fonctionnement de \emph{Gend'Loc} consiste à envoyer,
-par SMS, une URL au requérant. Ce dernier conduit à une page web
-unique qui demande la localisation au récepteur GPS du téléphone et la
-renvoie directement au secouriste et l'affiche par le biais d'une
-interface cartographique \emph{ad hoc.}  Avec cette solution les
-secouristes peuvent connaitre rapidement la position de la victime, ce
-qui facilite grandement les opérations de secours
-\autocite{Muscat2015}.
+Contrairement a une application pour smartphone, comme celle
+\footnote{Cette application, qui s’appelait auparavant \emph{IRera,}
+  porte aujourd'hui le nom de \emph{Rega.}}  proposée par la Garde
+aérienne suisse de sauvetage (REGA), \emph{Gend'Loc} ne demande pas un
+téléchargement et une installation préalable. Le principe de
+fonctionnement de \emph{Gend'Loc} consiste à envoyer, par SMS, une URL
+au requérant. Cette dernière conduit à une page web \emph{ad hoc,} qui
+demande, par le biais du navigateur web, la localisation du
+téléphone. Si la victime valide l'opération, la position du téléphone
+est automatiquement renvoyée aux secouristes, qui peuvent l'afficher
+directement à l'aide d'une interface cartographique \emph{ad hoc.}
+Avec cette solution les secouristes peuvent connaitre rapidement et
+précisément la position de la victime, sans qu'il soit nécessaire de
+passer par une autorité judiciaire, ce qui facilite grandement les
+opérations de secours \autocite{Muscat2015}.
 
 % Avantage 2
-Un autre avantage de cette solution est qu'elle offre également la
-possibilité d'envoyer à la victime un plan des environs de sa
-position, ainsi que l'itinéraire à suivre pour retrouver son
-chemin. Ce qui permet d'assister les personnes perdues sans procéder à
-leur évacuation \autocite{Muscat2015}.
+Cette solution est qu'elle offre également la possibilité d'envoyer à
+la victime un plan des environs de sa position, ainsi que l'itinéraire
+à suivre pour retrouver son chemin. Ce qui permet d'assister les
+personnes perdues sans procéder à leur évacuation
+\autocite{Muscat2015}.
 
 %Les limites de la solution
 Bien qu’extrêmement efficace cet outil ne peut pas apporter de
