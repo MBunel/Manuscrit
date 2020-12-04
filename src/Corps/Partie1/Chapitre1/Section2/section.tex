@@ -102,7 +102,7 @@ disposer d'un outil leur permettant de traiter plus facilement et
 confortablement plusieurs hypothèses en parallèle.
 
 Ces premiers problèmes \footnote{%
-  \begin{enumerate*}
+  \begin{enumerate*}[label=(\arabic*)]
   \item Impossibilité d'identifier les positions correspondant à
 certaines description,
   \item difficulté à considérer l'ensemble des cas possibles lorsque
@@ -110,6 +110,24 @@ le requérant se réfère par rapport à un objet sans le nommer,
   \item difficulté à prendre en compte l'imprécision et
   \item difficulté de traiter des hypothèses en parallèle.
   \end{enumerate*}} peuvent être
+
+Le développement d'une solution destinée à rechercher ces
+différentes possibilités et de les combiner entre elles, permettrait
+de faciliter le travail de localisation. Toutefois nous ne souhaitons
+pas que cette solution se substitue au secouriste, ces solutions sont
+conçues pour être des outils d'aide à la décision.
+
+Une seconde catégorie de problèmes, liés aux premiers, concerne
+spécifiquement l'exploitation des données.
+
+Toutefois, malgré ce volume de données et les difficultés qu'ont les
+secouristes pour les exploiter, certaines données nécessaires à
+l'interprétation des informations transmissent par le requérant
+viennent à manquer. Ce peut être le cas lorsqu'il se réfère à un objet
+qui n'est pas saisi dans les bases de données géographiques, soit
+parce que l'objet n'entre pas dans les spécifications de la base de
+donnée utilisée, soit car il trop récent.
+
 
 La première d'entre-t-elle est la richesse sémantique des données à la
 disposition des secouristes. En effet, une partie des descriptions
@@ -129,11 +147,6 @@ donc d'élargir la richesse des sélections
 
 
 
-Le développement d'une solution destinée à rechercher ces
-différentes possibilités et de les combiner entre elles, permettrait
-de faciliter le travail de localisation. Toutefois nous ne souhaitons
-pas que cette solution se substitue au secouriste, ces solutions sont
-conçues pour être des outils d'aide à la décision.
 
 \subsection{Objectifs scientifiques du projet}
 \label{subsec:1-2-3}
