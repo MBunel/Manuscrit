@@ -189,35 +189,35 @@ Une synthèse des objectifs du projet Choucas est présentée par la
   hétérogènes}
 \label{subsec:1-2-3-1}
 
-Le premier de ces objectifs est l'extraction et la structuration de
-données issues de sources textuelles. Comme nous l’expliquions
-précédemment les bases de données géographiques ne contiennent pas
-l'ensemble des objets utilisés pour décrire une position en
-montagne. Si on y trouve la plupart des sentiers et des sommets, il
-est moins fréquent de trouver des représentations de barres rocheuses,
-ou de vires, alors qu'il s'agit de points de repères utiles sur le
-terrain. L'ajout de ce type d'objet dans la base de données utilisées
+Comme nous l’expliquions précédemment les bases de données
+géographiques ne contiennent pas l'ensemble des objets pouvant être
+utilisés pour décrire une position en montagne. Si on y trouve la
+plupart des sentiers et des sommets, il est moins fréquent de trouver
+des représentations de \emph{barres rocheuses,} ou de \emph{vires,}
+alors qu'il s'agit de points de repères saillants et donc
+régulièrement utilisés pour décrire des positions dans notre
+contexte. L'ajout de ce type d'objet dans la base de données utilisées
 par les secours permettrait d’affiner ou de faciliter la localisation
-des victimes.
-
-Pour ce faire, il a été proposé d'extraire ce type d'information à
-partir de descriptions textuelles d'itinéraires de randonnée. En
-effet, la majorité des informations disponible sur les itinéraires de
-randonnée est présentée (et diffusée) sous forme de texte. Notamment
-par le biais de \emph{topoguides,} de sites collaboratifs
-\footnote{Comme le site web \emph{camp2camp.}}, ou encore de
-blogs. Les itinéraires y sont généralement présentés sous la forme
-d'un texte décrivant principalement les points de bifurcation et les
-objets permettant de les repérer, \eg \enquote{prendre à droite à la
-  bifurcation située au niveau d'un gros rocher.} Or certains de ces
-objets peuvent être absents des bases de données géographiques, que ce
-soit à cause de leur taille ou de leur type. Ainsi, certains objets
-saillants peuvent être absents des bases de données de référence. Le
-développement d'une méthode automatisée d'extraction de ce type
-d'objets permettrait donc de compléter les données avec un ensemble
-d'objets géographiques utiles dans ce contexte.
-
-\autocite{Moncla2019,Medad2018}
+des victimes. Le premier objectif scientifique du projet : \enquote{la
+  structuration des données issues de sources textuelles hétérogènes};
+consiste à enrichir les bases de données à la disposition du \ac{pghm}
+par l'analyse de sources textuelles et plus spécifiquement de
+descriptions textuelles d'itinéraires de randonnée. En effet, la
+majorité des informations disponibles sur les itinéraires de randonnée
+est présentée (et diffusée) sous forme de texte, notamment par le
+biais de \emph{topoguides,} de sites collaboratifs \footnote{Comme le
+  site web \emph{camp2camp.}}, ou encore de blogs. Les itinéraires y
+sont généralement présentés sous la forme d'un texte décrivant
+principalement les points de bifurcation et les objets permettant de
+les repérer (\eg \enquote{prendre à droite à la bifurcation située au
+  niveau d'un gros rocher}) et son parfois (notamment sur les sites
+tels que \emph{camp2camp}), complétés par une trace GPS. La présence
+de ces deux informations complémentaires permet d'envisager
+d'identifier les positions correspondant à certaines descriptions, et
+inversement. Or, comme certains des objets décrits et utilisés comme
+points de repère dans le récit peuvent être absents des bases de
+données géographiques, il devient possible de les enrichir
+\autocite{Moncla2019,Medad2018}.
 
 \subsubsection{Raisonnement spatial qualitatif flou}
 \label{subsec:1-2-3-2}
