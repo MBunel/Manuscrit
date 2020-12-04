@@ -111,31 +111,41 @@ Une solution à cet ensemble de problèmes \footnote{C'est-à-dire :%
   \item difficulté de traiter des hypothèses en parallèle.
   \end{enumerate*}} peut être apportée par le développement de
 méthodes et d'outils informatiques \emph{ad hoc,} destinés à assister
-le secouriste procédant à la localisation. Les informations
-inexploitables manuellement (\eg les notions de visibilité) peuvent
-alors être à l'aide d'une méthode et d'un outil destinés à transformer
-une description de position (\eg \enquote{la victime voit une partie
-  de plant d'eau}) en une zone dont les coordonnées sont connues. Les
-différents objets correspondant à la description donnée par le
-requérant peuvent être identifiés automatiquement à l'aide d'un outil
-d’interrogation des données. Enfin, ces deux outils peuvent être
-combinés dans un outil d'aide a la décision permettant de définir
+le secouriste procédant à la localisation. Les différents objets
+correspondant à la description donnée par le requérant peuvent être
+identifiés automatiquement à l'aide d'un outil d’interrogation des
+données. Les informations inexploitables manuellement (\eg les notions
+de visibilité) peuvent alors être à l'aide d'un outil destiné à
+transformer une description de position (\eg \enquote{la victime voit
+  une partie de plant d'eau}) en une zone, dont les coordonnées sont
+connues et permettant de prendre en compte l'imprécision des
+descriptions et les situations où plusieurs objets peuvent
+correspondre à la description. Enfin, ces deux outils peuvent être
+combinés dans un outil d'aide à la décision permettant de définir
 plusieurs hypothèses et de les traiter indépendamment. Le
-développement d'une solution destinée à rechercher ces différentes
-possibilités et de les combiner entre elles, permettrait de faciliter
-le travail de localisation.
-%
-Toutefois nous ne souhaitons pas que cette
-solution se substitue au secouriste, ces solutions sont conçues pour
-être des outils d'aide à la décision.
+développement d'une telle solution pourrait apporter un réel support
+aux secouristes durant la phase de localisation. Cependant, il nous
+semble nécessaire que cette solution ne soit pas conçue pour se
+substituer aux secouristes (\eg en interprétant directement la
+discussion téléphonique et en cherchant à modéliser la description
+donnée par le requérant), mais qu'elle s'intègre dans leur cadre de
+travail.
 
 Une seconde catégorie de problèmes, liés aux premiers, concerne
-spécifiquement l'exploitation des données.
-
-Toutefois, malgré ce volume de données et les difficultés qu'ont les
-secouristes pour les exploiter, certaines données nécessaires à
-l'interprétation des informations transmissent par le requérant
-viennent à manquer. Ce peut être le cas lorsqu'il se réfère à un objet
+spécifiquement l'exploitation des données. Pour localiser les
+requérants les secouristes ont à leur disposition de nombreuses
+données, comme des bases de données géographiques, des cartes et des
+plans, des \emph{topo-guides,} \emph{etc.} Une grande partie de ces
+données n'existent que sous format papier, ce qui rend leur
+utilisation difficile, notamment lorsque les secouristes cherchent une
+information sans connaitre le document dans lequel elle se trouve. Les
+secouristes sont donc confrontés à un autre problème : l'interrogation
+des données. Une solution pour faciliter l'exploitation de ces données
+consiste à travailler à leur intégration et à proposer des outils
+d'interrogation des données.  Toutefois, même en considérant toutes
+les données à la disposition des secouristes, quel que soit leur
+format, il reste des descriptions qu'il est impossible d'interpréter…
+faute de données. Ce peut être le cas lorsqu'il se réfère à un objet
 qui n'est pas saisi dans les bases de données géographiques, soit
 parce que l'objet n'entre pas dans les spécifications de la base de
 donnée utilisée, soit car il est trop récent, ou autre. Dans cette
