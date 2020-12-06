@@ -1,22 +1,22 @@
 Comme nous l'avons montré dans cette partie, le secours en montagne
 est un service public essentiel pour le tourisme montagnard. Son
 développement et sa professionnalisation ont permis de réduire
-considérablement la mortalié des sports de montagne et ce malgré
+considérablement la mortalité des sports de montagne et ce malgré
 l'explosion du tourisme montagnard au cours des dernières
 décennies. Les opérations de secours en montagne restent, toutefois,
 des opérations critiques, mobilisant un personnel, certes très
 qualifié et bien équipé, mais non ubiquiste. Les \ac{usem} peuvent
 donc, notamment en période touristique, être amenées à effectuer de
-nombreux secours d'affilée. Ainsi une opération particulièrement
+nombreux secours d'affilée. Ainsi, une opération particulièrement
 longue peut impacter les secours sur toute la zone d'intervention des
 \ac{usem}. Par conséquent, la phase de localisation de la victime, \ie
 la première partie des opérations de secours, est une étape
 critique. En effet, si dans la majorité des cas les secouristes
-n'éprouvent que peu de difficultées à localiser les victimes et encore
+n'éprouvent que peu de difficultés à localiser les victimes et encore
 moins depuis la généralisation des outils de géolocalisation (\eg
-GendLoc), il reste des situations où les victimes sont difficiles à
-localiser, ce qui conduit à une perte de temps, dont les conséquences
-peuvent s'avérer dramatiques (\autoref{chap:1}).
+\emph{Gend'Loc}), il reste des situations où les victimes sont
+difficiles à localiser, ce qui conduit à une perte de temps, dont les
+conséquences peuvent s'avérer dramatiques (\autoref{chap:1}).
 
 Le projet de recherche Choucas, issu d'une collaboration scientifique
 avec le \ac{pghm} de Grenoble, souhaite élaborer des solutions d'aide
@@ -29,8 +29,8 @@ par les secouristes. Pour ce faire, quatre axes de travail ont été
 identifiés (\autoref{tab:synthese_objectifs_choucas}). Le premier
 d'entre eux consiste à enrichir les données dont disposent les
 secouristes en exploitant le corpus des récits de randonnées mis en
-ligne par les alpinistes. Ces nouvelles données compléterons les
-nombreuses données dont disposent déjà les secouristes. Mais ces
+ligne par les alpinistes. Ces nouvelles données complèteront les
+nombreuses données dont disposent déjà les secouristes, mais ces
 dernières peuvent être numériques (\eg bases de données géographiques)
 ou analogiques (\eg plans de pistes de ski, \emph{topoguides,} etc.)
 %
@@ -39,62 +39,65 @@ est de travailler à leur intégration et ainsi permettre aux
 secouristes de travailler efficacement avec ces données hétérogènes.
 %
 Le troisième objectif de ce projet, auquel notre thèse se rattache,
-consiste, quant à lui, à développer des modèles de raisonnement,
-permettant d'identifier la position correspondant à une description de
-position, offrant ainsi aux secouristes la possibilité de tester plus
-facilement et rapidement leurs hypothèses de localisation.
+consiste à développer des modèles de raisonnement, permettant
+d'identifier la position correspondant à une description de position,
+offrant ainsi aux secouristes la possibilité de tester plus facilement
+et rapidement leurs hypothèses de localisation.
 %
-Enfin, le dernier objectif de projet consiste à travailler sur
+Enfin, le quatrième et dernier objectif consiste à travailler sur
 l'interaction des secouristes avec les autres résultats du projet,
 d'une part en travaillant sur la géovisualisation des résultats
 produits par le troisième objectif, mais également en développant une
 interface permettant aux secouristes de formaliser leurs hypothèses
 et, plus généralement, de traiter l'alerte.
 
-Dans le second chapitre nous avons détaillé les objectifs de notre
-thèse et expliqué que la transformation d'une position décrite en une
-zone de coordonnées connues ne pouvait ce faire qu'en deux étapes. Une
-première dite de \emph{spatialisation,} où les différents
-\emph{indices de localisation} qui composent une alerte sont
-transformés en des \emph{zones de localisation compatibles} et une
-seconde étape de \emph{fusion} où les différentes \emph{zones de
-  localisation compatibles} d'une même alerte sont combinée pour
-former la \emph{zone de localisation probable} de l'alerte, \ie la
-zone où tous les \emph{indices de localisation} sont vérifiés. Nous
-avons identifié plusieurs verrous scientifiques à la réalisation de
-ces deux objectifs. Le premier d'entre eux est la définition d'une
+Dans le second chapitre (\ref{chap:02}), nous avons détaillé les
+objectifs de notre thèse et expliqué pour quelles raisons la
+transformation d'une position décrite en une zone de coordonnées
+devait se faire deux étapes. Une première, dite de
+\emph{spatialisation,} où les différents \emph{indices de
+  localisation} qui composent une alerte sont transformés en des
+\emph{zones de localisation compatibles} et une seconde étape de
+\emph{fusion} où les différentes \emph{zones de localisation
+  compatibles} d'une même alerte sont combinées pour former la
+\emph{zone de localisation probable} de l'alerte, \ie la zone où tous
+les \emph{indices de localisation} sont vérifiés.
+
+Nous avons identifié plusieurs verrous scientifiques à la réalisation
+de ces deux objectifs. Le premier d'entre eux est la définition d'une
 méthode de \emph{spatialisation} qui soit adaptée aux différents
 \emph{indices de localisation,} \ie qui soit capable de construire une
 \emph{zone de localisation compatible} pour des \emph{indices de
-  localisation} aussi variés que : \enquote{Je sur une route} ou
+  localisation} aussi variés que : \enquote{Je suis sur une route} ou
 \enquote{je vois une forêt}.  Un autre problème est que la sémantique
 des \emph{indices de localisation} peut être difficile à
-identifier. En effet, comme nous l'avons expliqué dans le chapitre 2
-et dans la seconde partie du chapitre 3, ces derniers peuvent être
-fortement \emph{imprécis.}  \emph{L'imprécision} des \emph{indices de
-  localisation} implique de développer une méthode de spatialisation
-qui soit capable de la prendre en compte dans le but d'améliorer la
-qualité des \emph{zones de localisation compatibles,} c'est l'objet du
-second verrou scientifique de cette thèse.  Un troisième point
-essentiel est la notion \emph{d'incertitude}, également abordée dans
-les chapitres 2 et 3. En effet, les secouristes doivent pouvoir
-énoncer un doute sur la véracité des \emph{indices de localisation}
-qui leur sont transmis. La principale difficulté posée par la prise en
-compte de \emph{l'incertitude} est que la méthode développée devra
-cohabiter avec la méthode de prise en compte de \emph{l'imprécision}
-et, plus généralement, avec les méthodes de \emph{spatialisation.}  De
-plus nous devons développer une méthode de \emph{fusion} des
-\emph{zones de localisation compatibles.} Cette dernière doit pouvoir
-cohabiter avec les méthodes développées pour prendre en compte
-\emph{l'imprécision} et \emph{l'incertitude.} Enfin, nous souhaitons
-proposer une méthode permettant d'évaluer les \emph{zones de
-  localisation probables} construites. L'étude de la littérature
-proposée dans le chapitre 3 nous a permis de présenter les solutions
-proposées dans la littérature pour résoudre ces verrous. Notamment sur
-les questions de modélisation de \emph{l'imprécision} et de
-\emph{l'incertitude} et de \emph{spatialisation} des \emph{indices de
-  localisation.} La prochaine partie de ce travail sera consacrée à la
-définition de la méthode de notre thèse et à la mise en œuvre des
+identifier. En effet, comme nous l'avons expliqué dans le
+\autoref{chap:02} et dans la première partie du \autoref{chap:03}, ces
+derniers peuvent être fortement \emph{imprécis.} \emph{L'imprécision}
+des \emph{indices de localisation} implique de développer une méthode
+de spatialisation qui soit capable de la prendre en compte dans le but
+d'améliorer la qualité des \emph{zones de localisation compatibles,}
+c'est l'objet du second verrou scientifique de cette thèse. Un
+troisième point essentiel à considérer est la notion
+\emph{d'incertitude}, également abordée dans les chapitres
+\ref{chap:02} et \ref{chap:03}. En effet, les secouristes doivent
+pouvoir énoncer un doute sur la véracité des \emph{indices de
+  localisation} qui leur sont transmis. La principale difficulté posée
+par la prise en compte de \emph{l'incertitude} est que la méthode
+développée devra cohabiter avec la méthode de prise en compte de
+\emph{l'imprécision} et, plus généralement, avec les méthodes de
+\emph{spatialisation.} De plus, nous devons développer une méthode de
+\emph{fusion} des \emph{zones de localisation compatibles.} Cette
+dernière doit pouvoir cohabiter avec les méthodes développées pour
+prendre en compte \emph{l'imprécision} et \emph{l'incertitude.} Enfin,
+nous souhaitons proposer une méthode permettant d'évaluer les
+\emph{zones de localisation probables} construites. L'étude de la
+littérature, présentée dans le \autoref{chap:03}, nous a permis de
+présenter les solutions déjà proposées pour résoudre ces verrous,
+notamment sur les questions de modélisation de \emph{l'imprécision} et
+de \emph{l'incertitude} et de \emph{spatialisation} des \emph{indices
+  de localisation.} La prochaine partie de ce travail sera consacrée à
+la définition de la méthode de notre thèse et à la mise en œuvre des
 concepts présentés jusqu'ici.
 
 %%% Local Variables:
