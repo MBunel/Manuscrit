@@ -29,11 +29,11 @@ institutions partenaires :
   qualification, l'enrichissement et la visualisation des données
   géographiques;
 \item l'équipe \emph{probabilités et statistiques} du
-  \emph{laboratoire de mathématiques et de leurs applications} de
-  l'université de Pau
-  \footnote{\url{https://lma-umr5142.univ-pau.fr/}} (LMAP), dont les
-  membres sont spécialisés dans la recherche autour des modèles
-  probabilistes et de l'inférence statistique;
+  \emph{laboratoire de mathématiques et de leurs applications}
+  \footnote{\url{https://lma-umr5142.univ-pau.fr/}} (LMAP) de
+  l'université de Pau, dont les membres sont spécialisés dans la
+  recherche autour des modèles probabilistes et de l'inférence
+  statistique;
 \item L'équipe STeamer \footnote{\url{http://steamer.imag.fr/}} du
   \emph{laboratoire d'informatique de Grenoble} (LIG), travaillant à
   la conception d'outils et de méthodes destinés à la construction de
@@ -46,27 +46,27 @@ institutions partenaires :
 \subsection{Problématique du projet}
 \label{subsec:1-2-2}
 
-L'objectif premier du projet Choucas et de développer des méthodes et
+L'objectif premier du projet Choucas est de développer des méthodes et
 des outils permettant aux secouristes de localiser plus facilement,
 rapidement et efficacement des victimes en montagne et ainsi éviter de
 reproduire la situation de l'alerte présentée ci-dessus, où la victime
 n'a été retrouvée que par chance. De part son statut de
 \enquote{déclencheur} du projet de recherche Choucas, mais surtout en
 raisons de ses spécificités qui en font un cas d'école
-(\autoref{subsec:1-1-2-3}), cette alerte aucune une place centrale
+(\autoref{subsec:1-1-2-3}), cette alerte occupe une place centrale
 dans le projet Choucas, au point d'être baptisée \enquote{\emph{fil
     rouge}} \autocite{OlteanuRaimond2017}.
 
-À la suite de l'alerte \emph{fil rouge} un processus de réflexion,
+À la suite de l'alerte \emph{fil rouge,} un processus de réflexion,
 visant à identifier les lacunes du processus de localisation des
 victimes, a été mis en place. Ce dernier a permis d'identifier
 plusieurs problèmes. Le premier d'entre eux est qu'il est difficile,
-voir impossible, de traiter une partie des informations données par le
-requérant. Les raisons peuvent être multiples. Par exemple le
+voire impossible, de traiter une partie des informations données par
+le requérant. Les raisons peuvent être multiples. Par exemple, le
 requérant peut donner une information qui pourrait se révéler
 discriminante, mais qu'il est très difficile d'exploiter
 manuellement. C'est par exemple le cas lorsque, dans le \emph{fil
-  rouge,} la victime indique \enquote{voir une partie de plan
+  rouge,} la victime indique voir \enquote{une partie de plan
   d'eau}. Si relativement peu de positions correspondent à cet énoncé,
 il n'est pas exploitable lors d'une localisation manuelle, puisqu'il
 serait nécessaire d'arriver à construire manuellement des zones de
@@ -74,19 +74,18 @@ visibilité. Un autre problème se pose lorsque le requérant décrit sa
 position à l'aide d'un objet non nommé, mais défini par son type ou sa
 nature. C'est par exemple le cas lorsque la victime indique être
 \enquote{sous une ligne électrique} ou être \enquote{partie \textelp{}
-  en direction d'une station de ski}. Dans ce cas de très nombreuses
+  en direction d'une station de ski}. Dans ce cas, de très nombreuses
 positions peuvent correspondre à une même description et il est
 difficile pour un opérateur humain de toutes les identifier et les
 vérifier. Un autre problème est que les requérants peuvent décrire une
 position en utilisant des termes très vagues, par exemple lorsque,
 dans le \emph{fil rouge,} la victime indique avoir marché
 \enquote{plusieurs heures}. Les secouristes ne peuvent qu'approximer
-la distance qu'a pu parcourir la victime, s'agit-il de quelques
-kilomètres ? Auquel cas la victime aurait marché deux ou trois heures,
-en fonction du terrain ou beaucoup plus ? Bien entendu ces différents
-problèmes peuvent se combiner, c'est par exemple le cas lorsque la
+la distance qu'a pu parcourir la victime : s'agit-il de quelques
+kilomètres ? Auquel ou beaucoup plus ? Bien entendu ces différents
+problèmes peuvent se combiner. C'est par exemple le cas lorsque la
 victime indique être \enquote{sous une route et entend des
-  voitures}. Dans ce cas le \enquote{sous} est imprécis (\ie on ne
+  voitures}. Dans ce cas, le \enquote{sous} est imprécis (\ie on ne
 sait pas s'il s'agit de quelques mètres ou de beaucoup plus), l'objet
 est inconnu (\ie il peut s'agir de n'importe quelle route) et il est
 impossible de traiter une partie de l'information manuellement (\ie
@@ -97,8 +96,8 @@ précédent, est qu'il est difficile pour les secouristes de traiter
 différentes hypothèses de localisation de la victime en parallèle,
 surtout lorsque ces dernières sont complexes. Les secouristes ont donc
 tendance à se focaliser sur une même hypothèse, celle qui semble la
-plus probable. Toutefois cela peut conduire à se focaliser sur une
-hypothèse fausse, d’antan plus que, comme l'indique
+plus probable. Toutefois, cela peut conduire à se focaliser sur une
+hypothèse fausse, d’autant plus que, comme l'indique
 \textcite{Bachelard1934} : \enquote{À l'usage, les idées se valorisent
   indûment}. Il serait donc préférable que les secouristes puissent
 disposer d'un outil leur permettant de traiter plus facilement et
