@@ -1,14 +1,22 @@
 % Introduction objectifs scientifiques
-Le développement d'une méthode de \emph{spatialisation} des
-\emph{indices de localisation} et celui d'une méthode de \emph{fusion}
-des \emph{zones de localisation compatibles} qui soient adaptées aux
+La nécessité de concevoir des méthodes de \emph{spatialisation} des
+\emph{indices de localisation} et une méthode de \emph{fusion} des
+\emph{zones de localisation compatibles} qui soient adaptées aux
 contraintes de notre contexte applicatif nous a conduit à identifier
-cinq objectifs scientifiques pour ce travail de thèse. Cette partie se
-destine à présenter en détail ces différents objectifs.
+quatre objectifs scientifiques pour cette thèse :
+%
+\begin{enumerate*}[label=(\arabic*)]
+\item la spatialisation des indices de localisation ;
+\item la modélisation de l'imprécision des indices de localisation ;
+\item la modélisation de l'incertitude ; et
+\item la fusion des indices de localisation/
+\end{enumerate*}
+%
+Cette partie se destine à présenter ces différents objectifs.
 % Annonce tableau synthèse
 On trouvera une synthèse des objectifs scientifiques, ainsi que de
-leurs verrous et des contributions attendues dans le
-\autoref{tab:synthese_objectifs} page2
+leurs verrous et des contributions attendues, dans le
+\autoref{tab:synthese_objectifs} page
 \pageref{tab:synthese_objectifs}.
 
 \subsection{La \emph{spatialisation} des \emph{indices de
@@ -655,8 +663,8 @@ la \emph{zone de localisation probable.} La prise en compte de
 problème. Cependant, comme son estimation reste à la charge du
 secouriste.
 
-\subsection{L'évaluation des \emph{zones de localisation}}
-\label{subsec:2-1-5}
+% \subsection{L'évaluation des \emph{zones de localisation}}
+% \label{subsec:2-1-5}
 
 % TODO
 % \tdi{Je mets ici le commentaire d'ana-maria sur cette partie: \\ Cette
@@ -673,95 +681,95 @@ secouriste.
 %   croyance" que la victime se trouve dans une zone de localisation
 %   probable }
 
-Enfin, notre dernier objectif est de proposer une méthode d'évaluation
-des \emph{zones de localisation} construites et ce, qu'il s'agisse des
-\emph{zones de localisation compatibles} ou \emph{probables.} Il est,
-en effet, primordial de savoir si les zones construites à l'aide de
-notre méthodologie de \emph{spatialisation} des \emph{indices de
-  localisation} sont des \enquote{bonnes zones} ou non. Une mesure de
-qualité pertinente offrira la possibilité de juger de la qualité des
-méthodes de \emph{spatialisation} développées. Cependant cet objectif
-nécessite définir des critères d'évaluation pertinants et adaptés au
-contexte applicatif de ce travail.
+% Enfin, notre dernier objectif est de proposer une méthode d'évaluation
+% des \emph{zones de localisation} construites et ce, qu'il s'agisse des
+% \emph{zones de localisation compatibles} ou \emph{probables.} Il est,
+% en effet, primordial de savoir si les zones construites à l'aide de
+% notre méthodologie de \emph{spatialisation} des \emph{indices de
+%   localisation} sont des \enquote{bonnes zones} ou non. Une mesure de
+% qualité pertinente offrira la possibilité de juger de la qualité des
+% méthodes de \emph{spatialisation} développées. Cependant cet objectif
+% nécessite définir des critères d'évaluation pertinants et adaptés au
+% contexte applicatif de ce travail.
 
-\subsubsection{Contexte scientifique}
+% \subsubsection{Contexte scientifique}
 
-La question de l’évaluation des résultats est centrale dans la
-recherche scientifique. Le processus d'évaluation consiste à vérifier
-que les résultats produits sont une bonne approximation de la
-réalité. On peut définir deux grandes catégories de méthodes
-d'évaluation des résultats. La première est \emph{l'évaluation
-  supervisée,} où les résultats, quelle que soit leur forme sont
-comparés à un jeu de données ou d'observations représentatifs de la
-réalité. C'est la confrontation du comportement du modèle avec les
-résultats observés qui permet d'en évaluer la qualité. Généralement,
-tout écart tranche en défaveur du modèle ou de la théorie utilisée,
-cependant l'inverse est également possible, notamment lorsque la
-théorie utilisée est considérée comme très robuste, c'est par exemple
-le cas du \emph{modèle standard de la physique des particules,} que
-les physiciens considèrent comme si éprouvé que les écarts observés
-entre le modèle et les observations sont, par défaut, imputés à des
-erreurs d'observation. À notre connaissance, seule la physique
-théorique dispose de modèles si polis que leurs prédictions théoriques
-sont considérées comme plus fiables que les observations. On peut,
-cependant, également parler d'\enquote{\emph{approche supervisée}}
-lorsque les résultats sont comparés à une référence qui ne correspond
-pas nécessairement à la réalité. \textcite{Olteanu2008}, par exemple,
-a été amenée à évaluer les résultats d'un appariement de données
-géographiques. Pour ce faire les résultats de l’appariement
-automatiques ont été comparés à ceux d'un appariement manuel, faisant
-office de référence. Ce dernier ne correspond donc à aucune
-\enquote{réalité}, il s'agit juste d'un cas idéal, ce qui n’empêche
-pas de considérer cette méthode d’évaluation comme une \emph{approche
-  supervisée.} La seconde méthode d'évaluation existante est
-l'évaluation \emph{non-supervisée.}  Cette catégorie regroupe toutes
-les situations où on ne dispose pas d'observations de référence
-permettant d'évaluer les résultats produits. C'est, par exemple, le
-cas lorsque l'on cherche à évaluer des résultats par des tests
-utilisateurs, comme le propose \textcite{Dumont2018} pour évaluer la
-qualité d'une généralisation cartographique. Ces deux approches ne
-sont cependant pas incompatibles. Par exemple, \textcite{Jolivet2014}
-combine ces deux approches pour évaluer un modèle de simulation. Les
-trajectoires d’animaux construites par le modèle sont, d'une part
-comparées quantitativement aux observations instrumentales
-(\emph{approche supervisée}), mais également évaluées qualitativement
-par des experts de la thématique (\emph{approche non-supervisée}).
+% La question de l’évaluation des résultats est centrale dans la
+% recherche scientifique. Le processus d'évaluation consiste à vérifier
+% que les résultats produits sont une bonne approximation de la
+% réalité. On peut définir deux grandes catégories de méthodes
+% d'évaluation des résultats. La première est \emph{l'évaluation
+%   supervisée,} où les résultats, quelle que soit leur forme sont
+% comparés à un jeu de données ou d'observations représentatifs de la
+% réalité. C'est la confrontation du comportement du modèle avec les
+% résultats observés qui permet d'en évaluer la qualité. Généralement,
+% tout écart tranche en défaveur du modèle ou de la théorie utilisée,
+% cependant l'inverse est également possible, notamment lorsque la
+% théorie utilisée est considérée comme très robuste, c'est par exemple
+% le cas du \emph{modèle standard de la physique des particules,} que
+% les physiciens considèrent comme si éprouvé que les écarts observés
+% entre le modèle et les observations sont, par défaut, imputés à des
+% erreurs d'observation. À notre connaissance, seule la physique
+% théorique dispose de modèles si polis que leurs prédictions théoriques
+% sont considérées comme plus fiables que les observations. On peut,
+% cependant, également parler d'\enquote{\emph{approche supervisée}}
+% lorsque les résultats sont comparés à une référence qui ne correspond
+% pas nécessairement à la réalité. \textcite{Olteanu2008}, par exemple,
+% a été amenée à évaluer les résultats d'un appariement de données
+% géographiques. Pour ce faire les résultats de l’appariement
+% automatiques ont été comparés à ceux d'un appariement manuel, faisant
+% office de référence. Ce dernier ne correspond donc à aucune
+% \enquote{réalité}, il s'agit juste d'un cas idéal, ce qui n’empêche
+% pas de considérer cette méthode d’évaluation comme une \emph{approche
+%   supervisée.} La seconde méthode d'évaluation existante est
+% l'évaluation \emph{non-supervisée.}  Cette catégorie regroupe toutes
+% les situations où on ne dispose pas d'observations de référence
+% permettant d'évaluer les résultats produits. C'est, par exemple, le
+% cas lorsque l'on cherche à évaluer des résultats par des tests
+% utilisateurs, comme le propose \textcite{Dumont2018} pour évaluer la
+% qualité d'une généralisation cartographique. Ces deux approches ne
+% sont cependant pas incompatibles. Par exemple, \textcite{Jolivet2014}
+% combine ces deux approches pour évaluer un modèle de simulation. Les
+% trajectoires d’animaux construites par le modèle sont, d'une part
+% comparées quantitativement aux observations instrumentales
+% (\emph{approche supervisée}), mais également évaluées qualitativement
+% par des experts de la thématique (\emph{approche non-supervisée}).
 
-\subsubsection{Verrous scientifiques}
+% \subsubsection{Verrous scientifiques}
 
-Le principal verrou scientifique à la mise en place d'une méthode
-d'évaluation, réside dans le fait qu'il est insatisfaisant de nous
-baser uniquement sur une comparaison entre une \enquote{zone estimée},
-\ie la \emph{zone de localisation probable} et la position réele de la
-victime. En effet, l'absence ---~et inversement la présence~--- de la
-position de la victime dans la \emph{zone de localisation probable}
-construite, ne signifie pas nécessairement que la modélisation est
-erronée. Les \emph{indices de localisation} peuvent être incorrects,
-sans pour autant avoir été identifiés comme tels par le secouriste, ou
-le requérant peut se référer à un objet qui n'existe pas dans les
-basses de données utilisées. De plus, avec ce critère, l'évaluation ne
-peut se faire sans la connaissance de la position réelle de la
-victime, ce qui ne permet pas d'envisager la mise en place d'une
-\enquote{évaluation dynamique} des résultats, à même de renseigner le
-secouriste sur la qualité des résultats lors de la phase de
-localisation. L'évalution des résultats ne peut être réalisée qu'après
-avoir pris connaissance de la position de la victime. Une autre
-solution serait de considérer que, moins la \emph{zone de localisation
-  probable} est étendue, plus elle est précise et donc de
-\enquote{meilleure qualitée}. Cependant cette approche n'est pas plus
-satisfaisante.  En effet, la \emph{zone de localisation probable}
-correspond à l'ensemble des \emph{positions} validant la description
----~transmise sous la forme \emph{d'indices de localisation}. Or,
-plusieurs zones peuvent correspondre à cette descrition, à fortiori si
-les \emph{indices de localisations} donnés sont peu nombreux ou
-discriminants. Utiliser un critère de \enquote{taille de zone}
-reviendrait donc à estimer la qualité des \emph{indices de
-  localisation} et non celle de leur modélisation.
+% Le principal verrou scientifique à la mise en place d'une méthode
+% d'évaluation, réside dans le fait qu'il est insatisfaisant de nous
+% baser uniquement sur une comparaison entre une \enquote{zone estimée},
+% \ie la \emph{zone de localisation probable} et la position réele de la
+% victime. En effet, l'absence ---~et inversement la présence~--- de la
+% position de la victime dans la \emph{zone de localisation probable}
+% construite, ne signifie pas nécessairement que la modélisation est
+% erronée. Les \emph{indices de localisation} peuvent être incorrects,
+% sans pour autant avoir été identifiés comme tels par le secouriste, ou
+% le requérant peut se référer à un objet qui n'existe pas dans les
+% basses de données utilisées. De plus, avec ce critère, l'évaluation ne
+% peut se faire sans la connaissance de la position réelle de la
+% victime, ce qui ne permet pas d'envisager la mise en place d'une
+% \enquote{évaluation dynamique} des résultats, à même de renseigner le
+% secouriste sur la qualité des résultats lors de la phase de
+% localisation. L'évalution des résultats ne peut être réalisée qu'après
+% avoir pris connaissance de la position de la victime. Une autre
+% solution serait de considérer que, moins la \emph{zone de localisation
+%   probable} est étendue, plus elle est précise et donc de
+% \enquote{meilleure qualitée}. Cependant cette approche n'est pas plus
+% satisfaisante.  En effet, la \emph{zone de localisation probable}
+% correspond à l'ensemble des \emph{positions} validant la description
+% ---~transmise sous la forme \emph{d'indices de localisation}. Or,
+% plusieurs zones peuvent correspondre à cette descrition, à fortiori si
+% les \emph{indices de localisations} donnés sont peu nombreux ou
+% discriminants. Utiliser un critère de \enquote{taille de zone}
+% reviendrait donc à estimer la qualité des \emph{indices de
+%   localisation} et non celle de leur modélisation.
 
-L’évaluation de la qualité de la \emph{zone de localisation probable}
-impose donc de développer une méthode à même d'estimer la qualité de
-la modélisation des \emph{indices de localisation} donnés par le
-requérant et non celle des \emph{indices} en eux-mêmes. 
+% L’évaluation de la qualité de la \emph{zone de localisation probable}
+% impose donc de développer une méthode à même d'estimer la qualité de
+% la modélisation des \emph{indices de localisation} donnés par le
+% requérant et non celle des \emph{indices} en eux-mêmes. 
 
 %%% Local Variables:
 %%% mode: latex
