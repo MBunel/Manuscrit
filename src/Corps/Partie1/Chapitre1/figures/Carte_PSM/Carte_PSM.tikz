@@ -19,10 +19,10 @@
     % Légende
     \node (rect) [anchor=north west, caisson] at ([yshift=-2cm]P1) {};
     \path[route](rect.west) -- (rect.north) -- (rect.east);
-    \node[right of=rect, legende] {\scriptsize Limies départementales};
+    \node[right of=rect, legende] {\scriptsize Limite départementale};
 
     \node (rect) [anchor=north west, caisson, fill=RdBu-9-1] at ([yshift=-2.75cm]P1) {};
-    \node[right of=rect, legende] {\scriptsize Zones urbaines};
+    \node[right of=rect, legende] {\scriptsize Zone urbaine};
 
     \node (rect) [anchor=north west, caisson, pattern=north west lines] at
     ([yshift=-3.5cm]P1) {}; \node[right of=rect, legende] {\scriptsize
@@ -35,7 +35,7 @@
 
     \node (rect) [anchor=north west, caisson] at ([yshift=-5cm]P1) {};
     \draw[anchor=north west, fill=RdBu-9-8, draw=none] (rect) circle
-    [radius=0.1cm]; \node[right of=rect, legende] {\scriptsize Bases saisonnières};
+    [radius=0.1cm]; \node[right of=rect, legende] {\scriptsize Base saisonnière};
 
     % Échelle
     \draw[-] (P2 |- 1cm,0) --++ (1,0) node[pos=.5, above] {\footnotesize\SI{17.5}{\kilo\meter}};
