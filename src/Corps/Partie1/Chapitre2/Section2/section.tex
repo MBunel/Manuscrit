@@ -47,15 +47,16 @@ Comme notre objectif est de proposer des solutions de
 actuelle des secouristes, nous pouvons envisager d'exploiter leur
 expertise pour réaliser certaines actions, comme l'écoute et l'analyse
 du discours du \emph{requérant,} qui seraient difficilement
-automatisables par ailleurs. En effet, il n'est pas nécessaire, voire
+automatisables par ailleurs. En effet, il n'est ni nécessaire, ni
 souhaitable, d'automatiser entièrement le processus de localisation de
 la victime, ce qui nécessiterait, par ailleurs, de développer des
-solutions d'analyse automatisée du langage oral. Cette étape n'est,
-cependant, pas nécessaire dans notre cas, puisque nous pouvons confier
-cette tache de \enquote{sémantisation} de la description orale d'une
-position au secouriste. Notre travail se limitera donc à identifier
-les \enquote{types} de descriptions utilisées dans notre contexte, de
-les exprimer dans un vocabulaire controlé, puis d'en proposer une
+solutions d'analyse automatisée du langage oral. Cependant, cette
+étape, ne concerne pas notre travail et ne sera donc pas abordée ici,
+puisque nous choisissons de confier cette tâche de
+\enquote{sémantisation} de la description orale d'une position au
+secouriste. Notre travail se limitera donc à identifier les
+\enquote{types} de descriptions utilisées dans notre contexte, de les
+exprimer dans un vocabulaire controlé, puis d'en proposer une
 modélisation à même d'en permettre la \emph{spatialisation.}
 
 \subsubsection{Contexte scientifique}
@@ -77,31 +78,31 @@ une précision submétrique, que d'identifier la position correspondant
 à la description : \enquote{le café sous ma maison}, alors que cette
 dernière est pourtant beaucoup plus compréhensible pour un être humain
 \autocite{Duchene2019}. L'interprétation de ce type de description se
-heurte, en effet, à plusieurs problèmes. Tout d'abord il est difficile
-d'identifier la sémantique des termes utilisés, celle-ci étant
-dépendante du contexte. Reprenons l'exemple du \enquote{café}. Vous
-aurez très certainement compris en lisant cet énoncé que \enquote{le
-  café} était un lieu. Toutefois, pour en arriver a cette conclusion
-il a fallu comprendre qu'il s'agissait d'une métonymie et par
-conséquent que le terme \enquote{café} désigne ici un lieu et non une
-boisson psychotrope, le moment où on la consomme, ou les grains du
-caféier. C'est le contexte d’utilisation, ou le mot \enquote{café} est
-couplé à une \emph{relation de localisation} qui permet de comprendre
-qu'il s'agit d'un objet géographique et donc que l'interprétation la
-plus vraisemblable est que l'on parle ici d'un bar. De la même
-manière, le terme \enquote{ma maison}, peut être interprété comme un
-synonyme d'\enquote{habitat individuel} ou comme une nouvelle
-métonymie désignant \enquote{mon foyer}, dans ce cas c'est l'adjectif
-possessif \enquote{ma} qui permet de trancher. Comme le montrent ces
-deux cas, bien qu'il soit assez facile pour un être humain
-d'interpréter ces deux phrases, il est nécessaire de prendre en compte
-beaucoup d'éléments pour permettre à un ordinateur de les
+heurte, en effet, à plusieurs problèmes. Tout d'abord, il est
+difficile d'identifier la sémantique des termes utilisés, celle-ci
+étant dépendante du contexte. Reprenons l'exemple du
+\enquote{café}. Vous aurez très certainement compris en lisant cet
+énoncé que \enquote{le café} était un lieu. Toutefois, pour en arriver
+à cette conclusion, il a fallu comprendre qu'il s'agissait d'une
+métonymie et, par conséquent, que le terme \enquote{café} désigne ici
+un lieu et non une boisson psychotrope ou le moment où on la consomme,
+ou les grains du caféier. C'est le contexte d’utilisation, où le mot
+\enquote{café} est couplé à une \emph{relation de localisation} qui
+permet de comprendre qu'il s'agit d'un objet géographique et donc que
+l'interprétation la plus vraisemblable est que l'on parle ici d'un
+bar. De la même manière, le terme \enquote{ma maison}, peut être
+interprété comme un synonyme d'\enquote{habitat individuel} ou comme
+une nouvelle métonymie désignant \enquote{mon foyer}. Dans ce cas
+c'est l'adjectif possessif \enquote{ma} qui permet de trancher. Comme
+le montrent ces deux cas, bien qu'il soit assez facile pour un être
+humain d'interpréter ces deux phrases, il est nécessaire de prendre en
+compte beaucoup d'éléments pour permettre à un ordinateur de les
 interpréter. Cet exemple porte sur l'interprétation automatisée du
 langage naturel dans le cas général, mais les mêmes problèmes
 s'appliquent également aux \emph{relations de localisation.} Dans cet
 exemple, le \enquote{café} est \enquote{sous} mon domicile, mais
 comment identifier les positions qui sont effectivement \enquote{sous
-  ma maison} ? Pour ce faire il est nécessaire d'identifier la
+  ma maison} ? Pour ce faire, il est nécessaire d'identifier la
 sémantique des \emph{relations de localisation} et notamment de celles
 utilisées dans notre contexte applicatif.
 
@@ -114,7 +115,7 @@ sémantique de \emph{relations de localisation} utilisées en
 français. Ce travail a été consolidé par les travaux de
 \textcite{Borillo1998}, qui portent, quant à eux, sur la morphologie
 des descriptions de position, ou de \textcite{Aurnague1993,
-  Aurnague1997}, qui irons jusqu'à proposer une formalisation logique
+  Aurnague1997}, qui iront jusqu'à proposer une formalisation logique
 des \emph{relations de localisations.} Des travaux similaires ont été
 entrepris pour la langue anglaise, notamment par
 \autocite{Kracht2002,Mark1999,Freksa2018,Carlson2005,Lang1991,Matsakis2010}.
