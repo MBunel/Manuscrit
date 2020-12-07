@@ -73,10 +73,11 @@ informatique de positions et plus généralement, d'objets
 géographiques, est assez éloignée de la façon dont les hommes et les
 femmes conçoivent l'espace et leur localisation. Pour des raisons
 techniques, il est beaucoup plus simple, pour un ordinateur,
-d'identifier les coordonnées d'un point à la surface de la terre avec
-une précision submétrique, que d'identifier la position correspondant
-à la description : \enquote{le café sous ma maison}, alors que cette
-dernière est pourtant beaucoup plus compréhensible pour un être humain
+d'identifier et de manipuler les coordonnées d'un point à la surface
+de la terre avec une précision submétrique, que d'identifier la
+position correspondant à la description : \enquote{le café sous ma
+  maison}, alors que cette dernière est pourtant beaucoup plus
+compréhensible pour un être humain
 \autocite{Duchene2019}. L'interprétation de ce type de description se
 heurte, en effet, à plusieurs problèmes. Tout d'abord, il est
 difficile d'identifier la sémantique des termes utilisés, celle-ci
@@ -146,16 +147,21 @@ L’élaboration d'une méthode de \emph{spatialisation} se heurte
 néanmoins à deux verrous majeurs, l'un intrinsèquement lié à cet
 exercice, l'autre dépendant de notre contexte applicatif.
 
-Le premier (et principal) verrou est la grande variabilité sémantique
-des \emph{relations de localisation.} Ces dernières peuvent prendre
-des sens légèrement différents, en fonction du contexte. Par exemple,
-on peut être \enquote{sous \emph{un pont}}, ce qui implique une notion
-de recouvrement, ou \enquote{sous \emph{une route}}, ce qui n'implique
-pas de recouvrement. Ainsi, la méthode de \emph{spatialisation}
-développée devra être à même de générer ces différentes acceptations
-d'une même \emph{relation de localisation,} au risque de construire
-une \emph{zone de localisation compatible} qui ne soit pas
-représentative de la description donnée par le \emph{requérant.}
+Le premier verrou est la grande variabilité sémantique des préposition
+spatiales. Ces dernières peuvent, en effet, prendre des sens
+légèrement différents, en fonction du contexte
+\autocite{Bateman2010}. Par exemple, on peut être \enquote{sous
+  \emph{un pont}}, ce qui implique une notion de recouvrement, ou
+\enquote{sous \emph{une route}}, ce qui n'implique pas de
+recouvrement. Ainsi une même préposition spatiale peut décrire des
+relations de localisation différentes, par exemple un \enquote{sous
+  avec recouvrement} et un \enquote{sous sans recouvrement}. Les
+méthodes de \emph{spatialisation} développées ne pourront directement
+traiter les prépositions spatiales comme des \emph{relations de
+  localisation,} mais elle devront s'adapter a ces différentes
+\emph{relations de localisations,} au risque de construire une
+\emph{zone de localisation compatible} qui ne soit pas représentative
+de la description donnée par le \emph{requérant.}
 
 le second verrou est lié au manque d’exhaustivité et à la redondance
 des \emph{indices de localisation} dont nous disposons pour développer
@@ -165,7 +171,7 @@ d'alertes, traitées par différents \ac{pghm}. Or, il existe peu de
 redondances entre chacune de ces alertes, ce qui rend leur
 confrontation difficile. Par exemple, nous n'avons pas à notre
 disposition, deux enregistrements différents, décrivant la même
-position, avec des \emph{indices de localisation spécifiques.} Nous ne
+position, avec les mêmes \emph{indices de localisation.} Nous ne
 pouvons donc pas estimer la divergence des descriptions d'une même
 position. De même, les \emph{indices de localisation} utilisés sont si
 divers, qu'un même \emph{indice de localisation} n'est que rarement
@@ -183,9 +189,9 @@ applicatif. On peut, en effet, supposer que seul un sous-ensemble des
 est utilisé, du moins régulièrement, pour décrire une position en
 montagne. L'identification de ces \emph{relations de localisation}
 nous permettra, d'une part, d'identifier les spécificités de la
-description d'une position en langage naturel, dans un contexte
-montagnard et, de l'autre, de nous concentrer sur la modélisation de
-ces \emph{relations de localisation.}
+description d'une position en langage naturel dans un contexte
+montagnard et, de l'autre, de nous concentrer exclusivement sur la
+modélisation de ces \emph{relations de localisation.}
 
 Ce travail sera complété par un travail d'identification de la
 sémantique des relations de localisation utilisées dans notre
@@ -207,13 +213,13 @@ alors que la phrase : \enquote{je suis proche \emph{d'un kiosque}},
 semble peu probable. Comme pour les \emph{relations de localisation,}
 l'identification et le recensement de ces objets permettront d'avoir,
 à la fois une meilleure connaissance des descriptions de positions
-dans notre contexte applicatif, mais aussi de focaliser notre travail
-sur les objets les plus pertinents.
+dans le contexte du secours en montagne, mais aussi de focaliser notre
+travail sur les objets les plus pertinents.
 
-Ces trois objectifs intermédiaires nous permettrons de développer une
-méthode de \emph{spatialisation} de ces \emph{indices de localisation}
-et d'en proposer une implémentation fonctionnelle. La méthode mise en
-œuvre devra être suffisamment générique pour fonctionner avec les
+Ces objectifs nous permettront de développer une méthode de
+\emph{spatialisation} de ces \emph{indices de localisation} et d'en
+proposer une implémentation fonctionnelle. La méthode mise en œuvre
+devra être suffisamment générique pour fonctionner avec les
 différentes \emph{relations de localisation} et les différents
 \emph{objets de référence} identifiés, tout en prenant en compte leurs
 spécificités, dans le but de proposer une \emph{spatialisation}
