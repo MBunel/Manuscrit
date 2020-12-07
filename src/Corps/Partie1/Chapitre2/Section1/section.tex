@@ -108,12 +108,12 @@ position ne peut se faire directement. Il est nécessaire de procéder
 en deux étapes, la première destinée à \emph{spatialiser} les
 différents \emph{indices de localisation} et la seconde combinant les
 résultats des différentes \emph{spatialisations} pour aboutir à la
-\emph{zone de localisation} finale, \ie la \emph{fusion} des résultats
-de la \emph{spatialisation.} On est donc amenées, pour une même
-alerte, à définir plusieurs \footnote{À l'exception du cas, déjà
+\emph{zone de localisation} finale, c'est-à-dire la \emph{fusion} des
+résultats de la \emph{spatialisation.} On est donc amenées, pour une
+même alerte, à définir plusieurs \footnote{À l'exception du cas, déjà
   mentionné, où le requérant ne donne qu'un seul \emph{indice de
-    localisation.}  Toutefois, c'est un cas que l'on rencontre pas en
-  pratique.}  \emph{zones de localisation,} une pour chaque
+    localisation.}  Toutefois, c'est un cas que l'on ne rencontre pas
+  en pratique.}  \emph{zones de localisation,} une pour chaque
 \emph{indice de localisation,} auxquelles s'ajoute une dernière zone,
 construite par la \emph{fusion} des résultats de la
 \emph{spatialisation.}  L'ontologie \ac{oac} \autocite{Viry2019} fait
@@ -127,13 +127,14 @@ Le processus de \emph{spatialisation} d'un \emph{indice de
   localisation} est illustré par la figure \ref{fig:obj_spa}. Dans cet
 exemple, \emph{l'indice de localisation} \enquote{je suis proche d'une
   maison} est \emph{spatialisé} à l'aide d'une zone tampon. On
-considère que la zone \enquote{proche d'une maison} correspond à
+considère donc que la zone \enquote{proche d'une maison} correspond à
 toutes positions situées à moins d'une distance fixée de \emph{l'objet
-  de référence}, la zone résultante est donc un disque. Cette
-\emph{spatialisation} est simple, voire simpliste et il ne faut pas
-voir cette illustration comme une représentation de la méthode qui
-sera effectivement utilisée pour \emph{spatialiser} cet indice, mais
-plutôt comme une illustration du processus de \emph{spatialisation.}
+  de référence}, la \emph{zone de localisation compatible} résultante
+est donc un disque. Cette \emph{spatialisation} est simple, voire
+simpliste, et il ne faut pas voir cette illustration comme une
+représentation de la méthode qui sera effectivement utilisée pour
+\emph{spatialiser} cet indice, mais plutôt comme une illustration du
+processus de \emph{spatialisation.}
 
 \begin{figure}[hb]
   \centering
