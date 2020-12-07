@@ -428,9 +428,6 @@ appliquée à l'interprétation automatisée d'images médicales
 
 \subsubsection{Verrous scientifiques}
 
-Dans notre cas, la prise en compte de \emph{l'imprécision} des
-\emph{relations de localisation} pose deux problèmes majeurs.
-
 Le premier des verrous à la prise en compte de \emph{l'imprécision}
 est l'identification d'une théorie qui permette sa modélisation, tout
 en étant compatible avec la solution de \emph{spatialisation} des
@@ -450,41 +447,43 @@ deux indices ont une signification semblable, tous deux renseignent
 sur la proximité du locuteur avec la ville de Grenoble. On aurait
 toutefois du mal à les considérer comme parfaitement équivalents, la
 relation de localisation \enquote{\emph{aux alentours de}} nous
-semblant plus vague, \ie que l'aire que l'on peut définir comme étant
-\enquote{\emph{aux alentours de} Grenoble} est plus étendue que celle
-qui en est \emph{proche.} On ne peut pas, pour autant, considérer que
-la \emph{relation de localisation} \enquote{\emph{proche de}} est
-\emph{précise.} Ces deux relations sont \emph{imprécises,} mais a des
-degrés divers et, si l'on peut les ordonner selon leur \enquote{degré
-  \emph{d'imprécision}}, on ne saurait quantifier cet écart et donc
-leurs différents degrés \emph{d'imprécision.}
+semblant plus vague, c'est-à-dire que l'aire que l'on peut définir
+comme étant \enquote{\emph{aux alentours de} Grenoble} est plus
+étendue que celle qui en est \emph{proche.} On ne peut pas, pour
+autant, considérer que la \emph{relation de localisation}
+\enquote{\emph{proche de}} est \emph{précise.} Ces deux relations sont
+\emph{imprécises,} mais a des degrés divers et, si l'on peut les
+ordonner selon leur \enquote{degré \emph{d'imprécision}}, on ne
+saurait quantifier cet écart et donc leurs différents degrés
+\emph{d'imprécision.}
 
 Cette quantification est cependant une étape indispensable à la prise
 en compte de \emph{l'imprécision} des \emph{relations de
   localisation.} L'analyse de la sémantique des \emph{relations de
   localisation} devra donc être complétée par une estimation de leur
-\emph{imprécision} et leur modélisation devra prendre en considération
-ces deux aspects.
+\emph{imprécision} et les méthodes de spatialisation définies devront
+prendre en considération ces deux aspects.
 
-\subsection{La modélisation de \emph{l'incertitude}}
+\subsection{La modélisation de \emph{l'incertitude} des \emph{indices
+    de localisation}}
 \label{subsec:2-1-3}
 
 Si la prise en compte de \emph{l'imprécision} des \emph{indices de
-  localisation} permet d'améliorer la qualité de leur modélisation, ce
-mécanisme ne permet pas d'en gérer la plausiblité. En effet, certains
-\emph{indices de localisation} donnés par le requérant peuvent être
-faux, ou, du moins, sujets à caution et ce indépendament de toute
-notion de \emph{précision.} La prise en considération ---~aveugle~---
-de ce type d'indices ne peut qu'impacter négativement la qualité de la
-\emph{zone de localisation probable} créée par \emph{fusion} des
-\emph{indices de localisation.} Les secouristes sont cependant, grâce
-à leur connaissance du terrain et à leur expérience, à même
-d'identifier la plupart de ces erreurs et approximations, ou, tout du
-moins, d’émettre un doute sur la véracité de certains \emph{indices de
-  localisation.} La prise en compte de ces connaissances, exogènes à
-l'indice, nous semble très importante, en plus d'être un excellent
-moyen pour contrôler la prise en considération d'indices de mauvaise
-qualité.
+  localisation} permet d'améliorer la qualité de leur future
+modélisation, cette solution ne permet pas d'en gérer la
+plausiblité. En effet, certains \emph{indices de localisation} donnés
+par le requérant peuvent être faux, ou, du moins, sujets à caution et
+ce indépendamment de toute notion de \emph{précision.} La prise en
+considération ---~aveugle~--- de ce type d'indices ne peut qu'impacter
+négativement la qualité de la \emph{zone de localisation probable}
+créée par \emph{fusion} des \emph{indices de localisation.} Les
+secouristes sont cependant, grâce à leur connaissance du terrain et à
+leur expérience, à même d'identifier la plupart de ces erreurs et
+approximations, ou, tout du moins, d’émettre un doute sur la véracité
+de certains \emph{indices de localisation.} La prise en compte de ces
+connaissances, exogènes à l'indice, nous semble très importante, en
+plus d'être un excellent moyen de limiter l'impact d'indices peu
+plausibles sur la qualité de la spatialisation.
 
 \subsubsection{Contexte scientifique}
 
