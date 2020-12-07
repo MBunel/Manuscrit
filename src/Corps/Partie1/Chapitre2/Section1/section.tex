@@ -1,31 +1,34 @@
-La construction d'une zone à partir de sa description est une tache
-complexe, qui nécessite de prendre en compte de nombreux éléments que
-nous n'avons pas abordés lors de la présentation des objectifs
-scientifiques du projet Choucas. De plus, durant le premier chapitre
-de ce manuscrit nous avons fait emploi de nombreux termes, inhérents
-au projet, sans pour autant les définir. Nous allons a présent
-clarifier ces différents termes (\ref{subsec:2-1}), avant de détailler
-les concepts généraux de cette thèse (\ref{subsec:2-2})
+La construction d'une zone à partir de la description qui en est
+données par le requérant est une tache complexe, qui nécessite de
+prendre en compte de nombreux éléments que nous n'avons pas abordés
+lors de la présentation des objectifs scientifiques du projet
+Choucas. De plus, durant le premier chapitre de ce manuscrit nous
+avons fait emploi de nombreux termes, inhérents au projet, sans pour
+autant les définir. Nous allons a présent clarifier ces différents
+termes (\ref{subsec:2-1}), avant de détailler les concepts généraux de
+cette thèse (\ref{subsec:2-2})
 
 \subsection{Définition des termes du sujet}
 \label{subsec:2-1}
 
 % Alertes
 Jusqu'à présent nous avons abondamment employé le terme
-\enquote{d'alerte} pour désigner, à la fois une opération de secours
+\enquote{d'alerte} pour désigner à la fois une opération de secours
 donnée, sa phase de localisation et l'ensemble des éléments décrivant
-une position donnés par le requérant. Dans son acceptation formelle,
-\ie telle que définie dans \emph{l’ontologie d'alerte Choucas}
-\autocite[\ac{oac},][]{Viry2019}, le terme \enquote{alerte} désigne
-l'ensemble des \emph{indices de localisation} à la disposition des
-secours pour identifier la position d'une victime donnée, pour une
-opération de secours donnée. Une alerte est donc caractérisée par un
-ensemble \emph{d'indices de localisation,} mais également par sa
-temporalité et l'identité de la \emph{victime} et du \emph{requérant.}
-L'objectif de cette thèse est de construire les zones correspondant à
-la position de la victime à partir de la description qui en est faite
-dans une alerte donnée, \ie à partir des différents \emph{indices de
-  localisation} qui la composent.
+une position donnés par le requérant. Dans cadre du projet Choucas ce
+terme prend une définition plus restrictive, qui est formalisée dans
+\emph{l’ontologie d'alerte Choucas}
+\autocite[\ac{oac},][]{Viry2019}. Dans l'ontologie \ac{oac} le terme
+\enquote{alerte} est défini comme l'ensemble des \emph{indices de
+  localisation} à la disposition des secours pour identifier la
+position d'une victime donnée, pour une opération de secours
+donnée. Une alerte est donc caractérisée par un ensemble
+\emph{d'indices de localisation,} mais également par sa temporalité et
+l'identité de la \emph{victime} (et du \emph{requérant,} s'ils sont
+différents). L'objectif de cette thèse est de construire les zones
+correspondant à la position de la victime à partir de la description
+qui en est faite dans une alerte donnée, \ie à partir des différents
+\emph{indices de localisation} qui la composent.
 
 % Indices de localisation
 Ces derniers correspondent à l'ensemble des éléments donnés par le
