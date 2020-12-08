@@ -172,7 +172,7 @@ nécessaire que la base de règles définie puisse :
 
 Nous avons choisi de formaliser les règles de décomposition des
 \emph{relations de localisation} à l'aide d'une ontologie de
-décomposition. Le choix d'utiliser une ontologie présenter l'avantage
+décomposition. Le choix d'utiliser une ontologie présente l'avantage
 de définir un cadre théorique et pratique, nous permettant de nous
 focaliser sur la définition de son contenu. Pour permettre la
 décomposition des \emph{relations de localisation} telle que nous
@@ -188,17 +188,20 @@ d'objets :
   \emph{relations de localisations atomiques}
   (\autoref{fig:onto_min_struct}).
 \end{enumerate*}
-
+%
 L'ensemble des \emph{relations de localisation} définies dans
 l'ontologie forme un vocabulaire contrôlé, qui peut répondre à
-plusieurs besoins du projet Choucas, comme permettre la définition
+plusieurs besoins du projet Choucas, notamment permettre la définition
 d'une liste de relations de localisation accessible à l'utilisateur
 via l'interface et lui permettant de saisir les \emph{indices de
-  localisation}. Le travail de décomposition ne consiste alors qu'à
-appliquer la règle de décomposition ---~définie dans l'ontologie~---
-correspondant à la \emph{relation de localisation} saisie.
+  localisation} durant la phase d'alerte \footnote{Comme nous l'avons
+  déjà indiqué, la saisie des indices par le secouriste correspond à
+  la première étape de la phase de décomposition.} Le travail de
+décomposition ne consiste alors qu'à appliquer la règle de
+décomposition ---~définie dans l'ontologie~--- correspondant à la
+\emph{relation de localisation} saisie.
 
-\begin{figure}
+\begin{figure}[hb]
   \centering
   \input{../figures/ontologie_min_struc.tex} 
   \caption[Structure générale d'une ontologie de
