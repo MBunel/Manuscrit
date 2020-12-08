@@ -14,51 +14,41 @@
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
   %% Fond
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-  %\input{./figures/tikz_fond}
+  % \input{./figures/tikz_fond}
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
   %% Logos
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
   % Les Fbox ne servent qu'au debug
   % \fbox{
-  \begin{minipage}[t]{.95\textwidth}
+  \begin{minipage}[t][3.5cm][t]{.95\textwidth}
     \hspace{.1cm}
     % \fbox{
-    \begin{minipage}[t]{5cm}
+    \begin{minipage}[c]{4cm}
       \centering
-      % Logo Université
-      \includegraphics[width=2cm]{./figures/logo-choucas.png}
-      % Logo Ed
-      \includegraphics[width=2cm]{./figures/logo-choucas.png}
-      \par
-      {\scriptsize
-        Université Gustave Eiffel\par
-        École doctorale MSTIC
-      }
+      \includegraphics[width=4cm]{./figures/Logo_Univ.pdf}
     \end{minipage}
-    % }    
     \hfill
-    % \fbox{
-    \begin{minipage}[t]{2.5cm}
+    \begin{minipage}[c]{4cm}
+      \centering
+      % Logo CHOUCAS
+      \includegraphics[width=4cm]{./figures/Logo_mstic.pdf}
+    \end{minipage}
+    \hfill
+    % % \fbox{
+    \begin{minipage}[c]{2cm}
       \centering
       % Logo CHOUCAS
       \includegraphics[width=2cm]{./figures/logo-choucas.png}
-      \par
-      {\scriptsize Projet Choucas}
     \end{minipage}
-    % }
     \hfill
-    % \fbox{
-    \begin{minipage}[t]{5cm}
+    % % }
+    %   \fbox{
+    \begin{minipage}[c]{2cm}
       \centering
       % Logo IGN
-      \includegraphics[width=2cm]{./figures/logo-choucas.png}
+      \includegraphics[width=2cm]{./figures/Logo_ign.pdf}
       % Logo Lastig
-      \includegraphics[width=2cm]{./figures/logo-choucas.png}
-      \par
-      {\scriptsize
-        Institut national de l'information géographique et forestière\par
-        Laboratoire LASTIG
-      }
+      % \includegraphics[width=2cm]{./figures/logo-choucas.png}
     \end{minipage}
     % }
     \hspace{.1cm}
@@ -70,7 +60,7 @@
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
   \vspace{.05\textheight}
   % \fbox{
-  \begin{minipage}{0.6\textwidth}
+  \begin{minipage}{0.7\textwidth}
     \centering
     % Pour l'obtention
     {\usekomafont{subtitle} Thèse de doctorat\par} \vspace{.01\textheight}
@@ -82,19 +72,17 @@
   \vfill
   % \vspace{.025\textheight}
   {\usekomafont{author} Mattia Bunel}\par
-  \vspace{.025\textheight}
+  \vspace{.05\textheight}
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
   %% Titre
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
   % \fbox{
   \begin{minipage}{0.95\textwidth}
-    %\centering
-    \raggedright
+    \centering
     % Titre
-    {\usekomafont{title}\Huge Modélisation et raisonnement spatial flou \par}
-    % Sous-Titre
-    {\usekomafont{subtitle} Appliqués à l'aide à la localisation de
-      victimes en montagne \par}
+    {\usekomafont{title}\Huge Modélisation et raisonnement spatial
+      imprécis pour l'aide à la localisation de victimes en
+      montagne \par}
   \end{minipage}
   % }
   \vfill
@@ -102,7 +90,7 @@
   %% Illustration
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
   \input{./figures/figure_garde.tex}
-  %\includegraphics{./figures/Raster_ZLP_SOUS_HT.png}
+  % \includegraphics{./figures/Raster_ZLP_SOUS_HT.png}
   \vfill
   \noindent
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -115,28 +103,27 @@
     \vspace{.01\textheight} {\footnotesize
       \begin{tabular}{m{0.95\textwidth}}
         M\up{me} Mireille \bsc{Batton-Hubert}, Professeure, École des Mines de Saint-Étienne \dotfill Rapportrice\\
-        %
-        M\up{me} Sophie \bsc{de Ruffray}, Professeure, Université de Rouen Normandie \dotfill Rapportrice\\
-        %
+        % 
+        M\up{me} Sophie \bsc{de Ruffray}, Professeure, Université de Rouen--Normandie \dotfill Rapportrice\\
+        % 
         M. Thomas \bsc{Devogele}, Professeur, Université François Rabelais de Tours  \dotfill Examinateur\\
-        %
-        M\up{me} Cécile \bsc{Duchêne}, Chercheuse (HDR), IGN \dotfill Directrice de thèse\\
-        %
+        % 
+        M\up{me} Cécile \bsc{Duchêne}, Enseignante-Chercheuse (HDR),
+        IGN (Saint-Mandé) \dotfill Directrice de thèse\\
+        % 
         M. Olivier \bsc{Favre}, PGHM de Grenoble \dotfill Invité\\
-        %
-        M. Didier \bsc{Josselin}, Directeur de recherche, UMR Espace \dotfill Examinateur\\
-        %
-        M\up{me} Ana-Maria \bsc{Olteanu-Raimond}, Chercheuse (HDR), IGN \dotfill Directrice de thèse\\
+        % 
+        M. Didier \bsc{Josselin}, Directeur de recherche, CNRS--UMR Espace (Avignon) \dotfill Examinateur\\
+        % 
+        M\up{me} Ana-Maria \bsc{Olteanu-Raimond}, Chargée de recherche (HDR), IGN (Saint-Mandé)\dotfill Directrice de thèse\\
       \end{tabular}
     }
   \end{minipage}
   \vfill
   \centering
   {\usekomafont{titlehead} Université Gustave Eiffel --- École doctorale MSTIC}\par
-  {\usekomafont{titlehead} Institut National de l'information
-    Géographique et Forestière --- UMR LASTIG}\par
-  
-  % }
+  {\usekomafont{titlehead} Institut national de l'information
+    géographique et fxorestière --- UMR LASTIG}\par
 \end{titlepage}
 
 % Retour à la géométrie initiale
