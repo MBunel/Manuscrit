@@ -1,9 +1,9 @@
-Tous les modèles théoriques que nous avons présenté dans l'état de
+Tous les modèles théoriques que nous avons présentés dans l'état de
 l'art de cette thèse ne sont pas nécessairement adaptés aux exigences
 de modélisation que nous avons formulé.
 
 % Les modèles discrets (exacts, ensembles épais, autres ?)
-Par exemple, les modèles \enquote{exacts} \footnote{Comme les modèles
+Ainsi, les modèles \enquote{exacts} \footnote{Comme les modèles
   \emph{egg-yolk} \autocite{Cohn1996}, \emph{min-max}
   \autocite{Clementini1996}, \emph{etc.}} ou basés sur la
 \emph{théorie des ensembles approximatifs} \autocite{Pawlak1982},
@@ -18,8 +18,8 @@ modéliser toute forme de \emph{zone de localisation} \footnote{À
     localisation} ne pouvant définir une zone précise.}, il leur est
 impossible de rendre compte de la variation de \emph{l'imprécision} au
 sein de la zone frontière, cette dernière n'étant définie que par ses
-bornes supérieures et inférieures. On peut illustrer ce problème par
-la \autoref{fig:Comp_mod}, où deux frontières imprécises, très
+bornes supérieure et inférieure. On peut illustrer ce problème par la
+\autoref{fig:Comp_mod}, où deux frontières imprécises, très
 différentes, sont représentées. Dans les deux situations, la zone
 \emph{imprécise} débute et se termine au même endroit. Dans une telle
 situation, ces deux frontières seraient \enquote{lissées} par
@@ -27,31 +27,31 @@ l'utilisation d'un modèle \enquote{exact}. Il serait pourtant
 intéressant de pouvoir prendre en compte ces différences, d'autant
 plus que la zone \emph{imprécise} est étendue.
 
-\begin{figure}
-  \centering
-  \input{../figures/Comparaison_mod.tex}
+\begin{figure}[hb]
+  \centering \input{../figures/Comparaison_mod.tex}
   \caption{Illustration du passage de différents types de frontières
     \emph{imprécises} à une modélisation \enquote{exacte}.}
   \label{fig:Comp_mod}
 \end{figure}
 
 De plus, si les \emph{zones de localisation} construites par la
-\emph{spatialisation} d'une \emph{relation de localisation} sont
+\emph{spatialisation} d'une \emph{relation de localisation} seraient
 relativement simples \footnote{Elles ne sont constituées que de deux
   polygones marquant les limites de la zone frontière
   (cf. \autoref{chap:03}).} et donc faciles à interpréter, elles se
-complexifient rapidement au fil des unions et des intersections. En
-effet, contrairement aux intersections et unions d'objets
-\enquote{classiques}, il est ici nécessaire de manipuler deux
-géométries, la frontière supérieure et la frontière inférieure. Ainsi,
-si les \emph{zones de localisation compatibles} modélisées avec un
-modèle \enquote{exact} pourraient être faciles à interpréter, il n'en
-sera pas de même avec la \emph{zone de localisation probable,} issue
-de la fusion de toutes ces zones. Par conséquent, les modèles
-\enquote{exacts} ou basés sur la \emph{théorie des ensembles
-  approximatifs} n'ont pas les caractéristiques attendues et ne
-permettent donc pas de modéliser les \emph{zones de localisation
-  compatibles} et \emph{probables} comme nous le souhaitons.
+complexifieraient rapidement au fil des unions et des
+intersections. En effet, contrairement aux intersections et unions
+d'objets \enquote{classiques}, il est ici nécessaire de manipuler,
+pour chaque objet, deux géométries, la frontière supérieure et la
+frontière inférieure. Ainsi, si les \emph{zones de localisation
+  compatibles} modélisées avec un modèle \enquote{exact} pourraient
+être faciles à interpréter, il n'en sera pas de même avec la
+\emph{zone de localisation probable,} issue de la fusion de toutes ces
+zones. Par conséquent, les modèles \enquote{exacts} ou basés sur la
+\emph{théorie des ensembles approximatifs} n'ont pas les
+caractéristiques attendues et ne permettent donc pas de modéliser les
+\emph{zones de localisation compatibles} et \emph{probables} comme
+nous le souhaitons.
 
 % Modèles non linéaires et non flous
 En permettant de définir, pour chaque position, un \emph{degré
@@ -72,16 +72,15 @@ garanti donc l'auto interprétabilité de ces résultats.
 
 Les \emph{sous-ensembles flous} offrent donc un cadre théorique
 permettant de répondre à tous les critères de modélisation que nous
-avons défini. De plus, cette méthode a pour avantage d'avoir été
-régulièrement utilisées dans la littérature (cf. \autoref{chap:03}),
-ce qui est un atout supplémentaire. Ce modèle apparait comme la
-solution la plus pertinente pour modéliser des \emph{zones de
-  localisation} et plus généralement des \emph{objets géographiques
-  imprécis.} Cependant, de nombreuses implémentations de ce modèle
-théorique ont été proposées (cf. \autoref{chap:03}). Il est donc
-nécessaire de se pencher sur ces différentes solutions afin
-d'identifier celle qui est la plus pertinente pour notre cas
-d'utilisation.
+avons définis. De plus, cette méthode a pour avantage d'avoir été
+régulièrement utilisée dans la littérature (cf. \autoref{chap:03}), ce
+qui est un atout supplémentaire. Ce modèle apparait comme la solution
+la plus pertinente pour modéliser des \emph{zones de localisation} et
+plus généralement des \emph{objets géographiques imprécis.} Cependant,
+de nombreuses implémentations de ce modèle théorique ont été proposées
+(cf. \autoref{chap:03}). Il est donc nécessaire de se pencher sur ces
+différentes solutions afin d'identifier celle qui est la plus
+pertinente pour notre cas d'utilisation.
 
 % \begin{landscape}
 %   \begin{table}[H]
