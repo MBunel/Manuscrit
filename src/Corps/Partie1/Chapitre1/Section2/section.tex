@@ -285,23 +285,36 @@ travailler à la structuration et à l'interrogation de l'ensemble des
 données géographiques qui permettraient de localiser la victime :
 sommets, itinéraires, \emph{etc.} Comme nous l'avons précédemment
 expliqué, les secouristes disposent d'un important corpus de données,
-de types divers, mais non organisées. Il est, par conséquent,
-difficile de trouver une information utile au processus de
-localisation sans savoir où chercher. La structuration de ces données
-offrirait la possibilité de les interroger conjointement et ainsi de
-disposer d'un maximum d'informations, ce qui améliorera le processus
-de localisation.
+provenant de sources hétérogènes telles que les données
+institutionnelles (\eg données produites par l'IGN), les données
+collaboratives (\eg données issues de CamptoCamp ou
+\emph{d'openStreetMap}) ou des données produites par le projet
+Choucas. Il est, par conséquent, difficile de trouver une information
+utile au processus de localisation sans savoir où chercher.  La
+structuration de ces données offrirait la possibilité de les
+interroger conjointement et ainsi de disposer d'un maximum
+d'informations, ce qui améliorera le processus de localisation.
 
-Le principal verrou scientifique de cette tâche est d'arriver à
-combiner des sources de données potentiellement différentes et pouvant
-être contradictoires (\eg deux sources différentes placent un même
-sommet à des endroits différents), avoir une précision géographique et
+Le premier verrou scientifique de cette tâche est d'arriver à combiner
+des sources de données potentiellement différentes et pouvant être
+contradictoires (\eg deux sources différentes placent un même sommet à
+des endroits différents), avoir une précision géographique et
 sémantique différente (\eg une base de donnée distingue les sentiers
 des chemins et une autre non) et décrire un même territoire à des
 dates différentes. La mise en commun de telles sources nécessite donc
 d'être en capacité de réaliser un appareillement, pouvant se révéler
-complexe, de données géographiques
-\autocite{VanDamme2019,Halilali2018}.
+complexe, de données géographiques \autocite{VanDamme2019}.
+
+Le second verrou est la définition d'un architecture permettant
+l'indexation et l'interrogation de ces données. L’architecture étudié
+pour cet objectif se repose sur un \emph{médiateur} qui interrogera le
+catalogue de service et dirigera les requêtes vers différentes sources
+de données. Par exemple, si l’utilisateur souhaite récupérer les
+limites de l’objet \enquote{le lac Blanc}, le système interrogera les
+sources de données qui possèdent des lacs modélisés sous forme de
+polygone. Selon la requête, la réponse peut être unique ou multiple
+\autocite{Halilali2018}.
+ 
 
 %%% Local Variables:
 %%% mode: latex
