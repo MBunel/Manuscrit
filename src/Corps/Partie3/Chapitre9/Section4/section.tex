@@ -94,12 +94,12 @@ ayant indiqué avoir utilisé un chemin. Cependant, les expressions
 suivantes nous indiquent que la victime \enquote{a chuté de plusieurs
   mètres}. Il est, par conséquent difficile d'affirmer que la victime
 se situe toujours sur un chemin, c'est pourquoi il ne nous semble pas
-pertinent d'utiliser cette relation de localisation. Il est cependant
-possible de construire un indice de localisation à partir de cette
-première description. En effet, la victime indique qu'elle est partie
-de \emph{Bourg-d'Oisans} dans la direction \enquote{globale} d'une
-station de ski, ce qui nous renseigne sur sa direction globale. Or, la
-relation de localisation
+pertinent d'utiliser cette relation de localisation. Il est,
+cependant, possible de construire un indice de localisation à partir
+de cette première description. En effet, la victime indique qu'elle
+est partie de \emph{Bourg-d'Oisans} dans la direction
+\enquote{globale} d'une station de ski, ce qui nous renseigne sur sa
+direction globale. Or, la relation de localisation
 \onto[orl]{Dans\-La\-Direction\-De\-X\-Depuis\-Y} a été conçue pour
 modéliser ce type d'informations, sans préjuger du mode ou du support
 de déplacement.
@@ -112,17 +112,17 @@ une estimation de la distance parcourue par la victime. Pour ce faire
 nous avons défini une relation de localisation
 \onto[orl]{A\-Temps\-De\-Marche\-De}, permettant de construire la
 \ac{zlc} atteignable en un temps de marche et à partir d'un point de
-départ donné. La possibilité de construire un tel indice de
+départ donnés. La possibilité de construire un tel indice de
 localisation remplace avantageusement l'utilisation d'une relation de
 localisation telle que \onto[orl]{Aux\-Alentours\-De}. En effet, cette
 dernière ne donne qu'une information très vague sur la zone de
 présence de la victime, alors que la relation de localisation
 \onto[orl]{A\-Temps\-De\-Marche\-De} permet une modélisation plus
 fine, même dans le cas présent, où l'estimation du temps de parcours
-est très imprécise. Dans le cas de cette alerte nous avons donc
+est très imprécise. Dans le cas de cette alerte, nous avons donc
 considéré qu'il était inutile de définir un indice de localisation
 employant les relations de localisaiton \onto[orl]{Aux\-Alentours\-De}
-ou \onto[orl]{Proximal}, la relation
+ou \onto[orl]{Pres\-De}, la relation
 \onto[orl]{A\-Temps\-De\-Marche\-De} quantifiant également un
 éloignement au point de départ, mais de manière plus discriminante.
 
@@ -158,13 +158,14 @@ relations de visibilité \onto[orl]{Site\-Voit\-Cible} et
 distinguer les visibilités actives et passives. Dans le cas présent,
 la victime décrit ce qu'elle voit, on est donc dans une situation
 modélisable à l'aide de la relation de localisation
-\onto[orl]{Cible\-Voit\-Site}. Cette description présente cependant la
-particularité d'employer l’adverbe \enquote{presque} précisant que le
-plan d'eau mentionné n'est pas vu dans son intégralité. Dans sa
-configuration initiale la relation \onto[orl]{Cible\-Voit\-Site} ne
-permet pas d'exprimer une telle description, il est donc nécessaire
-d'employer un modifieur, ce que nous détaillerons lors de la
-modélisation de cet indice de localisation.
+\onto[orl]{Cible\-Voit\-Site}. Cette description présente, cependant,
+la particularité d'employer la locution \enquote{une partie de}
+précisant que le plan d'eau mentionné n'est pas vu dans son
+intégralité. Dans sa configuration initiale, la relation
+\onto[orl]{Cible\-Voit\-Site} ne permet pas d'exprimer une telle
+description, il est donc nécessaire d'employer un modifieur, ce que
+nous détaillerons lors de la modélisation de cet indice de
+localisation.
 
 De manière similaire, la cinquième description, \enquote{La victime
   est sous une route et entend des voitures}, est assez explicite. On
@@ -178,32 +179,33 @@ donc utiliser une nouvelle fois la relation de localisation
 \onto[orl]{Sous\-Proche\-De} pour construire un nouvel indice de
 localisation. Cette description donne une seconde information,
 \enquote{la victime entend des véhicules}. Cette dernière n'est, une
-nouvelle, pas directement interprétable avec une relation de
+nouvelle fois, pas directement interprétable avec une relation de
 localisation, pourtant cette information peut être exploitée de
 manière à raffiner la modélisation de \emph{l'indice de localisation.}
 On peut tirer deux informations différentes de cette indication. Tout
 d'abord une indication de proximité. En effet, la victime indique
 indirectement qu'elle se situe a portée de son de la route, ce qui, si
 l'on disposait d'un modèle adapté, permettrait d'estimer la distance
-de victime à la route.Il serait même possible de définir une nouvelle
-relation de localisation \onto{A\-Porte\-De\-Son} pour retranscrire
-cette indication. Une telle relation permettrait sans aucun doute
-d'affiner cette approximation, particulièrement si elle permet la
-prise en compte des effets d’échos, particulièrement présents en
-montagne, pouvant conduire à une perception faussée de la distance
-d'un son. Cependant nous n'avons pas travaillé au développement d'une
-telle méthode, cette alerte étant la seule où une portée sonore est
-mentionnée. La seconde information que l'on peut tirer de cet élément
-est la nature de la route. On peut en effet considérer que, pour que
-la victime note entendre une route, il est nécessaire que celle-ci
-soit suffisamment fréquentée pour que le trafic soit notable. Un tel
-critère permet d'affiner la sélection des objets de référence, qui,
-compte-tenu de l’imprécision de la description, seront relativement
-nombreux. Il est cependant délicat de procéder à une telle sélection
-sans risquer de supprimer des objets de référence pertinents, et donc
-de créer des faux négatifs. En effet, l'hypothèse que nous proposons
-ici est assez contraignante et il nous semble inenvisageable de
-l'appliquer sans la confirmation de la victime.
+de victime à la route. Il serait même possible de définir une nouvelle
+relation de localisation \onto{A\-Portee\-De\-Son\-De} pour
+retranscrire cette indication. Une telle relation permettrait sans
+aucun doute d'affiner cette approximation, particulièrement si elle
+permet la prise en compte des effets d’échos, particulièrement
+présents en montagne, pouvant conduire à une perception faussée de la
+distance d'un son. Cependant, nous n'avons pas travaillé au
+développement d'une telle méthode, cette alerte étant la seule où une
+portée sonore est mentionnée. La seconde information que l'on peut
+tirer de cet élément est la nature de la route. On peut en effet
+considérer que, pour que la victime note entendre une route, il est
+nécessaire que celle-ci soit suffisamment fréquentée pour que le
+trafic soit notable. Un tel critère permet d'affiner la sélection des
+objets de référence, qui, compte-tenu de l’imprécision de la
+description, seront relativement nombreux. Il est, cependant, délicat
+de procéder à une telle sélection sans risquer de ne pas prendre en
+comptex des objets de référence pertinents, et donc de créer des faux
+négatifs. En effet, l'hypothèse que nous proposons ici est assez
+contraignante et il nous semble inenvisageable de l'appliquer sans la
+confirmation de la victime.
 
 Dans la sixième description, la victime indique qu'elle se situe sous
 une ligne électrique trois brins. Nous avons déjà présenté ce cas,
