@@ -30,7 +30,8 @@ Le traitement du \emph{fil rouge} est donc plus proche du traitement
 opérationnel qui sera réellement effectué lors du traitement d'une
 alerte.
 
-
+Comme nous l'avons déjà indiqué cette alerte se déroule dans la région
+de \emph{Bourg-d'Oisans} \autoref{fig:zir_fil_rouge}.
 
 \begin{figure}
   \centering
@@ -342,27 +343,27 @@ utilisant le rasteriser \onto[orla]{Centroide}, la métrique
 relation de localisation a la particularité d'être binaire, elle
 nécessite donc deux sites, \texttt{X} et \texttt{Y}, le premier
 donnant le point visé et le second le point de départ. Dans le cas
-présent l'un des deux sites est clairement identifié
+présent, l'un des deux sites est clairement identifié
 (\enquote{Bourg-d'Oisans}) alors que le second est désigné par son
 type (\enquote{Une station de ski}). Il est donc nécessaire de
 procéder à la décomposition de l'indice de localisation en fonction
 des différentes instances correspondant à la description de l'objet de
-référence. Dans le cas présent on peut identifier 7 stations de ski
+référence. Dans le cas présent, on peut identifier 7 stations de ski
 \footnote{Les deux Alpes, Auris en Oisans, Ornon, l'Alpe d'Huez, Oz,
-  Villard-Reculas et Vaujany.}  dans la \ac{zir}, chacune entre elles
-pouvant être un objet de référence potentiel. Nous aurions pu
+  Villard-Reculas et Vaujany.}  dans la \ac{zir}, chacune d'entre
+elles pouvant être un objet de référence potentiel. Nous aurions pu
 compléter cette sélection en y ajoutant les stations situées en
 bordure de la \ac{zir}, comme \emph{Champrousse,} le requérant pouvant
 se diriger vers une station (ce qui justifiait de la sélectionner),
 sans qu'il n'ait eut le temps de l'atteindre (ce qui justifie son
-absence de la \ac{zir}). Nous avons cependant choisi de nous limiter à
-sélectionner les stations situées dans la \ac{zir}, cette dernière
+absence de la \ac{zir}). Nous avons, cependant, choisi de nous limiter
+à sélectionner les stations situées dans la \ac{zir}, cette dernière
 étant de grande taille et une station comme \emph{Champrousse} nous
-semblant être trop éloignées du point de départ pour être pertinente.
+semblant être trop éloignée du point de départ pour être pertinente.
 On est donc amenés à décomposer cet indice de localisation en 7
 sous-indices, partageant la même relation de localisation et le même
 site \texttt{Y} (\ie le même point de départ) et se distinguant par
-leur destination, site \texttt{X}.
+leur destination, le site \texttt{X}.
 
 \begin{figure}
   \centering
@@ -373,17 +374,18 @@ leur destination, site \texttt{X}.
   \label{fig:ex_parties_statialisation_DanslaDirectionDe}
 \end{figure}
 
-Pour représenter les objets utilisés comme site nous avons, à nouveau,
-utilisé les données ponctuelles, destinées au placement des toponymes,
-présents dans la BDTOPO. Les géotypes désignés par la victime sont
-donc représentés par des points, ce qui est une approximation
-significative. Cependant, nous avons choisi d'utiliser le rasteriser
-\onto[orla]{Centroide} pour la spatialisation de la relation de
-localisation \onto[orl]{Dans\-La\-Direction\-De\-X\-Depuis\-Y},
-l'utilisation d'une autre géométrie n'aurait donc pas impacté le
-résultat de la modélisation.
+Pour représenter les objets utilisés comme sites, nous avons, à
+nouveau, utilisé les données ponctuelles, destinées au placement des
+toponymes, présents dans la BDTOPO. Les objets géographiques désignés
+par la victime sont donc représentés par des points, ce qui est une
+approximation significative. Cependant, nous avons choisi d'utiliser
+le rasteriser \onto[orla]{Centroide} pour la spatialisation de la
+relation de localisation
+\onto[orl]{Dans\-La\-Direction\-De\-X\-Depuis\-Y}, l'utilisation d'une
+autre géométrie n'aurait donc pas impacté le résultat de la
+modélisation.
 
-Une fois la décomposition effectuée on peut procéder à la
+Une fois la décomposition effectuée, on peut procéder à la
 spatialisation indépendante des indices de localisation. L'opération
 de rasterisation ne présente pas caractéristiques particulières, si ce
 n'est que nous avons choisi d'employer la rasteriser
