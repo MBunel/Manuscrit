@@ -30,7 +30,7 @@ réduite, nous avons choisi de construire les \ac{zlc} et la \ac{zlp}
 avec une résolution de \SI{5}{\meter}, la plus fine possible avec les
 données altimétriques (\autoref{sec:9-1}) dont nous disposons.
 
-\begin{figure}[hbt]
+\begin{figure}
   \centering
   \input{./figures/ZIR_grand_veymont.tex}
   \caption{Zone initiale de recherche pour l'alerte \enquote{Grand
@@ -732,15 +732,26 @@ inversement.
 
 La relation de localisaiton \onto[orl]{DansLaDirectionDeXDepuisY} est
 une version générique des relations de cardinalité (\eg
-\onto[orl]{Au\-Nord\-De})que nous avons déjà présentées.
+\onto[orl]{Au\-Nord\-De}) que nous avons déjà présentées.
 %
 Cette relation partage donc sa métrique, son fuzzyfieur et son
 rasteriser avec ces relations.
 
-\begin{figure}
+La \autoref{fig:Ente_metriques_GrandVeymont} représente le valeur de
+la métrique \onto[orla]{Ecart\-Angulaire}, calculée pour ces deux
+relations de localisation atomiques. Plus précisément la figure
+\ref{fig:Ente_metriques_GrandVeymont_a} représente la valeur de la
+métrique \onto[orla]{Ecart\-Angulaire}, calculée à partir du \emph{Pas
+  de la Ville} et par rapport à la demi-droite par partant de ce point
+et passant par le somme de \emph{Pierre Blanche} et la figure
+\ref{fig:Ente_metriques_GrandVeymont_b} représente la valeur de la
+métrique \onto[orla]{Ecart\-Angulaire} calculée à partir du sommet de
+\emph{Pierre Blanche,} dans la direction du \emph{Pas de la Ville.}
+
+\begin{figure}[hpb]
   \centering
-  \subfloat[]{\includegraphics{../figures/Entre_metrique1_GrandVeymont.png}}\hspace{1cm}
-    \subfloat[]{\includegraphics{../figures/Entre_metrique2_GrandVeymont.png}}
+  \subfloat[\label{fig:Ente_metriques_GrandVeymont_a}]{\includegraphics{../figures/Entre_metrique1_GrandVeymont.png}}\hspace{1cm}
+  \subfloat[\label{fig:Ente_metriques_GrandVeymont_b}]{\includegraphics{../figures/Entre_metrique2_GrandVeymont.png}}
   \caption{Métriques}
   \label{fig:Ente_metriques_GrandVeymont}
 \end{figure}
