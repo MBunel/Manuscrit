@@ -318,7 +318,8 @@ de 9 indices de localisation différents et non contradictoires :
 % 
 \begin{enumerate}
 \item \label{ind:gv1} Le requérant est
-  \onto[orl]{Hors\-De\-Planimetrique} du sommet du \emph{Grand Veymont}
+  \onto[orl]{Hors\-De\-Planimetrique} du sommet du \emph{Grand
+    Veymont,} avec une confiance normale.
   % 
 \item \label{ind:gv2} Le requérant est \onto[orl]{Sous\-Altitude} du
   sommet du \emph{Grand Veymont,} avec une confiance normale
@@ -374,11 +375,11 @@ des objets de référence indéfinis. Seule la fusion des \ac{zlc} des
 différents indices en vue de la construction de la \ac{zlp} sera
 séparée du reste.
 
-% Indice 1
+% Le requérant est orl#HorsDePlanimetrique du sommet du Grand Veymont
 Le premier des indices de localisation est \enquote{le requérant est
   \onto[orl]{Hors\-De\-Planimetrique} du sommet du \emph{Grand
     Veymont}} (\ref{ind:gv1}). Pour construire la \ac{zlc}
-correspondant a cet indice il est nécessaire de poursuivre la phase de
+correspondant à cet indice il est nécessaire de poursuivre la phase de
 décomposition (\autoref{fig:methodo_1}). Ici, l'objet de référence de
 l'indice de localisation est nommé, il s'agit du sommet du \emph{Grand
   Veymont.} Par conséquent, il n'est pas nécessaire de décomposer
@@ -418,15 +419,18 @@ l'objet de référence.
   \label{fig:ex_parties_statialisation_horsdeplani}
 \end{figure}
 
-On peut alors calculer la métrique à partir de cette rasterisation. La
-\autoref{fig:Distance_GrandVeymont} représente le résultat du calcul
-de la métrique \onto[orla]{Distance} pour toutes les positions de la
-\ac{zir} \footnote{Pour des raisons de lisibilité de la représentation
-  graphique, la résolution de la représentation a été réduite à 50
-  mètres, pour toutes les figures représentant les résultats de la
-  modélisation de l'alerte \emph{Grand Veymont.} Le calcul a cependant
-  été réalisé avec une résolution de 5 mètres.} à partir du sommet du
-\emph{Grand Veymont.}
+Dans le cas présent \emph{l'objet de référence} (le sommet du
+\emph{Grand Veymont}) est représenté dans la BDTOPO par un
+ponctuel. La métrique \onto[orla]{Distance} calcule donc, pour chaque
+pixel échantillonnant les positions de la \ac{zir}, la distance à ce
+ponctuel. La \autoref{fig:Distance_GrandVeymont} représente le
+résultat du calcul de la métrique \onto[orla]{Distance} pour toutes
+les positions de la \ac{zir} \footnote{Pour des raisons de lisibilité
+  de la représentation graphique, la résolution de la représentation a
+  été réduite à 50 mètres, pour toutes les figures représentant les
+  résultats de la modélisation de l'alerte \emph{Grand Veymont.} Le
+  calcul a cependant été réalisé avec une résolution de 5 mètres.} à
+partir du sommet du \emph{Grand Veymont.}
 
 \begin{figure}
   \centering
