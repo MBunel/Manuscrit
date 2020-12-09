@@ -244,47 +244,54 @@ unique et assez spécifique, ce qui nous a conduit à l'ignorer
 provisoirement, la connaissance de l'antenne de rattachement du
 téléphone de la victime est plus facilement obtenable par les
 secouristes, ces derniers pouvant faire une demande de localisation
-pour chaque alerte (\autoref{chap:01}). Toutefois l'exploitation fine
+pour chaque alerte (\autoref{chap:1}). Toutefois l'exploitation fine
 de cet indice est assez complexe, comme nous l'avions rapidement
 évoqué dans le \autoref{chap:01}. L'implémentation d'une hypothétique
-relation \onto{Connecte\-A\-Antenne} nécessiterai, en effet, de
-prendre la portée du signal, fortement influencée par les conditions
-climatiques. Nous avons donc choisi d'ajourner sa définition. Il est
-cependant possible d'utiliser cette information pour extrapoler un
-nouvel indice de localisation, certes moins précis que celui que l'on
-pourrait obtenir avec une relation de localisation dédiée, mais tout
-de même discriminant. On connait en effet l'orientation générale de
-l'antenne téléphonique de à laquelle le téléphone de la victime est
-connecté. On peut alors approximer la zone où le téléphone de la
-victime peut se connecter à une antenne donnée en l'approximant à
-l'aide d'une relation cardinale. On peut ici employer la relation de
-localisation \onto[orl]{A\-L\-Est\-De}, pour créer ce cône. Il n'y a
-ici pas de raisons d'employer une des relations de localisation
-dérivée de \onto[orl]{A\-L\-Est\-De}, comme
+relation \onto{Connecte\-A\-Antenne} nécessiterait, en effet, de
+prendre en compte la portée du signal, fortement influencée par les
+conditions climatiques. Nous avons donc choisi d'ajourner sa
+définition. Il est, cependant, possible d'utiliser cette information
+pour extrapoler un nouvel indice de localisation, certes moins précis
+que celui que l'on pourrait obtenir avec une relation de localisation
+dédiée, mais tout de même discriminant. On connait en effet
+l'orientation générale de l'antenne téléphonique à laquelle le
+téléphone de la victime est connecté. On peut alors approximer la zone
+où le téléphone de la victime peut se connecter à une antenne donnée
+en l'approximant à l'aide d'une relation cardinale. On peut ici
+employer la relation de localisation \onto[orl]{A\-L\-Est\-De}, pour
+créer se cône. Il n'y a ici pas de raisons d'employer une des
+relations de localisation dérivée de \onto[orl]{A\-L\-Est\-De}, comme
 \onto[orl]{Dans\-La\-Partie\-Est\-De} ou
 \onto[orl]{A\-L\-Est\-De\-Externe}. En effet, l'objet de référence
 utilisé pour cet indice de localisation, une antenne GSM, n'est pas de
-taille suffisante pour que cette distinction est un sens. Cette
+taille suffisante pour que cette distinction ait un sens. Cette
 approche ne permettra cependant pas de modéliser la portée du signal,
 le cône construit par la relation \onto[orl]{A\-L\-Est\-De} étant
 virtuellement infini. Cette approximation dans la modélisation de ce
 dernier indice est certes insatisfaisante en soi, mais elle devient
-parfaitement acceptable lorsque remise dans le contexte de la
-modélisation de l'alerte dans son ensemble, la multiplication des
-indices de localisation permettant de compenser la faiblesse de
-certains d'entre eux.
+acceptable lorsque remise dans le contexte de la modélisation de
+l'alerte dans son ensemble, la multiplication des indices de
+localisation permet de compenser la faiblesse de certains d'entre
+eux.
+%
+% TODO : Finir
+De plus, comme nous l'indiquions dans le \autoref{chap:01}, la
+portée des antennes téléphoniques hors des milieux urbains peut être
+importante et atteindre plusieurs dizaines de kilomètres. Compte-tenu
+de la taille la \ac{zir} (inférieure à la portée théorique) cette
+approximation est satisfaisante.
 
 Au terme de l'analyse de l'alerte on dispose donc de 7 indices de
 localisation à spatialiser:
 % 
 \begin{enumerate}
 \item \label{ind:fr1} La victime est
-  \onto[orl]{Dans\-La\-Direction\-De\-X\-Depuis\-Y}
-  \emph{Bourg-d'Oisans} (\texttt{X}) et une station de ski
-  (\texttt{Y})
+  \onto[orl]{Dans\-La\-Direction\-De\-X\-Depuis\-Y} ou \texttt{X} est
+  une station de ski et \texttt{Y} \emph{Bourg-d'Oisans}
   % 
 \item \label{ind:fr2} La victime est
-  \onto[orl]{A\-Temps\-De\-Marche\-De} \emph{Bourg-d'Oisans} 
+  \onto[orl]{A\-Temps\-De\-Marche\-De} \emph{Bourg-d'Oisans}, avec un
+  déplacement de \enquote{plusieurs heures}
   % 
 \item \label{ind:fr3} La victime est \onto[orl]{Sous\-Proche\-De} un
   chemin
