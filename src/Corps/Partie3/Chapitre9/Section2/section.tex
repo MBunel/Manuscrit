@@ -662,21 +662,12 @@ de cette alerte.
 Les \ac{zlc} spatialisant les relations de localisation atomiques
 \onto[orl]{Au\-Nord\-De} (\autoref{fig:ZLC_Nord_Pas_Ville}) et
 \onto[orl]{Hors\-De\-Pla\-ni\-mé\-trique}
-(\autoref{fig:ZLC_Ext_Pas_Ville}).
-
-
-On obtient alors la \ac{zlc} de ce troisième indice de localisation.
-
-\begin{figure}
-  \centering
-  \input{./figures/ZLC_NordExterne_PasVille_GrandVeymont.tex}
-  \caption{2one de localisation compatible pour le troisième indice de
-    localisation de l'alerte \emph{Grand Veymont :} \enquote{Le
-      requérant est \protect\onto[orl]{Au\-Nord\-De\-Externe} du
-      \emph{Pas de la Ville,} avec une certitude normale}
-    (\ref{ind:gv3}).}
-  \label{fig:ZLC_GrandVeymont_3}
-\end{figure}
+(\autoref{fig:ZLC_Ext_Pas_Ville}) peuvent alors être fusionnées à
+l'aide de l'opérateur d'intersection précédemment présenté
+(\autoref{chap:08}), ce qui permet de construire la \ac{zlc} de ce
+troisième indice de localisation, c'est-à-dire l'ensemble des
+positions \onto[orl]{Au\-Nord\-De\-Externe} du \emph{Pas de la Ville}
+(\autoref{fig:ZLC_GrandVeymont_3}).
 
 On peut noter que les figures \autoref{fig:ZLC_GrandVeymont_3} et
 \autoref{fig:ZLC_Nord_Pas_Ville} présentent assez peu de différences
@@ -688,7 +679,19 @@ tend à \enquote{gommer} les variations locales de degré
 d'appartenance, effet renforcé par l'échelle de la
 représentation. Mais cette faible différence met surtout en évidence
 le fait que la relation de localisation
-\onto[orla]{Hors\-De\-Pla\-ni\-mé\-trique} est moins contraignante que 
+\onto[orla]{Hors\-De\-Pla\-ni\-mé\-trique} est moins contraignante que
+
+\begin{figure}[htb]
+  \centering
+  \input{./figures/ZLC_NordExterne_PasVille_GrandVeymont.tex}
+  \caption{Zone de localisation compatible pour le troisième indice de
+    localisation de l'alerte \emph{Grand Veymont :} \enquote{Le
+      requérant est \protect\onto[orl]{Au\-Nord\-De\-Externe} du
+      \emph{Pas de la Ville,} avec une certitude normale}
+    (\ref{ind:gv3}).}
+  \label{fig:ZLC_GrandVeymont_3}
+\end{figure}
+
 
 %\subsubsection{Au-delà du Pas de la Ville}
 
