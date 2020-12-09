@@ -342,7 +342,8 @@ est fondé sur la relation de localisation
 modéliser une relation de direction sans considération d'itinéraire ou
 de support. Il s'agit d'une relation de localisation atomique
 utilisant le rasteriser \onto[orla]{Centroide}, la métrique
-\onto[orla]{XXX} et le fuzzyficateur \onto[orla]{XXXX}
+\onto[orla]{Direction\-De} et le fuzzyficateur
+\onto[orla]{Inf\-Val\-0}
 (\autoref{fig:ex_parties_statialisation_DanslaDirectionDe}). Cette
 relation de localisation a la particularité d'être binaire, elle
 nécessite donc deux sites, \texttt{X} et \texttt{Y}, le premier
@@ -411,7 +412,7 @@ sites sont légèrement en dehors de l'ellipse. Nous avons en effet
 considéré que cette relation de localisation perdait en pertinence à
 proximité des deux sites. Ainsi, nous avons fixé la longueur de
 l'ellipse à 90 \% de la longueur du segment reliant les deux sites. La
-longueur du demi-grand axe de l'ellipse est quant à elle définie en
+longueur du demi-petit axe de l'ellipse est, quant à elle, définie en
 fonction de la longueur du demi grand-axe \footnote{Précisément 25 \%
   de la longueur du demi grand-axe.}. En choisissant de faire des deux
 axes de l'ellipse des longueurs proportionnelles à la distance
@@ -433,7 +434,7 @@ fuzzyfication de la figure \ref{fig:Metrique_FilRouge_1_obj_1}
   donc pas présente à la résolution native.}.
 %
 La fonction de fuzzyfication choisie, \onto[orla]{Inf\-Val\-0}, a été
-paramétrée avec une valeur \(\delta\) de XX.
+paramétrée avec une valeur \(\delta\) de XX. Cette valeur permet de 
 %
 Comme on peut le remarquer, la zone de localisation ainsi construite
 inclut et dépasse de part et d'autre des deux sites, même si le degré
@@ -497,12 +498,13 @@ d'appartenance nul.
 
 % Temps de marche
 
-Le second indice de localisaiton (\ref{ind:fr2}) donne une estimation
-du temps pendant lequel la victime. Pour ce faire nous proposons
-d’employer la relation de localisation
-\onto[orl]{A\-Temps\-De\-Marche\-De}. Il s'agit une nouvelle fois
-d'une relation de localisaiton atomique, qu'il n'est pas nécessaire de
-décomposer. De même, l'objet de référence utilisé,
+Le second indice de localisation \footnote{La victime est
+  \onto[orl]{A\-Temps\-De\-Marche\-De} Bourg-d’Oisans
+  (\ref{ind:fr2}).} donne une estimation du temps pendant lequel la
+victime. Pour ce faire nous proposons d’employer la relation de
+localisation \onto[orl]{A\-Temps\-De\-Marche\-De}. Il s'agit une
+nouvelle fois d'une relation de localisaiton atomique, qu'il n'est pas
+nécessaire de décomposer. De même, l'objet de référence utilisé,
 \emph{Bourg-d'Oisans} est nommé, il n'est donc pas nécessaire de
 procéder à la décomposition des objets de référence. Cet indice de
 localisation est donc directement spatialisable.
