@@ -228,21 +228,24 @@ nouvelle fois, nous n'avons pas défini de relation de localisation
 permettant de modéliser un tel indice, celui-ci n'apparaissant qu'une
 seule fois dans l'ensemble du corpus d'alertes. Il serait cependant
 possible de mettre en place une telle relation de localisation,
-plusieurs bibliothèques \footnote{Par exemple la fonction
-  \texttt{r.sunmask} implémentée dans le \ac{sig} Grass
-  \autocite{GDT2020} ou la fonction \texttt{ta_lighting} du \ac{sig}
-  Saga \autocite{Conrad2015}.} permettant de modéliser les ombres
-produites par le relief en fonction de l'heure de la journée.
+plusieurs bibliothèques \footnote{Par exemple les fonctions
+  \texttt{r.sunmask} et \texttt{ta\_lighting}, respectivement
+  implémentées dans les \ac{sig} GRASS \autocite{GDT2020} et SAGA
+  \autocite{Conrad2015}.} permettant de modéliser les ombres produites
+par le relief en fonction de l'heure de la journée.
 
 La huitième et dernière information que nous ayons sur cette alerte
 donne la position du relais téléphonique auquel le téléphone de la
-victime est connecté. Comme pour la description précédente nous
+victime est connecté. Comme pour la description précédente, nous
 n'avons pas défini une relation de localisation spécifique à ce type
 d'information, mais pour des raisons différentes. En effet, si
 l’indication \enquote{Je viens de passer du Soleil à l'ombre} est
 unique, ce qui nous a conduit à l'ignorer provisoirement, la
 connaissance de l'antenne de rattachement du téléphone de la victime
-est plus fréquente. Toutefois l'exploitation fine de cet indice est
+est, sinon plus fréquente dans notre corpus d'alertes, tout du moins
+plus facilement obtenable par les secouristes, ces derniers pouvant
+faire une demande de localisation pour chaque alerte
+(\autoref{chap:01}). Toutefois l'exploitation fine de cet indice est
 assez complexe, comme nous l'avions rapidement évoqué dans le
 \autoref{chap:01}. L'implémentation d'une hypothétique relation
 \onto{Connecte\-A\-Antenne} nécessiterai, en effet, de prendre la
