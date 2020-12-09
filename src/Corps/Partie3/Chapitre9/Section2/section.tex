@@ -786,7 +786,13 @@ une grande distance des deux objets de référence mais proches de la
 médiatrice du segment reliant le \emph{Pas de la Ville} et le sommet
 de \emph{Pierre Blanche} (\ie équidistants, ou presque, à ces deux
 objets de référence) se voient attribuer un degré d'appartenance non
-nul.
+nul. Ce comportement peut être changé en modifiant la valeur du
+paramètre \(\delta\) utilisé pour le fuzzyficateur
+\onto[orla]{Eq\-Angle} (ici une valeur de \SI{180}{\degree} a été
+utilisée). Plus cette valeur est faible, moins la \ac{zlc}
+spatialisant la relation de localisaiton \onto[orl]{Entre\-X\-Et\-Y}
+est étendue le long de la médiatrice au segment
+$[\text{\texttt{XY}}]$.
 
 \begin{figure}
   \centering
