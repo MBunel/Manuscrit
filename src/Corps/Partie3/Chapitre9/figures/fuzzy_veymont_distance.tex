@@ -5,14 +5,15 @@
   \begin{scope}[transparency group]
     % fond
     \begin{scope}
-      \path[ffc_fade_m] (0,.8) -- (1,.8) -- (1,0) -- (0,0) -- cycle ;
-      \path[ffc_fade] (8,.8) -- (9,.8) -- (9,0) -- (8,0) -- cycle;
-      \path[ffa]  (3,0) -- (4.5, 2) -- (6,0) -- cycle;
+      \path[ffa_fade_m] (0,.8) -- (1,.8) -- (1,0) -- (0,0) -- cycle ;
+      \path[ffa_fade] (8,.8) -- (9,.8) -- (9,0) -- (8,0) -- cycle;
+      \path[ffa]  (1,.8) -- (3.6,.8) -- (4.5, 2) -- (5.4,.8) --(8,.8)
+      --(8,0) --(1,0) -- cycle;
     \end{scope}
     % bords
     \begin{scope}
-      \path[ffc, dotted] (3.6,.4) -- (3,0);
-      \path[ffc, dotted] (5.4,.4) -- (6,0);
+      \path[ffc, dotted] (3.6,.8) -- (3,0);
+      \path[ffc, dotted] (5.4,.8) -- (6,0);
       % 
       \path[ffc] (1,.8) -- (3.6,.8) -- (4.5, 2) -- (5.4,.8) -- (8,.8) ;
       \path[ffc_fade_m] (0,.8) -- (1,.8) ;
@@ -32,7 +33,7 @@
         \node[below, font=\footnotesize] at (\n, \decalageX - .05) {\t};
       }
       % label
-      \node[below left, yshift=-.25cm, font=\small] at (x axis)
+      \node[below left, yshift=-.3cm, font=\small] at (x axis)
       {\itshape Distance \normalfont (m)};
     \end{scope}
     % Axe Y
