@@ -27,7 +27,7 @@ permettent de rendre des variations non linéaires. De la même manière,
 ces deux approches permettent de construire des \emph{zones de
   localisation} dont les limites peuvent être \emph{imprécises} ou
 assez précises. Nous proposons de confronter les deux implémentations
-qui nous semblent être les plus prometteuses, l'utilisation
+qui nous semblent être les plus prometteuses: l'utilisation
 \emph{d'alpha-cuts} vectorielles et l'utilisation de rasters.
 
 \subsection{Définition d'un exemple comparatif}
@@ -37,44 +37,44 @@ l'aide d'une approche par \emph{alpha-cuts} ou par raster nous
 semblent toutes les deux pertinentes pour notre cas
 d'utilisation. Nous proposons donc de les comparer en les utilisant
 pour spatialiser un même exemple \autocite{Bunel2019a}. Pour ce faire
-nous allons utiliser l'un des \emph{indices de localisation} du
-\emph{fil rouge} : \enquote{La victime est située sous une ligne
-  électrique 3 brins}. Cet \emph{indice} présente le double avantage
-d'être simple à modéliser ---~et donc à comparer~---, tout en
-utilisant une \emph{relation de localisation,} décomposable, ce qui
-permet de tester également les opérations de fusion inter \emph{zones
-  de localisation.}
+nous allons utiliser l'un des \emph{indices de localisation} de
+l'alerte \enquote{\emph{fil rouge}} (\autoref{subsec:1-1-2-3}) :
+\enquote{La victime est située sous une ligne électrique 3 brins}. Cet
+\emph{indice} présente le double avantage d'être simple à modéliser
+---~et donc à comparer~---, tout en utilisant une \emph{relation de
+  localisation} décomposable, ce qui permet de tester également les
+opérations de fusion inter \emph{zones de localisation.}
 
 % Définition de l'aire
 Pour faciliter la comparaison de ces deux implémentations, nous nous
-sommes focalisés sur une petite partie de la zone du \emph{fil rouge}
+sommes focalisé sur une petite partie de la zone du \emph{fil rouge}
 (\autoref{fig:fil_rouge}), ce qui nous permet de ne travailler qu'avec
 un seul \emph{objet de référence} candidat (\autoref{fig:ZIR_HT}).
-Ainsi, pour cet exemple nous ne nous focalisons que sur une partie de
-la méthodologie présentée dans le \autoref{chap:04}. La présence d'un
-seul \emph{indice de localisation} à \emph{spatialiser} ne nécessite
-pas de \emph{décomposer} \emph{l'ensemble des indices de localisation}
-et de fusionner les \ac{zlc} correspondantes \footnote{Ce qui
-  correspond, respectivement à la première étape de la \emph{phase de
-    décomposition} et à la dernière étape de la \emph{phase de fusion}
-  (\autoref{fig:methodo_1}).}. De même, comme nous ne travaillons que
-sur un \emph{objet de référence} il n'est pas nécessaire de procéder à
-la \emph{décomposition} d'un \emph{objet de référence} non nommé et à
-la \emph{fusion} des \ac{zlc} issues de leur spatialisation
-\footnote{Ce qui correspond, respectivement aux secondes étapes des
-  \emph{phases de décomposition} et de \emph{fusion}
-  (\autoref{fig:methodo_1}).}. L'absence de ces quatre étapes ne pose
-pas de problèmes pour la comparaison des implémentations. D'une part
-car le choix de la \emph{modélisation} des \emph{zones de
-  localisation} n'a pas impact sur la \emph{phase de décomposition}
-(aucun \emph{objet géographique} n'étant encore construit), de
-l'autre, car toutes les étapes de la \emph{phase de fusion} emploient
-les mêmes outils théoriques \footnote{C'est-à-dire des unions et des
-  intersections ensemblistes, faisant appel aux \emph{t-normes} et
-  \emph{t-conormes} de la \emph{théorie des sous-ensembles flous.}},
-ce qui rend leur comportement similaire. Il n'est donc pas nécessaire
-de tester chaque étape de la \emph{phase de fusion} pour estimer
-l'adéquation d'une implémentation.
+Ainsi, pour cet exemple, nous ne nous focalisons que sur une partie de
+la méthodologie présentée dans le \autoref{chap:04}. En effet, la
+présence d'un seul \emph{indice de localisation} à \emph{spatialiser}
+ne nécessite pas de \emph{décomposer} \emph{l'ensemble des indices de
+  localisation} puis de fusionner les \ac{zlc} correspondantes
+\footnote{Ce qui correspond, respectivement à la première étape de la
+  \emph{phase de décomposition} et à la dernière étape de la
+  \emph{phase de fusion} (\autoref{fig:methodo_1}).}. De même, comme
+nous ne travaillons que sur un \emph{objet de référence,} il n'est pas
+nécessaire de procéder à la \emph{décomposition} d'un \emph{objet de
+  référence} non nommé puis à la \emph{fusion} des \ac{zlc} issues de
+leur spatialisation \footnote{Ce qui correspond, respectivement aux
+  secondes étapes des \emph{phases de décomposition} et de
+  \emph{fusion} (\autoref{fig:methodo_1}).}. L'absence de ces quatre
+étapes ne pose pas de problèmes pour la comparaison des
+implémentations, d'une part car le choix de la \emph{modélisation} des
+\emph{zones de localisation} n'a pas impact sur la \emph{phase de
+  décomposition} (aucun \emph{objet géographique} n'étant encore
+construit), de l'autre, car toutes les étapes de la \emph{phase de
+  fusion} emploient les mêmes outils théoriques \footnote{C'est-à-dire
+  des unions et des intersections ensemblistes, faisant appel aux
+  \emph{t-normes} et \emph{t-conormes} de la \emph{théorie des
+    sous-ensembles flous.}}, ce qui rend leur comportement
+similaire. Il n'est donc pas nécessaire de tester chaque étape de la
+\emph{phase de fusion} pour estimer l'adéquation d'une implémentation.
 
 \begin{figure}
   \centering \input{../figures/Raster_ZIR_HT.tex}
@@ -86,7 +86,8 @@ l'adéquation d'une implémentation.
 %\tdi{paragraphe étude sens et signification indice}
 
 La \emph{relation de localisation} la plus adaptée à la formalisation
-de cet \emph{indice de localisation} est donc
+de \emph{l'indice de localisation} \enquote{la victime est située sous
+  une ligne électrique trois brins}, est donc
 \onto[orl]{Sous\-Pro\-che\-De}, qui traduit une relation sur l'axe
 vertical (l'altitude du \emph{sujet} est plus basse que celle de
 \emph{l'objet de référence}), contrainte par une distance
@@ -94,7 +95,7 @@ planimétrique (\autoref{anx:orl_dic}). Cette \emph{relation} se
 décompose en deux \emph{relations de localisation atomiques} :
 \onto[orla]{Al\-ti\-tu\-de\-Stric\-te\-ment\-Inf\-érieu\-re} et
 \onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que},
-traduisant respectivement, la notion de position sur l'axe vertical et
+traduisant respectivement la notion de position sur l'axe vertical et
 la contrainte posée sur la distance planimétrique. Conformément au
 \emph{principe de décomposition} et à notre méthodologie (Chapitres
 \ref{chap:02} et \ref{chap:04}), la \emph{zone de localisation
@@ -106,8 +107,8 @@ deux \emph{zones de localisation compatibles} résultant de la
 
 % Définition fonctions appartenance
 La construction de ces deux \emph{zones de localisation compatibles}
-nécessite de définir des \emph{fonctions d'appartenance} ($f_A$), qui,
-associent à chaque élément de l'ensemble traité, un degré ---~compris
+nécessite de définir des \emph{fonctions d'appartenance} ($f_A$) qui
+associent, à chaque élément de l'ensemble traité, un degré ---~compris
 entre 0 et 1~--- définissant l'appartenance de l'élément au
 \emph{sous-ensemble flou} (Section \ref{subsec:theorie_flou}). Dans
 notre contexte, où les \emph{sous-ensembles fous} représentent des
