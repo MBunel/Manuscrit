@@ -450,14 +450,16 @@ partir du sommet du \emph{Grand Veymont.}
 
 Une fois la métrique calculée (\autoref{fig:Distance_GrandVeymont}),
 on peut procéder à la création de la \ac{zlc} grâce au fuzzyficateur
-\onto[orla]{Sup\-\Val\-0}
+\onto[orla]{Sup\-Val\-0}
 (\autoref{fig:fuzzy_veyont_distanceSommet}). Comme nous l'expliquions
 dans le \autoref{chap:07}, ce fuzzyficateur ne prend qu'un paramètre
 \(\delta\), quantifiant l'écart qui existe entre la valeur de
 référence \(\v\) (ici de 0) et valeur où le degré d'appartenance
-devient nul.
+devient nul. Pour cet indice nous avons choisi de fixer la valeur du
+paramètre \(\delta\) à \SI{500}{\meter}. Ainsi les positions situées à
+plus de \SI{500}{\meter} ont un degré d'appartenance maximal à la
+\ac{zlc}.
 
-%
 La \emph{zone de localisation} ainsi obtenue
 (\autoref{fig:ZLC_GrandVeymont_1}) représente la \ac{zlc} pour ce
 premier indice de localisaiton. Comme on peut le voir la majeure
