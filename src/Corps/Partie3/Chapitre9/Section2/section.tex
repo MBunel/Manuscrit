@@ -908,9 +908,13 @@ désirée (ici \SI{800}{\meter}).
 % Pour cette modélisation (\autoref{fig:fuzzy_veyont_distance})
 
 \begin{figure}
-  \centering
-  \input{./figures/fuzzy_veymont_distance.tex}
-  \caption{XXXX \enquote{Grand Veymont}}
+  \centering \input{./figures/fuzzy_veymont_distance.tex}
+  \caption{Fuzzyficateur \protect\onto[orla]{Eq\-Val} paramétré pour
+    le huitième indice de localisation de l'alerte \emph{Grand Veymont
+      :} \enquote{Le requérant est
+      \protect\onto[orl]{Distance\-Quantitative} de \SI{800}{\meter}
+      du \emph{Pas de la Ville,} avec une certitude moyenne}
+    (\ref{ind:gv9}).}
   \label{fig:fuzzy_veyont_distance}
 \end{figure}
 
@@ -934,7 +938,7 @@ la métrique (\autoref{fig:veyont_distance}) permet de construire la
 \begin{figure}
   \centering
   \input{./figures/ZLC_800m_GrandVeymont.tex}
-  \caption{Zone de localisation compatible pour le neuvième indice de
+  \caption{Zone de localisation compatible pour le huitième indice de
     localisation de l'alerte \emph{Grand Veymont :} \enquote{Le
       requérant est \protect\onto[orl]{Distance\-Quantitative} de
       \SI{800}{\meter} du \emph{Pas de la Ville,} avec une certitude
@@ -987,8 +991,10 @@ l'intersection de ces 6 \ac{zlc} (\autoref{fig:methodo_1}). La
 intersection. Comme on peut le remarquer, la \ac{zlp} obtenue est
 fragmentée. On trouve un premier cluster de positions au centre de la
 \ac{zir} et un second plus à l'ouest. C'est dans le premier cluster
-que l'on trouve les positions dont le degré d'appartenance est le plus
-élevé. 
+que l'on trouve les positions dont le degré d'appartenance à la
+\ac{zlp} est le plus élevé. Le second cluster n'est constitué que de
+positions dont le degré d'appartenance est assez faible. Comme on peut
+le voir sur les précédentes \ac{zlc}, la valeur de 
 
 si l'on confronte la \ac{zlp} construite à la position effective de la
 victime 
@@ -1005,6 +1011,21 @@ victime
 
 \subsection{Critique de la modélisation}
 \label{subsec:9-2-3}
+
+
+La première critique que l'on puisse faire sur cette modélisation est
+qu'elle n'est que partiellement représentative de ce qui aurait été
+modélisé par un secouriste lors d'un cas réel. Certaines informations,
+comme celles données par les extraits \ref{gv:1} et \ref{gv:11} ne
+sont, par exemple, pas spatialisables, une partie de l'information
+nécessaire ne nous étant pas connue. Or, il est fort probable que le
+secouriste aurait adapté ses questions pour obtenir les informations
+nécessaires à la définition des relations de localisations qui lui
+semblent pertinentes.
+
+La \ac{zlp} obtenue est sans doute un peu plus vaste que celle
+qu'auraient obtenu les secouristes durant la phase de localisation.
+
 
 % TODO
 % \tdi{Impact de la position du toponyme "pas de la ville" sur la
