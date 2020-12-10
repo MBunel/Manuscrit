@@ -11,6 +11,9 @@
     \end{scope}
     % bords
     \begin{scope}
+      \path[ffc, dotted] (3.6,.4) -- (3,0);
+      \path[ffc, dotted] (5.4,.4) -- (6,0);
+      % 
       \path[ffc] (1,.8) -- (3.6,.8) -- (4.5, 2) -- (5.4,.8) -- (8,.8) ;
       \path[ffc_fade_m] (0,.8) -- (1,.8) ;
       \path[ffc_fade] (8,.8) -- (9,.8) ;
@@ -29,7 +32,7 @@
         \node[below, font=\footnotesize] at (\n, \decalageX - .05) {\t};
       }
       % label
-      \node[below left, yshift=-.1cm, font=\small] at (x axis)
+      \node[below left, yshift=-.25cm, font=\small] at (x axis)
       {\itshape Distance \normalfont (m)};
     \end{scope}
     % Axe Y
@@ -48,16 +51,12 @@
   \end{scope}
   \begin{scope}
     % Seuil 1
-    \draw[ffc,line width=.5] (3,\decalageY) -- (3,0);
     \draw[fill, RdBu-9-1] (3,\decalageY) circle (2pt);
-    \draw[fill, RdBu-9-1] (3,0) circle (2pt);
     % Seuil 2
     \draw[ffc,line width=.5] (4.5,\decalageY) -- (4.5,2);
     \draw[fill, RdBu-9-1] (4.5,\decalageY) circle (2pt);
     \draw[fill, RdBu-9-1] (4.5,2) circle (2pt);
     % Seuil 3
-    \draw[ffc,line width=.5] (6,\decalageY) -- (6,0);
     \draw[fill, RdBu-9-1] (6,\decalageY) circle (2pt);
-    \draw[fill, RdBu-9-1] (6,0) circle (2pt);
   \end{scope}
 \end{tikzpicture}
