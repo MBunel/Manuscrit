@@ -1,13 +1,35 @@
-Ce chapitre nous a permis de présenter la manière dont les \emph{zones de localisation} construites par notre méthodologie seront modélisées. Notre volonté de prendre en compte l'imprécision des relations de localisation et de la répercuter sur les zones de localisation impose de recourir a une représentation des objets géographiques différente de celles généralement utilisées dans le domaine des \ac{sig}.
+Ce chapitre nous a permis de présenter la manière dont les \emph{zones
+  de localisation} construites par notre méthodologie seront
+modélisées. Notre volonté de prendre en compte l'imprécision des
+relations de localisation et de la répercuter sur les zones de
+localisation impose de recourir a une représentation des objets
+géographiques différente de celles généralement utilisées dans le
+domaine des \ac{sig}.
 
-Différents modèles théoriques permettent de modéliser \emph{l'imprécision.} Nous avons choisi d'utiliser la \emph{théorie des sous-ensembles flous,} qui offre un cadre théorique permettant de traiter tous les aspects que nous avons identifiés comme essentiels, à savoir la possibilité de représenter des \emph{zones de localisation} de formes et d'imprécision très diverses et la possibilité de réaliser les opérations de fusion définies dans la méthodologie sans que cela n'impacte le résultat.
+Différents modèles théoriques permettent de modéliser
+\emph{l'imprécision.} Nous avons choisi d'utiliser la \emph{théorie
+  des sous-ensembles flous,} qui offre un cadre théorique permettant
+de traiter tous les aspects que nous avons identifiés comme
+essentiels, à savoir la possibilité de représenter des \emph{zones de
+  localisation} de formes et d'imprécision très diverses et la
+possibilité de réaliser les opérations de fusion définies dans la
+méthodologie sans que cela n'impacte le résultat.
 
 Pour sélectionner une implémentation de la théorie des
 \emph{sous-ensembles flous} nous avons confronté les deux
 implémentations qui nous semblaient être les plus intéressantes,
 l'approche par \emph{alpha-cut} et l'approche raster, lors de la
 modélisation d'un \emph{indice de localisation} réel, issu du cas
-\emph{fil rouge} : \enquote{Je suis sous une ligne électrique trois brins}. Les deux implémentations permettent une modélisation de qualité similaire, mais avec ds contraintes différentes. Là où l'approche par \emph{alpha-cuts} est plus difficile à mettre en place, mais plus sobre, l'approche raster est rapide à utiliser et à étendre, mais plus couteuse en temps de calcul et en volume de données. Au terme de cette comparaison nous, nous sommes donc orientés vers l'implémentation raster, qui nous permet de développer rapidement notre méthodologie de \emph{spatialisation} et donc de traiter un maximum de \emph{relations de localisations} et donc d'alertes.
+\emph{fil rouge} : \enquote{Je suis sous une ligne électrique trois
+  brins}. Les deux implémentations permettent une modélisation de
+qualité similaire, mais avec ds contraintes différentes. Là où
+l'approche par \emph{alpha-cuts} est plus difficile à mettre en place,
+mais plus sobre, l'approche raster est rapide à utiliser et à étendre,
+mais plus couteuse en temps de calcul et en volume de données. Au
+terme de cette comparaison nous, nous sommes donc orientés vers
+l'implémentation raster, qui nous permet de développer rapidement
+notre méthodologie de \emph{spatialisation} et donc de traiter un
+maximum de \emph{relations de localisations} et donc d'alertes.
 
 %%% Local Variables:
 %%% mode: latex
