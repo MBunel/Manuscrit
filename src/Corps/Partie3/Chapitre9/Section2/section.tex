@@ -650,9 +650,19 @@ cette métrique.
 Pour transformer les métriques \onto[orla]{Ecart\-Angulaire} et
 \onto[orla]{Distance} en les \ac{zlc} spatialisant les relations de
 localisation atomiques \onto[orla]{Au\-Nord\-De} et
-\onto[orla]{Hors\-De\-Pla\-ni\-mé\-tri\-que} il est nécessaire
+\onto[orla]{Hors\-De\-Pla\-ni\-me\-tri\-que} il est nécessaire
 d'employer respectivement le fuzzyficateur \onto[orla]{Eq\-Angle} et
-le fuzzyficateur \onto[orla]{Sup\-Val\-0}.
+le fuzzyficateur \onto[orla]{Sup\-Val\-0}. Nous avons fixé le
+paramètre \(v\) du premier fuzzyficateur à 0, la métrique
+\onto[orla]{Ecart\-Angulaire} calculant un écart à une direction de
+référence (ici le nord) et le paramètre \(\delta\) à
+\SI{180}{\degree}. Ainsi, quant une position est située parfaitement
+au nord du \emph{Pas de la Ville,} c'est-à-dire le long du segment
+passant par ce point et orienté au nord, son degré d'appartenance est
+maximal. La valeur du degré d'appartenance décroit lorsque la position
+s'éloigne de cette direction de référence, jusqu'à devenir nul lorsque
+l'écart supérieur de \SI{90}{\degree} d'un côté comme de l'autre
+(Figure \ref{fig:fuzzy_veyont_angleNord_1}).
 
 \begin{figure} \centering
 \subfloat[\label{fig:fuzzy_veyont_angleNord_1}]{%
