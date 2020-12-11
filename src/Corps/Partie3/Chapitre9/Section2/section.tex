@@ -525,7 +525,15 @@ représentant l'objet de référence).
 La fonction d'appartenance utilisée pour la fuzzyfication de la
 métrique nécessite la définition de deux valeurs \(v\), la valeur de
 référence et \(\delta\) l'écartement, ici nous avons fixé la valeur de
-\(\delta\) à \SI{5}{\meter} (\autoref{fig:fuzzy_veyont_sousSommet}).
+\(\delta\) à \SI{5}{\meter}
+(\autoref{fig:fuzzy_veyont_sousSommet}). Ainsi les positions qui
+seront situées légèrement au dessus de l'objet de référence seront
+considérées comme partiellement en-dessous de l'objet de référence et
+toutes les positions dont l'altitude est inférieure à l'objet de
+référence seront considérées comme totalement en dessous. Ce
+paramétrage du fuzzyficateur \onto[orla]{Inf\-Val\-0} est donc assez
+\enquote{large}.
+
 Comme pour l'indice précédent (\ref{ind:gv1}), la zone de localisation
 obtenue après la fuzzyficaiton de la métrique
 (\autoref{fig:ZLC_GrandVeymont_2}) est très étendue, de nombreuses
