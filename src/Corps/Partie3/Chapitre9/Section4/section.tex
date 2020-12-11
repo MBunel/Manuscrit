@@ -1238,8 +1238,19 @@ aux \num{34} instances de lignes électriques précédemment prises en
 compte. La \autoref{fig:ZLC_FilRouge_6_2} représente le résultat de
 cette actualisation de la \ac{zlc}. Comme on peut le remarquer, cette
 nouvelle \ac{zlc} est considérablement plus étendue que sa précédente
-itération. 
+itération, assez contraignante. Certaines positions, qui se voyaient
+attribuer un degré d'appartenance nul à la \ac{zlp} à cause de cet
+indice, peuvent donc être moins contraintes, ce qui peut modifier la
+\ac{zlp}.
 
+La \autoref{fig:zlp_fil_rouge_2} présente la \ac{zlp} de l'alerte
+\emph{fil rouge}, construite après l'actualisation de l'indice de
+localisaiton : \enquote{La victime est sous une ligne électrique trois
+  brins} (\ref{ind:fr6}). On peut remarquer la zone de localisation
+probable obtenue est plus étendue que précédemment, de nouveaux
+clusters de positions non nulles apparaissant, et que le degré
+d'appartenance des positions qui y appartenaient déjà est généralement
+supérieur à la précédente version de la \ac{zlp}.
 
 \begin{figure}
   \centering
@@ -1250,9 +1261,6 @@ itération.
   \label{fig:ZLC_FilRouge_6_2}
 \end{figure}
 
-La \autoref{fig:zlp_fil_rouge_2} présente une actualisation de la
-\ac{zlp}, après modification de l'indice de localisaiton : \enquote{La
-  victime est sous une ligne électrique trois brins} (\ref{ind:fr6}).
 
 \begin{figure}
   \centering
