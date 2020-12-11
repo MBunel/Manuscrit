@@ -525,17 +525,7 @@ représentant l'objet de référence).
 La fonction d'appartenance utilisée pour la fuzzyfication de la
 métrique nécessite la définition de deux valeurs \(v\), la valeur de
 référence et \(\delta\) l'écartement, ici nous avons fixé la valeur de
-\(\delta\) à \SI{5}{\meter}.
-
-% TODO :
-% \begin{figure}
-%   \centering
-%   \input{./figures/fuzzy_veymont_distanceSommet.tex}
-%   \caption{Fonction d'appartenance pour le fuzzyficateur
-%     \protect\onto[orla]{Sup\-0}, paramétrée.}
-%   \label{fig:fuzzy_veyont_distanceSommet}
-% \end{figure}
-
+\(\delta\) à \SI{5}{\meter} (\autoref{fig:fuzzy_veyont_sousSommet}).
 Comme pour l'indice précédent (\ref{ind:gv1}), la zone de localisation
 obtenue après la fuzzyficaiton de la métrique
 (\autoref{fig:ZLC_GrandVeymont_2}) est très étendue, de nombreuses
@@ -545,6 +535,15 @@ l'indice de localisation modélisé se réfère au sommet du \emph{Grand
 les points de la \ac{zir}, ou presque, sont donc situés à une altitude
 inférieure à l'objet de référence, ce qui rend cet indice de
 localisation très peu discriminant.
+
+% TODO :
+\begin{figure}
+  \centering
+  \input{./figures/fuzzy_veymont_sousSommet.tex}
+  \caption{Fonction d'appartenance pour le fuzzyficateur
+    \protect\onto[orla]{Sup\-0}, paramétrée.}
+  \label{fig:fuzzy_veyont_sousSommet}
+\end{figure}
 
 \begin{figure}
   \centering
