@@ -352,23 +352,23 @@ définir la \emph{zone de localisation compatible} issue de la
 est vraie :
 
 \begin{equation}
-  \text{\textsf{ZLC}}_i = \{p \mid \text{\textsf{S}}_{Rla}(p, o) \wedge p
+  \text{\textsf{ZLC}}_i = \{p \mid \text{\textsf{S}}_{Rla}(p, o) = 1 \wedge p
   ∈ \text{\textsf{ZIR}} \wedge o ∈ i\}
 \end{equation}
 
 Avec \(\text{\textsf{ZLC}}_i\) la \emph{zone de localisation
-  compatible} pour l'indice de localisation $i$, \(S_i\) la fonction
-de \emph{spatialisation} de ce même indice et \(p\) un point
+  compatible} pour l'indice de localisation $i$, \(S_{Rla}\) la
+fonction de \emph{spatialisation} de ce même indice et \(p\) un point
 appartenant à la \emph{zone initiale de recherche,}
 \(\text{\textsf{ZIR}}\), elle-même un sous-ensemble de
 \(\mathbb{R}^2\), défini par le secouriste. Toute la difficulté de la
-phase de \emph{spatialisation} tien en la définition de cette fonction
-de spatialisation \(S\), dont la méthode de définition sera présentée
-dans le \autoref{chap:07}.
+phase de \emph{spatialisation} tient en la définition de cette
+fonction de spatialisation \(S_{Rla}\). La méthode de définition d'une
+telle fonction sera présentée dans le \autoref{chap:07}.
 
 Au terme de la phase de \emph{spatialisation} on dispose d'un grand
 ensemble de \emph{zones de localisation compatible}
-(\(\text{\textsf{ZLC}}\)), contant autant d'éléments qu'il y a
+(\(\text{\textsf{ZLC}}\)), comptant autant d'éléments qu'il y a
 d'indices au terme de la \emph{phase de décomposition.} Cet ensemble
 est définissable de la manière suivante :
 
@@ -382,9 +382,9 @@ Avec \(\text{\textsf{ZLC}}_i\) la \emph{zone de localisation
 et \(I\) l'ensemble des \emph{indices de localisation.} Ces
 différentes \emph{zones de localisation} contiennent l'ensemble des
 informations produites par notre méthode, mais leur (potentiel) grand
-nombre rend leur exploitation directe, sinon impossible délicate, il
-est donc nécessaire de les fusionner pour obtenir une seule zone, la
-\ac{zlp}.
+nombre rend leur exploitation directe, sinon impossible, du moins
+délicate, il est donc nécessaire de les fusionner pour obtenir une
+seule zone, la \ac{zlp}.
 
 \subsection{La phase de fusion}
 
