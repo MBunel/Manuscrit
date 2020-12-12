@@ -543,8 +543,8 @@ avec l'implémentation raster, puisque les intersections et les unions
 sont réalisées au niveau des pixels. Le raster produit par ces
 opérations est donc de forme identique à ceux intersectés. Ainsi,
 alors que les \emph{alpha-cuts} tendent à ce complexifier à chaque
-\emph{fusion,} les rasters restent similaires et donc de complexité
-similaire.
+\emph{fusion,} les rasters restent de résolution similaire et donc de
+complexité similaire.
 
 % Temps de calcul
 D'autres critères techniques peuvent également être pris en compte
@@ -585,8 +585,8 @@ du point de vue des données à manipuler.
 
 % Choix du raster
 Ces différents éléments de comparaison (\autoref{tab:comp_implems})
-nous ont conduit à privilégier l'implémentation raster. Bien que
-potentiellement moins performante que l'implémentation par
+nous ont notamment conduit à privilégier l'implémentation raster. Bien
+que potentiellement moins performante que l'implémentation par
 \emph{alpha-cuts,} cette approche s'est révélée plus simple et rapide
 à mettre en place. De plus les développements nécessaires à la
 généralisation de la méthode (\eg changement d'opérateurs
@@ -595,24 +595,23 @@ d'intersection et d'union, ajout de nouvelles méthodes de
 couteux. Le choix d'une implémentation raster nous permet donc
 d'aboutir plus rapidement une à méthode générique et fonctionnelle, ce
 qui nous permettra de nous concentrer sur la \emph{spatialisation} (et
-donc de traiter plus d'alertes) et non sur des problèmes techniques de
-programmation.
+donc de traiter plus de types d'indices) et non sur des problèmes
+techniques de programmation.
 
 % Impacts
 Le choix de l'implémentation raster nécessite la définition préalable
 d'une résolution de traitement, de laquelle dépendra, toutes choses
 égales par ailleurs, la précision de la \emph{spatialisation,} mais
 également le temps de calcul et le volume des résultats. Si cette
-résolution peut être importante pour de petites \ac{zir}
-\footnote{Comme la \emph{zone initiale de recherche} de \emph{l'indice
-    de localisation} ici traité. Cette dernière étant suffisamment
-  réduite pour que nous puissions travailler avec la résolution
-  maximale, celle de la moins précise des données (en l’occurrence le
-  \ac{mnt}).}, elle doit nécessairement être réduite lorsque la
-\ac{zir} grandi \footnote{Plus de pixels sont alors à traiter.} ou
-lorsque les \emph{indices de localisation} se multiplient ou se
-complexifient \footnote{Plus de \emph{zones de localisation
-    compatibles} sont alors à construire}.
+résolution peut être fine pour de petites \ac{zir} \footnote{Comme la
+  \emph{zone initiale de recherche} de \emph{l'indice de localisation}
+  ici traité. Cette dernière étant suffisamment réduite pour que nous
+  puissions travailler avec la résolution maximale, celle de la moins
+  précise des données (en l’occurrence le \ac{mnt}).}, elle doit
+nécessairement être réduite lorsque la \ac{zir} grandit \footnote{Plus
+  de pixels sont alors à traiter.} ou lorsque les \emph{indices de
+  localisation} se multiplient ou se complexifient \footnote{Plus de
+  \emph{zones de localisation compatibles} sont alors à construire}.
 
 \begin{landscape}
   \begin{table}[!h]
