@@ -103,7 +103,7 @@ décomposer chaque \emph{relations de localisation} en un ensemble de
 composantes sémantiquement indépendantes, les \emph{relations de
   localisation atomiques.} Comme pour les deux précédentes étapes,
 cette décomposition n'est pas toujours nécessaire, \emph{la relation
-  de localisation utilisée} pouvant être atomique (\eg
+  de localisation utilisée} pouvant déjà être atomique (\eg
 \enquote{proche}). Cette étape peut être formalisée de la manière
 suivante :
 
@@ -119,13 +119,13 @@ Avec \(Dec_{Rl}(i)\) la fonction de \emph{décomposition} des
 l'ensemble initial des \emph{objets de référence.}
 
 
-La principale différence entre cette étape et les
-précédentes est qu'il est nécessaire de disposer d'une information
-supplémentaire pour savoir comment l'effectuer. En effet, lorsqu'un
-ensemble d'indice de localisation nous est transmis, les différents
-\emph{indices de localisation} qui le composent sont déjà identifiés,
-puisque saisis tels quels par le secouriste, de la même manière les
-différents \emph{objets de référence,} mais contrairement à la
+La principale différence entre cette étape et les précédentes est
+qu'il est nécessaire de disposer d'une information supplémentaire pour
+savoir comment l'effectuer. En effet, lorsqu'un ensemble d'indice de
+localisation nous est transmis, les différents \emph{indices de
+  localisation} qui le composent sont déjà identifiés, puisque saisis
+tels quels par le secouriste, de la même manière que les différents
+\emph{objets de référence,} mais contrairement à la
 \emph{décomposition des relations de localisation.} En effet, notre
 souhait est de permettre au secouriste de sélectionner la
 \emph{relation de localisation} correspondant à la description du
@@ -162,10 +162,11 @@ imagions que \emph{l'ensemble des indices de localisation} (\(I\)
 saisi par un secouriste à partir de la description suivante :
 \enquote{je suis proche du \emph{Pic de Jean Ray} et suis sur une
   crête}. Ce dernier est composé de deux \emph{indices de
-  localisation,} séparés lors de la première étape de la \emph{phase
-  de décomposition.} Les deux \emph{indices de localisation :}
-\enquote{je suis proche du \emph{Pic de Jean Ray}} et \enquote{je suis
-  sur une crête} peuvent être alors traités indépendamment :
+  localisation,} séparés (par le secouriste) lors de la première étape
+de la \emph{phase de décomposition.} Les deux \emph{indices de
+  localisation :} \enquote{je suis proche du \emph{Pic de Jean Ray}}
+et \enquote{je suis sous une crête} peuvent être alors traités
+indépendamment :
 
 \begin{quote}
   \begin{tikzpicture}[%
@@ -190,16 +191,16 @@ l'ensemble des objets de type \enquote{crête} situés dans la \ac{zir}
 \footnote{Voir dans un espace plus réduit si le secouriste décide,
   compte-tenu de ses connaissances et de la situation, de réduire la
   zone de recherche pour cette catégorie d'objets.} peuvent
-correspondre. Admettons que six crêtes aient été sélectionnées,
-\emph{l'indice de localisation} qui nous sera transmis sera donc de la
-forme \enquote{je suis sur la \emph{crête de Roche Motte} ou je suis
-  sur la \emph{crête de Font Froide} ou je suis sur la \emph{crête de
-    Serre Chapelle} ou je suis sur la \emph{crête des Barres} ou je
-  suis sur la \emph{crête du Petit Puy}}. Ainsi au sortir de cette
-seconde étape de décomposition on dispose de \(i\) \emph{indices de
-  localisation} (première décomposition), eux-mêmes divisés en
-plusieurs \emph{indices de localisation,} en fonction du nombre
-\emph{d'objets de référence} à prendre en compte :
+correspondre. Admettons que six crêtes aient été sélectionnées :
+\emph{l'indice de localisation} qui nous sera transmis sera alors de
+la forme \enquote{je suis sous la \emph{crête de Roche Motte} ou je
+  suis sous la \emph{crête de Font Froide} ou je suis sous la
+  \emph{crête de Serre Chapelle} ou je suis sous la \emph{crête des
+    Barres} ou je suis sous la \emph{crête du Petit Puy}}. Ainsi au
+sortir de cette seconde étape de décomposition on dispose de \(n\)
+\emph{indices de localisation} (première décomposition), eux-mêmes
+divisés en plusieurs \emph{indices de localisation,} en fonction du
+nombre \emph{d'objets de référence} à prendre en compte :
 
 \begin{quote}
   \begin{tikzpicture}[%
