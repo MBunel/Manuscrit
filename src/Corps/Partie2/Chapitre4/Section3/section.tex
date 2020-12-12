@@ -411,20 +411,20 @@ La première étape de la \emph{phase de fusion} est la \emph{fusion}
 des \emph{zones de localisation compatibles} issues de la
 \emph{spatialisation.} Cette étape répond donc à l'étape de
 \emph{décomposition des relations de localisation} de \emph{la phase
-  de décomposition,} \ie que le nombre de \emph{zones de localisation}
-en résultant est identique au nombre \emph{d'indices de localisation}
-avant la \emph{décomposition des relations de localisation}
-(\autoref{fig:methodo_1}).
+  de décomposition,} c'est-à-dire que le nombre de \emph{zones de
+  localisation} en résultant est identique au nombre \emph{d'indices
+  de localisation} avant la \emph{décomposition des relations de
+  localisation} (\autoref{fig:methodo_1}).
 
 Conformément au \emph{principe de décomposition,} les \emph{relations
   de localisation} se décomposent en une série de \emph{relations de
-  localisation atomiques} liées par des conjonctions. Par conséquent,
-pour valider une \emph{relation de localisation} il est nécessaire de
-valider toutes les \emph{relations de localisation atomiques} qui la
-composent. La méthode de \emph{fusion} des \emph{relations de
-  localisation atomiques} ne doit donc retourner que les positions
-présentes dans toutes les \emph{zones de localisations} qu'elle
-fusionne. Comme chaque \emph{zone de localisation} peut être
+  localisation atomiques} liées par une relation de conjonction. Par
+conséquent, pour valider une \emph{relation de localisation} il est
+nécessaire de valider toutes les \emph{relations de localisation
+  atomiques} qui la composent. La méthode de \emph{fusion} des
+\emph{relations de localisation atomiques} ne doit donc retourner que
+les positions présentes dans toutes les \emph{zones de localisations}
+qu'elle fusionne. Comme chaque \emph{zone de localisation} peut être
 formalisée comme l'ensemble des points validant une \emph{relation de
   localisation} on peut construire la \emph{zone de localisation
   compatible} correspondant à une \emph{relation de localisation}
@@ -435,14 +435,14 @@ correspondant à la fusion de plusieurs \emph{relations de
   localisation} correspond à :
 
 \begin{equation}
-  \text{\textsf{ZLC}}_{o_i} = ⋂ \text{\textsf{ZLC}}_{{Rla}_i}
+  \text{\textsf{ZLC}}_{o_i} = ⋂ \text{\textsf{ZLC}}_{{Rla}_j}
 \end{equation}
 
 Avec \(\text{\textsf{ZLC}}_{o_i}\), la \emph{zone de localisation
   compatible} correspondant à \emph{l'objet de référence} \(oᵢ\) et
-\(\text{\textsf{ZLC}}_i\) la \emph{zone de localisation compatible}
+\(\text{\textsf{ZLC}}_j\) la \emph{zone de localisation compatible}
 correspondant à la \emph{spatialisation,} pour l'objet de référence
-\(o_i\), de la \emph{relation de localisation atomique} \(Rla_i\).
+\(o_i\), de la \emph{relation de localisation atomique} \(Rla_j\).
 
 \subsubsection{La \emph{fusion} des \emph{objets de référence
     indéfinis}}
@@ -460,19 +460,20 @@ présentée, de \emph{fusion des relations de localisation atomiques,}
 sans que cela n'impacte le résultat de la modélisation.
 
 La \emph{fusion des objets de référence indéfinis} se distingue des
-autres étapes de \emph{fusion} sa forme conjonctive. Comme nous
-l'indiquions lors de la présentation de \emph{l'étape de décomposition
-  des objets de référence indéfinis,} les différents \emph{objets de
-  référence} candidats (pour un même indice de localisation) sont
-concurrents. Ainsi pour que \emph{l'indice de localisation spatialisé}
-soit valable en une position il est nécessaire qu'il soit vrai pour au
-moins un des \emph{objets de référence} et non pour tous (comme c'est
-le cas lors de la \emph{fusion} des \emph{relations de localisation
-  atomiques}). La \emph{zone de localisation compatible} correspondant
-à un \emph{indice de localisation} dont \emph{l'objet de référence}
-est indéfini peut, par conséquent, être construite en faisant l'union
-de l'ensemble des \emph{zones de localisation compatibles} construites
-en \emph{spatialisant} l'indice de localisation pour chaque objet de
+autres étapes de \emph{fusion} sa forme disjonctive. Comme nous
+l'avons indiqué lors de la présentation de \emph{l'étape de
+  décomposition des objets de référence indéfinis,} les différents
+\emph{objets de référence} candidats (pour un même indice de
+localisation) sont concurrents. Ainsi pour que \emph{l'indice de
+  localisation spatialisé} soit valable en une position il est
+nécessaire qu'il soit vrai pour au moins un des \emph{objets de
+  référence} et non pour tous (comme c'est le cas lors de la
+\emph{fusion} des \emph{relations de localisation atomiques}). La
+\emph{zone de localisation compatible} correspondant à un \emph{indice
+  de localisation} dont \emph{l'objet de référence} est indéfini peut,
+par conséquent, être construite en faisant l'union de l'ensemble des
+\emph{zones de localisation compatibles} construites en
+\emph{spatialisant} l'indice de localisation pour chaque objet de
 référence candidat :
 
 \begin{equation}
