@@ -892,7 +892,7 @@ n'est pas assez fine pour permettre de distinguer des zones
 caillouteuses et des prairies d'autres zones. Face à ces difficultés
 et sachant que nous n'avons pas étudié la question de l'enrichissement
 des données métier \footnote{Point qui est par ailleurs traité dans un
-  autre axe du projet Choucas (\autoref{chap:2}).}, nous avons donc
+  autre axe du projet Choucas (\autoref{chap:02}).}, nous avons donc
 opté pour une autre approche, consistant a exploiter au mieux les
 données dont nous disposons, sans créer de nouvel objet de
 référence. La solution que nous proposons est de transformer les
@@ -919,14 +919,22 @@ l'avons déjà indiqué, la relation de localisation
 \onto[orl]{Dans\-Planimetrique} est atomique. Son rasteriser est
 \onto[orla]{Geometrie}, sa métrique est \onto[orla]{Distance} et son
 fuzzyficateur est \onto[orla]{Inf\-0}
-(\autoref{fig:ex_parties_statialisation_dansplani}).
+(\autoref{fig:ex_parties_statialisation_dansplani}). Étant donné que
+l'objet de référence employé par ce nouvel indice de localisation
+n'est pas nommé (\enquote{une forêt}), il est nécessaire de procéder à
+la décomposition des objets de référence et de construire une \ac{zlc}
+pour chacun d'entre eux. Les figures \label{fig:metrique_dist_foret_1}
+et \label{fig:metrique_dist_foret_2}
+
+
 
 \begin{figure}
   \centering
-  \subfloat[]{\includegraphics{./figures/DistanceForetX_GrandVeymont.png}}\hspace{1cm}
-  \subfloat[]{\includegraphics{./figures/DistanceForet2_GrandVeymont.png}}
+  \subfloat[\label{fig:metrique_dist_foret_1}]{\includegraphics{./figures/DistanceForetX_GrandVeymont.png}}\hspace{1cm}
+  \subfloat[\label{fig:metrique_dist_foret_2}]{\includegraphics{./figures/DistanceForet2_GrandVeymont.png}}
   \caption{Fonction d'appartenance pour le fuzzyficateur
     \protect\onto[orla]{Ed\-Val} \enquote{Grand Veymont}}
+  \label{fig:metrique_dist_foret}
 \end{figure}
 
 \begin{figure}
