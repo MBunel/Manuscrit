@@ -92,12 +92,18 @@ ordonné) \emph{d'objets} (ou de n-uplets \emph{d'objets}) \emph{de
   référence.} \(Or\) est donc définissable de la manière suivante :
 
 \begin{equation}
-  Or = \{(or_1, \ldots,  or_n) \mid \forall x \in Or, |x| ≥ 1 \wedge
-  \forall x,y \in Or^2, |x| = |y|\}
+  Or = \{(or_{11}, \ldots,  or_{1k}), ldots, (or_{n1}, \ldots,
+  or_{nk}) \mid  n ≥ 1 \vee k ≥ 1\}
 \end{equation}
 
 Avec \(Or\) l'ensemble des \emph{objets de référence} et \(or_i\) un
-\emph{objet de référence} donné.
+\emph{objet de référence} donné, \(k\) le nombre d'objet dans le
+n-uplet des objets de référence associés à la relation de localisation
+considérée et \(n\) le nombre d'instances de n-uplet (ou le nombre
+d'objets de référence si $k=1$) considéré. La valeur de \(n\) est
+égale à 1 si le n-uplet est désigné sans ambiguïté et est supérieure à
+1 si l'objet de référence est ambigu (\eg il est désigné par son
+type).
 
 
 %%% Local Variables:
