@@ -259,26 +259,25 @@ courants, ceux proposés par \textcite{Zadeh1965}, où la fonction
 
 \subsection{Implémentation raster}
 
-L'implémentation a l'avantage d'être extrêmement facile a mettre en
+L'implémentation raster a l'avantage d'être assez facile a mettre en
 place. Une fois que les \emph{métriques} et les \emph{fonctions
   d’appartenance} ont été définies, elle se résume à calculer, pour
 chaque pixel d'une grille échantillonnant l'espace, la valeur de la
 \emph{métrique,} puis du degré d'appartenance à la \emph{zone de
-  localisation compatible} \emph{spatialisée.} Cette opération est
-répétée pour chaque \emph{relation de localisation atomique,} puis les
-\emph{zones de localisation compatibles} résultantes sont
-\emph{fusionnées} à l'aide des opérateurs d'intersection et de fusion
-sélectionnés. Le seul choix imposé par l'utilisation de cette
-implémentation et celui de la résolution du raster. Ce critère fixe la
-taille et le nombre de pixels du raster et influe, par conséquent, sur
-la précision et la durée du calcul. Cette résolution doit être
-suffisamment grande pour permettre le calcul des fonctions
-\emph{d'appartenance définies.} Par exemple, la \emph{fonction
-  d'appartenance} définie pour la \emph{relation de localisation
-  atomique}
-\onto[orla]{Pres\-De}
-(figure \ref{fig:fnc_app_Dist}) a deux seuils, \num{50} et
-\SI{100}{\meter}.
+  localisation compatible} \emph{spatialisée} \footnote{L'opération
+  d'affectation du degré d'appartenance et appelée
+  fuzzyfication.}. Cette opération est répétée pour chaque
+\emph{relation de localisation atomique,} puis les \emph{zones de
+  localisation compatibles} résultantes sont \emph{fusionnées} à
+l'aide des opérateurs d'intersection et de fusion sélectionnés. Le
+seul choix imposé par l'utilisation de cette implémentation et celui
+de la résolution du raster. Ce critère fixe la taille de pixels du
+raster et influe, par conséquent, sur la précision et la durée du
+calcul. Cette résolution doit être suffisamment fine pour permettre le
+calcul des fonctions \emph{d'appartenance définies.} Par exemple, la
+\emph{fonction d'appartenance} définie pour la \emph{relation de
+  localisation atomique} \onto[orla]{Pres\-De} (figure
+\ref{fig:fnc_app_Dist}) a deux seuils, \num{50} et \SI{100}{\meter}.
 
 L’application de la fonction d'appartenance (figure
 \ref{fig:fnc_app_Dist}) à la métrique précédemment calculée (figure
@@ -288,10 +287,11 @@ L’application de la fonction d'appartenance (figure
 \onto[orla]{Pres\-De}. Le degré d'appartenance de chaque pixel à la
 \emph{zone de localisation compatible} est représenté par un cercle,
 centré sur le pixel et dont le diamètre augmente avec
-celui-ci. Lorsque ce degré est maximal, le diamètre du cercle est égal
-à la maille du raster (50 mètres dans le cas présent). Le diamètre est
-minimal lorsque le degré d'appartenance est supérieur à zéro et les
-valeurs nulles sont filtrées pour faciliter la lisibilité.
+celui-ci. Lorsque le degré d'appartenance est maximal, le diamètre du
+cercle est égal à la maille du raster (50 mètres dans le cas
+présent). Le diamètre est minimal lorsque le degré d'appartenance est
+à peine supérieur à zéro et les valeurs nulles sont filtrées pour
+faciliter la lisibilité.
 
 \begin{figure}
   \centering
@@ -310,9 +310,9 @@ Une méthode identique est utilisée pour construire la \emph{zone de
 pour chaque pixel, puis ces valeurs sont transformées en \emph{degrés
   d'appartenance} à l'aide de fonction d'appartenance définie
 précédemment (Figure \ref{fig:fnc_app_AltInf}). La figure
-\ref{fig:ZLC_ALTINF_HT}, qui résulte de ce processus, représente alors
-le degré d'appartenance de chaque pixel à la \emph{zone de
-  localisation compatible.}
+\ref{fig:ZLC_ALTINF_HT}, qui résulte de ce processus, représente le
+degré d'appartenance de chaque pixel à la \emph{zone de localisation
+  compatible.}
 
 \begin{figure}
   \centering
