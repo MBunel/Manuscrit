@@ -329,7 +329,9 @@ que la décomposition est fortement liée à notre travail, le thésaurus
 des relations de localisation peut être exploité pour d'autres travaux
 au sein du projet Choucas ou à l'extérieur. C'est pourquoi nous avons
 décidé de séparer les deux ontologies et de ne diffuser que
-l'ontologie des \emph{relations de localisation.}
+l'ontologie des \emph{relations de localisation.} Le tableau
+\ref{tab:orl_vs_orla} résume les caractéristiques de ces deux
+ontologies.
 
 \begin{table}
   \centering
@@ -353,8 +355,9 @@ permettant d'exprimer la sémantique de la \emph{relation de
   localisation} utilisée.
 %
 Pour ce faire, nous avons systématiquement cherché à identifier le
-concept de l'ontologie de \textcite{Bateman2010} le plus proche de la
-sémantique de la relation de localisation utilisée par le requérant.
+concept de l'ontologie GUM-Space de \textcite{Bateman2010} le plus
+proche de la sémantique de la relation de localisation utilisée par le
+requérant.
 %
 À la suite de cette étape toutes les \emph{relations de localisations}
 sont associées à un concept tiré de l'ontologie de
@@ -408,7 +411,7 @@ peut légitimement penser que ce concept a essentiellement été prévu
 pour conceptualiser des distances métriques, uniquement des distances
 métriques. On pourrait se contenter de cette situation, considérant
 que ces distances sont équivalentes. Cependant, comme nous
-l'expliquions dans l'état de l'art (\autoref{chap:03}) le
+l'expliquions dans l'état de l'art (\autoref{chap:03}), les
 distances-temps sont beacoup plus imprécises que les distances
 métriques et leur \emph{spatialisation} implique dès lors des méthodes
 plus avancées. Par conséquent il nous semble nécessaire de développer
@@ -416,10 +419,13 @@ un nouveau concept, \onto{A\-Dist\-ance\-Temps}, plus précis et
 adapté.
 
 Au final, 51 \emph{relations de localisation} ont été définies dont
-seules 8 sont des concepts originaux de GUM-Space
-(\autoref{fig:ontho}). Les 43 concepts restants sont soit des
-précisions de concepts existants (\eg \onto{A\-Dist\-ance\-Temps})
-soit des concepts totalement nouveaux (\eg \onto{En\-tre\-X\-\&\-Y}).
+seules 8 sont des concepts originaux de GUM-Space (\autoref{fig:ontho}
+\footnote{Certaines relations de localisation apparaissent plusieurs
+  fois dans la \autoref{fig:ontho} du fait de la représentation sous
+  forme d'arbre, même lorsqu'un concept a plusieurs parents. }). Les
+43 concepts restants sont soit des précisions de concepts existants
+(\eg \onto{A\-Dist\-ance\-Temps}) soit des concepts totalement
+nouveaux (\eg \onto{En\-tre\-X\-\&\-Y}).
 
 % Hiérarchisation des concepts
 Une fois que l'ensemble des \emph{relations de localisation}
@@ -427,8 +433,9 @@ nécessaires a la retranscription des alertes a été défini nous avons
 procédé à leur hiérarchisation. Pour ce faire nous avons défini de
 nouvelles classes, permettant de regrouper les relations de
 localisation par similarité sémantique. Ces nouvelles classes sont
-abstraites, \ie qu'elles ne sont pas des \emph{relations de
-  localisation,} elles ne servent qu'à leur regroupement.
+abstraites, c'est-à-dire qu'elles ne sont pas des \emph{relations de
+  localisation} destinées à être instanciées, elles ne servent qu'à
+leur regroupement.
 
 Pour définir cette hiérarchie nous nous sommes appuyés sur différentes
 propositions précédentes et principalement de l'ontologie GUM-Space
