@@ -342,14 +342,14 @@ les positions n'appartenant par à la \emph{zone de localisation
 différentes \emph{zones de localisation compatibles} sont donc créées
 les unes à la suite des autres, ce qui a pour effet de lier
 implicitement les résultats des différentes \emph{spatialisations.}
-Avec cette approche, l'opération de \emph{fusion} est implicite, elle
-s'opère, en partie, à chaque nouvelle \emph{spatialisation,} puisque
-les zones ne correspondant pas aux \emph{indices de localisation} sont
+Avec cette approche, l'opération de \emph{fusion} est implicite: elle
+s'opère en partie à chaque nouvelle \emph{spatialisation,} puisque les
+zones ne correspondant pas aux \emph{indices de localisation} sont
 retirées peu à peu. La \emph{zone de localisation probable} (en bleu
 sur la figure \ref{fig:comp_approches}) est obtenue une fois que l'on
 a \emph{spatialisé} tous les \emph{indices de localisation.} Cette
 approche à l'avantage d'être simple à concevoir et à développer, mais
-elle a un défaut majeur, la propagation des erreurs. À cause de
+elle a un défaut majeur : la propagation des erreurs. À cause de
 l'enchainement des étapes de \emph{spatialisation,} les potentielles
 erreurs de \emph{spatialisation} peuvent modifier le résultat des
 \emph{spatialisations} ultérieures. Imaginons par exemple que l'on
@@ -367,7 +367,7 @@ la figure \ref{fig:comp_approches_lin}). Le problème de la
 répercussion des erreurs se pose si le résultat de la première
 \emph{spatialisation} est faux, (\eg une des forêts pouvant faire
 office \emph{d'objet de référence} n'est pas prise en compte). Deux
-cas de figure sont alors possibles, soit la \emph{zone de
+cas de figure sont alors possibles : soit la \emph{zone de
   localisation} résultant de la \emph{spatialisation} est trop étendue
 \footnote{C'est-à-dire que certaines de positions retenues sont de
   faux positifs.}, soit trop réduite \footnote{C'est-à-dire que
