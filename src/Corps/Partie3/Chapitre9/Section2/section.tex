@@ -1005,9 +1005,16 @@ localisation. Si la relation de localisation atomique
 \onto[orla]{Sup\-Val\-0}, la relation de localisation atomique
 \onto[orla]{Distance\-Quantitative\-Planimetrique} emploie quant à
 elle le fuzzyficateur \onto[orla]{Eq\-Val}, paramétré par la distance
-désirée (ici \SI{800}{\meter}).
-
-% Pour cette modélisation (\autoref{fig:fuzzy_veyont_distance})
+désirée (ici \SI{800}{\meter}). Pour prendre en compte la confiance,
+la valeur minimale de la fonction d'appartenance a été rehaussée à
+0,4, seuil défini pour une certitude moyenne
+(\autoref{chap:08}). L’application du fuzzyficateur
+(\autoref{fig:fuzzy_veyont_distance}) à la métrique
+(\autoref{fig:veyont_distance}) permet de construire la \ac{zlc} de
+cet indice (\autoref{fig:ZLC_GrandVeymont_9}). Comme on peut le
+remarquer ce dernier indice de localisation n'attribue, à cause de sa
+certitude, à aucune position de la \ac{zir} un degré d'appartenance
+nul.
 
 \begin{figure}
   \centering \input{./figures/fuzzy_veymont_distance.tex}
@@ -1019,10 +1026,6 @@ désirée (ici \SI{800}{\meter}).
     (\ref{ind:gv9}).}
   \label{fig:fuzzy_veyont_distance}
 \end{figure}
-
-L’application du fuzzyficateur (\autoref{fig:fuzzy_veyont_distance}) à
-la métrique (\autoref{fig:veyont_distance}) permet de construire la
-\ac{zlc} de cet indice (\autoref{fig:ZLC_GrandVeymont_9}).
 
 % La \autoref{fig:veyont_distance} représente le résultat du calcul de
 % la métrique \onto[orla]{Distance} ---~calculée à partir du ponctuel
