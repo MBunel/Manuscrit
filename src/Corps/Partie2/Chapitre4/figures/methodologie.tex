@@ -127,11 +127,38 @@
   \end{scope}
 
   % Annotations
-  \node[anchor=west] at (zlp-1-1.east) {zlp};
+  \node[anchor=west, text width=3cm, font=\tiny, align=left] at (zla-1-4.east) {Zones de
+    localisation compatibles pour l'objet de référence \(or_1\) de
+    l'indice de localisation \(i_1\)};
+  % 
+  \node[anchor=west, text width=2.5cm, font=\tiny, align=left] at (zlb-1-4.east) {Zones de
+    localisation compatibles pour les différents objets de référence
+    possibles pour l'indice de localisation \(i_1\) };
+  % 
+  \node[anchor=west, text width=2cm, font=\tiny, align=left] at (zlc-1-4.east) {Zones de
+    localisation compatibles pour les différents indices de localisation};
+  % 
+  \node[anchor=north, text width=2cm, font=\tiny, align=center] at (zlp-1-1.south) {Zone de
+    localisation probable};
+  % 
+  \node[anchor=north, text width=2cm, font=\tiny, align=center] at (I-1-1.south)
+  {Ensemble des indices de localisation};
+  % 
+  \node[anchor=east, text width=2cm, font=\tiny, align=right] at (is-1-1.west)
+  {Indices de localisation};
+  % 
+  \node[anchor=east, text width=2cm, font=\tiny,align=right] at (is_o-1-1.west)
+  {Objets de référence possibles pour l'indice \(i_1\)};
+    % 
+  \node[anchor=east, text width=3cm, font=\tiny,align=right] at (is_o_r-1-1.west)
+  {Relations de localisation atomiques pour l'objet de référence
+    \(or_1\) de l'indice de localisation \(i_1\)};
+  
+  
   
   \begin{scope}
     % Décomposition
-    \draw[-<<, black,] (I-p) |- ($(I-p)!0.5!(is-g)$) node[pos=0,above
+    \draw[->, black,] (I-p) |- ($(I-p)!0.5!(is-g)$) node[pos=0,above
     left, cardinalite] {1} node[pos=1, fill=white] (t_dec_1) {\tiny
       \textbf{Décomposition}} -| (is-g) node[pos=1,below
     right,cardinalite]{1..*};
@@ -139,7 +166,7 @@
     \node[anchor=west,baseline] at ([xshift=1ex]t_dec_1.south west)
     {\tiny de \emph{l'ensemble des indices de localisation}};
 
-    \draw[-<<, black,] (is-p) |- ($(is-p)!0.5!(is_o-g)$)
+    \draw[->, black,] (is-p) |- ($(is-p)!0.5!(is_o-g)$)
     node[pos=0,above left, cardinalite] {1} node[pos=1, fill=white]
     (t_dec_2) {\tiny \textbf{Décomposition}} -| (is_o-g)
     node[pos=1,below right,cardinalite]{1..*};
@@ -147,7 +174,7 @@
     \node[anchor=west,baseline] at ([xshift=1ex]t_dec_2.south west)
     {\tiny des \emph{objets de référence non nommés}};
 
-    \draw[-<<, black,] (is_o-p) |- ($(is_o-p)!0.5!(is_o_r-g)$)
+    \draw[->, black,] (is_o-p) |- ($(is_o-p)!0.5!(is_o_r-g)$)
     node[pos=0,above left, cardinalite] {1} node[pos=1, fill=white]
     (t_dec_3) {\tiny \textbf{Décomposition}} -| (is_o_r-g)
     node[pos=1,below right,cardinalite]{1..*};
@@ -162,7 +189,7 @@
     node[pos=1,above right,cardinalite]{1};
 
     % Fusion
-    \draw[->>, black,] (zla-g) |- ($(zla-g)!0.5!(zlb-p)$)
+    \draw[->, black,] (zla-g) |- ($(zla-g)!0.5!(zlb-p)$)
     node[pos=0,below right, cardinalite] {1..*} node[pos=1,
     fill=white] (t_fus_1) {\tiny \textbf{Fusion}} -| (zlb-p)
     node[pos=1,above right,cardinalite]{1};
@@ -171,7 +198,7 @@
     ([xshift=1ex]t_fus_1.south west) {\tiny des \emph{relations de
         localisation atomiques}};
     
-    \draw[->>, black,] (zlb-g) |- ($(zlb-g)!0.5!(zlc-p)$)
+    \draw[->, black,] (zlb-g) |- ($(zlb-g)!0.5!(zlc-p)$)
     node[pos=0,below right, cardinalite] {1..*} node[pos=1,
     fill=white] (t_fus_2) {\tiny \textbf{Fusion}} -| (zlc-p)
     node[pos=1,above right,cardinalite]{1};
@@ -180,7 +207,7 @@
     ([xshift=1ex]t_fus_2.south west) {\tiny des \emph{objets de
         référence}};
 
-    \draw[->>, black] (zlc-g) |- ($(zlc-g)!0.5!(zlp-p)$)
+    \draw[->, black] (zlc-g) |- ($(zlc-g)!0.5!(zlp-p)$)
     node[pos=0,below right, cardinalite] {1..*} node[pos=1,
     fill=white] (t_fus_3) {\tiny \textbf{Fusion}} -| (zlp-p)
     node[pos=1,above right,cardinalite]{1};
