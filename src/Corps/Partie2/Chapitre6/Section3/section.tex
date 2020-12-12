@@ -376,7 +376,7 @@ on peut alors définir une méthode géométrique permettant de
 construire, pour chaque \emph{relation de localisation atomique} et
 chaque \emph{alpha-cut} construite, une région, correspondant à une
 \emph{alpha-cut} de la \emph{zone de localisation compatible}
-traitée. Ces différentes \emph{alpha-cuts} seraient alors intersectées
+traitée. Ces différentes \emph{alpha-cuts} sont alors intersectées
 deux à deux, par même degré d'appartenance en vue d'obtenir les
 \emph{alpha-cuts} de la \emph{zone de localisation probable} et ce de
 manière fortement similaire à l'implémentation raster. Pour cette
@@ -390,17 +390,18 @@ supérieur à 0, délimitant le \emph{support} et enfin
 Pour chaque segment de la ligne électrique traitée, nous construisons
 un polyèdre, correspondant à une \emph{alpha-cut}
 tridimensionnelle. Aucun \ac{sig} ne permettant de construire ce type
-d'objet, nous avons été contrains de nous orienter vers une solution
+d'objet, nous avons été contraint de nous orienter vers une solution
 de plus bas niveau, la bibliothèque de calcul géométrique CGAL
-\autocite{CGAL2019}, ce qui a considérablement complexifié la
-tâche. Le polyèdre construit se compose de 6 faces, définies par
-autant de demis-plans (\autoref{fig:schema_polyhedre}). Comme les
-\emph{alpha-cuts} délimitent une \emph{zone de localisation}
-dépendante, toutes choses égales par ailleurs, de la position de
-\emph{l'objet de référence,} la position de tous ces demi-plans est
-exprimable en fonction de la position de la ligne électrique
-traitée. Toutefois, certains d'entre eux ont une position variante par
-translation, en fonction de \emph{l'alpha-cut} considérée.
+\autocite{CGAL2019}, ce qui a considérablement complexifié la tâche
+d'implémentation. Le polyèdre construit se compose de 6 faces,
+définies par autant de demis-plans
+(\autoref{fig:schema_polyhedre}). Comme les \emph{alpha-cuts}
+délimitent une \emph{zone de localisation} dépendante, toutes choses
+égales par ailleurs, de la position de \emph{l'objet de référence,} la
+position de tous ces demi-plans est exprimable en fonction de la
+position de la ligne électrique traitée. Toutefois, certains d'entre
+eux ont une position variante par translation, en fonction de
+\emph{l'alpha-cut} considérée.
 
 Les demi-plans dont la position varie en fonction de
 \emph{l'alpha-cut} considérée sont ceux dont la position délimite une
@@ -444,10 +445,10 @@ demi-plan inférieur ne sert qu'a fermer le polyèdre, aucune des
 \emph{relations de localisation} n'imposant une limite d'altitude
 minimale. Pour éviter de réduire artificiellement l'étendue des
 \emph{alpha-cuts} nous avons placé ce demi-plan a une altitude
-nettement plus faible que l'altitude minimale de la \ac{zir}, simulant
-ainsi un demi-plan virtuellement à l'infini. Le résultat de
-l'implémentation par \emph{alpha-cuts} est visible sur la
-\autoref{fig:AlphaCuts_zenith}.
+nettement plus faible que l'altitude minimale de la \emph{zone
+  initiale de recherche} \acp{zir}, simulant ainsi un demi-plan
+virtuellement à l'infini. Le résultat de l'implémentation par
+\emph{alpha-cuts} est visible sur la \autoref{fig:AlphaCuts_zenith}.
 
 \begin{figure}
   \centering
@@ -476,7 +477,7 @@ nombreuses différences entre les approches raster et par
 % Qualité de la modélisation
 Ces deux approches aboutissent à une \emph{zone de localisation
   probable} similaire, sans différences notables et de qualité
-semblable \autocite{Bunel2019a}. Cependant, de part sa construction,
+semblable \autocite{Bunel2019a}. Cependant, de par sa construction,
 l'implémentation par \emph{alpha-cuts} devrait être, dans le cas
 général, plus précise que l'approche raster, puisque ne nécessitant
 pas un échantillonnage préalable. Toutefois, la précision de toutes
@@ -493,7 +494,7 @@ calculée à partir d'un raster dont la résolution est calquée sur celle
 du \ac{mnt}, sa précision est identique à celle des données, dans
 cette configuration l'implémentation par \emph{alpha-cuts} ne peut
 donc pas être plus précise. Ainsi, la précision de l'ensemble de la
-modélisation est avant tout limité par l'élément le moins précis, qui
+modélisation est avant tout limitée par l'élément le moins précis, qui
 dans le cas des deux implémentations est la précision du \ac{mnt}.
 
 % \missingfigure{Différence zones}
