@@ -918,16 +918,17 @@ d'inverser la sémantique de la relation de localisation. Comme nous
 l'avons déjà indiqué, la relation de localisation
 \onto[orl]{Dans\-Planimetrique} est atomique. Son rasteriser est
 \onto[orla]{Geometrie}, sa métrique est \onto[orla]{Distance} et son
-fuzzyficateur est \onto[orla]{Inf\-0}
+fuzzyficateur est \onto[orla]{Inf\-Val\-0}
 (\autoref{fig:ex_parties_statialisation_dansplani}). Étant donné que
 l'objet de référence employé par ce nouvel indice de localisation
 n'est pas nommé (\enquote{une forêt}), il est nécessaire de procéder à
 la décomposition des objets de référence et de construire une \ac{zlc}
 pour chacun d'entre eux. Les figures \ref{fig:metrique_dist_foret_1}
 et \ref{fig:metrique_dist_foret_2} représentent le résultat du calcul
-de la métrique \onto[orla]{Distance} pour deux instances de forêts.
-
-
+de la métrique \onto[orla]{Distance} pour deux instances de forêts. La
+métrique est ensuite fuzzyfiée, pour chaque objet de référence, à
+l'aide du fuzzyficateur \onto[orla]{Inf\-Val\-0} et de son modifieur
+\onto[orl]{Not}. Le paramètre \(\delta\) a été fixé à \SI{10}{\meter}.
 
 \begin{figure}
   \centering
