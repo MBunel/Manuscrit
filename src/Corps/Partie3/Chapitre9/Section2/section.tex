@@ -928,7 +928,16 @@ et \ref{fig:metrique_dist_foret_2} représentent le résultat du calcul
 de la métrique \onto[orla]{Distance} pour deux instances de forêts. La
 métrique est ensuite fuzzyfiée, pour chaque objet de référence, à
 l'aide du fuzzyficateur \onto[orla]{Inf\-Val\-0} et de son modifieur
-\onto[orl]{Not}. Le paramètre \(\delta\) a été fixé à \SI{10}{\meter}.
+\onto[orl]{Not}. Le paramètre \(\delta\) a été fixé à \SI{10}{\meter},
+ce qui implique qu'une position située à plus de \SI{10}{\meter} de la
+limite d'une forêt sera considérée comme en dehors de la forêt.
+
+Une fois que les métriques calculées pour toutes les instances de
+forêts ont été fuzzifiées nous disposons d'une \ac{zlc} pour chaque
+instance qu'il est nécessaire de fusionner afin d'obtenir la \ac{zlc}
+spatialisant l'indice de localisation : \enquote{La victime n'est pas
+  dans une foret}. La \autoref{fig:ZLC_GrandVeymont_8} représente le
+résultat de ce processus.
 
 \begin{figure}
   \centering
