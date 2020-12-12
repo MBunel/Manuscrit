@@ -94,16 +94,15 @@ vertical (l'altitude du \emph{sujet} est plus basse que celle de
 planimétrique (\autoref{anx:orl_dic}). Cette \emph{relation} se
 décompose en deux \emph{relations de localisation atomiques} :
 \onto[orla]{Al\-ti\-tu\-de\-Stric\-te\-ment\-Inf\-érieu\-re} et
-\onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que},
-traduisant respectivement la notion de position sur l'axe vertical et
-la contrainte posée sur la distance planimétrique. Conformément au
-\emph{principe de décomposition} et à notre méthodologie (Chapitres
-\ref{chap:02} et \ref{chap:04}), la \emph{zone de localisation
-  compatible} correspondant à la \emph{relation de localisation}
-\onto[orl]{Sous\-Pro\-che\-De} peut être créée en intersectant les
-deux \emph{zones de localisation compatibles} résultant de la
-\emph{spatialisation} indépendante de ces \emph{relations de
-  localisation atomiques.}
+\onto[orla]{Pres\-De}, traduisant respectivement la notion de position
+sur l'axe vertical et la contrainte posée sur la distance
+planimétrique. Conformément au \emph{principe de décomposition} et à
+notre méthodologie (Chapitres \ref{chap:02} et \ref{chap:04}), la
+\emph{zone de localisation compatible} correspondant à la
+\emph{relation de localisation} \onto[orl]{Sous\-Pro\-che\-De} peut
+être créée en intersectant les deux \emph{zones de localisation
+  compatibles} résultant de la \emph{spatialisation} indépendante de
+ces \emph{relations de localisation atomiques.}
 
 % Définition fonctions appartenance
 La construction de ces deux \emph{zones de localisation compatibles}
@@ -129,12 +128,11 @@ servir de mesure à la sémantique de la \emph{relation de localisation
 
 Dans notre exemple, les \emph{métriques} à utiliser sont assez
 instinctives et simples à calculer. Par exemple, la \emph{relation de
-  localisation atomique}
-\onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que}
-traduit le fait que la distance planimétrique entre le \emph{sujet} et
-\emph{l'objet de référence} est faible. La métrique adaptée est donc
-la distance euclidienne entre chaque position et le point le plus
-proche de \emph{l'objet de référence} (\autoref{fig:ISO_DIST_HT}). La
+  localisation atomique} \onto[orla]{Pres\-De} traduit le fait que la
+distance planimétrique entre le \emph{sujet} et \emph{l'objet de
+  référence} est faible. La métrique adaptée est donc la distance
+euclidienne entre chaque position et le point le plus proche de
+\emph{l'objet de référence} (\autoref{fig:ISO_DIST_HT}). La
 \emph{relation de localisation atomique}
 \onto[orla]{Al\-ti\-tu\-de\-Stric\-te\-ment\-Inf\-érieu\-re} traduit,
 quant à elle, un positionnement relatif sur l'axe vertical. La
@@ -147,7 +145,7 @@ l'altitude de chaque position (\autoref{fig:ISO_DALT_HT}).
   \input{../figures/Raster_ISO_DIST_HT.tex}
   \caption{\emph{Métrique} pour la \emph{relation de localisation
       atomique}
-    \protect\onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que}
+    \protect\onto[orla]{Pres\-De}
     : La distance planaire à la ligne électrique trois brins.}
   \label{fig:ISO_DIST_HT}
 \end{figure}
@@ -176,9 +174,8 @@ seuils qui, comme nous allons le voir, est généralement assez
 arbitraire. Cependant, pour cet exemple particulier les seuils définis
 ont été validés par un secouriste du \ac{pghm}.
 
-La \emph{relation de localisation atomique}
-\onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que}
-est utilisée pour figurer le fait que le \emph{sujet} n'est pas très
+La \emph{relation de localisation atomique} \onto[orla]{Pres\-De} est
+utilisée pour figurer le fait que le \emph{sujet} n'est pas très
 éloigné de \emph{l'objet de référence.} Ainsi, une position
 \enquote{proche} de \emph{l'objet de référence} doit avoir un
 \emph{degré d'appartenance} à la \emph{zone de localisation
@@ -236,7 +233,7 @@ reste nulle au-delà (Figure \ref{fig:fnc_app_AltInf}).
   }
   \caption{Fonctions d'appartenance pour les \emph{relations de
       localisation atomiques}
-    \protect\onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que}
+    \protect\onto[orla]{Pres\-De}
     \protect\subref{fig:fnc_app_Dist} et
     \protect\onto[orla]{Al\-ti\-tu\-de\-Stric\-te\-ment\-Inf\-érieu\-re}
     \protect\subref{fig:fnc_app_AltInf}, utilisées pour construire la
@@ -251,15 +248,14 @@ de \emph{fusionner} ---~à l'aide d'une intersection~--- les deux
 \emph{zones de localisations compatibles} correspondant aux
 \emph{relations de localisation atomiques}
 \onto[orla]{Al\-ti\-tu\-de\-Stric\-te\-ment\-Inf\-érieu\-re} et
-\onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que}. Si
-son appliquation est dépendante de l'implémentation, la méthode
-utilisée est fixée par le modèle théorique. La \emph{théorie des
-  sous-ensembles flous} nécessite d'employer une \emph{t-norme.} Étant
-donné que cette comparaison ne porte que sur les implémenations et non
-sur les opérateurs d'unions et d'intersection, nous avons choisi
-d'utiliser les opérateurs les plus courants, ceux proposés par
-\textcite{Zadeh1965}, où la fonction \emph{minimum} fait office de
-\emph{t-norme.}
+\onto[orla]{Pres\-De}. Si son appliquation est dépendante de
+l'implémentation, la méthode utilisée est fixée par le modèle
+théorique. La \emph{théorie des sous-ensembles flous} nécessite
+d'employer une \emph{t-norme.} Étant donné que cette comparaison ne
+porte que sur les implémenations et non sur les opérateurs d'unions et
+d'intersection, nous avons choisi d'utiliser les opérateurs les plus
+courants, ceux proposés par \textcite{Zadeh1965}, où la fonction
+\emph{minimum} fait office de \emph{t-norme.}
 
 \subsection{Implémentation raster}
 
@@ -280,7 +276,7 @@ suffisamment grande pour permettre le calcul des fonctions
 \emph{d'appartenance définies.} Par exemple, la \emph{fonction
   d'appartenance} définie pour la \emph{relation de localisation
   atomique}
-\onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que}
+\onto[orla]{Pres\-De}
 (figure \ref{fig:fnc_app_Dist}) a deux seuils, \num{50} et
 \SI{100}{\meter}.
 
@@ -289,21 +285,20 @@ L’application de la fonction d'appartenance (figure
 \ref{fig:ISO_DIST_HT}) permet d'obtenir la figure
 \ref{fig:ZLC_DIST_HT}, représentant la \emph{zone de localisation
   compatible} de la \emph{relation de localisation atomique}
-\onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que}.
-Le degré d'appartenance de chaque pixel à la \emph{zone de
-  localisation compatible} est représenté par un cercle, centré sur le
-pixel et dont le diamètre augmente avec celui-ci. Lorsque ce degré est
-maximal, le diamètre du cercle est égal à la maille du raster (50
-mètres dans le cas présent). Le diamètre est minimal lorsque le degré
-d'appartenance est supérieur à zéro et les valeurs nulles sont
-filtrées pour faciliter la lisibilité.
+\onto[orla]{Pres\-De}. Le degré d'appartenance de chaque pixel à la
+\emph{zone de localisation compatible} est représenté par un cercle,
+centré sur le pixel et dont le diamètre augmente avec
+celui-ci. Lorsque ce degré est maximal, le diamètre du cercle est égal
+à la maille du raster (50 mètres dans le cas présent). Le diamètre est
+minimal lorsque le degré d'appartenance est supérieur à zéro et les
+valeurs nulles sont filtrées pour faciliter la lisibilité.
 
 \begin{figure}
   \centering
   \input{../figures/Raster_ZLC_DIST_HT.tex}
   \caption{\emph{Zone de localisation compatible} pour la
     \emph{relation de localisation atomique}
-    \protect\onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que}.}
+    \protect\onto[orla]{Pres\-De}.}
   \label{fig:ZLC_DIST_HT}
 \end{figure}
 
@@ -414,28 +409,27 @@ latéraux (\ie situés à gauche et à droite par rapport au sens de la
 ligne électrique et parallèlement à celle-ci) permettent de délimiter
 une distance planimétrique à \emph{l'objet de référence} et donc de
 représenter la \emph{relation de localisation atomique}
-\onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que}. Si
-l'on cherche à construire \emph{l'alpha-cut} délimitant le support, il
-faudra placer ces demi-plans latéraux de manière a ce qu'aucune
-position située au-delà (par rapport à la ligne électrique) ne puisse
-avoir un degré d'appartenance non nul. Dans le cas de \emph{l'indice
-  de localisation} considéré, seule la \emph{relation}
-\onto[orla]{Dis\-tan\-ce\-Quan\-ti\-dta\-ti\-ve\-Pla\-ni\-mé\-tri\-que}
-impacte la position de ces deux demi-plans, on peut alors se fonder
-sur la fonction d'appartenance correspondante (Figure
-\ref{fig:fnc_app_Dist}) et identifier la distance correspondant au
-degré d'éloignement considéré, soit \SI{100}{\meter} pour un degré
-d'appartenance non nul. Les demi-plans avant et arrière délimitent
-également la distance planimétrique à la ligne électrique. Cependant
-nous avons choisi de ne pas les faire varier. D'une part, car nous
-travaillons sur un seul \emph{objet de référence,} traversant l'aire
-étudiée de part en part et sans changement de direction marqués. Par
-conséquent, les polyèdres modélisant les \emph{alpha-cuts} de chaque
-segment sont toutes en contact par leurs faces avant et arrières, la
-prise en compte de leur décalage par rapport à la ligne électrique
-n'est donc pas nécessaire. De plus, contrairement aux faces latérales,
-les limites avant et arrières des \emph{alpha-cuts} ne peuvent être
-délimitées de manière satisfaisante par des demi-plans.
+\onto[orla]{Pres\-De}. Si l'on cherche à construire \emph{l'alpha-cut}
+délimitant le support, il faudra placer ces demi-plans latéraux de
+manière a ce qu'aucune position située au-delà (par rapport à la ligne
+électrique) ne puisse avoir un degré d'appartenance non nul. Dans le
+cas de \emph{l'indice de localisation} considéré, seule la
+\emph{relation} \onto[orla]{Pres\-De} impacte la position de ces deux
+demi-plans, on peut alors se fonder sur la fonction d'appartenance
+correspondante (Figure \ref{fig:fnc_app_Dist}) et identifier la
+distance correspondant au degré d'éloignement considéré, soit
+\SI{100}{\meter} pour un degré d'appartenance non nul. Les demi-plans
+avant et arrière délimitent également la distance planimétrique à la
+ligne électrique. Cependant nous avons choisi de ne pas les faire
+varier. D'une part, car nous travaillons sur un seul \emph{objet de
+  référence,} traversant l'aire étudiée de part en part et sans
+changement de direction marqués. Par conséquent, les polyèdres
+modélisant les \emph{alpha-cuts} de chaque segment sont toutes en
+contact par leurs faces avant et arrières, la prise en compte de leur
+décalage par rapport à la ligne électrique n'est donc pas
+nécessaire. De plus, contrairement aux faces latérales, les limites
+avant et arrières des \emph{alpha-cuts} ne peuvent être délimitées de
+manière satisfaisante par des demi-plans.
 % 
 Comme les demi-plans latéraux, la position du demi-plan supérieur
 dépend de la ligne électrique considérée et de \emph{l'alpha-cut}
@@ -525,13 +519,12 @@ l'approche par \emph{alpha-cuts,} la méthode de construction du
 polyèdre utilisée ne pouvant fonctionner qu'avec les \emph{relations
   de localisation atomiques}
 \onto{Al\-ti\-tu\-de\-Stric\-te\-ment\-Inf\-érieu\-re} et
-\onto[orla]{Dis\-tan\-ce\-Quan\-ti\-ta\-ti\-ve\-Pla\-ni\-mé\-tri\-que}
-et les opérateurs de \textcite{Zadeh1965}. De plus, la généralisation
-de l'utilisation de l'implémentation par \emph{alpha-cuts} nécessite
-de compléter notre proposition pour offir une meilleure prise en
-compte des jointures entre les polyèdres modélisant les
-\emph{alpha-cuts,} toutes les configurations ne permettant pas
-l'approximation fait ici.
+\onto[orla]{Pres\-De} et les opérateurs de \textcite{Zadeh1965}. De
+plus, la généralisation de l'utilisation de l'implémentation par
+\emph{alpha-cuts} nécessite de compléter notre proposition pour offir
+une meilleure prise en compte des jointures entre les polyèdres
+modélisant les \emph{alpha-cuts,} toutes les configurations ne
+permettant pas l'approximation fait ici.
 
 % Tendance à la fragmentation des alpha-cuts
 La généralisation de l'implémentation par \emph{alpha-cuts} impose
