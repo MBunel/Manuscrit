@@ -160,19 +160,19 @@ l'altitude de chaque position et l'altitude du point le plus proche de
 
 La transformation des valeurs de ces deux métriques en degré
 d'appartenance se fait à l'aide d'une fonction d'appartenance qu'il
-convient de définir. Pour ce faire nous procédons généralement en deux
-étapes. La première consiste à identifier la forme de \emph{la
-  fonction d'appartenance} qui nous semble être la plus pertinente
-pour retranscrire la sémantique de la \emph{relation de localisation
-  atomique.} Puis nous identifions les seuils de cette
-fonction. Ainsi, la première étape permet \footnote{Conjointement à la
-  sélection d'une \emph{métrique.}} de fixer la sémantique de la
-\emph{relation,} alors que la seconde étape fait plus office de
-paramétrisation fine. La sélection de la forme de la fonction ne pose
-pas de problèmes particuliers, contrairement à la définition des
-seuils qui, comme nous allons le voir, est généralement assez
-arbitraire. Cependant, pour cet exemple particulier les seuils définis
-ont été validés par un secouriste du \ac{pghm}.
+convient de définir. Pour ce faire nous procédons en deux étapes. La
+première consiste à identifier la forme de \emph{la fonction
+  d'appartenance} qui nous semble être la plus pertinente pour
+retranscrire la sémantique de la \emph{relation de localisation
+  atomique,} puis, lors de la seconde étape, nous identifions les
+seuils de cette fonction. Ainsi, la première étape permet
+\footnote{Conjointement à la sélection d'une \emph{métrique.}} de
+fixer la sémantique de la \emph{relation,} alors que la seconde étape
+fait plus office de paramétrisation fine. La sélection de la forme de
+la fonction ne pose pas de problèmes particuliers, contrairement à la
+définition des seuils qui, comme nous allons le voir, est généralement
+assez arbitraire. Cependant, pour cet exemple particulier les seuils
+définis ont été validés par un secouriste du \ac{pghm}.
 
 La \emph{relation de localisation atomique} \onto[orla]{Pres\-De} est
 utilisée pour figurer le fait que le \emph{sujet} n'est pas très
@@ -180,11 +180,11 @@ utilisée pour figurer le fait que le \emph{sujet} n'est pas très
 \enquote{proche} de \emph{l'objet de référence} doit avoir un
 \emph{degré d'appartenance} à la \emph{zone de localisation
   compatible} correspondant à cette \emph{relation de localisation
-  atomique} plus élevé qu'une position qui en est éloigné. Le degré
+  atomique} plus élevé qu'une position qui en est éloignée. Le degré
 d'appartenance doit donc diminuer lorsque la distance à \emph{l'objet
   de référence} (\ie la valeur de la métrique) augmente. La forme de
 la fonction d'appartenance étant fixée, nous pouvons à présent en
-définir les seuils. Deux valeurs sont à fixer, la première est la
+définir les seuils. Deux valeurs sont à fixer : la première est la
 distance à partir de laquelle le degré d'appartenance décroit. Si elle
 est nulle le degré d’appartenance décroit dès que la distance
 augmente, sinon il y aura une zone, dont la largeur dépend de la
@@ -218,8 +218,8 @@ ce qui permet d'ajouter une petite marge d'erreur. Ainsi, le degré
 d'appartenance est de 1 jusqu’à ce que la différence d'altitude soit
 nulle, puis il décroit rapidement jusqu'à atteindre la valeur de 0
 lorsque la différence est de \SI{5}{\meter} (\ie que la position est
-\SI{5}{\meter} au-dessus du sommet de la ligne électrique), la valeur
-reste nulle au-delà (Figure \ref{fig:fnc_app_AltInf}).
+\SI{5}{\meter} au-dessus du sommet de la ligne électrique) et la
+valeur reste nulle au-delà (Figure \ref{fig:fnc_app_AltInf}).
 
 \begin{figure}
   \centering \subfloat[]{%
