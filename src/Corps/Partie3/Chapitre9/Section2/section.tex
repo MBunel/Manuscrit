@@ -898,11 +898,24 @@ données dont nous disposons, sans créer de nouvel objet de
 référence. La solution que nous proposons est de transformer les
 indices de localisation \ref{ind:fr5}, \ref{ind:fr6} et \ref{ind:fr7}
 en un nouvel indice de localisation les approximant au mieux, sans les
-contredire.
+contredire. Comme la BD TOPO défini la couverture forestière et que le
+requérant indique implicitement qu'il \emph{n'est pas} situé dans une
+forêt, nous proposons de transformer ces indices de localisation en :
+\enquote{Le requérant n'est pas dans une forêt}. Ce nouvel indice de
+localisation est certes moins discriminant que la combinaison des
+indices \ref{ind:fr5}, \ref{ind:fr6} et \ref{ind:fr7}, mais il permet
+de prendre en compte une partie de ces informations, sans ajouter de
+nouveaux objets de référence, ce qui ne serait pas réalisable dans le
+cas d'une utilisation opérationnelle de notre méthode.
 
-
-Comme nous l’expliquions lors de la spatialisation du premier indice
-de localisation (\ref{ind:gv1}), la relation de localisation
+La création de ce nouvel indice de localisation ne modifie pas la
+relation de localisation utilisée pour le spatialiser, il s'agit
+toujours de la relation \onto[orl]{Dans\-Planimetrique}, déjà utilisée
+pour la spatialisation du premier indice de localisation
+(\ref{ind:gv1}). Par ailleurs, comme pour cette première utilisation,
+il est nécessaire d'utiliser le modifieur \onto[orla]{Not}, qui permet
+d'inverser la sémantique de la relation de localisation. Comme nous
+l'avons déjà indiqué, la relation de localisation
 \onto[orl]{Dans\-Planimetrique} est atomique. Son rasteriser est
 \onto[orla]{Geometrie}, sa métrique est \onto[orla]{Distance} et son
 fuzzyficateur est \onto[orla]{Inf\-0}
