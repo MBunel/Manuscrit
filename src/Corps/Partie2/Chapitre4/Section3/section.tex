@@ -49,11 +49,11 @@ géovisualisation (\autoref{fig:methodo_1}) :
 
 \begin{equation}
   \label{eq:ens_ind_loc}
-  I = \{i_1, i_2, \dots, i_n \}
+  I = \{i_1, i_2, \dots, i_r \}
 \end{equation}
 
 La \emph{décomposition} de l'ensemble \(I\) permet d'extraire les
-différents \emph{indices de localisation} (\(i_n\)), à partir desquels
+différents \emph{indices de localisation} (\(i_r\)), à partir desquels
 serons construites les \emph{zones de localisation compatibles} durant
 la phase de \emph{spatialisation.} Comme on peut le voir sur la
 \autoref{fig:methodo_1}, les indices issus de la décomposition
@@ -67,17 +67,17 @@ conformément au principe de modélisation précédemment mentionné.
 Comme nous l'avons indiqué lors de leur formalisation, un \emph{indice
   de référence} peut contenir de nombreux \emph{objets de référence}
 différents. Si \emph{l'indice de localisation} qui nous est transmis
-contient plus d'un objet \footnote{Ou plus d'un n-tuple, dans le cas
+contient plus d'un objet \footnote{Ou plus d'un n-uplet, dans le cas
   où la relation modélisée est bi ou n-aire.}, alors \emph{l'objet de
-  référence} est indéfini est \emph{l'indice de localisation} doit
-être \emph{spatialisé} pour chacun d'entre eux.
+  référence} est indéfini et \emph{l'indice de localisation} doit être
+\emph{spatialisé} pour chacun d'entre eux.
 
 L'objectif de la \emph{décomposition} des \emph{objets de référence
-  indéfini} est donc de transformer un \emph{indice de localisation}
+  indéfinis} est donc de transformer un \emph{indice de localisation}
 comportant plusieurs \emph{objets de référence} concurrents en un
 ensemble \emph{d'indices de localisation} contenant chacun un seul
-\emph{objet de référence} (ou un seul tuple), c'est-à-dire une des
-instances parmi l'ensemble des \emph{objets de référence possibles.}
+\emph{objet de référence} (ou un seul n-uplet), c'est-à-dire une des
+instances de l'ensemble des \emph{objets de référence possibles.}
 L'étape de décomposition des \emph{objets de référence indéfinis} peut
 être formalisée de la manière suivante :
 
@@ -98,12 +98,12 @@ La troisième et dernière étape de cette phase est la
 \emph{décomposition} des \emph{relations de localisation.} C'est
 durant cette étape qu'est appliqué le \emph{principe de décomposition}
 des \emph{relations de localisation} que nous avons déjà
-présenté. Comme nous l'expliquions, cette étape consiste à décomposer
-les \emph{relations de localisation} en un ensemble de composantes
-sémantiquement indépendantes, les \emph{relations de localisation
-  atomiques.} Comme pour les deux précédentes étapes, cette
-décomposition n'est pas toujours nécessaire, \emph{la relation de
-  localisation utilisée} pouvant être atomique (\eg
+présenté. Comme nous l'avons expliqué, cette étape consiste à
+décomposer chaque \emph{relations de localisation} en un ensemble de
+composantes sémantiquement indépendantes, les \emph{relations de
+  localisation atomiques.} Comme pour les deux précédentes étapes,
+cette décomposition n'est pas toujours nécessaire, \emph{la relation
+  de localisation utilisée} pouvant être atomique (\eg
 \enquote{proche}). Cette étape peut être formalisée de la manière
 suivante :
 
