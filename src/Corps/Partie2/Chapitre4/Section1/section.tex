@@ -370,8 +370,8 @@ office \emph{d'objet de référence} n'est pas prise en compte). Deux
 cas de figure sont alors possibles : soit la \emph{zone de
   localisation} résultant de la \emph{spatialisation} est trop étendue
 \footnote{C'est-à-dire que certaines de positions retenues sont de
-  faux positifs.}, soit trop réduite \footnote{C'est-à-dire que
-  certaines de positions retenues sont de faux
+  faux positifs.}, soit elle est trop réduite \footnote{C'est-à-dire
+  que certaines de positions retenues sont de faux
   négatifs.}\multiplefootnoteseparator \footnote{Ce qui est, par
   exemple, le résultat de l'oubli d'un \emph{objet de référence.}}.
 Dans le premier cas, la \emph{spatialisation} du second \emph{indice
@@ -385,12 +385,13 @@ réduite, des positions devant appartenir à la \emph{zone de
 de victime\footnote{Ces deux cas de figure correspondent à des
   erreurs, respectivement, de type II et I.}. Ainsi, si un des
 \emph{indices de localisation} est mal \emph{spatialisé}, que ce soit
-à cause de la méthode utilisée ou d'une mauvaise description, cela se
-répercute sur toutes les \emph{spatialisations} ultérieures et la
-moindre correction impose donc de refaire l'ensemble des traitements.
+à cause de la méthode de spatialisation utilisée ou d'une mauvaise
+description, cela se répercute sur toutes les \emph{spatialisations}
+ultérieures et la moindre correction impose donc de refaire l'ensemble
+des traitements.
 
 Une seconde solution, plus robuste, est cependant permise par une des
-caractéristiques des \emph{indices de localisation,} leur
+caractéristiques des \emph{indices de localisation:} leur
 indépendance. Il n'est, en effet, généralement pas nécessaire de
 connaitre le résultat de la \emph{spatialisation} d'un \emph{indice de
   localisation} pour pouvoir \emph{spatialiser} les autres
@@ -400,28 +401,28 @@ précédemment utilisée : \enquote{Je suis dans une forêt, près du
 regroupés participent à décrire une même position. Mais ces deux
 \emph{indices} conservent leur sens s'ils sont énoncés
 séparément. Dire, \enquote{Je suis dans une forêt} ou \enquote{je suis
-  près du refuge} est une description valide, même si moins précise
-que \emph{l'indice de localisation} initial. Cette indépendance des
+  près du refuge} est une description valide et \emph{l'indice de
+  localisation} initial est simplement la conjonction, sans ordre
+particulier, de ces deux informations. Cette indépendance des
 \emph{indices} permet de mettre en place une \emph{spatialisation}
-parallèle, comme le montre la figure
-\ref{fig:comp_approches_sep}. Avec cette approche la
-\emph{spatialisation} des différents \emph{indices de localisation}
-est effectuée séparément et leur \emph{fusion} est effectuée dans un
-second temps. Comme pour la démarche \enquote{chainée} une
-\emph{spatialisation} erronée peut impacter la \emph{zone de
-  localisation probable,} toutefois il est plus facile de corriger ces
-erreurs. En effet, si les différentes \emph{zones de localisation
-  compatibles} ont été conservées il est possible de faire une
-nouvelle \emph{fusion} en retirant un, ou plusieurs \emph{indices de
-  localisation.} Alors qu'avec une approche \enquote{chainée} il est
-nécessaire de refaire toutes les opérations de \emph{spatialisations}
-ultérieures à celle de \emph{l'indice de localisation} que l'on
-souhaite modifier ou retirer et ce même si les résultats
-intermédiaires ont été conservés.
+autonome, comme le montre la figure \ref{fig:comp_approches_sep}. Avec
+cette approche la \emph{spatialisation} des différents \emph{indices
+  de localisation} est effectuée séparément et leur \emph{fusion} est
+effectuée dans un second temps. Comme pour la démarche
+\enquote{chainée} une \emph{spatialisation} erronée peut impacter la
+\emph{zone de localisation probable,} toutefois il est plus facile de
+corriger ces erreurs. En effet, si les différentes \emph{zones de
+  localisation compatibles} ont été conservées il est possible de
+faire une nouvelle \emph{fusion} en retirant un ou plusieurs
+\emph{indices de localisation.} Alors qu'avec une approche
+\enquote{chainée} il est nécessaire de refaire toutes les opérations
+de \emph{spatialisations} ultérieures à celle de \emph{l'indice de
+  localisation} que l'on souhaite modifier ou retirer, et ce même si
+les résultats intermédiaires ont été conservés.
 
 \begin{figure}
   \centering
-  \subfloat[Construction suivant une démarche linéaire]{
+  \subfloat[Construction suivant une démarche chainée]{
     \input{../figures/mod_lin.tex}
     \label{fig:comp_approches_lin}
   }
@@ -431,7 +432,7 @@ intermédiaires ont été conservés.
     \label{fig:comp_approches_sep}
   }
   \caption{Comparaison du processus de construction de la \emph{zone
-      de localisation probable} pour une alerte à deux \emph{indices
+      de localisation probable,} pour une alerte à deux \emph{indices
       de localisation}.}
   \label{fig:comp_approches}
 \end{figure}
@@ -446,19 +447,20 @@ processus permet de construire des nouveaux \emph{indices de
 \emph{relations de localisation atomiques} décrivent des concepts
 sémantiquement orthogonaux. Le principe de modélisation autonome peut
 donc être étendu aux \emph{indices de localisation} décomposés, ce qui
-le rend d'autant plus pertinent.
+le rend d'autant plus pertinent. Nous choisissons donc d'utiliser
+cette seconde approche.
 
 \subsubsection{Le raisonnement logique en monde ouvert}
 
 Le dernier des principes de modélisation que nous souhaitons fixer est
 celui du raisonnement en \emph{monde ouvert}. Ce terme, issu du monde
-de la logique formelle, désigne un cadre de raisonnement où l'on ne
+de la logique formelle, désigne un cadre de raisonnement où l'on
 considère que l'ignorance ou l'indémontrabilité d'une règle logique
 n'implique pas sa fausseté, par opposition à l'hypothèse du
 \emph{monde clos.} La \autoref{fig:comp_md} tente d'illustrer ces deux
 hypothèses opposées. L'ensemble de toutes les assertions logiques est
 réparti entre deux ensembles, celui des assertions vraies et celui
-assertions fausses. Parmi toutes ces assertions seules certaines
+assertions fausses. Parmi toutes ces assertions, seules certaines
 d'entre-elles nous sont connues \footnote{Où sont démontrables en un
   temps fini}, elles forment un nouvel ensemble plus réduit, mais
 pouvant contenir des assertions vraies ou fausses, d'où
