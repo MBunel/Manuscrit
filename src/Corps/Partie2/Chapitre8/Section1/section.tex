@@ -508,9 +508,9 @@ assez éloignées des considérations applicatives de ce
 travail. Cependant, il n'en est rien. Ces deux propriétés modifient,
 en effet, le comportement des \emph{t-normes} et des
 \emph{t-conormes,} et donc le résultat des intersections et des
-unions, a fortiori quand ces opérations sont répétées. Or, la répétion
-\emph{d'intersection} et de \emph{fusions} est au cœur de la
-\emph{phase de fusion.} Utiliser des opérateurs impactant
+unions, a fortiori quand ces opérations sont répétées. Or, la
+répétition \emph{d'intersections} et de \emph{fusions} est au cœur de
+la \emph{phase de fusion.} Utiliser des opérateurs impactant
 substantiellement les trois étapes de la \emph{fusion} n'est donc
 envisageable qu'après une étude attentive de leur comportement et de
 son influence sur la sémantique des \emph{zones de localisation.}
@@ -519,22 +519,21 @@ On peut illustrer l'effet de ces deux propriétés en analysant le
 comportement des ces différentes \emph{t-(co)normes} pour une même
 intersection (ou union). La
 \autoref{fig:comparaison_operateurs_intersection} représente le
-résultat de l'intersection deux \ac{zlc},
-\textcolor{RdBu-9-1}{\textsf{A}} représentant la \emph{spatialisation}
-de \emph{l'indice de localisation} \enquote{au sud de} et
-\textcolor{RdBu-9-9}{\textsf{B}} de \emph{l'indice de localisation}
-\enquote{à l'est de}. Le résultat de l'intersection des \ac{zlc}
-\textcolor{RdBu-9-1}{\textsf{A}} et \textcolor{RdBu-9-9}{\textsf{B}}
-correspond à la \ac{zlc} de \emph{l'indice de localisation}
-\enquote{Je suis au sud-est de} \footnote{XXXX}. Si l'on compare le
-résultat de cette intersection en fonction de la \emph{t-norme}
-utilisée on peut remarquer que les \emph{t-normes archimédiennes}
-construisent une \ac{zlc} dont le degré d'appartenance est moindre en
-toute position. Cela peut s'expliquer par la
-%
-Les \emph{t-normes} archimédiennes tendent à pénaliser la conjonction
-entre des positions appartenant partiellement aux \ac{zlc}
-intersectées. Ainsi, si une position \(p\) appartient
+résultat de l'intersection de deux \ac{zlc}
+(\textcolor{RdBu-9-1}{\textsf{A}} et
+\textcolor{RdBu-9-9}{\textsf{B}}). \textcolor{RdBu-9-1}{\textsf{A}}
+représente la \emph{spatialisation} de \emph{l'indice de localisation}
+\enquote{au sud de} et \textcolor{RdBu-9-9}{\textsf{B}} de
+\emph{l'indice de localisation} \enquote{à l'est de}. Le résultat de
+l'intersection des \ac{zlc} \textcolor{RdBu-9-1}{\textsf{A}} et
+\textcolor{RdBu-9-9}{\textsf{B}} correspond à la \ac{zlc} de
+\emph{l'indice de localisation} \enquote{Je suis au sud-est de}. Si
+l'on compare le résultat de cette intersection en fonction de la
+\emph{t-norme} utilisée, on peut remarquer que les \emph{t-normes
+  archimédiennes} construisent une \ac{zlc} dont le degré
+d'appartenance est moindre en toute position. Elles tendent donc à
+pénaliser la conjonction entre des positions appartenant partiellement
+aux \ac{zlc} intersectées. Ainsi, si une position \(p\) appartient
 \enquote{moyennement} aux \ac{zlc} \textcolor{RdBu-9-1}{\textsf{A}} et
 \textcolor{RdBu-9-9}{\textsf{B}}, (\eg avec un \emph{degré
   d’appartenance} compris entre 0,4 et 0,6), alors une \emph{t-norme}
@@ -556,15 +555,16 @@ utiliser des opérateurs alternatifs.
   \label{fig:comparaison_operateurs_intersection}
 \end{figure}
 
-L'archimédianité est cependant plus problématique pour les
+L'archimédianité est, cependant, plus problématique pour les
 \emph{t-conormes.} La \autoref{fig:comparaison_operateurs_union}
 représente le résultat de l'union deux \ac{zlc},
 \textcolor{RdBu-9-1}{\textsf{A}} représentant la \emph{spatialisation}
-de la même \emph{relation de localisation} (\enquote{XX}), mais pour
-deux \emph{objets de référence} différents. Comme le montre la
-\autoref{fig:comparaison_operateurs_union}, le degré d'appartenance
-résultant de l'union de ces deux \ac{zlc} on peut constater que les
-\emph{t-conormes} archimédiennes tendent à le faire augmenter.
+de deux \emph{relation de localisation} ; \onto[orl]{A\-L\-Est\-De} et
+\onto[orl]{Au\-Sud\-de}, pour le même \emph{objet de référence.}
+Comme le montre la \autoref{fig:comparaison_operateurs_union}, le
+degré d'appartenance résultant de l'union de ces deux \ac{zlc} est,
+globalement plus important lorsque la \emph{t-conorme} employée est
+archimédiennes.
 %
 Les \emph{t-conormes} archimédiennes ont pour effet de favoriser la
 disjonction entre les positions appartenant partiellement aux \ac{zlc}
