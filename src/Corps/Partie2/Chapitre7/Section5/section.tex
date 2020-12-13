@@ -3,38 +3,37 @@ représentation des règles de décomposition des \emph{relations de
   localisation} et avions décidé de les représenter dans une ontologie
 \emph{ad hoc,} \ac{orla}. Cette solution présentait le double avantage
 de proposer une formalisation des règles qui soit lisible par un être
-humain, tout en les centralisant, ce qui, à terme favorise leur
-compréhension, leur maintient et leur évolution. Une question
-similaire se pose à présent, celle de la représentation des règles de
+humain tout en les centralisant, ce qui à terme favorise leur
+compréhension, leur maintien et leur évolution. Une question similaire
+se pose à présent : celle de la représentation des règles de
 \emph{spatialisation} des \emph{relations de localisation atomiques.}
 Il est à nouveau possible de représenter ces règles dans une
 ontologie, nous avons donc décidé de les intégrer à \ac{orla}. Pour
 permettre une bonne représentation des règles de
 \emph{spatialisation,} il est nécessaire de spécifier quelques
-contraintes, comme nous l'avions fait dans la
-\autoref{chap:05-sec1}. Tout d'abord, toute \emph{relation de
-  localisation atomique} doit, pour être spatialisée, être liée à un
-\emph{rasteriser,} une \emph{métrique,} un \emph{fuzzyficateur} et,
-optionnellement à un \emph{modifieur.} Comme pour les \emph{relations
-  de localisation} nous ne permettons pas l’existence de règles
-concurrentes, une \emph{relation de localisation atomique} donnée
-ne correspond qu'à une \emph{méthode de spatialisation} et inversement
-\footnote{Conformément à la règle d'unicité des \emph{relations de
-  localisations atomiques} formulée dans le \autoref{chap:05}.}
+contraintes, comme nous l'avions fait dans la \autoref{sec:5-1}. Tout
+d'abord, toute \emph{relation de localisation atomique} doit, pour
+être spatialisée, être liée à un \emph{rasteriser,} une
+\emph{métrique,} un \emph{fuzzyficateur,} et optionnellement à un
+\emph{modifieur.} Comme pour les \emph{relations de localisation} nous
+ne permettons pas l’existence de règles concurrentes: une
+\emph{relation de localisation atomique} donnée ne correspond qu'à une
+\emph{méthode de spatialisation} et inversement \footnote{Conformément
+  à la règle d'unicité des \emph{relations de localisations atomiques}
+  formulée dans le \autoref{chap:05}.}
 
 Pour représenter les règles de spatialisation dans \emph{l'ontologie
-  des relations de localisation atomiques} nous avons défini quatre
-nouvelles relations \onto[orla]{has\-Rasteriser},
+  des relations de localisation atomiques,} nous avons défini quatre
+nouvelles relations: \onto[orla]{has\-Rasteriser},
 \onto[orla]{has\-Metrique}, \onto[orla]{has\-Fuzzyfier} et
 \onto[orla]{has\-Modifieur}. Chacune de ces nouvelles relations lie
 une \emph{relation de localisation atomique} à une classe
 représentant, respectivement, une méthode de \emph{rastérisation,} une
 méthode de calcul d'une \emph{métrique,} une méthode de
-\emph{fuzzyfication} et une méthode appliquant un \emph{modifieur}
-(\autoref{fig:structure_spatialisation_ontologie}). Ainsi, les
-\emph{relations de localisation atomiques} ne sont pas seulement
-définissables comme des \emph{relations de localisation} desquelles ne
-proviennent aucune relation
+\emph{fuzzyfication} et une méthode appliquant un \emph{modifieur.}
+Ainsi, les \emph{relations de localisation atomiques} ne sont pas
+seulement définissables comme des \emph{relations de localisation}
+desquelles ne proviennent aucune relation
 \onto[orla]{has\-Relation\-Spatiale\-Atomique} \footnote{Comme nous
   l'indiquions dans le \autoref{chap:05}.}, mais également comme des
 \emph{relations de localisation} auxquelles sont associés un
@@ -56,9 +55,9 @@ le cas échant, le \emph{modifieur,} définis dans \ac{orla} pour cette
 % \end{figure}
 
 Par exemple, la \emph{relation de localisation atomique}
-\onto[orla]{Sous\-Al\-ti\-tu\-de} ---~notamment utilisée pour définir
-la \emph{relation} \onto[orla]{Sous\-Pro\-che\-De}
-(\autoref{chap:05})~--- défini une \emph{zone de localisation
+\onto[orl]{Sous\-Al\-ti\-tu\-de} ---~notamment utilisée pour définir
+la \emph{relation} \onto[orl]{Sous\-Pro\-che\-De}
+(\autoref{chap:05})~--- définit une \emph{zone de localisation
   compatible} dont toutes les positions ont une altitude inférieure à
 celle de \emph{l'objet de référence}
 (\autoref{fig:ex_parties_statialisation_sousalt}). Pour
@@ -69,13 +68,13 @@ raisons de se focaliser sur une partie spécifique de \emph{l'objet de
 une de ces parties. Le \emph{rasteriser} le plus adapté est donc
 \onto[orla]{Geometrie}. Le choix de la \emph{métrique} est un peu plus
 difficile. On peut, en effet, se questionner sur l'altitude à
-considérer pour \emph{l'objet de référence,} doit-on considérer le
+considérer pour \emph{l'objet de référence:} doit-on considérer le
 point le plus haut, le plus bas, le plus proche ? Ou bien doit-on
 utiliser un indicateur de centralité, comme la moyenne ? Tous ces
 critères paraissent pertinents, mais l'altitude de la position la plus
 proche nous semble être la solution la plus générique, car la moins
 sensible aux fortes variations d'altitudes que l'on pourrait retrouver
-sur des objets très étendus (\eg vallées, forêts, \emph{etc.}). Ainsi
+sur des objets très étendus (\eg vallées, forêts, \emph{etc.}), ainsi
 nous avons opté pour la \emph{métrique}
 \onto[orla]{Delta\-Nearest\-Val}. Le choix du \emph{fuzzyfieur} ne
 pose, quant à lui, pas de problèmes particuliers. En effet, la
