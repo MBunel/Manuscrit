@@ -357,7 +357,7 @@ erreurs de \emph{spatialisation} peuvent modifier le résultat des
 souhaite construire la \ac{zlp} correspondant à \emph{l'indice de
   localisation} : \enquote{Je suis dans une forêt, près du refuge.} Si
 l'on décide de commencer par \emph{spatialiser} \emph{l'indice de
-  localisation} : \enquote{Je suis dans une forêt} on obtiendra une
+  localisation} : \enquote{Je suis dans une forêt,} on obtiendra une
 \emph{zone de localisation compatible} (qui correspond à la seconde
 étape de la figure \ref{fig:comp_approches_lin}) réduisant l'aire de
 recherche. La \emph{spatialisation} du second \emph{indice de
@@ -381,9 +381,9 @@ nécessaire, ce qui peut avoir pour effet de produire une \emph{zone de
   localisation probable} contenant des positions erronées. Le second
 cas est plus problématique, puisque la \emph{spatialisation} du second
 \emph{indice de localisation} est effectuée à partir d'une zone trop
-réduite, des positions devant appartenir à la \emph{zone de
+réduite. De fait, des positions devant appartenir à la \emph{zone de
   localisation probable} pourront donc être ignorées, dont la position
-de victime\footnote{Ces deux cas de figure correspondent à des
+de la victime \footnote{Ces deux cas de figure correspondent à des
   erreurs, respectivement, de type II et I.}. Ainsi, si un des
 \emph{indices de localisation} est mal \emph{spatialisé}, que ce soit
 à cause de la méthode de spatialisation utilisée ou d'une mauvaise
@@ -394,7 +394,7 @@ des traitements.
 Une seconde solution, plus robuste, est cependant permise par une des
 caractéristiques des \emph{indices de localisation:} leur
 indépendance. Il n'est, en effet, généralement pas nécessaire de
-connaitre le résultat de la \emph{spatialisation} d'un \emph{indice de
+connaître le résultat de la \emph{spatialisation} d'un \emph{indice de
   localisation} pour pouvoir \emph{spatialiser} les autres
 \emph{indices} d'une même alerte. Par exemple, la description
 précédemment utilisée : \enquote{Je suis dans une forêt, près du
@@ -407,15 +407,15 @@ séparément. Dire, \enquote{Je suis dans une forêt} ou \enquote{je suis
 particulier, de ces deux informations. Cette indépendance des
 \emph{indices} permet de mettre en place une \emph{spatialisation}
 autonome, comme le montre la figure \ref{fig:comp_approches_sep}. Avec
-cette approche la \emph{spatialisation} des différents \emph{indices
+cette approche, la \emph{spatialisation} des différents \emph{indices
   de localisation} est effectuée séparément et leur \emph{fusion} est
 effectuée dans un second temps. Comme pour la démarche
-\enquote{chainée} une \emph{spatialisation} erronée peut impacter la
-\emph{zone de localisation probable,} toutefois il est plus facile de
+\enquote{chaînée} une \emph{spatialisation} erronée peut impacter la
+\emph{zone de localisation probable.} Toutefois, il est plus facile de
 corriger ces erreurs. En effet, si les différentes \emph{zones de
   localisation compatibles} ont été conservées il est possible de
 faire une nouvelle \emph{fusion} en retirant un ou plusieurs
-\emph{indices de localisation.} Alors qu'avec une approche
+\emph{indices de localisation,} alors qu'avec une approche
 \enquote{chainée} il est nécessaire de refaire toutes les opérations
 de \emph{spatialisations} ultérieures à celle de \emph{l'indice de
   localisation} que l'on souhaite modifier ou retirer, et ce même si
