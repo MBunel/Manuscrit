@@ -104,57 +104,56 @@ définie dans \ac{orla}. C'est par exemple ce que proposent
   localisation donnée.} Nous proposons cependant d'utiliser, à
 nouveau, une démarche de décomposition.
 
-Prenons, par exemple deux \emph{relations de localisation atomiques,}
-\onto[orla]{In\-te\-ri\-eur} et \onto[orla]{Ex\-te\-ri\-eur}
-\footnote{Ces deux \emph{relations de localisation atomiques} sont
-  utilisées pour décomposer des \emph{relations} comme
-  \protect\onto[orl]{Dans\-La\-Partie\-Sud\-De} ou
-  \protect\onto[orl]{Au\-Nord\-De\-Externe}, mais également
+Prenons par exemple les deux \emph{relations de localisation
+  atomiques,} \onto[orla]{In\-te\-ri\-eur} et
+\onto[orla]{Ex\-te\-ri\-eur} \footnote{Ces deux \emph{relations de
+    localisation atomiques} sont utilisées pour décomposer des
+  \emph{relations} comme \protect\onto[orl]{Dans\-La\-Partie\-Sud\-De}
+  ou \protect\onto[orl]{Au\-Nord\-De\-Externe}, mais également
   directement dans les \emph{relations}
   \protect\onto[orl]{Dans\-Planimétrique} et
   \protect\onto[orl]{Hors\-De\-Planimétrique}.}. Ces deux concepts
-décrivent une \emph{relation} entre le \emph{sujet} et \emph{l'objet
-  de référence} opposée, mais de même nature (\ie topologique). Aussi
+décrivent deux \emph{relations} entre le \emph{sujet} et \emph{l'objet
+  de référence} opposée, mais de même nature (\ie topologique). Aussi,
 on peut considérer que ce qui distingue ces deux \emph{relations de
   localisation atomiques} n'est pas la nature de la configuration
 spatiale qu'elles décrivent, mais la manière dont elles évaluent la
 validité de l'assertion : \enquote{\emph{l'indice de localisation} est
-  vrai}. Pour illustrer cette affirmation prenons l'exemple de la
+  vrai}. Pour illustrer cette affirmation, prenons l'exemple de la
 \autoref{fig:Exemple_Metrique_vs_Selecteur}. Un \emph{objet de
-  référence} (en rouge) est situé au centre d'un raster de 4 pixels,
-représentant une \ac{zir} simplifiée. Imaginons que l'on cherche à
-construire, sans prendre en compte \emph{l'imprécision,} les \ac{zlc}
-correspondant aux \emph{relations} \onto[orla]{Interieur} et
-\onto[orla]{Exterieur}, pour cet \emph{objet de référence.} L'approche
-raster, nous permet de construire ces deux \ac{zlc} en sélectionnant
-les pixels situés, respectivement, à l'intérieur et à l'extérieur de
-\emph{l'objet de référence.} Pour cela, il est tout d'abord nécessaire
-d'identifier la relation topologique entre chaque pixel et
-\emph{l'objet de référence.} Étant donné que \emph{l'imprécision}
-n'est pas considérée ici, nous pouvons décrire ces relations
-topologiques à l'aide d'une matrice 4IM \footnote{Nous aurions pu
-  utiliser n'importe quelle autre formalisation des relations
-  topologiques présentée dans le \autoref{chap:03} (RCC-8, 9IM,
-  DE-9IM, \emph{etc.}). Le modèle 4IM nous a simplement semblé le plus
-  clair pour illustrer cet exemple.}  calculée en chaque pixel de la
-\ac{zir} \footnote{Le pixel traité fait alors office d'objet \(a\) et
-  \emph{l'objet de référence} d'objet \(b\) (\autoref{eq:matrice_4IM},
-  \autoref{chap:03}).}
-(\autoref{fig:Exemple_Metrique_vs_Selecteur}). On obtient alors un
-raster contenant (explicitement) une information permettant de
-distinguer les pixels situés à l'intérieur et à l'extérieur de
-\emph{l'objet de référence.} On peut alors construire :
+  référence} (en rouge) est situé dans le coin supérieur droit d'un
+raster de 4 pixels représentant une \ac{zir} simplifiée. Imaginons que
+l'on cherche à construire, sans prendre en compte
+\emph{l'imprécision,} les \ac{zlc} correspondant aux \emph{relations}
+\onto[orla]{Interieur} et \onto[orla]{Exterieur}, pour cet \emph{objet
+  de référence.} L'approche raster nous permet de construire ces deux
+\ac{zlc} en sélectionnant les pixels situés, respectivement, à
+l'intérieur et à l'extérieur de \emph{l'objet de référence.} Pour
+cela, il est tout d'abord nécessaire d'identifier la relation
+topologique entre chaque pixel et \emph{l'objet de référence.} Étant
+donné que \emph{l'imprécision} n'est pas considérée ici, nous pouvons
+décrire ces relations topologiques à l'aide d'une fonction (\(f\))
+attribuant une valeur égale à 1, si la position (représentée par un
+pixel) est confondue avec \emph{l'objet de référence} et une valeur de
+0 dans la cas contraire \footnote{Nous aurions pu utiliser une des
+  formalisations des relations topologiques présentée dans le
+  \autoref{chap:03} (RCC-8, 4IM, 9IM, DE-9IM, \emph{etc.}). Cependant
+  ces modèles ne sont pas destinés à représenter des relations
+  topologiques entre raster. Il nous donc semblé plus simple de ne pas
+  les utiliser pour illustrer cet exemple.}  calculée en chaque pixel
+de la \ac{zir} (\autoref{fig:Exemple_Metrique_vs_Selecteur}). On
+obtient alors un raster contenant (explicitement) une information
+permettant de distinguer les pixels situés à l'intérieur et à
+l'extérieur de \emph{l'objet de référence.} On peut alors construire :
 % 
 \begin{itemize}
 \item La \ac{zlc} \textcolor{RdBu-9-1}{\textsf{A}}, correspondant à la
   \emph{relation de localisation atomique}
   \onto[orla]{In\-te\-ri\-eur}, en sélectionnant l'ensemble des pixels
-  pour lesquels la matrice 4IM est :
-  \(\left[\begin{smallmatrix}V&F\\F&F\\\end{smallmatrix}\right]\).
+  pour lesquels la valeur de la fonction \(f\) est égale à 1.
 \item La \ac{zlc} \textcolor{RdBu-9-9}{\textsf{B}}, correspondant à la
   \emph{relation} \onto[orla]{Ex\-te\-ri\-eur}, en sélectionnant les
-  pixels dont la matrice 4IM est :
-  \(\left[\begin{smallmatrix}F&F\\F&V\\\end{smallmatrix}\right]\).
+  pixels pour lesquels la valeur de la fonction \(f\) est égale à 0.
 \end{itemize}
 %
 Ces deux \ac{zlc}, bien qu'ayant une sémantique et une emprise
