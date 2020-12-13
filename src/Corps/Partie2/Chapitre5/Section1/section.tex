@@ -1,7 +1,7 @@
 Parmi les trois étapes constitutives de la phase de décomposition,
 seule la décomposition des \emph{relations de localisation} nécessite
 le développement d'une méthode spécifique. En effet, les étapes de
-décomposition de ensemble des \emph{indices de localisation} et des
+décomposition de l'ensemble des \emph{indices de localisation} et des
 \emph{objets de référence indéfinis} ne font qu'expliciter un
 découpage présent dès la saisie dans l'interface utilisateur. Ces deux
 opérations ne nécessitent donc pas l'apport de connaissances
@@ -17,8 +17,9 @@ l'aide de \emph{relations de localisation} (atomiques) \emph{ad hoc,}
 qui ne sont pas destinées à être manipulées directement par
 l'utilisateur. Il est donc inenvisageable de demander à l'utilisateur
 de saisir des \emph{relations de localisation atomiques,} qui ne sont
-pas prévues pour. C'est pourquoi nous proposons d'automatiser l'étape
-de décomposition des \emph{relations de localisation atomiques.}
+pas prévues à cet effet. C'est pourquoi nous proposons d'automatiser
+l'étape de décomposition des \emph{relations de localisation
+  atomiques.}
 
 \subsection{La décomposition des \emph{relations de localisation}}
 
@@ -27,15 +28,15 @@ Nous avons précédemment abordé la décomposition des \emph{relations de
 passer d'une \emph{relation de localisation} à un ensemble de
 \emph{relations de localisations atomiques} liées par des
 conjonctions. Chaque \emph{relation de localisation atomique} est
-adossée une méthode de \emph{spatialisation,} permettant de construire
-la \emph{zone de localisation compatible} correspondant à la
-\emph{relation de localisation atomique} pour un \emph{objet de
+adossée à une méthode de \emph{spatialisation,} permettant de
+construire la \emph{zone de localisation compatible} correspondant à
+la \emph{relation de localisation atomique} pour un \emph{objet de
   référence} donné. La difficulté majeure de cette décomposition
 consiste donc à identifier la manière dont les \emph{relations de
   localisation} utilisées par le requérant se décomposent. Notre
 objectif étant de proposer une décomposition selon des critères
 sémantiques, propres à chaque \emph{relation de localisation,} il est
-nécessaire de disposer de connaissances à priori sur la sémantique des
+nécessaire de disposer de connaissances a priori sur la sémantique des
 \emph{relations de localisation.}
 
 Nous proposons donc de créer une base de règles, formalisant la
@@ -83,15 +84,15 @@ contexte.
 \end{figure}
 
 Dans l'exemple utilisé pour présenter le \emph{principe de
-  décomposition} (\autoref{subsec:4-3-3-4}) une \emph{relation de
+  décomposition} (cf. \ref{subsec:4-3-3-4}) une \emph{relation de
   localisation} (\enquote{sous}) était décomposée en deux
 \emph{relations de localisation atomiques} (\enquote{proche} et
 \enquote{altitude inférieure}). Si cette configuration a pour mérite
 de bien illustrer le fonctionnement et l'objectif du \emph{principe de
   décomposition,} elle ne présente qu'une des configurations
-possibles. Tout d'abord il est possible qu'une \emph{relation de
+possibles. Tout d'abord, il est possible qu'une \emph{relation de
   localisation} soit décomposable en plus de deux \emph{relations de
-  localisations atomiques.} Par exemple, \textcite{Vanegas2011},
+  localisations atomiques.} Par exemple, \textcite{Vanegas2011}
 proposent de décomposer la \emph{relation de localisation}
 \enquote{entouré de} (dans \emph{l'indice de localisation} \enquote{A
   est entouré de B}), avec des \emph{relations de localisation}
@@ -100,12 +101,12 @@ directionnelles, donnant les \emph{indices de localisation:}
   est au sud de A} et \enquote{B est à l'ouest de A}. Ainsi, il n'y a
 aucune raison de limiter le nombre de \emph{relations de localisation
   atomiques} décomposant une \emph{relation de localisation,} même
-s'il est peu probable que se nombre puisse atteindre des très grandes
+s'il est peu probable que ce nombre puisse atteindre de très grandes
 valeurs. À l'inverse, on peut se questionner sur la possibilité que
 certaines \emph{relations de localisation} ne soient pas
 décomposables. Par exemple, la \emph{relation de localisation}
-\enquote{à} (\eg je suis au sommet) ne nous semble pas décomposable,
-pourtant il s'agit bien d'une \emph{relation de localisation,} que
+\enquote{à} (\eg je suis au sommet) ne nous semble pas décomposable.
+Pourtant il s'agit bien d'une \emph{relation de localisation,} que
 l'on est amené à utiliser fréquemment. Dans ce cas, \emph{relation de
   localisation} et \emph{relation de localisation atomique} sont
 confondues. Cet exemple illustre le fait que les deux types de
@@ -144,8 +145,8 @@ bien qu'elle parte, systématiquement d'une \emph{relation de
 % plus complexes à mettre en place, de telles décompositions permettent
 % d’adapter la spatialisation au contexte.
 
-Ainsi, pour représenter l'ensemble des décompositions possibles il est
-nécessaire que la base de règles définie puisse :
+Ainsi, pour représenter l'ensemble des décompositions possibles, il
+est nécessaire que la base de règles définie puisse :
 \begin{enumerate*}[label=(\arabic*)]
 \item permettre que la décomposition d'une \emph{relation de
     localisation} se fasse en un nombre, possiblement élevé, de
@@ -196,7 +197,7 @@ d'une liste de relations de localisation accessible à l'utilisateur
 via l'interface et lui permettant de saisir les \emph{indices de
   localisation} durant la phase d'alerte \footnote{Comme nous l'avons
   déjà indiqué, la saisie des indices par le secouriste correspond à
-  la première étape de la phase de décomposition.} Le travail de
+  la première étape de la phase de décomposition.}. Le travail de
 décomposition ne consiste alors qu'à appliquer la règle de
 décomposition ---~définie dans l'ontologie~--- correspondant à la
 \emph{relation de localisation} saisie.
@@ -220,7 +221,7 @@ d'une \emph{relation de localisation} et peuvent aboutir à une autre
 \emph{relation de localisation} ou à une \emph{relation de
   localisation atomique.} Pour construire la base des relations de
 localisation, des relations de localisation atomiques et des relations
-de décomposition entre ces deux ensembles nous avons adopté,
+de décomposition entre ces deux ensembles, nous avons adopté,
 conformément au principe d'intégration dans le contexte métier, une
 démarche centrée sur le besoin de l'utilisateur, c'est-à-dire fondée
 sur la définition préalable des \emph{relations de localisation.} Les
@@ -228,12 +229,12 @@ relations de localisation atomiques et les relations de décomposition
 ont été définies ultérieurement en fonction des relations de
 localisation et non l'inverse, car cela aurait pu conduire à la
 définition de concepts inadaptés à notre contexte applicatif. En
-procédant de la sorte nous garantissons que les concepts mis à
+procédant de la sorte, nous garantissons que les concepts mis à
 disposition des utilisateurs correspondent à la réalité du contexte
 applicatif. Pour mettre en place cette démarche, il a été nécessaire
 d'identifier les \emph{relations de localisations} utilisées dans
 notre contexte et les spécificités de leur usage. La suite de ce
-chapitre (\autoref{sec:5-2}), présente la manière dont nous avons
+chapitre (\autoref{sec:5-2}) présente la manière dont nous avons
 procédé pour construire une telle ontologie.
 
 %%% Local Variables:
