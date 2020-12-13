@@ -265,13 +265,12 @@ la \emph{spatialisation.} La rasterisation de \emph{l'objet de
 raster, qui dans notre cas correspond à la \ac{zir}. Ainsi, la zone de
 \emph{rasterisation} correspond à la \emph{zone initiale de recherche}
 et cette étape fait donc également office de délimitation de la zone
-de calcul. De plus il est nécessaire de ne sélectionner que la partie
-de \emph{l'objet de référence} qui est utile pour la \emph{relation de
+de calcul. De plus il est nécessaire d'identifier que la partie de
+\emph{l'objet de référence} qui est utile pour la \emph{relation de
   localisation atomique} à spatialiser (\eg frontière, centroide,
-\emph{etc.}). Il est plus simple de réaliser cette opération dans un
+\emph{etc.}). Il est plus simple d'extraire cette partie dans un
 premier temps et de ne rasteriser ensuite que la partie
-sélectionnée. Ainsi l'étape de \emph{rasterisation} rempli trois rôles
-:
+extraite. Ainsi l'étape de \emph{rasterisation} rempli trois rôles :
 %
 \begin{enumerate*}[label=(\alph*)]
 \item la sélection de la partie de \emph{l'objet de référence} à rasteriser,
