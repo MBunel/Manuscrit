@@ -8,19 +8,19 @@
     \node (P1) at ([yshift=-.5cm]image.south west) {};
     % 
     \node[anchor=west, font=\footnotesize\vphantom{Ag}, text width=8cm] at
-    (P1 |- 0cm,-1.85cm) {Différence d'altitude avec la ligne électrique:};
+    (P1 |- 0cm,-1cm) {Différence d'altitude avec la ligne électrique:};
     % 
     \begin{scope}
-      \foreach \x [evaluate=\xshift using 1.5+\x/10, evaluate=\rad using (\x * -.0008) + .05] in {0,...,50}
+      \foreach \x [evaluate=\xshift using 1+\x/10, evaluate=\rad using (\x * -.0008) + .05] in {0,...,50}
       {
         \draw[fill=RdBu-9-9,draw=none, below] ([xshift=\xshift cm, yshift=-1.5cm]P1) circle [radius=\rad cm];
       }
-      \foreach \x [evaluate=\xshift using 6.5+\x/10, evaluate=\rad using (\x * .0008) + .01] in {0,...,50}
+      \foreach \x [evaluate=\xshift using 6+\x/10, evaluate=\rad using (\x * .0008) + .01] in {0,...,50}
       {
         \draw[fill=RdBu-9-1,draw=none, below] ([xshift=\xshift cm, yshift=-1.5cm]P1) circle [radius=\rad cm];
       }
       % 
-      \path(2.5,-1.5) --++ (10,0)
+      \path(1,-2) --++ (10,0)
       node[et,pos=0] {$<$ \SI{-500}{\meter}}
       node[et,pos=.5] {\SI{0}{\meter}}
       node[et,pos=1] {$>$ \SI{500}{\meter}};
