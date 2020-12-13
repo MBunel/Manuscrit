@@ -22,7 +22,7 @@ un degré, quantifiant l'appartenance de la position à la zone
 étudiée.
 
 La méthode de construction de ces zones a été présentée dans le
-\autoref{chap:06}. C'est au court de la phase de spatialisation que
+\autoref{chap:07}. C'est au court de la phase de spatialisation que
 les indices de localisation décomposés sont interprétés de manière à
 construire les zones de localisation. Nous avons défini un processus
 utilisant trois éléments : un \emph{rasteriser,} sélectionnant et
@@ -33,4 +33,13 @@ fuzzyficateur, qui interprète la valeur de la métrique de manière à
 construire une zone de localisation représentée par un sous-ensemble
 flou. Plusieurs de ces trois éléments ont été définis et leur
 combinaison permet de définir de nombreuses méthodes de
-spatialisation. Nous avons par ailleurs pris
+spatialisation.
+
+Enfin, le \autoref{chap:08} nous a permis de présenter la dernière
+étape de notre méthode, \emph{la phase de fusion.} C'est au court de
+cette phase que les différentes zones de localisation construites lors
+de la spatialisation sont regroupées de manière à construire une seule
+zone de localisation, la zone de localisation probable, correspondant
+à l'ensemble des positions qui valident toutes les informations
+données par le requérant, c'est-à-dire l'ensemble des indices de
+localisation.
