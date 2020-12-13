@@ -432,7 +432,7 @@ définie, dont a diminué la \emph{certitude,} jusqu'à une valeur
 \autoref{fig:combinaison_incertitude_imprecision}, il est ici
 impossible d'obtenir un degré d'appartenance inférieur à l'incertitude
 (\(1-c\)), quelle que soit la valeur de la \emph{métrique.} Les
-\ac{zlc} construites à partir d'une fonction d'appartenance serons
+\ac{zlc} construites à partir d'une fonction d'appartenance seront
 donc constituées de tous les pixels de la \ac{zir}.
 
 \begin{figure}
@@ -446,14 +446,14 @@ donc constituées de tous les pixels de la \ac{zir}.
 \subsection{La modélisation de la confiance d'un \emph{indice de
     localisation}}
 
-Dans notre cas, on cherche à utiliser la théorie des possibilités pour
+Dans notre cas, nous utilisons la théorie des possibilités pour
 représenter le doute du secouriste sur la véracité de l'indice de
-localisation donné par le requérant. Ce parti-pris a donc une
-implication majeure. Comme les sous-ensembles flous que nous
-manipulons représentent des \emph{zones de localisation,} alors la
-certitude s'applique de manière homogène à l'ensemble de
-\emph{l'indice de localisation,} dit autrement nous nous plaçons dans
-le cadre de l'équation \ref{eq:incert_imp}.
+localisation donné par le requérant. Ce parti-pris a une implication
+majeure. Comme les sous-ensembles flous que nous manipulons
+représentent des \emph{zones de localisation,} alors la certitude
+s'applique de manière homogène à l'ensemble de \emph{l'indice de
+  localisation,} dit autrement nous nous plaçons dans le cadre de
+l'équation \ref{eq:incert_imp}.
 
 Pour prendre en compte la confiance du secouriste dans un indice de
 localisation donné on peut employer la méthode décrite ci-dessus,
@@ -464,12 +464,12 @@ implique une modification de la forme de la fonction d'appartenance
 utilisée pour \emph{spatialiser l'indice de localisation,} mais cette
 modification n'est pas réellement effectuée lors de la fusion, la
 \ac{zlc} spatialisant \emph{l'indice de localisation} incertain est
-simplement unie avec un raster homogène, attribuant ) chaque pixel un
+simplement unie avec un raster homogène, attribuant à chaque pixel un
 degré d'appartenance égale à l'incertitude (\(1-c\)). Comme pour les
 \emph{modifieurs,} on peut représenter le résultat de la modification
 théoriques des fonctions d'appartenance. La \autoref{fig:fnc_incert}
 représente la forme des principales fonctions d'appartenance définies
-précédemment, avec une certitude variable. De manière similaire au
+précédemment, avec une certitude variable. De manière similaire, au
 comportement des modificateurs, la diminution de la confiance modifie
 la forme générale de la courbe, mais ne change pas les paramètres du
 \emph{fuzzyficateur,} que sont l'écartement (\(\delta\)) et la valeur
@@ -511,9 +511,9 @@ la \emph{relation de localisation atomique} \onto[orla]{Pres\-De}
 \ref{fig:non-contradiction}) à partir du même pixel, avec la même
 fonction d'appartenance. Cependant, alors qu'une confiance absolue est
 donnée au premier cas, c'est une confiance partielle (0,4) qui est
-donnée à la seconde modélisation. Comme nous l'indiquions
-précédemment, on peut remarquer qu'aucune position ne possède un degré
-d'appartenance inférieur à l'incertitude, ici 0,6, aucune position de
+donnée à la seconde modélisation. Comme nous l'avons indiqué
+précédemment, aucune position ne possède un degré d'appartenance
+inférieur à l'incertitude, ici 0,6. Par conséquent aucune position de
 la \ac{zir} ne peut pas ne pas appartenir à la \ac{zlc}. On peut
 remarquer que, la modification de la certitude à un impact conséquent
 sur la \ac{zlc}. Réduire la confiance a donc un impact conséquent sur
@@ -540,18 +540,18 @@ descriptifs qualitatifs, tels que \enquote{confiance forte} ou
 \enquote{confiance faible}, ce qui a pour effet de simplifier la
 qualification des indices de localisation par les secouristes.
 
-\subsubsection{L'influence de l'incertitude sur la fusion des zones de
+\paragraph{L'influence de l'incertitude sur la fusion des zones de
   localisation compatibles}
 
 La t-norme de \bsc{Zadeh} que nous utilisons pour les intersections
 inter-\ac{zlc} a pour effet de retirer de la \ac{zlp} tout pixel ayant
-un degré d'appartenance nul a une des \ac{zlc} intersectées. Or, la
+un degré d'appartenance nul à une des \ac{zlc} intersectées. Or, la
 diminution de la certitude d'un indice de localisation a pour effet
 d'attribuer un degré d'appartenance non nul à tous les pixels qui, en
 cas de certitude absolue, auraient été considérés comme en dehors de
 la \ac{zlc}. Ainsi, ces pixels, qui auraient été retirés de la
 \ac{zlp} par le jeu des intersections peuvent à présent s'y retrouver,
-ce qui peut conduire à une augmentation de la taille de la \ac{zlp}.
+ce qui conduit à une augmentation de la taille de la \ac{zlp}.
 
 La \autoref{fig:intersection_incert} illustre ce phénomène, en
 représentant le résultat de l'intersection de deux zones de
