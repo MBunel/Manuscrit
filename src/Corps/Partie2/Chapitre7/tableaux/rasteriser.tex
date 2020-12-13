@@ -59,6 +59,8 @@
                                                  \foreach \y in {0,.25,...,1.75}
                                                  \path[draw, line width=.01mm] (\x,\y) rectangle (\x +.25, \y + .25);
                                                }
+                                               \path[ffa] (.25,.25) rectangle (.5, .5);
+                                               \path[ffa] (1.5,1.5) rectangle (1.75, 1.75);
                                                \path[ffc] (0,0) rectangle (2,2);
                                              \end{scope}
                                              } &\tikz{
@@ -99,8 +101,7 @@
                                                  \foreach \y in {0,.25,...,1.75}
                                                  \path[draw, line width=.01mm] (\x,\y) rectangle (\x +.25, \y + .25);
                                                }
-                                               \path[ffa] (.25,.25) rectangle (.5, .5);
-                                               \path[ffa] (1.5,1.5) rectangle (1.75, 1.75);
+                                               \path[ffa] (1,1) rectangle (1.25, 1.25);
                                                \path[ffc] (0,0) rectangle (2,2);
                                              \end{scope}
                                              } &\tikz{
