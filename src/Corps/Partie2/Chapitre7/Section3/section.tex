@@ -170,22 +170,13 @@ cet écart de la même manière que pour la \emph{métrique}
 \onto{Ecart\-Angulaire}, cette mesure ne permettant pas de représenter
 des contournements ou des détours qui sont fréquents lors du suivi
 d'un itinéraire, d'autant plus dans un milieu montagneux. Nous avons
-donc opté pour la définition d'une ellipse
-(\autoref{fig:calc_direction_de}), dont la longueur des deux demi-axes
-est proportionnel au segment reliant les deux \emph{objets de
-  référence.}  Cette forme permet de définir une direction
-globale. L'écart a cette direction globale peut ensuite être calculé à
+donc opté pour la définition d'une ellipse, dont la longueur des deux
+demi-axes est proportionnel au segment reliant les deux \emph{objets
+  de référence.} Cette forme permet de définir une direction
+globale. L'écart à cette direction globale peut ensuite être calculé à
 l'aide d'une simple distance à l'ellipse. Une illustration de cette
 \emph{métrique} est présentée sur la
 \autoref{fig:metrique_direction_de}.
-
-\begin{figure}
-  \centering
-  \input{../figures/calcul_direction_de.tex}
-  \caption{Illustration du calcul de la \emph{métrique}
-    \protect\onto{Direction\-De}.}
-  \label{fig:calc_direction_de}
-\end{figure}
 
 \begin{figure}
   \centering
@@ -218,59 +209,49 @@ information est intrinsèque, elle peut donc être pré-calculée et
 réutilisée à chaque calcul de la \emph{métrique.} À partir de cette
 information et de \emph{l'objet de référence} rasterisé il est ensuite
 possible de calculer le temps de parcours minimal de \emph{l'objet de
-  référence} à chaque pixel de la \ac{zir}, comme l'illustre la
-\autoref{fig:metrique_temps_marche}. Dans notre cas nous avons décidé
-de calculer la durée de franchissement à l'aide du modèle de
+  référence} à chaque pixel de la \ac{zir}. Dans notre cas nous avons
+décidé de calculer la durée de franchissement à l'aide du modèle de
 \textcite{Tobler1993} (voir \autoref{eq:marche_tobler}), ce dernier
 présentant l'avantage d'être robuste et paramétrable en fonction de la
 nature du terrain. On peut ainsi faire évoluer la méthode en modifiant
-la durée de franchissement en fonction de la nature du terrain, comme
-le montre la \autoref{fig:metrique_temps_marche}.
+la durée de franchissement en fonction de la nature du terrain.
 
-\begin{figure}
-  \centering
-  \input{../figures/Metrique_temps_marche.tex}
-  \caption{Exemple du calcul de la \emph{métrique}
-    \protect\onto{Temps\-De\-Marche}.}
-  \label{fig:metrique_temps_marche}
-\end{figure}
-
-Les deux dernières \emph{métriques} que nous ayons développées,
+Les deux dernières \emph{métriques} que nous avons développées,
 \onto{Part\-Visible} et \onto{Part\-Vue}, sont également des
 \emph{métriques} extrinsèques et non paramétriques. Elles sont toutes
 deux destinées à \emph{spatialiser} des \emph{relations de
   localisations} traitant de visibilité. Ces deux \emph{métriques}
 sont très similaires, si ce n'est que la première calcule une zone de
 visibilité active à partir de \emph{l'objet de référence} (\ie quels
-sont les pixels vus de \emph{l'objet de référence}) et la seconde une
-visibilité passive (\ie quels sont les pixels de \emph{l'objet de
-  référence} qui sont vus). La première \emph{métrique} est utilisée
+sont les pixels vus depuis \emph{l'objet de référence}) et la seconde
+une visibilité passive (\ie quels sont les pixels qui voient
+\emph{l'objet de référence}). La première \emph{métrique} est utilisée
 pour \emph{spatialiser} \onto[orla]{Site\-Voit\-Cible} et la seconde
 pour \emph{spatialiser} \onto[orla]{Cible\-Voit\-Voit}. La visibilité
-est généralement calculée de manière binaire, on vérifie si chaque
+est généralement calculée de manière binaire : on vérifie si chaque
 pixel de la zone étudiée voit ou non un objet. Le problème d'une telle
 \emph{métrique} est qu'elle ne nous permet pas de définir une
-visibilité \emph{imprécise,} la zone étudiée est visible ou non. Des
-pistes pour une modélisation \emph{imprécise} de la visibilité ont été
-proposées par \textcite{Fisher1991,Fisher1992}. Une des solutions
-proposées étant d'étudier la variation des zones de visibilité en
-fonction des modifications du \ac{mnt} de référence, pour identifier
-les zones où la visibilité est la plus variable et donc
-potentiellement la plus \emph{imprécise.}  Nous avons cependant opté
-pour une autre approche, considérant que \emph{l'imprécision} de la
-visibilité doit quantifier la qualité de la perception de
-\emph{l'objet de référence} que la qualité des données servant a son
-calcul. Nous avons donc construit des \emph{métriques} calculant la
-part visible de \emph{l'objet de référence.} Ainsi, pour chaque pixel
-de la \ac{zir} on va calculer, non pas si \emph{l'objet de référence}
-est visible, mais quelle est la part de ses pixels qui le sont. On
-obtient alors un raster dont les valeurs varient de 0, lorsque l'objet
-n'est pas visible, à 1 lorsque tous les pixels qui le représentent le
-sont. On peut voir une illustration du calcul de la \emph{métrique}
-\onto{Part\-visible} sur la \autoref{fig:metrique_part_lac}. Dans cet
-exemple la taille du figuré représente la part de \emph{l'objet de
-  référence} (le lac au centre de l'image) qui est visible depuis
-chaque pixel.
+visibilité \emph{imprécise,} la zone étudiée est considérée comme
+visible ou non. Des pistes pour une modélisation \emph{imprécise} de
+la visibilité ont été proposées par
+\textcite{Fisher1991,Fisher1992}. Une des solutions proposées étant
+d'étudier la variation des zones de visibilité en fonction des
+modifications du \ac{mnt} de référence, pour identifier les zones où
+la visibilité est la plus variable et donc potentiellement la plus
+\emph{imprécise.}  Nous avons cependant opté pour une autre approche,
+considérant que \emph{l'imprécision} de la visibilité doit quantifier
+la qualité de la perception de \emph{l'objet de référence} que la
+qualité des données servant a son calcul. Nous avons donc construit
+des \emph{métriques} calculant la part visible de \emph{l'objet de
+  référence.} Ainsi, pour chaque pixel de la \ac{zir} nous calculons,
+non pas si \emph{l'objet de référence} est visible, mais quelle est la
+part de ses pixels qui le sont. On obtient alors un raster dont les
+valeurs varient de 0, lorsque l'objet n'est pas visible, à 1 lorsque
+tous les pixels qui le représentent le sont. On peut voir une
+illustration du calcul de la \emph{métrique} \onto{Part\-visible} sur
+la \autoref{fig:metrique_part_lac}. Dans cet exemple la taille du
+figuré représente la part de \emph{l'objet de référence} (le lac au
+centre de l'image) qui est visible depuis chaque pixel.
 
 \begin{figure}
   \centering
