@@ -158,19 +158,19 @@ distinguer les pixels situés à l'intérieur et à l'extérieur de
 \end{itemize}
 %
 Ces deux \ac{zlc}, bien qu'ayant une sémantique et une emprise
-spatiale inconfusibles, sont \emph{spatialisées} avec une méthode
-similaire, dont seule la dernière étape ---~la sélection des pixels
-satisfaisant la \emph{relation de localisation atomique}~--- différè.
-Ainsi, ce qui distingue ces deux \emph{relations de localisation
-  atomiques} n'est pas le critère utilisé pour les modéliser (\ie les
-matrices 4IM), mais la manière dont les valeurs obtenues sont filtrées
-pour construire les \ac{zlc}. On peut alors identifier deux parties
-distinctes dans cette \emph{méthode de spatialisation,} le calcul du
-critère de modélisation de la \emph{relation de localisation atomique}
----~on parlera dorénavant de \emph{métrique}~--- et la
-\emph{sélection} des pixels dont la valeur de la \emph{métrique}
-correspond à la sémantique de la \emph{relation de localisation
-  atomique} spatialisée.
+spatiale qui ne peuvent être confondues, sont \emph{spatialisées} avec
+une méthode similaire, dont seule la dernière étape ---~la sélection
+des pixels satisfaisant la \emph{relation de localisation
+  atomique}~--- diffère.  Ainsi, ce qui distingue ces deux
+\emph{relations de localisation atomiques} n'est pas le critère
+utilisé pour les modéliser (\ie les matrices 4IM), mais la manière
+dont les valeurs obtenues sont filtrées pour construire les
+\ac{zlc}. On peut alors identifier deux parties distinctes dans cette
+\emph{méthode de spatialisation:} le calcul du critère de modélisation
+de la \emph{relation de localisation atomique} ---~nous parlerons
+dorénavant de \emph{métrique}~--- et la \emph{sélection} des pixels
+dont la valeur de la \emph{métrique} correspond à la sémantique de la
+\emph{relation de localisation atomique} spatialisée.
 
 \begin{figure}
   \centering
@@ -190,20 +190,20 @@ d'ailleurs modélisables avec des \emph{relations de localisation
   atomiques} distinctes, \onto[orla]{Distance\-Quantitive} et
 \onto[orla]{A\-La\-Frontiere\-De}. Pourtant si l'on se penche sur leur
 signification on peut s’apercevoir qu'elles partagent leur
-\emph{métrique,} mais également son interprétation. En effet, ces deux
-\emph{relations de localisation atomiques} décrivent un éloignement
-spatial entre le \emph{sujet} et \emph{l'objet de référence,} si ce
-n'est qu'il est explicite et quantifié dans un cas et sous-entendu
-dans l'autre. Elles peuvent donc être modélisée avec la même métrique,
-la distance à \emph{l'objet de référence.} On pourrait penser que ces
-\emph{relations} se distinguent par leur interprétation de cette même
-\emph{métrique,} comme c'est le cas pour les \emph{relations de
-  localisation atomiques} \onto[orla]{Exterieur} et
-\onto[orla]{Intérieur}, ce n'est pourtant pas le cas. La
-\emph{relation} \onto[orla]{Distance\-Quantitive} indique
-explicitement que la distance entre le \emph{sujet} et \emph{l'objet
-  de référence} est proche d'une valeur donnée (ici \SI{300}{\meter}),
-mais c'est également le cas de la \emph{relation}
+\emph{métrique,} mais également son interprétation. En effet, d'une
+part ces deux \emph{relations de localisation atomiques} décrivent un
+éloignement spatial entre le \emph{sujet} et \emph{l'objet de
+  référence,} si ce n'est qu'il est explicite et quantifié dans un cas
+et sous-entendu dans l'autre. Elles peuvent donc être modélisée avec
+la même métrique: la distance à \emph{l'objet de référence.} D'autre
+part on pourrait penser que ces \emph{relations} se distinguent par
+leur interprétation de cette même \emph{métrique,} comme c'est le cas
+pour les \emph{relations de localisation atomiques}
+\onto[orla]{Exterieur} et \onto[orla]{Intérieur}, ce n'est pourtant
+pas le cas. La \emph{relation} \onto[orla]{Distance\-Quantitive}
+indique explicitement que la distance entre le \emph{sujet} et
+\emph{l'objet de référence} est proche d'une valeur donnée (ici
+\SI{300}{\meter}), mais c'est également le cas de la \emph{relation}
 \onto[orla]{A\-La\-Frontiere\-De}, si ce n'est que cette distance est
 implicitement nulle. Bien entendu la notion de \enquote{proximité},
 correspondant à \emph{l'imprécision} de la zone modélisée peut être
