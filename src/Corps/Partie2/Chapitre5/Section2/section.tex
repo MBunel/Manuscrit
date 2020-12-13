@@ -561,14 +561,14 @@ démarche de définition d'\ac{orla} a consisté à définir des
 fil de l'eau, en fonction des \emph{relations de localisation}
 identifiées dans les alertes traitées.
 
-Pour modéliser les \emph{relations topologiques} nous utilisons
-quatres relations de localisation atomiques :
+Pour modéliser les \emph{relations topologiques,} nous utilisons
+quatre relations de localisation atomiques :
 \onto[orla]{In\-te\-ri\-eur\-De},
 \onto[orla]{A\-La\-Fron\-ti\-ere\-De},
 \onto[orla]{Ex\-te\-ri\-eur\-De} et \onto[orla]{Con\-tact}. Deux de
 ces \emph{relations atomiques} (\onto[orla]{In\-te\-ri\-eur\-De} et
 \onto[orla]{A\-La\-Fron\-ti\-ere\-De}) peuvent être utilisées
-directement, elles correspondent alors aux \emph{relations de
+directement. Elles correspondent alors aux \emph{relations de
   localisation} \onto[orl]{Dans\-Pla\-ni\-me\-tri\-que} et
 \onto[orl]{A\-La\-Fron\-ti\-ere\-De}. Les deux autres \emph{relations
   atomiques} ne sont utilisées que dans des compostions. La
@@ -598,7 +598,7 @@ seule une \emph{relation de localisation atomique} a été définie :
 \onto[orla]{Dans\-La\-Direction\-De}. Cette \emph{relation atomique}
 sert de base à toutes les relations de cardinalité (\ie
 \onto[orl]{Au\-Nord\-De}, \onto[orl]{A\-L\-Ouest\-De}, \emph{etc.}) et
-leurs dérivées composés (\eg \onto[orl]{Au\-Sud\-De\-Ex\-ter\-ne}),
+leurs dérivées composées (\eg \onto[orl]{Au\-Sud\-De\-Ex\-ter\-ne}),
 mais est également utilisée directement. Elle correspond alors à la
 \emph{relation} homonyme définie dans \emph{l'ontologie des relations
   de localisation}.
@@ -610,7 +610,7 @@ La notion de verticalité est exprimée à l'aide de trois principales
 \onto[orla]{Al\-ti\-tu\-de\-Stric\-te\-ment\-Inf\-erieu\-re}. Chacune
 d'entre elles exprime une relation strictement verticale entre le
 \emph{sujet} et \emph{l'objet de référence.} Ces trois \emph{relations
-  atomiques} sont a la base de toutes les \emph{relations spatiales}
+  atomiques} sont à la base de toutes les \emph{relations spatiales}
 où est présente une notion de verticalité. Elles peuvent être
 utilisées telles quelles, pour désigner des positions relatives sur
 l'axe vertical ou être combinées avec d'autres \emph{relations
@@ -634,18 +634,19 @@ combinées avec des \emph{relations atomiques} topologiques, comme
 Ces trois \emph{relations atomiques} ont la particularité d'être
 fortement dépendantes de la valeur d'altitude utilisée comme point de
 référence. C'est pourquoi nous avons défini, pour chacune de ces trois
-\emph{relation de localisation atomiques} des variantes, utilisant une
-valeur d'altitude différente (\autoref{tab:atomique_vertical}). Par
-exemple, les \emph{relations de localisation atomiques}
+\emph{relations de localisation atomiques} des variantes, utilisant
+une valeur d'altitude différente
+(\autoref{tab:atomique_vertical}). Par exemple, les \emph{relations de
+  localisation atomiques}
 \onto[orla]{Al\-ti\-tu\-de\-Stric\-te\-ment\-Sup\-erieu\-re} et
 \onto[orla]{Al\-ti\-tu\-de\-Stric\-te\-ment\-Inf\-erieu\-re} se
 basent, respectivement, sur les altitudes maximale et minimale de
 \emph{l'objet de référence.} Ce parti pris n'est cependant pas
 compatible avec certaines \emph{relations de localisation.} Par
-exemple les \emph{relations}
+exemple, les \emph{relations}
 \onto[orl]{Dans\-La\-Par\-tie\-Bas\-se\-de} ou
 \onto[orl]{Dans\-La\-Par\-tie\-Hau\-te\-de} se référent à l'altitude
-moyenne de l'objet et non à son maximum ou son minimum. Ainsi les
+moyenne de l'objet et non à son maximum ou son minimum. Ainsi, les
 trois \emph{relations de localisation atomiques} de verticalité
 principales sont complétées par des variantes basées sur l'altitude
 moyenne, sur l'altitude du plus proche voisin et sur les altitudes
@@ -656,7 +657,7 @@ permet de disposer d'une expressivité maximale.
   \centering
   \input{../tableaux/atomiques_verticales.tex}
   \caption{\emph{Relations de localisation atomiques} de verticalité
-    et leurs vairantes.}
+    et leurs variantes.}
   \label{tab:atomique_vertical}
 \end{table}
 
@@ -668,9 +669,9 @@ ne sont composées à aucune autre \emph{relation atomique}). Les deux
 relations de visibilité définies dans \ac{orl} (\ie
 \onto[orl]{Ci\-ble\-Voit\-Si\-te} et
 \onto[orl]{Si\-te\-Voit\-Ci\-ble}) sont donc peu liées aux autres
-\emph{relations,} d'une part car elles ne sont pas décomposables, mais
-également car les \emph{relations atomiques} qui y correspondent ne
-sont utilisées dans aucune autre décomposition.
+\emph{relations,} d'une part car elles ne sont pas décomposables et
+d'autre part, car les \emph{relations atomiques} qui y correspondent
+ne sont utilisées dans aucune autre décomposition.
 
 Chacune des \emph{relations de localisation atomique} définie dans
 \ac{orla} est associée à un ensemble de règles supplémentaires,
