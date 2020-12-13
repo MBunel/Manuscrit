@@ -2,14 +2,14 @@ Les \emph{principes de modélisation} décrits, nous allons à présent
 formaliser notre méthode de construction de \emph{zones de
   localisation probables}. L'objectif n'est cependant pas d'en
 présenter tous les aspects, mais d'en décrire le fonctionnement global
-et les interactions entre les différentes phases de la méthode. Ainsi
+et les interactions entre les différentes phases de la méthode. Ainsi,
 les considérations les plus avancées, comme la prise en compte de
 \emph{l'incertitude} ou de \emph{l'imprécision,} ou les points
 spécifiques à chaque phase particulière de la méthode, seront
 détaillés dans des chapitres dédiés. Ce chapitre ne se destine donc
 qu'à présenter le socle de notre méthode.
 
-Dans le \autoref{chap:02} nous avons ébauché une méthode de
+Dans le \autoref{chap:02}, nous avons ébauché une méthode de
 construction d'une \emph{zone de localisation probable} à partir
 \emph{d'une description de position,} en deux étapes : la
 \emph{spatialisation} et la \emph{fusion.} Cette présentation n'est
@@ -22,7 +22,7 @@ complétées et revues au fur et à mesure de cette partie.
 
 La méthode que nous proposons est désormais décomposable en trois
 phases : la \emph{décomposition,} la \emph{spatialisation} et la
-\emph{fusion,} elles mêmes composées de plusieurs étapes. La
+\emph{fusion,} elles-mêmes composées de plusieurs étapes. La
 \autoref{fig:methodo_1} présente une synthèse de l'ensemble de cette
 méthode.
 
@@ -99,7 +99,7 @@ La troisième et dernière étape de cette phase est la
 durant cette étape qu'est appliqué le \emph{principe de décomposition}
 des \emph{relations de localisation} que nous avons déjà
 présenté. Comme nous l'avons expliqué, cette étape consiste à
-décomposer chaque \emph{relations de localisation} en un ensemble de
+décomposer chaque \emph{relation de localisation} en un ensemble de
 composantes sémantiquement indépendantes, les \emph{relations de
   localisation atomiques.} Comme pour les deux précédentes étapes,
 cette décomposition n'est pas toujours nécessaire, \emph{la relation
@@ -118,7 +118,6 @@ Avec \(Dec_{Rl}(i)\) la fonction de \emph{décomposition} des
   atomiques décomposant} la \emph{relation} \(Rl\) et \(Or\)
 l'ensemble initial des \emph{objets de référence.}
 
-
 La principale différence entre cette étape et les précédentes est
 qu'il est nécessaire de disposer d'une information supplémentaire pour
 savoir comment l'effectuer. En effet, lorsqu'un ensemble d'indice de
@@ -131,9 +130,9 @@ souhait est de permettre au secouriste de sélectionner la
 \emph{relation de localisation} correspondant à la description du
 requérant à partir d'une liste pré-définie de \emph{relations de
   localisation} (cf. principe de modélisation explicite des
-connaissances). Ainsi le secouriste n'a pas à manipuler directement
+connaissances). Ainsi, le secouriste n'a pas à manipuler directement
 les \emph{relations de localisation atomiques.} Il est donc nécessaire
-de connaitre la \emph{décomposition des relations de localisation} et
+de connaître la \emph{décomposition des relations de localisation} et
 de s'y référer lors de cette étape. Ce processus sera détaillé plus
 longuement dans le \autoref{chap:05}.
 
@@ -158,7 +157,7 @@ fonction de \emph{décomposition des relations de localisation,}
 \label{subsec:4-3-3-4}
 
 Pour illustrer l'ensemble de la \emph{phase de décomposition,}
-imagions que \emph{l'ensemble des indices de localisation} (\(I\)
+imaginons que \emph{l'ensemble des indices de localisation} (\(I\)
 saisi par un secouriste à partir de la description suivante :
 \enquote{je suis proche du \emph{Pic de Jean Ray} et suis sur une
   crête}. Ce dernier est composé de deux \emph{indices de
@@ -196,8 +195,8 @@ correspondre. Admettons que six crêtes aient été sélectionnées :
 la forme \enquote{je suis sous la \emph{crête de Roche Motte} ou je
   suis sous la \emph{crête de Font Froide} ou je suis sous la
   \emph{crête de Serre Chapelle} ou je suis sous la \emph{crête des
-    Barres} ou je suis sous la \emph{crête du Petit Puy}}. Ainsi au
-sortir de cette seconde étape de décomposition on dispose de \(n\)
+    Barres} ou je suis sous la \emph{crête du Petit Puy}}. Ainsi, au
+sortir de cette seconde étape de décomposition, on dispose de \(n\)
 \emph{indices de localisation} (première décomposition), eux-mêmes
 divisés en plusieurs \emph{indices de localisation,} en fonction du
 nombre \emph{d'objets de référence} à prendre en compte :
@@ -212,7 +211,7 @@ nombre \emph{d'objets de référence} à prendre en compte :
     child {node[anchor=south west] {\enquote{je suis proche du \emph{Pic
             de Jean Ray}}}}
     child {node[anchor=south west, text=RdBu-9-9] {Ou}
-      child{node[anchor=south west] {\enquote{je suis sous
+      child{node[anchor=south west] {\enquote{je suis sous la
             \emph{crête de Roche Motte}}}}
       child{node[anchor=south west]{\enquote{je suis
             sous la \emph{crête de Font Froide}}} 
@@ -232,7 +231,7 @@ nombre \emph{d'objets de référence} à prendre en compte :
 Enfin, la dernière étape de la phase de \emph{décomposition,}
 nécessite la définition préalable d'un ensemble de \emph{relations de
   localisation atomiques,} ce qui sera abordé dans le
-\autoref{chap:05}. Cependant, pour aller au bout de cet exemple nous
+\autoref{chap:05}. Cependant, pour aller au bout de cet exemple, nous
 allons considérer que la relation de localisation \enquote{proche} est
 une \emph{relation spatiale atomique} (hypothèse déjà utilisée
 précédemment) et que la relation de localisation \enquote{sous} se
@@ -305,7 +304,7 @@ Comme le montre cette longue énumération, \emph{le processus de
   décomposition,} même lorsqu'il est appliqué à un petit
 \emph{ensemble d'indices de localisation} (ici deux), peut générer de
 nombreux \emph{indices de localisation décomposés,} qu'il est
-difficile d'énumérer. Nous sommes cependant convaincus que les apports
+difficile d'énumérer. Nous sommes cependant convaincu que les apports
 permis par cette approche (\eg spatialisation indépendante,
 décomposition sémantique) compensent la multiplication des
 \emph{indices de localisation.}
