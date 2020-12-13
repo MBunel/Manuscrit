@@ -402,8 +402,8 @@ principes de \emph{non-contradiction} et du \emph{tiers-exclu}
   \centering
   \input{../figures/comparaison_operateurs_non_contradiction.tex}
   \caption[Illustration du principe de la
-  \emph{non-contradiction}]{Illustration du principe de
-    la\emph{non-contradiction.}  Une \emph{zone de localisation
+  \emph{non-contradiction}]{Illustration du principe de la
+    \emph{non-contradiction.} Une \emph{zone de localisation
       compatible} (\textcolor{RdBu-9-1}{\textsf{A}}) et son
     complémentaire (\textcolor{RdBu-9-9}{\textsf{A\up{C}}}) sont
     unies, si le résultat de cette union est égal à \emph{l'ensemble
@@ -428,11 +428,11 @@ l'explique \textcite{Lukasiewicz1910} :
 \end{displayquote}
 
 Si cet exemple est assez éloquent, il n'a que peu d'impact transposé à
-notre cas d’application. En effet notre méthode ne se base pas sur des
-raisonnements logiques qui seraient impactés par la non validation des
-principes du tiers-exclus et de la non-contradiction. Il n'est donc
-pas nécessaire que les opérateurs employés lors de la fusion valident
-ces principes, nous ne pouvons donc en disqualifier aucun.
+notre cas d’application. En effet, notre méthode ne se base pas sur
+des raisonnements logiques qui seraient impactés par la non validation
+des principes du tiers-exclus et de la non-contradiction. Il n'est
+donc pas nécessaire que les opérateurs employés lors de la fusion
+valident ces principes, nous ne pouvons donc en disqualifier aucun.
 
 % Ces considérations étant
 % assez théoriques et les opérations permettant de les mettre
@@ -482,7 +482,7 @@ puisque l’application de la \emph{t-norme} (́\(⊤_Z\)) ou de la
 d'appartenance (\(x\)) est toujours égale a cette même valeur, soit :
 \(∀ x ∈ [0,1]\): \(⊤_Z(x,x) = x\) et \(⊥_Z(x,x) = x\).
 %
-Les opérateurs de \bsc{Łukasiewicz} sont quant à eux archimédiens et
+Les opérateurs de \bsc{Łukasiewicz} sont, quant à eux, archimédiens et
 les opérateurs probabilistes archimédiens stricts.
 
 L’idempotence est une autre propriété des opérateurs, liée à
@@ -490,24 +490,26 @@ l'archimédianité. Un opérateur est dit idempotent, lorsque le résultat
 de son application n'est pas modifié si elle est répétée,
 c'est-à-dire, que pour une \emph{t-norme} ou une \emph{t-conorme}
 idempotente : \(⊤(⊤(x,y), ⊤(x,y)) = ⊤(x,y)\) et
-\(⊥(⊥(x,y),⊥(x,y)) = ⊥(x,y)\). Parmi les quatre couples d'opérateurs
-présentés ici, seuls les opérateurs de \bsc{Zadeh} sont idempotents,
-les applications successives des \emph{t-(co)normes} des trois autres
-couples d'opérateurs ont pour effet de faire diminuer (ou augmenter)
-le degré d'appartenance. Ainsi, pour les opérateurs de
-\bsc{Łukasiewicz}, probabilistes et drastiques :
-\(⊤(⊤(x,y), ⊤(x,y)) ≤ ⊤(x,y)\) et \(⊥(⊥(x,y),⊥(x,y)) ≥ ⊥(x,y)\).
+\(⊥(⊥(x,y),⊥(x,y)) = ⊥(x,y)\).  Dans notre cas, cela implique que
+l'intersection (ou l'union) d'une \emph{zone de localisation} avec
+elle-même sera égale à la \emph{zone de localisation.}  Parmi les
+quatre couples d'opérateurs présentés ici, seuls les opérateurs de
+\bsc{Zadeh} sont idempotents, les applications successives des
+\emph{t-(co)normes} des trois autres couples d'opérateurs ont pour
+effet de faire diminuer (ou augmenter) le degré d'appartenance. Ainsi,
+pour les opérateurs de \bsc{Łukasiewicz}, probabilistes et drastiques
+: \(⊤(⊤(x,y), ⊤(x,y)) ≤ ⊤(x,y)\) et \(⊥(⊥(x,y),⊥(x,y)) ≥ ⊥(x,y)\).
 
 % D'accord mais RAF non ?
 Comme les principes du \emph{tiers-exclu} et de la
 \emph{non-contradiction,} l'archimédianité et l'idempotence des
 \emph{t-(co)normes} apparaissent comme des propriétés théoriques,
 assez éloignées des considérations applicatives de ce
-travail. Cependant, il n'est est rien. Ces deux propriétés modifient,
+travail. Cependant, il n'en est rien. Ces deux propriétés modifient,
 en effet, le comportement des \emph{t-normes} et des
 \emph{t-conormes,} et donc le résultat des intersections et des
-unions, a fortiori quand ces opérations sont répétées. Or, la
-répétions \emph{d'intersection} et de \emph{fusions} est au cœur de la
+unions, a fortiori quand ces opérations sont répétées. Or, la répétion
+\emph{d'intersection} et de \emph{fusions} est au cœur de la
 \emph{phase de fusion.} Utiliser des opérateurs impactant
 substantiellement les trois étapes de la \emph{fusion} n'est donc
 envisageable qu'après une étude attentive de leur comportement et de
