@@ -51,11 +51,11 @@ automatisables par ailleurs. En effet, il n'est ni nécessaire, ni
 souhaitable, d'automatiser entièrement le processus de localisation de
 la victime, ce qui nécessiterait, par ailleurs, de développer des
 solutions d'analyse automatisée du langage oral. Cependant, cette
-étape, ne concerne pas notre travail et ne sera donc pas abordée ici,
+étape ne concerne pas notre travail et ne sera donc pas abordée ici,
 puisque nous choisissons de confier cette tâche de
 \enquote{sémantisation} de la description orale d'une position au
 secouriste. Notre travail se limitera donc à identifier les
-\enquote{types} de descriptions utilisées dans notre contexte, de les
+\enquote{types} de descriptions utilisés dans notre contexte, de les
 exprimer dans un vocabulaire controlé, puis d'en proposer une
 modélisation à même d'en permettre la \emph{spatialisation.}
 
@@ -76,7 +76,7 @@ techniques, il est beaucoup plus simple, pour un ordinateur,
 d'identifier et de manipuler les coordonnées d'un point à la surface
 de la terre avec une précision submétrique, que d'identifier la
 position correspondant à la description : \enquote{le café sous ma
-  maison}, alors que cette dernière est pourtant beaucoup plus
+  maison}, tandis que cette dernière est pourtant beaucoup plus
 compréhensible pour un être humain
 \autocite{Duchene2019}. L'interprétation de ce type de description se
 heurte, en effet, à plusieurs problèmes. Tout d'abord, il est
@@ -88,18 +88,18 @@ difficile d'identifier la sémantique des termes utilisés, celle-ci
 métonymie et, par conséquent, que le terme \enquote{café} désigne ici
 un lieu et non une boisson psychotrope ou le moment où on la consomme,
 ou les grains du caféier. C'est le contexte d’utilisation, où le mot
-\enquote{café} est couplé à une \emph{relation de localisation} qui
-permet de comprendre qu'il s'agit d'un objet géographique et donc que
+\enquote{café} est couplé à une \emph{relation de localisation,} qui
+permet de comprendre qu'il s'agit d'un objet géographique et donc, que
 l'interprétation la plus vraisemblable est que l'on parle ici d'un
 bar. De la même manière, le terme \enquote{ma maison}, peut être
 interprété comme un synonyme d'\enquote{habitat individuel} ou comme
-une nouvelle métonymie désignant \enquote{mon foyer}. Dans ce cas
+une nouvelle métonymie désignant \enquote{mon foyer}. Dans ce cas,
 c'est l'adjectif possessif \enquote{ma} qui permet de trancher. Comme
-le montrent ces deux cas, bien qu'il soit assez facile pour un être
-humain d'interpréter ces deux phrases, il est nécessaire de prendre en
-compte beaucoup d'éléments pour permettre à un ordinateur de les
-interpréter. Cet exemple porte sur l'interprétation automatisée du
-langage naturel dans le cas général, mais les mêmes problèmes
+le montrent ces deux exemples, bien qu'il soit assez facile pour un
+être humain d'interpréter ces deux phrases, il est nécessaire de
+prendre en compte beaucoup d'éléments pour permettre à un ordinateur
+de les interpréter. Cet exemple porte sur l'interprétation automatisée
+du langage naturel dans le cas général, mais les mêmes problèmes
 s'appliquent également aux \emph{relations de localisation.} Dans cet
 exemple, le \enquote{café} est \enquote{sous} mon domicile, mais
 comment identifier les positions qui sont effectivement \enquote{sous
@@ -111,7 +111,7 @@ utilisées dans notre contexte applicatif.
 
 Ce travail d'identification et de formalisation des \emph{relations de
   localisation} a été entrepris par de nombreux chercheurs, comme
-\textcite{Vandeloise1986} qui a proposé une analyse complète de la
+\textcite{Vandeloise1986}, qui a proposé une analyse complète de la
 sémantique de \emph{relations de localisation} utilisées en
 français. Ce travail a été consolidé par les travaux de
 \textcite{Borillo1998}, qui portent, quant à eux, sur la morphologie
@@ -120,18 +120,18 @@ des descriptions de position, ou de \textcite{Aurnague1993,
 des \emph{relations de localisations.} Des travaux similaires ont été
 entrepris pour la langue anglaise, notamment par
 \autocite{Kracht2002,Mark1999,Freksa2018,Carlson2005,Lang1991,Matsakis2010}.
-En 2010 \textcite{Bateman2010} proposerons \emph{l'ontologie} GUM, qui
-formalise l'ensemble des \emph{relations de localisation.} L'ensemble
-de ces travaux permet d'avoir de nombreuses connaissances sur la
-sémantique des \emph{relations de localisation,} pourtant de nombreux
-autres travaux ont eu besoin de spatialiser des \emph{relations de
-  localisation.}
+En 2010 \textcite{Bateman2010}, proposerons \emph{l'ontologie} GUM,
+qui formalise l'ensemble des \emph{relations de localisation.}
+L'ensemble de ces travaux permet d'avoir de nombreuses connaissances
+sur la sémantique des \emph{relations de localisation.} Pourtant, de
+nombreux autres travaux ont eu besoin de spatialiser des
+\emph{relations de localisation.}
 
 Parmi les applications de spatialisation des \emph{relations de
-  localisation} on peut retrouver des travaux en analyse d'image
+  localisation,} on peut retrouver des travaux en analyse d'image
 \autocite{Hudelot2008, Hudelot2008a,Bloch1996, Vanegas2011,
-  Takemura2012}, en robotique \autocite{Skubic2004}, en sciences de
-l'information géographique
+  Takemura2012}, en robotique \autocite{Skubic2004} ou encore en
+sciences de l'information géographique
 \autocite{Xu2007a,Xu2007,Xu2006,Wolter2018,Dittrich2015,Du2016,Hornsby2009,Mathet2000,Hall2015}.
 
 
@@ -153,18 +153,18 @@ légèrement différents, en fonction du contexte
 \autocite{Bateman2010}. Par exemple, on peut être \enquote{sous
   \emph{un pont}}, ce qui implique une notion de recouvrement, ou
 \enquote{sous \emph{une route}}, ce qui n'implique pas de
-recouvrement. Ainsi une même préposition spatiale peut décrire des
+recouvrement. Ainsi, une même préposition spatiale peut décrire des
 relations de localisation différentes, par exemple un \enquote{sous
   avec recouvrement} et un \enquote{sous sans recouvrement}. Les
-méthodes de \emph{spatialisation} développées ne pourront directement
-traiter les prépositions spatiales comme des \emph{relations de
-  localisation,} mais elle devront s'adapter a ces différentes
-\emph{relations de localisations,} au risque de construire une
-\emph{zone de localisation compatible} qui ne soit pas représentative
-de la description donnée par le \emph{requérant.}
+méthodes de \emph{spatialisation} développées ne pourront pas
+directement traiter les prépositions spatiales comme des
+\emph{relations de localisation,} mais elle devront s'adapter à ces
+différentes \emph{relations de localisations,} au risque de construire
+une \emph{zone de localisation compatible} qui ne soit pas
+représentative de la description donnée par le \emph{requérant.}
 
-le second verrou est lié au manque d’exhaustivité et à la redondance
-des \emph{indices de localisation} dont nous disposons pour développer
+Le second verrou est lié au manque d’exhaustivité et à la redondance
+des \emph{indices de localisation} à notre disposition pour développer
 et tester nos méthodes de spatialisation. Les seules données dont nous
 disposons (et pouvons disposer) sont des enregistrements audio
 d'alertes, traitées par différents \ac{pghm}. Or, il existe peu de
