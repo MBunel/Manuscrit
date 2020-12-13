@@ -587,16 +587,6 @@ partiellement un seul lac. Pour le dire autrement, utiliser une
   vraie} si l'on voit partiellement deux lacs, que si on n'en voit
 qu'un. Ce comportement est cependant incompatible avec notre cas
 d'application.
-%
-L'étape de \emph{décomposition des objets de référence indéfinis}
-(\autoref{fig:methodo_1}) a pour fonction de permettre la
-\emph{spatialisation} d'un \emph{indice de localisation} dont
-\emph{l'objet de référence} n'est connu que par sa nature. Chaque
-instance correspondant est potentiellement le bon \emph{objet de
-  référence.} Cependant, la multiplicité des candidats n'implique pas
-%
-Compte-tenu du rôle que prennent les unions dans notre méthode, les
-\emph{t-conormes} archimédiennes sont à proscrire.
 
 \begin{figure}
   \centering
@@ -626,15 +616,15 @@ de ces \emph{zones} sera important. Ce comportement est fortement
 similaire à celui induit par l'archimédianité des \emph{t-conormes,}
 et de la même manière que l'archimédianité des \emph{t-conormes} pose
 problème, il est difficile de justifier l'utilisation d'une
-\emph{t-conorme} non-idempotente, rien dans une formulation employant
-un \emph{objet de référence indéfini} n'impliquant que la
+\emph{t-conorme} non-idempotente. En effet rien dans une formulation
+employant un \emph{objet de référence indéfini} n'impliquant que la
 \emph{relation de localisation} doivent être validée par plus d'un
 \emph{objet de référence.} À l'inverse, la non-idempotence appliquée
 aux \emph{t-normes} tend à faire diminuer les degrés d'appartenance en
 fonction du nombre de \ac{zlc} intersectées. Par conséquent, plus une
 position aura fréquemment un degré d'appartenance faible aux
-différentes \ac{zlc}, plus sont degré d'appartenance à la \ac{zlp}
-sera faible. La non-idempotence conduit donc à utiliser des opérateurs
+différentes \ac{zlc}, plus son degré d'appartenance à la \ac{zlp} sera
+faible. La non-idempotence conduit donc à utiliser des opérateurs
 d'union et d'intersection qui sont impactés par le nombre de \ac{zlc}
 à fusionner.
 
