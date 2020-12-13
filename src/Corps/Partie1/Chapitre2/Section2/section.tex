@@ -276,20 +276,16 @@ quelle que soit sa distance à \emph{l'objet de référence,} en est
   former de tas \autocite{Sorensen2018,Hyde2018}.}, illustre la
 difficulté à fixer une limite \emph{précise} à des concepts qui ne le
 sont pas. Pourquoi une position serait-elle proche d'un objet, alors
-que celle qui en est éloignée d'un pas ne l'est pas ? Bien que
-courante, cette modélisation est une simplification extrême de la
-sémantique de la \emph{relation de localisation} \enquote{proche de}.
-
-% TODO
-% \tdi{Voir si :
-%   https://www.sciencedirect.com/science/article/abs/pii/S0165011499000093
-% est une bonne citation pour le paradoxe sorite appliqué aux objets géo}
+que celle qui en est éloignée d'un pas ne l'est pas ?
+\autocite{Fisher2000} Bien que courante, cette modélisation est une
+simplification extrême de la sémantique de la \emph{relation de
+  localisation} \enquote{proche de}.
 
 Ces considérations peuvent sembler inutilement complexes, d'autant
 plus que notre objectif est applicatif, pourtant elles sont
 indispensables. Ne pas tenir compte de \emph{l'imprécision} des
 \emph{relations de localisation} pourrait conduire à ignorer des zones
-pertinentes, ou au contraire à proposer une modélisation trop laxiste
+pertinentes ou, au contraire, à proposer une modélisation trop laxiste
 en cherchant à éviter les faux positifs. C'est pourquoi il nous semble
 indispensable de prendre systématiquement en compte
 \emph{l'imprécison} lors de la \emph{spatialisation} des
@@ -303,17 +299,17 @@ réellement étudiée qu'à partir de la fin du \bsc{xix}\up{ème} siècle
 \autocite{Williamson1994}, avec le développement de la logique
 mathématique dont la première formalisation est \emph{l'idéographie}
 du mathématicien \textcite{Frege1879} \footnote{Pour une traduction
-  française voir \textcite{Frege1999}.}. Ce dernier défendra son
-projet idéographique avec, en 1882, la publication de \emph{Que la
-  science justifie le recours à une idéographie} \autocite{Frege1882}
+  française voir \textcite{Frege1999}.}. Ce dernier défend son projet
+idéographique avec, en 1882, la publication de \emph{Que la science
+  justifie le recours à une idéographie} \autocite{Frege1882}
 \footnote{Voir \textcite{Frege2019} pour une traduction
-  récente.}. Dans cet article, \bsc{Frege} soutien que
+  récente.}. Dans cet article, \bsc{Frege} soutient que
 \emph{l'imprécision} du langage naturel est source d'erreurs de
 raisonnement et d'interprétation et que, par conséquent, les sciences
 ne peuvent s'en contenter. Elles nécessitent un moyen d'expression
 plus rigoureux, un langage formel, \emph{l'idéographie.} Cette
 \enquote{méfiance} envers le langage naturel est également partagée
-par \textcite{Russell1923}, qui proposera une formalisation du concept
+par \textcite{Russell1923}, qui propose une formalisation du concept
 de \emph{vague,} synonyme \emph{d'imprécision.} Selon sa définition,
 \emph{l'imprécision} est intrinsèquement liée à la représentation de
 la réalité par un \emph{système de signes,} quel qu'il soit. Ces
@@ -321,9 +317,9 @@ derniers ne sont pas \emph{imprécis} dans l'absolu, c'est la relation
 entre deux \emph{systèmes de signes} qui est qualifiée de
 \emph{précise} ou \emph{d'imprécise.} Cette dernière est qualifiée de
 \emph{précise} lorsqu'il existe une bijection entre les deux ensembles
-de signes, \ie que chaque signe a un seul et unique équivalent, par
-conséquent le passage d'un \emph{système de signes} à l'autre est sans
-équivoque. Dans le cas contraire, un même signe peut être
+de signes, \ie que chaque signe a un seul et unique équivalent. Par
+conséquent, le passage d'un \emph{système de signes} à l'autre est
+sans équivoque. Dans le cas contraire, un même signe peut être
 \enquote{traduit} de diverses façon, laissant dès lors place à
 l'interprétation.
 
@@ -332,9 +328,9 @@ français a deux traductions en anglais,
 \foreignquote{english}{\emph{under}} et
 \foreignquote{english}{\emph{below}}, à la sémantique légèrement
 différente. \foreignquote{english}{\emph{Under}} implique en effet que
-le sujet soit à proximité immédiate, voir recouvert par l'objet de
-référence. Alors que \foreignquote{english}{below} n'impose pas cette
-condition, il s'agit d'un \enquote{sous} plus large et moins
+le sujet soit à proximité immédiate, voire recouvert par l'objet de
+référence, alors que \foreignquote{english}{below} n'impose pas cette
+condition : il s'agit d'un \enquote{sous} plus large et moins
 contraint. On dira, par exemple : \foreignquote{english}{The owl is
   under the bed}, car il y a ici une notion de recouvrement, mais
 \foreignquote{english}{My car is in the street below}, car la route
@@ -357,7 +353,7 @@ et \emph{incertitude.}
 \paragraph{La modélisation de \emph{l'imprécision}}
 
 Divers cadres théoriques ont été développés pour modéliser
-\emph{l'imprécision.} Si la logique classique n'en reconnait pas
+\emph{l'imprécision.} Si la logique classique n'en reconnaît pas
 l'existence, d'autres formalisations intègrent directement cette
 notion dans leur grammaire. C'est le cas des logiques multivalentes,
 comme la logique de \bsc{Łukasiewicz} ou la logique floue
@@ -366,21 +362,21 @@ permettent de raisonner sur des valeurs de vérité intermédiaires,
 entre le \enquote{vrai} et le \enquote{faux}, et permettent de
 répondre au paradoxe sorite et autres raisonnements jouant sur
 \emph{l'imprécision} du langage naturel. Pour reprendre notre exemple
-précédent, si l'on se rapproche peu à peu d'un objet on finira par
+précédent, si l'on se rapproche peu à peu d'un objet, on finira par
 pouvoir décrire notre position comme étant \enquote{proche} de cet
 objet. Avec un raisonnement fondé sur la logique classique, on est
 contraint de définir arbitrairement la limite entre les positions qui
 sont \enquote{proches} de l'objet considéré et celles qui ne le sont
-pas \autocite{Fisher2000}. Alors que les logiques multivalentes
-permettent de définir un entre-deux, une partie de l'espace où les
-propositions logiques : \enquote{je suis proche} et \enquote{je ne
-  suis pas proche} sont toutes les deux fausses ou partiellement
-vraies, en fonction de l'approche retenue. \textcite{Tye1994}, par
-exemple, propose une modélisation basée sur une logique trivalente,
-dont les valeurs de vérités sont : \enquote{vrai}, \enquote{faux} et
+pas, alors que les logiques multivalentes permettent de définir un
+entre-deux, une partie de l'espace où les propositions logiques :
+\enquote{je suis proche} et \enquote{je ne suis pas proche} sont
+toutes les deux fausses ou partiellement vraies, en fonction de
+l'approche retenue. \textcite{Tye1994}, par exemple, propose une
+modélisation basée sur une logique trivalente, dont les valeurs de
+vérités sont : \enquote{vrai}, \enquote{faux} et
 \enquote{indéterminé}. Avec cette modélisation, la zone située entre
 celle validant la proposition \enquote{je suis proche} et celle ne la
-validant pas, à une réponse \enquote{indéterminée} à cette
+validant pas, a une réponse \enquote{indéterminée} à cette
 proposition. Cette approche est assez différente des solutions fondées
 sur la logique floue, qui considèrent que la proposition \enquote{je
   suis proche} a un degré de vérité qui décroit au fur et à mesure que
@@ -447,7 +443,7 @@ naturel~--- sont \emph{imprécis,} il reste qu'ils peuvent l'être à des
 degrés divers. Pour l'illustrer, nous pouvons utiliser les
 \emph{indices de localisation :} \enquote{je suis \emph{proche de}
   Grenoble} et \enquote{je suis \emph{aux alentours de} Grenoble}. Ces
-deux indices ont une signification semblable, tous deux renseignent
+deux indices ont une signification semblable: tous deux renseignent
 sur la proximité du locuteur avec la ville de Grenoble. On aurait
 toutefois du mal à les considérer comme parfaitement équivalents, la
 relation de localisation \enquote{\emph{aux alentours de}} nous
@@ -456,7 +452,7 @@ comme étant \enquote{\emph{aux alentours de} Grenoble} est plus
 étendue que celle qui en est \emph{proche.} On ne peut pas, pour
 autant, considérer que la \emph{relation de localisation}
 \enquote{\emph{proche de}} est \emph{précise.} Ces deux relations sont
-\emph{imprécises,} mais a des degrés divers et, si l'on peut les
+\emph{imprécises,} mais à des degrés divers et, si l'on peut les
 ordonner selon leur \enquote{degré \emph{d'imprécision}}, on ne
 saurait quantifier cet écart et donc leurs différents degrés
 \emph{d'imprécision.}
@@ -476,14 +472,14 @@ Si la prise en compte de \emph{l'imprécision} des \emph{indices de
   localisation} permet d'améliorer la qualité de leur future
 modélisation, cette solution ne permet pas d'en gérer la
 plausiblité. En effet, certains \emph{indices de localisation} donnés
-par le requérant peuvent être faux, ou, du moins, sujets à caution et
+par le requérant peuvent être faux ou, du moins, sujets à caution et
 ce indépendamment de toute notion de \emph{précision.} La prise en
 considération ---~aveugle~--- de ce type d'indices ne peut qu'impacter
 négativement la qualité de la \emph{zone de localisation probable}
-créée par \emph{fusion} des \emph{indices de localisation.} Les
+créée par la \emph{fusion} des \emph{indices de localisation.} Les
 secouristes sont cependant, grâce à leur connaissance du terrain et à
 leur expérience, à même d'identifier la plupart de ces erreurs et
-approximations, ou, tout du moins, d’émettre un doute sur la véracité
+approximations ou, tout du moins, d’émettre un doute sur la véracité
 de certains \emph{indices de localisation.} La prise en compte de ces
 connaissances, exogènes à l'indice, nous semble très importante, en
 plus d'être un excellent moyen de limiter l'impact d'indices peu
