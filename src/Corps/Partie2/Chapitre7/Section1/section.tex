@@ -132,19 +132,20 @@ l'intérieur et à l'extérieur de \emph{l'objet de référence.} Pour
 cela, il est tout d'abord nécessaire d'identifier la relation
 topologique entre chaque pixel et \emph{l'objet de référence.} Étant
 donné que \emph{l'imprécision} n'est pas considérée ici, nous pouvons
-décrire ces relations topologiques à l'aide d'une fonction (\(f\))
-attribuant une valeur égale à 1, si la position (représentée par un
+décrire ces relations topologiques à l'aide d'une fonction \(f\),
+attribuant une valeur égale à 1 si la position (représentée par un
 pixel) est confondue avec \emph{l'objet de référence} et une valeur de
 0 dans la cas contraire \footnote{Nous aurions pu utiliser une des
   formalisations des relations topologiques présentée dans le
   \autoref{chap:03} (RCC-8, 4IM, 9IM, DE-9IM, \emph{etc.}). Cependant
   ces modèles ne sont pas destinés à représenter des relations
   topologiques entre raster. Il nous donc semblé plus simple de ne pas
-  les utiliser pour illustrer cet exemple.}  calculée en chaque pixel
-de la \ac{zir} (\autoref{fig:Exemple_Metrique_vs_Selecteur}). On
-obtient alors un raster contenant (explicitement) une information
-permettant de distinguer les pixels situés à l'intérieur et à
-l'extérieur de \emph{l'objet de référence.} On peut alors construire :
+  les utiliser pour illustrer cet exemple.}. En calculant la valeur de
+la fonction \(f\) pour chaque pixel de la \ac{zir}
+(\autoref{fig:Exemple_Metrique_vs_Selecteur}) on obtient alors un
+raster contenant (explicitement) une information permettant de
+distinguer les pixels situés à l'intérieur et à l'extérieur de
+\emph{l'objet de référence.} On peut alors construire :
 % 
 \begin{itemize}
 \item La \ac{zlc} \textcolor{RdBu-9-1}{\textsf{A}}, correspondant à la
