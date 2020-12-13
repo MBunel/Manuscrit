@@ -126,17 +126,18 @@ exprimée à partir de \emph{l'objet de référence.} Cette
 \emph{métrique} est employée pour \emph{spatialiser} l'ensemble des
 \emph{relations de localisation atomiques} décrivant une orientation
 générale, comme les relations de cardinalité (\eg
-\onto[orla]{Au\-Nord\-De}). La \autoref{fig:metrique_ecart_angulaire},
-donne un exemple de cet \emph{métrique.} À partir d'un point donné (au
-centre de la figure) et d'une direction (l'angle supérieur droit), on
-construit une demi-droite faisant office de direction de
-référence. Puis, pour chaque pixel, on calcul l'écart angulaire entre
-la direction de référence et la demi-droite reliant \emph{l'objet de
-  référence} a ce point. Sur la \autoref{fig:metrique_ecart_angulaire}
-l'importance de cet angle est figurée avec une variation de taille, et
-son orientation par une variation de couleur. Cette \emph{métrique}
-peut-être utilisée pour \emph{spatialiser} différentes \emph{relations
-  de localisation atomiques.}
+\onto[orla]{Au\-Nord\-De}). La \autoref{fig:metrique_ecart_angulaire}
+donne un exemple de cette \emph{métrique.} À partir d'un point donné
+(au centre de la figure) et d'une direction (l'angle supérieur droit),
+on construit une demi-droite faisant office de direction de
+référence. Puis, pour chaque pixel, on calcule l'écart angulaire
+(modulo $2\pi$) entre la direction de référence et la demi-droite
+reliant \emph{l'objet de référence} a ce point. Sur la
+\autoref{fig:metrique_ecart_angulaire} la valeur absolue de cet angle
+est figurée avec une variation de taille, et son signe par une
+variation de couleur. Cette \emph{métrique} peut-être utilisée pour
+\emph{spatialiser} différentes \emph{relations de localisation
+  atomiques.}
 
 \begin{figure}
   \centering
@@ -148,11 +149,11 @@ peut-être utilisée pour \emph{spatialiser} différentes \emph{relations
 \end{figure}
 
 Bien qu'elle puisse être utilisée à cet effet, la \emph{métrique}
-\onto{Ecart\-Angulaire}, n'est pas très adaptée à la
+\onto{Ecart\-Angulaire} n'est pas très adaptée à la
 \emph{spatialisation} de \emph{relations de localisations} qualifiant
 un déplacement vers un \emph{objet de référence,} comme
-\onto[orl]{Dans\-La\-Direction\-De}. Un déplacement dans une direction
-globale pouvant conduire à s'éloigner ponctuellement de cette
+\onto[orl]{Dans\-La\-Direction\-De}. En effet, un déplacement dans une
+direction globale peut conduire à s'éloigner ponctuellement de cette
 direction sans que l'on puisse considérer que la \emph{relation de
   localisation spatialisée} soit fausse. Pour prendre en considération
 ces cas nous avons développé une \emph{métrique} \emph{ad hoc,}
@@ -163,19 +164,20 @@ déplacement dans une direction donnée. Le calcul de cette
 \emph{métrique} \onto{Ecart\-Angulaire}~--- par définir un segment
 entre le centre du \emph{l'objet de référence,} le point de départ, et
 le centre du second \emph{objet de référence,} la destination. Ce
-segment défini la direction de référence, à partir de laquelle la
+segment définit la direction de référence, à partir de laquelle la
 \emph{métrique} calcule un écart. On ne peut cependant pas calculer
 cet écart de la même manière que pour la \emph{métrique}
 \onto{Ecart\-Angulaire}, cette mesure ne permettant pas de représenter
 des contournements ou des détours qui sont fréquents lors du suivi
 d'un itinéraire, d'autant plus dans un milieu montagneux. Nous avons
 donc opté pour la définition d'une ellipse
-(\autoref{fig:calc_direction_de}), dont les deux axes sont est
-proportionnel au segment reliant les deux \emph{objets de référence.}
-Cette forme permet de définir une direction globale. L'écart a cette
-direction globale peut ensuite être calculé à l'aide d'une simple
-distance à l'ellipse. Une illustration de cette \emph{métrique} est
-présentée sur la \autoref{fig:metrique_direction_de}.
+(\autoref{fig:calc_direction_de}), dont la longueur des deux demi-axes
+est proportionnel au segment reliant les deux \emph{objets de
+  référence.}  Cette forme permet de définir une direction
+globale. L'écart a cette direction globale peut ensuite être calculé à
+l'aide d'une simple distance à l'ellipse. Une illustration de cette
+\emph{métrique} est présentée sur la
+\autoref{fig:metrique_direction_de}.
 
 \begin{figure}
   \centering
@@ -250,24 +252,25 @@ pixel de la zone étudiée voit ou non un objet. Le problème d'une telle
 \emph{métrique} est qu'elle ne nous permet pas de définir une
 visibilité \emph{imprécise,} la zone étudiée est visible ou non. Des
 pistes pour une modélisation \emph{imprécise} de la visibilité ont été
-proposées par \textcite{}. Une des solutions proposées étant d'étudier
-la variation des zones de visibilité en fonction des modifications du
-\ac{mnt} de référence, pour identifier les zones où la visibilité est
-la plus variable et donc potentiellement la plus \emph{imprécise.}
-Nous avons cependant opté pour une autre approche, considérant que
-\emph{l'imprécision} de la visibilité doit quantifier la qualité de la
-perception de \emph{l'objet de référence} que la qualité des données
-servant a son calcul. Nous avons donc construit des \emph{métriques}
-calculant la part visible de \emph{l'objet de référence.} Ainsi, pour
-chaque pixel de la \ac{zir} on va calculer, non pas si \emph{l'objet
-  de référence} est visible, mais quelle est la part de ses pixels qui
-le sont. On obtient alors un raster dont les valeurs varient de 0,
-lorsque l'objet n'est pas visible, à 1 lorsque tous les pixels qui le
-représentent le sont. On peut voir une illustration du calcul de la
-\emph{métrique} \onto{Part\-visible} sur la
-\autoref{fig:metrique_part_lac}. Dans cet exemple la taille du figuré
-représente la part de \emph{l'objet de référence} (le lac au centre de
-l'image) qui est visible depuis chaque pixel.
+proposées par \textcite{Fisher1991,Fisher1992}. Une des solutions
+proposées étant d'étudier la variation des zones de visibilité en
+fonction des modifications du \ac{mnt} de référence, pour identifier
+les zones où la visibilité est la plus variable et donc
+potentiellement la plus \emph{imprécise.}  Nous avons cependant opté
+pour une autre approche, considérant que \emph{l'imprécision} de la
+visibilité doit quantifier la qualité de la perception de
+\emph{l'objet de référence} que la qualité des données servant a son
+calcul. Nous avons donc construit des \emph{métriques} calculant la
+part visible de \emph{l'objet de référence.} Ainsi, pour chaque pixel
+de la \ac{zir} on va calculer, non pas si \emph{l'objet de référence}
+est visible, mais quelle est la part de ses pixels qui le sont. On
+obtient alors un raster dont les valeurs varient de 0, lorsque l'objet
+n'est pas visible, à 1 lorsque tous les pixels qui le représentent le
+sont. On peut voir une illustration du calcul de la \emph{métrique}
+\onto{Part\-visible} sur la \autoref{fig:metrique_part_lac}. Dans cet
+exemple la taille du figuré représente la part de \emph{l'objet de
+  référence} (le lac au centre de l'image) qui est visible depuis
+chaque pixel.
 
 \begin{figure}
   \centering
