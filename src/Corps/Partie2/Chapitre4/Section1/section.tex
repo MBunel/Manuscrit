@@ -82,22 +82,22 @@ de la sélection. En effet, sans information supplémentaire tout objet
 géographique correspondant à la sélection peut être considéré comme un
 objet de référence valide. Il est donc nécessaire de définir une
 \emph{zone de travail} délimitant l'aire de recherche de la victime,
-et par conséquent l'aire de sélection des \emph{objets de référence.}
+et par conséquent, l'aire de sélection des \emph{objets de référence.}
 Dans l'ontologie d'alerte CHOUCAS (OAC, \cite{Viry2019}), cette région
 est qualifiée de \emph{zone initiale de recherche} \acp{zir}. La
 définition d'une telle zone est un préalable indispensable à la
 \emph{spatialisation} des \emph{indices de localisation.}
 
-Ainsi, notre méthodologie impose trois tâches au secouriste. La
-première, effectuée au début de la phase de localisation, consiste à
-définir la \ac{zir}. La seconde consiste à identifier, à partir d'une
-liste préalablement définir, \emph{la relation de localisation}
+Ainsi, notre méthode impose trois tâches au secouriste. La première,
+effectuée au début de la phase de localisation, consiste à définir la
+\ac{zir}. La seconde consiste à identifier, à partir d'une liste
+préalablement définie, \emph{la relation de localisation}
 correspondant au mieux à \emph{l'indice de localisation.} La troisième
 consiste à sélectionner les \emph{objets de référence} utilisés par le
 requérant.
 %
-Ainsi, en entrée de notre méthode nous disposons, pour chaque
-\emph{indice de localisation} d'une \emph{relation de localisation}
+Ainsi, en entrée de notre méthode, nous disposons, pour chaque
+\emph{indice de localisation,} d'une \emph{relation de localisation}
 exprimée dans un vocabulaire contrôlé et d'un ensemble d'objets
 géographiques servant de référence.
 
@@ -111,36 +111,36 @@ géographiques servant de référence.
 
 \subsubsection{La modélisation explicite des connaissances}
 
-Lorsque nous avons défini les premier éléments de note méthode de
+Lorsque nous avons défini les premiers éléments de notre méthode de
 spatialisation dans le \autoref{chap:02}, nous avons définis deux
-phases, la \emph{spatialisation} et la \emph{fusion.}  Toutes deux
-différent par un point essentiel. La fusion consiste à regrouper
+phases : la \emph{spatialisation} et la \emph{fusion.} Toutes deux
+diffèrent par un point essentiel : la fusion consiste à regrouper
 différentes \emph{zones de localisation compatibles} dans le but de
 construire une seule \emph{zone de localisation probable}
-\footnote{Bien qu'elle puisse être discontinue.}, par conséquent, tous
+\footnote{Bien qu'elle puisse être discontinue.}. Par conséquent, tous
 les individus fusionnés sont du même type, des \emph{zones de
   localisation compatibles}. Une même méthode peut donc être employée
 dans toutes les configurations, qu'il soit nécessaire de fusionner
 deux \emph{zones de localisation} identiques ou trente \emph{zones}
 extrêmement différentes. Cette généricité n'est cependant pas partagée
 par la méthode de \emph{spatialisation,} qui doit avoir un
-comportement adapté à la chaque \emph{relation de localisation.} En
+comportement adapté à chaque \emph{relation de localisation.} En
 effet, on ne peut spatialiser la \emph{relation} \enquote{sous} de la
 même manière que les \emph{relations} \enquote{entre} ou
 \enquote{proche}. Il est donc nécessaire de définir (et d'implémenter)
-une méthode de \emph{spatialisation} chaque les \emph{relation de
+une méthode de \emph{spatialisation} pour chaque \emph{relation de
   localisation} traitée. Ces différentes méthodes de
 \emph{spatialisation} sont d'une grande importance. D'une part, car
 elles constituent le cœur de notre travail de conception de notre
 solution, c'est par elles qu'une description de position devient une
-\emph{zone de localisation compatible,} de l'autre, car le
+\emph{zone de localisation compatible,} d'autre part, car le
 fonctionnement de ces méthodes devient \emph{de facto} un cadre
 formel, fixant ---~par le biais de leur \emph{spatialisation}~--- la
 sémantique que nous attribuons à chaque \emph{relation de
   localisation.} Pour le dire autrement, la meilleure façon de
 comprendre comment est traitée une \emph{relation de localisation}
 donnée est de consulter le code qui se destine à la
-\emph{spatialiser.} Ce faisant l'ensemble des connaissances produites
+\emph{spatialiser.} Ce faisant, l'ensemble des connaissances produites
 lors de l'élaboration des méthodes de \emph{spatialisation} serait
 principalement sous forme procédurale (\ie un algorithme \emph{ad hoc}
 pour chaque méthode, implémenté par un code spécifique), ce qui est
