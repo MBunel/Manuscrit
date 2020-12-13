@@ -577,7 +577,7 @@ Comme nous l'avons expliqué précédemment, la construction de la
 \emph{zones de localisation compatibles} au cours d'un processus que
 nous nommons \emph{fusion.} Son rôle est, en première approche,
 d'identifier la zone où tous les \emph{indices de localisation} donnés
-par le requérant sont vérifiés. Cependant, les deux objectif
+par le requérant sont vérifiés. Cependant, les deux objectifs
 scientifiques précédents ont montré qu'il était nécessaire de prendre
 en compte deux éléments principaux, \emph{l'imprécision} des
 \emph{relations de localisation} et \emph{l'incertitude} des
@@ -586,9 +586,9 @@ fusionner, c'est-à-dire les \emph{zones de localisation compatibles}
 seront \emph{imprécises.} La méthode \emph{fusion} que nous allons
 élaborer doit donc être capable de prendre en compte ces
 caractéristiques. Il est donc nécessaire d'identifier une méthode qui
-soit compatible avec la théorie de modélisation de la l'imprécision
-utilisée pour spatialiser les \emph{indices de localisation} et avec
-la théorie de modélisation de \emph{l'incertitude} utilisée.
+soit compatible avec la théorie de modélisation de l'imprécision
+utilisée pour spatialiser les \emph{indices de localisation} et la
+théorie de modélisation de \emph{l'incertitude} utilisée.
 
 \subsubsection{Contexte scientifique}
 
@@ -599,7 +599,7 @@ l'usage de termes de \emph{fusion d'imformations} ou de \emph{fusion
   de données} peut s'appliquer à un grand nombre de méthodes
 permettant de réduire l'information. Comme l'indique
 \textcite{Castanedo2013}, la fusion d'informations peut s'appliquer à
-de nombreux domaines de recherche, il s'agit par conséquent d'un sujet
+de nombreux domaines de recherche. Il s'agit par conséquent d'un sujet
 abondamment étudié.
 
 Dans un premier temps, des méthodes de classification comme les
@@ -625,7 +625,7 @@ la modélisation de \emph{l'imprécision} et de \emph{l'incertitude.}
 
 Le processus de \emph{fusion} des indices est une opération qui se
 déroule après la \emph{spatialisation} des différents \emph{indices de
-  localisation,} par conséquent, il s'agit d'une opération qui est
+  localisation.} Par conséquent, il s'agit d'une opération qui est
 fortement impactée par les choix méthodologiques effectués en amont,
 comme, par exemple, celui de la théorie de modélisation de
 \emph{l'imprécision }des \emph{relations de localisation.}
@@ -635,17 +635,17 @@ Comme nous l'avons expliqué ci-dessus (\ref{subsec:2-1-2} et
 \emph{l'imprécision des relations de localisation} et de
 \emph{l'incertitude} des \emph{indices de localisation} soit
 intrinsèque à la méthode de \emph{spatialisation} des \emph{indices de
-  localisation} (\ref{subsec:2-1-1}). Il est par conséquent nécessaire
-qu'il en soit de même pour la méthode de \emph{fusion} des \emph{zones
-  de localisation compatibles}.
+  localisation} (\ref{subsec:2-1-1}). Il est, par conséquent,
+nécessaire qu'il en soit de même pour la méthode de \emph{fusion} des
+\emph{zones de localisation compatibles}.
 % 
 Or, ces deux composantes sont, par définition, variables. Deux indices
 issus d'une même alerte peuvent avoir une \emph{incertitude} évaluée
 différemment par le secouriste. Ce peut être, par exemple, le cas si
 un requérant décrit sa position comme étant : \enquote{proche d'un
-  chalet et probablement au sud du sommet}. Dans ce cas le premier
+  chalet et probablement au sud du sommet}. Dans ce cas, le premier
 \emph{indice de localisation} : \enquote{je suis proche d'un chalet},
-serait surement, considéré comme plus \emph{certain} que le second :
+serait sûrement, considéré comme plus \emph{certain} que le second :
 \enquote{je suis probablement au sud sommet}. La méthode de
 \emph{fusion} des \emph{indices de localisation} doit donc être
 capable de prendre en considération cette différence entre les deux
@@ -666,8 +666,8 @@ prendre cet aspect en considération et nous devons veiller à ce que
 les résultats de ce processus ne soient pas impactés par l'ordre de la
 \emph{fusion.}
 
-Un dernier verrou fortement lié à la question de la modélisation de
-\emph{l'incertitude} est celui de la gestion des conflits entre
+Un dernier verrou,x fortement lié à la question de la modélisation de
+\emph{l'incertitude,} est celui de la gestion des conflits entre
 indices. Il n'est, en effet, pas exclu que deux indices d'une même
 alerte se contredisent, rendant dès lors impossible la construction de
 la \emph{zone de localisation probable.} La prise en compte de
