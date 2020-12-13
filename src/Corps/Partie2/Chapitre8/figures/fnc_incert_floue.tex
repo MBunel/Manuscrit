@@ -37,13 +37,13 @@
         % Axe
         \draw[-] (\decalageY ,0) --++ (0, 2) coordinate (y axis);
         % Graduations
-        \foreach \n/\t in {0/{0},2/{1}}
+        \foreach \n/\t in {0/{0},.4/{$i$},2/{1}}
         {
           \draw[-] (\decalageY -.05, \n) --++ (.1, 0);
           \node[left, font=\footnotesize] at (\decalageY -.05, \n) {\t};
         }
         % Label
-        \node[above] at (y axis) {$\mu$};
+        \node[above] at (y axis) {$\pi$};
       \end{scope}
     \end{scope}
     \begin{scope}
@@ -83,7 +83,7 @@
           \draw[-] (\decalageY -.05, \n) --++ (.1, 0);
           \node[left, font=\footnotesize] at (\decalageY -.05, \n) {\t};
         }
-        \node[above] at (y axis) {$\pi$};
+        \node[above] at (y axis) {$\mu$};
       \end{scope}
     \end{scope}
     \begin{scope}
