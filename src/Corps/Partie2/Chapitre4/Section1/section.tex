@@ -3,24 +3,24 @@
 
 \subsection{Intégration dans le contexte métier}
 
-Le premier des principes que nous voulons voir respectés par notre
+Le premier des principes que nous voulons voir respecter par notre
 méthode est celui de sa bonne intégration dans le contexte métier.
 %
-C'est un point que nous avons déjà évoqué a plusieurs reprises. Nous
+C'est un point que nous avons déjà évoqué à plusieurs reprises. Nous
 souhaitons que notre méthode soit conçue dans l'optique de son
 application en situation réelle, c'est-à-dire que nous avons à cœur de
 réfléchir à son appropriation et son utilisation par les
-secouristes. Pour autant nous ne souhaitons pas sacrifier la
-généricité de notre méthode, c'est pourquoi son développement relève
-d'un équilibre entre la généricité de la méthode et la spécificité de
-certains paramétrages.
+secouristes. Pour autant, nous ne souhaitons pas sacrifier sa
+généricité, c'est pourquoi son développement relève d'un équilibre
+entre la généricité de la méthode et la spécificité de certains
+paramétrages.
 
 \subsubsection{Prérequis nécessaires à la méthode de construction
   d'une zone de localisation probable}
 \label{sec:4-1-1-1}
 
-Comme nous l'avons indiqué dans la première partie, un des partis-pris
-fondamentaux du projet CHOUCAS est d'intégrer pleinement les
+Comme nous l'avons indiqué dans la première partie, un des partis pris
+fondamentaux du projet Choucas est d'intégrer pleinement les
 secouristes au processus de localisation de la victime, ce qui impose
 le développement de solutions d'aide à la décision et non
 d'automatisation de la localisation. Si ce choix n'appose pas de
@@ -36,45 +36,46 @@ son application.
 Nous avons donc décidé de compter sur les secouristes pour construire
 les \emph{indices de localisation} à partir des informations données
 par le requérant. Cette opération consiste à identifier les différents
-élément constituant \emph{l'indice de localisation} (\emph{sujet,}
+éléments constituant \emph{l'indice de localisation} (\emph{sujet,}
 \emph{objet de référence,} \emph{relation de localisation}) dans le
 discours du requérant, puis à les renseigner dans l'interface. Ce
 travail ne se résume cependant pas à une opération de saisie mais
 impose également un travail d'analyse et de désambiguïsation du
-discours du requérant. Pour l'illustrer prenons l'exemple de la phrase
-: \enquote{Je suis à deux pas d'une maison}. La première tâche que
-nous confions au secouriste est celle de l'identification des éléments
-de la phrase, \enquote{je} est le \emph{sujet,} \enquote{à deux pas}
-est une \emph{relation de localisation} et \enquote{une maison} est
-\emph{l'objet de référence.} Mais cette segmentation ne suffit pas à
-\emph{spatialiser} cet \emph{indice de localisation.} Pour ce faire il
-est nécessaire d'interpréter ces trois chaines de caractères pour
-identifier l'objet ou le concept auquel elles se référent. Dans le cas
-d'une automatisation intégrale il serait nécessaire de définir une
-méthode à cet effet, mais nous pouvons déléguer cette tâche au
-secouriste. La \emph{relation de localisation} \enquote{à deux pas}
-peut, par exemple, être considérée comme une \emph{relation de
-  distance (métrique) quantitative}
-(cf. \ref{sec:3-1-dist_met_quant}), pourtant on peut supposer que la
-notion centrale de cet exemple est la notion de \emph{proximité} et
-non une quantification de distance. L'automatisation de ce travail de
-désambiguïsation est extrêmement difficile et est un champ de
-recherche spécifique, c'est pourquoi nous le déléguons au
-secouriste. Dans les faits cela implique que c'est à ce dernier de
-choisir la \emph{relation spatiale,} à partir d'une liste prédéfinie,
-en fonction du contexte et de sa compréhension de \emph{l'indice de
-  localisation}. Ainsi, pour reprendre l'exemple précédent, c'est au
-secouriste de choisir si la \emph{relation de localisation} \enquote{à
-  deux pas} doit être modélisée comme une relation de \emph{proximité}
-où une \emph{distance métrique quantitative.}
+discours du requérant. Pour l'illustrer, prenons l'exemple de la
+phrase : \enquote{Je suis à deux pas d'une maison}. La première tâche
+que nous confions au secouriste est celle de l'identification des
+éléments de la phrase, \enquote{je} est le \emph{sujet,} \enquote{à
+  deux pas} est une \emph{relation de localisation} et \enquote{une
+  maison} est \emph{l'objet de référence,} mais cette segmentation ne
+suffit pas à \emph{spatialiser} cet \emph{indice de localisation.}
+Pour ce faire, il est nécessaire d'interpréter ces trois chaînes de
+caractères pour identifier l'objet ou le concept auquel elles se
+réfèrent. Dans le cas d'une automatisation intégrale, il serait
+nécessaire de définir une méthode à cet effet, mais nous pouvons
+déléguer cette tâche au secouriste. En effet, la \emph{relation de
+  localisation} \enquote{à deux pas} peut, par exemple, être
+considérée comme une \emph{relation de distance (métrique)
+  quantitative} (cf. \ref{sec:3-1-dist_met_quant}). Pourtant, on peut
+supposer que la notion centrale de cet exemple est la notion de
+\emph{proximité} et non une quantification de
+distance. L'automatisation de ce travail de désambiguïsation est
+extrêmement difficile et est un champ de recherche spécifique, c'est
+pourquoi nous le déléguons au secouriste. Dans les faits, cela
+implique que c'est à ce dernier de choisir la \emph{relation
+  spatiale,} à partir d'une liste prédéfinie, en fonction du contexte
+et de sa compréhension de \emph{l'indice de localisation}. Ainsi, pour
+reprendre l'exemple précédent, c'est au secouriste de choisir si la
+\emph{relation de localisation} \enquote{à deux pas} doit être
+modélisée comme une relation de \emph{proximité} où une \emph{distance
+  métrique quantitative.}
 
-De manière analogue il revient au secouriste d'analyser l'objet de
+De manière analogue, il revient au secouriste d'analyser l'objet de
 référence. Dans notre exemple, \emph{l'objet de référence}
 (\enquote{une maison}) désigne un type d'objet auquel plusieurs objets
 (\ie les \emph{instances}) peuvent correspondre. Ce travail
 d'identification des objets géographiques utilisés comme référence par
 le requérant peut également être délégué au secouriste, par le biais
-de l'interface. Pour notre exemple le secouriste devra sélectionner
+de l'interface. Pour notre exemple, le secouriste devra sélectionner
 tous les objets correspondant à la description donnée par le
 secouriste. Cette approche pose néanmoins un problème, celui de l'aire
 de la sélection. En effet, sans information supplémentaire tout objet
