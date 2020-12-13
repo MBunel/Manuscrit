@@ -14,15 +14,15 @@ méthode (\autoref{chap:04}).
 La \emph{phase de fusion} est fondée sur l'idée qu'il existe une
 équivalence entre les \emph{indices de localisation} et les \ac{zlc}
 qui les spatialisent et qu'il est par conséquent possible de
-\emph{spatialiser} la \ac{zlp} en \emph{fusionnant} les \ac{zlc}
-\emph{spatialisant} les \emph{indices de localisation}
-\emph{décomposant} \emph{l'ensemble des indices de localisation}
-(\autoref{fig:methodo_1}). Ainsi, de la même manière que les
-\emph{indices de localisation} sont décomposables à l'aide de
+construire la zone de localisation probable \acp{zlp} en
+\emph{fusionnant} les \ac{zlc} \emph{spatialisant} les \emph{indices
+  de localisation} décomposant \emph{l'ensemble des indices de
+  localisation} (\autoref{fig:methodo_1}). Ainsi, de la même manière
+que les \emph{indices de localisation} sont décomposables à l'aide de
 disjonctions et de conjonctions (\autoref{chap:04}), il est possible
-de construire la \emph{zone de localisaiton probable,} spatialisant
-l'ensemble des indices de localisation initial en appliquant les
-mêmes combinaisons logiques entre les \ac{zlc} spatialisant les
+de construire la \emph{zone de localisation probable} qui spatialise
+l'ensemble initial des indices de localisation initial, en appliquant
+les mêmes combinaisons logiques entre les \ac{zlc} spatialisant les
 indices localisation décomposés.
 
 Le degré d'appartenance d'un pixel \(p\) donné à la \emph{zone de
@@ -87,8 +87,8 @@ chacune destinée à fusionner des \emph{zones de localisation
 \end{figure}
 
 La première de ces étapes est la \emph{fusion} des \emph{relations de
-  localisation atomiques.} Comme nous l'expliquions lors de la
-présentation de la méthodologie (\autoref{chap:04}) et plus
+  localisation atomiques.} Comme nous l'avons expliqué lors de la
+présentation de la méthode (\autoref{chap:04}) et plus
 particulièrement lors de la définition de la \emph{phase de
   décomposition} (\autoref{chap:05}), les \emph{relations de
   localisation} utilisée dans les \emph{indices de localisation} (\eg
@@ -109,19 +109,20 @@ Comme nous l'avons déjà expliqué (\autoref{chap:04}), cette fusion est
 effectuée à l'aide d'une intersection entre les \emph{zones de
   localisation compatibles} issues de la \emph{spatialisation} de
 \emph{l'indice de localisation décomposé.} Cette construction par
-intersection, équivaut à indiquer que, pour qu'une position
-appartienne a le \ac{zlc} construite à partir d'une \emph{relation de
-  localisation non atomique} il est nécessaire qu'elle appartienne à
-toutes les \ac{zlc} construites à partir des \emph{relations de
-  localisation atomiques} la décomposant. Par exemple, pour qu'une
-position appartienne à la \ac{zlc} spatialisant la \emph{relation de
+intersection équivaut à indiquer que, pour qu'une position appartienne
+à la \ac{zlc} construite à partir d'une \emph{relation de localisation
+  non atomique,} il est nécessaire qu'elle appartienne à toutes les
+\ac{zlc} construites à partir des \emph{relations de localisation
+  atomiques} la décomposant. Par exemple, pour qu'une position
+appartienne à la \ac{zlc} spatialisant la \emph{relation de
   localisation} \onto[orl]{Sous\-Pro\-che\-De} \footnote{Qui est une
   \emph{relation de localisation non atomique} (\autoref{chap:04}).},
 il est nécessaire qu'elle appartienne aux deux \ac{zlc} \footnote{Et
   par conséquent à leur intersection.} \emph{spatialisant} les
 \emph{relations de localisation atomiques} \onto[oral]{Sous\-Altitude}
-et \onto[orla]{Proximal}, utilisée pour la décomposition de
-\onto[orl]{Sous\-Pro\-che\-De}.
+et \onto[orla]{Proximal}, utilisées pour la décomposition de
+\onto[orl]{Sous\-Pro\-che\-De,} et par conséquent à l'intersection de
+ces deux \ac{zlc}.
 %
 On dispose donc à la fin de cette première étape de \emph{fusion}
 d'autant de \ac{zlc} qu'il y a \emph{d'indices de localisation} avant
@@ -129,18 +130,20 @@ la décomposition des \emph{relations de localisation atomiques}
 (\autoref{fig:methodo_1}).
 
 La seconde étape de la fusion est la fusion des \emph{objets de
-  référence indéfinis.} L'objectif de cette étape est de regrouper les
-\ac{zlc} issues de la fusion des \emph{relations de localisation
-  atomiques.} On dispose donc d'un ensemble de \emph{zones de
-  localisation compatibles} définies à partir de plusieurs instances
-d'un même type \emph{d'objet de référence.} Cette ce distingue de la
-précédente par l'utilisation d'un opérateur conjonctif entre les
-différentes \ac{zlc}. En effet, si lors de la fusion des relations de
-localisation atomiques on cherche à construire les \ac{zlc} comprenant
-toutes les positions correspondant à toutes les \emph{relations de
-  localisation atomiques,} ici on cherche à identifier toutes les
-positions validant la relation de localisation spatialisée pour au
-moins un \emph{objet de référence.}
+  référence indéfinis} (\eg passer de \enquote{Je suis sous le
+  téléphérique 1} ou \enquote{Je suis sous le téléphérique 2} à
+\enquote{Je suis sous un téléphérique}.). L'objectif de cette étape
+est de regrouper les \ac{zlc} issues de la fusion des \emph{relations
+  de localisation atomiques.} On dispose donc d'un ensemble de
+\emph{zones de localisation compatibles} définies à partir de
+plusieurs instances d'un même type \emph{d'objet de référence.} Cette
+étape se distingue de la précédente par l'utilisation d'un opérateur
+disjonctif entre les différentes \ac{zlc}. En effet, si lors de la
+fusion des relations de localisation atomiques on cherche à construire
+les \ac{zlc} comprenant les positions correspondant à toutes les
+\emph{relations de localisation atomiques,} ici on cherche à
+identifier toutes les positions validant la relation de localisation
+spatialisée pour au moins un \emph{objet de référence.}
 %
 Au terme de cette seconde étape de \emph{fusion} on dispose donc
 d'autant de \emph{zones de localisation compatibles} qu'il y a
