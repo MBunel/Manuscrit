@@ -252,14 +252,15 @@ d'une variante, \onto{Inf\-Val\-0} dont la \emph{valeur de référence}
 \subsection{Les \emph{modifieurs}}
 
 La seule utilisation des \emph{fuzzyfieurs} définis jusqu'à présent ne
-permet cependant pas de traiter toutes les situations possibles. En
-effet, il n'est pas vraiment possible de formaliser des \emph{indices
-  de localisation} ayant une tournure négative (\eg \enquote{Je ne
-  suis pas au niveau du plateau}) ou utilisant des approximations (\eg
-\enquote{Elle est presque à côté de moi}). Certes, certaines
-\emph{relations de localisation atomiques} ont des opposés (\eg
-\onto[orala]{Iterieur} et \onto[orala]{Exterieur}), mais il s'agit de
-cas particuliers et il est, par exemple, impossible de définir une
+permet cependant pas de traiter toutes les situations rencontrées dans
+notre corpus d'alertes. En effet, il n'est pas vraiment possible de
+formaliser des \emph{indices de localisation} ayant une tournure
+négative (\eg \enquote{Je ne suis pas au niveau du plateau}) ou
+utilisant des approximations (\eg \enquote{Elle est presque à côté de
+  moi}). Certes, certaines \emph{relations de localisation atomiques}
+ont des opposés (\eg \onto[orala]{Interieur} et
+\onto[orala]{Exterieur}), mais il s'agit de cas particuliers et il
+est, par exemple, pas prévu dans l'ontologie \ac{orl} de définir une
 \emph{zone de localisation compatible} à partir de ce qui n'est pas
 vu, ou qui n'est pas à la même altitude \footnote{Il n'existe pas de
   \emph{relations} \onto[orla]{Site\-Ne\-Voit\-Pas\-Cible} ou
@@ -311,8 +312,8 @@ correspondant à la \emph{relation de localisation}
 \onto[orla]{A\-La\-Frontiere\-De}, on peut, en prenant le
 complémentaire de la \emph{zone de localisation,} construire la
 \ac{zlc} correspondant à la \emph{relation de localisation atomique}
-\onto[orla]{Not\-A\-La\-Frontiere\-De}. Comme nous l'expliquions dans
-le \autoref{eq:comp} (\autoref{chap:03}), le complémentaire d'un
+\onto[orla]{Not\-A\-La\-Frontiere\-De}. Comme nous l'avons expliqué
+dans le \autoref{eq:comp} (\autoref{chap:03}), le complémentaire d'un
 \emph{sous-ensemble flou} peut-être construit en soustrayant le degré
 d'appartenance de chaque élément de l'ensemble (ici les pixels) à
 1. Cette démarche est parfaitement équivalente à la définition de
@@ -387,16 +388,16 @@ but est de servir de support à la définition de nouveaux
 % \end{figure}
 
 Comme on peut le constater avec ces deux exemples, le mécanisme des
-\emph{modifieurs} peut influer sur la forme globale des
+\emph{modifieurs} peut influer non pas sur la forme globale des
 \emph{fonctions d'appartenance} définies par le \emph{fuzzyficateur,}
-mais sur leurs seuils. L'écartement (\(\delta\)), définissant,
-notamment, la valeur de la \emph{métrique} à partir de laquelle le
+mais sur leurs seuils. L'écartement (\(\delta\)), définissant
+notamment la valeur de la \emph{métrique} à partir de laquelle le
 degré d'appartenance est nul, ne peut, par exemple, pas être
 modifié. Ainsi, si l'on peut modifier la pente d'une \emph{fonction
   d'appartenance} avec le \emph{modifieur} \onto{Resampling} ou
 l'inverser avec le \emph{modifieur} \onto{Not}, il sera impossible de
 modifier la valeur des seuils. Les \emph{modifieurs} ne sont donc
-qu'un mécanisme supplémentaire, permettant de raffiner la
+qu'un mécanisme supplémentaire permettant de raffiner la
 \emph{spatialisation} mais leur utilisation ne peut dispenser d'une
 bonne sélection du \emph{rasterizer,} de la \emph{métrique} et du
 \emph{fuzzyficateur.}
@@ -421,7 +422,7 @@ spatialisée \footnote{Dit autrement, si \(N\) est la fonction
   alors \(N(T(S)) \neq T(N(S))\).}. Nous avons contourné ce problème
 en définissant un ordre de priorité des \emph{modifieurs} en fonction
 de leur type. Nous sommes partis du principe que la négation
-s'appliquait toujours à l'ensemble de \emph{l'indice de localisation}
+s'appliquait toujours à l'ensemble de \emph{l'indice de localisation,}
 et donc qu'elle devait être appliquée en dernier. Ainsi, le
 \emph{modifieur} \onto{Not} a une priorité minimale. À l'inverse,
 comme nous n'avons identifié aucune situation ou un \emph{modifieur}
