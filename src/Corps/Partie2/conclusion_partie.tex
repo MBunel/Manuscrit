@@ -1,1 +1,36 @@
-Texte de conclusion de la partie 1
+Dans cette seconde partie nous avons présenté la méthode que nous
+avons définie pour tranformer une description de position en une zone
+de coordonées connues, c'est-à-dire exprimée dans un référentiel
+indirect. Nous avons organisé cette méthode selon trois phases,
+illustrées par la \autoref{fig:methodo_1}, la décomposition, la
+spatialisation et la fusion \autoref{chap:05}. L'objectif de la phase
+de décomposition est de transformer \emph{l'ensemble des indices de
+  localisation} défini par le secouriste de manière à ce qu'il soit
+spatialisable. Cette décomposition s'opère en trois étapes : la
+décomposition de l'ensemble d'indices de localisation, la
+décomposition des objets de référence non nommés et la décomposition
+des relations de localisation. À la suite de ces trois étapes on
+dispose d'une liste d'indices de localisation indépendants, qu'il est
+possible de spatialiser en parallèle \autoref{chap:05}, de manière a
+construire des \emph{zones de localisation} imprécises.
+
+Dans le \autoref{chap:06} nous avons détaillé l'approche retenue pour
+représenter les zones de localisation. Nous avons opté pour une
+représentation raster de sous-ensembles flous, permettant d'attribuer
+à chaque position (échantillonnée par des pixels) de la zone étudiée
+un degré, quantifiant l'appartenance de la position à la zone
+étudiée.
+
+La méthode de construction de ces zones a été présentée dans le
+\autoref{chap:06}. C'est au court de la phase de spatialisation que
+les indices de localisation décomposés sont interprétés de manière à
+construire les zones de localisation. Nous avons défini un processus
+utilisant trois éléments : un \emph{rasteriser,} sélectionnant et
+rasterisant la partie de l'objet de référence à utiliser, une
+\emph{métrique} qui est une grandeur permettant de quantifier la
+sémantique de la relation de localisation modélisée et un
+fuzzyficateur, qui interprète la valeur de la métrique de manière à
+construire une zone de localisation représentée par un sous-ensemble
+flou. Plusieurs de ces trois éléments ont été définis et leur
+combinaison permet de définir de nombreuses méthodes de
+spatialisation. Nous avons par ailleurs pris
