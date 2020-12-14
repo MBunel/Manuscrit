@@ -1135,10 +1135,22 @@ l'importance du dernier indice de localisation (\ref{ind:fr7}).
 
 Comme pour la modélisation de la première alerte (\emph{Grand
   Veymont,} \autoref{sec:9-2}) le premier reproche que l'on puisse
-faire à la modélisation proposée est la valeur des paramètres ds
+faire à la modélisation proposée est la valeur des paramètres des
 fuzzyficateurs utilisés pour spatialisation des indices de
-localisation. Les valeurs des seuils utilisées ont été définies
-empiriquement et validées par les secouristes.
+localisation. Comme précédemment les valeurs sélectionnées l'on été
+empiriquement et, bien que le résultat ait été validé par les
+secouristes, il nous semble possible d'améliorer le résultat de cette
+modélisation par une configuration plus fine des
+\emph{fuzzyficateurs.} Le problème nous semble d'autant plus important
+ici que la \ac{zlp} obtenue ici est très fragmentée. En effet, dans
+l'alerte \emph{Grand Veymont} la \ac{zlp} était composée d'une grande
+zone principale, assez peut étendue. Une paramétrisation plus fine des
+fonctions d'appartenance aurait certainement permis de réduire la
+taille de cette zone et donc d'identifier plus précisément la position
+de la victime. Cependant, cette plus grande précision n'aurait pas été
+spécialement intéressante pour les secouristes, la \ac{zlp} initiale
+étant suffisamment réduite pour qu'il soit relativement facile de
+localiser la victime. Ce n'est 
 
 
 
@@ -1227,7 +1239,7 @@ indice, peuvent donc être moins contraintes, ce qui peut modifier la
 La \autoref{fig:zlp_fil_rouge_2} présente la \ac{zlp} de l'alerte
 \emph{fil rouge}, construite après l'actualisation de l'indice de
 localisaiton : \enquote{La victime est sous une ligne électrique trois
-  brins} (\ref{ind:fr6}). On peut remarquer la z\emph{one de
+  brins} (\ref{ind:fr6}). On peut remarquer la \emph{zone de
   localisation probable obtenue} est plus étendue que précédemment, de
 nouveaux clusters de positions non nulles apparaissant, et que le
 degré d'appartenance des positions qui y appartenaient déjà est
