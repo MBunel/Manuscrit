@@ -158,17 +158,25 @@ bibliothèques de calcul scientifique. Cette bibliothèque est complétée
 par la bibliothèque \emph{rasterio} \autocite{Mapbox2020} qui permet
 de traiter des rasters comme des matrices \emph{numpy.} Les étapes de
 \emph{calcul de la métrique} et de \emph{fuzzyfication} sont
-effectuées directement avec \emph{numpy.}
-
-La bibliothèque \emph{numpy}
-permet d'effectuer de nombreux calculs avancés, toutefois certaines
-méthodes spécifiques n'y figurent pas, c'est pourquoi nous avons
-également fait appel aux bibliothèques \emph{SciPy} et
+effectuées directement avec \emph{numpy.} La bibliothèque \emph{numpy}
+permet d'effectuer de nombreux calculs avancés, ce qui nous permet de
+calculer de nombreux types de \emph{métriques,} toutefois certaines
+méthodes spécifiques, qui pourraient être utiles pour le calcul de
+certaines \emph{métriques,} n'y figurent pas. C'est pourquoi nous
+avons également fait appel aux bibliothèques \emph{SciPy} et
 \emph{scikit-image} \autocite{vanderWalt2014,Virtanen2020} qui
-proposent des outils supplémentaires tout en opérant de à partir des
-types de données définis par \emph{numpy.}
+proposent des outils supplémentaires, utiles pour le calcul de
+certaines métriques (\eg distance à la partie la plus proche de
+l'objet de référence) tout en opérant de à partir des types de données
+définis par \emph{numpy.}
 
-
+Les \emph{zones de localisation} \emph{compatibles} et
+\emph{probables} sont directement représentées par des matrices
+\emph{numpy.} Nous avons cependant développé une bibliothèque, basée
+sur \emph{rasterio} \autocite{Mapbox2020}, permettant de simplifier et
+d'automatiser au maximum la création de rasters flous (et donc, dans
+le cas présent la phase de fuzzyfication) et les opérations
+inter-raster, comme les unions et les intersections.
 
 \subsection{Présentation des alertes}
 
