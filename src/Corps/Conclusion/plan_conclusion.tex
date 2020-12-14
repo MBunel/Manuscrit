@@ -294,48 +294,51 @@ fuzzyficateurs.
 
 Différentes pistes d'amélioration de notre méthode ont été envisagées
 au cours de notre travail. La plus avancée d'entre elles est la
-décomposition des objets de référence.
+décomposition des objets de référence lorsqu'ils ont un aspect
+composite.
 
 Nous avons en effet remarqué que certains objets de référence utilisés
 par les requérants étaient \enquote{composites}, c'est-à-dire qu'ils
 sont une composition de plusieurs parties relativement
-différentes. C'est par exemple le cas des lignes électriques, qui sont
-composées de pylônes et d'un câble suspendu ou des lignes de
+différentes. C'est par exemple le cas des lignes électriques
+\footnote{Ce cas a été présenté durant le \autoref{chap:06}.}, qui
+sont composées de pylônes et d'un câble suspendu ou des lignes de
 téléphérique, composées des mêmes éléments mais auxquels s'ajoutent
 une station d'arrivée et de départ. Le problème que soulèvent ces
 objets est que la sémantique ou le paramétrage des relations de
 localisation qui s'y appliquent peut changer en fonction de la partie
-de l'objet considérée. Par exemple pour une ligne de téléphérique il
+de l'objet considérée. Par exemple, pour une ligne de téléphérique il
 parait raisonnable de considérer qu'une relation de proximité a un
 rayon plus important si elle se rapporte aux bâtiments qu'aux pylônes
-ou au câble. Dit autrement, on est plus vite loin d'un pylône que
-d'une gare de téléphérique. Les parties de l'objet peuvent influer le
-paramétrage des relations de localisation. Un exemple peut être celui
-d'une route contenant des ponts et des tunnels. Si un requérant décrit
-sa position en indiquant se trouver \enquote{sous une route} il est
-pertinent d'adapter le concept à la composante de l'objet. On sera
+ou au câble, ces derniers étant plus saillants. Dit autrement, on est
+plus vite loin d'un pylône que d'une gare de téléphérique. Les parties
+de l'objet peuvent influer le paramétrage des relations de
+localisation. Un exemple peut être celui d'une route contenant des
+ponts et des tunnels. Si un requérant décrit sa position en indiquant
+se trouver \enquote{sous une route} il est pertinent d'adapter le
+concept à la composante de l'objet. On sera
 \onto[orl]{Sous\-Proche\-De} une route mais
 \onto[orl]{Sous\-Recouvert\-Par} un tunnel ou un pont. Les parties de
 l'objet peuvent donc influencer le choix des concepts.
 
 La solution que nous avons envisagée pour traiter ces cas consiste à
-ajouter une étape à la phase de décomposition, la décomposition des
-objets de référence composites \autocite{Bunel2019a}. Le rôle de cette
-étape, qui vient après la décomposition des objets de référence non
-nommés, est de créer un nouvel indice de localisation pour chaque
-composante des objets de référence, puis d’adapter si nécessaire la
-relation de localisation utilisée ou son paramétrage. Cette étape
-permettrait une plus grande finesse lors du processus de
-spatialisation des indices de localisation. Cependant, elle est assez
-contraignante à mettre en place. Cette étape nécessite en effet la
-création de nouvelles informations, notamment la formalisation des
-liens de composition existant entre objets de référence et la
-formalisation de l'impact de la nature de l'objet de référence sur la
-relation de localisation. La généralisation de cette proposition
-impliquerait donc une refonte de l'ontologie des relations de
-localisation et des relations de localisation atomiques, mais
-également la création d'une nouvelle ontologie, celle des objets de
-référence composites.
+ajouter une étape à la phase de décomposition : la décomposition des
+objets de référence composites (\autoref{chap:06},
+\autocite{Bunel2019a}). Le rôle de cette étape, qui vient après la
+décomposition des objets de référence non nommés, est de créer un
+nouvel indice de localisation pour chaque composante des objets de
+référence, puis d’adapter si nécessaire la relation de localisation
+utilisée ou son paramétrage. Cette étape permettrait une plus grande
+finesse lors du processus de spatialisation des indices de
+localisation. Cependant, elle est assez contraignante à mettre en
+place. Cette étape nécessite en effet la création de nouvelles
+informations, notamment la formalisation des liens de composition
+existant entre objets de référence et la formalisation de l'impact de
+la nature de l'objet de référence sur la relation de localisation. La
+généralisation de cette proposition impliquerait donc une refonte de
+l'ontologie des relations de localisation et des relations de
+localisation atomiques, mais également la création d'une nouvelle
+ontologie, celle des objets de référence composites.
 
  % L'évaluation de la qualité des \ac{zlp}
 Une seconde piste d'amélioration que nous déjà explorée est la
