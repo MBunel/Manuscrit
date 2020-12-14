@@ -1164,20 +1164,26 @@ représentés dans la BD TOPO par des ponctuels, dont la fonction
 première n'est pas de représenter l'emprise des objets, mais
 \enquote{d'ancrer} les toponymes, en vue d'une représentation
 cartographique. L'utilisation de telles géométries comme objets de
-référence nous expose donc à quelques problèmes.
-%
-Tout d'abord
+référence nous expose à quelques problèmes. Par exemple, l'indice de
+localisation : \enquote{À \SI{800}{\meter} du Pas de la Ville} a été
+spatialisé en calculant la métrique \onto[orla]{Distance} à partir du
+ponctuel plaçant l'oronyme \enquote{Pas de la Ville} dans la base de
+données. Quant à l'indice de localisation \enquote{je suis sous le
+  sommet du \emph{Grand Veymont}} il a été spatialisé en calculant la
+différence d'altitude entre le ponctuel représentant le sommet et
+chaque position de la \ac{zir}. Or, même dans le cas (hypothétique) où
+les seuils utilisés pour la spatialisation sont incontestable, le fait
+de calculer la \emph{métrique} a partir d'un seul point est une
+approximation discutable. En effet, pour ces deux exemples l'objet de
+référence mentionné par le requérant n'est pas vraiment assimilable à
+un point, il s'agit d'une zone sommitale pour le sommet du \emph{Grand
+  Veymont} et d'un point de passage relativement étendu pour le \emph{Pas de
+la Ville.} Si il peut être satisfaisant de représenter un sommet par
+un point, cette approximation est un peu plus d
 
-
-que peut avoir la géométrie des
-objets de référence sur le résultat de la spatialisation. Par exemple,
-l'indice de localisation : \enquote{À \SI{800}{\meter} du Pas de la
-  Ville} a été spatialisé en calculant la métrique
-\onto[orla]{Distance} à partir du ponctuel plaçant l'oronyme
-\enquote{Pas de la Ville} dans la base de données. Or, la
-représentation d'un géotype étendu, comme un pas ou une crête, par un
-point est une approximation conséquente, impactant fortement la
-spatialisation.
+Or, la représentation d'un objet géographique étendu, comme
+un pas ou une crête, par un point est une approximation conséquente,
+impactant fortement la spatialisation.
 
 %%% Local Variables:
 %%% mode: latex
