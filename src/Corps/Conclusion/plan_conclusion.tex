@@ -49,16 +49,17 @@ du secouriste en ces indices ou de leur fusion. Mais la question
 centrale de ce travail est la spatialisation des descriptions de
 positions. Pour y répondre, nous avons proposé une méthode que nous
 avons voulue générique, tout en la calibrant spécifiquement pour notre
-cas d’application, le secours en montagne.
+cas d’application : le secours en montagne.
 
-Cette méthode a été structurée selon trois grandes phases, la
+Cette méthode a été structurée selon trois grandes phases : la
 \emph{décomposition,} la \emph{spatialisation} et la \emph{fusion.}
 Chacune d'entre elles répond à un objectif précis. La décomposition
 traite les indices de localisation saisis par le secouriste de manière
 à les rendre spatialisables, la spatialisation transforme ces indices
 en des \emph{zones de localisation compatibles} et la fusion les
-regroupe, jusqu'à aboutir à une seule zone, la \ac{zlp}, correspondant
-au résultat de la spatialisation pour l'ensemble de l'alerte traitée.
+regroupe, jusqu'à aboutir à une seule zone, la \emph{zone de
+  localisation probable} \acp{zlp}, correspondant au résultat de la
+spatialisation pour l'ensemble de l'alerte traitée.
 
 Pour permettre la prise en compte de l'imprécision des indices de
 localisation, nous avons construit notre méthode autour du cadre
@@ -70,29 +71,30 @@ correspondant partiellement ou totalement à l'indice de localisation
 spatialisé et donc modéliser leur imprécision. 
 
 La confiance du secouriste traitant l'alerte en la véracité des
-indices de localisation qu'il traite a quant à elle été modélisée à
+indices de localisation qu'il collecte à quant à elle été modélisée à
 l'aide de la théorie des possibilités \autocite{Zadeh1978}. Ce cadre
 théorique nous permet d'attribuer un degré de confiance à chaque
 indice de localisation et de le répercuter sur la zone de localisation
 le spatialisant.
 
-L'objectif du projet CHOUCAS n'étant pas de proposer des solutions se
+L'objectif du projet Choucas n'étant pas de proposer des solutions se
 substituant aux secouristes, nous avons conçu notre méthode de manière
-a ce qu'elle s'intègre avec peu de contraintes dans le processus
+à ce qu'elle s'intègre avec peu de contraintes dans le processus
 métier de localisation des victimes. Note méthode est donc conçue pour
 que les indices de localisation qu'elle spatialise soient saisis par
-des humains et non interprétés à partir de l'appel téléphonique (ou
-autre) à l'aide de techniques issues du domaine du traitement
-automatisé des langues. Pour permettre la saisie des indices de
-localisation et leur spatialisation, nous avons créé, à partir de
-l'analyse d'un corpus d'alertes passées, une ontologie des
-\emph{relations de localisation} \acp{orl} listant et définissant,
-tous les concepts utilisés par les victimes et les secouristes pour
-décrire leur position. Bien qu'elle s'inspire d'autres travaux,
-notamment l'ontologie GUM-Space \autocite{Bateman2010}, l'ontologie
-des relations de localisation présente la caractéristique d'être
-spécifique a la description de positions en montagne, ce qui en fait
-une production exploitable indépendamment de notre travail de thèse.
+des humains, et non identifiés automatiquement à partir de l'appel
+téléphonique (ou son \emph{verbatim} écrit) à l'aide de techniques
+issues du domaine du traitement automatisé des langues. Pour permettre
+la saisie des indices de localisation et leur spatialisation, nous
+avons créé, à partir de l'analyse d'un corpus d'alertes passées, une
+ontologie des \emph{relations de localisation} ---~nommée
+\ac{orl}~---, listant et définissant tous les concepts utilisés par
+les victimes et les secouristes pour décrire leur position. Bien
+qu'elle s'inspire d'autres travaux, notamment l'ontologie GUM-Space
+\autocite{Bateman2010}, l'ontologie des relations de localisation
+présente la caractéristique d'être spécifique a la description de
+positions en montagne, ce qui en fait une production exploitable
+indépendamment de notre travail de thèse.
 
 L'étude des relations de localisation préalable a la construction de
 l'ontologie des relations de localisation, nous a permis de constater
