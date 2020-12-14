@@ -193,30 +193,31 @@ celles qui ne pourront naitre que d'une confrontation de notre méthode
 % Seuils de la confiance
 Une première piste d'amélioration consiste à améliorer la
 paramétrisation de notre méthode. En effet, dans la situation actuelle
-certains paramètres, comme les seuils de confiance, ont été fixés
-empiriquement.
+certains paramètres, comme les valeurs de confiance associées au
+seuils (\autoref{chap:08}), ont été fixés empiriquement.
 
 C'est un problème qui se pose également pour le choix de la résolution
 du calcul. Comme nous l'avons expliqué dans le \autoref{chap:06}, la
-représentation raster des \ac{zlc}, implique de définir une résolution
+représentation raster des \ac{zlc} implique de définir une résolution
 de maille, qui impacte la précision du résultat, mais également le
 temps de calcul et le volume du résultat. Pour les modélisations
-présentées dans le \autoref{chap:09}, où nous n'étions pas contrains
+présentées dans le \autoref{chap:09}, où nous n'étions pas contraint
 par les temps de calcul, nous avons pris la décision de travailler à
-l'aide de la résolution la plus fine possible. Toutefois cette
-solution n'est pas perenne, notre méthode visant à être appliquée dans
-des contextes où le temps peut être limité. Nous souhaitons donc
-offrir aux secouristes la possibilité de paramétrer la résolution du
-calcul. Pour ce faire deux solutions seraient envisageables, la
-première serait de laisser le secouriste fixer manuellement la maille
-du calcul, ce qui est déjà techniquement possible, mais non accessible
-pour l'utilisateur. Une seconde solution serait d'adapter
+l'aide de la résolution la plus fine possible, compte-tenu du nombre
+d'objets de référence à traiter. Toutefois cette solution n'est pas
+pérenne, notre méthode visant à être appliquée dans des contextes où
+le temps peut être limité. Nous souhaitons donc offrir aux secouristes
+la possibilité de paramétrer la résolution du calcul. Pour ce faire
+deux solutions seraient envisageables : la première serait de laisser
+le secouriste fixer manuellement la maille du calcul, ce qui est déjà
+techniquement possible, mais non accessible pour l'utilisateur dans
+l'état actuel du prototype. Une seconde solution serait d'adapter
 automatiquement cette résolution en fonction de la zone étudiée, ce
 qui libérerait les secouristes de ces considérations. Cependant la
-mise en place de cette solution pose un autre problème, nous ne savons
-pas quelle est la meilleure résolution de spatialisation. Il est en
-effet possible de des résolutions plus faibles que celles que nous
-avons utilisées dans nos essais (\eg 100, voire 250~m) soient
+mise en place de cette solution pose un autre problème : nous ne
+savons pas quelle est la meilleure résolution de spatialisation. Il
+est en effet possible de des résolutions plus faibles que celles que
+nous avons utilisées dans nos essais (\eg 100, voire 250~m) soient
 satisfaisantes pour déclencher une intervention, ce que nous ne
 pouvons savoir à l'heure actuelle. Il est donc possible qu'une
 spatialisation à une résolution fixe et peu élevée soit satisfaisante
