@@ -1147,23 +1147,24 @@ d'entre-eux sont discutables et l'ont été. Nous avons toujours cherché
 à ne pas proposer des seuils trop sévères, contant sur la
 multiplication des \emph{indices de localisation} pour réduire la
 \emph{zone de localisation probable,} cependant cela fait peser la
-qualité du résultat sur le nombre d'indices disponibles. 
-
-
-% TODO
-% \tdi{Impact de la position du toponyme "pas de la ville" sur la
-%   modélisation}
+qualité du résultat sur le nombre d'indices disponibles. Il nous
+semble donc qu'une voie majeure d’amélioration du résultat de cette
+modélisation serait à chercher dans l'affinage des seuils des
+fuzzyficateurs.
 
 Un autre problème notable est l'impact de la représentation
 géométrique des objets de référence sur les résultats de la
-modélisation. Par exemple, le \emph{Pas de la Ville} et le sommet du
-\emph{Grand Veymont} sont régulièrement employés dans les alertes
-comme objet de référence. Ces deux objets sont représentés dans la
-BDTOPO par des ponctuels, dont la fonction première n'est pas de
-représenter l'emprise des objets, mais \enquote{d'ancrer} les
-toponymes, en vue d'une représentation cartographique. L'utilisation
-de telles géométries comme objets de référence nous expose donc à
-quelques problèmes.
+modélisation. En effet, les métriques, utilisées pour le calcul des
+\emph{zones de localisation} sont calculées à partir de la géométrie
+des objets de référence. Par exemple, le \emph{Pas de la Ville} et le
+sommet du \emph{Grand Veymont} sont deux objets de référence
+régulièrement employés dans l'alerte comme objet de référence. Or, ces
+deux objets sont, comme la plupart des informations oronymiques,
+représentés dans la BD TOPO par des ponctuels, dont la fonction
+première n'est pas de représenter l'emprise des objets, mais
+\enquote{d'ancrer} les toponymes, en vue d'une représentation
+cartographique. L'utilisation de telles géométries comme objets de
+référence nous expose donc à quelques problèmes.
 %
 Tout d'abord
 
