@@ -227,7 +227,7 @@ téléphone de la victime est plus facilement obtenable par les
 secouristes, ces derniers pouvant faire une demande de localisation
 pour chaque alerte (\autoref{chap:1}). Toutefois l'exploitation fine
 de cet indice est assez complexe, comme nous l'avions rapidement
-évoqué dans le \autoref{chap:01}. L'implémentation d'une hypothétique
+évoqué dans le \autoref{chap:1}. L'implémentation d'une hypothétique
 relation \onto{Connecte\-A\-Antenne} nécessiterait, en effet, de
 prendre en compte la portée du signal, fortement influencée par les
 conditions climatiques. Nous avons donc choisi d'ajourner sa
@@ -471,7 +471,9 @@ d'appartenance nul.
 \begin{figure}[h]
   \centering
   \input{./figures/ZLC_EnDirectionDe_FilRouge.tex}
-  \caption{\ac{zlc} pour l'indice de localisation  (\ref{ind:fr1})}
+  \caption{\ac{zlc} pour l'indice de localisation : \enquote{La
+      victime est partie de \emph{Bourg-d'Oisans,} en direction d'une
+      station de ski} (\ref{ind:fr1}).}
   \label{fig:ZLC_FilRouge_1}
 \end{figure}
 
@@ -492,8 +494,9 @@ localisation est donc directement spatialisable.
 
 Dans sa version \enquote{standard} la relation de localisation
 atomique \onto[orla]{A\-Temps\-De\-Marche\-De} utilise le rasteriser
-\onto[orla]{Geometrie}, la métrique \onto[orla]{} et la fuzzyficateur
-\onto[orla]{Eq\-Val} prenant comme paramètre la durée de déplacement
+\onto[orla]{Geometrie}, la métrique \onto[orla]{Temps\-Marche} et la
+fuzzyficateur \onto[orla]{Eq\-Val} prenant comme paramètre la durée de
+déplacement
 (\autoref{fig:ex_parties_statialisation_ATempsDeMarcheDe}). Cependant
 cette méthode de spatialisation ne peut s'appliquer ici, le requérant
 donnant une valeur très imprécise (\ie \enquote{Plusieurs heures}) de
@@ -568,7 +571,8 @@ la \ac{zir}.
 \begin{figure}[htb]
   \centering
   \input{./figures/TempsMarche_Metrique_FilRouge.tex}
-  \caption{Metrique temps marche}
+  \caption{Métrique \onto[orla]{Temps\-Marche} calculée à partir de
+    \emph{Bourg-d'Oisans.}}
   \label{fig:TempsMarche_Metrique_FilRouge}
 \end{figure}
 
@@ -659,7 +663,9 @@ premier indice de localisation.
 \begin{figure}[htb]
   \centering
   \input{./figures/TempsMarche_ZLC_FilRouge.tex}
-  \caption{\ac{zlc} pour l'indice de localisation (\ref{ind:fr2})}
+  \caption{\ac{zlc} pour l'indice de localisation :\enquote{La victime
+      a marché plusieurs heures depuis \emph{Bourg-d'Oisans}}
+    (\ref{ind:fr2}).}
   \label{fig:ZLC_TempsMarche}.  
 \end{figure}
 
@@ -869,7 +875,7 @@ indices.
   \centering
   \input{./figures/ZLC_SousProche_Chemin/ZLC_SousProche.tex}
   \caption{\ac{zlc} pour l'indice de localisation \enquote{La victime
-      est sous un chemin} (\ref{ind:fr3})}
+      est sous un chemin} (\ref{ind:fr3}).}
     \label{fig:ZLC_FilRouge_3}
 \end{figure}
 
@@ -972,7 +978,8 @@ référence candidat on peut procéder à leur fusion et construire la
 \begin{figure}
   \centering
   \input{./figures/Visibilite_ZLC_FilRouge.tex}
-  \caption{\ac{zlc} pour l'indice de localisation  (\ref{ind:fr4})}
+  \caption{\ac{zlc} pour l'indice de localisation : \enquote{La
+      victime voit une partie de plan d'eau} (\ref{ind:fr4}).}
   \label{fig:ZLC_FilRouge_4}
 \end{figure}
 
@@ -998,7 +1005,8 @@ celle de la \autoref{fig:ZLC_FilRouge_3}.
 \begin{figure}
   \centering
   \input{./figures/SousProcheRoute_ZLC_FilRouge.tex}
-  \caption{\ac{zlc} pour l'indice de localisation  (\ref{ind:fr5})}
+  \caption{\ac{zlc} pour l'indice de localisation :\enquote{La victime
+      est sous une route} (\ref{ind:fr5}).}
   \label{fig:ZLC_FilRouge_5}
 \end{figure}
 
@@ -1103,7 +1111,7 @@ dans la partie centrale de la \ac{zir} (Figure
 \ref{fig:zlp_fil_rouge_b}).  Le degré d'appartenance à la \ac{zlp} des
 positions situées dans le cluster situé le plus au nord de la \ac{zir}
 (Figure \ref{fig:zlp_fil_rouge_a}) est principalement limité par le
-dernier indice de localisation (\ref{ind:fr:7}). En effet, cette zone
+dernier indice de localisation (\ref{ind:fr7}). En effet, cette zone
 est quasiment située au nord de la Chapelle \emph{St-Philomene,} ce
 qui conduit a un très faible degré d’appartenance pour cet indice de
 localisation. Or, comme nous l'expliquions précédemment, la relation
