@@ -1150,8 +1150,22 @@ taille de cette zone et donc d'identifier plus précisément la position
 de la victime. Cependant, cette plus grande précision n'aurait pas été
 spécialement intéressante pour les secouristes, la \ac{zlp} initiale
 étant suffisamment réduite pour qu'il soit relativement facile de
-localiser la victime. Ce n'est 
-
+localiser la victime. Cette observation n'est cependant pas valable
+dans le cas du \emph{fil rouge.} En effet, la \ac{zlp} que nous
+obtenons ici est composée de nombreuses petites zones
+fragmentée. Prises indépendamment, ces zones sont faciles à explorer
+par les secouristes, puisque de taille réduite. Cependant ces zones
+sont si nombreuses et réparties dans la \ac{zir} qu'il n'est pas
+envisageable de toutes les explorer. Une meilleure paramétrisation des
+fuzzyficateurs permettrait, certes, de réduire la taille de ces zones
+et donc d'améliorer leur précision, mais surtout de faire disparaitre
+certaines d'entre-elles et donc de faciliter la localisation de la
+victime. Ainsi, si une meilleure définition des seuils des fonctions
+d'appartenance n'offre qu'un gain de précision dans le cas de l'alerte
+\emph{Grand veymont,} elle devient fortement nécessaire pour le
+\emph{fil rouge,} puisqu'il s'agit d'un moyen permettant de limiter
+les zones à explorer, sans qu'il soit nécessaire d'ajouter de nouveaux
+indices de localisation.
 
 
 Pb de représentation des géométries
