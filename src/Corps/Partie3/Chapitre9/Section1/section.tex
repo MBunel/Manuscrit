@@ -27,12 +27,12 @@ programmation python, dans sa version 3.5, de septembre 2015
 raisons principales :
 %
 \begin{enumerate*}[label=(\arabic*)]
-\item D'une part car c'est un langage de programmation avec lequel
+\item D'une part, car c'est un langage de programmation avec lequel
   nous avons une certaine expérience \autocite{Bunel2017b,Bunel2017c},
   ce qui nous a permis de limiter le temps de développement consacré à
   la résolution de problèmes qui auraient pu être causés par une
   mauvaise maitrise du langage.
-\item De plus il s'agit d'un langage populaire et répandu, notamment
+\item De plus, il s'agit d'un langage populaire et répandu, notamment
   en géomatique, que ce soit dans la recherche ou dans le milieu
   professionnel. De nombreuses bibliothèques utiles pour
   l'implémentation de notre méthode sont donc développées dans ce
@@ -40,7 +40,7 @@ raisons principales :
 \end{enumerate*}
 %
 Le choix d'un langage de développement ne fixe pas à lui seul le cadre
-du développement. En effet, plusieurs approches de développement,
+d'un développement. En effet, plusieurs approches de développement,
 utilisant le même langage, sont envisageables. Une première solution
 serait d'employer le \emph{cadriciel} fourni par les différents SIG
 professionnels, comme QGis ou ArcGis. Cette solution permet de
@@ -59,9 +59,9 @@ logiciels conçus pour une tâche spécifique et déclenchés manuellement
 par l'utilisateur~---, étendant les fonctionnalités d'un SIG, plutôt
 que d'un logiciel unique, fonctionnant de manière quasi-automatisée.
 
-Le rejet des \emph{cadriciels} d'un SIG n'impose cependant pas de se
+Le rejet des \emph{cadriciels} d'un SIG n'impose, cependant, pas de se
 passer de toute bibliothèque de manipulations de données
-géométrique. Certains projets libres, au premier rang desquels on
+géométriques. Certains projets libres, au premier rang desquels on
 trouve les développements de \emph{l'open géo consortium} (OGC),
 proposent de nombreuses bibliothèques permettant la manipulation de
 données géographiques, qu'elles soient représentées par des vecteurs
@@ -79,29 +79,42 @@ apportées par les \emph{cadriciels} de SIG étant trop restrictives.
 
 Les trois phases de notre méthode traitant d'objets différents (\ie
 des \emph{indices de localisation} dans la phase de décomposition et
-des \ac{zlc} dans la phase de spatialisation et de fusion), il en
-résulte que les bibliothèques qui 
+des \ac{zlc} dans la phase de spatialisation et de fusion), il nous
+est nécessaire d'employer des bibliothèques spécifiques pour chacune
+des tâches, ce qui a compliqué le processus de développement.
 
 % Implémentation de la phase de décomposition
 
 Lors de la présentation de la \emph{phase de décomposition}
-(\autoref{chap:05}) nous avions indiqué que difficulté de mise en
-place de cette phase était concentrée sur la dernière étape, celle de
-la décomposition des \emph{relations de localisation,} les
-\emph{indices de localisation} et les \emph{objets de référence} étant
-déjà décomposés lors de leur saisie par le secouriste. Par corolaire,
-implémentation des deux premières étapes de la phase de décomposition
-ne pose pas, non plus, de problèmes particuliers.
+(\autoref{chap:05}), nous avions indiqué que la difficulté de sa mise
+en place de cette était concentrée sur la dernière étape : la
+décomposition des \emph{relations de localisation,} les \emph{indices
+  de localisation} et les \emph{objets de référence} étant déjà
+décomposés lors de leur saisie par le secouriste. Par corolaire,
+l'implémentation des deux premières étapes de la phase de
+décomposition ne pose pas, non plus, de problèmes particuliers.
 
-% TODO
-% Au début de la phase de décomposition ---~et donc de la méthode dans
-% son ensemble~--- nous disposons de la requête du secouriste
-% formalisée
-% %
-% Pour le développement du prototype nous avons mis en pla
+En effet, au début de la phase de décomposition ---~et donc de la
+méthode dans son ensemble~--- nous disposons de la requête du
+secouriste formalisée dans une structure de données que nous avons
+nous-même définie. Les \emph{différents indices de localisation} sont
+regroupés dans \emph{l'ensemble des indices de localisation} et, si
+les \emph{indices de localisations} se référent à plusieurs
+\emph{objets de référence} (\ie dans le cas où les objets de référence
+ne sont pas nommés) alors ces derniers sont explicitement présents
+dans la requête. Ainsi, la requête transmise par le secouriste
+contient l'ensemble des informations nécessaires à la décomposition de
+l'ensemble des \emph{indices de localisation} et à la décomposition
+des objets de référence non nommés. Du point de vue de
+l'implémentation ces deux étapes se résument en la transformation
+d'une structure de données (la requête du secouriste) en une autre,
+que l'on sait traiter. 
+
+%
+Pour le développement du prototype nous avons mis en pla
 
 
-% Owlready \autocite{Lamy2017}
+Owlready \autocite{Lamy2017}
 
 % Implémentation des phases de spatialisation \& de fusion
 
