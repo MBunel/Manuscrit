@@ -227,39 +227,29 @@ notre solution de spatialisation s'appuie sur une base de données et
 un référentiel métier dont l’élaboration et la mise en place est
 effectuée au sein d'un autre axe du projet Choucas (\autoref{chap:02}
 et \cite{VanDamme2019}).
- 
 
-L'ensemble des \emph{objets de référence} utilisés pour la
-spatialisation des indices de localisation proviennent de la même base
-de données, la BDTOPO, produite par l'IGN \autocite{IGN2020}. Cette
-dernière
+Pour définir cette base de données nous avons employé les données
+produites par l'IGN. L'ensemble des \emph{objets de référence}
+utilisés pour la spatialisation des indices de localisation
+proviennent de la même base de données, la BD TOPO
+\autocite{IGN2020}. Pour nos modélisations nous avons travaillé
+exclusivement de la version de 2018.
 %
-Pour nos modélisations nous avons travaillé exclusivement à partir du
-millésime de 2018.
-
-
-Une base de données comme la BDTOPO, ne propose pas une représentation
-exhaustive et à l'échelle unitaire du territoire qu'elle
-cartographie. Tous les objets du territoire n'y figurent pas et les
-géométries qui les représentent ne sont que des abstractions
-simplifiée de la forme réelle de l'objet.
-
-Le principal problème d'une telle base de donnée est donc que certains
-objets du réels, pouvant donc être utilisés comme \emph{objets de
-  référence} dans un \emph{indice de localisation,} n'y figurent pas
-nécessairement.
+Une base de données comme la BDTOPO a le contenu approximatif d'une
+carte topographique. Ainsi, certains objets présents sur le territoire
+et susceptibles d'être utilisés comme objets de référence par des
+requérants peuvent ne pas y figurer.
 
 Les données vectorielles utilisées pour la représentation des
-\emph{objets de référence données} ne sont pas les seules dont nous
+\emph{objets de référence} donnés ne sont pas les seules dont nous
 ayons besoin pour traiter les alertes. Il est en effet nécessaire de
-disposer d e données altimétriques, sous la forme de \ac{mnt}, pour
+disposer de données altimétriques, sous la forme de \ac{mnt}, pour
 spatialiser des \emph{indices de localisation} impactés par le relief,
 comme le temps de marche (\onto[orl]{A\-Temps\-De\-Marche}), les
 relations traitant de verticalité (\eg \onto[orl]{Sous\-Altitude}), ou
 la visibilité (\onto[orl]{Site\-Voit\-Cible}). Pour disposer de
-données altimétriques nous avons utilisé la BDALTI, qui est la
+données altimétriques nous avons utilisé la BD ALTI, qui est la
 composante altimétrique du référentiel à grande échelle de l'IGN.
-
 
 %%% Local Variables:
 %%% mode: latex
