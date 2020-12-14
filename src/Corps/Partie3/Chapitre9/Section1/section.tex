@@ -117,13 +117,16 @@ celles transmises par le secouriste. Ces informations sont explicités
 dans \emph{l'ontologie des relation de localisation} \acp{orl}. La
 réalisation de cette dernière étape de la phase de localisation
 nécessite donc lire et d'interpréter les informations formalisées dans
-l'ontologie \ac{orl}.
-
-%
-Pour le développement du prototype nous avons mis en pla
-
-
-Owlready \autocite{Lamy2017}
+l'ontologie \ac{orl}. Dans Ruitor, cette tâche est principalement
+effectuée à l'aide de la bibliothèque \emph{Owlready}
+\autocite{Lamy2017}, permettant la lecture et la manipulation
+d'ontologies OWL. Cette bibliothèque nous permet de lire les
+informations présentes dans \ac{orl} et \ac{orla} afin d'identifier
+les relations de localisation atomiques décomposant, le cas échéant,
+les relations de localisation utilisées par le secouriste et
+d'identifier le \emph{rasteriser,} la \emph{métrique} et le
+\emph{fuzzyficateur} utilisés pour spatialiser les relations de
+localisation atomiques.
 
 % Implémentation des phases de spatialisation \& de fusion
 
