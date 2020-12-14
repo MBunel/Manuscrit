@@ -125,26 +125,30 @@ chacun des concepts de cette ontologie à un ensemble de concepts
 décrivant des méthodes qui seront appliquées lors de la
 spatialisation.
 
-La lecture et l’application de ces concepts est réalisée au cours de
-la seconde phase, la spatialisation. Trois concepts différents,
-correspondant à autant d'étapes de la spatialisation ont été
-définis. Le \emph{rasteriser} transforme l'objet utilisé comme
-référence en un raster. Le choix du \emph{rasteriser} permet de
-sélectionner la partie de l'objet qui est utilisée comme référence
-(centre, frontière, ensemble de l'objet). La seconde étape est celle
-de la construction de la \emph{métrique}. Durant cette étape une
-mesure permettant de quantifier la sémantique de la relation de
-localisation spatialisée est calculée pour toutes les positions de la
-zone étudiée à partir de l'objet de référence rasterisé. Cette
-métrique est ensuite utilisé pour construire la zone de localisation
-compatible lors de la \emph{fuzzyfication.} Un grand nombre de
-\emph{rasterisers,} de \emph{métriques} et de \emph{fuzzyficateurs}
-ont été définis. Certains sont très spécifiques et sont employés que
-pour la spatialisation d'une relation de localisation particulière,
-mais une grande partie sont génériques et partagés par plusieurs
-relations de localisation. Ces derniers peuvent donc être réemployés
-pour modéliser d'autre relations de localisation, voir pour en définir
-des nouvelles, ce qui offre une grande flexibilité.
+Une autre contribution de notre thèse est la proposition d'une méthode
+générique de spatialisation permettant de traduire une position
+décrite par une relation de localisation et un objet ou type d'objet
+de référence, en une région floue correspondant à cette position.
+Trois concepts différents, correspondant à autant d'étapes de la
+spatialisation ont été définis. Le \emph{rasteriser} transforme
+l'objet utilisé comme référence en un raster. Le choix du
+\emph{rasteriser} permet de sélectionner la partie de l'objet qui est
+utilisée comme référence (centre, frontière, ensemble de l'objet). La
+seconde étape est celle de la construction de la
+\emph{métrique}. Durant cette étape une mesure permettant de
+quantifier la sémantique de la relation de localisation spatialisée
+est calculée pour toutes les positions de la zone étudiée à partir de
+l'objet de référence rasterisé. Cette métrique est ensuite utilisée
+pour construire une zone de localisation compatible floue lors de la
+dernière étape de la phase de spatialisation : la
+\emph{fuzzyfication.}  Un grand nombre de \emph{rasterisers,} de
+\emph{métriques} et de \emph{fuzzyficateurs} ont été définis. Certains
+sont très spécifiques et ne sont employés que pour la spatialisation
+d'une relation de localisation particulière, mais une grande partie
+sont génériques et partagés par plusieurs relations de
+localisation. Ces derniers peuvent donc être réemployés pour modéliser
+d'autre relations de localisation, voir pour en définir des nouvelles,
+ce qui offre une grande flexibilité.
 
 L'ensemble de la méthode a été implémenté dans un prototype, RUITOR,
 qui nous a permis de confronter nos propositions théoriques a la
