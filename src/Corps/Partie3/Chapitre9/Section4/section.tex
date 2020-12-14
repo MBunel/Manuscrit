@@ -1187,7 +1187,15 @@ est que, pour certains \emph{indices de localisation} (\enquote{La
 limiter manuellement les \emph{objets de référence}
 sélectionnés. Cette décision nous à conduit à ne pas traiter tous les
 objets qui auraient pu être considérés comme des \emph{objets de
-  référence} par les secouristes.
+  référence} par les secouristes. Cette approximation n'est cependant
+pas très problématique, d'une part car ce type de sélection manuelle
+des \emph{objets de référence} est envisagé comme une des actions
+possibles des secouristes durant la phase de traitement de l'alerte,
+mais également car, dans le cas présent, les position qui auraient été
+prises en compte par les objets de référence retirés, se voient
+attribuer un degré d'appartenance nul par d'autres indices. Ainsi, la
+\ac{zlp} n'est pas modifiée par de retrait de ces \emph{objets de
+  référence.}
 
 Enfin, le dernier indice de localisation (\ref{ind:fr7}) ne propose
 qu'une approximation grossière de l'information contenue dans la
