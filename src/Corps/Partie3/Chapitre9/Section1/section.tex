@@ -229,16 +229,19 @@ effectuée au sein d'un autre axe du projet Choucas (\autoref{chap:02}
 et \cite{VanDamme2019}).
 
 Pour définir cette base de données nous avons employé les données
-produites par l'IGN. L'ensemble des \emph{objets de référence}
-utilisés pour la spatialisation des indices de localisation
-proviennent de la même base de données, la BD TOPO
+produites par l'IGN, qui présentent l'avantage d'offrir une couverture
+de précision et de qualité constante sur l'ensemble de l'aire étudiée
+(contrairement à des données saisies bénévolement comme
+\emph{OpenStreetMap,} pour lesquelles la qualité et la complétude des
+données saisies ne dépendent que des contributeurs). L'ensemble des
+\emph{objets de référence} utilisés pour la spatialisation des indices
+de localisation proviennent de la même base de données, la BD TOPO
 \autocite{IGN2020}. Pour nos modélisations nous avons travaillé
-exclusivement de la version de 2018.
-%
-Une base de données comme la BDTOPO a le contenu approximatif d'une
-carte topographique. Ainsi, certains objets présents sur le territoire
-et susceptibles d'être utilisés comme objets de référence par des
-requérants peuvent ne pas y figurer.
+exclusivement de la version de 2018. Une base de données comme la
+BDTOPO a le contenu approximatif d'une carte topographique, dont elle
+est la source de données principale. Ainsi, certains objets présents
+sur le territoire et susceptibles d'être utilisés comme objets de
+référence par des requérants peuvent ne pas y figurer.
 
 Les données vectorielles utilisées pour la représentation des
 \emph{objets de référence} donnés ne sont pas les seules dont nous
@@ -248,8 +251,13 @@ spatialiser des \emph{indices de localisation} impactés par le relief,
 comme le temps de marche (\onto[orl]{A\-Temps\-De\-Marche}), les
 relations traitant de verticalité (\eg \onto[orl]{Sous\-Altitude}), ou
 la visibilité (\onto[orl]{Site\-Voit\-Cible}). Pour disposer de
-données altimétriques nous avons utilisé la BD ALTI, qui est la
-composante altimétrique du référentiel à grande échelle de l'IGN.
+données altimétriques nous avons utilisé la BD ALTI (dans sa version
+de 2018), qui est la composante altimétrique du référentiel à grande
+échelle de l'IGN.
+
+L'ensemble des indices de localisation modélisés ci-dessous le sont
+donc à partir de ces deux bases de données, la BD TOPO et la BD Alti
+de 2018.
 
 %%% Local Variables:
 %%% mode: latex
