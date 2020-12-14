@@ -126,30 +126,40 @@ les relations de localisation atomiques décomposant, le cas échéant,
 les relations de localisation utilisées par le secouriste et
 d'identifier le \emph{rasteriser,} la \emph{métrique} et le
 \emph{fuzzyficateur} utilisés pour spatialiser les relations de
-localisation atomiques.
+localisation atomiques. 
 
 % Implémentation des phases de spatialisation \& de fusion
+Les phases de spatialisation et de fusion sont implémentées de manière
+très différente de la phase de décomposition. En effet, ces phases
+nécessitent la manipulation et le traitement d'objets géographiques,
+contrairement à phase de décomposition. La mise en place de ces étapes
+nécessite donc de mettre en place de nouveaux outils pour manipuler
+les géométries. Notre travail faisant une grande utilisation de
+rasters, la bibliothèque permettant leur manipulation prend une place
+centrale lors de cette étape. Dans l'état actuel de l'implémentation,
+nous ne pouvons traiter que des objets de référence représentés sous
+la forme de données vectorielles. Ces données sont traitées à l'aide
+des bibliothèques python \emph{fiona} \autocite{Gillies2020a},
+\emph{shapely} \autocite{Gillies2020} et \emph{gdal}
+\autocite{GDAL2020}, qui nous permettent de manipuler et de rasteriser
+les objets vectoriels. La première étape de la spatialisation, la
+rasterisation (\autoref{chap:07}) est donc effectuée à l'aide de ces
+trois bibliothèques.
 
-Les objets géographiques sont manipulés (pour les \emph{objets de
-  référence}) et construits (pour les zones de localisation
-compatibles et probables) à partir de l'étape de spatialisation.
-
-La mise en place de ces étapes nécessite donc de mettre en place de
-nouveaux outils pour manipuler les géométries.
-
-Notre travail faisant une grande utilisation de rasters, la
-bibliothèque permettant leur manipulation prend une place centrale
-lors de cette étape.
-
-Nous avons construit notre implémentation autour de la bibliothèque
-\emph{numpy,} conçue pour le calcul scientifique et plus précisément
-la manipulation optimisée de matrices volumineuses
-\autocite{vanderWalt2011}. Le type de données défini par \emph{numpy}
-\footnote{Le \emph{ndarray,} pour
+La manipulation des rasters, au cœur de notre travail, est construite
+autour de la bibliothèque \emph{numpy,} conçue pour le calcul
+scientifique et plus précisément la manipulation optimisée de matrices
+volumineuses \autocite{vanderWalt2011}. Le type de données défini par
+\emph{numpy} \footnote{Le \emph{ndarray,} pour
   \foreigntextquote{english}{N-dimensional array} (Tableau
   multidimensionnel).} fait office de standard du calcul scientifique
 dans l'univers du python, il est donc à la base de nombreuses
-bibliothèques de calcul scientifique.  La bibliothèque \emph{numpy}
+bibliothèques de calcul scientifique. Cette bibliothèque est complétée
+par la bibliothèque \emph{rasterio} \autocite{Mapbox2020} qui permet
+de traiter des rasters comme des matrices \emph{numpy.} L’application
+des 
+
+La bibliothèque \emph{numpy}
 permet d'effectuer de nombreux calculs avancés, toutefois certaines
 méthodes spécifiques n'y figurent pas, c'est pourquoi nous avons
 également fait appel aux bibliothèques \emph{SciPy} et
