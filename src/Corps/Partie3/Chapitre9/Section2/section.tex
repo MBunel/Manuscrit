@@ -314,13 +314,12 @@ visuellement approximée. Une relation de localisation
 \onto[orl]{Distance\-Quanti\-ta\-ti\-ve\-Plani\-metrique} est dédiée à
 la modélisation de ce type d'indices de localisation. L'extrait
 \ref{gv:15} met cependant en évidence le fait que le requérant est
-particulièrement hésitant dans sa réponse
-(\autoref{anx:retrans-gv-verb}), sa certitude en la validité de cette
-description semble donc assez faible. Nous ne pouvons qu'imaginer la
-confiance qu'un secouriste attribuerait à cet indice de localisation,
-mais il nous semble très probable qu'elle serait plus faible que celle
-des autres indices. C'est pourquoi nous proposons d'attribuer une
-confiance moyenne à cet indice de localisation.
+particulièrement hésitant dans sa réponse, sa certitude en la validité
+de cette description semble donc assez faible. Nous ne pouvons
+qu'imaginer la confiance qu'un secouriste attribuerait à cet indice de
+localisation, mais il nous semble très probable qu'elle serait plus
+faible que celle des autres indices. C'est pourquoi nous proposons
+d'attribuer une confiance moyenne à cet indice de localisation.
 
 Au terme de l'analyse de la retranscription de l'alerte on peut
 construire un ensemble d'indices (\autoref{eq:ens_ind_loc}), composé
@@ -676,7 +675,10 @@ représentent le résultat de cette opération de fuzzyfication.
   %
   \subfloat[\label{fig:fuzzy_veyont_angleNord_2}]{%
 \input{./figures/fuzzy_veymont_distanceSommet.tex}}
-  \caption{XXXX \enquote{Grand Veymont}}
+\caption{Fonction d'appartenance pour l'indice de localisaiton :
+  \enquote{Le requérant est \protect\onto[orl]{Au\-Nord\-De\-Externe}
+    du \emph{Pas de la Ville,} avec une certitude normale}
+  (\ref{ind:gv3}).}
   \label{fig:fuzzy_veyont_angleNord}
 \end{figure}
 
@@ -796,7 +798,9 @@ métrique \onto[orla]{Ecart\-Angulaire} calculée à partir du sommet de
   \centering
   \subfloat[\label{fig:Ente_metriques_GrandVeymont_a}]{\includegraphics{../figures/Entre_metrique1_GrandVeymont.png}}\hspace{1cm}
   \subfloat[\label{fig:Ente_metriques_GrandVeymont_b}]{\includegraphics{../figures/Entre_metrique2_GrandVeymont.png}}
-  \caption{Métriques}
+  \caption{Métriques calculées pour l'indice de localisation :
+    \enquote{La victime est entre le \emph{Pas de la Ville} et
+      \emph{Pierre Blanche}}.}
   \label{fig:Ente_metriques_GrandVeymont}
 \end{figure}
 
@@ -813,7 +817,9 @@ les mêmes paramètres (\(v = 0\), \(\delta=180\)). On obtient alors les
   \centering
   \subfloat[]{\includegraphics{../figures/Entre_1_GrandVeymont.png}}\hspace{1cm}
     \subfloat[]{\includegraphics{../figures/Entre_2_GrandVeymont.png}}
-  \caption{Zone de localisation compatibles}
+    \caption{Zone de localisation compatibles intermédiaires pour
+      l'indice de localisaiton : \enquote{La victime est entre le
+        \emph{Pas de la Ville} et \emph{Pierre Blanche}}.}
   \label{fig:Entre_GrandVeymont_RSA}
 \end{figure}
 
@@ -946,15 +952,16 @@ de recherche du requérant.
   \centering
   \subfloat[\label{fig:metrique_dist_foret_1}]{\includegraphics{./figures/DistanceForetX_GrandVeymont.png}}\hspace{1cm}
   \subfloat[\label{fig:metrique_dist_foret_2}]{\includegraphics{./figures/DistanceForet2_GrandVeymont.png}}
-  \caption{Fonction d'appartenance pour le fuzzyficateur
-    \protect\onto[orla]{Ed\-Val} \enquote{Grand Veymont}}
+  \caption{Exemples de métriques pour la pour l'indice de localisaiton
+    \enquote{La victime n'est pas dans une forêt.}}
   \label{fig:metrique_dist_foret}
 \end{figure}
 
 \begin{figure}
   \centering
   \input{../figures/ZLC_NotForet_GrandVeymont.tex}
-  \caption{\ac{zlc} pour l'indice de localisaiton }
+  \caption{\ac{zlc} pour l'indice de localisaiton : \enquote{La
+      victime n'est pas dans une forêt.}}
   \label{fig:ZLC_GrandVeymont_8}
 \end{figure}
 
