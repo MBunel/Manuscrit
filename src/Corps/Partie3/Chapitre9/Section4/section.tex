@@ -1167,16 +1167,14 @@ d'appartenance n'offre qu'un gain de précision dans le cas de l'alerte
 les zones à explorer, sans qu'il soit nécessaire d'ajouter de nouveaux
 indices de localisation.
 
-
-Pb de représentation des géométries
-
-Pour la modélisation du second indice de localisation nous avons
-employé la relation de localisaiton
-\onto[orl]{A\-Temps\-De\-Marche\-De}, employant le modèle de
-\textcite{Tobler1993} par le biais de la métrique
-\onto[orla]{Distance\-Temps}. Cependant lors du calcul de la métrique
-nous n'avons pas fait varier la valeur du coefficient \(g\) de
-\textcite{Tobler1993}, permettant de pénaliser la vitesse de
+Un second problème que nous avons identifié est l'utilisation que nous
+avons faite de certaines relations de localisation. Par exemple, pour
+la modélisation du second indice de localisation nous avons employé la
+relation de localisaiton \onto[orl]{A\-Temps\-De\-Marche\-De},
+employant le modèle de \textcite{Tobler1993} par le biais de la
+métrique \onto[orla]{Distance\-Temps}. Cependant lors du calcul de la
+métrique nous n'avons pas fait varier la valeur du coefficient \(g\)
+de \textcite{Tobler1993}, permettant de pénaliser la vitesse de
 déplacement si celui-ci est effectué hors sentier. La métrique
 représentée sur la \autoref{} est donc sensiblement plus optimiste que
 celle qui aurait été obtenue à l'aide d'une implémentation complète du
