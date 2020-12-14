@@ -1177,13 +1177,17 @@ de calculer la \emph{métrique} a partir d'un seul point est une
 approximation discutable. En effet, pour ces deux exemples l'objet de
 référence mentionné par le requérant n'est pas vraiment assimilable à
 un point, il s'agit d'une zone sommitale pour le sommet du \emph{Grand
-  Veymont} et d'un point de passage relativement étendu pour le \emph{Pas de
-la Ville.} Si il peut être satisfaisant de représenter un sommet par
-un point, cette approximation est un peu plus d
-
-Or, la représentation d'un objet géographique étendu, comme
-un pas ou une crête, par un point est une approximation conséquente,
-impactant fortement la spatialisation.
+  Veymont} et d'un point de passage relativement étendu pour le
+\emph{Pas de la Ville.} Si il peut être satisfaisant de représenter un
+sommet par un point, cette approximation est plus contestable dans le
+cas d'un \emph{Pas,} d'autant plus que l'information donnée par le
+requérant est une distance quantitative, elle est donc fortement
+impactée par la position de l'objet de référence. Une piste
+d'amélioration pour ce problème serait d’enrichir les données à l'aide
+de nouvelles géométrie, représentant au mieux les objets de référence,
+notamment les oronymes. Une solution envisageable pourrait être de
+construire des géométries floues, comme proposé par
+\textcite{Bloch1996}. 
 
 %%% Local Variables:
 %%% mode: latex
