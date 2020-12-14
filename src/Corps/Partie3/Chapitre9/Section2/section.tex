@@ -1105,8 +1105,10 @@ n'est constitué que de positions dont le degré d'appartenance est
 faible (inférieur à 0,4). 
 
 si l'on confronte la \ac{zlp} construite à la position effective de la
-victime 
-
+victime (\autoref{fig:ZLP_GrandVeymont}) on peut remarquer que la
+victime est située à proximité de la zone où le degré d'appartenance
+est le plus fort. Dans ce cas, la modélisation que nous proposons
+offre une bonne approximation de la position réelle de la victime.
 
 \begin{figure}
   \centering
@@ -1120,22 +1122,28 @@ victime
 \subsection{Critique de la modélisation}
 \label{subsec:9-2-3}
 
-
-La première critique que l'on puisse faire sur cette modélisation est
-qu'elle n'est que partiellement représentative de ce qui aurait été
-modélisé par un secouriste lors d'un cas réel. Certaines informations,
-comme celles données par les extraits \ref{gv:1} et \ref{gv:11} ne
-sont, par exemple, pas spatialisables, une partie de l'information
-nécessaire ne nous étant pas connue. Or, il est fort probable que le
-secouriste aurait adapté ses questions pour obtenir les informations
-nécessaires à la définition des relations de localisations qui lui
-semblent pertinentes.
-
-La \ac{zlp} obtenue est sans doute un peu plus vaste que celle
-qu'auraient obtenu les secouristes durant la phase de localisation.
+Malgré ces bons résultats, la modélisation que nous proposons pour
+cette alerte n'est pas exempte de défauts. La première critique que
+l'on puisse faire sur cette modélisation est qu'elle n'est que
+partiellement représentative de ce qui aurait été modélisé par un
+secouriste lors d'un cas réel. Certaines informations, comme celles
+données par les extraits \ref{gv:1} et \ref{gv:11} ne sont, par
+exemple, pas spatialisables, une partie de l'information nécessaire ne
+nous étant pas connue. Or, il est fort probable que le secouriste
+aurait adapté ses questions pour obtenir les informations nécessaires
+à la définition des relations de localisations qui lui semblent
+pertinentes. Ainsi, le résultat que nous proposons est surement assez
+différent de celui qu'auraient obtenu les secouristes en traitant
+\enquote{normalement} l'alerte. Cette observation ne remet pas en
+question les résultats obtenus, mais il convient de le préciser.
 
 Un second point que l'on peut reprocher à la modélisation proposée est
-la valeur des seuils.
+la valeur des seuils. En effet, nous n'avons pas réussit à proposer
+une démarche permettant de définir les seuils des fuzzyficateurs
+utilisés pour la modélisation des \emph{relations de localisation.} Si
+certains d'entre-eux peuvent être faciles à identifier et à défendre
+(\eg le fait que la valeur de référence \(v\) pour un écart d'altitude
+est fixée à 0)
 
 
 % TODO
