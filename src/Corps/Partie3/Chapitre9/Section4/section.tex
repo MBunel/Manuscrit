@@ -737,31 +737,31 @@ position de la \ac{zir}, la différence entre l'altitude de chaque
 position avec celle de la position, appartenant à l'objet de
 référence, la plus proche. La figure \ref{fig:SousAlt_Metrique_1}
 représente la valeur de cette métrique pour un chemin donné. Une fois
-le calcul de la métrique effectué on peut procéder à la construction
+le calcul de la métrique effectué, on peut procéder à la construction
 de la \ac{zlc} spatialisant la relation de localisation atomique
 \onto[orla]{Sous\-Altitude}, pour chacune des instances. Pour la
-modélisation de cette alerte nous avons légèrement modifié les valeurs
-de la fonction d'appartenance que nous avions utilisé lors du
-\autoref{chap:06}. En effet, lors de ce premier essai nous avions
+modélisation de cette alerte, nous avons légèrement modifié les
+valeurs de la fonction d'appartenance que nous avions utilisé lors du
+\autoref{chap:06}. En effet, lors de ce premier essai, nous avions
 choisi de fixer le paramètre \(v\) à \SI{-5}{\meter} et le paramètre
 \(\delta\) à \SI{5}{\meter}. Le choix d'une valeur négative de \(v\)
 était justifié par le fait que l'altitude des linéaires représentant
-les lignes électriques dans la BDTOPO était définie par la hauteur des
-pylônes et non par celle du sol. Un tel paramétrage nous semblait ici
-trop sévère, d'une part car l'altitude des objets \enquote{chemin} de
-la BDTOPO équivaut à la hauteur du sol, mais également car il nous
+les lignes électriques dans la BD TOPO était définie par la hauteur
+des pylônes et non par celle du sol. Un tel paramétrage nous semblait
+ici trop sévère, d'une part car l'altitude des objets \enquote{chemin}
+de la BD TOPO équivaut à la hauteur du sol, mais également car il nous
 semble préférable d'adopter une démarche multipliant les indices peu
 précis (\ie avec des fonctions d'appartenance \enquote{larges}),
 plutôt que de se reposer sur une paire d'indices optimisés. Nous avons
 donc fixé la valeur de \(v\) à 0 et conservé la valeur de
 \SI{5}{\meter} pour \(\delta\). La figure \ref{fig:SousAlt_fnc}
 représente la fonction d'appartenance ainsi définie. Avec un tel
-paramétrage, toutes positions située a une altitude inférieure à
+paramétrage, toutes positions située à une altitude inférieure à
 l'objet de référence se voient attribuer un degré d'appartenance
 maximal et les positions situées légèrement au-dessus de l'objet de
 référence (jusqu'à \SI{5}{\meter}) ont un degré d'appartenance non
 nul. Si l'on applique cette fonction de fuzzyfication à la métrique
-représentée par la figure \ref{fig:SousAlt_Metrique_1} on obtient la
+représentée par la figure \ref{fig:SousAlt_Metrique_1}, on obtient la
 figure \ref{fig:SousAlt_ZLC_1}, représentant la \ac{zlc} de la
 relation de localisation \onto[orla]{Sous\-Altitude} pour une instance
 donnée de chemin.
@@ -779,26 +779,27 @@ donnée de chemin.
 \end{figure}
 
 En parallèle du traitement de la première relation de localisation
-atomique on peut procéder au traitement de la relation de localisation
-\onto[orla]{Proximal}. La métrique utilisée par cette seconde relation
-est \onto[orla]{Distance\-Euclidienne}. La figure
+atomique, on peut procéder au traitement de la relation de
+localisation \onto[orla]{Proximal}. La métrique utilisée par cette
+seconde relation est \onto[orla]{Distance\-Euclidienne}. La figure
 \ref{fig:Proximal_Metrique_1} représente le résultat de cette métrique
-pour un chemin donné. Comme précédemment nous avons choisi de modifier
-légèrement les valeurs de la fonction d'appartenance par rapport aux
-valeurs que nous avions utilisées dans le \autoref{chap:06}. Les
-précédentes valeurs (\(v\) et \(\delta\) fixées à \SI{50}{\meter})
-nous semblant trop restrictives pour cette alerte. Nous avons donc
-choisi de fixer la valeur de \(\delta\) à \SI{150}{\meter}, ce qui
-permet une décroissance plus lente de la fonction d'appartenance et
-donc une fuzzyfication moins sévère. Nous avons laissé le paramètre
-\(v\) a sa valeur précédente de \SI{50}{\meter}, celle-ci nous ayant
-semblé être toujours pertinente. La figure \ref{fig:Proximal_fnc}
-représente la fonction d'appartenance ainsi construite. Si l'on
-applique cette fonction d'appartenance à la métrique précédemment
-calculée (Figure \ref{fig:Proximal_Metrique_1}) on obtient la \ac{zlc}
-de cette seconde relation de localisation atomique. La figure
-\ref{fig:Proximal_ZLC_1} représenta la \ac{zlc} résultante de cette
-opération pour un chemin donné.
+pour un chemin donné. Comme précédemment, nous avons choisi de
+modifier légèrement les valeurs de la fonction d'appartenance par
+rapport aux valeurs que nous avions utilisées dans le
+\autoref{chap:06}, les précédentes valeurs (\(v\) et \(\delta\) fixées
+à \SI{50}{\meter}) nous semblant trop restrictives pour cette
+alerte. Nous avons donc choisi de fixer la valeur de \(\delta\) à
+\SI{150}{\meter}, ce qui permet une décroissance plus lente de la
+fonction d'appartenance et donc une fuzzyfication moins sévère. Nous
+avons laissé le paramètre \(v\) a sa valeur précédente de
+\SI{50}{\meter}, celle-ci nous ayant semblé être toujours
+pertinente. La figure \ref{fig:Proximal_fnc} représente la fonction
+d'appartenance ainsi construite. Si l'on applique cette fonction
+d'appartenance à la métrique précédemment calculée (Figure
+\ref{fig:Proximal_Metrique_1}) on obtient la \ac{zlc} de cette seconde
+relation de localisation atomique. La figure \ref{fig:Proximal_ZLC_1}
+représenta la \ac{zlc} résultante de cette opération pour un chemin
+donné.
 
 \begin{figure}
   \centering
