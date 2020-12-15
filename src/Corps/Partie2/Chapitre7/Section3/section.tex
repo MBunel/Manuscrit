@@ -6,13 +6,13 @@ représentative de la sémantique de la \emph{relation de localisation
 nombreuses et diverses que les \emph{rasterisers.}
 
 \subsection{Classification}
-Les \emph{métriques} que nous sommes amenés à construire peuvent être
-de nature et porter sur des phénomènes assez différents. Toutefois on
+Les \emph{métriques} que nous sommes amenées à construire peuvent être
+de nature et porter sur des phénomènes assez différents. Toutefois, on
 peut identifier une certaine récurrence dans leurs
 caractéristiques. Tout d'abord, certaines \emph{métriques} quantifient
 des phénomènes exprimés par rapport à \emph{l'objet de référence.}
 C'est par exemple le cas de la fonction que nous avons précédemment
-utilisé pour introduire la méthodologie de \emph{spatialisation.} En
+utilisée pour introduire la méthodologie de \emph{spatialisation.} En
 effet, la valeur de cette fonction \footnote{Qui, pour rappel, est de
   1 si la position est confondue avec l'objet de référence et de 0
   sinon.} calculée en un pixel dépend de la position et de la forme de
@@ -29,7 +29,7 @@ distinguer les \emph{métriques.}  En effet, certaines d'entre elles
 nécessitent un paramétrage pour être calculées. C'est par exemple le
 cas d'une \emph{métrique} comme le temps de marche, qu'il est
 nécessaire de paramétrer en fonction de la vitesse de
-déplacement. Cependant une grande partie des \emph{métriques} ne
+déplacement. Cependant, une grande partie des \emph{métriques} ne
 nécessitent pas de paramétrage, c'est notamment le cas de la distance
 à \emph{l'objet de référence} ou de l'altitude, déjà citées.
 
@@ -48,7 +48,7 @@ ces deux critères.
 \subsection{Les différentes \emph{métriques}}
 
 Parmi tous les exemples que nous avons présentés, une \emph{métrique}
-apparait régulièrement : la \emph{distance planimétrique} à
+apparaît régulièrement : la \emph{distance planimétrique} à
 \emph{l'objet de référence.} Le processus de calcul de la
 \emph{métrique} consiste à calculer, pour chaque pixel de la \ac{zir},
 la distance minimale à \emph{l'objet de référence,} c'est-à-dire la
@@ -59,54 +59,54 @@ utilisée lors de la \emph{spatialisation} de \emph{l'indice de
 (\autoref{fig:ISO_DIST_HT}), mais elle est également utilisable pour
 spatialiser des relations topologiques tout en prenant en compte
 \emph{l'imprécision} (\eg deux objets très proches, mais qui ne
-partagent pas de positions, peuvent, du point vue du requérant, être
+partagent pas de positions peuvent, du point vue du requérant, être
 considérés comme en contact). Cette \emph{métrique} est un exemple
 caractéristique des \emph{métriques extrinsèques} et \emph{non
   paramétriques.} Il est, en effet, nécessaire de la calculer pour
 chaque \emph{objet de référence,} mais elle n'accepte pas de
 \emph{paramètres.}  On pourrait cependant en ajouter, par exemple en
 ajoutant un paramètre permettant d'employer d'autres distances, comme
-la distance de Manhattan, de Minkowski ou de Tchebychev. Mais nous
-avons estimé que ces distances alternatives, trop éloignées de la
+la distance de Manhattan, de Minkowski ou de Tchebychev. Cependant,
+nous avons estimé que ces distances alternatives, trop éloignées de la
 perception humaine des distances, ne présentent pas d’intérêt pour
 notre cas d'application.
 
 Une autre \emph{métrique,} également employée lors de la comparaison
 des implémentations (\autoref{chap:06}), est la différence d'altitude
 entre une position et \emph{l'objet de référence.} Il s'agit d'une
-\emph{métrique extrinsèque,} prenant en paramètre la méthode de calcul
-du l'altitude de référence, utilisée pour la comparaison. Comme nous
-l'avons précédemment (\autoref{tab:atomique_vertical}), plusieurs
-méthodes peuvent être employées pour sélectionner l'altitude à
-comparer. On peut par exemple calculer la différence d'altitude à
-partir de la valeur minimale, maximale ou moyenne de \emph{l'objet de
+\emph{métrique extrinsèque,} prenant en paramètre la méthode du calcul
+de l'altitude de référence, utilisée pour la comparaison. Comme nous
+l'avons précédemment indiqué (\autoref{tab:atomique_vertical}),
+plusieurs méthodes peuvent être employées pour sélectionner l'altitude
+à comparer. On peut par exemple calculer la différence d'altitude à
+partir des valeurs minimale, maximale ou moyenne de \emph{l'objet de
   référence,} ce qui peut permettre une \emph{spatialisation} plus ou
 moins stricte. Cependant, l'usage de ces valeurs de référence n'est
 pas pertinent pour des objets très étendus, comme des lignes
-électriques ou des forêts. C'est pourquoi nous avons choisi de
+électriques ou des forêts. C'est pourquoi, nous avons choisi de
 calculer par défaut cette différence à partir du pixel de l'objet de
-référence le plus proche. Dans cette configuration la \emph{métrique}
+référence le plus proche. Dans cette configuration, la \emph{métrique}
 \onto{Delta\-Alt} exprime alors une différence d'altitude contextuelle
 et non globale comme elle le ferait en calculant la différence par
 rapport au maximum ou au minimum. La \autoref{fig:metrique_delta_alt}
 donne un exemple ---~extrait de la spatialisation du \emph{fil rouge}
-(\autoref{chap:10}) et de la comparaison des implémentations
+(\autoref{chap:09}) et de la comparaison des implémentations
 (\autoref{chap:06})~--- du calcul de cette \emph{métrique.} La
 différence d'altitude est ici calculée par rapport à l'altitude du
-pixel de la ligne électrique le plus proche. Une amélioration possible
-de cette \emph{métrique} serait d'ajouter de nouveaux paramètres
-permettant de comparer l'altitude par rapport à des extremums
-locaux. Par exemple, en prenant pour point de comparaison le minimum
-(ou le maximum ou la moyenne) de la zone la plus proche de
+pixel, de la ligne électrique, le plus proche. Une amélioration
+possible de cette \emph{métrique} serait d'ajouter de nouveaux
+paramètres permettant de comparer l'altitude par rapport à des
+extremums locaux, par exemple, en prenant pour point de comparaison le
+minimum (ou le maximum ou la moyenne) de la zone la plus proche de
 \emph{l'objet de référence.} Cette approche permettrait une plus
 grande finesse de \emph{spatialisation,} en permettant des
-configurations plus fines. Cependant la solution retenue par défaut à
+configurations plus fines. Cependant, la solution retenue par défaut à
 l'avantage d'être suffisamment robuste pour fonctionner dans toutes
 les situations que nous avons rencontrées et ce sans ajustements
 \emph{ad hoc.} La métrique \onto{Delta\-Alt} peut également être
 utilisée pour calculer une différence par rapport à une altitude
 donnée explicitement, comme dans \emph{l'indice de localisation,}
-\enquote{Il est à \SI{300}{\meter} d'altitude.}
+\enquote{Il est à 300 mètres d'altitude.}
 
 \begin{figure}
   \centering
