@@ -132,7 +132,6 @@
       \foreach \x in {0,.25,...,1.75}{
         \foreach \y in {0,.25,...,1.75}
         {
-
           % Calcul de l'angle
           \calcangle{\angle}{\pgfpoint{0.125cm}{1.375cm}}{\pgfpoint{1.75cm}{0cm}}{\pgfpoint{\x cm}{\y cm}}
           % Fuzzyfication de l'angle
@@ -216,7 +215,26 @@
       \foreach \x in {0,.25,...,1.75}{
         \foreach \y in {0,.25,...,1.75}
         {
-          \fill[RdBu-9-1] (\x+.125,.125+\y) circle (2 pt);
+          % Calcul de l'angle
+          \calcangle{\angle}{\pgfpoint{0.125cm}{1.375cm}}{\pgfpoint{1.75cm}{0cm}}{\pgfpoint{\x cm}{\y cm}}
+          % Fuzzyfication de l'angle
+          \pgfmathsetmacro\fuzzya{%
+            ifthenelse(\angle < 90,(90-\angle)/90,
+            ifthenelse(\angle > 270,(\angle-270)/90,0)
+            )
+          }
+          %
+          % Calcul et représentation floue distance euclidienne
+          \pgfmathsetmacro\dist{sqrt((\x-0.125)^2+(\y-1.375)^2)}
+          % Fuzzyfication de la distance
+          \pgfmathsetmacro\fuzzyb{%
+            ifthenelse(\dist < .25,1,%
+            ifthenelse(\dist < 2,-0.57*\dist+1.14,0)%
+            )
+          }
+          %
+          \pgfmathsetmacro\radius{min(\fuzzya,1-\fuzzyb)*2.5}
+          \fill[RdBu-9-1] (\x+.125,.125+\y) circle (\radius pt);
         }
       }
       \path[ffc] (0,0) rectangle (2,2);
@@ -261,8 +279,42 @@
     \begin{scope}
       \foreach \x in {0,.25,...,1.75}{
         \foreach \y in {0,.25,...,1.75}
-        {
-          \fill[RdBu-9-9] (\x+.125,.125+\y) circle (2 pt);
+        {          
+          % Calcul de l'angle
+          \calcangle{\angle}{\pgfpoint{0.125cm}{1.375cm}}{\pgfpoint{1.75cm}{0cm}}{\pgfpoint{\x cm}{\y cm}}
+          % Fuzzyfication de l'angle
+          \pgfmathsetmacro\fuzzya{%
+            ifthenelse(\angle < 90,(90-\angle)/90,
+            ifthenelse(\angle > 270,(\angle-270)/90,0)
+            )
+          }
+          %
+          % Calcul et représentation floue distance euclidienne
+          \pgfmathsetmacro\dist{sqrt((\x-0.125)^2+(\y-1.375)^2)}
+          % Fuzzyfication de la distance
+          \pgfmathsetmacro\fuzzyb{%
+            ifthenelse(\dist < .25,1,%
+            ifthenelse(\dist < 2,-0.57*\dist+1.14,0)%
+            )
+          }
+
+          \pgfmathsetmacro\dista{sqrt((\x-0.125)^2+(\y-1.375)^2)}
+          % Fuzzyfication de la distance
+          \pgfmathsetmacro\fuzzyc{%
+            ifthenelse(\dista < .25,1,%
+            ifthenelse(\dista < 2,-0.57*\dista+1.14,0)%
+            )
+          }
+          % Calcul et représentation floue distance euclidienne
+          \pgfmathsetmacro\distb{sqrt((\x-2.125)^2+(\y-1.875)^2)}
+          % Fuzzyfication de la distance
+          \pgfmathsetmacro\fuzzyd{%
+            ifthenelse(\distb < .25,1,%
+            ifthenelse(\distb < 2,-0.57*\distb+1.14,0)%
+            )
+          }
+          \pgfmathsetmacro\radius{min(\fuzzya, 1-\fuzzyb, max(\fuzzyc, 0.3), max(\fuzzyd, 0.3))*2.5}          
+          \fill[RdBu-9-1] (\x+.125,.125+\y) circle (\radius pt);
         }
       }
       \path[ffc2] (0,0) rectangle (2,2);
