@@ -316,13 +316,13 @@ localisation qui s'y appliquent peuvent changer en fonction de la
 partie de l'objet considérée. Par exemple, pour une ligne de
 téléphérique il paraît raisonnable de considérer qu'une relation de
 proximité a un rayon plus important si elle se rapporte aux bâtiments
-qu'aux pylônes ou au câble, ces derniers étant plus saillants. Dit
-autrement, on est plus vite loin d'un pylône que d'une gare de
-téléphérique. Les parties de l'objet peuvent influer le paramétrage
-des relations de localisation. Un exemple peut être celui d'une route
-contenant des ponts et des tunnels. Si un requérant décrit sa position
-en indiquant se trouver \enquote{sous une route} il est pertinent
-d'adapter le concept à la composante de l'objet. On sera
+qu'aux pylônes ou au câble, ces derniers étant plus
+saillants. Autrement dit, on est plus vite loin d'un pylône que d'une
+gare de téléphérique. Les parties de l'objet peuvent influer le
+paramétrage des relations de localisation. Un exemple peut être celui
+d'une route contenant des ponts et des tunnels. Si un requérant décrit
+sa position en indiquant se trouver \enquote{sous une route}, il est
+pertinent d'adapter le concept à la composante de l'objet. On sera
 \onto[orl]{Sous\-Proche\-De} une route mais
 \onto[orl]{Sous\-Recouvert\-Par} un tunnel ou un pont. Les parties de
 l'objet peuvent donc influencer le choix des concepts.
@@ -347,29 +347,29 @@ localisation atomiques, mais également la création d'une nouvelle
 ontologie, celle des objets de référence composites.
 
  % L'évaluation de la qualité des \ac{zlp}
-Une seconde piste d'amélioration que nous déjà explorée, mais dont
-nous n'avons pas rendu compte dans ce mémoire, parce qu'elle n'était
-pas assez aboutie, est la définition d'une méthode d'évaluation de la
-qualité des zones de localisation construites et plus particulièrement
-de la zone de localisation probable. Comme les alertes étudiées dans
-le \autoref{chap:09} l'ont montré, la \emph{zone de localisation
-  probable} produite par notre méthode peut, en fonction des indices
-de localisation, avoir des configurations très différentes. Elle peut
-par exemple être d'un bloc, ou fragmentée, comme le résultat de la
-spatialisation du \emph{fil rouge.} Dans ce second cas il est
-difficile de savoir dans quelle zone chercher en priorité. Une
-première approche est de se focaliser sur les zones dont de degré
-d'appartenance est le plus élevé, mais ce critère ne permet pas de
-distinguer toutes les zones.
+Une seconde piste d'amélioration que nous avons déjà explorée, mais
+dont nous n'avons pas rendu compte dans ce mémoire, parce qu'elle
+n'était pas assez aboutie, est la définition d'une méthode
+d'évaluation de la qualité des zones de localisation construites et
+plus particulièrement de la zone de localisation probable. Comme les
+alertes étudiées dans le \autoref{chap:09} l'ont montré, la \emph{zone
+  de localisation probable} produite par notre méthode peut, en
+fonction des indices de localisation, avoir des configurations très
+différentes. Elle peut par exemple être d'un bloc, ou fragmentée,
+comme le résultat de la spatialisation du \emph{fil rouge.} Dans ce
+second cas, il est difficile de savoir dans quelle zone chercher en
+priorité. Une première approche est de se focaliser sur les zones dont
+le degré d'appartenance est le plus élevé, mais ce critère ne permet
+pas de distinguer toutes les zones.
 
-Pour faciliter l'exploitation des résultats nous avons réfléchi à
+Pour faciliter l'exploitation des résultats, nous avons réfléchi à
 mettre en place une méthode permettant de caractériser chaque fragment
 de la \ac{zlp}, puis de les classer de manière à faciliter l'analyse
 des secouristes. Pour ce faire, différentes pistes méthodologiques ont
 été explorées, comme la définition d'un système d'inférence flou ou
 d'une méthode fondée sur la théorie des fonctions de croyance
 \autocite{Shafer1976} et inspirée des travaux de
-\textcite{Olteanu2008}. Cependant nous n'avons pas encore réussi à
+\textcite{Olteanu2008}. Cependant, nous n'avons pas encore réussi à
 identifier des métriques de classifications qui soient pleinement
 pertinentes, ce travail doit donc encore être approfondi. Une piste
 d'amélioration serait d'étudier en détail, avec les secouristes les
