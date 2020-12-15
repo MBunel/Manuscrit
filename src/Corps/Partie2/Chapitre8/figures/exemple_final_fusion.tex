@@ -32,7 +32,7 @@
       \foreach \x in {0,.25,...,1.75}{ \foreach \y in {0,.25,...,1.75}
         {
           % Calcul de l'angle
-          \calcangle{\angle}{\pgfpoint{1cm}{1cm}}{\pgfpoint{1cm}{0cm}}{\pgfpoint{\x cm}{\y cm}}
+          \calcangle{\angle}{\pgfpoint{0.125cm}{1.375cm}}{\pgfpoint{1.75cm}{0cm}}{\pgfpoint{\x cm}{\y cm}}
           % Fuzzyfication de l'angle
           \pgfmathsetmacro\fuzzy{%
             ifthenelse(\angle < 90,(90-\angle)/90,
@@ -134,7 +134,7 @@
         {
 
           % Calcul de l'angle
-          \calcangle{\angle}{\pgfpoint{1cm}{1cm}}{\pgfpoint{1cm}{0cm}}{\pgfpoint{\x cm}{\y cm}}
+          \calcangle{\angle}{\pgfpoint{0.125cm}{1.375cm}}{\pgfpoint{1.75cm}{0cm}}{\pgfpoint{\x cm}{\y cm}}
           % Fuzzyfication de l'angle
           \pgfmathsetmacro\fuzzya{%
             ifthenelse(\angle < 90,(90-\angle)/90,
@@ -151,7 +151,7 @@
             )
           }
           %
-          \pgfmathsetmacro\radius{max(\fuzzya,\fuzzyb)*2.5}
+          \pgfmathsetmacro\radius{min(\fuzzya,1-\fuzzyb)*2.5}
           \fill[RdBu-9-1] (\x+.125,.125+\y) circle (\radius pt);
         }
       }
