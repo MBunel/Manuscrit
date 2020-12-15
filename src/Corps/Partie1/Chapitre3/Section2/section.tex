@@ -1408,7 +1408,7 @@ par \textcite{Schneider1999} à l’aide de \enquote{région\textins{s}
 multi-polygones) nets, représentant une plage de valeurs de degré
 d’appartenance. Cette implémentation est semblable à l’approche par
 alpha-cuts proposée par \textcite{Runz2008} ou
-\textcite{Zoghalmi2013,Zoghalmi2016}. Dans la théorie des
+\textcite{Zoghlami2013,Zoghlami2016}. Dans la théorie des
 sous-ensembles flous, une alpha-cut est définie comme l’ensemble des
 éléments d’un sous-ensemble flou ayant un degré d’appartenance
 supérieur à un seuil fixé \footnote{Par exemple, une \emph{alpha-cut}
@@ -1418,7 +1418,7 @@ sous-ensemble flou sont des positions, une alpha-cut permet de définir
 une aire, modélisable par un polygone.
 
 Ainsi, les implémentations proposées par \textcite{Kanjilal2010},
-\textcite{Zoghalmi2013,Zoghalmi2016} ou \textcite{Runz2008, Runz2008a}
+\textcite{Zoghlami2013,Zoghlami2016} ou \textcite{Runz2008, Runz2008a}
 ont pour point commun de représenter un sous-ensemble flou en le
 discrétisant à l’aide de polygones. Mais ces approches ont une
 différence majeure: les contraintes de construction des
@@ -1426,7 +1426,7 @@ polygones. L’approche de \textcite{Kanjilal2010} impose aux polygones
 constitutif d’une région plateau d’être disjoints ou adjacents deux à
 deux, une même position ne peut donc appartenir qu’à un seul polygone,
 ce qui n’est pas le cas pour les implémentations proposées par
-\textcite{Zoghalmi2013,Zoghalmi2016} ou \textcite{Runz2008}, où une
+\textcite{Zoghlami2013,Zoghlami2016} ou \textcite{Runz2008}, où une
 position appartient, par définition, à toutes les alpha-cuts
 construites à partir d’un seuil inférieur à son degré
 d’appartenance. Cette distinction n’est pas visible sur la figure 9,
@@ -1446,7 +1446,7 @@ degré d’appartenace est non nul \footnote{Chaque \emph{alpha-cut} est
   donc incluse dans la suivante.}. Par conséquent, si l’on ne
 construit que les \emph{alpha-cuts} du \emph{noyau} et du
 \emph{support,} le résultat de l’implémentation proposée par
-\textcite{Zoghalmi2013,Zoghalmi2016} ou \textcite{Runz2008a} est
+\textcite{Zoghlami2013,Zoghlami2016} ou \textcite{Runz2008a} est
 identique à celui des modèles de \textcite{Cohn1996} ou de
 \textcite{Clementini1996} présentés précédemment et qui superposent
 également la zone d’appartenance à la zone d’appartenance partielle;
@@ -1472,7 +1472,7 @@ précédemment présentés imposent un échantillonnage des degrés
 d’appartenance, dont la précision varie en fonction du nombre de
 régions nettes \autocite{Kanjilal2010} ou d’alpha-cuts utilisées
 \autocite{Zoghlami2016}. L’implémentation proposée par
-\textcite{Zoghalmi2013,Zoghalmi2016} ou \textcite{Runz2008a} vise à
+\textcite{Zoghlami2013,Zoghlami2016} ou \textcite{Runz2008a} vise à
 contourner ce problème en offrant la possibilité de calculer le degré
 d’appartenance en tout point de la région floue par interpolation (de
 manière similaire a la proposition de \textcite{Tossebro2002}. Ils
