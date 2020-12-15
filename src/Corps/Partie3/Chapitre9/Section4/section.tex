@@ -791,14 +791,14 @@ rapport aux valeurs que nous avions utilisées dans le
 alerte. Nous avons donc choisi de fixer la valeur de \(\delta\) à
 \SI{150}{\meter}, ce qui permet une décroissance plus lente de la
 fonction d'appartenance et donc une fuzzyfication moins sévère. Nous
-avons laissé le paramètre \(v\) a sa valeur précédente de
+avons laissé le paramètre \(v\) à sa valeur précédente de
 \SI{50}{\meter}, celle-ci nous ayant semblé être toujours
 pertinente. La figure \ref{fig:Proximal_fnc} représente la fonction
 d'appartenance ainsi construite. Si l'on applique cette fonction
 d'appartenance à la métrique précédemment calculée (Figure
 \ref{fig:Proximal_Metrique_1}) on obtient la \ac{zlc} de cette seconde
 relation de localisation atomique. La figure \ref{fig:Proximal_ZLC_1}
-représenta la \ac{zlc} résultante de cette opération pour un chemin
+représente la \ac{zlc} résultante de cette opération pour un chemin
 donné.
 
 \begin{figure}
@@ -832,7 +832,7 @@ et \protect\onto[proximal]{Proximal}
 Une fois que l'on dispose des \ac{zlc} spatialisant les relations de
 localisations \onto[orla]{Sous\-Altitude} et
 \onto[orla]{Distance\-Euclidienne} pour chaque instance (Soit
-\num{3952} \ac{zlc} dans le cas présent) commence la phase de
+\num{3952} \ac{zlc} dans le cas présent), commence la phase de
 fusion. Durant la première étape de cette phase, les \ac{zlc}
 correspondant à la spatialisation des relations de localisation
 atomiques \onto[orla]{Sous\-Altitude} et
@@ -844,8 +844,8 @@ deux, en \num{1976} \ac{zlc}, une par instance. La
 \autoref{fig:ZLC_SousProche_1} représente cette zone pour l'instance
 de \enquote{chemin} précédemment prise en exemple. Comme on peut le
 remarquer \footnote{C'est une remarque que nous avions déjà formulée
-  dans le \autoref{chap:06}.} la \ac{zlc} ainsi obtenue est avant tout
-contrainte par la relation de localisation \onto[orla]{Proximal}
+  dans le \autoref{chap:06}.}, la \ac{zlc} ainsi obtenue est avant
+tout contrainte par la relation de localisation \onto[orla]{Proximal}
 (Figure \ref{fig:Proximal_ZLC_1}). La relation de localisation
 \onto[orla]{Sous\-Altitude} ne limite quant à elle que l'étendue dans
 la partie supérieure.
@@ -881,7 +881,7 @@ Le quatrième indice de cette alerte emploie la relation de
 localisation \onto[orl]{Cible\-Voit\-Site}. Il s'agit d'une relation
 de localisation atomique utilisant le rasteriser
 \onto[orla]{Geometrie}, la métrique \onto[orla]{Part\-Visible} et le
-fuzzyficateur \onto{Sup\-Val}. Comme précédemment la victime ne
+fuzzyficateur \onto{Sup\-Val}. Comme précédemment, la victime ne
 mentionne pas un objet de référence particulier, mais en désigne un
 type (\ie un \enquote{plan d'eau}). Il est donc une nouvelle dois
 nécessaire de procéder a la décomposition de l'indice de
