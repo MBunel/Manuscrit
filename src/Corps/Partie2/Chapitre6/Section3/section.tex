@@ -360,7 +360,7 @@ résultats de l'implémentation raster (\autoref{fig:ZLP_SOUS_HT}) et
 d'en extraire les pixels dont le degré d'appartenance est supérieur à
 un seuil fixé. Cette construction par sélection \footnote{Fortement
   semblable à la \emph{construction en extension d'ordre supérieur}
-  présentée dans le \autoref{chap:03}.}, n'est cependant rien de plus
+  présentée dans le \autoref{chap:03}.} n'est cependant rien de plus
 qu'un post-traitement des résultats de l'implémentation raster et elle
 ne possède pas d'avantages (ou inconvénients) qui lui soient
 propres. Une approche différente est cependant
@@ -371,16 +371,16 @@ préalable de calcul des degrés d'appartenance, soit une
 \emph{d'alpha-cuts} en intension demande d'identifier les critères
 jouant sur la forme de la \emph{zone de localisation,} soit, dans
 notre exemple, la distance et la différence d'altitude par rapport à
-la ligne électrique. Conformément au \emph{principe de décomposition}
+la ligne électrique. Conformément au \emph{principe de décomposition,}
 on peut alors définir une méthode géométrique permettant de
 construire, pour chaque \emph{relation de localisation atomique} et
 chaque \emph{alpha-cut} construite, une région, correspondant à une
 \emph{alpha-cut} de la \emph{zone de localisation compatible}
 traitée. Ces différentes \emph{alpha-cuts} sont alors intersectées
 deux à deux, par même degré d'appartenance en vue d'obtenir les
-\emph{alpha-cuts} de la \emph{zone de localisation probable} et ce de
+\emph{alpha-cuts} de la \emph{zone de localisation probable} et ce, de
 manière fortement similaire à l'implémentation raster. Pour cette
-comparaison nous avons choisi de construire trois \emph{alpha-cuts,}
+comparaison, nous avons choisi de construire trois \emph{alpha-cuts,}
 celle dont le degré est égal à 1, délimitant le \emph{noyau} du
 \emph{sous-ensemble flou,} celle dont le degré d'appartenance est
 supérieur à 0, délimitant le \emph{support} et enfin
