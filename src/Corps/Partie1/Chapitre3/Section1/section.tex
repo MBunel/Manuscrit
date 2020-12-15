@@ -549,15 +549,15 @@ concepts. En effet, on ne dira pas de deux objets très éloignés, que
 l'un est \enquote{devant} l'autre.
 
 % Ontoi 2
-Contrairement GUM-Space, les ontologies des \emph{relations de
+Contrairement à GUM-Space, les ontologies des \emph{relations de
   localisation} proposées par
 \textcite{Dasiopoulou2005,Miron2007,Hudelot2008a} ont été construites
 pour application spécifique. L'ontologie de \textcite{Dasiopoulou2005}
 est, par exemple, destinée à l'identification automatisée d'objets
 dans des vidéos. Cette dernière définit des relations topologiques et
-directionnelles. 
+directionnelles.
 
-Quant a ONTOAST \autocite{Miron2007}, il s'agit d'une ontologie ne
+Quant à ONTOAST \autocite{Miron2007}, il s'agit d'une ontologie ne
 définissant que des \emph{relations de localisation} qualitatives. Ces
 dernières peuvent êtres topologiques (les relations définies sont
 équivalentes à celles du modèle RCC8), directionnelles ou bien de
@@ -575,7 +575,7 @@ d'images.
 La particularité principale de l'ontologie FRSO est qu'elle est basée
 sur une extension floue de la \emph{logique de description.}
 %
-Dans cette ontologies sont distinguées 8 relations directionnelles, 3
+Dans cette ontologie, sont distinguées 8 relations directionnelles, 3
 relations de distance et 8 relations topologiques sont définies.
 
 \subsection{Travaux sur la modélisation des différentes familles de
@@ -583,10 +583,10 @@ relations de distance et 8 relations topologiques sont définies.
 
 Nous allons à présent détailler les différents travaux proposés pour
 modéliser des familles spécifiques de \emph{relations de
-  localisation.} Pour ce faire nous allons aborder chaque famille de
+  localisation.} Pour ce faire, nous allons aborder chaque famille de
 \emph{relations de localisation} en commençant par les \emph{relations
   topologiques} qui, comme l'indiquent \textcite{Aurnague1997} sont
-les relations les plus simples a manipuler pour un être humain en plus
+les relations les plus simples à manipuler pour un être humain en plus
 d'être importantes pour la description d'une localisation
 \autocite{Egenhofer1995}.
 
@@ -628,14 +628,14 @@ modèle définit huit relations topologiques et méréologiques :
 (\autoref{fig:RCC}).
 %
 Ces dernières couvrent l'ensemble des possibles et sont mutuellement
-exclusives. Par conséquent, quelque soit la configuration des deux
+exclusives. Par conséquent, quelle que soit la configuration des deux
 régions \textcolor{RdBu-9-1}{A} et \textcolor{RdBu-9-9}{B}, une et une
 seule relation du modèle RCC est vérifiée, on parle alors de relations
 \foreigntextquote{english}[{\cite{Duchene2019}}]{\emph{Jointly
     Exhaustive Parwise Disjoint}} (JEPD).
 
 Une caractéristique essentielle du modèle RCC-8 est qu'il permet le
-raisonnement sur les relations qu'il formalise. Ainsi, si l'on connait
+raisonnement sur les relations qu'il formalise. Ainsi, si l'on connaît
 deux des trois relations topologique entre trois objets deux à deux,
 il est possible d'inférer automatiquement la troisième relation. Ce
 processus s’effectue à l'aide d'une \emph{table de transition.}
@@ -648,12 +648,12 @@ processus s’effectue à l'aide d'une \emph{table de transition.}
 l'indique, le nombre des \emph{relations topologiques} modélisées à 5
 (\autoref{fig:RCC}). Les relations DC et EC sont regroupées en une
 nouvelle relation, DR (\enquote{\emph{discrete}}), indiquant que deux
-régions ne partagent pas leurs intérieur. De même, les relations TPP
-et NTPP (et leurs inverses) sont combinées en une seule relation (et
-son inverse), PP (\emph{Proper parts}), indiquant qu'une région est
+régions ne partagent pas leur intérieur. De même, les relations TPP et
+NTPP (et leurs inverses) sont combinées en une seule relation (et son
+inverse), PP (\emph{Proper parts}), indiquant qu'une région est
 incluse dans la seconde. En réduisant le nombre de \emph{relations
-  topologiques} modélisées le modèle RCC-5 perd en expressivité,
-cependant l'objectif annoncé pour ce modèle n'est pas d’enrichir la
+  topologiques} modélisées, le modèle RCC-5 perd en expressivité.
+Cependant, l'objectif annoncé pour ce modèle n'est pas d’enrichir la
 sémantique du modèle RCC-8 (ce qui est le but de la majorité des
 extensions), mais de faciliter le raisonnement automatisé en
 simplifiant la \emph{table de transition} \autocite{Bennett1994}.
@@ -671,7 +671,7 @@ simplifiant la \emph{table de transition} \autocite{Bennett1994}.
 % Qualitative Spatial Representation and Reasoning with the Region
 % Connection Calculus, GeoInformatica 1(1), pp 1-44, 1997.
 Pour améliorer la modélisation des relations topologiques avec des
-régions concaves, \textcite{Cohn1997} proposerons une extension à 23
+régions concaves, \textcite{Cohn1997} proposeront, une extension à 23
 relations du modèle RCC, définissant le modèle RCC-23. La relation
 \emph{externally connected} (EC) est décomposée en 9 nouvelles
 relations, permettant, par exemple, de faire la distinction entre un
@@ -727,7 +727,7 @@ Dans la première version du \emph{modèle des intersections,} le modèle
 4IM, 8 \emph{relations tolopologiques}, équivalentes à celles du
 modèle RCC-8 \autocite{Duchene2019}, sont définies
 \textcite{Egenhofer1989,Egenhofer1990,Egenhofer1991a}. Celles-ci sont
-définies à partir d'une matrice 4 valeurs booléenes, détaillant les
+définies à partir d'une matrice 4 valeurs booléennes, détaillant les
 intersections entre les composantes de deux objets géométriques \(a\)
 et \(b\). La première d'entre elles est \emph{l'intérieur} de l'objet,
 notée \(aᵒ\) ou \(bᵒ\), en fonction de l'objet concerné. La seconde,
@@ -735,7 +735,7 @@ notée \(δa\) ou \(δb\), est la \emph{frontière} de l'objet. Ces deux
 ensembles, \emph{intérieur} et \emph{frontière,} sont définis pour
 chaque type de géométrie, par exemple la frontière d'une ligne est un
 ensemble de deux points, le premier et le dernier de la ligne. Pour un
-point les deux notions sont équivalentes. La construction de la
+point, les deux notions sont équivalentes. La construction de la
 \emph{matrice }d'intersection consiste alors en l'étude des
 intersections, deux à deux, de la \emph{frontière} et de l'intérieur
 de deux objets géométriques :
@@ -752,7 +752,7 @@ de deux objets géométriques :
 Si l'intersection entre deux ensembles donnés est vide, alors la
 valeur inscrite dans la matrice est \enquote{\(F\)}, dans le cas
 contraire, la valeur est \enquote{\(V\)}. Par exemple, une
-\emph{relation topologique} \emph{d'inclusion} (nomée \emph{overlap,}
+\emph{relation topologique} \emph{d'inclusion} (nommée \emph{overlap,}
 dans le modèle 4IM et correspondant au prédicat PO du modèle RCC-8,
 cf. figure \ref{fig:RCC}) correspond à la matrice :
 %
@@ -765,8 +765,8 @@ cf. figure \ref{fig:RCC}) correspond à la matrice :
 %
 étant donné que les quatres \emph{intersections} définies dans le
 modèle 4IM ne sont pas nulles. La \emph{matrice d'intersections} de ce
-modèle permet de définir 16 configurations différentes. Cependant la
-moitié d'entre-elles ne sont pas réalisables, comme par exemple la
+modèle permet de définir 16 configurations différentes. Cependant, la
+moitié d'entre elles ne sont pas réalisables, comme par exemple la
 matrice :
 %
 \(\left[
@@ -779,10 +779,11 @@ matrice :
 qui décrit une situation où les deux intérieurs et les deux frontières
 ne s'intersectent pas, mais où la frontière de chaque objet intersecte
 l'intérieur de chaque objet. Comme pour le modèle RCC-8, les 8
-configurations possibles sont toutes nomées (\emph{disjoint, contains,
-  inside, equal, meet, covers, coveredBy} et \emph{overlap}), ce qui
-rend les \emph{relations topologiques} définies plus intelligible et
-facile à manipuler que des matrices de valeurs booléenes.
+configurations possibles sont toutes nommées (\emph{disjoint,
+  contains, inside, equal, meet, covers, coveredBy} et
+\emph{overlap}), ce qui rend les \emph{relations topologiques}
+définies plus intelligible et facile à manipuler que des matrices de
+valeurs booléennes.
 
 Dans le modèle 9IM, une extension du modèle 4IM proposée par
 \textcite{Egenhofer1991}, la \emph{matrice des intersection} est
@@ -837,7 +838,7 @@ objets \(a\) ou \(b\) est alors :
 
 Avec \(\text{dim}(x)\), une fonction renvoyant la dimension de
 l'intersection, soit 0 pour un point, 1 pour une ligne et 2 pour une
-région. Malgrès cette modification substentielle, le modèle DE-9IM
+région. Malgrè cette modification substentielle, le modèle DE-9IM
 reste compatible avec le modèle 9IM, les matrices numériques du modèle
 DE-9IM étant faciles à convertir en matrices binaires, compatibles
 avec le modèle 9IM. Comme les autres extensions présentées, cette
@@ -847,7 +848,7 @@ un contact ponctuel, d'un contact en une ligne, \ie de distinguer un
 voisinage de Von Neuman, d'un voisinage de Moore
 (\autoref{tab:9IM_vs_DE9IM}). Cependant, cette nouvelle proposition se
 heurte aux mêmes limites que les modèles RCC-23 et RCC-62, à savoir le
-grand nombre de cas possibles. Conscient de se problème
+grand nombre de cas possibles. Conscient de ce problème
 \textcite{Clementini1993} complétent le modèle DE-9IM avec le
 \emph{calculus based model} (CMB). Ce second modèle propose de définir
 cinq \emph{prédicats topologiques} (\emph{in, cross, overlap, touch,
