@@ -74,9 +74,9 @@ utiliser un indicateur de centralité, comme la moyenne ? Tous ces
 critères paraissent pertinents, mais l'altitude de la position la plus
 proche nous semble être la solution la plus générique, car la moins
 sensible aux fortes variations d'altitudes que l'on pourrait retrouver
-sur des objets très étendus (\eg vallées, forêts, \emph{etc.}), ainsi
+sur des objets très étendus (\eg vallées, forêts, \emph{etc.}). Ainsi
 nous avons opté pour la \emph{métrique}
-\onto[orla]{Delta\-Nearest\-Val}. Le choix du \emph{fuzzyfieur} ne
+\onto[orla]{Delta\-Nearest\-Val}. Le choix du \emph{fuzzyficateur} ne
 pose, quant à lui, pas de problèmes particuliers. En effet, la
 \emph{métrique} \onto[orla]{Delta\-Nearest\-Val} calcule, pour chaque
 pixel de la \ac{zir}, la différence entre l'altitude locale et
@@ -114,14 +114,14 @@ Dans l'exemple de la \autoref{fig:Exemple_Metrique_vs_Selecteur}, nous
 avions utilisé les matrices 4IM pour modéliser une relation
 topologique. Mais cet exemple ignorait la question de
 \emph{l'imprécision}. Pour ajouter la prise en compte de
-\emph{l'imprécision} il est nécessaire d'utiliser une \emph{métrique}
+\emph{l'imprécision,} il est nécessaire d'utiliser une \emph{métrique}
 continue, exprimant la proximité. Nous avons donc choisi d'utiliser la
 \emph{métrique} \onto[orla]{Distance}, qui calcule la distance entre
 le pixel traité et le point le plus proche de \emph{l'objet de
   référence.} Si cette distance est nulle, alors cela signifie que le
 pixel est en contact avec \emph{l'objet de référence.} On peut alors
 attribuer un \emph{degré d'appartenance} non nul aux pixels situés à
-faible distance de \emph{l'objet de référence.} Ainsi des pixels qui
+faible distance de \emph{l'objet de référence.} Ainsi, des pixels qui
 seraient considérés comme en dehors de \emph{l'objet de référence}
 avec une modélisation topologique sont ici pris en compte, mais avec
 une pénalisation de leur degré d'appartenance. Étant donné que la
@@ -151,7 +151,7 @@ semble plus correct d'utiliser le \emph{fuzzyficateur}
 \end{figure}
 
 La \emph{relation de localisation atomique}
-\onto[orla]{Not\-A\-La\-Fron\-ti\-ere\-De} différè des exemples
+\onto[orla]{Not\-A\-La\-Fron\-ti\-ere\-De} diffère des exemples
 précédents par sa formulation négative, qui l'oppose à la
 \emph{relation} \onto[orla]{A\-La\-Fron\-ti\-ere\-De}. Ces deux
 \emph{relations de localisation atomiques} partagent leur
@@ -160,20 +160,20 @@ elles se distinguent par l'utilisation du \emph{modifieur}
 \onto[orla]{Not}
 (\autoref{fig:ex_parties_statialisation_notalafrontierede}). En effet,
 ces deux \emph{relations} traduisent une proximité à la frontière de
-\emph{l'objet de référence,} on peut donc utiliser la même
+\emph{l'objet de référence.} On peut donc utiliser la même
 \emph{métrique} que pour la \emph{relation de localisation atomique}
 \protect\onto[orla]{Dans\-Pla\-ni\-mé\-tri\-que}, la distance
-planaire, représentée par la classe \onto[orla]{Distance}. Cependant
+planaire, représentée par la classe \onto[orla]{Distance}. Cependant,
 cette distance ne peut être calculée à partir de \emph{l'objet de
   référence} dans son ensemble puisque ces \emph{relations} décrivent
 une position exprimée par rapport à la frontière de \emph{l'objet de
-  référence,} il est donc nécessaire d'employer le \emph{rasteriser}
+  référence.} Il est donc nécessaire d'employer le \emph{rasteriser}
 \onto[orla]{Frontiere}, déjà présenté. La \emph{métrique} ne
 correspond donc plus à la distance à \emph{l'objet de référence,} mais
 à la distance à sa frontière. Les positions situées à l'intérieur de
 l'objet se voient donc attribuer une distance non nulle. Ces deux
 \emph{relations} se distinguent donc par leur \emph{métrique.} Pour la
-\emph{relation} \onto[orla]{A\-La\-Fron\-ti\-ere\-De} on souhaite que
+\emph{relation} \onto[orla]{A\-La\-Fron\-ti\-ere\-De}, on souhaite que
 le degré d'appartenance soit maximal à la frontière ---~lorsque la
 distance est nulle~--- et qu'il diminue avec l'éloignement, ce qui
 correspond au \emph{fuzzyficateur} \onto[orla]{Eq\-Val\-0}. Pour la
@@ -181,7 +181,7 @@ correspond au \emph{fuzzyficateur} \onto[orla]{Eq\-Val\-0}. Pour la
 comportement opposé qui est attendu. On peut donc utiliser le même
 \emph{fuzzyficateur} mais en y adjoignant le \emph{modifieur}
 \onto[orla]{Not}, qui a pour effet de transformer la \emph{fonction
-  d'appartenance} en son opposée (Figure \ref{fig:fnc_not_eq_val}).
+  d'appartenance} en son opposé (Figure \ref{fig:fnc_not_eq_val}).
 
 \begin{figure}
   \centering  \input{../figures/exemple_parties_spatialisation_notalafrontierede.tex}
