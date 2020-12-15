@@ -327,30 +327,74 @@
     east) + (.1,0)$) |- (zlc2.south east) node[pos=0, yshift=.2] (acc-1)
     {};
 
-    \draw (zlc3.north east) -| ($(zlc3.south east)!0.5!(zlc4.north
-    east) + (.1,0)$) |- (zlc4.south east) node[pos=0, yshift=.2] (acc-2)
+    \draw (zlc3.north east) -| ($(zlc3.south east)!0.5!(zlc3.north
+    east) + (.1,0)$) |- (zlc3.south east) node[pos=0, yshift=.2] (acc-2)
+    {};
+
+        \draw (zlc4.north east) -| ($(zlc4.south east)!0.5!(zlc4.north
+    east) + (.1,0)$) |- (zlc4.south east) node[pos=0, yshift=.2] (acc-22)
     {};
 
     \draw (zlc5.north west) -| ($(zlc5.north west)!0.5!(zlc5.south
     west) + (-.1,0)$) |- (zlc5.south west) node[pos=0, yshift=.2] (acc-3w)
     {};
 
-    \draw (zlc6.north west) -| ($(zlc6.north west)!0.5!(zlc62.south
-    west) + (-.1,0)$) |- (zlc62.south west) node[pos=0, yshift=.2] (acc-4w)
-    {};
-    \draw (zlc5.north east) -| ($(zlc5.north east)!0.5!(zlc62.south
-    east) + (.1,0)$) |- (zlc62.south east) node[pos=0, yshift=.2] (acc-4)
+    \draw (zlc6.north west) -| ($(zlc6.north west)!0.5!(zlc6.south
+    west) + (-.1,0)$) |- (zlc6.south west) node[pos=0, yshift=.2] (acc-4w)
     {};
 
-    \draw (zlc7.north west) -| ($(zlc7.north west)!0.5!(zlc8.south
-    west) + (-.1,0)$) |- (zlc8.south west) node[pos=0, yshift=.2] (acc-5w)
+    \draw (zlc62.north west) -| ($(zlc62.north west)!0.5!(zlc62.south
+    west) + (-.1,0)$) |- (zlc62.south west) node[pos=0, yshift=.2] (acc-42w)
     {};
+
+    
+    \draw (zlc5.north east) -| ($(zlc5.north east)!0.5!(zlc5.south
+    east) + (.1,0)$) |- (zlc5.south east) node[pos=0, yshift=.2] (acc-4)
+    {};
+
+        \draw (zlc6.north east) -| ($(zlc6.north east)!0.5!(zlc62.south
+    east) + (.1,0)$) |- (zlc62.south east) node[pos=0, yshift=.2] (acc-5)
+    {};
+
+    \draw (zlc7.north west) -| ($(zlc7.north west)!0.5!(zlc7.south
+    west) + (-.1,0)$) |- (zlc7.south west) node[pos=0, yshift=.2] (acc-6w)
+    {};
+
+        \draw (zlc8.north west) -| ($(zlc8.north west)!0.5!(zlc8.south
+    west) + (-.1,0)$) |- (zlc8.south west) node[pos=0, yshift=.2] (acc-62w)
+    {};
+    
     \draw (zlc7.north east) -| ($(zlc7.north east)!0.5!(zlc8.south
-    east) + (.1,0)$) |- (zlc8.south east) node[pos=0, yshift=.2] (acc-5)
+    east) + (.1,0)$) |- (zlc8.south east) node[pos=0, yshift=.2] (acc-6)
     {};
 
-    \path[draw, ->] (acc-1) -- (acc-3w);
-    \path[draw, ->] (acc-2) -- (acc-4w);
+    \draw (zlc9.north west) -| ($(zlc9.north west)!0.5!(zlc9.south
+    west) + (-.1,0)$) |- (zlc9.south west) node[pos=0, yshift=.2] (acc-7w)
+    {};
+
+    \path[draw, ->] (acc-1) -- (acc-3w) node[pos=.25, text,
+    below, text width=3cm, font=\tiny, anchor=west]{Fusion des relations de
+      localisation atomiques};
+    
+    \path[draw, ->] (acc-2) -- (acc-4w) node[pos=.25, text, below,
+    text width=2.5cm, font=\tiny, anchor=west]{Fusion des relations de
+      localisation atomiques};
+    
+    \path[draw, ->] (acc-22) -- (acc-42w) node[pos=.25, text, below,
+    text width=2.5cm, font=\tiny, anchor=west]{Fusion des relations de
+      localisation atomiques};
+
+    \path[draw, ->] (acc-5) -- (acc-62w) node[pos=.25, text, below,
+    text width=2.5cm, font=\tiny, anchor=west]{Fusion des objets de
+      référence non nommés};
+    
+    \path[draw, ->] (acc-4) -- (acc-6w) node[pos=.25, text, below,
+    text width=2.5cm, font=\tiny, anchor=west]{Fusion des objets de
+      référence non nommés};
+
+    \path[draw, ->] (acc-6) -- (acc-7w) node[pos=.25, text, below,
+    text width=2.5cm, font=\tiny, anchor=west]{Fusion des indices de
+      localisation};
     
   \end{scope}
   % Annotations
