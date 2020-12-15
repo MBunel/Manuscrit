@@ -127,7 +127,7 @@
   %%%%%%%%%%%% 
   % Colonne 2
   %%%%%%%%%%%% 
-  \begin{scope}[xshift=6cm, yshift=-1.75cm]
+  \begin{scope}[xshift=6cm, yshift=-1.75cm,local bounding box=zlc5]
     \begin{scope}
       \foreach \x in {0,.25,...,1.75}{
         \foreach \y in {0,.25,...,1.75}
@@ -160,7 +160,7 @@
     {\itshape Zone de localisation compatible \normalfont \textcolor{RdBu-9-1}{\textsf{AB}}};
   \end{scope}
 
-  \begin{scope}[xshift=6cm, yshift=-8cm]
+  \begin{scope}[xshift=6cm, yshift=-8cm,local bounding box=zlc6]
     \begin{scope}
       \foreach \x in {0,.25,...,1.75}{
         \foreach \y in {0,.25,...,1.75}
@@ -210,7 +210,7 @@
   %%%%%%%%%%% 
   % Colonne 3
   %%%%%%%%%%%% 
-  \begin{scope}[xshift=12cm, yshift=-1.75cm]
+  \begin{scope}[xshift=12cm, yshift=-1.75cm,local bounding box=zlc7]
     \begin{scope}
       \foreach \x in {0,.25,...,1.75}{
         \foreach \y in {0,.25,...,1.75}
@@ -243,7 +243,7 @@
     {\itshape Zone de localisation compatible \normalfont \textcolor{RdBu-9-1}{\textsf{AB}}};
   \end{scope}
   % 
-  \begin{scope}[xshift=12cm, yshift=-9.75cm]
+  \begin{scope}[xshift=12cm, yshift=-9.75cm,local bounding box=zlc8]
     \begin{scope}
       \foreach \x in {0,.25,...,1.75}{
         \foreach \y in {0,.25,...,1.75}
@@ -275,7 +275,7 @@
   %%%%%%%%%%% 
   % Colonne 4
   %%%%%%%%%%%% 
-  \begin{scope}[xshift=18cm, yshift=-5.75cm]
+  \begin{scope}[xshift=18cm, yshift=-5.75cm,,local bounding box=zlc9]
     \begin{scope}
       \foreach \x in {0,.25,...,1.75}{
         \foreach \y in {0,.25,...,1.75}
@@ -297,7 +297,6 @@
             ifthenelse(\dist < 2,-0.57*\dist+1.14,0)%
             )
           }
-
           \pgfmathsetmacro\dista{sqrt((\x-0.125)^2+(\y-1.375)^2)}
           % Fuzzyfication de la distance
           \pgfmathsetmacro\fuzzyc{%
@@ -314,13 +313,32 @@
             )
           }
           \pgfmathsetmacro\radius{min(\fuzzya, 1-\fuzzyb, max(\fuzzyc, 0.3), max(\fuzzyd, 0.3))*2.5}          
-          \fill[RdBu-9-1] (\x+.125,.125+\y) circle (\radius pt);
+          \fill[black] (\x+.125,.125+\y) circle (\radius pt);
         }
       }
-      \path[ffc2] (0,0) rectangle (2,2);
+      \path[ffc2, color=black] (0,0) rectangle (2,2);
     \end{scope}
     \node[text width=3cm, align=center, anchor=north, font=\footnotesize] at (1,-.25)
     {\itshape Zone de localisation probable};
+  \end{scope}
+  % Accolades
+  \begin{scope}
+    \draw (zlc1.north east) -| ($(zlc1.south east)!0.5!(zlc2.north
+    east) + (.1,0)$) |- (zlc2.south east) node[pos=0, yshift=.2] (acc-1)
+    {};
+
+    \draw (zlc3.north east) -| ($(zlc3.south east)!0.5!(zlc4.north
+    east) + (.1,0)$) |- (zlc4.south east) node[pos=0, yshift=.2] (acc-2)
+    {};
+
+    \draw (zlc5.north east) -| ($(zlc5.north east)!0.5!(zlc5.south
+    east) + (.1,0)$) |- (zlc5.south east) node[pos=0, yshift=.2] (acc-3)
+    {};
+
+        \draw (zlc6.north east) -| ($(zlc6.south east)!0.5!(zlc7.north
+    east) + (.1,0)$) |- (zlc7.south east) node[pos=0, yshift=.2] (acc-4)
+    {};
+    
   \end{scope}
   % Annotations
   \begin{scope}
