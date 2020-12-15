@@ -129,7 +129,7 @@ très diverses, comme nous l'avons montré avec l'exemple des
 
 On peut imagier de nombreuses \emph{méthodes de rasterisation}
 différentes en fonction de la partie de \emph{l'objet de référence}
-sélectionnée, cependant toutes ne sont pas pertinentes ici. Nous avons
+sélectionné. Cependant, toutes ne sont pas pertinentes ici. Nous avons
 identifié trois \emph{méthodes de rasterisation} différentes,
 présentées par la \autoref{fig:methode_rasterisation}. Le résultat de
 la \emph{rasterisation} est présenté pour chaque type géométrique
@@ -155,7 +155,7 @@ nécessitent une méthode plus spécifique.
 Mais il également possible de ne rasteriser qu'une partie de
 \emph{l'objet de référence,} comme sa frontière ou son centroïde
 (\autoref{fig:methode_rasterisation}). Ainsi, la seconde méthode de
-rasterisation que nous avons défini, \onto{Frontiere}, ne traite que
+rasterisation que nous avons définie : \onto{Frontiere}, ne traite que
 la frontière de \emph{l'objet de référence.} Comme on peut le voir sur
 la \autoref{fig:methode_rasterisation}, cette méthode n'impacte que la
 \emph{rasterisation} des régions et des linéaires : les points, qui ne
@@ -171,8 +171,8 @@ de \emph{l'objet de référence} et non de \emph{l'objet de référence}
 
 Enfin, un troisième \emph{rasteriser,} ne traitant que le centroïde de
 \emph{l'objet de référence,} a été défini. Contrairement aux autres
-méthodes de rasterisation présentés jusqu'ici, celui-ci conduit tout
-type géométrique d'objet (point, ligne, polygone) à être représentés
+méthodes de rasterisation présentées jusqu'ici, celui-ci conduit tout
+type géométrique d'objet (point, ligne, polygone) à être représenté
 par un seul point. Ainsi, tous les objets traités sont représentés pas
 un point, lui-même \emph{rasterisé} en un unique pixel. Les
 utilisations de cette méthode de rasterisation sont un peu plus
@@ -190,11 +190,11 @@ exprimant un angle, comme \onto[orla]{Dans\-La\-Direction\-De}.
 % Parler rapidement des méthodes définies mais non utilisées (bbox,conxhull)
 De nombreux autres \emph{rasterisers} sont envisageables. On pourrait,
 par exemple, ne \emph{rasteriser} que l'intérieur d'un objet et
-ignorer ses frontières, ce qui équivaudrait à soustraite le résultat
+ignorer ses frontières, ce qui équivaudrait à soustraire le résultat
 du \emph{rasteriser} \onto{Frontiere} à celui du \emph{rasteriser}
 \onto{Geometrie}. On pourrait également ignorer les frontières
 intérieures des régions ayant une structure annulaire (\eg une forêt
-avec des clairières). Mais il est également possible d'employer des
+avec des clairières), mais il est également possible d'employer des
 méthodes sensiblement différentes de celles présentées jusqu'ici,
 comme la \emph{rasterisation} de l'enveloppe convexe ou de la boite
 englobante de \emph{l'objet de référence.} De telles méthodes ne
