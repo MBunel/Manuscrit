@@ -54,7 +54,7 @@ d'un grand nombre de \emph{zones de localisation compatibles}
   des \emph{indices de localisation} (\autoref{chap:04}) ne contient
   qu'un \emph{indice} lui-même employant une \emph{relation de
     localisation atomique} exprimée par rapport à un \emph{objet de
-    référence} défini. Dans ce cas les phases de \emph{décomposition}
+    référence} défini. Dans ce cas, les phases de \emph{décomposition}
   et de \emph{fusion} n'ont pas de rôle à jouer.}, chacune contenant
 une part de l'information nécessaire à la construction de la
 \ac{zlp}. Le rôle de la \emph{phase de fusion} consiste simplement à
@@ -88,10 +88,10 @@ chacune destinée à fusionner des \emph{zones de localisation
 
 La première de ces étapes est la \emph{fusion} des \emph{relations de
   localisation atomiques.} Comme nous l'avons expliqué lors de la
-présentation de la méthode (\autoref{chap:04}) et plus
+présentation de la méthode (\autoref{chap:04}), et plus
 particulièrement lors de la définition de la \emph{phase de
   décomposition} (\autoref{chap:05}), les \emph{relations de
-  localisation} utilisée dans les \emph{indices de localisation} (\eg
+  localisation} utilisées dans les \emph{indices de localisation} (\eg
 \onto[orl]{Pres\-De}, \onto[orl]{Sous\-Al\-ti\-tu\-de}, \emph{etc.})
 peuvent êtres décomposées en des \emph{relations de localisation
   atomiques} représentant chacune une \enquote{brique sémantique} de
@@ -124,7 +124,7 @@ et \onto[orla]{Proximal}, utilisées pour la décomposition de
 \onto[orl]{Sous\-Pro\-che\-De,} et par conséquent à l'intersection de
 ces deux \ac{zlc}.
 %
-On dispose donc à la fin de cette première étape de \emph{fusion}
+On dispose donc à la fin de cette première étape de \emph{fusion,}
 d'autant de \ac{zlc} qu'il y a \emph{d'indices de localisation} avant
 la décomposition des \emph{relations de localisation atomiques}
 (\autoref{fig:methodo_1}).
@@ -156,8 +156,8 @@ La dernière étape de la phase de fusion est la \emph{fusion des
   indices de localisation.} Cette étape vise à combiner les \ac{zlc}
 spatialisant les différents indices de localisaiton en une seule zone,
 la \ac{zlp}. Contrairement aux précédentes étapes, la \emph{fusion des
-  indices de localisation} abouti toujours en une unique \emph{zone de
-  localisation,} que l'on spatialise un seul \emph{indice de
+  indices de localisation} aboutit toujours en une unique \emph{zone
+  de localisation,} que l'on spatialise un seul \emph{indice de
   localisation} utilisant une \emph{relation de localisation atomique}
 et se référant à un \emph{objet de référence} nommé, ou que l'on
 spatialise une dizaine d'indices de localisation complexes. Cette
@@ -181,8 +181,8 @@ opérateurs peuvent être utilisés pour réaliser des intersections et
 des unions entre \emph{sous-ensembles flous.} Chaque opérateur
 présente des propriétés qui lui sont propres et qui impactent le
 résultat des opérations inter-ensemblistes. Dans notre cas, le choix
-d'un opérateur influence donc la valeur des degrés d'appartenance et
-par conséquent la forme de la \ac{zlp} et plus généralement de toutes
+d'un opérateur influence donc la valeur des degrés d'appartenance et,
+par conséquent, la forme de la \ac{zlp} et plus généralement de toutes
 les \emph{zones de localisation} construites au cours de la
 \emph{phase de fusion.} Le choix des opérateurs de \emph{fusion} doit
 donc être étudié, de manière à identifier les opérateurs plus adaptés
@@ -210,7 +210,7 @@ probabilistes et drastiques), qui proposent des intersections et des
 unions plus ou moins sévères (\autoref{chap:03}), offrent la
 possibilité de moduler, toutes choses égales par ailleurs, les
 résultats de la \emph{fusion.} Cependant, l'utilisation d'opérateurs
-alternatifs soulève plusieurs questions. Chaque couple d'opérateur a,
+alternatifs soulève plusieurs questions. Chaque couple d'opérateurs a,
 en effet, des propriétés spécifiques, impactant significativement le
 résultat des intersections et des unions. Le choix des opérateurs
 utilisés durant \emph{la phase de fusion} ne doit donc pas se fonder
@@ -245,7 +245,7 @@ l'ordre des zones de localisation à fusionner. Appliqué à la
 \emph{fusion} des \ac{zlc}, ces deux propriétés garantissent que la
 \emph{fusion} de plusieurs \ac{zlc} à une étape donnée de la phase de
 fusion donnera le même résultat quel que soit l'ordre dans lequel les
-fusion sont appliquées. Les trois étapes de la \emph{phase de fusion}
+fusions sont appliquées. Les trois étapes de la \emph{phase de fusion}
 ne sont donc pas impactées par l'ordre des \ac{zlc} qu'elles traitent.
 
 Une autre caractéristique des ces quatre couples est qu'ils sont
@@ -271,15 +271,15 @@ couple d'opérateur, la valeurs des \emph{t-normes} et des
 (\(x,y\)), on peut remarquer que les \emph{opérateurs drastiques} ont
 un comportement particulier, sans transition \footnote{À l'exception
   du cas où, soit \(x\), soit \(y\) est nul.} entre les degrés
-d’appartenance minimaux et maximaux. Ce couple d'opérateurs à la
+d’appartenance minimaux et maximaux. Ce couple d'opérateurs a la
 particularité d'être discontinu. La discontinuité des opérateurs
 drastiques ne nous semble pas très adaptée à notre cas
-d’application. De plus ces opérateurs sont particulièrement extrêmes
+d’application. De plus, ces opérateurs sont particulièrement extrêmes
 puisqu'ils correspondent à la plus sévère des \emph{t-normes} et à la
-plus lâche des \emph{t-conormes,} il ne nous semble donc pas pertinent
+plus lâche des \emph{t-conormes.} Il ne nous semble donc pas pertinent
 de les conserver. En effet, nous souhaitons disposer des zones de
 localisation les plus continues possibles et préférons surestimer leur
-étendue, plutôt que de la sous-estimer, ce a quoi pourrait nous
+étendue, plutôt que de les sous-estimer, ce à quoi pourrait nous
 conduire l'utilisation des opérateurs drastiques.
 
 \subsubsection{Les principes du \emph{tiers-exclu} \& de la
@@ -303,12 +303,12 @@ s'opposer au principe de \emph{non-contradiction} \footnote{C'est par
   exemple le cas dans l'exemple illustré par le
   \autoref{tab:conf_tnormes}, où une personne appartient partiellement
   aux ensembles des \emph{personnes de grande taille} et des
-  \emph{personnes âgés} et donc partiellement aux complémentaires
+  \emph{personnes âgées} et donc partiellement aux complémentaires
   respectifs de ces ensembles. Par conséquent, si les assertions
   \enquote{cette personne est de grande taille} et \enquote{cette
     personne est âgée} sont partiellemetn vraies, c'est également le
-  cas de leur négation respective.}. Toutefois, ce serait confondre la
-\emph{non-contradiction} avec le principe de \emph{non-bivalence}
+  cas de leurs négations respectives.}. Toutefois, ce serait confondre
+la \emph{non-contradiction} avec le principe de \emph{non-bivalence}
 utilisé en \emph{logique floue} \footnote{Mais également par d'autres
   logiques alternatives.} \autocite{Gottwald2020}. La
 \emph{non-bivalence} n'implique pas nécessairement la contradiction
@@ -317,7 +317,7 @@ par exemple la logique ternaire de \bsc{Łukasiewicz} valide ces deux
 principes.
 
 Pour qu'un couple d'opérateurs soit conforme au principe de
-\emph{non-contradiction} il est nécessaire que la proposition
+\emph{non-contradiction,} il est nécessaire que, soit la proposition
 \(\neg (p \wedge \neg p)\) soit vraie, soit que l’application de sa
 \emph{t-norme} à un degré appartenance quelconque (\(x\)) et à sa
 négation, \(1-x\) (\autoref{eq:comp}) donne toujours un degré
@@ -331,7 +331,7 @@ De même, pour q'un couple d'opérateurs soit conforme au principe du
 \emph{tiers-exclu,} il est nécessaie que la proposition
 \(p \vee \neg p\) soit vraie, soit que l’application de sa
 \emph{t-conorme} à un degré appartenance quelconque (\(x\)) et à sa
-négation soit toujours égal à 1 :
+négation soit toujours égale à 1 :
 
 \begin{equation}
   \forall x, ⊥(x,1-x) = 1
