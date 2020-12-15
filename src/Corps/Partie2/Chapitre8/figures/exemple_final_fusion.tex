@@ -331,18 +331,14 @@
     east) + (.1,0)$) |- (zlc4.south east) node[pos=0, yshift=.2] (acc-2)
     {};
 
-
     \draw (zlc5.north west) -| ($(zlc5.north west)!0.5!(zlc5.south
     west) + (-.1,0)$) |- (zlc5.south west) node[pos=0, yshift=.2] (acc-3w)
-    {};
-    \draw (zlc5.north east) -| ($(zlc5.north east)!0.5!(zlc5.south
-    east) + (.1,0)$) |- (zlc5.south east) node[pos=0, yshift=.2] (acc-3)
     {};
 
     \draw (zlc6.north west) -| ($(zlc6.north west)!0.5!(zlc62.south
     west) + (-.1,0)$) |- (zlc62.south west) node[pos=0, yshift=.2] (acc-4w)
     {};
-    \draw (zlc6.north east) -| ($(zlc6.north east)!0.5!(zlc62.south
+    \draw (zlc5.north east) -| ($(zlc5.north east)!0.5!(zlc62.south
     east) + (.1,0)$) |- (zlc62.south east) node[pos=0, yshift=.2] (acc-4)
     {};
 
@@ -353,6 +349,8 @@
     east) + (.1,0)$) |- (zlc8.south east) node[pos=0, yshift=.2] (acc-5)
     {};
 
+    \path[draw, -, shorten >=5pt, shorten <=5pt] (acc-1) -- (acc-3w);
+    
   \end{scope}
   % Annotations
   \begin{scope}
