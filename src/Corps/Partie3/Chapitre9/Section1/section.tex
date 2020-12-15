@@ -105,8 +105,8 @@ relations de localisation nécessite des informations supplémentaires à
 celles transmises par le secouriste. Ces informations sont explicitéés
 dans \emph{l'ontologie des relations de localisation} \acp{orl}. La
 réalisation de cette dernière étape de la phase de localisation
-nécessite donc lire et d'interpréter les informations formalisées dans
-l'ontologie \ac{orl}. Dans Ruitor, cette tâche est principalement
+nécessite donc de lire et d'interpréter les informations formalisées
+dans l'ontologie \ac{orl}. Dans Ruitor, cette tâche est principalement
 effectuée à l'aide de la bibliothèque \emph{Owlready}
 \autocite{Lamy2017}, permettant la lecture et la manipulation
 d'ontologies OWL. Cette bibliothèque nous permet de lire les
@@ -121,28 +121,28 @@ localisation atomiques.
 Les phases de spatialisation et de fusion sont implémentées de manière
 très différente de la phase de décomposition. En effet, ces phases
 nécessitent la manipulation et le traitement d'objets géographiques,
-contrairement à phase de décomposition. La mise en place de ces étapes
-nécessite donc de mettre en place de nouveaux outils pour manipuler
-les géométries. Notre travail faisant une grande utilisation de
-rasters, la bibliothèque permettant leur manipulation prend une place
-centrale lors de cette étape. Dans l'état actuel de l'implémentation,
-nous ne pouvons traiter que des objets de référence représentés sous
-la forme de données vectorielles. Ces données sont traitées à l'aide
-des bibliothèques python \emph{fiona} \autocite{Gillies2020a},
-\emph{shapely} \autocite{Gillies2020} et \emph{gdal}
-\autocite{GDAL2020}, qui nous permettent de manipuler et de rasteriser
-les objets vectoriels. La première étape de la spatialisation, la
-rasterisation (\autoref{chap:07}) est donc effectuée à l'aide de ces
-trois bibliothèques.
+contrairement à la phase de décomposition. La mise en place de ces
+étapes nécessite donc de mettre en place de nouveaux outils pour
+manipuler les géométries. Notre travail faisant une grande utilisation
+de rasters, la bibliothèque permettant leur manipulation prend une
+place centrale lors de cette étape. Dans l'état actuel de
+l'implémentation, nous ne pouvons traiter que des objets de référence
+représentés sous la forme de données vectorielles. Ces données sont
+traitées à l'aide des bibliothèques python \emph{fiona}
+\autocite{Gillies2020a}, \emph{shapely} \autocite{Gillies2020} et
+\emph{gdal} \autocite{GDAL2020}, qui nous permettent de manipuler et
+de rasteriser les objets vectoriels. La première étape de la
+spatialisation, la rasterisation (\autoref{chap:07}), est donc
+effectuée à l'aide de ces trois bibliothèques.
 
 La manipulation des rasters, au cœur de notre travail, est construite
 autour de la bibliothèque \emph{numpy,} conçue pour le calcul
 scientifique et plus précisément la manipulation optimisée de matrices
-volumineuses \autocite{vanderWalt2011}. Le type de données défini par
+volumineuses \autocite{vanderWalt2011}. Le type de données, défini par
 \emph{numpy} \footnote{Le \emph{ndarray,} pour
   \foreigntextquote{english}{N-dimensional array} (Tableau
-  multidimensionnel).} fait office de standard du calcul scientifique
-dans l'univers du python, il est donc à la base de nombreuses
+  multidimensionnel).}, fait office de standard du calcul scientifique
+dans l'univers \emph{python,} il est donc à la base de nombreuses
 bibliothèques de calcul scientifique. Cette bibliothèque est complétée
 par la bibliothèque \emph{rasterio} \autocite{Mapbox2020} qui permet
 de traiter des rasters comme des matrices \emph{numpy.} Les étapes de
