@@ -629,11 +629,11 @@ donc à utiliser des opérateurs d'union et d'intersection qui sont
 impactés par le nombre de \ac{zlc} à fusionner.
 
 On pourrait, cependant, penser que cette sensibilité à la taille de
-l'échantillon n'est pas problématique, au contraire même puisqu'elle
-permet d'introduire ---~implicitement~--- une nouvelle information, la
-régularité des résultats. Aussi une \emph{t-norme} non-idempotente n'a
-que pour effet de réduire le degré d'appartenance des positions ayant
-déjà un degré d'appartenance faible et ce dans plusieurs
+l'échantillon n'est pas problématique, au contraire, même puisqu'elle
+permet d'introduire ---~implicitement~--- une nouvelle information :
+la régularité des résultats. Aussi, une \emph{t-norme} non-idempotente
+n'a que pour effet de réduire le degré d'appartenance des positions
+ayant déjà un degré d'appartenance faible et ce, dans plusieurs
 \ac{zlc}. Avec ce type de \emph{t-norme} \enquote{le moins entraine le
   moins}, et le degré d'appartenance n'est réduit que par la
 succession de degrés d'appartenance inférieurs à un. Le cas des
@@ -643,9 +643,9 @@ puisqu'il ne peut qu'aboutir, dans le pire des cas, à des faux
 positifs. Ces compromis sont cependant inacceptables. D'une part, car
 l'augmentation (ou la diminution) des degrés d'appartenance est assez
 rapide, tout du moins elle nécessite moins de \ac{zlc} que ce que nous
-sommes amenés à manipuler. Par exemple, avec la \emph{t-norme} de
-\bsc{Łukasiewicz} une intersection de 10 fois la valeur 0,9 donnera un
-degré d’appartenance nul, là où il serait de 0,34 avec une
+sommes amené à manipuler. Par exemple, avec la \emph{t-norme} de
+\bsc{Łukasiewicz,} une intersection de 10 fois la valeur 0,9 donnera
+un degré d’appartenance nul, là où il serait de 0,34 avec une
 \emph{t-norme} probabiliste et de 0,9 avec la \emph{t-norme} de
 \textcite{Zadeh1965}. Or, il est très fréquent de manipuler plus de
 dix \emph{objets de référence.} L'exemple de décomposition proposé
@@ -654,7 +654,7 @@ dans le \autoref{chap:04} contient déjà 5 instances pour \emph{l'objet
 (implicitement) utilisée pour les identifier est extrêmement
 réduite. Un \emph{indice} plus vague, comme \enquote{Je suis sous une
   route} (tiré du fil rouge), peut, pour peu que la \ac{zir} soit de
-grande taille, aboutir à la sélection de centaines, voir de milliers
+grande taille, aboutir à la sélection de centaines, voire de milliers
 d'instances. D'autre part, et c'est sans aucun doute le point le plus
 problématique, une \emph{t-norme} non-idempotente peut conduire à
 attribuer un degré d'appartenance à la \ac{zlp} nul à des positions
@@ -668,7 +668,7 @@ un fort degré d’appartenance à toutes les \ac{zlc}, soit un potentiel
 faux négatif.
 
 % Conclusion
-L'utilisation d'opérateurs archimédiens ou non-idempotens et donc
+L'utilisation d'opérateurs archimédiens ou non-idempotents est donc
 incompatible avec notre méthode. D'une part, car ces opérateurs sont
 sensibles au nombre de \ac{zlc} fusionnées, mais surtout car les
 \emph{t-normes} et les \emph{t-conormes} non-idempotentes peuvent
@@ -684,7 +684,7 @@ le secouriste.
 L'étude des différentes caractéristiques
 (\autoref{tab:synthese_operateurs}) des couples d'opérateurs les plus
 utilisés dans la littérature nous a conduit à en rejeter la plupart
-d'entre-eux. Les opérateurs drastiques ont été rejetés car
+d'entre eux. Les opérateurs drastiques ont été rejetés car
 discontinus, trop sévères et donc inadaptés à notre cas
 d'utilisation. L'étude de l'impact du rejet des principes de
 \emph{non-contradiction} et du \emph{tiers-exclu} ne nous a pas permis
