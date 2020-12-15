@@ -38,7 +38,7 @@ fortement imprécises, surtout si on les compare aux extraits de
 l'alerte \emph{Grand Veymont}
 (\autoref{anx:retrans_grand_veymont}). Les descriptions sont ici peu
 informatives et discriminantes et la construction d'indices de
-localisations est par conséquent plus délicate. Par conséquent nous
+localisations est par conséquent plus délicate. Par conséquent, nous
 avons défini une \ac{zir} beaucoup plus grande que pour l'alerte
 \emph{Grand Veymont}, puisque celle-ci mesure \SI{25}{\kilo\meter} de
 coté, soit \SI{625}{\kilo\meter\squared} et est centrée sur
@@ -52,8 +52,8 @@ Bourg-d'Oisans (\autoref{fig:zir_fil_rouge}).
 \end{figure}
 
 La première de ces huit descriptions donne plusieurs informations sur
-le trajet suivit par la victime jusqu'à sa position actuelle. Elle
-nous renseigne sur son point de départ, \emph{Bourg-d'Oisans,} sa
+le trajet suivi par la victime jusqu'à sa position actuelle. Elle nous
+renseigne sur son point de départ, \emph{Bourg-d'Oisans,} sa
 destination visée, une station de ski inconnue et son mode de
 déplacement, à pied sur un chemin. Ces informations ne sont,
 cependant, pas directement transposables en un indice de
@@ -62,13 +62,13 @@ localisation. On pourrait certes supposer qu'étant donné que
 probablement à proximité de cette ville, ce qui permettrait d'utiliser
 la relation de localisation \onto[orl]{Aux\-Alentours\-De}, voire
 \onto[orl]{Pres\-De} si d'autres éléments confirment que le requérant
-et à proximité de son point de départ. Cependant, rien dans cette
+est à proximité de son point de départ. Cependant, rien dans cette
 première description ne nous permet d'affirmer que la victime est
 toujours à proximité de \emph{Bourg-d'Oisans.} En effet, nous ne
 connaissons pas la durée de sa sortie et il se peut que la victime ait
 parcouru suffisamment de kilomètres pour que ces relations de
-localisaiton ne soient plus valides. Il nous semble donc prématuré
-d'utiliser ces relations de localisaiton. De manière similaire, nous
+localisation ne soient plus valides. Il nous semble donc prématuré
+d'utiliser ces relations de localisation. De manière similaire, nous
 pourrions envisager d'utiliser la relation de localisation
 \onto[orla]{Si\-tue\-Sur\-Itineraire\-Ou\-Reseau\-Support}, la victime
 ayant indiqué avoir utilisé un chemin. Cependant, les expressions
@@ -89,7 +89,7 @@ Le second élément de cette alerte, \enquote{La victime a marché
   plusieurs heures}, donne un premier complément d'informations aux
 informations précédentes. Grâce à la connaissance du point de départ
 et à l'identification du temps de déplacement, nous pouvons construire
-une estimation de la distance parcourue par la victime. Pour ce faire
+une estimation de la distance parcourue par la victime. Pour ce faire,
 nous avons défini une relation de localisation
 \onto[orl]{A\-Temps\-De\-Marche\-De}, permettant de construire la
 \ac{zlc} atteignable en un temps de marche et à partir d'un point de
@@ -102,7 +102,7 @@ présence de la victime, alors que la relation de localisation
 fine, même dans le cas présent, où l'estimation du temps de parcours
 est très imprécise. Dans le cas de cette alerte, nous avons donc
 considéré qu'il était inutile de définir un indice de localisation
-employant les relations de localisaiton \onto[orl]{Aux\-Alentours\-De}
+employant les relations de localisation \onto[orl]{Aux\-Alentours\-De}
 ou \onto[orl]{Pres\-De}, la relation
 \onto[orl]{A\-Temps\-De\-Marche\-De} quantifiant également un
 éloignement au point de départ, mais de manière plus discriminante.
@@ -123,7 +123,7 @@ relation de localisation \onto[orl]{Sous\-Altitude} ou l'une des
 relations qui en dérivent. Compte-tenu du contexte de la chute, la
 relation de localisation plus appropriée nous semble être
 \onto[orl]{Sous\-Proche\-De}, puisqu’elle ajoute une contrainte de
-proximité planimétrique. Ainsi s'il nous est impossible de construire
+proximité planimétrique. Ainsi, s'il nous est impossible de construire
 directement une \ac{zlc} grâce à l'information \enquote{J'ai chuté de
   plusieurs mètres}, il nous est en revanche possible de dériver de
 cette information un indice de localisation exprimant la position
@@ -150,7 +150,7 @@ localisation.
 
 De manière similaire, la cinquième description, \enquote{La victime
   est sous une route et entend des voitures}, est assez explicite. On
-reconnait dans cette formulation l'utilisation de la préposition
+reconnaît dans cette formulation l'utilisation de la préposition
 \enquote{sous} traduisant une relation de verticalité. Or, comme nous
 l'indiquions lors de l'analyse de la seconde description (\enquote{La
   victime a chuté de plusieurs mètres}), la relation de localisation
@@ -164,29 +164,29 @@ nouvelle fois, pas directement interprétable avec une relation de
 localisation, pourtant cette information peut être exploitée de
 manière à raffiner la modélisation de \emph{l'indice de localisation.}
 On peut tirer deux informations différentes de cette indication. Tout
-d'abord une indication de proximité. En effet, la victime indique
-indirectement qu'elle se situe a portée de son de la route, ce qui, si
-l'on disposait d'un modèle adapté, permettrait d'estimer la distance
-de victime à la route. Il serait même possible de définir une nouvelle
-relation de localisation \onto{A\-Portee\-De\-Son\-De} pour
-retranscrire cette indication. Une telle relation permettrait sans
-aucun doute d'affiner cette approximation, particulièrement si elle
-permet la prise en compte des effets d’échos, particulièrement
-présents en montagne, pouvant conduire à une perception faussée de la
-distance d'un son. Cependant, nous n'avons pas travaillé au
-développement d'une telle méthode, cette alerte étant la seule où une
-portée sonore est mentionnée. La seconde information que l'on peut
-tirer de cet élément est la nature de la route. On peut en effet
-considérer que, pour que la victime note entendre une route, il est
-nécessaire que celle-ci soit suffisamment fréquentée pour que le
-trafic soit notable. Un tel critère permet d'affiner la sélection des
-objets de référence, qui, compte-tenu de l’imprécision de la
-description, seront relativement nombreux. Il est, cependant, délicat
-de procéder à une telle sélection sans risquer de ne pas prendre en
-comptex des objets de référence pertinents, et donc de créer des faux
-négatifs. En effet, l'hypothèse que nous proposons ici est assez
-contraignante et il nous semble inenvisageable de l'appliquer sans la
-confirmation de la victime.
+d'abord, quelle donne une indication de proximité. En effet, la
+victime indique indirectement qu'elle se situe à portée de son de la
+route, ce qui, si l'on disposait d'un modèle adapté, permettrait
+d'estimer la distance de la victime à la route. Il serait même
+possible de définir une nouvelle relation de localisation
+\onto{A\-Portee\-De\-Son\-De} pour retranscrire cette indication. Une
+telle relation permettrait sans aucun doute d'affiner cette
+approximation, surtout si elle permet la prise en compte des effets
+d’échos, particulièrement présents en montagne, pouvant conduire à une
+perception faussée de la distance d'un son. Cependant, nous n'avons
+pas travaillé au développement d'une telle méthode, cette alerte étant
+la seule où une portée sonore est mentionnée. La seconde information
+que l'on peut tirer de cet élément est la nature de la route. On peut
+en effet considérer que, pour que la victime prenne conscience
+d'entendre une route, il est nécessaire que celle-ci soit suffisamment
+fréquentée pour que le trafic soit notable. Un tel critère permet
+d'affiner la sélection des objets de référence qui, compte-tenu de
+l’imprécision de la description, seront relativement nombreux. Il est,
+cependant, délicat de procéder à une telle sélection sans risquer de
+ne pas prendre en compte des objets de référence pertinents, et donc
+de créer des faux négatifs. En effet, l'hypothèse que nous proposons
+ici est assez contraignante et il nous semble inenvisageable de
+l'appliquer sans la confirmation de la victime.
 
 Dans la sixième description, la victime indique qu'elle se situe sous
 une ligne électrique trois brins. Nous avons déjà présenté ce cas,
@@ -194,10 +194,10 @@ notamment dans le \autoref{chap:06} où nous comparions les différentes
 implémentations de la théorie des sous-ensembles flous pour
 représenter des zones de localisation. Si nous n'avions pas encore
 présenté les différentes relations de localisation, définies dans
-l'ontologie des relations de localisation, nous avions déjà expliqué
+l'ontologie des relations de localisation. Nous avions déjà expliqué
 que cette description nécessitait que la relation de verticalité entre
 le \emph{site} et la \emph{cible} soit contrainte selon l'axe
-horizontal. Dit autrement, il est ici nécessaire d'être proche du
+horizontal. Autrement dit, il est ici nécessaire d'être proche du
 \emph{site} et à une altitude inférieure du \emph{site} pour que l'on
 puisse affirmer qu'une position soit \enquote{sous} le \emph{site.}
 La relation de localisation \onto{Sous\-Proche\-De} a spécifiquement
