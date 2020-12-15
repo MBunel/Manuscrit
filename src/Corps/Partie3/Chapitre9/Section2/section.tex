@@ -456,12 +456,12 @@ dans le \autoref{chap:07}, ce fuzzyficateur ne prend qu'un paramètre
 \(\delta\), quantifiant l'écart qui existe entre la valeur de
 référence \(v\) (ici de 0) et valeur où le degré d'appartenance
 devient nul. Pour cet indice, nous avons choisi de fixer la valeur du
-paramètre \(\delta\) à \SI{500}{\meter}. Ainsi les positions situées à
-plus de \SI{500}{\meter} ont un degré d'appartenance maximal à la
-\ac{zlc}. La \emph{zone de localisation} ainsi obtenue
+paramètre \(\delta\) à 500 mètres. Ainsi les positions situées à plus
+de 500 mètres ont un degré d'appartenance maximal à la \ac{zlc}. La
+\emph{zone de localisation} ainsi obtenue
 (\autoref{fig:ZLC_GrandVeymont_1}) représente la \ac{zlc} pour ce
-premier indice de localisaiton. Comme on peut le voir la majeure
-partie des positions de la \ac{zir} on un degré d'appartenance élevé à
+premier indice de localisation. Comme on peut le voir, la majeure
+partie des positions de la \ac{zir} a un degré d'appartenance élevé à
 cette zone de localisation compatible. Ce premier indice est donc
 assez peu discriminant et ne permet pas, à lui seul, de localiser le
 requérant.
@@ -487,19 +487,19 @@ requérant.
 %\subsubsection{Sous Altitude Grand Veymont}
 Le second indice de localisation que nous avons défini est \enquote{Le
   requérant est situé sous le sommet du \emph{Grand Veymont}}
-(\ref{ind:gv2}). Pour le modéliser nous avons choisi d'utiliser la
+(\ref{ind:gv2}). Pour le modéliser, nous avons choisi d'utiliser la
 relation de localisation \onto[orl]{Sous\-Altitude}, traduisant une
 différence d'altitude, sans autre forme de contrainte. Comme nous
 l'avons détaillé dans le \autoref{chap:07}, cette relation de
 localisation est atomique, il n'est donc pas nécessaire de la
-décomposer. De plus l'objet de référence utilisé, est comme nous
+décomposer. De plus, l'objet de référence utilisé, est comme nous
 l'avons vu pour l'indice de localisation précédent, nommé. On peut
 alors spatialiser directement cet indice de localisation.
 
 Le processus de spatialisation de la relation de localisation atomique
 \onto[orla]{Sous\-Altitude} a déjà été présenté dans le
 \autoref{chap:07}
-(\autoref{fig:ex_parties_statialisation_sousalt}). Pour ce faire on
+(\autoref{fig:ex_parties_statialisation_sousalt}). Pour ce faire, on
 utilise le rasteriser \onto[orla]{Geometrie}, la métrique
 \onto[orla]{Delta\-Nearest\-Val}, qui calcule pour chaque position de
 la \ac{zir}, la différence d'altitude avec la position la plus proche
