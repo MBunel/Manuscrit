@@ -344,7 +344,7 @@ d'altitude. Pour le dire autrement, il y a peu de positions
 \begin{figure}
   \centering
   \input{../figures/Raster_ZLP_SOUS_HT.tex}
-  \caption{\emph{Zone de localisation probable,} construire avec une
+  \caption{\emph{Zone de localisation probable,} construite avec une
     approche raster, pour \emph{l'indice de localisation} \enquote{Je
       suis sous une ligne électrique trois brins}.}
   \label{fig:ZLP_SOUS_HT}
@@ -389,12 +389,12 @@ supérieur à 0, délimitant le \emph{support} et enfin
 % Détail de la méthode
 Pour chaque segment de la ligne électrique traitée, nous construisons
 un polyèdre, correspondant à une \emph{alpha-cut}
-tridimensionnelle. Aucun \ac{sig} ne permettant de construire ce type
-d'objet, nous avons été contraint de nous orienter vers une solution
-de plus bas niveau, la bibliothèque de calcul géométrique CGAL
-\autocite{CGAL2019}, ce qui a considérablement complexifié la tâche
-d'implémentation. Le polyèdre construit se compose de 6 faces,
-définies par autant de demis-plans
+tridimensionnelle. Étant donné qu'aucun \ac{sig} ne permettant de
+construire ce type d'objet, nous avons été contraint de nous orienter
+vers une solution de plus bas niveau : la bibliothèque de calcul
+géométrique CGAL \autocite{CGAL2019}, ce qui a considérablement
+complexifié la tâche d'implémentation. Le polyèdre construit se
+compose de 6 faces, définies par autant de demis-plans
 (\autoref{fig:schema_polyhedre}). Comme les \emph{alpha-cuts}
 délimitent une \emph{zone de localisation} dépendante, toutes choses
 égales par ailleurs, de la position de \emph{l'objet de référence,} la
