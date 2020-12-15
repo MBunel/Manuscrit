@@ -35,9 +35,10 @@
       \path (P1) -- (P2) node[pos=.5, yshift=-2.5cm] {\tiny Pour la légende détaillée du fond topographique voir \autoref{anx:topo_leg}. Sources: BD TOPO 2018, BD ALTI 2018.}; 
     \end{scope}
     \begin{scope}[x=(img.south east),y=(img.north west)]
-      \node[draw,RdBu-9-1,thick,minimum height=1.6cm,minimum width=1.00cm] (B1) at (0.2,0.60) {};
-      \node[draw,RdBu-9-1,thick,minimum height=0.8cm,minimum width=0.50cm] (B2) at (0.7,0.25) {};
-      \node[draw,RdBu-9-1,thick,minimum height=0.4cm,minimum width=0.25cm] (B3) at (0.9,0.10) {};
+      \draw[draw] (0,0) grid (1,1);
+      \node[draw,RdBu-9-1,thick,minimum height=1cm,minimum width=1cm] (B1) at (0.45,0.87) {};
+      \node[draw,RdBu-9-1,thick,minimum height=1cm,minimum width=1cm] (B2) at (0.56,0.44) {};
+      \node[draw,RdBu-9-1,thick,minimum height=1cm,minimum width=1cm] (B3) at (0.69,0.4) {};
     \end{scope}
   \end{tikzpicture}
 }
