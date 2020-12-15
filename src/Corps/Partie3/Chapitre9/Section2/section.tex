@@ -817,8 +817,8 @@ les mêmes paramètres (\(v = 0\), \(\delta=180\)). On obtient alors les
   \centering
   \subfloat[]{\includegraphics{../figures/Entre_1_GrandVeymont.png}}\hspace{1cm}
     \subfloat[]{\includegraphics{../figures/Entre_2_GrandVeymont.png}}
-    \caption{Zone de localisation compatibles intermédiaires pour
-      l'indice de localisaiton : \enquote{La victime est entre le
+    \caption{Zones de localisation compatibles intermédiaires pour
+      l'indice de localisation : \enquote{La victime est entre le
         \emph{Pas de la Ville} et \emph{Pierre Blanche}}.}
   \label{fig:Entre_GrandVeymont_RSA}
 \end{figure}
@@ -851,7 +851,7 @@ d'éviter de créer des faux négatifs.
 \begin{figure}
   \centering
   \input{../figures/ZLC_entre_GrandVeymont.tex}
-  \caption{2one de localisation compatible pour le cinquième indice de
+  \caption{Zone de localisation compatible pour le cinquième indice de
     localisation de l'alerte \emph{Grand Veymont :} \enquote{Le
       requérant est \protect\onto[orl]{Entre\-X\-et\-Y} le \emph{Pas
         de la Ville} et \emph{Pierre Blanche} avec une certitude
@@ -868,7 +868,7 @@ référence différents, leur processus de spatialisation est donc
 identique. Ces trois indices de localisation sont les seuls de cette
 alerte à utiliser des objets de référence non nommés, respectivement
 \enquote{une zone à peu près plate} (\ref{ind:gv6}), \enquote{une zone
-  caillouteuse} (\ref{ind:gv7}) et \enquote{Une petite prairie}
+  caillouteuse} (\ref{ind:gv7}) et \enquote{une petite prairie}
 (\ref{ind:gv8}). Dans chacun de ces trois cas, le requérant ne
 mentionne pas un objet défini, mais un type de zone. Toutes les zones
 correspondant à cette description peuvent donc être le bon site. Il
@@ -885,30 +885,30 @@ l'identification des objets de référence. En effet, les
 \enquote{zone\textins{s} à peu près plate\textins{s}}, les
 \enquote{zone\textins{s} caillouteuses} et les
 \enquote{petite\textins{s} prairie\textins{s}} ne sont pas
-représentées dans la BD TOPO, ces indices de localisation ne sont pas
-directement spatialisables. Il est donc nécessaire de construire d'une
-manière ou d'une autre ces objets de référence. Une première solution
-serait d’enrichir les données dont nous disposons avec de nouvelles
-sources, comme les données altimétriques (pour identifier les
-\enquote{zone\textins{s} à peu près plate\textins{s}}) ou d'occupation
-du sol des bases \emph{Corine Land Cover} ou \emph{OCS Grande
-  Échelle.} Cependant la nomenclature proposée par ces bases de
-données (et l'échelle dans le cas de la base \emph{Corine Land Cover})
-n'est pas assez fine pour permettre de distinguer des zones
+représentées dans la BD TOPO, ces indices de localisation ne sont donc
+pas directement spatialisables. Il est ainsi nécessaire de construire
+d'une manière ou d'une autre ces objets de référence. Une première
+solution serait d’enrichir les données dont nous disposons avec de
+nouvelles sources, comme les données altimétriques (pour identifier
+les \enquote{zone\textins{s} à peu près plate\textins{s}}) ou
+d'occupation du sol des bases \emph{Corine Land Cover} ou \emph{OCS
+  Grande Échelle.} Cependant, la nomenclature proposée par ces bases
+de données (et l'échelle dans le cas de la base \emph{Corine Land
+  Cover}) n'est pas assez fine pour permettre de distinguer des zones
 caillouteuses et des prairies d'autres zones. Face à ces difficultés
 et sachant que nous n'avons pas étudié la question de l'enrichissement
 des données métier \footnote{Point qui est par ailleurs traité dans un
   autre axe du projet Choucas (\autoref{chap:02}).}, nous avons donc
-opté pour une autre approche, consistant a exploiter au mieux les
+opté pour une autre approche, consistant à exploiter au mieux les
 données dont nous disposons, sans créer de nouvel objet de
 référence. La solution que nous proposons est de transformer les
 indices de localisation \ref{ind:fr5}, \ref{ind:fr6} et \ref{ind:fr7}
 en un nouvel indice de localisation les approximant au mieux, sans les
-contredire. Comme la BD TOPO défini la couverture forestière et que le
-requérant indique implicitement qu'il \emph{n'est pas} situé dans une
-forêt, nous proposons de transformer ces indices de localisation en :
-\enquote{Le requérant n'est pas dans une forêt}. Ce nouvel indice de
-localisation est certes moins discriminant que la combinaison des
+contredire. Comme la BD TOPO définit la couverture forestière et que
+le requérant indique implicitement qu'il \emph{n'est pas} situé dans
+une forêt, nous proposons de transformer ces indices de localisation
+en : \enquote{Le requérant n'est pas dans une forêt}. Ce nouvel indice
+de localisation est certes moins discriminant que la combinaison des
 indices \ref{ind:fr5}, \ref{ind:fr6} et \ref{ind:fr7}, mais il permet
 de prendre en compte une partie de ces informations, sans ajouter de
 nouveaux objets de référence, ce qui ne serait pas réalisable dans le
@@ -934,17 +934,17 @@ et \ref{fig:metrique_dist_foret_2} représentent le résultat du calcul
 de la métrique \onto[orla]{Distance} pour deux instances de forêts. La
 métrique est ensuite fuzzyfiée, pour chaque objet de référence, à
 l'aide du fuzzyficateur \onto[orla]{Inf\-Val\-0} et de son modifieur
-\onto[orl]{Not}. Le paramètre \(\delta\) a été fixé à \SI{10}{\meter},
-ce qui implique qu'une position située à plus de \SI{10}{\meter} de la
-limite d'une forêt sera considérée comme en dehors de la forêt.
+\onto[orl]{Not}. Le paramètre \(\delta\) a été fixé 10 mètres, ce qui
+implique qu'une position située à plus de 10 mètres de la limite d'une
+forêt sera considérée comme en dehors de la forêt.
 
 Une fois que les métriques calculées pour toutes les instances de
-forêts ont été fuzzifiées nous disposons d'une \ac{zlc} pour chaque
-instance qu'il est nécessaire de fusionner afin d'obtenir la \ac{zlc}
+forêts ont été fuzzifiées, nous disposons d'une \ac{zlc} pour chaque
+instance, qu'il est nécessaire de fusionner afin d'obtenir la \ac{zlc}
 spatialisant l'indice de localisation : \enquote{La victime n'est pas
   dans une foret}. La \autoref{fig:ZLC_GrandVeymont_8} représente le
-résultat de ce processus. Comme on peut le remarquer le couvert
-forestier occupe une grande partie de la \ac{zir}, l'utilisation de ce
+résultat de ce processus. Comme on peut le remarquer, le couvert
+forestier occupe une grande partie de la \ac{zir}. L'utilisation de ce
 nouvel indice de localisation permet donc de réduire fermement la zone
 de recherche du requérant.
 
@@ -952,8 +952,8 @@ de recherche du requérant.
   \centering
   \subfloat[\label{fig:metrique_dist_foret_1}]{\includegraphics{./figures/DistanceForetX_GrandVeymont.png}}\hspace{1cm}
   \subfloat[\label{fig:metrique_dist_foret_2}]{\includegraphics{./figures/DistanceForet2_GrandVeymont.png}}
-  \caption{Exemples de métriques pour la pour l'indice de localisaiton
-    \enquote{La victime n'est pas dans une forêt.}}
+  \caption{Exemples de métriques pour la spatialisation de l'indice de
+    localisation \enquote{La victime n'est pas dans une forêt.}}
   \label{fig:metrique_dist_foret}
 \end{figure}
 
