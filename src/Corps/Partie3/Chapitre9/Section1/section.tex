@@ -6,9 +6,9 @@ avons développé un prototype, baptisé \emph{Ruitor} \footnote{Le nom
   \bsc{xix}\up{ème}.}, implémentant l'ensemble de la méthode que nous
 avons développée, c'est-à-dire les phases de décomposition, de
 spatialisation et de fusion. Par ailleurs, l'ensemble des résultats
-que nous avons présentées jusqu'ici (à l'exceptions de celles
-présentes dans le \autoref{chap:06}) et celles qui seront présentées
-dans ce chapitre, ont été réalisées avec ce prototype.
+que nous avons présentés jusqu'ici (à l'exceptions de ceux présentés
+dans le \autoref{chap:06}) et ceux qui seront présentés dans ce
+chapitre, ont été réalisés avec ce prototype.
 
 \emph{Ruitor} a été entièrement développé à l'aide du langage de
 programmation python, dans sa version 3.5, de septembre 2015
@@ -21,9 +21,9 @@ raisons principales :
   ce qui nous a permis de limiter le temps de développement consacré à
   la résolution de problèmes qui auraient pu être causés par une
   mauvaise maitrise du langage.
-\item De plus, il s'agit d'un langage populaire et répandu, notamment
-  en géomatique, que ce soit dans la recherche ou dans le milieu
-  professionnel. De nombreuses bibliothèques utiles pour
+\item D'autre part, il s'agit d'un langage populaire et répandu,
+  notamment en géomatique, que ce soit dans la recherche ou dans le
+  milieu professionnel. De nombreuses bibliothèques utiles pour
   l'implémentation de notre méthode sont donc développées dans ce
   langage.
 \end{enumerate*}
@@ -35,7 +35,7 @@ serait d'employer le \emph{cadriciel} fourni par les différents SIG
 professionnels, comme QGis ou ArcGis. Cette solution permet de
 disposer des nombreuses fonctions de manipulation, d'analyse et de
 visualisation de ces logiciels. Cette approche a cependant deux
-défauts, dont l'un majeur. Tout d'abord il est nécessaire de se
+défauts, dont l'un majeur. Tout d'abord, il est nécessaire de se
 familiariser avec ces fonctions spécifiques, ce qui peut nécessiter un
 temps d’apprentissage conséquent, bien que cette remarque soit valable
 pour n'importe quelle bibliothèque logicielle. De plus, le choix
@@ -75,8 +75,8 @@ des tâches, ce qui a compliqué le processus de développement.
 % Implémentation de la phase de décomposition
 
 Lors de la présentation de la \emph{phase de décomposition}
-(\autoref{chap:05}), nous avions indiqué que la difficulté de sa mise
-en place de cette était concentrée sur la dernière étape : la
+(\autoref{chap:05}), nous avions indiqué que la difficulté la mise en
+place de cette phase était concentrée sur la dernière étape : la
 décomposition des \emph{relations de localisation,} les \emph{indices
   de localisation} et les \emph{objets de référence} étant déjà
 décomposés lors de leur saisie par le secouriste. Par corolaire,
@@ -88,7 +88,7 @@ méthode dans son ensemble~--- nous disposons de la requête du
 secouriste formalisée dans une structure de données que nous avons
 nous-même définie. Les \emph{différents indices de localisation} sont
 regroupés dans \emph{l'ensemble des indices de localisation} et, si
-les \emph{indices de localisations} se référent à plusieurs
+les \emph{indices de localisations} se réfèrent à plusieurs
 \emph{objets de référence} (\ie dans le cas où les objets de référence
 ne sont pas nommés) alors ces derniers sont explicitement présents
 dans la requête. Ainsi, la requête transmise par le secouriste
@@ -115,7 +115,7 @@ les relations de localisation atomiques décomposant, le cas échéant,
 les relations de localisation utilisées par le secouriste et
 d'identifier le \emph{rasteriser,} la \emph{métrique} et le
 \emph{fuzzyficateur} utilisés pour spatialiser les relations de
-localisation atomiques. 
+localisation atomiques.
 
 % Implémentation des phases de spatialisation \& de fusion
 Les phases de spatialisation et de fusion sont implémentées de manière
