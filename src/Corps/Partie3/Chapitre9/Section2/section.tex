@@ -505,12 +505,12 @@ utilise le rasteriser \onto[orla]{Geometrie}, la métrique
 la \ac{zir}, la différence d'altitude avec la position la plus proche
 de l'objet de référence et le fuzzyficateur \onto[orla]{Inf\-Val\-0},
 qui attribue un degré d'appartenance non nul à toutes les positions
-pour lesquelles la métrique à une valeur inférieure à zéro. La
+pour lesquelles la métrique a une valeur inférieure à zéro. La
 \autoref{fig:Metrique_alt_GrandVeymont} représente le résultat du
 calcul de la métrique pour chaque position de la \ac{zir}. Comme on
-peut le remarquer très peu de positions ont une altitude supérieure au
-sommet du \emph{Grand Veymont,} ce point étant le point culminant de
-la région (L’existence de positions ayant une altitude légèrement
+peut le remarquer, très peu de positions ont une altitude supérieure
+au sommet du \emph{Grand Veymont,} ce point étant le point culminant
+de la région (L’existence de positions ayant une altitude légèrement
 supérieure ne s'explique que par le positionnement du ponctuel
 représentant l'objet de référence).
 
@@ -524,24 +524,23 @@ représentant l'objet de référence).
 
 La fonction d'appartenance utilisée pour la fuzzyfication de la
 métrique nécessite la définition de deux valeurs \(v\), la valeur de
-référence et \(\delta\) l'écartement, ici nous avons fixé la valeur de
-\(\delta\) à \SI{5}{\meter}
-(\autoref{fig:fuzzy_veyont_sousSommet}). Ainsi les positions qui
-seront situées légèrement au dessus de l'objet de référence seront
-considérées comme partiellement en-dessous de l'objet de référence et
-toutes les positions dont l'altitude est inférieure à l'objet de
-référence seront considérées comme totalement en dessous. Ce
-paramétrage du fuzzyficateur \onto[orla]{Inf\-Val\-0} est donc assez
-\enquote{large}. Nous avons fait le choix de proposer une
+référence et \(\delta\) l'écartement. Ici nous avons fixé la valeur de
+\(\delta\) à 5 mètres (\autoref{fig:fuzzy_veyont_sousSommet}). Ainsi,
+les positions qui seront situées légèrement au-dessus de l'objet de
+référence seront considérées comme partiellement en-dessous de l'objet
+de référence et toutes les positions dont l'altitude est inférieure à
+l'objet de référence seront considérées comme totalement en
+dessous. Ce paramétrage du fuzzyficateur \onto[orla]{Inf\-Val\-0} est
+donc assez \enquote{large}. Nous avons fait le choix de proposer une
 spatialisation assez peu contraignante des critères d'altitude pour
 compenser les difficultés qu'il peut y avoir à estimer la relation
 verticale entre deux objets, notamment quand elle est peu importante.
 Comme pour l'indice précédent (\ref{ind:gv1}), la zone de localisation
-obtenue après la fuzzyficaiton de la métrique
+obtenue après la fuzzyfication de la métrique
 (\autoref{fig:ZLC_GrandVeymont_2}) est très étendue, de nombreuses
 positions ayant un degré d'appartenance proche de 1. En effet,
 l'indice de localisation modélisé se réfère au sommet du \emph{Grand
-  Veymont,} or, ce sommet est le plus haut du massif du Vercors. Tous
+  Veymont.} Or, ce sommet est le plus haut du massif du Vercors. Tous
 les points de la \ac{zir}, ou presque, sont donc situés à une altitude
 inférieure à l'objet de référence, ce qui rend cet indice de
 localisation très peu discriminant.
@@ -572,28 +571,28 @@ La relation de localisation \onto[orl]{Au\-Nord\-De\-Externe},
 utilisée pour modéliser le troisième indice de localisation
 (\ref{ind:gv3}) est la première des relations de localisation non
 atomiques de cette alerte. Cette relation se décompose, en effet, en
-deux relation de localisation atomiques, \onto[orla]{Au\-Nord\-De} et
+deux relations de localisation atomiques, \onto[orla]{Au\-Nord\-De} et
 \onto[orla]{Hors\-De\-Planimetrique}. La relation de localisation
 atomique \onto[orla]{Au\-Nord\-De} \footnote{Que la relation de
   localisation \protect\onto[orla]{Au\-Nord\-De\-Externe} partage avec
   sa relation sœur \protect\onto[orla]{Dans\-La\-Partie\-Nord\-De}.}
 est une relation cardinale générale, qui permet de construire une zone
-au nord de l'objet de référence, à partir de son centroide. La zone
+au nord de l'objet de référence, à partir de son centroïde. La zone
 construite à l'aide de cette relation peut être située au sein de
 l'objet de référence, notamment si celui-ci est étendu (\eg une
 vallée). L'ajout de la relation de localisation
 \onto[orla]{Hors\-De\-Planimetrique} permet de modifier ce
 comportement, en imposant que les positions appartenant à la \ac{zlc}
 soient situées à l'extérieur de l'objet de référence. Comme pour les
-indices précédents l'objet de référence de cet indice de localisation
+indices précédents, l'objet de référence de cet indice de localisation
 est nommé, il n'est donc pas nécessaire de procéder à la décomposition
 des objets de référence, contrairement à la relation de localisation.
 
 La première des relations de localisations issues de la décomposition,
-\onto[orla]{Au\-Nord\-De} est une relation de localisaiton cardinale
+\onto[orla]{Au\-Nord\-De} est une relation de localisation cardinale
 ayant \onto[orla]{Centroide} comme rasteriser,
 \onto[orla]{Ecart\-Angulaire} comme métrique et \onto[orla]{Eq\-Angle}
-comme fuzzyfieur
+comme fuzzyficateur
 (\autoref{fig:ex_parties_statialisation_AuNordDe}). La métrique
 \onto[orla]{Ecart\-Angulaire}, que nous avions déjà présentée dans le
 \autoref{chap:07}, calcule l'écart angulaire entre la demi-droite
@@ -628,11 +627,11 @@ sur la \autoref{fig:veyont_EcartNord}.
 \end{figure}
 
 La seconde \emph{relation de localisaiton atomique} est
-\onto[orla]{Hors\-De\-Pla\-ni\-mé\-tri\-que}, qui à déjà été employée
+\onto[orla]{Hors\-De\-Pla\-ni\-mé\-tri\-que}, qui a déjà été employée
 directement pour la spatialisation du premier indice de localisation
 de cette alerte
 (\autoref{fig:ex_parties_statialisation_horsdeplani}). Cette relation
-de localisaiton est spatialisée avec la métrique
+de localisation est spatialisée avec la métrique
 \onto[orla]{Distance}, qui est ici calculée à partir du ponctuel
 représentant le \emph{Pas de la Ville} dans la BD TOPO. La
 \autoref{fig:veyont_distance} représente le résultat du calcul de
