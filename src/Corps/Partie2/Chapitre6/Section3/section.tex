@@ -210,16 +210,16 @@ est négative) et nul dans le cas contraire (\ie que la métrique est
 positive). Il faut alors définir les valeurs de la métrique à partir
 desquelles le degré d'appartenance est de 1 ou de 0. Étant donné que
 la différence d'altitude est calculée à partir du sommet de la ligne
-électrique nous avons considéré que toute position dont l'altitude
+électrique, nous avons considéré que toute position dont l'altitude
 était inférieure au point le plus proche de la ligne électrique (\ie
 dès que la valeur de la métrique est négative) avait un degré
-d'appartenance de 1. Nous avons fixé le second seuil à \SI{5}{\meter},
-ce qui permet d'ajouter une petite marge d'erreur. Ainsi, le degré
+d'appartenance de 1. Nous avons fixé le second seuil à 5 mètres, ce
+qui permet d'ajouter une petite marge d'erreur. Ainsi, le degré
 d'appartenance est de 1 jusqu’à ce que la différence d'altitude soit
 nulle, puis il décroit rapidement jusqu'à atteindre la valeur de 0
-lorsque la différence est de \SI{5}{\meter} (\ie que la position est
-\SI{5}{\meter} au-dessus du sommet de la ligne électrique) et la
-valeur reste nulle au-delà (Figure \ref{fig:fnc_app_AltInf}).
+lorsque la différence est de 5 mètres (\ie que la position est 5
+mètres au-dessus du sommet de la ligne électrique) et la valeur reste
+nulle au-delà (Figure \ref{fig:fnc_app_AltInf}).
 
 \begin{figure}
   \centering \subfloat[]{%
@@ -248,11 +248,11 @@ de \emph{fusionner} ---~à l'aide d'une intersection~--- les deux
 \emph{zones de localisations compatibles} correspondant aux
 \emph{relations de localisation atomiques}
 \onto[orla]{Al\-ti\-tu\-de\-Stric\-te\-ment\-Inf\-erieu\-re} et
-\onto[orla]{Pres\-De}. Si son appliquation est dépendante de
+\onto[orla]{Pres\-De}. Si son application est dépendante de
 l'implémentation, la méthode utilisée est fixée par le modèle
 théorique. La \emph{théorie des sous-ensembles flous} nécessite
 d'employer une \emph{t-norme.} Étant donné que cette comparaison ne
-porte que sur les implémenations et non sur les opérateurs d'unions et
+porte que sur les implémenations et non sur les opérateurs d'union et
 d'intersection, nous avons choisi d'utiliser les opérateurs les plus
 courants, ceux proposés par \textcite{Zadeh1965}, où la fonction
 \emph{minimum} fait office de \emph{t-norme.}
