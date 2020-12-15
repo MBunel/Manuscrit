@@ -210,10 +210,10 @@ temps de calcul et le volume du résultat. Pour les modélisations
 présentées dans le \autoref{chap:09}, où nous n'étions pas contraint
 par les temps de calcul, nous avons pris la décision de travailler à
 l'aide de la résolution la plus fine possible, compte-tenu du nombre
-d'objets de référence à traiter. Toutefois cette solution n'est pas
+d'objets de référence à traiter. Toutefois, cette solution n'est pas
 pérenne, notre méthode visant à être appliquée dans des contextes où
 le temps peut être limité. Nous souhaitons donc offrir aux secouristes
-la possibilité de paramétrer la résolution du calcul. Pour ce faire
+la possibilité de paramétrer la résolution du calcul. Pour ce faire,
 deux solutions seraient envisageables : la première serait de laisser
 le secouriste fixer manuellement la maille du calcul, ce qui est déjà
 techniquement possible, mais non accessible pour l'utilisateur dans
@@ -225,10 +225,10 @@ savons pas quelle est la meilleure résolution de spatialisation. Il
 est en effet possible que des résolutions plus faibles que celles que
 nous avons utilisées dans nos essais (\eg 100, voire 250~m) soient
 satisfaisantes pour déclencher une intervention, ce que nous ne
-pouvons savoir à l'heure actuelle. Il est donc possible qu'une
+pouvons pas savoir à l'heure actuelle. Il est donc possible qu'une
 spatialisation à une résolution fixe et peu élevée soit satisfaisante
 pour la localisation d'appels. Pour évaluer l'effet de tels
-changements de résolution il peut être intéressant de procéder à une
+changements de résolution, il peut être intéressant de procéder à une
 analyse de sensibilité, laquelle permettrait de quantifier l'impact de
 tels changements sur la qualité des résultats. Cette étude pourrait
 être réalisée à partir d'alertes déjà étudiées, comme celles
@@ -247,10 +247,10 @@ d'appartenance non nul aux valeurs de la métrique supérieures à zéro)
 ou \onto[orla]{Eq\-Val\-0} (qui permet d'attribuer un degré
 d’appartenance non nul aux valeurs de la métriques proches de zéro)
 facilite l'utilisation de certaines relations de localisation (\eg
-\onto[orl]{Alt\-Inf}) il est toujours nécessaire de fixer la valeur
+\onto[orl]{Alt\-Inf}), il est toujours nécessaire de fixer la valeur
 d'un paramètre \(\delta\). Si cette tâche n'est que peu contraignante
 pour l'exercice de modélisation effectué dans le \autoref{chap:09},
-sachant que nous n'étions pas contraints par le temps, il nous semble
+sachant que nous n'étions pas contraint par le temps, il nous semble
 difficile de demander aux secouristes de paramétrer les fuzzyficateurs
 durant la phase de secours.
 
@@ -282,12 +282,12 @@ La définition d'une méthode de paramétrisation des fuzzyficateurs
 prenant en compte la nature et les caractéristiques (géométriques ou
 non) des objets de référence pose toutefois de nombreux problèmes
 scientifiques. Il est en effet nécessaire d'identifier les
-caractéristiques des objets influent ces paramètres, d'identifier si
+caractéristiques des objets impactant ces paramètres, d'identifier si
 le type d'objet à une influence sur ces paramètres, \emph{etc.}
 
-Une des pistes envisagées est de recourir a des méthodes
+Une des pistes envisagées est de recourir à des méthodes
 d'apprentissage, alimentées par des données recueillies lors
-d'entretiens ou de sondages. On pourrait, par exemple, demander a un
+d'entretiens ou de sondages. On pourrait, par exemple, demander à un
 panel de randonneurs comment ils décriraient une position donnée. Il a
 même été envisagé d'organiser ce type d'études sur le terrain ou à
 l'aide d'un environnement en réalité virtuelle, qui permettrait aux
@@ -312,17 +312,17 @@ sont composées de pylônes et d'un câble suspendu ou des lignes de
 téléphérique, composées des mêmes éléments mais auxquels s'ajoutent
 une station d'arrivée et de départ. Le problème que soulèvent ces
 objets est que la sémantique ou le paramétrage des relations de
-localisation qui s'y appliquent peut changer en fonction de la partie
-de l'objet considérée. Par exemple, pour une ligne de téléphérique il
-parait raisonnable de considérer qu'une relation de proximité a un
-rayon plus important si elle se rapporte aux bâtiments qu'aux pylônes
-ou au câble, ces derniers étant plus saillants. Dit autrement, on est
-plus vite loin d'un pylône que d'une gare de téléphérique. Les parties
-de l'objet peuvent influer le paramétrage des relations de
-localisation. Un exemple peut être celui d'une route contenant des
-ponts et des tunnels. Si un requérant décrit sa position en indiquant
-se trouver \enquote{sous une route} il est pertinent d'adapter le
-concept à la composante de l'objet. On sera
+localisation qui s'y appliquent peuvent changer en fonction de la
+partie de l'objet considérée. Par exemple, pour une ligne de
+téléphérique il paraît raisonnable de considérer qu'une relation de
+proximité a un rayon plus important si elle se rapporte aux bâtiments
+qu'aux pylônes ou au câble, ces derniers étant plus saillants. Dit
+autrement, on est plus vite loin d'un pylône que d'une gare de
+téléphérique. Les parties de l'objet peuvent influer le paramétrage
+des relations de localisation. Un exemple peut être celui d'une route
+contenant des ponts et des tunnels. Si un requérant décrit sa position
+en indiquant se trouver \enquote{sous une route} il est pertinent
+d'adapter le concept à la composante de l'objet. On sera
 \onto[orl]{Sous\-Proche\-De} une route mais
 \onto[orl]{Sous\-Recouvert\-Par} un tunnel ou un pont. Les parties de
 l'objet peuvent donc influencer le choix des concepts.
