@@ -149,15 +149,15 @@ de traiter des rasters comme des matrices \emph{numpy.} Les étapes de
 \emph{calcul de la métrique} et de \emph{fuzzyfication} sont
 effectuées directement avec \emph{numpy.} La bibliothèque \emph{numpy}
 permet d'effectuer de nombreux calculs avancés, ce qui nous permet de
-calculer de nombreux types de \emph{métriques,} toutefois certaines
+calculer de nombreux types de \emph{métriques.} Toutefois, certaines
 méthodes spécifiques, qui pourraient être utiles pour le calcul de
 certaines \emph{métriques,} n'y figurent pas. C'est pourquoi nous
 avons également fait appel aux bibliothèques \emph{SciPy} et
 \emph{scikit-image} \autocite{vanderWalt2014,Virtanen2020} qui
 proposent des outils supplémentaires, utiles pour le calcul de
 certaines métriques (\eg distance à la partie la plus proche de
-l'objet de référence) tout en opérant de à partir des types de données
-définis par \emph{numpy.}
+l'objet de référence), tout en opérant de à partir des types de
+données définis par \emph{numpy.}
 
 Les \emph{zones de localisation} \emph{compatibles} et
 \emph{probables} sont directement représentées par des matrices
@@ -168,7 +168,7 @@ le cas présent la phase de fuzzyfication) et les opérations
 inter-raster, comme les unions et les intersections.
 
 Dans son état actuel, Ruitor n'offre pas encore la possibilité de
-traiter directement les indices saisies dans l'interface développée au
+traiter directement les indices saisis dans l'interface développée au
 sein du projet Choucas \autocite{Viry2019a} et de lui renvoyer les
 \emph{zones de localisation compatibles} et \emph{probables}
 construites. La mise en commun de ces deux travaux de développement
@@ -183,19 +183,19 @@ d'ici la fin du projet Choucas.
 
 Nous ne pouvions, dans le cadre de ce travail et de ce manuscrit,
 traiter l'ensemble des alertes dont nous disposons. Nous avons donc
-choisi de nous focaliser sur deux d'entre-elles, présentant des
+choisi de nous focaliser sur deux d'entre elles, présentant des
 caractéristiques pertinentes à étudier et permettant d'aborder des
 problèmes différents.
 
 La première des alertes que nous avons sélectionnée est l’alerte dite
 du \emph{Grand Veymont.} Il s'agit d'une alerte relativement courte et
 contenant moins d'une vingtaine d'indices de localisations. Bien
-qu'elle soit courte des indices de localisation de nombreux types
+qu'elle soit courte, des indices de localisation de nombreux types
 différents y sont présents et des relations de localisation assez
 différentes sont énoncées. Cette alerte est relativement simple à
 traiter. En effet, tous les \emph{objets de référence} utilisés par le
 requérant pour décrire sa position sont nommés et les descriptions
-données sont assez précises. Toutefois des relations de localisation
+données sont assez précises. Toutefois, des relations de localisation
 assez variées sont utilisées. La modélisation de cette alerte nous
 permet donc d'aborder de nombreuses questions de modélisation, tout en
 évitant les problèmes liés à la modélisation d'indices de localisation
