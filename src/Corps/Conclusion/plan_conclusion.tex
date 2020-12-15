@@ -60,7 +60,7 @@ Cette méthode a été structurée selon trois grandes phases : la
 \emph{décomposition,} la \emph{spatialisation} et la \emph{fusion.}
 Chacune d'entre elles répond à un objectif précis. La décomposition
 traite les indices de localisation saisis par le secouriste de manière
-à les rendre spatialisables, la spatialisation transforme ces indices
+à les rendre spatialisables. La spatialisation transforme ces indices
 en des \emph{zones de localisation compatibles} et la fusion les
 regroupe, jusqu'à aboutir à une seule zone, la \emph{zone de
   localisation probable} \acp{zlp}, correspondant au résultat de la
@@ -76,7 +76,7 @@ correspondant partiellement ou totalement à l'indice de localisation
 spatialisé et donc modéliser leur imprécision. 
 
 La confiance du secouriste traitant l'alerte en la véracité des
-indices de localisation qu'il collecte à quant à elle été modélisée à
+indices de localisation qu'il collecte a, quant à elle été modélisée à
 l'aide de la théorie des possibilités \autocite{Zadeh1978}. Ce cadre
 théorique nous permet d'attribuer un degré de confiance à chaque
 indice de localisation et de le répercuter sur la zone de localisation
@@ -85,23 +85,24 @@ le spatialisant.
 L'objectif du projet Choucas n'étant pas de proposer des solutions se
 substituant aux secouristes, nous avons conçu notre méthode de manière
 à ce qu'elle s'intègre avec peu de contraintes dans le processus
-métier de localisation des victimes. Note méthode est donc conçue pour
-que les indices de localisation qu'elle spatialise soient saisis par
-des humains, et non identifiés automatiquement à partir de l'appel
+métier de localisation des victimes. Celle-ci méthode est donc conçue
+pour que les indices de localisation qu'elle spatialise soient saisis
+par des humains, et non identifiés automatiquement à partir de l'appel
 téléphonique (ou son \emph{verbatim} écrit) à l'aide de techniques
 issues du domaine du traitement automatisé des langues. Pour permettre
 la saisie des indices de localisation et leur spatialisation, nous
 avons créé, à partir de l'analyse d'un corpus d'alertes passées, une
 ontologie des \emph{relations de localisation} ---~nommée
 \ac{orl}~---, listant et définissant de nombreuses relations de
-localisation utilisés par les victimes et les secouristes pour décrire
-la position des victimes par rapport à des objets repères. Bien
-qu'elle s'inspire d'autres travaux, notamment l'ontologie GUM-Space
-\autocite{Bateman2010}, l'ontologie des relations de localisation
-présente la caractéristique d'être spécifique à la description de
-positions en montagne, ce qui en fait une production exploitable
-indépendamment de notre travail de thèse, par exemple pour des travaux
-traitant de la question de la localisation en montagne.
+localisation utilisées par les victimes et les secouristes pour
+décrire la position des victimes par rapport à des objets
+repères. Bien qu'elle s'inspire d'autres travaux, notamment
+l'ontologie GUM-Space \autocite{Bateman2010}, l'ontologie des
+relations de localisation présente la caractéristique d'être
+spécifique à la description de positions en montagne, ce qui en fait
+une production exploitable indépendamment de notre travail de thèse,
+par exemple pour des travaux traitant de la question de la
+localisation en montagne.
 
 L'étude des relations de localisation préalable à la construction de
 l'ontologie des relations de localisation nous a permis de constater
@@ -120,14 +121,14 @@ décomposée.
 Le rôle de la phase de décomposition est, en partie, d'effectuer cette
 décomposition des relations de localisation de manière à permettre
 leur spatialisation et celui de la phase de fusion de les combiner, de
-manière a obtenir la zone de localisation spatialisant la relation de
+manière à obtenir la zone de localisation spatialisant la relation de
 localisation non décomposée. La définition des relations de
 localisation atomiques et les liens de décomposition les rattachant
 aux relations de localisation sont formalisés dans l'ontologie des
 relations de localisation atomiques \acp{orla}. Pour pouvoir
-spatialiser les relations de localisation atomiques nous avons associé
-chacun des concepts de cette ontologie à un ensemble de concepts
-décrivant des méthodes qui seront appliquées lors de la
+spatialiser les relations de localisation atomiques, nous avons
+associé chacun des concepts de cette ontologie à un ensemble de
+concepts décrivant des méthodes qui seront appliquées lors de la
 spatialisation.
 
 Une autre contribution de notre thèse est la proposition d'une méthode
@@ -140,7 +141,7 @@ l'objet utilisé comme référence en un raster. Le choix du
 \emph{rasteriser} permet de sélectionner la partie de l'objet qui est
 utilisée comme référence (centre, frontière, ensemble de l'objet). La
 seconde étape est celle de la construction de la
-\emph{métrique}. Durant cette étape une mesure permettant de
+\emph{métrique}. Durant cette étape, une mesure permettant de
 quantifier la sémantique de la relation de localisation spatialisée
 est calculée pour toutes les positions de la zone étudiée à partir de
 l'objet de référence rasterisé. Cette métrique est ensuite utilisée
