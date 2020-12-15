@@ -1011,10 +1011,10 @@ Pour le sixième indice de localisation, les objets de référence
 potentiels n'ont pas été filtrés, seuls 34 instances correspondant à
 la description donnée par la victime.
 %
-Comme l'illustre la \autoref{fig:ZLC_FilRouge_6} la \ac{zlc} obtenue après
-la spatialisation de ce sixième indice de localisation est beaucoup
-plus réduite que celle des indices précédents, ce qui s'explique d'une
-part par le faible nombre d'objets de référence et par la petite
+Comme l'illustre la \autoref{fig:ZLC_FilRouge_6} la \ac{zlc} obtenue
+après la spatialisation de ce sixième indice de localisation est
+beaucoup plus réduite que celle des indices précédents, ce qui
+s'explique par le faible nombre d'objets de référence et par la petite
 taille de la \ac{zlc} de chacune de ces instances.
 
 \begin{figure}
@@ -1030,20 +1030,21 @@ taille de la \ac{zlc} de chacune de ces instances.
 
 Le dernier indice de localisation de cette alerte (\ref{ind:fr7}) est
 sans aucun doute le plus simple à modéliser. Il est en effet le seul
-indice de cette alerte a ne nécessiter ni décomposition des relations
+indice de cette alerte à ne nécessiter ni décomposition des relations
 de localisation, ni des objets de référence indéfinis. Comme nous
 l'expliquions lors de la modélisation de l'alerte \emph{Grand Veymont}
-(cf. indice \ref{ind:gv3}) les relations cardinales comme
+(cf. indice \ref{ind:gv3}), les relations cardinales comme
 \onto[orl]{Au\-Nord\-De} ou \onto[orl]{A\-L\-Est\-De} sont des
 relations de localisation atomiques, utilisant le rasteriser
 \onto[orla]{Centroide}, la métrique \onto[orla]{} avec pour paramètre
 la direction et le fuzzyficateur \onto[orla]{Eq\-Angle}. La seule
-particularité de cet indice de localisaiton comparé au troisième
-indice de l'alerte \emph{Grand Veymont} est son objet de référence. En
-effet, les antennes téléphoniques ne sont pas représentées dans la
-BDTOPO, nous avons donc complété notre jeu de données avec les données
-métier de l'ANFR. La \autoref{fig:ZLC_FilRouge_7} représente le
-résultat de la spatialisation de ce septième indice de localisation.
+particularité de cet indice de localisation, comparé au troisième
+indice de l'alerte \emph{Grand Veymont,} est son objet de
+référence. En effet, les antennes téléphoniques ne sont pas
+représentées dans la BD TOPO. Nous avons donc complété notre jeu de
+données avec les données métier de l'ANFR. La
+\autoref{fig:ZLC_FilRouge_7} représente le résultat de la
+spatialisation de ce septième indice de localisation.
 
 \begin{figure}
   \centering
@@ -1090,13 +1091,13 @@ résultat de la spatialisation de ce septième indice de localisation.
 %\subsection{Construction de la \ac{zlp}}
 
 Une fois que les \ac{zlc} des 7 indices de localisation ont été
-construites on peut procéder à la dernière étape de la phase de
+construites, on peut procéder à la dernière étape de la phase de
 fusion, la fusion des \ac{zlp} correspondant à la spatialisation des
-indices de localisation, qui abouti à la construction de la \ac{zlp}
-de l'alerte. Dans le cas de l'alerte \emph{fil rouge}, la ac{zlp}
+indices de localisation, qui aboutit à la construction de la \ac{zlp}
+de l'alerte. Dans le cas de l'alerte \emph{fil rouge}, la \ac{zlp}
 ainsi obtenue est représentée par la \autoref{fig:zlp_fil_rouge}.
 
-Comme on peut le remarquer la \ac{zlp} ainsi obtenue est
+Comme on peut le remarquer, la \ac{zlp} ainsi obtenue est
 significativement différente de celles obtenues pour l'alerte
 \emph{Grand Veymont.} En effet, les \ac{zlp} de ces précédentes
 alertes sont relativement \enquote{compactes} et forment une zone d'un
@@ -1110,12 +1111,12 @@ positions situées dans le cluster situé le plus au nord de la \ac{zir}
 (Figure \ref{fig:zlp_fil_rouge_a}) est principalement limité par le
 dernier indice de localisation (\ref{ind:fr7}). En effet, cette zone
 est quasiment située au nord de la Chapelle \emph{St-Philomene,} ce
-qui conduit a un très faible degré d’appartenance pour cet indice de
+qui conduit à un très faible degré d’appartenance pour cet indice de
 localisation. Or, comme nous l'expliquions précédemment, la relation
 de localisation \onto[orla]{A\-Est\-De}, utilisée pour modéliser le
 dernier élément de l'alerte \emph{fil rouge,} ne propose qu'une
 approximation de la zone où le signal de l'antenne GSM est présent. Il
-par conséquent très probable que ce cluster de points ait été
+est par conséquent très probable que ce cluster de points ait été
 disqualifié par un modélisation plus fine de ce dernier indice de
 localisation. Cette remarque est également valable pour le cluster
 isolé en fond de vallée. Son existence s'explique par la présence de
@@ -1141,15 +1142,15 @@ l'importance du dernier indice de localisation (\ref{ind:fr7}).
 Comme pour la modélisation de la première alerte (\emph{Grand
   Veymont,} \autoref{sec:9-2}) le premier reproche que l'on puisse
 faire à la modélisation proposée est la valeur des paramètres des
-fuzzyficateurs utilisés pour spatialisation des indices de
-localisation. Comme précédemment les valeurs sélectionnées l'on été
+fuzzyficateurs utilisés pour la spatialisation des indices de
+localisation. Comme précédemment, les valeurs sélectionnées l'on été
 empiriquement et, bien que le résultat ait été validé par les
 secouristes, il nous semble possible d'améliorer le résultat de cette
 modélisation par une configuration plus fine des
 \emph{fuzzyficateurs.} Le problème nous semble d'autant plus important
 ici que la \ac{zlp} obtenue ici est très fragmentée. En effet, dans
 l'alerte \emph{Grand Veymont} la \ac{zlp} était composée d'une grande
-zone principale, assez peut étendue. Une paramétrisation plus fine des
+zone principale, assez peu étendue. Une paramétrisation plus fine des
 fonctions d'appartenance aurait certainement permis de réduire la
 taille de cette zone et donc d'identifier plus précisément la position
 de la victime. Cependant, cette plus grande précision n'aurait pas été
@@ -1157,14 +1158,14 @@ spécialement intéressante pour les secouristes, la \ac{zlp} initiale
 étant suffisamment réduite pour qu'il soit relativement facile de
 localiser la victime. Cette observation n'est cependant pas valable
 dans le cas du \emph{fil rouge.} En effet, la \ac{zlp} que nous
-obtenons ici est composée de nombreuses petites zones
-fragmentée. Prises indépendamment, ces zones sont faciles à explorer
-par les secouristes, puisque de taille réduite. Cependant ces zones
+obtenons ici est composées de nombreuses petites zones
+fragmentées. Prises indépendamment, ces zones sont faciles à explorer
+par les secouristes, puisque de taille réduite. Cependant, ces zones
 sont si nombreuses et réparties dans la \ac{zir} qu'il n'est pas
 envisageable de toutes les explorer. Une meilleure paramétrisation des
 fuzzyficateurs permettrait, certes, de réduire la taille de ces zones
 et donc d'améliorer leur précision, mais surtout de faire disparaitre
-certaines d'entre-elles et donc de faciliter la localisation de la
+certaines d'entre elles et donc de faciliter la localisation de la
 victime. Ainsi, si une meilleure définition des seuils des fonctions
 d'appartenance n'offre qu'un gain de précision dans le cas de l'alerte
 \emph{Grand veymont,} elle devient fortement nécessaire pour le
@@ -1190,16 +1191,16 @@ est que, pour certains \emph{indices de localisation} (\enquote{La
   victime est sous un chemin} (\ref{ind:fr3}) et \enquote{la victime
   est sous une route} (\ref{ind:fr5})) nous avons pris le parti de
 limiter manuellement les \emph{objets de référence}
-sélectionnés. Cette décision nous à conduit à ne pas traiter tous les
+sélectionnés. Cette décision nous a conduit à ne pas traiter tous les
 objets qui auraient pu être considérés comme des \emph{objets de
   référence} par les secouristes. Cette approximation n'est cependant
 pas très problématique, d'une part car ce type de sélection manuelle
 des \emph{objets de référence} est envisagé comme une des actions
 possibles des secouristes durant la phase de traitement de l'alerte,
-mais également car, dans le cas présent, les position qui auraient été
-prises en compte par les objets de référence retirés, se voient
+mais également car, dans le cas présent, les positions qui auraient
+été prises en compte par les objets de référence retirés, se voient
 attribuer un degré d'appartenance nul par d'autres indices. Ainsi, la
-\ac{zlp} n'est pas modifiée par de retrait de ces \emph{objets de
+\ac{zlp} n'est pas modifiée par le retrait de ces \emph{objets de
   référence.}
 
 Un autre reproche que l'on puisse faire à cette modélisation est que
