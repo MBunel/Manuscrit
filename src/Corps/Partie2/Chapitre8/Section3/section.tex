@@ -1,15 +1,15 @@
-Pour illustrer le déroulement de la \emph{phase de fusion} nous nous
+Pour illustrer le déroulement de la \emph{phase de fusion,} nous nous
 fonderons sur l'exemple de la construction de la \ac{zlp}
 correspondant à \emph{l'ensemble des indices de localisation}
 \enquote{Je suis à l'extérieur, au sud du sommet et je suis proche
   d'un refuge} (\autoref{fig:exemple_final_fusion}). Pour les besoins
-de l'exemple, nous considérerons que le secouriste a attribué une
+de l'exemple, nous considèrerons que le secouriste a attribué une
 confiance absolue au premier \emph{indice} \footnote{C'est le choix
   qui a implicitement été fait lors de la \emph{spatialisation} de cet
   \emph{indice} dans le \autoref{chap:05}.} et une confiance moyenne
 (\ie un coefficient de \si{0,6}) au second. Pour le second
 \emph{indice de localisation} utilisant un \emph{objet de référence
-  indéfini} (\eg \enquote{un refuge}) nous avons considéré qu'il
+  indéfini} (\eg \enquote{un refuge}), nous avons considéré qu'il
 n'existait que deux objets candidats, utilisés pour la spatialisation
 des \ac{zlc} \textcolor{RdBu-9-8}{\textsf{C}} et
 \textcolor{RdBu-9-9}{\textsf{D}} (\autoref{fig:exemple_final_fusion}).
@@ -63,18 +63,18 @@ l'assertion \enquote{Cette position est au sud de la forêt} \emph{et}
 l'assertion \enquote{Cette position est à l'extérieur de la
   forêt}. Conformément aux opérateurs précédemment sélectionnés, cette
 intersection est réalisée en prenant, pour chaque position de la
-\ac{zir}, la valeur minimale des deux degrés d'appartenance, on
+\ac{zir}, la valeur minimale des deux degrés d'appartenance. On
 obtient alors la \ac{zlc} \textcolor{RdBu-9-1}{\textsf{AB}}.
 
 Dans la seconde partie de la figure, on retrouve les \ac{zlc}
 \textcolor{RdBu-9-8}{\textsf{C}} et \textcolor{RdBu-9-9}{\textsf{D}},
 spatialisées à partir de la décomposition de \emph{l'indice de
   localisation} : \enquote{Je suis proche d'un refuge}. Bien que
-provenant du même \emph{indice de localisation} ces \ac{zlc} n'ont pas
-à être fusionnées lors de cette étape. En effet elles sont toutes deux
-construites à partir d'une \emph{relation de localisation atomique}
-(\onto[orla]{Proche\-De}), il n'est donc pas nécessaire d'intersecter
-ces deux zones.
+provenant du même \emph{indice de localisation,} ces \ac{zlc} n'ont
+pas à être fusionnées lors de cette étape. En effet elles sont toutes
+deux construites à partir d'une \emph{relation de localisation
+  atomique} (\onto[orla]{Proche\-De}), il n'est donc pas nécessaire
+d'intersecter ces deux zones.
 
 \subsection{La \emph{fusion} des \emph{objets de référence indéfinis}}
 
@@ -94,9 +94,9 @@ Les \ac{zlc} \textcolor{RdBu-9-8}{\textsf{C}} et
 \textcolor{RdBu-9-9}{\textsf{D}} \emph{spatialisent} en effet, la même
 \emph{relation de localisation atomique} (et ne nécessitent donc pas
 d'être fusionnées lors de la première étape de la phase de
-spatialisation) mais pour deux instances différentes d'un même type
+spatialisation), mais pour deux instances différentes d'un même type
 \emph{d'objet de référence.} Ces deux \ac{zlc} doivent donc être
-\emph{fusionnées,} de manière a obtenir la \emph{zone de localisation}
+\emph{fusionnées,} de manière à obtenir la \emph{zone de localisation}
 spatialisant \emph{l'indice de localisation} initial, c'est-à-dire
 avant la \emph{décomposition des objets de référence} et la
 \emph{décomposition des relations de localisation.} Pour ce faire, on
