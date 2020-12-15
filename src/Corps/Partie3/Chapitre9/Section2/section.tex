@@ -649,7 +649,7 @@ cette métrique.
 Pour transformer les métriques \onto[orla]{Ecart\-Angulaire} et
 \onto[orla]{Distance} en les \ac{zlc} spatialisant les relations de
 localisation atomiques \onto[orla]{Au\-Nord\-De} et
-\onto[orla]{Hors\-De\-Pla\-ni\-me\-tri\-que} il est nécessaire
+\onto[orla]{Hors\-De\-Pla\-ni\-me\-tri\-que}, il est nécessaire
 d'employer respectivement le fuzzyficateur \onto[orla]{Eq\-Angle} et
 le fuzzyficateur \onto[orla]{Sup\-Val\-0}. Nous avons fixé le
 paramètre \(v\) du premier fuzzyficateur à 0, la métrique
@@ -660,9 +660,9 @@ au nord du \emph{Pas de la Ville,} c'est-à-dire le long du segment
 passant par ce point et orienté au nord, son degré d'appartenance est
 maximal. La valeur du degré d'appartenance décroit lorsque la position
 s'éloigne de cette direction de référence, jusqu'à devenir nul lorsque
-l'écart supérieur de \SI{90}{\degree} d'un côté comme de l'autre
+l'écart est supérieur de \SI{90}{\degree} d'un côté comme de l'autre
 (Figure \ref{fig:fuzzy_veyont_angleNord_1}). Pour la fuzzyfication de
-la métrique \onto[orla]{Distance} nous avons employé le même
+la métrique \onto[orla]{Distance}, nous avons employé le même
 paramétrage que pour le premier indice de localisation, à savoir une
 valeur \(v\) nulle et un paramètre \(\delta\) de \SI{500}{\meter}
 (Figure \ref{fig:fuzzy_veyont_angleNord_2}). Les Figures
@@ -721,11 +721,11 @@ positions \onto[orl]{Au\-Nord\-De\-Externe} du \emph{Pas de la Ville}
 présentent assez peu de différences visuelles, seule une petite
 diminution du degré d'appartenance est visible au voisinage direct du
 \emph{Pas de la Ville.} Cette observation s'explique de plusieurs
-manières. Tout d'abord le mode de représentation que nous avons choisi
-pour représenter les \ac{zlc} tend à \enquote{gommer} les variations
-locales de degré d'appartenance, effet renforcé par l'échelle de la
-représentation. Mais cette faible différence met surtout en évidence
-le fait que la relation de localisation
+manières. Tout d'abord, le mode de représentation que nous avons
+choisi pour représenter les \ac{zlc} tend à \enquote{gommer} les
+variations locales de degré d'appartenance, effet renforcé par
+l'échelle de la représentation. Mais cette faible différence met
+surtout en évidence le fait que la relation de localisation
 \onto[orl]{Hors\-De\-Pla\-ni\-me\-trique} est moins contraignante que
 la relation de localisation \onto[orl]{Au\-Nord\-De}.
 
@@ -762,20 +762,20 @@ Le cinquième indice de localisation indique que le requérant est situé
   Blanche} \ref{ind:gv5}. La relation de localisation utilisée par cet
 indice a la particularité d'être \emph{binaire,} elle nécessite donc
 deux sites \texttt{X} (le \emph{Pas de la Ville}) et \texttt{Y}
-(\emph{Pierre Blanche}. Comme pour les précédents indices de
+(\emph{Pierre Blanche}). Comme pour les précédents indices de
 localisation, les objets faisant office de référence, le \emph{Pas de
   la Ville} et le \emph{Grand Veymont}, sont nommés. Il n'est donc pas
 nécessaire de procéder à la décomposition des objets de référence non
 nommés. La relation de localisation \onto[orl]{Entre\-X\-et\-Y} est,
-quant a elle, une relation de localisation décomposable. Elle a la
+quant à elle, une relation de localisation décomposable. Elle a la
 particularité de décomposer en deux variantes de la relations de
 localisation atomique \onto[orla]{DansLaDirectionDeXDepuisY}, la
 seconde inversant les objets de référence \texttt{X} et
 \texttt{Y}. Ainsi, cette définition revient a considérer qu'être entre
-deux objets, revient a être dans la direction de X depuis Y et
+deux objets, revient à être dans la direction de X depuis Y et
 inversement.
 
-La relation de localisaiton \onto[orl]{DansLaDirectionDeXDepuisY} est
+La relation de localisation \onto[orl]{DansLaDirectionDeXDepuisY} est
 une version générique des relations de cardinalité (\eg
 \onto[orl]{Au\-Nord\-De}) que nous avons notamment utilisé pour
 spatialiser l'indice de localisation précédent (\ref{ind:gv3}).
