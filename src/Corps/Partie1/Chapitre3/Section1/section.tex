@@ -967,8 +967,8 @@ chauffeurs de taxi (avant l'introduction des systèmes d'aide à la
 navigation). Dans ses travaux, \textcite{Pailhous1970} met en évidence
 que, lors de leurs déplacements, les chauffeurs de taxis cherchent en
 priorité à rejoindre le réseau routier principal, composé des grandes
-avenues et des voies périphériques, le long desquels ils effectuons la
-majorité du trajet. L'entrée dans le réseau routier secondaire, qui
+avenues et des voies périphériques, le long desquels ils effectueront
+la majorité du trajet. L'entrée dans le réseau routier secondaire, qui
 est repoussée au plus tard possible, s'effectue généralement à
 proximité de la destination \autocite{Lagesse2016}. Ce type
 d'itinéraire est sensiblement différent du plus court chemin,
@@ -995,8 +995,8 @@ valeur de distance quantifiée n'est pas nécessairement précise. En
 effet, compte tenu de notre contexte, les distances quantitatives sont
 quasi-exclusivement estimées par une personne, généralement le
 requérant et non à l'aide d'une mesure, ce qui pourrait être le cas si
-nous avions a \emph{spatialiser} des phrases telles que :
-\enquote{D'après le GPS, j'ai a roulé 123 km}. Bien entendu, une
+nous avions à \emph{spatialiser} des phrases telles que :
+\enquote{D'après le GPS, j'ai roulé 123 km}. Bien entendu, une
 distance mesurée peut également être imprécise, par exemple, à cause
 d'une mauvaise calibration de l'outil de mesure, mais il s'agit d'un
 cas assez différent, car lié à un événement particulier, alors que la
@@ -1006,7 +1006,7 @@ Au problème de la mauvaise estimation des distances s'ajoute un autre
 phénomène impactant la qualité des estimations des distances,
 \emph{l'attraction des nombres ronds} \autocite{Durand1961}. Ce
 phénomène, initialement mis en évidence lors de l'étude de la
-distribution des ages, implique une surreprésentation des valeurs se
+distribution des âges, implique une surreprésentation des valeurs se
 terminant par 0 et 5, à cause d'un arrondi de la personne
 recensée. Par conséquent, on peut s'attendre à ce que les distances
 exprimées à \enquote{vue de nez} soient impactées par ce phénomène et
@@ -1059,10 +1059,10 @@ directement, comme expliqué ci-dessus, il est nécessaire de
 transformer la \emph{durée de parcours} en une distance parcourue pour
 \emph{spatialiser} une \emph{distance-temps.} On obtient alors une
 \emph{distance métrique quantitative} que l'on peut alors traiter
-comme n'importe qu'elle distance de ce type. La \emph{spatialisation}
+comme n'importe quelle distance de ce type. La \emph{spatialisation}
 d'une \emph{distance-temps} nécessite donc une étape supplémentaire,
 permettant de la transformer en une \emph{distance métrique
-  quantitative.} Pour ce faire il nécessaire d'employer un modèle
+  quantitative.} Pour ce faire, il nécessaire d'employer un modèle
 \emph{ad hoc.}
 
 La solution la plus simple consiste à définir une vitesse de
@@ -1242,7 +1242,7 @@ quadratique :
 Avec \(S\) la pente. Les valeurs des coefficients \(a\), \(b\) et
 \(c\) sont respectivement
 \SIlist{0,75;0,09;14,6}{\second\per\meter}. Ce modèle à un
-comportement similaire à celui de \textcite{Tobler1993}, mais
+comportement similaire a celui de \textcite{Tobler1993}, mais
 contrairement à ce dernier, la vitesse de marche maximale est atteinte
 sur le plat et non sur une pente faiblement négative. Le modèle de
 \textcite{Irmischer2017} est également similaire à celui de
@@ -1260,16 +1260,16 @@ classe d'âge ou la régularité de l'activité.
 
 Comme l'illustre la \autoref{fig:modeles_marche}, ces différents
 \emph{modèles de marche} ont un comportement (relativement)
-similaire. Tous font l'hypothèse que la vitesse de marche décroit avec
+similaire. Tous font l'hypothèse que la vitesse de marche décroît avec
 la pente (que ce soit en montée ou en descente) et tous considèrent
 que la vitesse maximale est atteinte entre 0 et -5 degrés. La
 principale différence entre ces modèles se situe au niveau de la
 vitesse de marche maximale et de la rapidité de sa diminution. Si l'on
-ne tient pas compte des variantes \enquote{hors sentier} c'est les
+ne tient pas compte des variantes \enquote{hors sentier} c'est le
 modèle proposé par \textcite{Irmischer2017} qui estime la vitesse
 maximale la plus faible et c'est le modèle de \bsc{Langmuir-Naismith}
 qui en fait l'estimation la plus forte, même si cette dernière
-estimation nous semble irréaliste. À l'inverse c'est le modèle de
+estimation nous semble irréaliste. À l'inverse, c'est le modèle de
 \textcite{Irmischer2017} qui décroit le plus lentement et le modèle de
 \textcite{Tobler1993} qui décroit le plus rapidement. Cette proximité
 de comportement nous permet de supposer que tous ces modèles
