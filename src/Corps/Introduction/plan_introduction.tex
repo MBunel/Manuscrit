@@ -1,16 +1,16 @@
 Depuis la démocratisation de l'informatique et plus particulièrement
 de la cartographie sur le web, il n'a jamais été aussi facile de
 trouver ou de partager une position géographique. On peut désormais
-facilement connaitre les coordonnées, dans un système de référence
+facilement connaître les coordonnées, dans un système de référence
 donné, d'un bâtiment situé à l'autre bout de la terre ou de la rue, ce
-qu'aucune personne ne pourrait faire. Mais les systèmes permettant une
+qu'aucune individu ne pourrait faire. Mais les systèmes permettant une
 telle précision seraient bien incapables de comprendre une position
-telle que nous la décrivons a quelqu’un demandant son chemin (\eg
+telle que nous la décrivons à quelqu’un demandant son chemin (\eg
 \enquote{Prenez la première à droite après la boulangerie},
-\enquote{C'est en face du stade}). Pourtant les coordonnées, comme une
-description orale d'un itinéraire ou d'un endroit décrivent tout deux
-la même chose : une position dans l'espace. La différence entre ces
-deux approches tient dans la manière dont elles décrivent une
+\enquote{C'est en face du stade}). Pourtant, les coordonnées, comme
+une description orale d'un itinéraire ou d'un endroit, décrivent tous
+deux la même chose : une position dans l'espace. La différence entre
+ces deux approches tient dans la manière dont elles décrivent une
 position. Les coordonnées définissent un référentiel dit
 \enquote{direct} alors qu'une description orale de position correspond
 à un référentiel indirect, où la position des objets est exprimée à
@@ -27,7 +27,7 @@ positions, par exemple les humanités numériques, qui peuvent exploiter
 ces techniques pour localiser des événements ou des lieux mentionnés
 dans des corpus d'archives historiques. Mais de telles possibilités
 présentent également des intérêts hors du domaine de la recherche. Un
-des domaines d’application étudié est l'assistance aux secours; le
+des domaines d’application étudiés est l'assistance aux secours; le
 domaine d’application de cette thèse. Les secours à la personne sont
 régulièrement amenés à intervenir dans des zones imparfaitement
 définies, notamment lorsque aucun témoin n'est capable de donner une
@@ -55,32 +55,32 @@ Cette difficulté de localisation des victimes est d'autant plus
 importante lorsqu'il est nécessaire de localiser des personnes perdues
 dans des espaces offrant peu de points de repères identifiables sans
 ambiguïté. C'est, par exemple, le cas pour les unités de secours en
-montagne \acp{usem}, qui sont régulièrement amenés à secourir des
-personnes perdues ou blessées en montagne. Pour ces unités le problème
-de la difficulté de localisation est accentué par ces
+montagne \acp{usem}, qui sont régulièrement amenées à secourir des
+personnes perdues ou blessées en montagne. Pour ces unités le
+problème de la difficulté de localisation est accentué par ces
 implications. Les \ac{usem} disposant de moyens humains et matériels
 limités, la focalisation sur une alerte peut impacter aussi bien
 l'opération de secours en cours, que les potentielles opérations à
 venir, qui pourraient être retardées.
 
-Pour faciliter la localisation des victimes en montagne les
+Pour faciliter la localisation des victimes en montagne, les
 secouristes du \ac{pghm} de Grenoble ont développé une solution,
 Gend'Loc, permettant de localiser le requérant (\ie la personne
-appelant les secours) à l'aide du GPS intégré a son téléphone
-portable. Cette solution à l'avantage de permettre une localisation
+appelant les secours) à l'aide du GPS intégré à son téléphone
+portable. Cette solution a l'avantage de permettre une localisation
 rapide et assez facile à utiliser pour le requérant, mais elle a
 l'inconvénient majeur d'être dépendante du téléphone du requérant et
 de son bon fonctionnement. De nombreux facteurs peuvent rendre cette
 solution inopérante, notamment lorsque le requérant ne dispose pas
 d'un téléphone avec GPS, lorsque les secours sont contactés par un
 tiers ou lorsque la victime n'arrive pas à effectuer la manipulation
-nécessaire. Dans ces situations les secouristes n'ont d'autres choix
+nécessaire. Dans ces situations, les secouristes n'ont d'autres choix
 que d'identifier la position du requérant manuellement, en recoupant
 les informations qui leur sont données avec leurs connaissances
 personnelles et les données géographiques qu'ils ont à leur
 disposition. Le résultat de ce processus est assez variable: si les
 secouristes peuvent parvenir à identifier très rapidement la position
-de la victime a l'aide de quelques éléments très discriminants, il est
+de la victime à l'aide de quelques éléments très discriminants, il est
 parfois difficile pour la victime de donner des informations qui
 soient suffisamment claires ou discriminantes pour que les secouristes
 puissent les interpréter. Dans ces conditions, la phase de
@@ -92,15 +92,15 @@ faciliter le traitement de ces alertes spécifiques. L'hypothèse
 première de ce projet est que la géomatique et ses méthodes peuvent
 aider à identifier les zones correspondant aux informations données
 par les victimes. En effet, de nombreuses méthodes qui ont été
-proposées dans le domaine de la géomatique pourraient être employés a
-cet effet. Par exemple les travaux autour des questions de visibilité
+proposées dans le domaine de la géomatique pourraient être employées à
+cet effet. Par exemple, les travaux autour des questions de visibilité
 pourraient être exploités pour identifier la position d'un requérant
 décrivant son champ de vision, les travaux sur la modélisation de
 trajectoire pourraient être utilisés pour localiser une personne
 indiquant qu'elle a suivi un itinéraire donné, \emph{etc.} Un tel
 objectif n'est cependant pas réalisable par la \enquote{simple}
 concaténation de méthodes préexistantes et impose de travailler à
-l'étude et a l’enrichissement des données utilisables par les
+l'étude et à l’enrichissement des données utilisables par les
 secouristes, de définir des solutions leur permettant d’interagir avec
 les solutions développées au sein du projet, d'étudier les subtilités
 et les spécificités des descriptions de localisation en milieux
@@ -124,21 +124,21 @@ décrivant sa position peut être amenée à utiliser de nombreux
 de départ, son objectif visé, décrire son champ de vision, \emph{etc.}
 L'identification de la position du requérant impose donc d'être en
 capacité de pouvoir interpréter une majorité, sinon toutes les
-informations qu'elle donne. De plus nous devons être en mesure de
-combiner ces différentes informations de manière identifier la
+informations qu'elle donne. De plus, nous devons être en mesure de
+combiner ces différentes informations, de manière à identifier la
 position qu'elles décrivent conjointement.
 
 % inteprétation sémantique
 La seconde difficulté est d'être en capacité d'interpréter les
 concepts utilisés dans leur discours par les requérants. Si nous ne
-cherchons pas à interpréter directement le discours du secouriste
+cherchons pas à interpréter directement le discours du secouriste,
 celui-ci décrit sa position en employant des concepts issus du langage
 naturel (\eg \enquote{à côté de}, \enquote{en face de},
-\emph{etc.}). Or ces derniers peuvent voir leur signification varier
+\emph{etc.}). Or, ces derniers peuvent voir leur signification varier
 en fonction du contexte, de l'objet auquel ils se réfèrent,
 \emph{etc.}  Nous devons donc être en capacité d'identifier les
 différents sens que peuvent avoir ces concepts et identifier les
-situations dans lesquelles ils sont utilisés. Par ailleurs ces
+situations dans lesquelles ils sont utilisés. Par ailleurs, ces
 concepts peuvent voir leur signification impactée par le fait que
 notre cas d’application soit spécifique au milieu montagneux.
 
@@ -156,7 +156,7 @@ compte leur imprécision.
 Indépendamment de leur imprécision, les informations données par les
 victimes peuvent également êtres faussées. Il est par exemple possible
 qu'elles se trompent dans le nom d'un point leur servant de reprère ou
-qu'elles fassent des confusions. Lorsque ces erreurs sont manifestes
+qu'elles fassent des confusions. Lorsque ces erreurs sont manifestes,
 le secouriste peut les identifier et les corriger, mais ce n'est pas
 toujours possible. Il est donc nécessaire de proposer une méthode qui
 puisse tenir compte de la fiabilité variable des informations données.
