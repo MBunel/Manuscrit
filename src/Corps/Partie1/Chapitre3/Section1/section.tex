@@ -147,7 +147,7 @@ certaines \emph{relations de localisation} ne peuvent être
 interprétées ---~et donc \emph{spatialisées}~--- sans une connaissance
 supplémentaire sur la configuration de la position décrite. C'est par
 exemple le cas dans des phrases telles que : \enquote{Elle est devant
-  l'université} ou \enquote{la poste est à gauche}. Les
+  l'université} ou \enquote{La poste est à gauche}. Les
 \emph{relations de localisation} \enquote{devant} et \enquote{à
   gauche} ont une signification dépendante du contexte.
 
@@ -160,7 +160,7 @@ une connaissance exogène, un \emph{référentiel de directions} (ou
 reprendre l'exemple de l'indice de localisation : \enquote{Elle est
   devant l'université}, on peut l'interpréter de deux manières
 différentes. Si le \emph{cadre de référence} est l'université, alors
-on considérera que son \enquote{devant} est la face où se situe
+on considèrera que son \enquote{devant} est la face où se situe
 l'entrée principale. Alors que si la référence est un observateur
 externe on pourra considérer que n'importe quelle positon située entre
 l'observateur et l'université sera \enquote{devant}, car avec ce
@@ -174,12 +174,12 @@ compliquée par le fait que le \emph{cadre de référence} ne soit pas
 nécessairement explicité dans \emph{l'indice de localisation,} comme
 dans l'exemple précédent, \enquote{Elle est devant l'université},
 alors qu'il l'est dans la phrase \enquote{il est à ma
-  gauche}. L'article définit \enquote{ma} indique que le locuteur
+  gauche}. L'article défini \enquote{ma} indique que le locuteur
 utilise sa ligne de vue comme référence.
 
 \subsubsection{Modélisation formelle d'un \emph{indice de localisation}}
 
-Dans leur ontologie \textcite{Bateman2010} définissent les notions
+Dans leur ontologie, \textcite{Bateman2010} définissent les notions
 \emph{d'objet} (qui peut être localisé) et de \emph{place} (le lieu où
 un \emph{objet} peut être localisé). La particularité des
 \emph{places} est qu'elles peuvent êtres définies à partir d'un
@@ -211,9 +211,9 @@ est l'objet à localiser, \(r\) la \emph{relation de localisation} et
 \enquote{Je suis à côté d'une pizzeria} sera formalisée de la manière
 suivante :
 \(\langle \text{Je},\ \text{à côté},\ \text{pizzeria} \rangle\). Ce
-formalisme en triplets et ensuite utilisé pour définir un graphe, dont
-les objets spatiaux (\ie le \(L\) et le \(R_o\) d'un triplet) sont les
-nœuds et la \emph{relation de localisation} les arêtes
+formalisme en triplets est ensuite utilisé pour définir un graphe,
+dont les objets spatiaux (\ie le \(L\) et le \(R_o\) d'un triplet)
+sont les nœuds et la \emph{relation de localisation} les arêtes
 orientées. Cette formalisation permet, comme dans l'ontologie de
 \textcite{Bateman2010} de définir des indices de localisation
 récursifs.
@@ -225,7 +225,7 @@ représentation spatiale. Ce modèle est cependant beaucoup plus
 détaillé que la proposition de \textcite{Vasardini2013}. D'une part,
 car le modèle ISO-Space offre la possibilité de modéliser des
 déplacements, d'autre part, il est construit au dessus de l'ontologie
-de \textcite{Bateman2010}. Ainsi certains concepts, comme la
+de \textcite{Bateman2010}. Ainsi, certains concepts, comme la
 \emph{spatial entity} (qui est l'objet à localiser) sont directement
 repris de GUM-Space.
 
@@ -234,12 +234,12 @@ proposées dans le domaine de la géomatique, plusieurs travaux
 nécessitant l'interprétation de \emph{relations de localisation.}
 C'est par exemple le cas de la généralisation automatique, dont
 l'objectif est de simplifier l'information cartographiée, tout en
-conservant les relations géographiques entre objets. Par exemple si
+conservant les relations géographiques entre objets. Par exemple, si
 l'on simplifie la géométrie d'une rue il est souhaitable que les
 bâtiments qui la longent, longent également la rue simplifiée. Ainsi,
 même si la donnée cartographiée ne correspond pas parfaitement à la
 réalité elle en conserve une caractéristique importante, les bâtiments
-sont alignés le long de la rue. Pour ce faire il est nécessaire
+sont alignés le long de la rue. Pour ce faire, il est nécessaire
 d'expliciter ces relations entre objets
 cartographiés. \textcite{Duchene2004,Gaffuri2008} proposent, par
 exemple, de représenter ces relations sous la forme d'objets portant
@@ -249,7 +249,7 @@ représenter les \emph{relations de localisation} entre objets
 cartographiques, mais également les méthodes permettant de vérifier
 ces relations.
 
-Toujours dans le deomaine de la généralisation cartographique,
+Toujours dans le domaine de la généralisation cartographique,
 \textcite{Jaara2012} ont proposé un modèle permettant d'exprimer les
 \emph{relations de localisation} entre des objets géographiques, liés
 à une base de données et des objets thématiques qui s'y
@@ -261,20 +261,20 @@ géographiques, par exemple lors du passage à un autre niveau de
 détail. Comme dans les travaux de \textcite{Duchene2004,Gaffuri2008,
   Touya2012}, ce modèle permet donc d'exprimer des relations entre
 objets que l'on veut voir conservées lors d'une modification. Bien que
-trainant de \emph{relations de localisation,} ces travaux adoptent une
+traitant de \emph{relations de localisation,} ces travaux adoptent une
 modélisation très centrée sur leur domaine
 d’application. \textcite{Jaara2012} identifient, par exemple, deux
 types d'objets, les \emph{objets supports} et les \emph{objets
-  thématiques.} Bien que pouvant tout deux jouer le rôle de
-\emph{sujet} ou \emph{d'objet de référence} ils ne sont pas distingués
-selon ce critère, mais en fonction de leur nature, ce qui rend ce
-modèle assez différent de ce que proposent
+  thématiques.} Bien que pouvant tous deux jouer le rôle de
+\emph{sujet} ou \emph{d'objet de référence,} ils ne sont pas
+distingués selon ce critère, mais en fonction de leur nature, ce qui
+rend ce modèle assez différent de ce que proposent
 \textcite{Bateman2010,Pustejovsky2017}.
 
 Dans un domaine d’application assez différent, l'ontologie FRSO
 \autocite{Hudelot2008a} propose une formalisation des \emph{indices de
   localisation} destinée à la segmentation automatique d'images
-médicales. Les positions relatives des organes humains étant connues à
+médicales. Les positions relatives des organes humains étant connues a
 priori, la formalisation de cette connaissance permet d'ajouter des
 connaissances exogène lors de la segmentation automatisée des
 images. Une des particularités de l'ontologie de
@@ -289,7 +289,7 @@ sont modélisées comme des concepts et non comme des relations. Ce
 modèle propose également la prise en compte de la notion de
 \emph{cadre de référence,} sauf que, contrairement à la proposition
 d'\textcite{Hudelot2008a}, deux cadres de référence distincts sont
-définis. Le premier définit implicitement et un second défini
+définis : le premier défini implicitement et un second défini
 explicitement, lorsque les contraintes modélisées impliquent la
 présence d'un observateur.
 
