@@ -848,12 +848,12 @@ un contact ponctuel, d'un contact en une ligne, \ie de distinguer un
 voisinage de Von Neuman, d'un voisinage de Moore
 (\autoref{tab:9IM_vs_DE9IM}). Cependant, cette nouvelle proposition se
 heurte aux mêmes limites que les modèles RCC-23 et RCC-62, à savoir le
-grand nombre de cas possibles. Conscient de ce problème
-\textcite{Clementini1993} complétent le modèle DE-9IM avec le
+grand nombre de cas possibles. Conscient de ce problème,
+\textcite{Clementini1993} complètent le modèle DE-9IM avec le
 \emph{calculus based model} (CMB). Ce second modèle propose de définir
 cinq \emph{prédicats topologiques} (\emph{in, cross, overlap, touch,
   et disjoint}), correspondant à des configurations particulières de
-\emph{matrices d'intersection}, plus faciles à apprender et a
+\emph{matrices d'intersection}, plus faciles à apprender et à
 manipuler.
 
 \begin{table}
@@ -926,17 +926,17 @@ n'y a pas de différence sémantique entre les phrases : \enquote{Il est
 déplacement peuvent aussi bien s'exprimer de manière qualitative,
 comme dans l'exemple précédent, ou quantitative, comme dans la phrase
 : \enquote{C'est à trois minutes de marche}.  Ces différents types de
-distance peuvent toutes se retrouver dans les alertes que nous
-traitons, ainsi nous présenterons ici aussi bien les distances
+distance peuvent tous se retrouver dans les alertes que nous
+traitons. Ainsi, nous présenterons ici aussi bien les distances
 métriques (qualitatives et quantitatives) que les temps de
 déplacement.
 
 Un second aspect important à prendre en compte est la méthode de
-calcul de la distance. Celle-ci doit t-elle être calculée à vol
-d'oiseau (\ie distance euclidienne) ou sur le réseau ? On peut
-également adopter d'autres approches, comme la distance de Manhattan,
-offrant une bonne approximation de la \emph{distance réseau} pour des
-maillages orthogonaux. Dans notre contexte d’application différentes
+calcul de la distance. Celle-ci doit-elle être calculée à vol d'oiseau
+(\ie distance euclidienne) ou sur le réseau ? On peut également
+adopter d'autres approches, comme la distance de Manhattan, offrant
+une bonne approximation de la \emph{distance réseau} pour des
+maillages orthogonaux. Dans notre contexte d’application, différentes
 méthodes de calcul de la distance peuvent être employées. La
 \emph{distance euclidienne} semble, en effet, plus adaptée au calcul
 de distances estimées visuellement, comme dans la phrase : \enquote{Il
@@ -951,12 +951,12 @@ problèmes spécifiques, ce n'est pas le cas pour la \emph{distance
 l'algorithme du plus court chemin de \textcite{Dijkstra1959}, et
 l'algorithme A* \autocite{Hart1968}, plus rapide mais ne renvoyant pas
 nécessairement le chemin le plus court. Ces deux algorithmes peuvent
-être utilisés pour approximer le trajet suivit sur un réseau donné et
+être utilisés pour approximer le trajet suivi sur un réseau donné et
 entre deux points, comme le proposent \textcite{Berli2018, Bunel2018}
 dans leurs travaux de reconstitution de flux maritimes à partir de
 matrices origine-destination. Mais cet usage implique de faire
-l'hypothèse que le trajet réellement suivit est le chemin le plus
-court (ou le moins couteux), ou tout du moins qu'il tend à s'en
+l'hypothèse que le trajet réellement suivi est le chemin le plus court
+(ou le moins couteux), ou tout du moins qu'il tend à s'en
 rapprocher. Or cette hypothèse est assez contraignante, aussi bien
 pour la modélisation des flux maritimes, puisqu'elle peut contredire
 certaines réalités météorologiques ou historiques, que du trafic
