@@ -26,29 +26,30 @@ fortement contrainte par le choix de l'implémentation raster
 précédemment annoncé (\autoref{chap:06}). La méthode développée doit
 donc être à même de produire des \emph{zones de localisation
   compatibles} \acp{zlc} sous la forme de rasters de degrés
-d'appartenance et ce à partir \emph{d'objets de référence}
+d'appartenance et ce, à partir \emph{d'objets de référence}
 généralement représentés sous forme vectorielle. Il est pour ce faire
 nécessaire de définir une méthode de rasterisation, permettant de
 transformer ces \emph{objets de référence} vectoriels en des rasters à
 mêmes d'être utilisés pour générer des \ac{zlc} raster.
 
 Un point essentiel de la représentation raster \emph{d'objets
-  géographiques} et qu'elle impose, contrairement à une représentation
-vectorielle, de définir explicitement une résolution et une zone de
-modélisation fixant les limites du raster. Un même objet peut donc
-être représenté par des rasters de taille très différentes, à des
-résolutions qui le sont tout autant. La définition d'une résolution et
-d'une limite à la \emph{rasterisation} est une phase importante dans
-notre méthode. En effet les rasters construits lors de cette étape
-sont à la base de notre méthode de \emph{spatialisation.} Par
-conséquent, tous les traitements ultérieurs, que ce soit au sein de la
-phase de \emph{spatialisation} ou durant la phase de \emph{fusion}
-(Chapitres \ref{chap:04} et \ref{chap:08}), sont impactés par le choix
-d'une résolution et des limites de la zone de traitement, puisqu'ils
-en héritent et qu'il n'y aucune pertinence à envisager des opérations
-de changement de résolution ou de région de traitement au cours des
-phases de \emph{spatialisation} et de \emph{fusion.} Dans notre cas,
-la définition d'une zone de modélisation ne pose pas de problèmes
+  géographiques} est qu'elle impose, contrairement à une
+représentation vectorielle, de définir explicitement une résolution et
+une zone de modélisation fixant les limites du raster. Un même objet
+peut donc être représenté par des rasters de taille très différentes,
+à des résolutions qui le sont tout autant. La définition d'une
+résolution et d'une limite à la \emph{rasterisation} est une phase
+importante dans notre méthode. En effet, les rasters construits lors
+de cette étape sont à la base de notre méthode de
+\emph{spatialisation.}  Par conséquent, tous les traitements
+ultérieurs, que ce soit au sein de la phase de \emph{spatialisation}
+ou durant la phase de \emph{fusion} (Chapitres \ref{chap:04} et
+\ref{chap:08}), sont impactés par le choix d'une résolution et des
+limites de la zone de traitement, puisqu'ils en héritent et qu'il n'y
+aucune pertinence à envisager des opérations de changement de
+résolution ou de région de traitement au cours des phases de
+\emph{spatialisation} et de \emph{fusion.} Dans notre cas, la
+définition d'une zone de modélisation ne pose pas de problèmes
 particuliers: en effet, le secouriste définit une \emph{zone initiale
   de recherche} \ac{zir}, fixant aussi l'aire de recherche maximale et
 donc les limites de la zone où devra être calculée la
@@ -58,7 +59,7 @@ de référence d'une même alerte à l'aide d'un raster de même dimension
 et correspondant aux délimitations de la \ac{zir}. Le choix de la
 résolution influençant la qualité (et la durée) de la
 \emph{spatialisation,} nous avons choisi de le laisser à
-l'appréciation du secouriste. Pour ce faire nous avons défini quatre
+l'appréciation du secouriste. Pour ce faire, nous avons défini quatre
 valeurs (\SIlist{10;25;50;100}{\meter}), associées à autant de
 qualificatifs (haute, moyenne, basse et très basse résolution),
 décrivant la précision de la \emph{spatialisation.}  Le secouriste
@@ -69,7 +70,7 @@ sélectionner directement une valeur.
 
 Pour définir une \emph{méthode de spatialisation,} le mieux est encore
 de s’interroger sur la nature des résultats que nous souhaitons
-obtenir, les \emph{zones de localisations compatibles.} Ces dernières
+obtenir : les \emph{zones de localisations compatibles.} Ces dernières
 doivent délimiter la région correctement décrite par \emph{l'indice de
   localisation} spatialisé, c'est-à-dire qu'en toute position de la
 \ac{zlc}, l'assertion : \enquote{\emph{l'indice de localisation} est
@@ -94,15 +95,15 @@ donné et à l'aide de la \emph{théorie des sous-ensembles flous,} la
 validité de l'assertion \enquote{\emph{l'indice de localisation} est
   vrai}. Or, le \emph{principe de décomposition} nous a amené à
 définir des \emph{relations de localisation atomiques} très
-différentes différentes les unes des autres et nécessitant, par
-conséquent, des \emph{méthodes de spatialisation} qui le sont tout
-autant. Il semble donc nécessaire de développer une \emph{méthode de
-  spatialisation} pour chaque \emph{relation de localisation atomique}
-définie dans \ac{orla}. C'est par exemple ce que proposent
-\textcite{Vanegas2011} ou \textcite{Takemura2012} en proposant des
-\emph{méthodes de spatialisation} dédiées à une \emph{relation de
-  localisation donnée.} Nous proposons cependant d'utiliser, à
-nouveau, une démarche de décomposition.
+différentes les unes des autres et nécessitant, par conséquent, des
+\emph{méthodes de spatialisation} qui le sont tout autant. Il semble
+donc nécessaire de développer une \emph{méthode de spatialisation}
+pour chaque \emph{relation de localisation atomique} définie dans
+\ac{orla}. C'est, par exemple, ce que proposent \textcite{Vanegas2011}
+ou \textcite{Takemura2012} en proposant des \emph{méthodes de
+  spatialisation} dédiées à une \emph{relation de localisation
+  donnée.} Nous proposons cependant d'utiliser, à nouveau, une
+démarche de décomposition.
 
 Prenons par exemple les deux \emph{relations de localisation
   atomiques,} \onto[orla]{In\-te\-ri\-eur} et
@@ -114,34 +115,35 @@ Prenons par exemple les deux \emph{relations de localisation
   \protect\onto[orl]{Dans\-Planimétrique} et
   \protect\onto[orl]{Hors\-De\-Planimétrique}.}. Ces deux concepts
 décrivent deux \emph{relations} entre le \emph{sujet} et \emph{l'objet
-  de référence} opposée, mais de même nature (\ie topologique). Aussi,
-on peut considérer que ce qui distingue ces deux \emph{relations de
-  localisation atomiques} n'est pas la nature de la configuration
-spatiale qu'elles décrivent, mais la manière dont elles évaluent la
-validité de l'assertion : \enquote{\emph{l'indice de localisation} est
-  vrai}. Pour illustrer cette affirmation, prenons l'exemple de la
-\autoref{fig:Exemple_Metrique_vs_Selecteur}. Un \emph{objet de
-  référence} (en rouge) est situé dans le coin supérieur droit d'un
-raster de 4 pixels représentant une \ac{zir} simplifiée. Imaginons que
-l'on cherche à construire, sans prendre en compte
-\emph{l'imprécision,} les \ac{zlc} correspondant aux \emph{relations}
-\onto[orla]{Interieur} et \onto[orla]{Exterieur}, pour cet \emph{objet
-  de référence.} L'approche raster nous permet de construire ces deux
-\ac{zlc} en sélectionnant les pixels situés, respectivement, à
-l'intérieur et à l'extérieur de \emph{l'objet de référence.} Pour
-cela, il est tout d'abord nécessaire d'identifier la relation
-topologique entre chaque pixel et \emph{l'objet de référence.} Étant
-donné que \emph{l'imprécision} n'est pas considérée ici, nous pouvons
-décrire ces relations topologiques à l'aide d'une fonction \(f\),
-attribuant une valeur égale à 1 si la position (représentée par un
-pixel) est confondue avec \emph{l'objet de référence} et une valeur de
-0 dans la cas contraire \footnote{Nous aurions pu utiliser une des
-  formalisations des relations topologiques présentée dans le
-  \autoref{chap:03} (RCC-8, 4IM, 9IM, DE-9IM, \emph{etc.}). Cependant
-  ces modèles ne sont pas destinés à représenter des relations
-  topologiques entre raster. Il nous donc semblé plus simple de ne pas
-  les utiliser pour illustrer cet exemple.}. En calculant la valeur de
-la fonction \(f\) pour chaque pixel de la \ac{zir}
+  de référence,} opposée, mais de même nature (\ie
+topologique). Aussi, on peut considérer que ce qui distingue ces deux
+\emph{relations de localisation atomiques} n'est pas la nature de la
+configuration spatiale qu'elles décrivent, mais la manière dont elles
+évaluent la validité de l'assertion : \enquote{\emph{l'indice de
+    localisation} est vrai}. Pour illustrer cette affirmation, prenons
+l'exemple de la \autoref{fig:Exemple_Metrique_vs_Selecteur}. Un
+\emph{objet de référence} (en rouge) est situé dans le coin supérieur
+droit d'un raster de 4 pixels représentant une \ac{zir}
+simplifiée. Imaginons que l'on cherche à construire, sans prendre en
+compte \emph{l'imprécision,} les \ac{zlc} correspondant aux
+\emph{relations} \onto[orla]{Interieur} et \onto[orla]{Exterieur},
+pour cet \emph{objet de référence.} L'approche raster nous permet de
+construire ces deux \ac{zlc} en sélectionnant les pixels situés,
+respectivement, à l'intérieur et à l'extérieur de \emph{l'objet de
+  référence.} Pour cela, il est tout d'abord nécessaire d'identifier
+la relation topologique entre chaque pixel et \emph{l'objet de
+  référence.} Étant donné que \emph{l'imprécision} n'est pas
+considérée ici, nous pouvons décrire ces relations topologiques à
+l'aide d'une fonction \(f\), attribuant une valeur égale à 1 si la
+position (représentée par un pixel) est confondue avec \emph{l'objet
+  de référence} et une valeur de 0 dans la cas contraire
+\footnote{Nous aurions pu utiliser une des formalisations des
+  relations topologiques présentées dans le \autoref{chap:03} (RCC-8,
+  4IM, 9IM, DE-9IM, \emph{etc.}). Cependant, ces modèles ne sont pas
+  destinés à représenter des relations topologiques entre raster. Il
+  nous à donc semblé plus simple de ne pas les utiliser pour illustrer
+  cet exemple.}. En calculant la valeur de la fonction \(f\) pour
+chaque pixel de la \ac{zir}
 (\autoref{fig:Exemple_Metrique_vs_Selecteur}) on obtient alors un
 raster contenant (explicitement) une information permettant de
 distinguer les pixels situés à l'intérieur et à l'extérieur de
@@ -181,25 +183,25 @@ dont la valeur de la \emph{métrique} correspond à la sémantique de la
 \end{figure}
 
 % Importance de la rasterisation
-Cependant ces deux parties ne sont pas suffisantes pour distinguer
+Cependant, ces deux parties ne sont pas suffisantes pour distinguer
 toutes les \emph{relations de localisation atomiques.} Par exemple,
 les descriptions de position : \enquote{Je suis à 300 mètres de ma
   maison} et \enquote{Je suis à la frontière du bois de Vincennes},
 décrivent des situations en apparence très différentes, elles sont
 d'ailleurs modélisables avec des \emph{relations de localisation
   atomiques} distinctes, \onto[orla]{Distance\-Quantitive} et
-\onto[orla]{A\-La\-Frontiere\-De}. Pourtant si l'on se penche sur leur
-signification on peut s’apercevoir qu'elles partagent leur
+\onto[orla]{A\-La\-Frontiere\-De}. Pourtant, si l'on se penche sur
+leur signification, on peut s’apercevoir qu'elles partagent leur
 \emph{métrique,} mais également son interprétation. En effet, d'une
-part ces deux \emph{relations de localisation atomiques} décrivent un
+part, ces deux \emph{relations de localisation atomiques} décrivent un
 éloignement spatial entre le \emph{sujet} et \emph{l'objet de
   référence,} si ce n'est qu'il est explicite et quantifié dans un cas
-et sous-entendu dans l'autre. Elles peuvent donc être modélisée avec
+et sous-entendu dans l'autre. Elles peuvent donc être modélisées avec
 la même métrique: la distance à \emph{l'objet de référence.} D'autre
-part on pourrait penser que ces \emph{relations} se distinguent par
+part, on pourrait penser que ces \emph{relations} se distinguent par
 leur interprétation de cette même \emph{métrique,} comme c'est le cas
 pour les \emph{relations de localisation atomiques}
-\onto[orla]{Exterieur} et \onto[orla]{Intérieur}, ce n'est pourtant
+\onto[orla]{Exterieur} et \onto[orla]{Intérieur}. Ce n'est pourtant
 pas le cas. La \emph{relation} \onto[orla]{Distance\-Quantitive}
 indique explicitement que la distance entre le \emph{sujet} et
 \emph{l'objet de référence} est proche d'une valeur donnée (ici
