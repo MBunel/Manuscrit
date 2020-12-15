@@ -459,7 +459,7 @@ calculer l'union et construire la \ac{zlc} de ce premier indice de
 localisation. La \autoref{fig:ZLC_FilRouge_1} représente le résultat
 de cette union.
 %
-Comme on peut le remarquer ce premier indice est, compte-tenu de la
+Comme on peut le remarquer, ce premier indice est, compte-tenu de la
 taille initiale de la \ac{zir}, assez discriminant, une grande part
 des parties sud, est et ouest de la \ac{zir} obtenant un degré
 d'appartenance nul.
@@ -484,11 +484,11 @@ modéliser cette information à l'aide de la relation de localisation
 \onto[orl]{A\-Temps\-De\-Marche\-De}. Il s'agit une nouvelle fois
 d'une relation de localisation atomique, qu'il n'est pas nécessaire de
 décomposer. De même, l'objet de référence utilisé,
-\emph{Bourg-d'Oisans} est nommé, il n'est donc pas nécessaire de
+\emph{Bourg-d'Oisans,} est nommé. Il n'est donc pas nécessaire de
 procéder à la décomposition des objets de référence. Cet indice de
 localisation est donc directement spatialisable.
 
-Dans sa version \enquote{standard} la relation de localisation
+Dans sa version \enquote{standard}, la relation de localisation
 atomique \onto[orla]{A\-Temps\-De\-Marche\-De} utilise le rasteriser
 \onto[orla]{Geometrie}, la métrique \onto[orla]{Temps\-Marche} et la
 fuzzyficateur \onto[orla]{Eq\-Val} prenant comme paramètre la durée de
@@ -499,16 +499,16 @@ donnant une valeur très imprécise (\ie \enquote{Plusieurs heures}) de
 sa durée de déplacement. Or, la méthode de spatialisation de la
 relation \onto[orla]{A\-Temps\-De\-Marche\-De} que nous avons définie
 ne permet que la modélisation d'indices où la durée de déplacement est
-clairement définie, comme \enquote{J'ai marché environ deux heures} ou
-\enquote{Il a marché pendant cinq heures}. Pour modéliser un indice
+clairement définie, comme \enquote{J'ai marché environ deux heures},
+ou \enquote{Il a marché pendant cinq heures}. Pour modéliser un indice
 donnant un intervalle de durée de déplacement (\eg \enquote{J'ai
   marché entre trois et cinq heures, je ne sais plus exactement}) il
 est nécessaire d'utiliser une fonction d'appartenance plus adaptée,
-comme une fonction de forme trapézoïdale. Pour ce faire plusieurs
+comme une fonction de forme trapézoïdale. Pour ce faire, plusieurs
 solutions sont envisageables. On peut, par exemple, utiliser un
 modifieur pour transformer la fonction d'appartenance initiale. On
 peut également définir un nouveau fuzzyficateur et une nouvelle
-relation de localisation spécifiquement adaptée a cette situation. Si
+relation de localisation spécifiquement adaptée à cette situation. Si
 ces deux approches sont parfaitement défendables, nous avons opté pour
 une troisième solution, plus pérenne.
 %
