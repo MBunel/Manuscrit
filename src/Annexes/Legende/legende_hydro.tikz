@@ -14,6 +14,6 @@
 \node[right of=rect3, legende] {Court d'eau};
 
 \node (rect4) [below of=rect3,  caisson] {};
-\path[draw,blue!20, --](rect4.west) .. controls (rect4.south) and (rect4.north) .. (rect4.east);
+\path[draw,blue!20,dashed](rect4.west) .. controls (rect4.south) and (rect4.north) .. (rect4.east);
 \node[right of=rect4, legende] {Court d'eau intermittant};
 \end{tikzpicture}	
