@@ -968,11 +968,11 @@ de recherche du requérant.
 % À 800 mètres du Pas de la Ville
 Le dernier indice de localisation de l'alerte est : \enquote{le
   requérant est à 800 mètres du \emph{Pas de la Ville}}
-(\ref{ind:gv9}). Une nouvelle fois nous sommes en présence d'un indice
-de localisation qu'il n'est pas nécessaire de décomposer, le \emph{Pas
-  de la Ville} étant un objet de référence nommé et la relation de
-localisation \onto[orl]{Distance\-Quantitative\-Planimetrique} étant
-atomique.
+(\ref{ind:gv9}). Une nouvelle fois, nous sommes en présence d'un
+indice de localisation qu'il n'est pas nécessaire de décomposer, le
+\emph{Pas de la Ville} étant un objet de référence nommé et la
+relation de localisation
+\onto[orl]{Distance\-Quantitative\-Planimetrique} étant atomique.
 
 Comme le montre la
 \autoref{fig:ex_parties_statialisation_distancePlani}, la relation de
@@ -1019,7 +1019,7 @@ la valeur minimale de la fonction d'appartenance a été rehaussée à
 (\autoref{fig:fuzzy_veyont_distance}) à la métrique
 (\autoref{fig:veyont_distance}) permet de construire la \ac{zlc} de
 cet indice (\autoref{fig:ZLC_GrandVeymont_9}). Comme on peut le
-remarquer ce dernier indice de localisation n'attribue, à cause de sa
+remarquer, ce dernier indice de localisation n'attribue, à cause de sa
 certitude, à aucune position de la \ac{zir} un degré d'appartenance
 nul.
 
@@ -1093,8 +1093,8 @@ nul.
 Une fois que les six \ac{zlc} identifiées ont été construites (Figures
 \ref{fig:ZLC_GrandVeymont_1}, \ref{fig:ZLC_GrandVeymont_2},
 \ref{fig:ZLC_GrandVeymont_3}, \ref{fig:ZLC_GrandVeymont_5},
-\ref{fig:ZLC_GrandVeymont_8} et \ref{fig:ZLC_GrandVeymont_9}) nous
-pouvons construite la \ac{zlp} de l'alerte, correspondant à
+\ref{fig:ZLC_GrandVeymont_8} et \ref{fig:ZLC_GrandVeymont_9}), nous
+pouvons construire la \ac{zlp} de l'alerte, correspondant à
 l'intersection de ces 6 \ac{zlc} (\autoref{fig:methodo_1}). La
 \autoref{fig:ZLP_GrandVeymont} représente le résultat de cette
 opération. Comme on peut le remarquer, la \ac{zlp} obtenue est
@@ -1106,9 +1106,9 @@ ouest de la \ac{zir}. C'est dans le premier cluster que l'on trouve
 les positions dont le degré d'appartenance à la \ac{zlp} est le plus
 élevé, le degré le plus important étant de 0,8. Le second cluster
 n'est constitué que de positions dont le degré d'appartenance est
-faible (inférieur à 0,4). 
+faible (inférieur à 0,4).
 
-si l'on confronte la \ac{zlp} construite à la position effective de la
+Si l'on confronte la \ac{zlp} construite à la position effective de la
 victime (\autoref{fig:ZLP_GrandVeymont}) on peut remarquer que la
 victime est située à proximité de la zone où le degré d'appartenance
 est le plus fort. Dans ce cas, la modélisation que nous proposons
@@ -1135,22 +1135,22 @@ données par les extraits \ref{gv:1} et \ref{gv:11} ne sont, par
 exemple, pas spatialisables, une partie de l'information nécessaire ne
 nous étant pas connue. Or, il est fort probable que le secouriste
 aurait adapté ses questions pour obtenir les informations nécessaires
-à la définition des relations de localisations qui lui semblent
-pertinentes. Ainsi, le résultat que nous proposons est surement assez
+à la définition des relations de localisation qui lui auraient semblé
+pertinentes. Ainsi, le résultat que nous proposons est sûrement assez
 différent de celui qu'auraient obtenu les secouristes en traitant
 \enquote{normalement} l'alerte. Cette observation ne remet pas en
 question les résultats obtenus, mais il convient de le préciser.
 
 Un second point que l'on peut reprocher à la modélisation proposée est
-la valeur des seuils. En effet, nous n'avons pas réussit à proposer
-une démarche permettant de définir les seuils des fuzzyficateurs
-utilisés pour la modélisation des \emph{relations de localisation.} Si
-certains d'entre-eux sont assez évidents (\eg le fait que la valeur de
+la valeur des seuils. En effet, nous n'avons pas réussi à proposer une
+démarche permettant de définir les seuils des fuzzyficateurs utilisés
+pour la modélisation des \emph{relations de localisation.} Si certains
+d'entre-eux sont assez évidents (\eg le fait que la valeur de
 référence \(v\) pour un écart d'altitude est fixée à 0), la plupart
 d'entre-eux sont discutables et l'ont été. Nous avons toujours cherché
-à ne pas proposer des seuils trop sévères, contant sur la
+à ne pas proposer des seuils trop sévères, comptant sur la
 multiplication des \emph{indices de localisation} pour réduire la
-\emph{zone de localisation probable,} cependant cela fait peser la
+\emph{zone de localisation probable.} Cependant, cela fait peser la
 qualité du résultat sur le nombre d'indices disponibles. Il nous
 semble donc qu'une voie majeure d’amélioration du résultat de cette
 modélisation serait à chercher dans l'affinage des seuils des
@@ -1169,7 +1169,7 @@ première n'est pas de représenter l'emprise des objets, mais
 \enquote{d'ancrer} les toponymes, en vue d'une représentation
 cartographique. L'utilisation de telles géométries comme objets de
 référence nous expose à quelques problèmes. Par exemple, l'indice de
-localisation : \enquote{À \SI{800}{\meter} du Pas de la Ville} a été
+localisation \enquote{À 800 mètres} du Pas de la Ville} a été
 spatialisé en calculant la métrique \onto[orla]{Distance} à partir du
 ponctuel plaçant l'oronyme \enquote{Pas de la Ville} dans la base de
 données. Quant à l'indice de localisation \enquote{je suis sous le
@@ -1177,24 +1177,24 @@ données. Quant à l'indice de localisation \enquote{je suis sous le
 différence d'altitude entre le ponctuel représentant le sommet et
 chaque position de la \ac{zir}. Or, même dans le cas (hypothétique) où
 les seuils utilisés pour la spatialisation sont incontestable, le fait
-de calculer la \emph{métrique} a partir d'un seul point est une
-approximation discutable. En effet, pour ces deux exemples l'objet de
+de calculer la \emph{métrique} à partir d'un seul point est une
+approximation discutable. En effet, pour ces deux exemples, l'objet de
 référence mentionné par le requérant n'est pas vraiment assimilable à
 un point, il s'agit d'une zone sommitale pour le sommet du \emph{Grand
   Veymont} et d'un point de passage relativement étendu pour le
-\emph{Pas de la Ville.} Si il peut être satisfaisant de représenter un
+\emph{Pas de la Ville.} S'il peut être satisfaisant de représenter un
 sommet par un point, cette approximation est plus contestable dans le
 cas d'un \emph{Pas,} d'autant plus que l'information donnée par le
-requérant est une distance quantitative, elle est donc fortement
+requérant est une distance quantitative. Exlle est donc fortement
 impactée par la position de l'objet de référence. Une piste
 d'amélioration pour ce problème serait d’enrichir les données à l'aide
 de nouvelles géométrie, représentant au mieux les objets de référence,
 notamment les oronymes. Une solution envisageable pourrait être de
 construire des géométries floues, comme proposé par
-\textcite{Bloch1996}. Ce qui permettrait de représenter des objets de
+\textcite{Bloch1996}, ce qui permettrait de représenter des objets de
 référence étendus (\eg un sommet, un pas, \emph{etc.}) par des
 régions, tout en permettant de prendre en compte des limites
-imprécises.  Cette solution nécessite cependant de nombreuses
+imprécises. Cette solution nécessite cependant de nombreuses
 recherches et une modification conséquente de la méthode que nous
 proposons ici.
 
