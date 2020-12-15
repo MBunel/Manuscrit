@@ -225,7 +225,7 @@ unique et assez spécifique, ce qui nous a conduit à l'ignorer
 provisoirement, la connaissance de l'antenne de rattachement du
 téléphone de la victime est plus facilement obtenable par les
 secouristes, ces derniers pouvant faire une demande de localisation
-pour chaque alerte (\autoref{chap:1}). Toutefois l'exploitation fine
+pour chaque alerte (\autoref{chap:1}). Toutefois, l'exploitation fine
 de cet indice est assez complexe, comme nous l'avions rapidement
 évoqué dans le \autoref{chap:1}. L'implémentation d'une hypothétique
 relation \onto{Connecte\-A\-Antenne} nécessiterait, en effet, de
@@ -234,13 +234,13 @@ conditions climatiques. Nous avons donc choisi d'ajourner sa
 définition. Il est, cependant, possible d'utiliser cette information
 pour extrapoler un nouvel indice de localisation, certes moins précis
 que celui que l'on pourrait obtenir avec une relation de localisation
-dédiée, mais tout de même discriminant. On connait en effet
+dédiée, mais tout de même discriminant. On connaît en effet
 l'orientation générale de l'antenne téléphonique à laquelle le
 téléphone de la victime est connecté. On peut alors approximer la zone
 où le téléphone de la victime peut se connecter à une antenne donnée
 en l'approximant à l'aide d'une relation cardinale. On peut ici
 employer la relation de localisation \onto[orl]{A\-L\-Est\-De}, pour
-créer se cône. Il n'y a ici pas de raisons d'employer une des
+créer ce cône. Il n'y a ici pas de raisons d'employer une des
 relations de localisation dérivée de \onto[orl]{A\-L\-Est\-De}, comme
 \onto[orl]{Dans\-La\-Partie\-Est\-De} ou
 \onto[orl]{A\-L\-Est\-De\-Externe}. En effet, l'objet de référence
@@ -251,15 +251,14 @@ le cône construit par la relation \onto[orl]{A\-L\-Est\-De} étant
 virtuellement infini. Cette approximation dans la modélisation de ce
 dernier indice est certes insatisfaisante en soi, mais elle devient
 acceptable lorsque remise dans le contexte de la modélisation de
-l'alerte dans son ensemble, la multiplication des indices de
-localisation permet de compenser la faiblesse de certains d'entre
-eux.
+l'alerte dans son ensemble. La multiplication des indices de
+localisation permet de compenser la faiblesse de certains d'entre eux.
 %
 % TODO : Finir
-De plus, comme nous l'indiquions dans le \autoref{chap:01}, la
-portée des antennes téléphoniques hors des milieux urbains peut être
+De plus, comme nous l'indiquions dans le \autoref{chap:1}, la portée
+des antennes téléphoniques hors des milieux urbains peut être
 importante et atteindre plusieurs dizaines de kilomètres. Compte-tenu
-de la taille la \ac{zir} (inférieure à la portée théorique) cette
+de la taille la \ac{zir} (inférieure à la portée théorique), cette
 approximation est satisfaisante.
 
 Au terme de l'analyse de l'alerte on dispose donc de 7 indices de
@@ -296,12 +295,12 @@ localisation à spatialiser:
 Les informations données par la victime étant très imprécises, il est
 difficile de définir la \emph{zone initiale de recherche} pour cette
 alerte. On sait cependant, grâce au premier indice de localisation
-(\ref{ind:fr1}), que la victime est partie de Bourg-d'Oisans, on peut
+(\ref{ind:fr1}), que la victime est partie de Bourg-d'Oisans. On peut
 donc centrer la \ac{zir} sur ce lieu. Cependant, aucun autre indice de
 nous permet d'estimer la taille que devrait faire cette zone. Nous
 avons donc pris la décision de définir une \ac{zir} dont les limites
 ne seraient pas atteignables en une journée par un randonneur (à moins
-qu'il se déplace en fond de vallée).
+qu'il ne se déplace en fond de vallée).
 %
 Nous avons donc créé une \ac{zir} de \SI{25}{\kilo\meter} de côté,
 pour une aire de \SI{625}{\kilo\meter\squared} \footnote{Compte-tenu
@@ -313,7 +312,7 @@ pour une aire de \SI{625}{\kilo\meter\squared} \footnote{Compte-tenu
   \SI{600}{\meter} de côté). La réduction de la résolution des rasters
   a pu créer certains artéfacts visuels (\eg déformations de zones).}
 (\autoref{fig:zir_fil_rouge}). L'ensemble des calculs présentés ici
-ont été réalisées à partir d'une maille de \SI{50}{\meter} de côté.
+ont été réalisées à partir d'une maille de 50 mètres de côté.
 
 % Direction
 Le premier des indices de localisation de cette alerte (\ref{ind:fr1})
@@ -345,7 +344,7 @@ absence de la \ac{zir}). Nous avons, cependant, choisi de nous limiter
 à sélectionner les stations situées dans la \ac{zir}, cette dernière
 étant de grande taille et une station comme \emph{Champrousse} nous
 semblant être trop éloignée du point de départ pour être pertinente.
-On est donc amenés à décomposer cet indice de localisation en 7
+On est donc amené à décomposer cet indice de localisation en 7
 sous-indices, partageant la même relation de localisation et le même
 site \texttt{Y} (\ie le même point de départ) et se distinguant par
 leur destination, le site \texttt{X}.
@@ -372,12 +371,12 @@ modélisation.
 
 Une fois la décomposition effectuée, on peut procéder à la
 spatialisation indépendante des indices de localisation. L'opération
-de rasterisation ne présente pas caractéristiques particulières, si ce
-n'est que nous avons choisi d'employer la rasteriser
+de rasterisation ne présente pas de caractéristiques particulières, si
+ce n'est que nous avons choisi d'employer la rasteriser
 \onto[orla]{Centroide}, celui-ci nous semblant plus adapté à la
 modélisation d'une direction.
 
-Une fois la rasterisation effectuée la métrique
+Une fois la rasterisation, effectuée la métrique
 \onto[orla]{Direction\-De} est calculée. Cette métrique, déjà
 présentée dans le \autoref{chap:07}, mesure la distance de chaque
 position de la \ac{zir} à une ellipse alignée sur la droite reliant
