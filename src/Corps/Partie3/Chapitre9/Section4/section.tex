@@ -515,7 +515,7 @@ une troisième solution, plus pérenne.
 Nous avons créé une variante \emph{ad hoc} de la relation de
 localisation \onto[orla]{A\-Temps\-De\-Marche\-De} utilisant le
 fuzzyficateur \onto[orla]{Inf\-Val}, ce qui permet la modélisation de
-situations ou la victime donne la borne supérieure de sa durée de
+situations où la victime donne la borne supérieure de sa durée de
 déplacement et non une valeur précise. Cette nouvelle relation de
 localisation, \onto{Temps\-De\-Marche\-Inferieur\-A} \footnote{Cette
   nouvelle relation de localisation n'a pas encore été intégrée à
@@ -575,20 +575,20 @@ la \ac{zir}.
 Une fois le calcul de la métrique effectué, on peut procéder à la
 fuzzyfication et à la construction des \ac{zlc}. Dans le cas présent,
 deux \ac{zlc} sont à construire et donc deux fonctions d'appartenance
-sont à paramétrer. La première d'entre-elles utilise le fuzzyficateur
+sont à paramétrer. La première d'entre elles utilise le fuzzyficateur
 \onto[orla]{Inf\-Val} pour sélectionner les positions situées à moins
 d'un temps de marche donné. Pour prendre en compte la forte
 imprécision dans l'estimation de la durée de déplacement
-(\enquote{Plusieurs heures}) nous avons fixé une borne supérieure
+(\enquote{Plusieurs heures}), nous avons fixé une borne supérieure
 élevée, considérant que la victime avait potentiellement marché toute
-la journée. La valeur \(v\) \footnote{Pour rappel cette valeur
-  définit, pour le fuzzyficateur \onto[orla]{Inf\-Val}, dans la borne
-  maximale ou les valeurs appartiennent totalement à la \ac{zlc}
+la journée. La valeur \(v\) \footnote{Pour rappel, cette valeur
+  défini, pour le fuzzyficateur \onto[orla]{Inf\-Val}, dans la borne
+  maximale où les valeurs appartiennent totalement à la \ac{zlc}
   (\autoref{fig:select_infval}).} a donc été fixée à 6 heures, ce qui
 correspond à la durée d'une longue randonnée. Pour prendre en compte
-des déplacement plus longs nous avons également fixé la valeur du
+des déplacements plus longs, nous avons également fixé la valeur du
 second paramètre, \(\delta\), à 6 heures, ce qui permet d'attribuer un
-degré d'appartenance non nul a toutes les randonnées durant moins de
+degré d'appartenance non nul à toutes les randonnées durant moins de
 12 heures. Comme on peut le remarquer sur la
 \autoref{fig:ZLC_1_TempsMarche}, l’application de cette fonction
 d'appartenance à la métrique précédemment calculée
@@ -597,24 +597,24 @@ construction d'une \ac{zlc} moins discriminante que celle du premier
 indice de localisation (\autoref{fig:ZLC_FilRouge_1}). L'ensemble des
 positions situées en fond de vallée, moins contraintes pas la pente,
 ont un degré d'appartenance maximal et seules quelques zones, situées
-a haute altitude et éloignées de \emph{Bourg-d'Oisans} ont un degré
+à haute altitude et éloignées de \emph{Bourg-d'Oisans} ont un degré
 d'appartenance faible voir nul.
 
 La seconde \ac{zlc} est également construite à l'aide du fuzzyficateur
 \onto[orla]{Inf\-Val}, mais couplé au modifieur \onto[orla]{Not}, ce
-qui permet d'attribuer un degré d'appartenance non nul a toutes les
+qui permet d'attribuer un degré d'appartenance non nul à toutes les
 positions atteignables en marchant plus qu'une durée donnée. Toujours
 confrontés à l'imprécision de l'estimation de la durée de déplacement
 de la victime, nous avons choisi de considérer que les positions
 situées à plus de 2 heures de marche, la durée minimale pour que l'on
 puisse parler de \enquote{Plusieurs heures}, devaient se voir
-attribuer un degré d'appartenance maximal. Cependant rien ne nous
+attribuer un degré d'appartenance maximal. Cependant, rien ne nous
 garantit que la victime ait suivi ces considérations lexicales lors de
 la discussion téléphonique avec les secours. Il est donc utile de
 fixer le paramètre \(v\) \footnote{Qui fixe ici le seuil à partir du
   quel le degré d'appartenance n'est plus nul
-  (\autoref{fig:fnc_not}).} a une valeur suffisamment faible pour
-garantir que la victime ce soit déplacée plus longtemps que cette
+  (\autoref{fig:fnc_not}).} à une valeur suffisamment faible pour
+garantir que la victime se soit déplacée plus longtemps que cette
 valeur. Nous avons choisi de fixer la valeur de \(v\) a 30 minutes et
 le paramètre \(\delta\) à 1h30. L’application de cette fonction de
 fuzzyfication à la métrique précédemment calculée permet de construire
