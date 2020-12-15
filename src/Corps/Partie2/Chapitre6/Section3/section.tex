@@ -555,15 +555,15 @@ la construction des deux \emph{zones de localisations probables}
 (Figures \ref{fig:ZLP_SOUS_HT} et \ref{fig:AlphaCuts_zenith}),
 l'implémentation raster est plus rapide. Mais cette performance est
 plus liée à des facteurs exogènes, comme la qualité du développement
-et l'optimisation des bibliothèques logicielles utilisées qu'a la
+et l'optimisation des bibliothèques logicielles utilisées qu'à la
 complexité des algorithmes utilisés. De plus, l'implémentation par
 \emph{alpha-cuts} ayant été plus longue et difficile à mettre en
 place, peu de temps a été consacré à l'optimisation, même basique, de
-son code, ses performances sont donc très certainement
+son code : ses performances sont donc très certainement
 améliorables. Le temps de calcul de l'implémentation raster a
 également tendance à augmenter plus rapidement avec le nombre
 \emph{d'objets de référence} à traiter (ou avec la résolution
-utilisée), cette méthode est donc potentiellement moins performante
+utilisée). Cette méthode est donc potentiellement moins performante
 que l'approche par \emph{alpha-cuts,} même si la \emph{spatialisation}
 de \emph{l'indice de localisation} : \enquote{Je suis sous une ligne
   électrique trois brins} semble indiquer le contraire.
@@ -588,12 +588,12 @@ Ces différents éléments de comparaison (\autoref{tab:comp_implems})
 nous ont notamment conduit à privilégier l'implémentation raster. Bien
 que potentiellement moins performante que l'implémentation par
 \emph{alpha-cuts,} cette approche s'est révélée plus simple et rapide
-à mettre en place. De plus les développements nécessaires à la
+à mettre en place. De plus, les développements nécessaires à la
 généralisation de la méthode (\eg changement d'opérateurs
 d'intersection et d'union, ajout de nouvelles méthodes de
 \emph{spatialisation,} \emph{etc.}) sont moins contraignants et moins
 couteux. Le choix d'une implémentation raster nous permet donc
-d'aboutir plus rapidement une à méthode générique et fonctionnelle, ce
+d'aboutir plus rapidement à une méthode générique et fonctionnelle, ce
 qui nous permettra de nous concentrer sur la \emph{spatialisation} (et
 donc de traiter plus de types d'indices) et non sur des problèmes
 techniques de programmation.
