@@ -6,10 +6,10 @@ changement de représentation de la donnée géographique. Le terme de
 introduit, englobe plusieurs questions. Tout d'abord, la sélection de
 la partie de \emph{l'objet de référence} qui va être
 \emph{rasterisée,} mais également la manière dont on transforme cette
-sélection en un raster, c'est-à-dire comment définit si un pixel
-appartient ou non à \emph{l'objet de référence.} Toutefois lorsque
-nous parlons de définition d'une \emph{méthode de rasterisation} nous
-ne traiterons que de ce second point, il ne nous semble, en effet, pas
+sélection en un raster, c'est-à-dire comment on définit si un pixel
+appartient ou non à \emph{l'objet de référence.} Toutefois, lorsque
+nous parlons de définition d'une \emph{méthode de rasterisation,} nous
+ne traiterons que de ce second point. Il ne nous semble, en effet, pas
 pertinent de changer la manière dont la sélection des pixels est
 effectuée.
 
@@ -34,7 +34,7 @@ d'autre encore peuvent juste toucher la frontière de l'objet,
 \emph{etc.} Pour mettre en place une méthode de rasterisation, il est
 donc nécessaire de définir dans quelles configurations les pixels sont
 considérés comme appartenant à l'objet rasterisé et dans quelles
-conditions ils ne sont pas. Plusieurs solutions sont
+conditions ils ne le sont pas. Plusieurs solutions sont
 envisageables. Par exemple, la bibliothèque GDAL \autocite{GDAL2020},
 référence de facto dans le traitement des données géographiques,
 propose deux configurations possibles,
@@ -46,7 +46,7 @@ polylignes sont rasterisées avec l'algorithme de tracé de segment de
 \textcite{Bresenham1965}, qui sélectionne les pixels situés sur le
 trajet de la polyligne. La seconde configuration sélectionne tous les
 pixels qui sont en contact avec l'objet, même s'ils ne partagent qu'un
-seul point, ce qui abouti à la création d'une zone généralement plus
+seul point, ce qui aboutit à la création d'une zone généralement plus
 large que l'objet. La \autoref{fig:rasterisation_sel_pixels} illustre
 ces deux approches : un même \emph{objet de référence} y est
 \emph{rastérisé,} d'une part en sélectionnant uniquement les pixels
@@ -54,10 +54,10 @@ dont le centroïde est à l'intérieur de \emph{l'objet de référence}
 (aboutissant au raster \textcolor{RdBu-9-1}{\textsf{A}}), d'autre part
 en sélectionnant tous les pixels touchant \emph{l'objet de référence}
 (ce qui donne le raster \textcolor{RdBu-9-9}{\textsf{B}}). Comme on
-peut le voir la seconde solution abouti à une zone plus large, la zone
-résultant de la \emph{rasterisation} est alors plus importante que
-l'emprise réelle de l'objet. Cependant cette seconde approche à
-l'avantage de toujours aboutir à un raster non nul. En effet dans
+peut le voir, la seconde solution aboutit à une zone plus large, la
+zone résultant de la \emph{rasterisation} est alors plus importante
+que l'emprise réelle de l'objet. Cependant, cette seconde approche à
+l'avantage de toujours aboutir à un raster non nul. En effet, dans
 certaines configurations, il est possible qu'un \emph{objet de
   référence,} de surface non nulle, ne contienne aucun centroïde de
 pixel, aboutissant à la construction d'un raster vide. Or, cette
@@ -67,8 +67,8 @@ considérer l'ensemble des informations transmises par le requérant. Ce
 phénomène se produit lorsque la maille utilisée pour la
 \emph{rasterisation} est trop grande comparativement aux objets que
 l'on souhaite \emph{rasteriser,} donc à une mauvaise paramétrisation
-de la rasterisation. Ce problème est donc corrigible par
-l'augmentation de la résolution du raster cible. Toutefois cette
+de la rasterisation. Ce problème est donc corrigeable par
+l'augmentation de la résolution du raster cible. Toutefois, cette
 solution n'est pas toujours possible lors d'une utilisation concrète
 d'une \emph{rasterisation.} Prenons pour exemple la
 \autoref{fig:rasterisation_cas_limite}, illustrant une situation où
