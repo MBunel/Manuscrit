@@ -372,27 +372,27 @@
     west) + (-.1,0)$) |- (zlc9.south west) node[pos=0, yshift=.2] (acc-7w)
     {};
 
-    \path[draw, ->] (acc-1) -- (acc-3w) node[pos=.1, text,
-    below, text width=2cm, font=\tiny, anchor=north west]{Fusion des relations de
+    \path[draw, ->] (acc-1) -- (acc-3w) node[pos=.1, below, text
+    width=2cm, font=\tiny, anchor=north west]{Fusion des relations de
       localisation atomiques};
     
-    \path[draw, ->] (acc-2) -- (acc-4w) node[pos=.1, text, below,
+    \path[draw, ->] (acc-2) -- (acc-4w) node[pos=.1, below,
     text width=2cm, font=\tiny, anchor=north west]{Fusion des relations de
       localisation atomiques};
     
-    \path[draw, ->] (acc-22) -- (acc-42w) node[pos=.1, text, below,
+    \path[draw, ->] (acc-22) -- (acc-42w) node[pos=.1, below,
     text width=2cm, font=\tiny, anchor=north west]{Fusion des relations de
       localisation atomiques};
 
-    \path[draw, ->] (acc-5) -- (acc-62w) node[pos=.1, text, below,
+    \path[draw, ->] (acc-5) -- (acc-62w) node[pos=.1, below,
     text width=2cm, font=\tiny, anchor=north west]{Fusion des objets de
       référence non nommés};
     
-    \path[draw, ->] (acc-4) -- (acc-6w) node[pos=.1, text, below,
+    \path[draw, ->] (acc-4) -- (acc-6w) node[pos=.1, below,
     text width=2cm, font=\tiny, anchor=north west]{Fusion des objets de
       référence non nommés};
 
-    \path[draw, ->] (acc-6) -- (acc-7w) node[pos=.1, text, below,
+    \path[draw, ->] (acc-6) -- (acc-7w) node[pos=.1, below,
     text width=2cm, font=\tiny, anchor=north west]{Fusion des indices de
       localisation};
     
@@ -409,7 +409,7 @@
       \begin{scope}[xshift=6cm, yshift=-1.75cm]
         \path[ffc] (1.75cm,1.75cm) rectangle (2cm,2cm);
       \end{scope}
-      \node[align=center,anchor=center] (zi) at (5,1) {$\bot(\textcolor{RdBu-9-1}{\textsf{A}},\textcolor{RdBu-9-2}{\textsf{B}})=\textcolor{RdBu-9-1}{\textsf{AB}}$};
+      \node[align=center,anchor=center] (zi) at (5,1) {$\top(\textcolor{RdBu-9-1}{\textsf{A}},\textcolor{RdBu-9-2}{\textsf{B}})=\textcolor{RdBu-9-1}{\textsf{AB}}$};
       \path[->, draw] (2,2) -- (zi.west);
       \path[->, draw] (2,-1.5) -- (zi.west);
       \path[->, draw] (zi.east) -- (7.75,.25);
@@ -425,10 +425,10 @@
       \begin{scope}[xshift=12cm, yshift=-9.75cm]
         \path[ffc] (1.75cm,1.75cm) rectangle (2cm,2cm);
       \end{scope}
-      \node[align=center,anchor=center] (zou) at (11,-7) {$\top(\textcolor{RdBu-9-8}{\textsf{C}},\textcolor{RdBu-9-9}{\textsf{D}})=\textcolor{RdBu-9-9}{\textsf{CD}}$};
-      \path[->, draw] (8,-6) -- (zou.west);
-      \path[->, draw] (8,-9.5) -- (zou.west);
-      \path[->, draw] (zou.east) -- (13.75,-7.75);
+      \node[align=center,anchor=center] (zou) at (11,-7) {$\bot(\textcolor{RdBu-9-8}{\textsf{C}},\textcolor{RdBu-9-9}{\textsf{D}})=\textcolor{RdBu-9-9}{\textsf{CD}}$};
+      \path[-, draw] (8,-6) -- (zou.west);
+      \path[-, draw] (8,-9.5) -- (zou.west);
+      \path[-, draw] (zou.east) -- (13.75,-7.75);
     \end{scope}
     % 
     \begin{scope}
@@ -438,10 +438,10 @@
       \begin{scope}[xshift=18cm, yshift=-5.75cm]
         \path[ffc] (1.75cm,1.75cm) rectangle (2cm,2cm);
       \end{scope}
-      \node[align=center,anchor=center] (zu) at (17,-2) {$\bot(\textcolor{RdBu-9-1}{\textsf{AB}},\textcolor{RdBu-9-9}{\textsf{CD}})=\textcolor{black}{\textsf{ABCD}}$};
-      \path[->, draw] (14,.25) -- (zu.west);
-      \path[->, draw] (14,-7.75) -- (zu.west);
-      \path[->, draw] (zu.east) -- (19.75,-3.75);
+      \node[align=center,anchor=center] (zu) at (17,-2) {$\top(\textcolor{RdBu-9-1}{\textsf{AB}},\textcolor{RdBu-9-9}{\textsf{CD}})=\textcolor{black}{\textsf{ABCD}}$};
+      \path[-, draw] (14,.25) -- (zu.west);
+      \path[-, draw] (14,-7.75) -- (zu.west);
+      \path[-, draw] (zu.east) -- (19.75,-3.75);
     \end{scope}
   \end{scope}
 \end{tikzpicture}
