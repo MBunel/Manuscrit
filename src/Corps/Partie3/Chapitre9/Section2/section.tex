@@ -371,8 +371,9 @@ indices indépendants, traités séparément les uns des autres. Comme
 nous l'expliquions dans le chapitre dédié à la phase de décomposition
 (\autoref{chap:05}), cette première étape est triviale, les indices de
 localisation étant décomposés dès leur saisie. Dans le cas de l'alerte
-\emph{Grand Veymont} on dispose donc 8 indices de localisation, dans
-l'ensemble assez simples à spatialiser, comme nous allons le voir.
+\emph{Grand Veymont} on dispose donc de 8 indices de localisation,
+dans l'ensemble assez simples à spatialiser, comme nous allons le
+voir.
 
 Pour des raisons de lisibilité, nous présenterons l'ensemble des
 opérations permettant de passer des indices de localisation identifiés
@@ -387,14 +388,14 @@ séparée du reste.
 Le premier des indices de localisation est \enquote{le requérant est
   \onto[orl]{Hors\-De\-Planimetrique} du sommet du \emph{Grand
     Veymont}} (\ref{ind:gv1}). Pour construire la \ac{zlc}
-correspondant à cet indice il est nécessaire de poursuivre la phase de
-décomposition (\autoref{fig:methodo_1}). Ici, l'objet de référence de
-l'indice de localisation est nommé, il s'agit du sommet du \emph{Grand
-  Veymont.} Par conséquent, il n'est pas nécessaire de décomposer
-selon les objets de référence indéfinis. De plus, comme nous
-l'expliquions dans le \autoref{chap:07}, la relation de localisation
-\onto[orl]{Hors\-De\-Planimetrique} est, comme la relation
-\onto[orl]{Dans\-Planimetrique} à laquelle elle s'oppose
+correspondant à cet indice, il est nécessaire de poursuivre la phase
+de décomposition (\autoref{fig:methodo_1}). Ici, l'objet de référence
+de l'indice de localisation est nommé, il s'agit du sommet du
+\emph{Grand Veymont.} Par conséquent, il n'est pas nécessaire de
+décomposer selon les objets de référence indéfinis. De plus, comme
+nous l'expliquions dans le \autoref{chap:07}, la relation de
+localisation \onto[orl]{Hors\-De\-Planimetrique} est, comme la
+relation \onto[orl]{Dans\-Planimetrique} à laquelle elle s'oppose
 (\autoref{fig:ex_parties_statialisation_dansplani}), une relation de
 localisation atomique. Il n'est donc pas nécessaire de décomposer la
 relation de localisation. Ainsi, ce premier indice de localisation est
@@ -406,16 +407,16 @@ directement spatialisable.
 (\autoref{fig:ex_parties_statialisation_dansplani}), on peut
 spatialiser les deux concepts de manière assez semblable. Ces deux
 relations sont, en effet, spatialisées avec le même rasteriser
-(\onto[orla]{Geometrie}) et la même métrique (\onto[orla]{Distance}),
-seul le fuzzyficateur les distingue
+(\onto[orla]{Geometrie}) et la même métrique (\onto[orla]{Distance}).
+Seul le fuzzyficateur les distingue
 (\autoref{fig:ex_parties_statialisation_horsdeplani}). Nous avons déjà
 détaillé les raisons du choix de ce rasteriser et de cette métrique
 pour la relation \onto[orla]{Dans\-Planimetrique} dans le
-\autoref{chap:07}. L'utilisation du fuzzyficateur \onto[orla]{Sup\-Val\-0}
-permet quand à elle d'attributer un degré d'appartenance non nul aux
-positions pour lesquelles la distance à l'objet de référence est
-supérieure à zéro, c'est-à-dire aux positions situées à l'extérieur de
-l'objet de référence.
+\autoref{chap:07}. L'utilisation du fuzzyficateur
+\onto[orla]{Sup\-Val\-0} permet quant à elle d'attribuer un degré
+d'appartenance non nul aux positions pour lesquelles la distance à
+l'objet de référence est supérieure à zéro, c'est-à-dire aux positions
+situées à l'extérieur de l'objet de référence.
 
 \begin{figure}
   \centering
@@ -427,7 +428,7 @@ l'objet de référence.
   \label{fig:ex_parties_statialisation_horsdeplani}
 \end{figure}
 
-Dans le cas présent \emph{l'objet de référence} (le sommet du
+Dans le cas présent, \emph{l'objet de référence} (le sommet du
 \emph{Grand Veymont}) est représenté dans la BDTOPO par un
 ponctuel. La métrique \onto[orla]{Distance} calcule donc, pour chaque
 pixel échantillonnant les positions de la \ac{zir}, la distance à ce
@@ -454,7 +455,7 @@ on peut procéder à la création de la \ac{zlc} grâce au fuzzyficateur
 dans le \autoref{chap:07}, ce fuzzyficateur ne prend qu'un paramètre
 \(\delta\), quantifiant l'écart qui existe entre la valeur de
 référence \(v\) (ici de 0) et valeur où le degré d'appartenance
-devient nul. Pour cet indice nous avons choisi de fixer la valeur du
+devient nul. Pour cet indice, nous avons choisi de fixer la valeur du
 paramètre \(\delta\) à \SI{500}{\meter}. Ainsi les positions situées à
 plus de \SI{500}{\meter} ont un degré d'appartenance maximal à la
 \ac{zlc}. La \emph{zone de localisation} ainsi obtenue
