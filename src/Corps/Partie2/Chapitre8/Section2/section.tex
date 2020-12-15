@@ -359,14 +359,14 @@ la manière suivante :
   \forall x \in X, \pi_{V, A}(x)=f_A(x)
 \end{equation}
 
-Ainsi, si un élément à un degré d'appartenance de 0,7 au sous-ensemble
+Ainsi, si un élément a un degré d'appartenance de 0,7 au sous-ensemble
 flou \(A\), alors la possibilité que \(V\) prenne la valeur \(x\) est
 également de 0,7 et sa nécessité est nulle.
 %
 Comme le signale \textcite{Bouchon-Meunier1995}, la capacité de
 définir une distribution de possibilité à partir d'une fonction
 d'appartenance n'implique pas que ces deux fonctions doivent être
-identiques, il est possible de combiner une distribution de
+identiques. Il est possible de combiner une distribution de
 possibilité et une fonction d'appartenance différentes.
 %
 C'est par exemple le cas lorsque l'on cherche à définir une
@@ -374,11 +374,11 @@ incertitude s'appliquant de manière homogène à tous les éléments du
 sous-ensemble flou considéré.
 
 Dans le cas où une même valeur d'incertitude s'applique à tous les
-éléments de l'ensemble de référence, alors aucun de ses éléments ne
+éléments de l'ensemble de référence, alors aucun de ces éléments ne
 peut être qualifié d'impossible.
 %
 Admettons que l'on cherche à spatialiser l'indice de localisation :
-\enquote{Elle est à 500 mètres du refuge}. Pour ce faire on recourra
+\enquote{Elle est à 500 mètres du refuge}. Pour ce faire, on recourra
 la relation de localisation atomique
 \onto[orla]{A\-Distance\-Planimetrique}, qui emploie le fuzzyficateur
 \onto[orla]{Eq\-Val} avec une valeur de référence de 500 mètres. La
@@ -386,16 +386,16 @@ spatialisation de cette relation de localisation permet alors de
 construire une \ac{zlc} représentée par un raster ne comprenant que
 les pixels qui lui appartiennent, au moins partiellement
 (\autoref{chap:06}). Dans le cas où ce même indice de localisation
-n'est pas certain tout à fait certain (\eg \enquote{Je pense qu'elle
-  est à 500 mètres du refuge}), il devient impossible d'affirmer qu'un
-pixel donné n'appartient pas à la zone de localisation compatible. On
-ne peut donc pas attribuer un degré d'appartenance nul aux pixels,
-même s'ils sont situés à très grande distance de l'objet de
-référence. Dans ce cas la \emph{distribution de possibilité} (\(π\))
-de cette proposition est obtenue en tronquant la base de la fonction
+n'est pas tout à fait certain (\eg \enquote{Je pense qu'elle est à 500
+  mètres du refuge}), il devient impossible d'affirmer qu'un pixel
+donné n'appartient pas à la zone de localisation compatible. On ne
+peut donc pas attribuer un degré d'appartenance nul aux pixels, même
+s'ils sont situés à très grande distance de l'objet de référence. Dans
+ce cas la \emph{distribution de possibilité} (\(π\)) de cette
+proposition est obtenue en tronquant la base de la fonction
 d'appartenance par la droite d'ordonnée \(i\)
 \autocite{Bouchon-Meunier2007}. La \emph{distribution de possibilité}
-(\(π'\)) combinant une incertitude constante, de valeur \(i\) et une
+(\(π'\)), combinant une incertitude constante, de valeur \(i\) et une
 imprécision modélisée par la distribution de possibilité \(\pi\) est
 donc :
 
