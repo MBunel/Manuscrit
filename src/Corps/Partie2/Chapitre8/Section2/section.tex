@@ -449,7 +449,7 @@ donc constituées de tous les pixels de la \ac{zir}.
 
 Dans notre cas, nous utilisons la théorie des possibilités pour
 représenter le doute du secouriste sur la véracité de l'indice de
-localisation donné par le requérant. Ce parti-pris a une implication
+localisation donné par le requérant. Ce parti pris a une implication
 majeure. Comme les sous-ensembles flous que nous manipulons
 représentent des \emph{zones de localisation,} alors la certitude
 s'applique de manière homogène à l'ensemble de \emph{l'indice de
@@ -457,14 +457,14 @@ s'applique de manière homogène à l'ensemble de \emph{l'indice de
 l'équation \ref{eq:incert_imp}.
 
 Pour prendre en compte la confiance du secouriste dans un indice de
-localisation donné on peut employer la méthode décrite ci-dessus,
+localisation donné, on peut employer la méthode décrite ci-dessus,
 permettant d'aboutir à la
 \autoref{fig:combinaison_incertitude_imprecision}. Comme pour les
 modifieurs (\autoref{chap:07}), la modification de la certitude
 implique une modification de la forme de la fonction d'appartenance
 utilisée pour \emph{spatialiser l'indice de localisation,} mais cette
-modification n'est pas réellement effectuée lors de la fusion, la
-\ac{zlc} spatialisant \emph{l'indice de localisation} incertain est
+modification n'est pas réellement effectuée lors de la fusion. La
+\ac{zlc} spatialisant \emph{l'indice de localisation} incertain, est
 simplement unie avec un raster homogène, attribuant à chaque pixel un
 degré d'appartenance égale à l'incertitude (\(1-c\)). Comme pour les
 \emph{modifieurs,} on peut représenter le résultat de la modification
@@ -475,7 +475,7 @@ comportement des modificateurs, la diminution de la confiance modifie
 la forme générale de la courbe, mais ne change pas les paramètres du
 \emph{fuzzyficateur,} que sont l'écartement (\(\delta\)) et la valeur
 de référence (\(v\)). Toutefois, contrairement aux \emph{modifieurs,}
-la modification de la confiance à également pour effet de changer la
+la modification de la confiance a également pour effet de changer la
 valeur de seuils de la fonction d'appartenance. En effet, si la pente
 des fonctions appartenance est conservée lors du rehaussement de la
 valeur minimale, ce n'est pas le cas de la valeur où la fonction
@@ -516,7 +516,7 @@ donnée à la seconde modélisation. Comme nous l'avons indiqué
 précédemment, aucune position ne possède un degré d'appartenance
 inférieur à l'incertitude, ici 0,6. Par conséquent aucune position de
 la \ac{zir} ne peut pas ne pas appartenir à la \ac{zlc}. On peut
-remarquer que, la modification de la certitude à un impact conséquent
+remarquer que la modification de la certitude à un impact conséquent
 sur la \ac{zlc}. Réduire la confiance a donc un impact conséquent sur
 les \ac{zlc} et par extension sur la \ac{zlp}, par le biais de
 l'intersection des \ac{zlc}.
