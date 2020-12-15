@@ -186,18 +186,18 @@ d'appartenance doit donc diminuer lorsque la distance à \emph{l'objet
 la fonction d'appartenance étant fixée, nous pouvons à présent en
 définir les seuils. Deux valeurs sont à fixer : la première est la
 distance à partir de laquelle le degré d'appartenance décroit. Si elle
-est nulle le degré d’appartenance décroit dès que la distance
+est nulle, le degré d’appartenance décroit dès que la distance
 augmente, sinon il y aura une zone, dont la largeur dépend de la
 valeur choisie, où le degré d'appartenance sera maximal. Définir ce
 premier seuil revient à se demander quelle est la distance à partir de
 laquelle on ne peut plus considérer que l'on est \enquote{proche}
-d'une ligne électrique. Pour cet exemple nous avons fixé empiriquement
-cette valeur à \SI{50}{\meter}. Le second seuil à fixer est la
+d'une ligne électrique. Pour cet exemple, nous avons fixé
+empiriquement cette valeur à 50 mètres. Le second seuil à fixer est la
 distance à partir de laquelle le degré d'appartenance est nul. De
-manière tout aussi empirique, nous avons fixé cette valeur à
-\SI{100}{\meter}. Ainsi, entre 0 et 50 mètres, le degré d'appartenance
-est de 1, puis il décroit jusqu’à être de 0 à 100 mètres et reste nul
-au-delà, comme le montre la figure \ref{fig:fnc_app_Dist}.
+manière tout aussi empirique, nous avons fixé cette valeur à 100
+mètres. Ainsi, entre 0 et 50 mètres, le degré d'appartenance est de 1,
+puis il décroit jusqu’à être nul à 100 mètres et le reste au-delà,
+comme le montre la figure \ref{fig:fnc_app_Dist}.
 
 La définition de la forme de la fonction d'appartenance pour la
 \emph{relation de localisation atomique}
