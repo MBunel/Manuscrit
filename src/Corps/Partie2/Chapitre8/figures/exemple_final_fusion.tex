@@ -184,7 +184,7 @@
     {\itshape Zone de localisation compatible \normalfont \textcolor{RdBu-9-8}{\textsf{C}}};
   \end{scope}
   
-  \begin{scope}[xshift=6cm, yshift=-11.5cm]
+  \begin{scope}[xshift=6cm, yshift=-11.5cm,local bounding box=zlc62]
     \begin{scope}
       \foreach \x in {0,.25,...,1.75}{
         \foreach \y in {0,.25,...,1.75}
@@ -334,11 +334,15 @@
     \draw (zlc5.north east) -| ($(zlc5.north east)!0.5!(zlc5.south
     east) + (.1,0)$) |- (zlc5.south east) node[pos=0, yshift=.2] (acc-3)
     {};
-
-        \draw (zlc6.north east) -| ($(zlc6.south east)!0.5!(zlc7.north
-    east) + (.1,0)$) |- (zlc7.south east) node[pos=0, yshift=.2] (acc-4)
-    {};
     
+    \draw (zlc6.north east) -| ($(zlc6.north east)!0.5!(zlc62.south
+    east) + (.1,0)$) |- (zlc62.south east) node[pos=0, yshift=.2] (acc-4)
+    {};
+
+        \draw (zlc7.north east) -| ($(zlc7.north east)!0.5!(zlc8.south
+    east) + (.1,0)$) |- (zlc8.south east) node[pos=0, yshift=.2] (acc-5)
+    {};
+
   \end{scope}
   % Annotations
   \begin{scope}
