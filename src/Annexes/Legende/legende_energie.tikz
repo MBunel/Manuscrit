@@ -5,6 +5,6 @@
 
 \node (rect) [anchor=north west, caisson] at (.75, -.75) {};
 \path[draw](rect.west) .. controls (rect.south) and (rect.north) .. (rect.east);
-\node[right of=rect, legende] {AutorouteLigne};
+\node[right of=rect, legende] {Lignes électriques};
 
 \end{tikzpicture}	

@@ -1,8 +1,8 @@
 \begin{tikzpicture}
 %\tikzset{}
 
-\node[right] (hydro) at (0,0) {\Large Voirie :};
-\node (rect) [anchor=north west, caisson, fill=blue!20] at (.75, -.75) {};
-\node[right of=rect, legende] {Bati};
+\node[right] (hydro) at (0,0) {\Large Bati :};
+\node (rect) [anchor=north west, caisson, fill=gray!20] at (.75, -.75) {};
+\node[right of=rect, legende] {Tout type de bati};
 
 \end{tikzpicture}	

@@ -1,19 +1,19 @@
 ﻿\begin{tikzpicture}
 %\tikzset{}
 
-\node[right] (hydro) at (0,0) {\Large Voirie :};
+\node[right] (hydro) at (0,0) {\Large Hydrographie :};
 \node (rect) [anchor=north west, caisson, fill=blue!20] at (.75, -.75) {};
-\node[right of=rect, legende] {Surface eau};
+\node[right of=rect, legende] {Surface eau permanente};
 
-\node (rect2) [below of=rect,  caisson, fill=blue!20] {};
-\node[right of=rect2, legende] {Bla};
+\node (rect2) [below of=rect, caisson, pattern=horizontal lines, pattern
+    color=blue!20] {}; \node[right of=rect2, legende] {Surface eau};
 
 
-\node (rect3) [right of=rect, xshift=45mm, caisson] {};
-\path[draw](rect3.west) .. controls (rect3.south) and (rect3.north) .. (rect3.east);
-\node[right of=rect3, legende] {Blublu blow};
+\node (rect3) [right of=rect, xshift=60mm, caisson] {};
+\path[draw,blue!20](rect3.west) .. controls (rect3.south) and (rect3.north) .. (rect3.east);
+\node[right of=rect3, legende] {Court d'eau};
 
 \node (rect4) [below of=rect3,  caisson] {};
-\path[draw](rect4.west) .. controls (rect4.south) and (rect4.north) .. (rect4.east);
-\node[right of=rect4, legende] {Quel est le meilleur acteur ?};
+\path[draw,blue!20, --](rect4.west) .. controls (rect4.south) and (rect4.north) .. (rect4.east);
+\node[right of=rect4, legende] {Court d'eau intermittant};
 \end{tikzpicture}	

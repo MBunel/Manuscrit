@@ -1,10 +1,11 @@
 \begin{tikzpicture}
 %\tikzset{}
 
-\node[right] (hydro) at (0,0) {\Large Voirie :};
+\node[right] (hydro) at (0,0) {\Large Végétation :};
 \node (rect) [anchor=north west, caisson, fill=green!80] at (.75, -.75) {};
-\node[right of=rect, legende] {Véget 1};
+\node[right of=rect, legende] {Forêt};
 
-\node (rect2) [below of=rect,  caisson, fill=green!20] {};
-\node[right of=rect2, legende] {Véget 2};
+\node (rect2) [below of=rect,  caisson,  pattern=dots, pattern
+    color=green!20] {};
+\node[right of=rect2, legende] {Forêt ouverte};
 \end{tikzpicture}	
