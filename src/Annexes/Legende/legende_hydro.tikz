@@ -11,9 +11,9 @@
 
 \node (rect3) [right of=rect, xshift=60mm, caisson] {};
 \path[draw,blue!20](rect3.west) .. controls (rect3.south) and (rect3.north) .. (rect3.east);
-\node[right of=rect3, legende] {Court d'eau};
+\node[right of=rect3, legende] {Cours d'eau};
 
 \node (rect4) [below of=rect3,  caisson] {};
 \path[draw,blue!20,dashed](rect4.west) .. controls (rect4.south) and (rect4.north) .. (rect4.east);
-\node[right of=rect4, legende] {Court d'eau intermittant};
+\node[right of=rect4, legende] {Cours d'eau intermittant};
 \end{tikzpicture}	
