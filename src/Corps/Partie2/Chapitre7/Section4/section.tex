@@ -8,22 +8,22 @@ premier ---~illustré par la
 \autoref{fig:Exemple_Metrique_vs_Selecteur}~--- consiste à
 sélectionner les pixels pour lesquels la valeur de la \emph{métrique}
 correspond à ce qui est attendu au sein de la \ac{zlc}, le second est
-produire une \emph{zone de localisation compatible} floue,
+de produire une \emph{zone de localisation compatible} floue,
 transcrivant \emph{l'imprécision} de la \emph{relation de localisation
   atomique.}
 
-\subsection{la méthode de \emph{fuzzyfication}}
+\subsection{La méthode de \emph{fuzzyfication}}
 
 Un simple filtre binaire, comme celui utilisé pour l'exemple de la
 \autoref{fig:Exemple_Metrique_vs_Selecteur}, ne permet pas de remplir
-les deux fonctions mentionnées ci-dessus, nous devons donc étendre
+les deux fonctions mentionnées ci-dessus. Nous devons donc étendre
 cette méthode pour lui permettre de générer des \ac{zlc} floues. Pour
-ce faire on peut se tourner vers la sélection floue
+ce faire, on peut se tourner vers la sélection floue
 
 À titre d'exemple, la \autoref{fig:importance_fuzzyfication} présente
 une version améliorée de l'exemple de la
 \autoref{fig:Exemple_Metrique_vs_Selecteur}. La \emph{métrique} a été
-remplacée par la distance euclidienne
+remplacée par la distance euclidienne.
 %
 Les valeurs de la \emph{métrique} sont alors filtrées à l'aide de deux
 fonctions d'appartenance, transformant les valeurs de la
@@ -31,7 +31,7 @@ fonctions d'appartenance, transformant les valeurs de la
 \emph{degré d'appartenance.} La première \emph{fonction
   d'appartenance} (définissant la \ac{zlc}
 \textcolor{RdBu-9-1}{\textsf{A}}) attribue un degré d'appartenance
-maximal lorsque la distance \footnote{Exprimée en centimètres à
+maximal, lorsque la distance \footnote{Exprimée en centimètres à
   l'échelle de la feuille.} est inférieure ou égale à
 \SI{0,25}{\centi\meter} (soit le côté d'un pixel), puis le degré
 d'appartenance décroit jusqu'à atteindre 0 lorsque la distance est de
@@ -53,7 +53,7 @@ la sémantique de la \emph{relation de localisation atomique}
 floue d'une \emph{relation} telle que \onto[orla]{Exterieur\-De}.
 %
 Ainsi, comme le montre cet exemple, on peut étendre la logique de
-\emph{spatialisation} en trois étapes utilisée pour construire la
+\emph{spatialisation} en trois étapes utilisées pour construire la
 \autoref{fig:Exemple_Metrique_vs_Selecteur} à un cadre flou.
 
 % forme = sémantique, seuils = implémentation
@@ -82,10 +82,10 @@ Nous proposons la définition de trois fonctions de
 \emph{fuzzyfication} principales, déclinées en plusieurs variantes,
 portant le total des \emph{fuzzyficateurs} à sept.
 
-Le premier d'entre-eux est le \emph{fuzzyficateur} \onto{Eq\-Val}, qui
+Le premier d'entre eux est le \emph{fuzzyficateur} \onto{Eq\-Val}, qui
 définit une fonction d'appartenance triangulaire (Figure
-\ref{fig:select_eqval_b}). L'objectif de ce \emph{fuzzyfieur} est de
-décrire des situations où la \emph{zone de localisation compatible}
+\ref{fig:select_eqval_b}). L'objectif de ce \emph{fuzzyficateur} est
+de décrire des situations où la \emph{zone de localisation compatible}
 est définie par un ensemble de pixels dont la valeur de la métrique
 est égale à une valeur donnée. C'est par exemple le cas pour une
 \emph{relation de localisation atomique} comme
@@ -99,14 +99,15 @@ une valeur de la \emph{métrique} proche de celle attendue. Ainsi, si
 l'on souhaite construire la \ac{zlc} à 100 mètres de \emph{l'objet de
   référence,} on pourra, en fonction des seuils fixés, inclure des
 positions situées à 75 ou 110 mètres de \emph{l'objet de référence.}
-De la même manière ce \emph{fuzzyfieur} permet de prendre en
+De la même manière, ce \emph{fuzzyficateur} permet de prendre en
 considération des pixels situés à une altitude donnée. La
 \enquote{largeur} de la fonction est définie par un paramètre
 \(delta\), indiquant l'écart entre la valeur de la métrique minimale
 permettant d'obtenir un degré d'appartenance supérieur à 0 ($x_1$) et
 la valeur de la métrique maximale pour obtenir un degré d'appartenance
-supérieur à 0 ($x_2$). La fonction d'appartenance du \emph{fuzzyfieur}
-\onto{Eq\-Val} est donc définie de la manière suivante :
+supérieur à 0 ($x_2$). La fonction d'appartenance du
+\emph{fuzzyficateur} \onto{Eq\-Val} est donc définie de la manière
+suivante :
 
 \begin{equation}
   \label{eq:eq_val}
@@ -124,21 +125,21 @@ Avec \(x\) la valeur de la \emph{métrique,} \(v\) la valeur de
 référence et \(\delta\) l'écart à la valeur de référence.
 
 Au fil de la \emph{spatialisation} de nouvelles \emph{relations de
-  localisation atomiques} il s'est avéré que nous recourions
+  localisation atomiques.} Il s'est avéré que nous recourions
 fréquemment à des métriques relatives, comme la différence d'altitude
 par rapport à \emph{l'objet de référence,} c'est pourquoi nous avons
-construit un second \emph{fuzzyfieur,} \onto{EqVal0}, spécialisant le
-premier \autoref{fig:select_eqval_0}. Il s'agit également d'une
+construit un second \emph{fuzzyficateur,} \onto{EqVal0}, spécialisant
+le premier \autoref{fig:select_eqval_0}. Il s'agit également d'une
 \emph{fonction de fuzzyfication} triangulaire et symétrique, dont la
-\enquote{largeur} est définie par un paramètre \(\delta\). Cependant
+\enquote{largeur} est définie par un paramètre \(\delta\). Cependant,
 son paramètre \(v\), indiquant la valeur de la \emph{métrique} sur
-laquelle la courbe est centrée est fixé à 0, sa fonction
-d'appartenance est donc : \(f(x,\delta) = f_{EqVal}(x,0,\delta)\). Nous avons
-également défini une seconde variante de ce \emph{fuzzyfieur,}
-\onto{Eq\-Angle}, fortement similaire à \onto{Eq\-Val}, mais destinée
-aux cas spécifiques où la \emph{métrique} est un angle. Ce
-\emph{fuzzyfieur} permet donc de traiter ces valeurs en prenant en
-compte leur périodicité.
+laquelle la courbe est centrée, est fixé à 0, sa fonction
+d'appartenance est donc : \(f(x,\delta) =
+f_{EqVal}(x,0,\delta)\). Nous avons également défini une seconde
+variante de ce \emph{fuzzyficateur,} \onto{Eq\-Angle}, fortement
+similaire à \onto{Eq\-Val}, mais destinée aux cas spécifiques où la
+\emph{métrique} est un angle. Ce \emph{fuzzyficateur} permet donc de
+traiter ces valeurs en prenant en compte leur périodicité.
 
 \begin{figure}
   \centering
@@ -161,14 +162,14 @@ compte leur périodicité.
   \label{fig:select_eqval}
 \end{figure}
 
-Le second \emph{fuzzyfieur,} \onto{Sup\-Val}, est destiné à
+Le second \emph{fuzzyficateur,} \onto{Sup\-Val}, est destiné à
 représenter des situations où les valeurs de la \emph{métrique}
 doivent être supérieures à un seuil \(v\). On considère que toutes les
 valeurs supérieures ou égale à ce seuil ont un degré d'appartenance
 maximal. À l'inverse on tolère des valeurs inférieures à ce seuil,
-dans la mesure d'un paramètre \(\delta\). Ce \emph{fuzzyfieur} prend
-la forme d'une fonction d'appartenance linéaire par morceaux (Figure
-\ref{fig:select_supval_b}), dont l'équation est :
+dans la mesure d'un paramètre \(\delta\). Ce \emph{fuzzyficateur}
+prend la forme d'une fonction d'appartenance linéaire par morceaux
+(Figure \ref{fig:select_supval_b}), dont l'équation est :
 
 % \dfrac{\Delta y}{\Delta x}x + \dfrac{x_2y_1 - x_1y_2}{\Delta x}
 
@@ -185,11 +186,11 @@ la forme d'une fonction d'appartenance linéaire par morceaux (Figure
 \end{equation}
 
 Avec \(x\) la valeur de la \emph{métrique,} \(v\) la valeur référence
-et \(\delta\) l'écart à cette valeur. Comme pour le \emph{fuzzyfieur}
-\onto{Eq\-Val} une variante de ce \emph{fuzzyficateur,} dont la
-\emph{valeur de référence} (\(v\)) est fixée à 0 a été définie,
-\onto{Sup\-Val\-0}. Sa \emph{fonction d'appartenance} est :
-\(f(x,\delta) = f(x,0,\delta)\).
+et \(\delta\) l'écart à cette valeur. Comme pour le
+\emph{fuzzyficateur} \onto{Eq\-Val} une variante de ce
+\emph{fuzzyficateur,} dont la \emph{valeur de référence} (\(v\)) est
+fixée à 0 a été définie, \onto{Sup\-Val\-0}. Sa \emph{fonction
+  d'appartenance} est : \(f(x,\delta) = f(x,0,\delta)\).
 
 \begin{figure}
   \centering
@@ -207,14 +208,14 @@ et \(\delta\) l'écart à cette valeur. Comme pour le \emph{fuzzyfieur}
   \label{fig:select_supval}
 \end{figure}
 
-Le dernier \emph{fuzzyfieur,} \onto{Inf\-Val}, est l'exact opposé de
-\onto{Sup\-Val}. Son objectif est de représenter des situations où
+Le dernier \emph{fuzzyficateur,} \onto{Inf\-Val}, est l'exact opposé
+de \onto{Sup\-Val}. Son objectif est de représenter des situations où
 l'on souhaite sélectionner les pixels dont la \emph{métrique} est
 inférieure à un seuil \(v\), donné. Toutes les valeurs inférieures à
 ce seuil ont un degré d'appartenance maximal, qui diminue linéairement
 lorsque la valeur de la métrique dépasse le seuil \(v\), jusqu’à
-devenir nul à \(v+\delta\). Ce \emph{fuzzyfieur} est défini à l'aide
-de la fonction d'appartenance suivante :
+devenir nul à \(v+\delta\). Ce \emph{fuzzyficateur} est défini à
+l'aide de la fonction d'appartenance suivante :
 
 \begin{equation}
   \label{eq:inf_val}
@@ -230,9 +231,9 @@ de la fonction d'appartenance suivante :
 
 Où \(x\) est la valeur de la \emph{métrique,} \(v\) la valeur
 référence et \(\delta\) l'écart à la valeur de référence. De la même
-manière que les autres \textrm{fuzzyfieurs,} \onto{Inf\-Val} dispose
-d'une variante, \onto{Inf\-Val\-0} dont la \emph{valeur de référence}
-(\(v\)) est fixée à 0. Son équation est donc :
+manière que les autres \textrm{fuzzyficateurs,} \onto{Inf\-Val}
+dispose d'une variante, \onto{Inf\-Val\-0} dont la \emph{valeur de
+  référence} (\(v\)) est fixée à 0. Son équation est donc :
 \(f(x,\delta) = f(x,0,\delta)\).
 
 \begin{figure}
@@ -251,16 +252,16 @@ d'une variante, \onto{Inf\-Val\-0} dont la \emph{valeur de référence}
 
 \subsection{Les \emph{modifieurs}}
 
-La seule utilisation des \emph{fuzzyfieurs} définis jusqu'à présent ne
-permet cependant pas de traiter toutes les situations rencontrées dans
-notre corpus d'alertes. En effet, il n'est pas vraiment possible de
-formaliser des \emph{indices de localisation} ayant une tournure
+La seule utilisation des \emph{fuzzyficateurs} définis jusqu'à présent
+ne permet cependant pas de traiter toutes les situations rencontrées
+dans notre corpus d'alertes. En effet, il n'est pas vraiment possible
+de formaliser des \emph{indices de localisation} ayant une tournure
 négative (\eg \enquote{Je ne suis pas au niveau du plateau}) ou
 utilisant des approximations (\eg \enquote{Elle est presque à côté de
   moi}). Certes, certaines \emph{relations de localisation atomiques}
 ont des opposés (\eg \onto[orala]{Interieur} et
 \onto[orala]{Exterieur}), mais il s'agit de cas particuliers et il
-est, par exemple, pas prévu dans l'ontologie \ac{orl} de définir une
+n'est, par exemple, pas prévu dans l'ontologie \ac{orl} de définir une
 \emph{zone de localisation compatible} à partir de ce qui n'est pas
 vu, ou qui n'est pas à la même altitude \footnote{Il n'existe pas de
   \emph{relations} \onto[orla]{Site\-Ne\-Voit\-Pas\-Cible} ou
@@ -270,8 +271,8 @@ seraient modélisables avec les \emph{rasterisers} et les
 seraient à définir.
 
 C'est pour traiter ces situations que nous avons développé la notion
-de \emph{modifieurs.} Les \emph{modifieurs} sont ---~de la même que
-les \emph{rasterisers,} les \emph{métriques} et les
+de \emph{modifieurs.} Les \emph{modifieurs} sont ---~de la même
+manière que les \emph{rasterisers,} les \emph{métriques} et les
 \emph{fuzzyficateurs}~--- des concepts formalisant la sémantique d'une
 \emph{relation spatiale atomique} et correspondant à un algorithme
 appliqué lors de la \emph{phase de spatialisation.} Cependant, ils
@@ -280,7 +281,7 @@ possèdent la particularité d'être facultatifs, la plupart des
 cumulatifs, une même \emph{relation} pouvant en utiliser
 plusieurs. Les \emph{modifieurs} sont appliqués à la fin de la
 \emph{spatialisation} (\autoref{fig:methodo_spatialisation}), après la
-\emph{fuzzyfication.}  Dans cette configuration la \emph{zone de
+\emph{fuzzyfication.}  Dans cette configuration, la \emph{zone de
   localisation compatible} n'est donc pas le résultat de la
 \emph{fuzzyfication} \footnote{Comme l'indique la
   \autoref{fig:methodo_spatialisation}, qui présente la \emph{méthode
@@ -291,17 +292,17 @@ la phase de \emph{fuzzyfication,} de manière à modifier la \emph{zone
   de localisation compatible.} Ils n'agissent donc pas directement sur
 la forme de la \emph{fonction d'appartenance} définie par le
 \emph{fuzzyficateur,} mais sur les \emph{degrés d'appartenance}
-résultant de son application. Toutefois cette opération est
+résultant de son application. Toutefois, cette opération est
 équivalente à un changement de \emph{fonction d'appartenance.} Ainsi,
 ce \emph{modifieur} peut être utilisé pour simuler un changement de
 forme de la \emph{fonction d'appartenance.}
 
-Le premier (et le plus utilisé) des \emph{modifieurs} développés et le
-\emph{modifieur} \onto{Not}. Sa fonction est de permettre la
+Le premier (et le plus utilisé) des \emph{modifieurs} développés est
+le \emph{modifieur} \onto{Not}. Sa fonction est de permettre la
 définition de l'opposée d'une \emph{relation de localisation
   atomique.} Par exemple, si l'on applique ce \emph{modifieur} à la
 \emph{relation de localisaiton atomique}
-\onto[orla]{A\-La\-Frontiere\-De}, on obtiendra son opposée,
+\onto[orla]{A\-La\-Frontiere\-De}, on obtiendra son opposé,
 c'est-à-dire une \emph{relation de localisation atomique,} que l'on
 pourrait appeler \onto[orla]{Not\-A\-La\-Frontiere\-De}, qui serait
 \emph{spatialisable} en vérifiant si, pour chaque pixel de la
@@ -314,7 +315,7 @@ complémentaire de la \emph{zone de localisation,} construire la
 \ac{zlc} correspondant à la \emph{relation de localisation atomique}
 \onto[orla]{Not\-A\-La\-Frontiere\-De}. Comme nous l'avons expliqué
 dans le \autoref{eq:comp} (\autoref{chap:03}), le complémentaire d'un
-\emph{sous-ensemble flou} peut-être construit en soustrayant le degré
+\emph{sous-ensemble flou} peut être construit en soustrayant le degré
 d'appartenance de chaque élément de l'ensemble (ici les pixels) à
 1. Cette démarche est parfaitement équivalente à la définition de
 nouveaux \emph{fuzzyficateurs,} opposés à ceux précédemment définis
@@ -342,7 +343,7 @@ hypothétique \emph{fuzzyficateur} \onto{Not\-Eq\-Val} (Figure
     \input{../figures/fnc_not_inf_val.tex}
     \label{fig:fnc_not_inf_va}
   }  
-  \caption{Fonctions d'appartenance des \emph{fuzzyfieurs}
+  \caption{Fonctions d'appartenance des \emph{fuzzyficateurs}
     \protect\onto{Eq\-Val}, \protect\onto{Sup\-Val}, et
     \protect\onto{Inf\-Val} après application du \emph{modifieur}
     \protect\onto{Not}.}
@@ -359,7 +360,7 @@ L'utilisation d'adverbes, tels que \enquote{juste} ou
 description d'une position. Par conséquent, les \ac{zlc} issues de la
 \emph{spatialisation} de tels \emph{indices de localisation} doivent
 se voir légèrement modifiées, de manière à retranscrire la sémantique
-des adverbes. Pour ce faire on peut définir des \emph{modifieurs}
+des adverbes. Pour ce faire, on peut définir des \emph{modifieurs}
 modifiant la valeur des degrés d'appartenance de chaque pixel. Par
 exemple, \emph{l'indice de localisation} : \enquote{Je suis presque à
   la frontière de cette forêt}, pourra être modélisé en ajoutant le
@@ -372,9 +373,9 @@ pixels ayant un degré d'appartenance supérieur à un certain seuil (\eg
 autres valeurs seraient recalculées à l'aide d'une interpolation
 linéaire, de manière à conserver une fonction d'appartenance
 continue. À l'inverse, un \emph{indice de localisation} comme
-\enquote{Je juste en face}, pourrait être modélisé avec un
-\emph{modifieur} ramenant à zéro, les degrés appartenance supérieurs à
-un seuil défini. Pour mettre en place cette solution, nous avons
+\enquote{Je suis juste en face}, pourrait être modélisé avec un
+\emph{modifieur} ramenant à zéro, les degrés d'appartenance supérieurs
+à un seuil défini. Pour mettre en place cette solution, nous avons
 défini un second \emph{modifieur} générique, \onto{Resampling}. Son
 but est de servir de support à la définition de nouveaux
 \emph{modifieurs} plus spécifiques, à l'image de \onto{Presque} ou
@@ -388,7 +389,7 @@ but est de servir de support à la définition de nouveaux
 % \end{figure}
 
 Comme on peut le constater avec ces deux exemples, le mécanisme des
-\emph{modifieurs} peut influer non pas sur la forme globale des
+\emph{modifieurs} peut influer, non pas sur la forme globale des
 \emph{fonctions d'appartenance} définies par le \emph{fuzzyficateur,}
 mais sur leurs seuils. L'écartement (\(\delta\)), définissant
 notamment la valeur de la \emph{métrique} à partir de laquelle le
@@ -405,7 +406,7 @@ bonne sélection du \emph{rasterizer,} de la \emph{métrique} et du
 % Ordre modifieurs
 La possibilité de cumuler plusieurs \emph{modifieurs} pose un problème
 jusqu'ici inédit, celui de l'influence de l'ordre du traitement sur le
-résultat final. En effet si une \emph{relation de localisation
+résultat final. En effet, si une \emph{relation de localisation
   atomique} fait appel au \emph{modifieur} \onto{Not} et à un
 \emph{modifieur} dérivé de \onto{Reseampling} (par exemple pour
 modéliser \emph{l'indice de localisation} : \enquote{Je ne suis pas
@@ -421,7 +422,7 @@ spatialisée \footnote{Dit autrement, si \(N\) est la fonction
   de la \emph{spatialisation} avant l'application des modifieurs,
   alors \(N(T(S)) \neq T(N(S))\).}. Nous avons contourné ce problème
 en définissant un ordre de priorité des \emph{modifieurs} en fonction
-de leur type. Nous sommes partis du principe que la négation
+de leur type. Nous sommes parti du principe que la négation
 s'appliquait toujours à l'ensemble de \emph{l'indice de localisation,}
 et donc qu'elle devait être appliquée en dernier. Ainsi, le
 \emph{modifieur} \onto{Not} a une priorité minimale. À l'inverse,
@@ -434,8 +435,8 @@ dérivés de \onto{Resampling} sont appliqués. Cependant ce cas, que
 nous n'avons par ailleurs jamais rencontré dans des alertes, nous
 semble hautement improbable, si ce n'est dans des formulations
 hyperboliques, utilisant la répétition, telles que : \enquote{Je suis
-  très très proche}, mais où ce problème ne se pose pas, le même
-\emph{modifieur} étant employé.
+  très très proche}, mais où ce problème ne se pose pas, car le même
+\emph{modifieur} est employé.
 
 %%% Local Variables:
 %%% mode: latex
